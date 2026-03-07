@@ -1259,8 +1259,7 @@ header::before{
 </header>
 
 
-<!-- ═══ YOUTUBE PLAYER (hidden, loaded on demand) ═══ -->
-<div id="yt-player"></div>
+
 
 <!-- ═══ VOICE SUBTITLE ═══ -->
 <div id="voice-sub"></div>
@@ -2167,7 +2166,8 @@ function onYouTubeIframeAPIReady() {
   ytReady = true;
 }
 
-function initYT() {
+function initYT() { return; // désactivé
+
   if (ytPlayer) return;
   try {
     ytPlayer = new YT.Player('yt-player', {
@@ -2234,7 +2234,8 @@ function setYTVolume(v) {
   }
 }
 
-function loadYTAPI() {
+function loadYTAPI() { return; // désactivé
+
   if (document.getElementById('yt-api-script')) return;
   const s = document.createElement('script');
   s.id = 'yt-api-script';
@@ -3377,13 +3378,13 @@ init();
 
 // ═══ COMBAT GIF SYSTEM ═══
 const GIFS_CORRECT = [
-  'https://media.tenor.com/x8v1oNUOmg4AAAAM/luffy-one-piece.gif',
-  'https://media.tenor.com/ySEAoSAGe2QAAAAM/one-piece-luffy.gif',
-  'https://media.tenor.com/ahGoHNBJCTkAAAAM/one-piece.gif',
+  'https://i.imgur.com/3HQ3oTX.gif',
+  'https://i.imgur.com/nHkYlKn.gif',
+  'https://i.imgur.com/wBpX2K6.gif',
 ];
 const GIFS_WRONG = [
-  'https://media.tenor.com/K5enuFi1TogAAAAM/luffy-one-piece.gif',
-  'https://media.tenor.com/9oOhNaXXGWoAAAAM/one-piece-usopp.gif',
+  'https://i.imgur.com/6YQbWYB.gif',
+  'https://i.imgur.com/QK3CDRV.gif',
 ];
 
 let gifTimer = null;
@@ -3419,13 +3420,13 @@ var WEBAPP_URL = '';
   <img id="combat-gif-img" src="" alt="">
 </div>
 
-< ═══ COMBAT VIDEO OVERLAY ═══ -->
+<!-- ═══ COMBAT VIDEO OVERLAY ═══ -->
 <div id="combat-overlay" onclick="closeCombatVideo()">
   <video id="combat-video" playsinline muted autoplay></video>
   <div style="position:absolute;top:12px;right:16px;color:rgba(255,255,255,.5);font-size:.75rem;font-family:Nunito,sans-serif;font-weight:800">TAP POUR FERMER</div>
 </div>
 
-< ═══ CINEMATIC SCENE OVERLAY ═══ -->
+<!-- ═══ CINEMATIC SCENE OVERLAY ═══ -->
 <div id="cine-scene">
   <canvas id="cine-canvas"></canvas>
   <div class="cine-flash" id="cineFlash"></div>
