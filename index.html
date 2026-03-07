@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>☠️ Académie Pirate — One Piece Quiz</title>
+<link rel="stylesheet" href="css/animations.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -3212,6 +3214,7 @@ function corriger(n){
           setTimeout(()=>fxCorrect(comboWords[Math.floor(Math.random()*comboWords.length)]),80+i*40);
           sfxOK(); sfxPow();
           speakChar(currentIsland,'correct');
+          showCombatGif('correct');
           if(streak>=3) starRain(4);
           if(streak>=5){sfxCombo();setTimeout(()=>showToast('🔥 Série de '+streak+' ! INCROYABLE !'),400)}
         } else {
@@ -3228,6 +3231,7 @@ function corriger(n){
           if (inp) inp.classList.add('wrong-input');
           sfxKO(); sfxSlash(); fxWrong();
           speakChar(currentIsland,'wrong');
+          showCombatGif('wrong');
         }
       }
     } else {
@@ -3247,6 +3251,7 @@ function corriger(n){
           setTimeout(()=>fxCorrect(comboWords[Math.floor(Math.random()*comboWords.length)]),100+i*50);
           sfxOK(); sfxPow();
           speakChar(currentIsland,'correct');
+          showCombatGif('correct');
           if(streak>=3)starRain(4);
           if(streak>=5){sfxCombo();setTimeout(()=>showToast('🔥 Série de '+streak+' ! INCROYABLE !'),400)}
         } else {
@@ -3258,6 +3263,7 @@ function corriger(n){
           });
           sfxKO(); sfxSlash(); fxWrong();
           speakChar(currentIsland,'wrong');
+          showCombatGif('wrong');
         }
       }
     }
@@ -3371,12 +3377,57 @@ async function init(){
 }
 init();
 
+// ═══ COMBAT GIF SYSTEM ═══
+const GIFS_CORRECT = [
+  'https://media.tenor.com/x8v1oNUOmg4AAAAM/luffy-one-piece.gif',
+  'https://media.tenor.com/ySEAoSAGe2QAAAAM/one-piece-luffy.gif',
+  'https://media.tenor.com/ahGoHNBJCTkAAAAM/one-piece.gif',
+];
+const GIFS_WRONG = [
+  'https://media.tenor.com/K5enuFi1TogAAAAM/luffy-one-piece.gif',
+  'https://media.tenor.com/9oOhNaXXGWoAAAAM/one-piece-usopp.gif',
+];
+
+let gifTimer = null;
+function showCombatGif(type) {
+  const list = type === 'correct' ? GIFS_CORRECT : GIFS_WRONG;
+  const src = list[Math.floor(Math.random() * list.length)];
+  const overlay = document.getElementById('combat-gif-overlay');
+  const img = document.getElementById('combat-gif-img');
+  img.src = src;
+  overlay.classList.add('active');
+  if (gifTimer) clearTimeout(gifTimer);
+  gifTimer = setTimeout(() => overlay.classList.remove('active'), 2500);
+}
+
+function closeCombatVideo() {
+  const v = document.getElementById('combat-video');
+  const o = document.getElementById('combat-overlay');
+  v.pause(); v.src = '';
+  o.classList.remove('active');
+}
+
+// ═══ AUDIO ENGINE BRIDGE ═══
+function playBGM(track) { if(window.AudioEngine) AudioEngine.playBGM(track); }
+function stopBGM()       { if(window.AudioEngine) AudioEngine.stopBGM(); }
+
 // Optional: expose WEBAPP_URL for GAS deployment
 // Set this to your deployed Google Apps Script URL
 var WEBAPP_URL = '';
 </script>
 
-<!-- ═══ CINEMATIC SCENE OVERLAY ═══ -->
+<!-- ═══ COMBAT GIF OVERLAY ═══ -->
+<div id="combat-gif-overlay">
+  <img id="combat-gif-img" src="" alt="">
+</div>
+
+< ═══ COMBAT VIDEO OVERLAY ═══ -->
+<div id="combat-overlay" onclick="closeCombatVideo()">
+  <video id="combat-video" playsinline muted autoplay></video>
+  <div style="position:absolute;top:12px;right:16px;color:rgba(255,255,255,.5);font-size:.75rem;font-family:Nunito,sans-serif;font-weight:800">TAP POUR FERMER</div>
+</div>
+
+< ═══ CINEMATIC SCENE OVERLAY ═══ -->
 <div id="cine-scene">
   <canvas id="cine-canvas"></canvas>
   <div class="cine-flash" id="cineFlash"></div>
@@ -3384,6 +3435,7 @@ var WEBAPP_URL = '';
   <div class="cine-panels" id="cinePanels"></div>
   <div class="cine-bottom" id="cineBottom"></div>
 </div>
+<script src="js/audio-engine.js"></script>
 </body>
 </html>
 
