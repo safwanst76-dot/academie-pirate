@@ -2176,7 +2176,8 @@ function initYT() {
       playerVars: {
         autoplay: 0, loop: 1, controls: 0,
         disablekb: 1, modestbranding: 1,
-        playlist: YT_IDS[0]
+        playlist: YT_IDS[0],
+        origin: window.location.origin
       },
       events: {
         onReady: (e) => {
