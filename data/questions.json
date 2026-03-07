@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "meta": {
+    "title": "Académie Pirate",
+    "subject": "Grammaire française",
+    "level": "CM1-CM2"
+  },
+  "chars": {
+    "luffy":   { "color": "#e63946", "emoji": "🍖" },
+    "nami":    { "color": "#f97316", "emoji": "🗺️" },
+    "zoro":    { "color": "#22c55e", "emoji": "⚔️" },
+    "robin":   { "color": "#845ef7", "emoji": "📚" },
+    "usopp":   { "color": "#f59e0b", "emoji": "🎯" },
+    "sanji":   { "color": "#3b82f6", "emoji": "🍳" },
+    "chopper": { "color": "#ec4899", "emoji": "🦌" },
+    "brook":   { "color": "#8b5cf6", "emoji": "💀" }
+  }
+}
