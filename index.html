@@ -2205,30 +2205,26 @@ function initYT() {
 }
 
 function toggleMusic() {
-  // First interaction needed to unlock AudioContext
   try { getActx().resume(); } catch(e) {}
-
   musicPlaying = !musicPlaying;
   const btn = document.getElementById('btnMusic');
-
   if (musicPlaying) {
     btn.classList.add('active');
-    btn.innerHTML = '🎵 Musique ▶';
     btn.classList.remove('muted');
-    if (!ytPlayer && typeof YT !== 'undefined' && YT.Player) {
-      initYT();
-    } else if (ytPlayer) {
-      ytPlayer.playVideo();
-      setYTVolume(Math.round(masterVol * 60));
-    } else {
-      // YT API not loaded yet — load it now
-      loadYTAPI();
+    btn.innerHTML = '🎵 Musique ▶';
+    if (window.AudioEngine) {
+      AudioEngine.bgmEnabled = true;
+      AudioEngine.setVolume(masterVol);
+      AudioEngine.playBGM('map');
     }
   } else {
     btn.classList.remove('active');
     btn.classList.add('muted');
     btn.innerHTML = '🎵 Musique ⏸';
-    if (ytPlayer) ytPlayer.pauseVideo();
+    if (window.AudioEngine) {
+      AudioEngine.bgmEnabled = false;
+      AudioEngine.stopBGM();
+    }
   }
 }
 
