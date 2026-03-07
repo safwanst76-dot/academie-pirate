@@ -1,0 +1,3389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>☠️ Académie Pirate — One Piece Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080c18;
+  --card:#0f1629;
+  --card2:#16213e;
+  --gold:#f5a623;
+  --gold2:#ffd700;
+  --red:#e63946;
+  --green:#06d6a0;
+  --blue:#3a86ff;
+  --ink:#1a1a2e;
+  --white:#f0f4ff;
+  --r:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--white);min-height:100vh;overflow-x:hidden;cursor:default}
+
+/* ═══════════════════════════════════════
+   MANGA SCROLLING BACKGROUND PANELS
+═══════════════════════════════════════ */
+#manga-bg{
+  position:fixed;inset:0;z-index:0;
+  overflow:hidden;pointer-events:none;
+}
+.bg-strip{
+  position:absolute;top:0;height:100%;
+  display:flex;flex-direction:column;gap:4px;
+  animation:stripScroll 20s linear infinite;
+  opacity:0.06;
+}
+.bg-strip:nth-child(1){left:0;width:22%;animation-duration:18s}
+.bg-strip:nth-child(2){left:23%;width:18%;animation-duration:24s;animation-direction:reverse}
+.bg-strip:nth-child(3){left:42%;width:25%;animation-duration:20s}
+.bg-strip:nth-child(4){left:68%;width:16%;animation-duration:16s;animation-direction:reverse}
+.bg-strip:nth-child(5){left:85%;width:15%;animation-duration:22s}
+.bg-strip img{width:100%;object-fit:cover;border:2px solid rgba(255,255,255,.1);flex-shrink:0}
+@keyframes stripScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+
+/* Manga halftone overlay */
+.halftone{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+/* Speed lines radial */
+.speed-lines{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    transparent 3.5deg,
+    rgba(255,255,255,.012) 3.5deg,
+    rgba(255,255,255,.012) 4deg
+  );
+  opacity:.5;
+}
+/* Color overlay gradient */
+.color-overlay{
+  position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 20%,rgba(230,57,70,.06) 0%,transparent 65%),
+    radial-gradient(ellipse 50% 70% at 85% 80%,rgba(58,134,255,.07) 0%,transparent 65%),
+    radial-gradient(ellipse 60% 40% at 50% 50%,rgba(245,166,35,.04) 0%,transparent 70%);
+}
+
+/* ═══════════════════════════════════════
+   LOADING SCREEN
+═══════════════════════════════════════ */
+#loading{
+  position:fixed;inset:0;z-index:2000;
+  background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
+  transition:opacity .8s,visibility .8s;
+}
+#loading.gone{opacity:0;visibility:hidden;pointer-events:none}
+.load-jolly{font-size:clamp(4rem,12vw,7rem);animation:jollyBounce 1s ease-in-out infinite}
+.load-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(2rem,8vw,4rem);letter-spacing:4px;
+  background:linear-gradient(135deg,var(--gold),var(--red));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:titlePulse 1.4s ease-in-out infinite;
+}
+.load-track{width:min(320px,75vw);height:8px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;border:1px solid rgba(255,255,255,.15)}
+.load-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--red));animation:loadGrow 2.5s cubic-bezier(.4,0,.2,1) forwards}
+.load-sub{font-size:.8rem;color:#475569;letter-spacing:3px;text-transform:uppercase}
+@keyframes jollyBounce{0%,100%{transform:rotate(-10deg) scale(1)}50%{transform:rotate(10deg) scale(1.1)}}
+@keyframes titlePulse{0%,100%{opacity:1}50%{opacity:.7}}
+@keyframes loadGrow{0%{width:0}100%{width:100%}}
+
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+header{
+  position:relative;z-index:10;
+  background:linear-gradient(180deg,#050810 0%,#0f1629 100%);
+  border-bottom:3px solid var(--gold);
+  padding:14px 16px 10px;text-align:center;
+  box-shadow:0 4px 48px rgba(245,166,35,.12),0 0 0 1px rgba(245,166,35,.08);
+}
+/* Manga border top */
+header::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:repeating-linear-gradient(90deg,var(--gold) 0px,var(--gold) 12px,var(--red) 12px,var(--red) 24px);
+}
+.logo{
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.8rem,6vw,3.2rem);
+  letter-spacing:4px;display:block;line-height:1;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 40%,var(--red) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 20px rgba(245,166,35,.3));
+}
+.logo-sub{font-size:.72rem;color:#4a5568;letter-spacing:3px;text-transform:uppercase;margin-top:2px}
+/* Manga ink border style */
+.panel-border{
+  display:inline-block;
+  border:3px solid rgba(255,255,255,.06);
+  border-radius:4px;padding:2px 8px;
+  background:rgba(255,255,255,.02);
+}
+
+/* HUD */
+.hud{display:flex;justify-content:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.hud-pill{
+  background:rgba(255,255,255,.05);
+  border:1.5px solid rgba(255,255,255,.1);
+  border-radius:20px;padding:4px 12px;
+  font-size:.75rem;font-weight:800;
+  display:flex;align-items:center;gap:5px;
+}
+.hud-pill b{color:var(--gold);font-size:.85rem}
+
+/* XP */
+.xp-wrap{max-width:440px;margin:10px auto 0;padding:0 12px}
+.xp-track{height:10px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.xp-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .7s cubic-bezier(.4,0,.2,1)}
+.xp-lbl{font-size:.65rem;color:#374151;text-align:right;margin-top:3px;font-weight:700}
+
+/* BADGES */
+.badges{display:flex;justify-content:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.bdg{font-size:1.4rem;opacity:.15;filter:grayscale(1);transition:all .4s;position:relative;cursor:default}
+.bdg.on{opacity:1;filter:none;animation:badgePop .7s cubic-bezier(.175,.885,.32,1.275)}
+.bdg-tip{display:none;position:absolute;bottom:120%;left:50%;transform:translateX(-50%);background:var(--card2);border:1px solid var(--gold);color:var(--white);font-size:.6rem;white-space:nowrap;padding:4px 8px;border-radius:6px;z-index:50;font-family:'Nunito',sans-serif;font-weight:700}
+.bdg:hover .bdg-tip{display:block}
+
+/* ═══════════════════════════════════════
+   MAP SECTION
+═══════════════════════════════════════ */
+#map-sec{position:relative;z-index:5;max-width:700px;margin:0 auto;padding:24px 14px}
+
+.sec-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(1.4rem,4vw,2rem);
+  letter-spacing:4px;text-align:center;
+  color:var(--gold2);margin-bottom:6px;
+}
+.sec-sub{text-align:center;font-size:.7rem;color:#4a5568;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px;font-weight:700}
+
+/* Manga panel frame */
+.panel-frame{
+  border:3px solid var(--ink);
+  border-radius:4px;
+  position:relative;
+}
+.panel-frame::before{
+  content:'';position:absolute;inset:3px;
+  border:1px solid rgba(255,255,255,.04);
+  border-radius:2px;pointer-events:none;z-index:1;
+}
+
+.map-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;background:var(--ink)}
+
+/* Island card = manga panel */
+.isle{
+  background:var(--card);
+  cursor:pointer;
+  transition:filter .25s,transform .25s;
+  position:relative;overflow:hidden;
+  -webkit-tap-highlight-color:transparent;
+  min-height:260px;display:flex;flex-direction:column;
+}
+.isle:hover{filter:brightness(1.15);z-index:2;transform:scale(1.015)}
+.isle.done{filter:saturate(1.2)}
+.isle.done::after{
+  content:'✔ TERMINÉ';
+  position:absolute;top:10px;right:10px;
+  background:var(--green);color:#000;
+  font-family:'Bangers',cursive;font-size:.7rem;letter-spacing:2px;
+  padding:3px 8px;border-radius:3px;z-index:5;
+  box-shadow:0 2px 8px rgba(6,214,160,.4);
+}
+
+/* Character image zone */
+.isle-img-zone{
+  position:relative;height:175px;overflow:hidden;
+  background:linear-gradient(135deg,#0a0d1a,#1a1030);
+  flex-shrink:0;
+}
+.isle-char-img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  transition:transform .5s;
+  image-rendering:auto;
+}
+.isle:hover .isle-char-img{transform:scale(1.08) translateY(-4px)}
+/* Manga screentone on image */
+.isle-img-zone::after{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(0,0,0,.3) 1px,transparent 1px);
+  background-size:4px 4px;
+  mix-blend-mode:multiply;
+  pointer-events:none;
+}
+/* Gradient fade bottom */
+.isle-fade{
+  position:absolute;bottom:0;left:0;right:0;height:60px;
+  background:linear-gradient(transparent,var(--card));
+  z-index:2;pointer-events:none;
+}
+/* Loading skeleton */
+.isle-skel{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,#0f1629 25%,#1a2035 50%,#0f1629 75%);
+  background-size:200% 100%;
+  animation:skel 1.5s infinite;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;
+}
+@keyframes skel{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* Panel footer */
+.isle-foot{
+  padding:10px 12px 14px;
+  background:var(--card);
+  border-top:2px solid var(--ink);
+  flex:1;display:flex;flex-direction:column;justify-content:space-between;
+}
+.isle-name{font-family:'Bangers',cursive;font-size:1.05rem;letter-spacing:2px;color:var(--gold2)}
+.isle-topic{font-size:.68rem;color:#4a5568;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-top:2px}
+.isle-stars{font-size:.85rem;letter-spacing:2px;margin-top:6px}
+/* Manga label */
+.isle-label{
+  position:absolute;top:8px;left:8px;z-index:5;
+  background:rgba(0,0,0,.8);border:1.5px solid rgba(255,255,255,.15);
+  font-family:'Bangers',cursive;font-size:.65rem;letter-spacing:1.5px;
+  padding:2px 7px;border-radius:2px;color:var(--gold);
+}
+
+/* WORLD MAP separator */
+.world-line{
+  text-align:center;margin:20px 0 0;
+  font-size:.65rem;color:#1f2937;letter-spacing:3px;text-transform:uppercase;font-weight:700;
+}
+
+/* ═══════════════════════════════════════
+   QUIZ SECTION
+═══════════════════════════════════════ */
+#quiz-sec{display:none;position:relative;z-index:5;max-width:660px;margin:0 auto;padding:14px 12px 50px}
+
+.qhdr{text-align:center;margin-bottom:18px;position:relative}
+.back-btn{
+  position:absolute;left:0;top:4px;
+  background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);
+  border-radius:8px;color:var(--white);font-size:.75rem;font-weight:800;
+  padding:5px 11px;cursor:pointer;transition:all .2s;font-family:'Nunito',sans-serif;
+}
+.back-btn:hover{background:rgba(255,255,255,.12);transform:translateX(-2px)}
+.q-island-title{font-family:'Bangers',cursive;font-size:clamp(1.3rem,5vw,1.9rem);letter-spacing:3px;color:var(--gold)}
+.q-prog-wrap{margin-top:10px}
+.q-prog-track{height:10px;background:rgba(255,255,255,.07);border-radius:99px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.q-prog-fill{height:100%;background:linear-gradient(90deg,var(--blue),#a855f7);border-radius:99px;transition:width .5s ease}
+.q-prog-lbl{font-size:.65rem;color:#374151;text-align:right;margin-top:3px;font-weight:700}
+
+/* ═══════════════════════════════════════
+   QUESTION CARD — MANGA PANEL STYLE
+═══════════════════════════════════════ */
+.q-card{
+  background:var(--card);
+  border:3px solid var(--ink);
+  /* Simulates manga panel thick border */
+  box-shadow:4px 4px 0 #000, inset 0 0 0 1px rgba(255,255,255,.04);
+  margin-bottom:3px;overflow:hidden;
+  animation:panelIn .35s cubic-bezier(.4,0,.2,1);
+  position:relative;
+}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* Character panel at top — manga style */
+.char-panel{
+  display:flex;height:110px;
+  border-bottom:3px solid var(--ink);
+  position:relative;overflow:hidden;
+}
+/* Left: character image */
+.char-panel-img{
+  width:100px;flex-shrink:0;
+  position:relative;overflow:hidden;
+  border-right:3px solid var(--ink);
+}
+.char-panel-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.char-panel-img .char-skel{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,#0f1629 25%,#1a2035 50%,#0f1629 75%);
+  background-size:200% 100%;animation:skel 1.5s infinite;
+  display:flex;align-items:center;justify-content:center;font-size:2rem;
+}
+/* Speed line effect on char panel */
+.char-panel-img::after{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    75deg,transparent,transparent 8px,
+    rgba(255,255,255,.025) 8px,rgba(255,255,255,.025) 9px
+  );pointer-events:none;
+}
+/* Right: speech bubble zone */
+.char-panel-speech{
+  flex:1;padding:12px 14px;
+  background:linear-gradient(135deg,#0c1225,#0f1a30);
+  display:flex;flex-direction:column;justify-content:center;gap:6px;
+  position:relative;
+}
+/* Diagonal manga action lines in bg */
+.char-panel-speech::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -30deg,transparent,transparent 20px,
+    rgba(255,255,255,.012) 20px,rgba(255,255,255,.012) 21px
+  );pointer-events:none;
+}
+.char-name-badge{
+  font-family:'Bangers',cursive;font-size:.75rem;letter-spacing:2px;
+  color:var(--gold);
+  border-bottom:1.5px solid rgba(245,166,35,.3);
+  padding-bottom:3px;width:fit-content;
+}
+/* Comic speech bubble */
+.speech-bubble{
+  background:rgba(255,255,255,.92);color:#1a1a2e;
+  border:2px solid #000;border-radius:12px 12px 12px 3px;
+  padding:8px 12px;font-size:.82rem;font-weight:800;
+  line-height:1.3;position:relative;z-index:2;
+  font-family:'Nunito',sans-serif;
+  box-shadow:2px 2px 0 rgba(0,0,0,.5);
+}
+.speech-bubble::before{
+  content:'';position:absolute;
+  bottom:-10px;left:10px;
+  border:8px solid transparent;border-top-color:#000;
+}
+.speech-bubble::after{
+  content:'';position:absolute;
+  bottom:-7px;left:11px;
+  border:7px solid transparent;border-top-color:rgba(255,255,255,.92);
+}
+
+/* Question body */
+.q-body{padding:16px}
+.q-num{font-size:.62rem;color:#374151;text-transform:uppercase;letter-spacing:2px;font-weight:800;margin-bottom:8px}
+.q-txt{
+  font-size:1rem;font-weight:800;line-height:1.6;color:#e2e8f0;margin-bottom:14px;
+  border-left:3px solid var(--gold);padding-left:12px;
+}
+.q-blank{
+  display:inline-block;min-width:44px;
+  border-bottom:3px solid var(--gold);
+  color:var(--gold);font-weight:900;text-align:center;padding:0 5px;
+  animation:blinkUnderline 1.5s ease-in-out infinite;
+}
+@keyframes blinkUnderline{0%,100%{border-color:var(--gold)}50%{border-color:var(--gold2)}}
+
+/* Options */
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{
+  display:flex;align-items:center;gap:10px;width:100%;
+  padding:12px 14px;
+  background:rgba(255,255,255,.04);
+  border:2px solid rgba(255,255,255,.08);
+  border-radius:0;/* manga sharp corners */
+  cursor:pointer;transition:all .15s;
+  font-size:.92rem;font-weight:800;
+  font-family:'Nunito',sans-serif;color:var(--white);text-align:left;
+  -webkit-tap-highlight-color:transparent;
+  position:relative;overflow:hidden;
+}
+/* Ink splatter hover effect */
+.opt::before{
+  content:'';position:absolute;
+  top:50%;left:-20px;width:0;height:0;
+  background:rgba(245,166,35,.12);
+  border-radius:50%;
+  transform:translateY(-50%);
+  transition:width .3s,height .3s,left .3s;
+}
+.opt:hover::before{width:200px;height:200px;left:-40px}
+.opt:hover:not(:disabled){border-color:var(--gold);transform:translateX(4px)}
+.opt:disabled{cursor:default;transform:none!important}
+.opt-key{
+  width:30px;height:30px;background:rgba(255,255,255,.08);
+  border:2px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bangers',cursive;font-size:.85rem;letter-spacing:1px;
+  flex-shrink:0;color:var(--gold);transition:all .2s;
+}
+.opt.selected{border-color:var(--gold);background:rgba(245,166,35,.1)}
+.opt.selected .opt-key{background:var(--gold);color:#000}
+.opt.correct{background:rgba(6,214,160,.12);border-color:var(--green);color:var(--green)}
+.opt.correct .opt-key{background:var(--green);border-color:var(--green);color:#000}
+.opt.wrong{background:rgba(230,57,70,.12);border-color:var(--red);color:#fca5a5}
+.opt.wrong .opt-key{background:var(--red);border-color:var(--red);color:#fff}
+
+/* Feedback */
+.fb{display:none;margin-top:10px;padding:10px 14px;font-size:.84rem;font-weight:700;border-left:4px solid;border-radius:0}
+.fb.show{display:block;animation:panelIn .3s ease}
+.fb.ok{background:rgba(6,214,160,.08);border-color:var(--green);color:var(--green)}
+.fb.ko{background:rgba(230,57,70,.08);border-color:var(--red);color:#fca5a5}
+.expl{display:none;margin-top:8px;padding:8px 12px;font-size:.78rem;font-weight:700;background:rgba(58,134,255,.07);border:1px solid rgba(58,134,255,.2);color:#93c5fd}
+.expl.show{display:block;animation:panelIn .3s ease .15s both}
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+.btn{
+  display:block;width:100%;padding:15px;
+  font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:3px;
+  border:none;cursor:pointer;transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+  position:relative;overflow:hidden;
+}
+/* Manga action button style */
+.btn-gold{
+  background:var(--gold);color:#000;
+  border:3px solid #000;
+  box-shadow:4px 4px 0 #000;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.btn-gold:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #000}
+.btn-gold:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #000}
+.btn-outline{
+  background:transparent;border:3px solid var(--gold);color:var(--gold);
+  margin-top:10px;
+  box-shadow:4px 4px 0 rgba(245,166,35,.3);
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.btn-outline:hover{background:rgba(245,166,35,.1);transform:translate(-2px,-2px)}
+
+/* Submit btn wrapper */
+.submit-wrap{
+  padding:16px 0;
+  border-top:3px solid var(--ink);
+  margin-top:6px;
+}
+
+/* ═══════════════════════════════════════
+   RESULT CARD
+═══════════════════════════════════════ */
+.result-card{
+  background:var(--card);
+  border:3px solid var(--gold);
+  box-shadow:6px 6px 0 rgba(245,166,35,.3), 0 0 40px rgba(245,166,35,.15);
+  overflow:hidden;margin-top:16px;
+  animation:resultPop .6s cubic-bezier(.175,.885,.32,1.275);
+  position:relative;
+}
+@keyframes resultPop{from{opacity:0;transform:scale(.6) rotate(-3deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.result-banner{height:180px;position:relative;overflow:hidden;border-bottom:3px solid var(--gold)}
+.result-banner img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.result-banner-overlay{position:absolute;inset:0;background:linear-gradient(0deg,var(--card) 0%,rgba(0,0,0,.1) 60%)}
+.result-banner-emoji{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:5rem;background:linear-gradient(135deg,#0a0d1a,#1a1030);
+}
+/* Manga action lines on result */
+.result-lines{
+  position:absolute;inset:0;
+  background:repeating-conic-gradient(
+    from 0deg at 50% 100%,
+    transparent 0deg,transparent 4deg,
+    rgba(255,255,255,.03) 4deg,rgba(255,255,255,.03) 5deg
+  );pointer-events:none;
+}
+.result-score-overlay{
+  position:absolute;bottom:10px;left:0;right:0;text-align:center;z-index:5;
+}
+.result-score-big{
+  font-family:'Bangers',cursive;font-size:5rem;letter-spacing:2px;line-height:1;
+  -webkit-text-stroke:3px #000;color:var(--gold);
+  filter:drop-shadow(0 0 20px rgba(245,166,35,.6));
+  text-shadow:4px 4px 0 #000;
+}
+.result-body{padding:18px 16px;text-align:center}
+.result-title{font-family:'Bangers',cursive;font-size:clamp(1.3rem,5vw,1.9rem);letter-spacing:3px;color:var(--gold2);margin-bottom:4px}
+.result-stars{font-size:1.5rem;letter-spacing:3px;margin:8px 0}
+.result-xp{font-size:.85rem;color:var(--blue);font-weight:800;margin-bottom:16px}
+
+/* ═══════════════════════════════════════
+   ATTACK ANIMATIONS (CSS combat effects)
+═══════════════════════════════════════ */
+/* Correct → Gum Gum Pistol flash */
+.attack-correct{
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  z-index:600;pointer-events:none;
+  font-family:'Bangers',cursive;font-size:clamp(3rem,10vw,6rem);
+  letter-spacing:3px;
+  color:var(--green);
+  -webkit-text-stroke:3px #000;
+  text-shadow:0 0 40px rgba(6,214,160,.8),4px 4px 0 #000;
+}
+.attack-correct.fire{animation:attackFire .7s cubic-bezier(.175,.885,.32,1.275) forwards}
+@keyframes attackFire{
+  0%{transform:translate(-50%,-50%) scale(0) rotate(-15deg);opacity:1}
+  40%{transform:translate(-50%,-50%) scale(1.2) rotate(5deg);opacity:1}
+  100%{transform:translate(-50%,-50%) scale(.8) rotate(0);opacity:0}
+}
+/* Wrong → Shanks slash */
+.attack-wrong{
+  position:fixed;inset:0;z-index:600;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;
+}
+.attack-wrong.fire{animation:slashFire .5s ease forwards}
+@keyframes slashFire{
+  0%{opacity:0}15%{opacity:1}100%{opacity:0}
+}
+.slash-line{
+  position:absolute;width:120vmax;height:6px;
+  background:linear-gradient(90deg,transparent,var(--red),transparent);
+  transform-origin:center;box-shadow:0 0 20px var(--red);
+}
+.slash-line:nth-child(1){transform:rotate(35deg)}
+.slash-line:nth-child(2){transform:rotate(38deg);height:3px;opacity:.6}
+.slash-line:nth-child(3){transform:rotate(32deg);height:2px;opacity:.4}
+
+/* Screen flash */
+.screen-flash{
+  position:fixed;inset:0;z-index:500;pointer-events:none;opacity:0;
+}
+.screen-flash.green-f{animation:flashG .4s ease}
+.screen-flash.red-f{animation:flashR .4s ease}
+@keyframes flashG{0%{opacity:0;background:rgba(6,214,160,.12)}30%{opacity:1}100%{opacity:0}}
+@keyframes flashR{0%{opacity:0;background:rgba(230,57,70,.12)}30%{opacity:1}100%{opacity:0}}
+
+/* Star particles */
+.star-p{position:fixed;z-index:550;pointer-events:none;font-size:1.6rem;animation:starFall 1.2s ease forwards}
+@keyframes starFall{
+  0%{opacity:1;transform:translateY(0) scale(1) rotate(0)}
+  100%{opacity:0;transform:translateY(100px) scale(.2) rotate(540deg)}
+}
+
+/* TOAST */
+#toast{
+  position:fixed;top:16px;left:50%;
+  transform:translateX(-50%) translateY(-100px);
+  background:var(--card2);border:2px solid var(--gold);
+  border-radius:10px;padding:12px 22px;
+  font-weight:800;font-size:.9rem;z-index:9999;
+  transition:transform .4s cubic-bezier(.175,.885,.32,1.275);
+  white-space:nowrap;box-shadow:0 8px 40px rgba(0,0,0,.6),0 0 20px rgba(245,166,35,.2);
+  font-family:'Nunito',sans-serif;
+}
+#toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ═══════════════════════════════════════
+   STREAK COUNTER
+═══════════════════════════════════════ */
+.streak-bar{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:8px;background:rgba(255,255,255,.03);
+  border-bottom:2px solid var(--ink);
+  font-family:'Bangers',cursive;font-size:1rem;letter-spacing:2px;
+  color:var(--gold);
+}
+.streak-dots{display:flex;gap:4px}
+.streak-dot{
+  width:16px;height:16px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);
+  transition:all .3s;
+}
+.streak-dot.lit{background:var(--gold);border-color:var(--gold2);box-shadow:0 0 8px var(--gold)}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:430px){
+  .map-grid{grid-template-columns:1fr}
+  .isle-img-zone{height:140px}
+  .char-panel{height:90px}
+  .char-panel-img{width:76px}
+  .speech-bubble{font-size:.76rem}
+  .q-txt{font-size:.92rem}
+}
+@media(min-width:600px){
+  #map-sec,#quiz-sec{padding:28px 20px}
+  .isle-img-zone{height:200px}
+}
+
+/* ═══════════════════════════════════════
+   SOUND CONTROLS
+═══════════════════════════════════════ */
+#sound-bar {
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:8px 16px;
+  background:rgba(0,0,0,.5);
+  border-bottom:2px solid rgba(245,166,35,.2);
+  flex-wrap:wrap;
+  position:relative;z-index:11;
+}
+.snd-btn {
+  background:rgba(255,255,255,.07);
+  border:1.5px solid rgba(255,255,255,.15);
+  border-radius:20px;padding:5px 14px;
+  font-size:.75rem;font-weight:800;
+  color:#e2e8f0;cursor:pointer;
+  transition:all .2s;
+  font-family:'Nunito',sans-serif;
+  display:flex;align-items:center;gap:5px;
+}
+.snd-btn:hover{background:rgba(245,166,35,.15);border-color:var(--gold)}
+.snd-btn.active{background:rgba(245,166,35,.2);border-color:var(--gold);color:var(--gold)}
+.snd-btn.muted{opacity:.45;text-decoration:line-through}
+.vol-wrap{display:flex;align-items:center;gap:6px;font-size:.7rem;color:#4a5568;font-weight:700}
+.vol-slider{
+  -webkit-appearance:none;appearance:none;
+  width:70px;height:4px;border-radius:99px;
+  background:rgba(255,255,255,.15);outline:none;cursor:pointer;
+}
+.vol-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;width:14px;height:14px;
+  border-radius:50%;background:var(--gold);cursor:pointer;
+  box-shadow:0 0 6px rgba(245,166,35,.5);
+}
+/* Voice subtitle popup */
+#voice-sub {
+  position:fixed;bottom:24px;left:50%;
+  transform:translateX(-50%) translateY(30px);
+  background:rgba(0,0,0,.88);
+  border:2px solid var(--gold);
+  border-radius:12px;padding:10px 20px;
+  font-family:'Bangers',cursive;font-size:1.1rem;letter-spacing:2px;
+  color:var(--gold2);z-index:999;
+  white-space:nowrap;
+  transition:transform .3s cubic-bezier(.175,.885,.32,1.275), opacity .3s;
+  opacity:0;pointer-events:none;
+  box-shadow:0 4px 24px rgba(0,0,0,.6);
+}
+#voice-sub.show{transform:translateX(-50%) translateY(0);opacity:1}
+/* YouTube iframe hidden */
+#yt-player{
+  position:fixed;bottom:-200px;left:-200px;
+  width:1px;height:1px;opacity:0;pointer-events:none;
+  z-index:-1;
+}
+
+/* ═══════════════════════════════════════
+   WRITE MODE — saisie libre
+═══════════════════════════════════════ */
+.write-zone {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.write-prompt {
+  font-size: .82rem;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.verb-badge {
+  background: linear-gradient(135deg, var(--gold), #d97706);
+  color: #000;
+  font-family: 'Bangers', cursive;
+  font-size: .85rem;
+  letter-spacing: 2px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.4);
+}
+.level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .65rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.level-badge.lv1 { background: rgba(6,214,160,.15); color: var(--green); border: 1px solid rgba(6,214,160,.3); }
+.level-badge.lv2 { background: rgba(245,166,35,.15); color: var(--gold); border: 1px solid rgba(245,166,35,.3); }
+.level-badge.lv3 { background: rgba(230,57,70,.15); color: var(--red); border: 1px solid rgba(230,57,70,.3); }
+
+.write-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.write-input {
+  flex: 1;
+  background: rgba(255,255,255,.05);
+  border: 2px solid rgba(255,255,255,.12);
+  border-radius: 0;
+  color: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  caret-color: var(--gold);
+  width: 100%;
+}
+.write-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245,166,35,.15);
+}
+.write-input.correct-input {
+  border-color: var(--green) !important;
+  background: rgba(6,214,160,.08) !important;
+  color: var(--green);
+}
+.write-input.wrong-input {
+  border-color: var(--red) !important;
+  background: rgba(230,57,70,.08) !important;
+  color: #fca5a5;
+}
+.write-input:disabled {
+  cursor: not-allowed;
+  opacity: .8;
+}
+/* Accent helper buttons */
+.accent-bar {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+.acc-btn {
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: 6px;
+  color: var(--gold2);
+  font-size: .85rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  padding: 4px 9px;
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.acc-btn:hover { background: rgba(245,166,35,.2); border-color: var(--gold); }
+/* Hint button */
+.hint-btn {
+  background: rgba(58,134,255,.12);
+  border: 1.5px solid rgba(58,134,255,.25);
+  border-radius: 6px;
+  color: #93c5fd;
+  font-size: .72rem;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.hint-btn:hover { background: rgba(58,134,255,.2); }
+.hint-box {
+  display: none;
+  background: rgba(58,134,255,.08);
+  border: 1px solid rgba(58,134,255,.2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: .78rem;
+  color: #93c5fd;
+  font-weight: 700;
+  animation: panelIn .25s ease;
+}
+.hint-box.show { display: block; }
+/* Correction answer reveal */
+.answer-reveal {
+  font-family: 'Bangers', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: var(--gold2);
+  background: rgba(245,166,35,.1);
+  border: 2px solid rgba(245,166,35,.3);
+  border-radius: 6px;
+  padding: 6px 14px;
+  display: inline-block;
+  margin-top: 4px;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.3);
+}
+/* Progress step indicators */
+.level-track {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.level-step {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: .65rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 99px;
+  border: 1.5px solid rgba(255,255,255,.1);
+  color: #374151;
+  background: rgba(255,255,255,.04);
+}
+.level-step.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(245,166,35,.1);
+}
+.level-step.done {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(6,214,160,.1);
+}
+
+/* ═══════════════════════════════════════════
+   CINEMATIC SCENE (Intro + Battle End)
+═══════════════════════════════════════════ */
+#cine-scene {
+  position:fixed;inset:0;z-index:3000;
+  background:#000;
+  display:none;flex-direction:column;
+  overflow:hidden;
+  font-family:'Bangers',cursive;
+}
+#cine-scene.active{display:flex}
+
+/* Canvas for particles */
+#cine-canvas{
+  position:absolute;inset:0;
+  pointer-events:none;z-index:20;
+}
+
+/* ── PANELS grid ── */
+.cine-panels{
+  position:relative;flex:1;
+  display:grid;
+  transition:all .3s;
+}
+/* 2-panel layout */
+.cine-panels.layout-2{grid-template-columns:1fr 1fr}
+/* 3-panel layout */
+.cine-panels.layout-3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}
+/* Full layout */
+.cine-panels.layout-1{grid-template-columns:1fr}
+
+.cine-panel{
+  position:relative;overflow:hidden;
+  border:4px solid #000;
+  background:#0a0d1a;
+  min-height:120px;
+}
+/* Diagonal split between panels */
+.cine-panels.layout-3 .cine-panel:first-child{grid-row:1/3}
+
+/* Panel image */
+.cine-panel img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+  display:block;
+  filter:contrast(1.15) saturate(1.3);
+}
+/* Manga screentone on panel */
+.cine-panel::after{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(0,0,0,.25) 1px,transparent 1px);
+  background-size:3px 3px;pointer-events:none;z-index:2;
+}
+/* Panel slide-in animations */
+.cine-panel.from-left{animation:panelFromLeft .5s cubic-bezier(.25,.46,.45,.94) both}
+.cine-panel.from-right{animation:panelFromRight .5s cubic-bezier(.25,.46,.45,.94) both}
+.cine-panel.from-top{animation:panelFromTop .5s cubic-bezier(.25,.46,.45,.94) both}
+.cine-panel.from-bottom{animation:panelFromBottom .6s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes panelFromLeft{from{transform:translateX(-100%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes panelFromRight{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes panelFromTop{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes panelFromBottom{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* Speed lines radial on panels */
+.cine-panel .speed-burst{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:repeating-conic-gradient(
+    from 0deg at 50% 110%,
+    transparent 0deg,transparent 3.5deg,
+    rgba(255,255,255,.06) 3.5deg,rgba(255,255,255,.06) 4.5deg
+  );
+  opacity:0;transition:opacity .3s;
+}
+.cine-panel.burst .speed-burst{opacity:1}
+
+/* ── TEXT PANELS ── */
+.cine-text-panel{
+  position:absolute;z-index:15;
+  left:0;right:0;bottom:0;
+  padding:14px 16px 18px;
+  background:linear-gradient(0deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.7) 70%,transparent 100%);
+}
+/* Speech bubble comic style */
+.cine-bubble{
+  background:#fff;color:#0a0d1a;
+  border:3px solid #000;
+  border-radius:14px 14px 14px 3px;
+  padding:10px 16px;
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(.85rem,2.5vw,1rem);
+  font-weight:800;line-height:1.4;
+  display:inline-block;max-width:90%;
+  box-shadow:3px 3px 0 rgba(0,0,0,.5);
+  position:relative;
+  animation:bubblePop .35s cubic-bezier(.175,.885,.32,1.275) both;
+}
+.cine-bubble::before{
+  content:'';position:absolute;
+  bottom:-13px;left:14px;
+  border:10px solid transparent;
+  border-top-color:#000;
+}
+.cine-bubble::after{
+  content:'';position:absolute;
+  bottom:-9px;left:15px;
+  border:8px solid transparent;
+  border-top-color:#fff;
+}
+@keyframes bubblePop{from{transform:scale(0) translateY(10px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+
+/* ── BIG KANJI/TEXT ── */
+.cine-kanji{
+  position:absolute;z-index:16;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0) rotate(-8deg);
+  font-family:'Bangers',cursive;
+  font-size:clamp(3rem,12vw,7rem);
+  letter-spacing:4px;
+  -webkit-text-stroke:4px #000;
+  text-shadow:6px 6px 0 #000,0 0 40px currentColor;
+  pointer-events:none;
+  white-space:nowrap;
+  line-height:1;
+}
+.cine-kanji.pop{animation:kanjiExplode .7s cubic-bezier(.175,.885,.32,1.275) forwards}
+.cine-kanji.shake{animation:kanjiShake .6s ease forwards}
+@keyframes kanjiExplode{
+  0%{transform:translate(-50%,-50%) scale(0) rotate(-12deg);opacity:1}
+  50%{transform:translate(-50%,-50%) scale(1.2) rotate(4deg);opacity:1}
+  75%{transform:translate(-50%,-50%) scale(.95) rotate(-2deg);opacity:1}
+  100%{transform:translate(-50%,-50%) scale(1) rotate(0);opacity:1}
+}
+@keyframes kanjiShake{
+  0%,100%{transform:translate(-50%,-50%) scale(1) rotate(0)}
+  20%{transform:translate(calc(-50% + 8px),-50%) scale(1.05) rotate(3deg)}
+  40%{transform:translate(calc(-50% - 8px),-50%) scale(1.05) rotate(-3deg)}
+  60%{transform:translate(calc(-50% + 5px),-50%) scale(1) rotate(2deg)}
+  80%{transform:translate(calc(-50% - 5px),-50%) scale(1) rotate(-1deg)}
+}
+
+/* ── SCORE REVEAL ── */
+.cine-score-reveal{
+  position:absolute;bottom:80px;right:16px;z-index:16;
+  text-align:right;
+  opacity:0;
+  animation:scoreReveal .5s ease .8s forwards;
+}
+@keyframes scoreReveal{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
+.cine-score-num{
+  font-size:clamp(3rem,10vw,5.5rem);
+  -webkit-text-stroke:3px #000;
+  text-shadow:4px 4px 0 #000;
+  line-height:1;
+}
+.cine-score-label{
+  font-size:.85rem;font-family:'Nunito',sans-serif;font-weight:800;
+  color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase;
+}
+
+/* ── BOTTOM BAR ── */
+.cine-bottom{
+  background:#000;border-top:3px solid var(--gold);
+  padding:12px 16px;
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:center;
+  flex-shrink:0;z-index:25;position:relative;
+}
+
+/* ── SKIP button ── */
+.cine-skip{
+  position:absolute;top:12px;right:12px;z-index:30;
+  background:rgba(0,0,0,.7);border:1.5px solid rgba(255,255,255,.2);
+  border-radius:20px;color:rgba(255,255,255,.6);
+  font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;
+  padding:5px 12px;cursor:pointer;transition:all .2s;
+  letter-spacing:1px;
+}
+.cine-skip:hover{background:rgba(255,255,255,.1);color:#fff}
+
+/* ── TRANSITION FLASH ── */
+.cine-flash{
+  position:absolute;inset:0;z-index:18;
+  pointer-events:none;opacity:0;background:#fff;
+}
+.cine-flash.fire{animation:whiteFlash .3s ease}
+@keyframes whiteFlash{0%{opacity:0}30%{opacity:.9}100%{opacity:0}}
+
+/* ── DIAGONAL SLASH on defeat ── */
+.cine-slash{
+  position:absolute;inset:0;z-index:17;pointer-events:none;
+  opacity:0;
+}
+.cine-slash.fire{animation:slashReveal .4s ease .2s forwards}
+@keyframes slashReveal{from{opacity:0}to{opacity:1}}
+.cine-slash-line{
+  position:absolute;top:50%;left:-10%;
+  width:120%;height:5px;
+  background:linear-gradient(90deg,transparent,#e63946,transparent);
+  box-shadow:0 0 20px #e63946,0 0 40px rgba(230,57,70,.5);
+  transform-origin:left center;
+}
+
+/* ═══════════════════════════════════════
+   CINEMATIC SCENE
+═══════════════════════════════════════ */
+#cine-scene{
+  position:fixed;inset:0;z-index:4000;
+  background:#000;display:none;
+  flex-direction:column;overflow:hidden;
+}
+#cine-scene.active{display:flex}
+#cine-canvas{position:absolute;inset:0;pointer-events:none;z-index:20}
+.cine-flash{position:absolute;inset:0;z-index:22;pointer-events:none;opacity:0;background:#fff}
+.cine-flash.fire{animation:cFlash .35s ease}
+@keyframes cFlash{0%{opacity:0}30%{opacity:.95}100%{opacity:0}}
+.cine-skip{
+  position:absolute;top:10px;right:10px;z-index:30;
+  background:rgba(0,0,0,.65);border:1.5px solid rgba(255,255,255,.2);
+  border-radius:20px;color:rgba(255,255,255,.55);
+  font-family:'Nunito',sans-serif;font-size:.7rem;font-weight:800;
+  padding:5px 13px;cursor:pointer;transition:all .2s;letter-spacing:1px;
+}
+.cine-skip:hover{background:rgba(255,255,255,.1);color:#fff}
+
+/* ── PANELS ── */
+.cine-panels{
+  position:relative;flex:1;display:grid;overflow:hidden;
+}
+.layout-1{grid-template-columns:1fr}
+.layout-2{grid-template-columns:1fr 1fr}
+.layout-3{grid-template-columns:3fr 2fr;grid-template-rows:1fr 1fr}
+.cine-panel{
+  position:relative;overflow:hidden;
+  border:3px solid #000;background:#0a0d1a;
+}
+.layout-3 .cine-panel:first-child{grid-row:1/3}
+.cine-panel img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:top center;display:block;
+  filter:contrast(1.2) saturate(1.25);
+}
+/* manga dot overlay */
+.cine-panel::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
+  background-image:radial-gradient(circle,rgba(0,0,0,.22) 1px,transparent 1px);
+  background-size:4px 4px;
+}
+/* Speed lines burst */
+.cine-panel .spd{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:repeating-conic-gradient(
+    from 0deg at 50% 120%,
+    transparent 0deg,transparent 3deg,
+    rgba(255,255,255,.07) 3deg,rgba(255,255,255,.07) 4.5deg
+  );
+  opacity:0;transition:opacity .4s;
+}
+.cine-panel.burst .spd{opacity:1}
+
+/* colour tint per outcome */
+.tint-gold::before{content:'';position:absolute;inset:0;background:rgba(245,166,35,.12);z-index:1;pointer-events:none}
+.tint-red::before{content:'';position:absolute;inset:0;background:rgba(220,38,38,.15);z-index:1;pointer-events:none}
+.tint-blue::before{content:'';position:absolute;inset:0;background:rgba(58,134,255,.1);z-index:1;pointer-events:none}
+
+/* slide-in */
+.from-left{animation:pLeft .45s cubic-bezier(.25,.46,.45,.94) both}
+.from-right{animation:pRight .45s cubic-bezier(.25,.46,.45,.94) both}
+.from-top{animation:pTop .45s cubic-bezier(.25,.46,.45,.94) both}
+.from-bot{animation:pBot .5s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes pLeft{from{transform:translateX(-110%);opacity:0}to{transform:none;opacity:1}}
+@keyframes pRight{from{transform:translateX(110%);opacity:0}to{transform:none;opacity:1}}
+@keyframes pTop{from{transform:translateY(-110%);opacity:0}to{transform:none;opacity:1}}
+@keyframes pBot{from{transform:translateY(110%);opacity:0}to{transform:none;opacity:1}}
+
+/* ── SPEECH BUBBLE ── */
+.cine-bubble{
+  position:absolute;left:10px;right:10px;bottom:10px;z-index:8;
+  background:#fff;color:#0a0d1a;
+  border:3px solid #000;border-radius:12px 12px 12px 2px;
+  padding:8px 14px;font-family:'Nunito',sans-serif;
+  font-size:clamp(.78rem,2.5vw,.95rem);font-weight:800;line-height:1.4;
+  box-shadow:3px 3px 0 rgba(0,0,0,.5);
+  animation:bPop .35s cubic-bezier(.175,.885,.32,1.275) both;
+}
+.cine-bubble::before{
+  content:'';position:absolute;bottom:-13px;left:12px;
+  border:10px solid transparent;border-top-color:#000;
+}
+.cine-bubble::after{
+  content:'';position:absolute;bottom:-9px;left:13px;
+  border:8px solid transparent;border-top-color:#fff;
+}
+@keyframes bPop{from{transform:scale(0) translateY(8px);opacity:0}to{transform:none;opacity:1}}
+
+/* ── BIG KANJI ── */
+.cine-kanji{
+  position:absolute;top:50%;left:50%;z-index:12;
+  transform:translate(-50%,-50%) scale(0) rotate(-10deg);
+  font-family:'Bangers',cursive;
+  font-size:clamp(2.5rem,10vw,6rem);
+  letter-spacing:3px;white-space:nowrap;line-height:1;
+  -webkit-text-stroke:4px #000;
+  text-shadow:5px 5px 0 #000,0 0 30px currentColor;
+  pointer-events:none;
+}
+.cine-kanji.pop{animation:kPop .65s cubic-bezier(.175,.885,.32,1.275) forwards}
+.cine-kanji.shake{animation:kShake .55s ease forwards}
+@keyframes kPop{
+  0%{transform:translate(-50%,-50%) scale(0) rotate(-12deg);opacity:1}
+  55%{transform:translate(-50%,-50%) scale(1.15) rotate(4deg);opacity:1}
+  80%{transform:translate(-50%,-50%) scale(.95) rotate(-2deg);opacity:1}
+  100%{transform:translate(-50%,-50%) scale(1) rotate(0);opacity:1}
+}
+@keyframes kShake{
+  0%,100%{transform:translate(-50%,-50%) scale(1) rotate(0)}
+  20%{transform:translate(calc(-50% + 8px),-50%) scale(1.05) rotate(3deg)}
+  40%{transform:translate(calc(-50% - 8px),-50%) scale(1.05) rotate(-3deg)}
+  60%{transform:translate(calc(-50% + 5px),-50%) scale(1) rotate(2deg)}
+  80%{transform:translate(calc(-50% - 4px),-50%) scale(1) rotate(-1deg)}
+}
+
+/* ── SCORE BIG ── */
+.cine-score{
+  position:absolute;bottom:90px;right:14px;z-index:12;
+  text-align:right;opacity:0;
+  animation:sReveal .5s ease .9s forwards;
+}
+@keyframes sReveal{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+.cine-score-num{
+  font-family:'Bangers',cursive;
+  font-size:clamp(3rem,9vw,5rem);line-height:1;
+  -webkit-text-stroke:3px #000;text-shadow:4px 4px 0 #000;
+}
+.cine-score-lbl{
+  font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:800;
+  color:rgba(255,255,255,.65);letter-spacing:2px;text-transform:uppercase;
+}
+
+/* ── SLASH lines for defeat ── */
+.cine-slash{
+  position:absolute;inset:0;z-index:11;pointer-events:none;
+  opacity:0;
+}
+.cine-slash.show{animation:slashIn .4s ease .3s forwards}
+@keyframes slashIn{from{opacity:0}to{opacity:1}}
+.slash-line{
+  position:absolute;height:4px;left:-5%;width:110%;
+  background:linear-gradient(90deg,transparent 0%,#e63946 20%,#ff6b6b 50%,#e63946 80%,transparent 100%);
+  box-shadow:0 0 18px #e63946,0 0 35px rgba(230,57,70,.4);
+}
+
+/* ── BOTTOM BAR ── */
+.cine-bottom{
+  background:#000;border-top:3px solid var(--gold);
+  padding:10px 14px;display:flex;gap:8px;flex-wrap:wrap;
+  justify-content:center;flex-shrink:0;z-index:25;position:relative;
+}
+
+/* panel label (isle name top-left) */
+.cine-label{
+  position:absolute;top:8px;left:8px;z-index:9;
+  font-family:'Bangers',cursive;font-size:.85rem;letter-spacing:2px;
+  color:#fff;background:rgba(0,0,0,.7);
+  border:1.5px solid rgba(255,255,255,.2);
+  border-radius:4px;padding:2px 8px;
+  text-shadow:1px 1px 0 #000;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ LOADING ═══ -->
+<div id="loading">
+  <div class="load-jolly">🏴‍☠️</div>
+  <div class="load-title">ACADÉMIE PIRATE</div>
+  <div class="load-sub">Chargement du Grand Bleu…</div>
+  <div class="load-track"><div class="load-fill"></div></div>
+</div>
+
+<!-- ═══ MANGA BG ═══ -->
+<div id="manga-bg">
+  <!-- strips filled by JS with Jikan images -->
+</div>
+<div class="halftone"></div>
+<div class="speed-lines"></div>
+<div class="color-overlay"></div>
+
+<!-- ═══ EFFECTS ═══ -->
+<div class="attack-correct" id="attackCorrect">PARFAIT!</div>
+<div class="attack-wrong" id="attackWrong">
+  <div class="slash-line"></div>
+  <div class="slash-line"></div>
+  <div class="slash-line"></div>
+</div>
+<div class="screen-flash" id="screenFlash"></div>
+<div id="toast">🏆 Badge débloqué !</div>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
+  <div class="logo-sub">Maîtrise la grammaire — Conquiers les Mers !</div>
+  <div class="hud">
+    <div class="hud-pill">⭐ XP <b id="hXP">0</b></div>
+    <div class="hud-pill">🏅 <b id="hLVL">Mousse</b></div>
+    <div class="hud-pill">🗺️ <b id="hISLE">0</b>/8 îles</div>
+    <div class="hud-pill">🔥 Série <b id="hSTREAK">0</b></div>
+  </div>
+  <div class="xp-wrap">
+    <div class="xp-track"><div class="xp-fill" id="xpFill" style="width:0%"></div></div>
+    <div class="xp-lbl" id="xpLbl">0 / 80 XP</div>
+  </div>
+  <div class="badges">
+    <div class="bdg" id="b0">🌊<span class="bdg-tip">Première île !</span></div>
+    <div class="bdg" id="b1">⚔️<span class="bdg-tip">Score parfait !</span></div>
+    <div class="bdg" id="b2">🔥<span class="bdg-tip">2 îles !</span></div>
+    <div class="bdg" id="b3">💎<span class="bdg-tip">Toutes les îles !</span></div>
+    <div class="bdg" id="b4">👑<span class="bdg-tip">Roi des Pirates !</span></div>
+  </div>
+</header>
+
+
+<!-- ═══ YOUTUBE PLAYER (hidden, loaded on demand) ═══ -->
+<div id="yt-player"></div>
+
+<!-- ═══ VOICE SUBTITLE ═══ -->
+<div id="voice-sub"></div>
+
+<!-- ═══ SOUND BAR ═══ -->
+<div id="sound-bar">
+  <button class="snd-btn" id="btnMusic" onclick="toggleMusic()" title="Musique We Are!">
+    🎵 Musique
+  </button>
+  <button class="snd-btn active" id="btnSfx" onclick="toggleSfx()" title="Effets sonores">
+    💥 Effets
+  </button>
+  <button class="snd-btn active" id="btnVoice" onclick="toggleVoice()" title="Voix des personnages">
+    🗣️ Voix
+  </button>
+  <div class="vol-wrap">
+    🔊
+    <input type="range" class="vol-slider" id="volSlider"
+      min="0" max="1" step="0.05" value="0.5"
+      oninput="setVolume(this.value)">
+  </div>
+</div>
+
+<!-- ═══ MAP ═══ -->
+<section id="map-sec">
+  <div class="sec-title">⚓ CARTE DU MONDE</div>
+  <div class="sec-sub">Choisis ton île et commence l'aventure</div>
+  <div class="panel-frame">
+    <div class="map-grid" id="mapGrid">
+
+      <div class="isle" id="isle1" onclick="startIsland(1)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel1">🍖</div>
+          <img class="isle-char-img" id="img1" src="" alt="Luffy" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #1</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">🏴‍☠️ ÎLE DE LUFFY</div>
+            <div class="isle-topic">⚡ é ou er ?</div>
+          </div>
+          <div class="isle-stars" id="stars1">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle2" onclick="startIsland(2)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel2">🗺️</div>
+          <img class="isle-char-img" id="img2" src="" alt="Nami" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #2</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">🧭 ÎLE DE NAMI</div>
+            <div class="isle-topic">📜 Passé composé</div>
+          </div>
+          <div class="isle-stars" id="stars2">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle3" onclick="startIsland(3)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel3">⚔️</div>
+          <img class="isle-char-img" id="img3" src="" alt="Zoro" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #3</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">⚔️ ÎLE DE ZORO</div>
+            <div class="isle-topic">🛡️ Accord avec être</div>
+          </div>
+          <div class="isle-stars" id="stars3">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle4" onclick="startIsland(4)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel4">📚</div>
+          <img class="isle-char-img" id="img4" src="" alt="Robin" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #4</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">📖 ÎLE DE ROBIN</div>
+            <div class="isle-topic">🏆 Défi pirate final</div>
+          </div>
+          <div class="isle-stars" id="stars4">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+
+      <div class="isle" id="isle5" onclick="startIsland(5)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel5">🎯</div>
+          <img class="isle-char-img" id="img5" src="" alt="Usopp" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #5 ✍️</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">🎯 ÎLE D'USOPP</div>
+            <div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div>
+          </div>
+          <div class="isle-stars" id="stars5">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle6" onclick="startIsland(6)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel6">🍳</div>
+          <img class="isle-char-img" id="img6" src="" alt="Sanji" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #6 ✍️</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">🍳 ÎLE DE SANJI</div>
+            <div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div>
+          </div>
+          <div class="isle-stars" id="stars6">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle7" onclick="startIsland(7)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel7">🦌</div>
+          <img class="isle-char-img" id="img7" src="" alt="Chopper" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #7 ✍️</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">🦌 ÎLE DE CHOPPER</div>
+            <div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div>
+          </div>
+          <div class="isle-stars" id="stars7">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle8" onclick="startIsland(8)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel8">💀</div>
+          <img class="isle-char-img" id="img8" src="" alt="Brook" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #8 ✍️</div>
+        </div>
+        <div class="isle-foot">
+          <div>
+            <div class="isle-name">💀 ÎLE DE BROOK</div>
+            <div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div>
+          </div>
+          <div class="isle-stars" id="stars8">☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="world-line">— Grand Line — ☠ — One Piece —</div>
+</section>
+
+<!-- ═══ QUIZ ═══ -->
+<section id="quiz-sec">
+  <div class="qhdr">
+    <button class="back-btn" onclick="goBack()">← Carte</button>
+    <div class="q-island-title" id="qTitle"></div>
+    <div class="q-prog-wrap">
+      <div class="q-prog-track"><div class="q-prog-fill" id="qProgFill" style="width:0%"></div></div>
+      <div class="q-prog-lbl" id="qProgLbl">0 / 10</div>
+    </div>
+  </div>
+  <div id="qContainer"></div>
+</section>
+
+<script>
+// ═══════════════════════════════════════
+// JIKAN API — CHARACTER IDs (MyAnimeList)
+// One Piece MAL Anime ID = 21
+// ═══════════════════════════════════════
+const JIKAN = 'https://api.jikan.moe/v4';
+
+// MAL character IDs - One Piece main crew
+const CHAR_IDS = { 1:40, 2:723, 3:53, 4:194, 5:60, 6:45, 7:318, 8:425 };
+
+// Fallback Wikimedia — affichées IMMEDIATEMENT, remplacees par Jikan ensuite
+const FALLBACK = {
+  1:'https://upload.wikimedia.org/wikipedia/en/thumb/8/81/Monkey_D_Luffy.png/220px-Monkey_D_Luffy.png',
+  2:'https://upload.wikimedia.org/wikipedia/en/thumb/0/09/Nami_One_Piece.png/220px-Nami_One_Piece.png',
+  3:'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Roronoa_Zoro_One_Piece.png/220px-Roronoa_Zoro_One_Piece.png',
+  4:'https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Nico_Robin_One_Piece.png/220px-Nico_Robin_One_Piece.png',
+  5:'https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Usopp_One_Piece.png/220px-Usopp_One_Piece.png',
+  6:'https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Sanji_One_Piece.png/220px-Sanji_One_Piece.png',
+  7:'https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Tony_Tony_Chopper_One_Piece.png/220px-Tony_Tony_Chopper_One_Piece.png',
+  8:'https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Brook_One_Piece.png/220px-Brook_One_Piece.png'
+};
+
+// Cache initialise avec les fallbacks (images visibles des le debut)
+const charImages = {...FALLBACK};
+
+// Delai utilitaire
+const wait = ms => new Promise(r => setTimeout(r, ms));
+
+// Affiche une image sur la carte ile
+function showIsleImage(isleId, url) {
+  const imgEl  = document.getElementById('img'  + isleId);
+  const skelEl = document.getElementById('skel' + isleId);
+  if (!imgEl) return;
+  imgEl.src = url;
+  imgEl.onload  = () => { imgEl.style.display='block'; if(skelEl) skelEl.style.display='none'; };
+  imgEl.onerror = () => {
+    if (url !== FALLBACK[isleId]) {
+      charImages[isleId] = FALLBACK[isleId];
+      showIsleImage(isleId, FALLBACK[isleId]);
+    } else {
+      imgEl.style.display='block'; if(skelEl) skelEl.style.display='none';
+    }
+  };
+}
+
+// Chargement Jikan avec :
+// 1) Fallbacks Wikimedia affiches immediatement
+// 2) Appels sequences espacees de 500ms (Jikan = max 3 req/s)
+// 3) Retry auto x2 si erreur 429
+async function loadJikanImages() {
+  // Etape 1 : afficher les fallbacks TOUT DE SUITE
+  for (const isleId of Object.keys(CHAR_IDS)) {
+    showIsleImage(isleId, FALLBACK[isleId]);
+  }
+  // Etape 2 : charger Jikan en sequence avec pause anti-rate-limit
+  for (const [isleId, charId] of Object.entries(CHAR_IDS)) {
+    await fetchJikanChar(isleId, charId);
+    await wait(500); // 500ms entre chaque -> ~2 req/s (sous la limite de 3)
+  }
+}
+
+// Recupere 1 image Jikan avec retry si 429
+async function fetchJikanChar(isleId, charId, attempt) {
+  attempt = attempt || 1;
+  try {
+    const r = await fetch(JIKAN + '/characters/' + charId + '/pictures');
+    if (r.status === 429) {
+      if (attempt <= 2) {
+        console.warn('Jikan 429 - ile ' + isleId + ', retry ' + attempt + ' dans ' + (attempt*1500) + 'ms');
+        await wait(attempt * 1500);
+        return fetchJikanChar(isleId, charId, attempt + 1);
+      }
+      console.warn('Jikan abandonne pour ile ' + isleId + ' - fallback Wikimedia conserve');
+      return;
+    }
+    if (!r.ok) return;
+    const data = await r.json();
+    if (data.data && data.data.length > 0) {
+      const url = data.data[0].jpg.image_url;
+      charImages[isleId] = url;
+      showIsleImage(isleId, url);
+    }
+  } catch(e) { /* reseau KO - fallback deja visible */ }
+}
+
+// Load background strips: One Piece anime pictures from Jikan
+async function loadBgStrips() {
+  try {
+    // Get anime pictures from One Piece (MAL ID 21)
+    const r = await fetch(`${JIKAN}/anime/21/pictures`);
+    const data = await r.json();
+    if (!data.data) return;
+    const pics = data.data.slice(0,20);
+    const bg = document.getElementById('manga-bg');
+    // Create 5 strips
+    const perStrip = Math.ceil(pics.length / 5);
+    for (let s=0; s<5; s++) {
+      const strip = document.createElement('div');
+      strip.className='bg-strip';
+      const slicePics = pics.slice(s*perStrip, s*perStrip+perStrip);
+      // Duplicate for seamless loop
+      const all = [...slicePics, ...slicePics];
+      all.forEach(p => {
+        const img = document.createElement('img');
+        img.src = p.jpg.image_url || p.jpg.large_image_url;
+        img.alt=''; img.loading='lazy';
+        strip.appendChild(img);
+      });
+      bg.appendChild(strip);
+    }
+  } catch(e){ /* silent fail */ }
+}
+
+// ═══════════════════════════════════════
+// QUESTIONS DATA (4 islands × 10 questions)
+// ═══════════════════════════════════════
+const ISLANDS = {
+  1:{
+    name:"ÎLE DE LUFFY",charName:"Luffy",color:"#e63946",
+    msgs:["Gum Gum Pistol ! Réponds vite !","Je vais être Roi des Pirates !","On avance moussaillon !","Vas-y ! Je te fais confiance !","Même Shanks serait fier !"],
+    qs:[
+      {q:"J'ai mang__ une pomme du diable.",o:["er","é"],a:"é",exp:"Après 'avoir' (j'ai) → participe passé en -é"},
+      {q:"Je vais cherch__ le One Piece !",o:["er","é"],a:"er",exp:"Après 'vais' (verbe de mode) → infinitif en -er"},
+      {q:"Tu dois termin__ ta mission.",o:["er","é"],a:"er",exp:"Après 'dois' → infinitif en -er"},
+      {q:"Nous avons regard__ la carte.",o:["er","é"],a:"é",exp:"Passé composé avec avoir → participe passé en -é"},
+      {q:"J'ai oubli__ mon chapeau de paille.",o:["er","é"],a:"é",exp:"'ai oublié' : participe passé, jamais accordé avec avoir"},
+      {q:"Il faut trouv__ le trésor !",o:["er","é"],a:"er",exp:"Après 'faut' → infinitif en -er"},
+      {q:"Ils ont combatt__ vaillamment.",o:["er","u"],a:"u",exp:"'Combattre' → participe passé = 'combattu' (verbe en -re)"},
+      {q:"Nous allons navigu__ vers le sud.",o:["er","é"],a:"er",exp:"Après 'allons' → infinitif en -er"},
+      {q:"Luffy a décid__ de partir.",o:["er","é"],a:"é",exp:"'a décidé' : participe passé avec avoir → -é"},
+      {q:"Peux-tu vérifi__ cette route ?",o:["er","é"],a:"er",exp:"Après 'peux' → infinitif en -er"}
+    ]
+  },
+  2:{
+    name:"ÎLE DE NAMI",charName:"Nami",color:"#f97316",
+    msgs:["Surveille tes accords !","Carte ou pas, il faut s'accorder !","L'argent et la grammaire, ça compte !","Tu progresses moussaillon !","Presque ! Encore un effort !"],
+    qs:[
+      {q:"Marie est arriv__ au port.",o:["é","ée"],a:"ée",exp:"Être + féminin singulier → on ajoute -e : -ée"},
+      {q:"Paul a cass__ son épée.",o:["é","ée"],a:"é",exp:"Avoir → le participe ne s'accorde PAS avec le sujet"},
+      {q:"Les garçons ont mang__.",o:["é","és"],a:"é",exp:"Avoir → invariable → -é (jamais accordé avec le sujet)"},
+      {q:"Les enfants sont arriv__.",o:["és","é"],a:"és",exp:"Être + masculin pluriel → -és"},
+      {q:"Les filles sont tomb__.",o:["ées","é"],a:"ées",exp:"Être + féminin pluriel → -ées"},
+      {q:"La navigatrice est part__.",o:["ie","i"],a:"ie",exp:"Être + féminin : 'parti' → 'partie'"},
+      {q:"Nous sommes all__ à l'aventure.",o:["és","é"],a:"és",exp:"Être + nous (masculin/mixte pluriel) → -és"},
+      {q:"Elles sont retourn__ au navire.",o:["ées","és"],a:"ées",exp:"Être + féminin pluriel → -ées"},
+      {q:"Le pirate a trouv__ un trésor.",o:["é","és"],a:"é",exp:"Avoir → invariable → -é"},
+      {q:"La capitaine est ven__ nous aider.",o:["ue","u"],a:"ue",exp:"Être + féminin : 'venu' → 'venue'"}
+    ]
+  },
+  3:{
+    name:"ÎLE DE ZORO",charName:"Zoro",color:"#22c55e",
+    msgs:["Je ne me perdrai pas !","Rien ne peut m'arrêter !","Style des Trois Sabres !","Entraîne-toi encore !","Tu es sur la bonne voie !"],
+    qs:[
+      {q:"Les femmes sont entr__ dans la salle.",o:["ées","és"],a:"ées",exp:"Être + féminin pluriel → -ées"},
+      {q:"Les pirates sont tomb__ à l'eau.",o:["és","é"],a:"és",exp:"Être + masculin pluriel → -és"},
+      {q:"Nami est arriv__ en retard.",o:["é","ée"],a:"ée",exp:"Être + féminin singulier → -ée"},
+      {q:"Les marins sont part__ en mer.",o:["is","i"],a:"is",exp:"'Partir' : participe passé pluriel = 'partis'"},
+      {q:"La pirate est tomb__ du bateau.",o:["ée","é"],a:"ée",exp:"Être + féminin singulier → -ée"},
+      {q:"Robin et Nami sont arriv__.",o:["ées","és"],a:"ées",exp:"Être + groupe 100% féminin → -ées"},
+      {q:"Zoro et Luffy sont mont__ sur le pont.",o:["és","ées"],a:"és",exp:"Être + masculin ou mixte pluriel → -és"},
+      {q:"La sentinelle est rest__ à bord.",o:["ée","é"],a:"ée",exp:"Être + féminin singulier : 'restée'"},
+      {q:"Les équipiers sont reparti__ au combat.",o:["s",""],a:"s",exp:"'Partir' pluriel masculin → 'repartis'"},
+      {q:"La navigatrice est retourn__ à la carte.",o:["ée","é"],a:"ée",exp:"Être + féminin singulier → -ée"}
+    ]
+  },
+  4:{
+    name:"ÎLE DE ROBIN",charName:"Robin",color:"#845ef7",
+    msgs:["Je veux vivre !","Fleur Fleur !","La connaissance est une arme !","Cherche dans tes souvenirs !","La vérité est dans les textes !"],
+    qs:[
+      {q:"Les pirates ont trouv__ un trésor.",o:["é","és"],a:"é",exp:"Avoir → participe invariable → -é"},
+      {q:"Les aventurières sont arriv__.",o:["ées","és"],a:"ées",exp:"Être + féminin pluriel → -ées"},
+      {q:"Nous avons termin__ la mission.",o:["é","és"],a:"é",exp:"Avoir → invariable → -é"},
+      {q:"Les garçons sont mont__ sur le pont.",o:["és","é"],a:"és",exp:"Être + masculin pluriel → -és"},
+      {q:"La navigatrice est tomb__ à la mer.",o:["ée","é"],a:"ée",exp:"Être + féminin singulier → -ée"},
+      {q:"Robin a lu__ tous les ponéglyphes.",o:["","s"],a:"",exp:"'Lire' → participe 'lu', avec avoir = invariable"},
+      {q:"Les archéologues sont all__ fouiller.",o:["és","ées"],a:"és",exp:"Être + groupe masculin/mixte pluriel → -és"},
+      {q:"Les étudiantes ont termin__ leur devoir.",o:["é","ées"],a:"é",exp:"Avoir → participe invariable avec le sujet → -é"},
+      {q:"Elles sont rest__ studieuses.",o:["ées","és"],a:"ées",exp:"Être + féminin pluriel → -ées"},
+      {q:"Il a fallu travaill__ dur.",o:["er","é"],a:"er",exp:"Après 'fallu' (infinitif sous-jacent) → infinitif en -er"}
+    ]
+  },
+  5:{
+    name:"ÎLE D'USOPP",charName:"Usopp",color:"#f59e0b",
+    mode:"write",
+    msgs:["J'ai 8000 hommes derrière moi !","Le brave guerrier de la mer parle !","Prépare-toi, c'est facile !","Tu peux le faire, je le jure !","Sniper King est fier de toi !"],
+    qs:[
+      {
+        level:1,
+        q:"Usopp a {v} toute la nuit. (travailler)",
+        verb:"travailler", subject:"Usopp", aux:"avoir", genre:"m", nombre:"s",
+        a:"travaillé",
+        hint:"Avec AVOIR → participe passé. Travailler → travaillé",
+        exp:"Avec <strong>avoir</strong>, le participe passé des verbes en -er se termine par <strong>-é</strong>. Travailler → travaillé."
+      },
+      {
+        level:1,
+        q:"Il veut {v} son tir. (améliorer)",
+        verb:"améliorer", subject:"il", aux:"vouloir", genre:"m", nombre:"s",
+        a:"améliorer",
+        hint:"Après 'veut' → infinitif. Les verbes en -er gardent leur infinitif.",
+        exp:"Après un verbe de mode comme <strong>veut, doit, peut, faut</strong> → on utilise l'<strong>infinitif en -er</strong>."
+      },
+      {
+        level:1,
+        q:"Les pirates ont {v} l'île. (attaquer)",
+        verb:"attaquer", subject:"les pirates", aux:"avoir", genre:"m", nombre:"p",
+        a:"attaqué",
+        hint:"Avec AVOIR → participe passé en -é, invariable.",
+        exp:"Avec <strong>avoir</strong>, le participe passé ne s'accorde JAMAIS avec le sujet. Attaquer → attaqué."
+      },
+      {
+        level:2,
+        q:"Usopp est {v} au combat. (partir)",
+        verb:"partir", subject:"Usopp", aux:"être", genre:"m", nombre:"s",
+        a:"parti",
+        hint:"Avec ÊTRE → accord avec le sujet. Usopp est masculin singulier.",
+        exp:"Avec <strong>être</strong>, on accorde avec le sujet. Usopp (masc. sing.) → <strong>parti</strong> (sans -e)."
+      },
+      {
+        level:2,
+        q:"Il faut {v} ses ennemis. (affronter)",
+        verb:"affronter", subject:"il", aux:"falloir", genre:"m", nombre:"s",
+        a:"affronter",
+        hint:"Après 'faut' → infinitif en -er.",
+        exp:"<strong>Il faut</strong> est suivi de l'<strong>infinitif</strong>. Affronter reste affronter."
+      },
+      {
+        level:2,
+        q:"Kaya est {v} à la fête. (venir)",
+        verb:"venir", subject:"Kaya", aux:"être", genre:"f", nombre:"s",
+        a:"venue",
+        hint:"Avec ÊTRE + féminin singulier → ajouter -e. Venu → venue",
+        exp:"Avec <strong>être</strong>, accord au <strong>féminin singulier</strong> : venu → <strong>venue</strong> (on ajoute -e)."
+      },
+      {
+        level:2,
+        q:"Les soldats sont {v} sur le bateau. (monter)",
+        verb:"monter", subject:"les soldats", aux:"être", genre:"m", nombre:"p",
+        a:"montés",
+        hint:"Avec ÊTRE + masculin pluriel → ajouter -és. Monté → montés",
+        exp:"Avec <strong>être</strong>, accord au <strong>masculin pluriel</strong> : monté → <strong>montés</strong> (on ajoute -s)."
+      },
+      {
+        level:3,
+        q:"Les guerrières sont {v} victorieuses. (rentrer)",
+        verb:"rentrer", subject:"les guerrières", aux:"être", genre:"f", nombre:"p",
+        a:"rentrées",
+        hint:"Avec ÊTRE + féminin pluriel → ajouter -ées. Rentré → rentrées",
+        exp:"Avec <strong>être</strong>, accord au <strong>féminin pluriel</strong> : rentré → <strong>rentrées</strong> (on ajoute -es)."
+      },
+      {
+        level:3,
+        q:"Usopp pouvait {v} n'importe qui. (tromper)",
+        verb:"tromper", subject:"Usopp", aux:"pouvoir", genre:"m", nombre:"s",
+        a:"tromper",
+        hint:"Après 'pouvait' (imparfait de pouvoir) → infinitif.",
+        exp:"Après <strong>pouvait</strong> (forme de pouvoir), on utilise l'<strong>infinitif</strong> : tromper."
+      },
+      {
+        level:3,
+        q:"Les deux amies sont {v} ensemble. (tomber)",
+        verb:"tomber", subject:"les deux amies", aux:"être", genre:"f", nombre:"p",
+        a:"tombées",
+        hint:"Avec ÊTRE + féminin pluriel → tomber → tombées",
+        exp:"Avec <strong>être</strong>, accord au <strong>féminin pluriel</strong> : tombé → <strong>tombées</strong>."
+      }
+    ]
+  },
+  6:{
+    name:"ÎLE DE SANJI",charName:"Sanji",color:"#3b82f6",
+    mode:"write",
+    msgs:["Mesdames, je cuisine pour vous !","Jambe Diable ! Réponds !","L'amour guide ma plume !","C'est parfait, comme ma cuisine !","Allons-y, ne te décourage pas !"],
+    qs:[
+      {
+        level:1,
+        q:"Sanji a {v} un repas délicieux. (préparer)",
+        verb:"préparer", subject:"Sanji", aux:"avoir", genre:"m", nombre:"s",
+        a:"préparé",
+        hint:"Avec AVOIR → participe passé. Préparer → préparé",
+        exp:"Avec <strong>avoir</strong>, les verbes en -er font leur participe passé en <strong>-é</strong>. Préparer → préparé."
+      },
+      {
+        level:1,
+        q:"Il aime {v} des gâteaux. (cuisiner)",
+        verb:"cuisiner", subject:"il", aux:"aimer", genre:"m", nombre:"s",
+        a:"cuisiner",
+        hint:"Après 'aime' → infinitif. Le verbe reste à l'infinitif.",
+        exp:"Après <strong>aime</strong> (verbe de goût), on utilise l'<strong>infinitif</strong> : cuisiner."
+      },
+      {
+        level:1,
+        q:"Les marins ont {v} tout le repas. (dévorer)",
+        verb:"dévorer", subject:"les marins", aux:"avoir", genre:"m", nombre:"p",
+        a:"dévoré",
+        hint:"Avec AVOIR → participe passé invariable. Dévorer → dévoré.",
+        exp:"Avec <strong>avoir</strong>, le participe ne s'accorde pas avec le sujet. Dévorer → <strong>dévoré</strong>."
+      },
+      {
+        level:2,
+        q:"Sanji est {v} en cuisine. (rester)",
+        verb:"rester", subject:"Sanji", aux:"être", genre:"m", nombre:"s",
+        a:"resté",
+        hint:"Avec ÊTRE + masculin singulier → pas de modification. Rester → resté.",
+        exp:"Avec <strong>être</strong>, accord au masculin singulier : rester → <strong>resté</strong> (sans -e ni -s)."
+      },
+      {
+        level:2,
+        q:"Nami a voulu {v} le dessert. (goûter)",
+        verb:"goûter", subject:"Nami", aux:"avoir+voulu", genre:"f", nombre:"s",
+        a:"goûter",
+        hint:"Après 'voulu' (participe passé de vouloir) → infinitif.",
+        exp:"<strong>A voulu</strong> = passé composé de vouloir, suivi de l'<strong>infinitif</strong> : goûter."
+      },
+      {
+        level:2,
+        q:"Les cuisinières sont {v} épuisées. (rentrer)",
+        verb:"rentrer", subject:"les cuisinières", aux:"être", genre:"f", nombre:"p",
+        a:"rentrées",
+        hint:"Avec ÊTRE + féminin pluriel → rentré → rentrées.",
+        exp:"Avec <strong>être</strong> au féminin pluriel : rentré → <strong>rentrées</strong>."
+      },
+      {
+        level:2,
+        q:"La serveuse est {v} servir les clients. (venir)",
+        verb:"venir", subject:"la serveuse", aux:"être", genre:"f", nombre:"s",
+        a:"venue",
+        hint:"Avec ÊTRE + féminin singulier → venu → venue.",
+        exp:"Avec <strong>être</strong> au féminin singulier : venu → <strong>venue</strong>."
+      },
+      {
+        level:3,
+        q:"Sanji et Zoro sont {v} en mer. (partir)",
+        verb:"partir", subject:"Sanji et Zoro", aux:"être", genre:"m", nombre:"p",
+        a:"partis",
+        hint:"Avec ÊTRE + masculin pluriel (groupe mixte) → parti → partis.",
+        exp:"Avec <strong>être</strong>, groupe mixte ou masculin → pluriel masculin : parti → <strong>partis</strong>."
+      },
+      {
+        level:3,
+        q:"Il aurait fallu {v} plus tôt. (partir)",
+        verb:"partir", subject:"il", aux:"falloir", genre:"m", nombre:"s",
+        a:"partir",
+        hint:"Après 'fallu' → infinitif. Partir reste partir.",
+        exp:"<strong>Aurait fallu</strong> est suivi de l'<strong>infinitif</strong> : partir."
+      },
+      {
+        level:3,
+        q:"Les deux amies sont {v} au marché. (aller)",
+        verb:"aller", subject:"les deux amies", aux:"être", genre:"f", nombre:"p",
+        a:"allées",
+        hint:"Avec ÊTRE + féminin pluriel → aller → allées.",
+        exp:"Avec <strong>être</strong> au féminin pluriel : allé → <strong>allées</strong>."
+      }
+    ]
+  },
+  7:{
+    name:"ÎLE DE CHOPPER",charName:"Chopper",color:"#ec4899",
+    mode:"write",
+    msgs:["Je ne suis pas content d'être félicité !","Point Rumble ! Allez !","Le docteur Chopper te soigne !","Tu progresses, continue !","Bonne réponse, idiot ! (je suis content)"],
+    qs:[
+      {
+        level:1,
+        q:"Chopper a {v} ses médicaments. (préparer)",
+        verb:"préparer", subject:"Chopper", aux:"avoir", genre:"m", nombre:"s",
+        a:"préparé",
+        hint:"Avec AVOIR → participe passé en -é.",
+        exp:"Avec <strong>avoir</strong> : préparer → <strong>préparé</strong>. Le participe ne s'accorde pas."
+      },
+      {
+        level:1,
+        q:"Il doit {v} le malade. (soigner)",
+        verb:"soigner", subject:"il", aux:"devoir", genre:"m", nombre:"s",
+        a:"soigner",
+        hint:"Après 'doit' → infinitif en -er.",
+        exp:"Après <strong>doit</strong> (verbe de mode), on met l'<strong>infinitif</strong> : soigner."
+      },
+      {
+        level:1,
+        q:"Nous avons {v} toute la nuit. (marcher)",
+        verb:"marcher", subject:"nous", aux:"avoir", genre:"m", nombre:"p",
+        a:"marché",
+        hint:"Avec AVOIR → participe passé invariable. Marcher → marché.",
+        exp:"Avec <strong>avoir</strong>, participe invariable : marcher → <strong>marché</strong>."
+      },
+      {
+        level:2,
+        q:"Chopper est {v} sur le navire. (arriver)",
+        verb:"arriver", subject:"Chopper", aux:"être", genre:"m", nombre:"s",
+        a:"arrivé",
+        hint:"Avec ÊTRE + masculin singulier → pas d'accord. Arriver → arrivé.",
+        exp:"Avec <strong>être</strong> au masculin singulier : arriver → <strong>arrivé</strong> (sans ajout)."
+      },
+      {
+        level:2,
+        q:"La patiente est {v} guérie. (repartir)",
+        verb:"repartir", subject:"la patiente", aux:"être", genre:"f", nombre:"s",
+        a:"repartie",
+        hint:"Avec ÊTRE + féminin singulier → repartir → repartie.",
+        exp:"Avec <strong>être</strong> au féminin singulier : reparti → <strong>repartie</strong> (on ajoute -e)."
+      },
+      {
+        level:2,
+        q:"Les infirmières sont {v} à l'hôpital. (rester)",
+        verb:"rester", subject:"les infirmières", aux:"être", genre:"f", nombre:"p",
+        a:"restées",
+        hint:"Avec ÊTRE + féminin pluriel → rester → restées.",
+        exp:"Avec <strong>être</strong> au féminin pluriel : resté → <strong>restées</strong>."
+      },
+      {
+        level:2,
+        q:"Chopper pouvait {v} ses ennemis. (vaincre)",
+        verb:"vaincre", subject:"Chopper", aux:"pouvoir", genre:"m", nombre:"s",
+        a:"vaincre",
+        hint:"Après 'pouvait' → infinitif. Vaincre reste vaincre.",
+        exp:"Après <strong>pouvait</strong> (pouvoir à l'imparfait), on utilise l'<strong>infinitif</strong> : vaincre."
+      },
+      {
+        level:3,
+        q:"Les deux médecins sont {v} ensemble. (travailler)",
+        verb:"travailler", subject:"les deux médecins", aux:"être", genre:"m", nombre:"p",
+        a:"travaillés",
+        hint:"Avec ÊTRE + masculin pluriel → travailler → travaillés.",
+        exp:"Avec <strong>être</strong> au masculin pluriel : travaillé → <strong>travaillés</strong>."
+      },
+      {
+        level:3,
+        q:"Les malades sont {v} à temps. (arriver)",
+        verb:"arriver", subject:"les malades", aux:"être", genre:"m", nombre:"p",
+        a:"arrivés",
+        hint:"Avec ÊTRE + masculin pluriel → arriver → arrivés.",
+        exp:"Avec <strong>être</strong> au masculin pluriel : arrivé → <strong>arrivés</strong>."
+      },
+      {
+        level:3,
+        q:"Les deux guerrières sont {v} blessées. (tomber)",
+        verb:"tomber", subject:"les deux guerrières", aux:"être", genre:"f", nombre:"p",
+        a:"tombées",
+        hint:"Avec ÊTRE + féminin pluriel → tomber → tombées.",
+        exp:"Avec <strong>être</strong> au féminin pluriel : tombé → <strong>tombées</strong>."
+      }
+    ]
+  },
+  8:{
+    name:"ÎLE DE BROOK",charName:"Brook",color:"#8b5cf6",
+    mode:"write",
+    msgs:["Yohohoho ! Une devinette ?","Puis-je voir ta culotte ?... Pardon !","Soul King Brook chante pour toi !","Yohohoho ! Presque !","Magnificent ! Comme ma musique !"],
+    qs:[
+      {
+        level:1,
+        q:"Brook a {v} une belle chanson. (composer)",
+        verb:"composer", subject:"Brook", aux:"avoir", genre:"m", nombre:"s",
+        a:"composé",
+        hint:"Avec AVOIR → participe passé en -é. Composer → composé.",
+        exp:"Avec <strong>avoir</strong> : composer → <strong>composé</strong>. Pas d'accord avec le sujet."
+      },
+      {
+        level:1,
+        q:"Il aime {v} sur scène. (chanter)",
+        verb:"chanter", subject:"il", aux:"aimer", genre:"m", nombre:"s",
+        a:"chanter",
+        hint:"Après 'aime' → infinitif. Chanter reste chanter.",
+        exp:"Après le verbe <strong>aime</strong>, on utilise l'<strong>infinitif</strong> : chanter."
+      },
+      {
+        level:1,
+        q:"Les musiciens ont {v} pendant des heures. (jouer)",
+        verb:"jouer", subject:"les musiciens", aux:"avoir", genre:"m", nombre:"p",
+        a:"joué",
+        hint:"Avec AVOIR → participe invariable. Jouer → joué.",
+        exp:"Avec <strong>avoir</strong>, le participe ne s'accorde jamais avec le sujet : jouer → <strong>joué</strong>."
+      },
+      {
+        level:2,
+        q:"Brook est {v} d'entre les morts. (revenir)",
+        verb:"revenir", subject:"Brook", aux:"être", genre:"m", nombre:"s",
+        a:"revenu",
+        hint:"Avec ÊTRE + masculin singulier → revenir → revenu (sans ajout).",
+        exp:"Avec <strong>être</strong> au masculin singulier : revenir → <strong>revenu</strong>."
+      },
+      {
+        level:2,
+        q:"La musicienne est {v} jouer. (venir)",
+        verb:"venir", subject:"la musicienne", aux:"être", genre:"f", nombre:"s",
+        a:"venue",
+        hint:"Avec ÊTRE + féminin singulier → venir → venue.",
+        exp:"Avec <strong>être</strong> au féminin singulier : venu → <strong>venue</strong>."
+      },
+      {
+        level:2,
+        q:"Les spectateurs sont {v} enchantés. (repartir)",
+        verb:"repartir", subject:"les spectateurs", aux:"être", genre:"m", nombre:"p",
+        a:"repartis",
+        hint:"Avec ÊTRE + masculin pluriel → repartir → repartis.",
+        exp:"Avec <strong>être</strong> au masculin pluriel : reparti → <strong>repartis</strong>."
+      },
+      {
+        level:2,
+        q:"Les spectatrices sont {v} dans la salle. (entrer)",
+        verb:"entrer", subject:"les spectatrices", aux:"être", genre:"f", nombre:"p",
+        a:"entrées",
+        hint:"Avec ÊTRE + féminin pluriel → entrer → entrées.",
+        exp:"Avec <strong>être</strong> au féminin pluriel : entré → <strong>entrées</strong>."
+      },
+      {
+        level:3,
+        q:"Brook et Nami sont {v} danser. (aller)",
+        verb:"aller", subject:"Brook et Nami", aux:"être", genre:"m", nombre:"p",
+        a:"allés",
+        hint:"Groupe mixte avec ÊTRE → masculin pluriel → aller → allés.",
+        exp:"Groupe mixte avec <strong>être</strong> → accord masculin pluriel : aller → <strong>allés</strong>."
+      },
+      {
+        level:3,
+        q:"Il aurait pu {v} plus fort. (chanter)",
+        verb:"chanter", subject:"il", aux:"pouvoir", genre:"m", nombre:"s",
+        a:"chanter",
+        hint:"Après 'pu' (participe de pouvoir) → infinitif.",
+        exp:"<strong>Aurait pu</strong> est suivi de l'<strong>infinitif</strong> : chanter."
+      },
+      {
+        level:3,
+        q:"Les deux chanteuses sont {v} applaudies. (tomber)",
+        verb:"tomber", subject:"les deux chanteuses", aux:"être", genre:"f", nombre:"p",
+        a:"tombées",
+        hint:"Avec ÊTRE + féminin pluriel → tomber → tombées.",
+        exp:"Avec <strong>être</strong> au féminin pluriel : tombé → <strong>tombées</strong>."
+      }
+    ]
+  }
+};
+
+const LEVELS=[
+  {min:0,name:"Mousse"},{min:10,name:"Matelot"},
+  {min:25,name:"Quartier-Maître"},{min:40,name:"Navigateur"},
+  {min:55,name:"Capitaine"},{min:70,name:"Vice-Amiral"},
+  {min:80,name:"👑 Roi des Pirates"}
+];
+
+// ═══ STATE ═══
+let xp=0, completedIslands={}, currentIsland=0, streak=0, answers={};
+
+// ═══════════════════════════════════════
+// AUDIO ENGINE
+// ═══════════════════════════════════════
+let actx = null;
+let masterVol = 0.5;
+let sfxEnabled = true;
+let voiceEnabled = true;
+let musicPlaying = false;
+let ytReady = false;
+
+function getActx() {
+  if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+  return actx;
+}
+
+// ─── Low-level tone generator ───────────────────────────────────────
+function tone(f, type, dur, vol, delay) {
+  if (!sfxEnabled) return;
+  delay = delay || 0;
+  try {
+    const c = getActx();
+    const o = c.createOscillator();
+    const g = c.createGain();
+    o.connect(g); g.connect(c.destination);
+    o.frequency.value = f; o.type = type;
+    const t = c.currentTime + delay;
+    const v = vol * masterVol;
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(v, t + 0.03);
+    g.gain.linearRampToValueAtTime(0, t + dur);
+    o.start(t); o.stop(t + dur + 0.01);
+  } catch(e) {}
+}
+
+// ─── Noise burst (for impact/POW effects) ───────────────────────────
+function noiseBurst(dur, vol, delay) {
+  if (!sfxEnabled) return;
+  delay = delay || 0;
+  try {
+    const c = getActx();
+    const buf = c.createBuffer(1, c.sampleRate * dur, c.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1);
+    const src = c.createBufferSource();
+    src.buffer = buf;
+    const g = c.createGain();
+    const filt = c.createBiquadFilter();
+    filt.type = 'bandpass'; filt.frequency.value = 400;
+    src.connect(filt); filt.connect(g); g.connect(c.destination);
+    const t = c.currentTime + delay;
+    g.gain.setValueAtTime(vol * masterVol, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+    src.start(t); src.stop(t + dur);
+  } catch(e) {}
+}
+
+// ─── SFX Library ────────────────────────────────────────────────────
+
+// ✅ Correct answer: ascending jingle
+function sfxOK() {
+  if (!sfxEnabled) return;
+  [523, 659, 784, 1047].forEach((f, i) => tone(f, 'sine', 0.18, 0.28, i * 0.1));
+}
+
+// ❌ Wrong answer: descending thud
+function sfxKO() {
+  if (!sfxEnabled) return;
+  tone(220, 'sawtooth', 0.12, 0.3, 0);
+  tone(150, 'sawtooth', 0.2,  0.25, 0.1);
+  noiseBurst(0.15, 0.2, 0);
+}
+
+// 🏆 Badge fanfare
+function sfxFanfare() {
+  if (!sfxEnabled) return;
+  const m = [523, 523, 523, 659, 523, 659, 784, 1047];
+  const d = [0.1, 0.1, 0.1, 0.4, 0.1, 0.1, 0.3, 0.7];
+  let t = 0;
+  m.forEach((f, i) => { tone(f, 'square', d[i], 0.15, t); t += d[i]; });
+}
+
+// 🔥 Combo streak
+function sfxCombo() {
+  if (!sfxEnabled) return;
+  [784, 1047, 1319, 1568].forEach((f, i) => tone(f, 'triangle', 0.18, 0.22, i * 0.08));
+}
+
+// 🌟 Perfect score
+function sfxPerfect() {
+  if (!sfxEnabled) return;
+  [523, 587, 659, 698, 784, 880, 988, 1047].forEach((f, i) =>
+    tone(f, 'sine', 0.2, 0.18, i * 0.07));
+  setTimeout(() => sfxFanfare(), 700);
+}
+
+// 💨 Swoosh (selecting an option)
+function sfxSwoosh() {
+  if (!sfxEnabled) return;
+  try {
+    const c = getActx();
+    const o = c.createOscillator();
+    const g = c.createGain();
+    o.connect(g); g.connect(c.destination);
+    o.type = 'sine';
+    o.frequency.setValueAtTime(200, c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(800, c.currentTime + 0.12);
+    g.gain.setValueAtTime(0.15 * masterVol, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.15);
+    o.start(); o.stop(c.currentTime + 0.16);
+  } catch(e) {}
+}
+
+// 💥 POW (correct answer impact)
+function sfxPow() {
+  if (!sfxEnabled) return;
+  noiseBurst(0.08, 0.4, 0);
+  tone(120, 'sine', 0.15, 0.5, 0);
+  tone(80,  'sine', 0.2,  0.3, 0.05);
+}
+
+// ⚔️ Slash/sabre (wrong answer)
+function sfxSlash() {
+  if (!sfxEnabled) return;
+  try {
+    const c = getActx();
+    const o = c.createOscillator();
+    const g = c.createGain();
+    const filt = c.createBiquadFilter();
+    filt.type = 'highpass'; filt.frequency.value = 2000;
+    o.connect(filt); filt.connect(g); g.connect(c.destination);
+    o.type = 'sawtooth';
+    o.frequency.setValueAtTime(1200, c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(200, c.currentTime + 0.18);
+    g.gain.setValueAtTime(0.25 * masterVol, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.2);
+    o.start(); o.stop(c.currentTime + 0.22);
+    noiseBurst(0.12, 0.25, 0.02);
+  } catch(e) {}
+}
+
+// 🔔 Island select (map click)
+function sfxIsland() {
+  if (!sfxEnabled) return;
+  [392, 523, 659].forEach((f, i) => tone(f, 'triangle', 0.25, 0.2, i * 0.12));
+}
+
+// ─── Volume control ─────────────────────────────────────────────────
+function setVolume(v) {
+  masterVol = parseFloat(v);
+  setYTVolume(Math.round(v * 100));
+}
+
+// ─── SFX toggle ─────────────────────────────────────────────────────
+function toggleSfx() {
+  sfxEnabled = !sfxEnabled;
+  const btn = document.getElementById('btnSfx');
+  btn.classList.toggle('active', sfxEnabled);
+  btn.classList.toggle('muted', !sfxEnabled);
+  btn.innerHTML = (sfxEnabled ? '💥' : '🔇') + ' Effets';
+}
+
+// ─── Voice toggle ───────────────────────────────────────────────────
+function toggleVoice() {
+  voiceEnabled = !voiceEnabled;
+  const btn = document.getElementById('btnVoice');
+  btn.classList.toggle('active', voiceEnabled);
+  btn.classList.toggle('muted', !voiceEnabled);
+  btn.innerHTML = (voiceEnabled ? '🗣️' : '🔕') + ' Voix';
+  if (!voiceEnabled && window.speechSynthesis) window.speechSynthesis.cancel();
+}
+
+// ═══════════════════════════════════════
+// YOUTUBE MUSIC
+// ═══════════════════════════════════════
+// "We Are!" One Piece Opening — YouTube IDs to try in order
+const YT_IDS = [
+  'o9dqeDmDy8A',  // We Are! (Opening 1) officiel
+  'bMCnMQJPIso',  // We Are! alternative
+  'SHgYiWoef7E',  // One Piece OST medley
+];
+let ytPlayer = null;
+let ytIdIndex = 0;
+
+// Initialize YouTube IFrame API
+function onYouTubeIframeAPIReady() {
+  ytReady = true;
+}
+
+function initYT() {
+  if (ytPlayer) return;
+  try {
+    ytPlayer = new YT.Player('yt-player', {
+      height: '1', width: '1',
+      videoId: YT_IDS[0],
+      playerVars: {
+        autoplay: 0, loop: 1, controls: 0,
+        disablekb: 1, modestbranding: 1,
+        playlist: YT_IDS[0]
+      },
+      events: {
+        onReady: (e) => {
+          e.target.setVolume(Math.round(masterVol * 60));
+          if (musicPlaying) e.target.playVideo();
+        },
+        onError: (e) => {
+          // Try next video ID on error
+          ytIdIndex = (ytIdIndex + 1) % YT_IDS.length;
+          if (ytIdIndex > 0 && ytPlayer) {
+            ytPlayer.loadVideoById(YT_IDS[ytIdIndex]);
+          }
+        },
+        onStateChange: (e) => {
+          // Loop: when ended, restart
+          if (e.data === YT.PlayerState.ENDED && musicPlaying) {
+            e.target.playVideo();
+          }
+        }
+      }
+    });
+  } catch(err) {
+    console.warn('YT init failed:', err);
+  }
+}
+
+function toggleMusic() {
+  // First interaction needed to unlock AudioContext
+  try { getActx().resume(); } catch(e) {}
+
+  musicPlaying = !musicPlaying;
+  const btn = document.getElementById('btnMusic');
+
+  if (musicPlaying) {
+    btn.classList.add('active');
+    btn.innerHTML = '🎵 Musique ▶';
+    btn.classList.remove('muted');
+    if (!ytPlayer && typeof YT !== 'undefined' && YT.Player) {
+      initYT();
+    } else if (ytPlayer) {
+      ytPlayer.playVideo();
+      setYTVolume(Math.round(masterVol * 60));
+    } else {
+      // YT API not loaded yet — load it now
+      loadYTAPI();
+    }
+  } else {
+    btn.classList.remove('active');
+    btn.classList.add('muted');
+    btn.innerHTML = '🎵 Musique ⏸';
+    if (ytPlayer) ytPlayer.pauseVideo();
+  }
+}
+
+function setYTVolume(v) {
+  if (ytPlayer && ytPlayer.setVolume) {
+    try { ytPlayer.setVolume(Math.min(100, v)); } catch(e) {}
+  }
+}
+
+function loadYTAPI() {
+  if (document.getElementById('yt-api-script')) return;
+  const s = document.createElement('script');
+  s.id = 'yt-api-script';
+  s.src = 'https://www.youtube.com/iframe_api';
+  s.onload = () => {
+    // wait for API ready callback
+    const poll = setInterval(() => {
+      if (typeof YT !== 'undefined' && YT.Player) {
+        clearInterval(poll);
+        initYT();
+      }
+    }, 200);
+  };
+  document.head.appendChild(s);
+}
+
+// ═══════════════════════════════════════
+// VOICE — Web Speech API
+// Phrases par perso + langue japonaise
+// ═══════════════════════════════════════
+const VOICES_DATA = {
+  1: { // Luffy
+    name: 'Luffy',
+    lang: 'ja-JP',
+    phrases: [
+      { jp: 'おれは海賊王になる！', fr: 'Je serai Roi des Pirates !' },
+      { jp: 'ゴムゴムの銃！', fr: 'Gum Gum Pistol !' },
+      { jp: 'すごい！', fr: 'Incroyable !' },
+      { jp: 'やった！', fr: 'Ouais !' },
+      { jp: 'なかま！', fr: 'Nakama !' },
+    ]
+  },
+  2: { // Nami
+    name: 'Nami',
+    lang: 'ja-JP',
+    phrases: [
+      { jp: 'お金！', fr: 'Mon argent !' },
+      { jp: 'まちがえた！', fr: 'Tu t\'es trompé !' },
+      { jp: 'すばらしい！', fr: 'Magnifique !' },
+      { jp: 'もっとがんばって！', fr: 'Encore un effort !' },
+      { jp: 'かんぺき！', fr: 'Parfait !' },
+    ]
+  },
+  3: { // Zoro
+    name: 'Zoro',
+    lang: 'ja-JP',
+    phrases: [
+      { jp: '三刀流！', fr: 'Trois Sabres !' },
+      { jp: '俺は迷わない！', fr: 'Je ne me perds pas !' },
+      { jp: 'やるな！', fr: 'Pas mal !' },
+      { jp: '鬼斬り！', fr: 'Oni Giri !' },
+      { jp: 'よし！', fr: 'Bien !' },
+    ]
+  },
+  4: { // Robin
+    name: 'Robin',
+    lang: 'ja-JP',
+    phrases: [
+      { jp: '生きたい！', fr: 'Je veux vivre !' },
+      { jp: 'フルフルの実！', fr: 'Fruit du Fleur-Fleur !' },
+      { jp: 'すばらしい！', fr: 'Splendide !' },
+      { jp: '残念ね。', fr: 'Dommage.' },
+      { jp: '正解よ！', fr: 'Bonne réponse !' },
+    ]
+  }
+};
+
+// Extra voices for new chars (5-8)
+const VOICES_EXTRA = {
+  5: { name:'Usopp', phrases:[
+    {jp:'おれは8000人の部下がいる！', fr:'J\'ai 8000 hommes derrière moi !'},
+    {jp:'すごい！', fr:'Incroyable !'},
+    {jp:'ちがう！', fr:'Faux !'},
+    {jp:'よーし！', fr:'Bien !'},
+    {jp:'スナイパーキング！', fr:'Sniper King !'},
+  ]},
+  6: { name:'Sanji', phrases:[
+    {jp:'レディのために！', fr:'Pour les dames !'},
+    {jp:'悪魔風脚！', fr:'Jambe Diable !'},
+    {jp:'まちがった！', fr:'Erreur !'},
+    {jp:'すばらしい！', fr:'Magnifique !'},
+    {jp:'愛のために！', fr:'Pour l\'amour !'},
+  ]},
+  7: { name:'Chopper', phrases:[
+    {jp:'うれしくなんかないぞ！', fr:'Je ne suis pas content !'},
+    {jp:'ランブルボール！', fr:'Rumble Ball !'},
+    {jp:'ちがう！', fr:'Non, c\'est faux !'},
+    {jp:'やった！', fr:'Ouais !'},
+    {jp:'完璧！', fr:'Parfait !'},
+  ]},
+  8: { name:'Brook', phrases:[
+    {jp:'ヨホホホ！', fr:'Yohohoho !'},
+    {jp:'パンツを見せてもらえますか？', fr:'Puis-je voir ta culotte ?'},
+    {jp:'ちがいます！', fr:'Non, incorrect !'},
+    {jp:'すばらしい！', fr:'Magnifique !'},
+    {jp:'ソウルキング！', fr:'Soul King !'},
+  ]},
+};
+
+let voiceCache = {}; // available voices cache
+
+function initVoices() {
+  if (!window.speechSynthesis) return;
+  const load = () => {
+    const all = window.speechSynthesis.getVoices();
+    voiceCache = {};
+    // Find best Japanese voice
+    const jaVoice = all.find(v => v.lang.startsWith('ja')) || null;
+    voiceCache['ja'] = jaVoice;
+    // Find French voice for subtitle reading fallback
+    const frVoice = all.find(v => v.lang.startsWith('fr')) || null;
+    voiceCache['fr'] = frVoice;
+  };
+  load();
+  window.speechSynthesis.onvoiceschanged = load;
+}
+
+// Speak a phrase for a given island character
+// type: 'correct' | 'wrong' | 'intro' | 'perfect'
+function speakChar(isleId, type) {
+  if (!voiceEnabled || !window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+
+  const char = VOICES_DATA[isleId] || VOICES_EXTRA[isleId];
+  if (!char) return;
+
+  let phraseIdx = 0;
+  if (type === 'correct') phraseIdx = Math.floor(Math.random() * 3) + 2;
+  else if (type === 'wrong') phraseIdx = 1;
+  else if (type === 'perfect') phraseIdx = 4;
+  else phraseIdx = 0; // intro
+
+  const phrase = char.phrases[phraseIdx % char.phrases.length];
+  const jaVoice = voiceCache['ja'];
+
+  // Show subtitle
+  showVoiceSub(char.name + ': ' + phrase.fr);
+
+  // Speak in Japanese if voice available, else French
+  const utt = new SpeechSynthesisUtterance();
+  if (jaVoice) {
+    utt.voice = jaVoice;
+    utt.lang = 'ja-JP';
+    utt.text = phrase.jp;
+    utt.rate = 1.1;
+    utt.pitch = isleId === 1 ? 1.4 : isleId === 3 ? 0.8 : 1.0; // Luffy high, Zoro low
+  } else {
+    // Fallback: French
+    utt.lang = 'fr-FR';
+    if (voiceCache['fr']) utt.voice = voiceCache['fr'];
+    utt.text = phrase.fr;
+    utt.rate = 0.95;
+    utt.pitch = isleId === 1 ? 1.3 : isleId === 3 ? 0.7 : 1.0;
+  }
+  utt.volume = masterVol;
+  window.speechSynthesis.speak(utt);
+}
+
+// Voice subtitle display
+let voiceSubTimer = null;
+function showVoiceSub(text) {
+  const el = document.getElementById('voice-sub');
+  if (!el) return;
+  el.textContent = text;
+  el.classList.add('show');
+  if (voiceSubTimer) clearTimeout(voiceSubTimer);
+  voiceSubTimer = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+// ═══ HUD ═══
+function getLvl(x){for(let i=LEVELS.length-1;i>=0;i--)if(x>=LEVELS[i].min)return LEVELS[i];return LEVELS[0]}
+function updateHUD(){
+  document.getElementById('hXP').textContent=xp;
+  document.getElementById('hLVL').textContent=getLvl(xp).name;
+  document.getElementById('hISLE').textContent=Object.keys(completedIslands).length;
+  document.getElementById('hSTREAK').textContent=streak;
+  document.getElementById('xpFill').style.width=Math.min(100,Math.round(xp/80*100))+'%';
+  document.getElementById('xpLbl').textContent=xp+' / 80 XP';
+}
+
+// ═══ BADGES ═══
+const BADGE_RULES=[
+  {id:'b0',check:()=>Object.keys(completedIslands).length>=1,msg:'🌊 Première île explorée !'},
+  {id:'b1',check:()=>Object.values(completedIslands).some(s=>s===10),msg:'⚔️ Score PARFAIT 10/10 !'},
+  {id:'b2',check:()=>Object.keys(completedIslands).length>=2,msg:'🔥 2 îles conquises !'},
+  {id:'b3',check:()=>Object.keys(completedIslands).length>=4,msg:'💎 Toutes les îles !'},
+  {id:'b4',check:()=>xp>=70,msg:'👑 Roi des Pirates !'},
+];
+const unlockedBadges=new Set();
+function checkBadges(){
+  BADGE_RULES.forEach(r=>{
+    if(!unlockedBadges.has(r.id)&&r.check()){
+      unlockedBadges.add(r.id);
+      document.getElementById(r.id).classList.add('on');
+      showToast(r.msg);sfxFanfare();
+    }
+  });
+}
+
+// ═══ TOAST ═══
+function showToast(msg){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ═══ VISUAL FX ═══
+function fxCorrect(word){
+  const el=document.getElementById('attackCorrect');
+  el.textContent=word||'PARFAIT!';
+  el.classList.remove('fire');void el.offsetWidth;el.classList.add('fire');
+  setTimeout(()=>el.classList.remove('fire'),750);
+  document.getElementById('screenFlash').className='screen-flash green-f';
+  setTimeout(()=>document.getElementById('screenFlash').className='screen-flash',400);
+}
+function fxWrong(){
+  const el=document.getElementById('attackWrong');
+  el.classList.remove('fire');void el.offsetWidth;el.classList.add('fire');
+  setTimeout(()=>el.classList.remove('fire'),550);
+  document.getElementById('screenFlash').className='screen-flash red-f';
+  setTimeout(()=>document.getElementById('screenFlash').className='screen-flash',400);
+}
+function starRain(n=6){
+  const emojis=['⭐','✨','💫','🌟','⚡','🔥'];
+  for(let i=0;i<n;i++){
+    setTimeout(()=>{
+      const s=document.createElement('div');s.className='star-p';
+      s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+      s.style.left=Math.random()*85+'vw';s.style.top=(10+Math.random()*50)+'vh';
+      document.body.appendChild(s);setTimeout(()=>s.remove(),1300);
+    },i*90);
+  }
+}
+
+// ═══ STARS ═══
+function starsStr(s,max){let r='';for(let i=0;i<max;i++)r+=i<s?'⭐':'☆';return r}
+
+// ═══ START ISLAND ═══
+
+// ══════════════════════════════════════════════════════════
+// CINEMATIC ENGINE
+// ══════════════════════════════════════════════════════════
+
+// Per-island intro config
+const ISLE_INTRO = {
+  1:{ bg:'#1a0005', tint:'tint-gold',
+      lines:['GUM GUM…','… PISTOL !!!','Prêt(e) à tout déchirer ?'],
+      kanji:'出発 !!', kanjiColor:'#f97316',
+      bubble:"Je vais être Roi des Pirates ! Montre ce que tu sais !",
+      particles:'sparks' },
+  2:{ bg:'#1a0e00', tint:'tint-gold',
+      lines:['Navigation…','… au TOP !','Cartographie ton savoir !'],
+      kanji:'地図 !!', kanjiColor:'#f59e0b',
+      bubble:"L'argent ET la grammaire, ça compte ! Allons-y !",
+      particles:'sparks' },
+  3:{ bg:'#001a05', tint:'tint-blue',
+      lines:['Style des…','… Trois Sabres !!','Affronte les questions !'],
+      kanji:'三刀流 !!', kanjiColor:'#22c55e',
+      bubble:"Je ne me perdrai jamais… ni toi dans cette leçon !",
+      particles:'ice' },
+  4:{ bg:'#0d0020', tint:'tint-blue',
+      lines:['Fleur…','… FLEUR !!','La connaissance est une arme.'],
+      kanji:'知識 !!', kanjiColor:'#a78bfa',
+      bubble:"Chaque réponse est une clé. Trouve-les toutes !",
+      particles:'sparks' },
+  5:{ bg:'#1a1000', tint:'tint-gold',
+      lines:["J'ai 8000 hommes !",'Sniper King…','… est avec toi !'],
+      kanji:'勇気 !!', kanjiColor:'#f59e0b',
+      bubble:"Je ne mens jamais quand il s'agit de grammaire !",
+      particles:'sparks' },
+  6:{ bg:'#00081a', tint:'tint-blue',
+      lines:['Jambe…','… DIABLE !!','Cuisine ta réponse !'],
+      kanji:'愛 !!', kanjiColor:'#3b82f6',
+      bubble:"Pour les Nakamas — je donne le meilleur de moi !",
+      particles:'fire' },
+  7:{ bg:'#1a001a', tint:'tint-gold',
+      lines:['Rumble…','… BALL !!','Point Reindeer !'],
+      kanji:'治療 !!', kanjiColor:'#ec4899',
+      bubble:"Je ne suis PAS content d'être ton prof… si si en fait !",
+      particles:'ice' },
+  8:{ bg:'#060010', tint:'tint-blue',
+      lines:['Yohohoho…','… !!!','Soul King chante pour toi !'],
+      kanji:'大勝利', kanjiColor:'#8b5cf6',
+      bubble:"Puis-je voir ta réponse ? Yohohoho !",
+      particles:'sparks' },
+};
+
+// Per-island battle end config (5 tiers: 10, 8-9, 6-7, 4-5, 0-3)
+const ISLE_END = {
+  1:[
+    { tier:'legendary', kanji:'大勝利 !!', kanjiColor:'#f97316', tint:'tint-gold',
+      lines:['LÉGENDAIRE !','10 / 10 !!!'], particles:'fire',
+      bubble:"GUM GUM LEGEND ! 10/10 ! Shanks serait fier de toi !", sfx:'fanfare' },
+    { tier:'great',     kanji:'勝利 !!',   kanjiColor:'#f59e0b', tint:'tint-gold',
+      lines:['EXCELLENT !','Nakama confirmé !'], particles:'sparks',
+      bubble:"Super boulot Moussaillon ! Tu progresses vite !", sfx:'ok' },
+    { tier:'good',      kanji:'よし !!',   kanjiColor:'#22c55e', tint:'tint-blue',
+      lines:['Bien joué !','Continue !'], particles:'sparks',
+      bubble:"Pas mal ! Quelques erreurs mais le cap est bon !", sfx:'ok' },
+    { tier:'mid',       kanji:'もう一度',  kanjiColor:'#f59e0b', tint:'',
+      lines:['Continue…','Entraîne-toi !'], particles:'ice',
+      bubble:"Hmm… Tu peux faire mieux ! Rejoue pour t'améliorer.", sfx:'ko' },
+    { tier:'fail',      kanji:'負け…',     kanjiColor:'#e63946', tint:'tint-red',
+      lines:['Défaite…','Ne lâche pas !'], particles:'slash',
+      bubble:"C'est dur mais ne renonce pas ! Luffy n'abandonne jamais !", sfx:'ko' },
+  ],
+  2:[
+    { tier:'legendary', kanji:'完璧 !!',   kanjiColor:'#f59e0b', tint:'tint-gold',
+      lines:['PARFAIT !','10 / 10 !'], particles:'fire',
+      bubble:"La carte est complète ! 10/10 ! Tu navigues parfaitement !", sfx:'fanfare' },
+    { tier:'great',     kanji:'すごい !!', kanjiColor:'#f97316', tint:'tint-gold',
+      lines:['SUPERBE !','Presque parfait !'], particles:'sparks',
+      bubble:"Excellent travail ! Quelques petits détails à revoir.", sfx:'ok' },
+    { tier:'good',      kanji:'進歩 !!',   kanjiColor:'#22c55e', tint:'tint-blue',
+      lines:['Bien !','En route !'], particles:'sparks',
+      bubble:"La route est bonne ! Quelques accords à réviser.", sfx:'ok' },
+    { tier:'mid',       kanji:'練習',      kanjiColor:'#f59e0b', tint:'',
+      lines:['Hmm…','Révise encore !'], particles:'ice',
+      bubble:"Les accords avec être sont piégeux ! Rejoue !", sfx:'ko' },
+    { tier:'fail',      kanji:'失敗…',     kanjiColor:'#e63946', tint:'tint-red',
+      lines:['Raté…','Courage !'], particles:'slash',
+      bubble:"Pas grave ! Même Nami se perd parfois. Réessaie !", sfx:'ko' },
+  ],
+  3:[
+    { tier:'legendary', kanji:'最強 !!',   kanjiColor:'#22c55e', tint:'tint-gold',
+      lines:['IMBATTABLE !','10 / 10 !'], particles:'fire',
+      bubble:"Style des Trois Sabres niveau MAX ! 10/10 parfait !", sfx:'fanfare' },
+    { tier:'great',     kanji:'強い !!',   kanjiColor:'#22c55e', tint:'tint-gold',
+      lines:['FORT !','Presque !'], particles:'sparks',
+      bubble:"Zoro approuve ! Tu maîtrises les accords avec être !", sfx:'ok' },
+    { tier:'good',      kanji:'前進 !!',   kanjiColor:'#3b82f6', tint:'tint-blue',
+      lines:['Bien !','Avance !'], particles:'sparks',
+      bubble:"Bonne base ! Quelques accords féminins à retravailler.", sfx:'ok' },
+    { tier:'mid',       kanji:'修行',      kanjiColor:'#f59e0b', tint:'',
+      lines:['Entraîne-toi','encore !'], particles:'ice',
+      bubble:"Zoro s'entraîne 10 000 heures. Toi, rejoue juste une fois !", sfx:'ko' },
+    { tier:'fail',      kanji:'敗北…',     kanjiColor:'#e63946', tint:'tint-red',
+      lines:['Défaite…','Relève-toi !'], particles:'slash',
+      bubble:"Même Zoro tombe parfois. L'important c'est de se relever !", sfx:'ko' },
+  ],
+  4:[
+    { tier:'legendary', kanji:'知識 !!',   kanjiColor:'#a78bfa', tint:'tint-gold',
+      lines:['SAVANT(E) !','10 / 10 !'], particles:'fire',
+      bubble:"Robin est fière de toi ! Connaissance = Puissance. 10/10 !", sfx:'fanfare' },
+    { tier:'great',     kanji:'よく出来た', kanjiColor:'#8b5cf6', tint:'tint-gold',
+      lines:['EXCELLENT !','Bien lu !'], particles:'sparks',
+      bubble:"Tu lis les ponéglyphes de la grammaire comme Robin !", sfx:'ok' },
+    { tier:'good',      kanji:'進歩',      kanjiColor:'#6366f1', tint:'tint-blue',
+      lines:['Bonne base !','Continue !'], particles:'sparks',
+      bubble:"La connaissance s'accumule. Tu progressses bien !", sfx:'ok' },
+    { tier:'mid',       kanji:'もっと',    kanjiColor:'#f59e0b', tint:'',
+      lines:['Plus dur…','Révise !'], particles:'ice',
+      bubble:"Les participes passés avec avoir piègent même les grands !", sfx:'ko' },
+    { tier:'fail',      kanji:'失敗',      kanjiColor:'#e63946', tint:'tint-red',
+      lines:['Pas encore…','Courage !'], particles:'slash',
+      bubble:"Même Robin a mis des années à tout apprendre. Courage !", sfx:'ko' },
+  ],
+};
+// Duplicate config 1-4 for islands 5-8
+for(let i=5;i<=8;i++) ISLE_END[i] = ISLE_END[i-4];
+
+// ── PARTICLE ENGINE ───────────────────────────────────────
+let _cineAF = null;
+function startParticles(type){
+  const cv = document.getElementById('cine-canvas');
+  const ctx = cv.getContext('2d');
+  cv.width = window.innerWidth;
+  cv.height = window.innerHeight;
+  const P = [];
+  const W = cv.width, H = cv.height;
+
+  if(type==='fire'){
+    for(let i=0;i<80;i++) P.push({
+      x:Math.random()*W, y:H+10,
+      vx:(Math.random()-.5)*3, vy:-(2+Math.random()*5),
+      r:3+Math.random()*6, life:1,
+      col:`hsl(${20+Math.random()*40},100%,${50+Math.random()*30}%)`
+    });
+  } else if(type==='ice'){
+    for(let i=0;i<60;i++) P.push({
+      x:Math.random()*W, y:-10,
+      vx:(Math.random()-.5)*2, vy:1+Math.random()*4,
+      r:2+Math.random()*5, life:1,
+      col:`hsl(${190+Math.random()*40},80%,${70+Math.random()*20}%)`
+    });
+  } else if(type==='sparks'){
+    for(let i=0;i<100;i++) P.push({
+      x:W/2+(Math.random()-.5)*W*.6,
+      y:H/2+(Math.random()-.5)*H*.6,
+      vx:(Math.random()-.5)*8, vy:(Math.random()-.5)*8,
+      r:1+Math.random()*3, life:1,
+      col:`hsl(${40+Math.random()*30},100%,${60+Math.random()*30}%)`
+    });
+  } else if(type==='slash'){
+    for(let i=0;i<40;i++) P.push({
+      x:Math.random()*W, y:Math.random()*H,
+      vx:(Math.random()-.5)*6, vy:-(1+Math.random()*3),
+      r:1+Math.random()*3, life:1,
+      col:`hsl(${350+Math.random()*20},90%,55%)`
+    });
+  }
+
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    P.forEach(p=>{
+      p.x+=p.vx; p.y+=p.vy; p.life-=.018;
+      if(type==='fire') p.vy-=.05;
+      if(type==='ice') p.vy+=.03;
+      ctx.globalAlpha=Math.max(0,p.life);
+      ctx.fillStyle=p.col;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+    });
+    ctx.globalAlpha=1;
+    // filter dead
+    for(let i=P.length-1;i>=0;i--) if(P[i].life<=0) P.splice(i,1);
+    if(P.length>0) _cineAF=requestAnimationFrame(loop);
+    else ctx.clearRect(0,0,W,H);
+  }
+  if(_cineAF) cancelAnimationFrame(_cineAF);
+  loop();
+}
+
+function stopParticles(){
+  if(_cineAF){cancelAnimationFrame(_cineAF);_cineAF=null;}
+  const cv=document.getElementById('cine-canvas');
+  if(cv) cv.getContext('2d').clearRect(0,0,cv.width,cv.height);
+}
+
+// ── AUDIO for cinematic scenes ────────────────────────────
+function sfxCineDrum(){
+  // Deep taiko-style drum hit
+  try{
+    const c=getActx();
+    const buf=c.createBuffer(1,c.sampleRate*.3,c.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.exp(-i/(c.sampleRate*.05));
+    const src=c.createBufferSource(); src.buffer=buf;
+    const g=c.createGain(); g.gain.setValueAtTime(.9,c.currentTime); g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.3);
+    src.connect(g);g.connect(c.destination);src.start();
+  }catch(e){}
+}
+function sfxCineRiser(){
+  // Rising tension sweep
+  try{
+    const c=getActx();
+    const o=c.createOscillator(); const g=c.createGain();
+    o.type='sawtooth';
+    o.frequency.setValueAtTime(80,c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(600,c.currentTime+.7);
+    g.gain.setValueAtTime(.4,c.currentTime);
+    g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.8);
+    o.connect(g);g.connect(c.destination);
+    o.start();o.stop(c.currentTime+.8);
+  }catch(e){}
+}
+function sfxCineVictory(){
+  // Ascending fanfare
+  [0,.15,.3,.45].forEach((delay,i)=>{
+    try{
+      const c=getActx(); const o=c.createOscillator(); const g=c.createGain();
+      const notes=[523,659,784,1047];
+      o.type='triangle'; o.frequency.value=notes[i];
+      g.gain.setValueAtTime(.35,c.currentTime+delay);
+      g.gain.exponentialRampToValueAtTime(.001,c.currentTime+delay+.35);
+      o.connect(g);g.connect(c.destination);
+      o.start(c.currentTime+delay); o.stop(c.currentTime+delay+.35);
+    }catch(e){}
+  });
+}
+function sfxCineDefeat(){
+  // Descending minor arpeggio
+  [0,.18,.36].forEach((delay,i)=>{
+    try{
+      const c=getActx(); const o=c.createOscillator(); const g=c.createGain();
+      const notes=[400,320,220];
+      o.type='sawtooth'; o.frequency.value=notes[i];
+      g.gain.setValueAtTime(.3,c.currentTime+delay);
+      g.gain.exponentialRampToValueAtTime(.001,c.currentTime+delay+.5);
+      o.connect(g);g.connect(c.destination);
+      o.start(c.currentTime+delay); o.stop(c.currentTime+delay+.5);
+    }catch(e){}
+  });
+}
+
+// ── SCENE UTILS ───────────────────────────────────────────
+let _cineCallback = null;
+
+function flashScreen(cb){
+  const f=document.getElementById('cineFlash');
+  f.classList.remove('fire');
+  void f.offsetWidth;
+  f.classList.add('fire');
+  if(cb) setTimeout(cb,180);
+}
+
+function showCine(panelsHTML, kanjiEl, bottomHTML, bgColor, particleType, callback){
+  const scene=document.getElementById('cine-scene');
+  document.getElementById('cinePanels').innerHTML=panelsHTML;
+  document.getElementById('cineBottom').innerHTML=bottomHTML;
+  if(kanjiEl) document.getElementById('cinePanels').appendChild(kanjiEl);
+  scene.style.background=bgColor||'#000';
+  scene.classList.add('active');
+  _cineCallback=callback||null;
+  if(particleType) setTimeout(()=>startParticles(particleType),300);
+}
+
+function closeCine(){
+  stopParticles();
+  const scene=document.getElementById('cine-scene');
+  scene.classList.remove('active');
+  document.getElementById('cinePanels').innerHTML='';
+  document.getElementById('cineBottom').innerHTML='';
+  if(_cineCallback){ _cineCallback(); _cineCallback=null; }
+}
+
+function skipCine(){ flashScreen(()=>closeCine()); }
+
+// ── BUILD PANEL HTML ──────────────────────────────────────
+function buildPanel(imgSrc, fallback, tint, anim, label, bubbleText, extraClass){
+  return `
+  <div class="cine-panel ${tint||''} ${anim||''} ${extraClass||''}">
+    <div class="spd"></div>
+    <img src="${imgSrc}" alt="" onerror="this.src='${fallback}'">
+    ${label?`<div class="cine-label">${label}</div>`:''}
+    ${bubbleText?`<div class="cine-bubble">${bubbleText}</div>`:''}
+  </div>`;
+}
+
+function makeKanji(text, color, delay, type){
+  const el=document.createElement('div');
+  el.className='cine-kanji';
+  el.textContent=text;
+  el.style.color=color||'#f97316';
+  el.style.animationDelay=(delay||0)+'ms';
+  setTimeout(()=>el.classList.add(type||'pop'), delay||0);
+  return el;
+}
+
+// ══════════════════════════════════════════════════════════
+// INTRO SCENE — called when isle card clicked
+// ══════════════════════════════════════════════════════════
+function playIntroScene(n, afterCallback){
+  const cfg = ISLE_INTRO[n] || ISLE_INTRO[1];
+  const charImg = charImages[n] || FALLBACK[n];
+  const isle = ISLANDS[n];
+
+  // Build 3-panel layout: big char left, 2 text panels right
+  const panels = `
+  <div class="cine-panels layout-3" style="font-family:'Bangers',cursive">
+
+    <div class="cine-panel ${cfg.tint} from-left" style="grid-row:1/3">
+      <div class="spd"></div>
+      <img src="${charImg}" alt="${isle.charName}" onerror="this.src='${FALLBACK[n]}'">
+      <div class="cine-label">${isle.name}</div>
+      <div class="cine-bubble">${cfg.bubble}</div>
+    </div>
+
+    <div class="cine-panel from-top" style="background:${cfg.bg};display:flex;align-items:center;justify-content:center;border-bottom:3px solid #000">
+      <div class="spd"></div>
+      <div style="text-align:center;padding:10px">
+        <div style="font-size:clamp(1.4rem,5vw,2.2rem);color:#fff;letter-spacing:3px;text-shadow:3px 3px 0 #000;animation:bPop .4s .2s both">
+          ${cfg.lines[0]||''}
+        </div>
+        <div style="font-size:clamp(1.8rem,6vw,3rem);color:${cfg.kanjiColor};letter-spacing:3px;text-shadow:3px 3px 0 #000;animation:bPop .4s .4s both">
+          ${cfg.lines[1]||''}
+        </div>
+      </div>
+    </div>
+
+    <div class="cine-panel from-right" style="background:${cfg.bg};display:flex;align-items:center;justify-content:center">
+      <div class="spd"></div>
+      <div style="text-align:center;padding:10px">
+        <div style="font-size:clamp(1rem,3.5vw,1.4rem);color:rgba(255,255,255,.85);font-family:'Nunito',sans-serif;font-weight:800;animation:bPop .4s .6s both;padding:0 8px">
+          ${cfg.lines[2]||''}
+        </div>
+        <div style="margin-top:8px;font-size:clamp(.7rem,2vw,.85rem);color:rgba(255,255,255,.5);font-family:'Nunito',sans-serif;font-weight:700;animation:bPop .4s .8s both;letter-spacing:1px">
+          ${isle.qs.length} QUESTIONS
+        </div>
+      </div>
+    </div>
+
+  </div>`;
+
+  const kanji = makeKanji(cfg.kanji, cfg.kanjiColor, 600, 'pop');
+
+  const bottomHTML = `
+    <button class="btn btn-gold" onclick="skipCine()">
+      ⚔️ COMMENCER L'ÎLE !
+    </button>`;
+
+  // SFX
+  setTimeout(()=>sfxCineDrum(), 50);
+  setTimeout(()=>sfxCineRiser(), 300);
+  // Burst speed lines
+  setTimeout(()=>{
+    document.querySelectorAll('#cine-scene .cine-panel').forEach(p=>p.classList.add('burst'));
+  }, 700);
+
+  showCine(panels, kanji, bottomHTML, cfg.bg, cfg.particles, afterCallback);
+}
+
+// ══════════════════════════════════════════════════════════
+// END SCENE — called after corriger()
+// ══════════════════════════════════════════════════════════
+function playEndScene(n, score, afterCallback){
+  const endCfgs = ISLE_END[n] || ISLE_END[1];
+  let tier;
+  if(score===10)      tier=0;
+  else if(score>=8)   tier=1;
+  else if(score>=6)   tier=2;
+  else if(score>=4)   tier=3;
+  else                tier=4;
+  const cfg = endCfgs[tier];
+
+  const charImg = charImages[n] || FALLBACK[n];
+  const isle = ISLANDS[n];
+  const gained = score * 2;
+  const isVictory = score >= 6;
+
+  // Layout: 2 panels (char big left, score right) for victory
+  //         1 panel (char full) for defeat
+  let panelsHTML;
+  if(isVictory){
+    panelsHTML = `
+    <div class="cine-panels layout-2">
+      <div class="cine-panel ${cfg.tint} from-left">
+        <div class="spd"></div>
+        <img src="${charImg}" alt="${isle.charName}" onerror="this.src='${FALLBACK[n]}'">
+        <div class="cine-bubble">${cfg.bubble}</div>
+      </div>
+      <div class="cine-panel from-right" style="background:${ISLE_INTRO[n]?ISLE_INTRO[n].bg:'#0a0d1a'};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">
+        <div class="spd"></div>
+        <div style="font-family:'Bangers',cursive;font-size:clamp(1.2rem,4vw,1.8rem);color:rgba(255,255,255,.6);letter-spacing:3px;text-shadow:2px 2px 0 #000;animation:bPop .4s .3s both">
+          SCORE FINAL
+        </div>
+        <div class="cine-score-num" style="font-family:'Bangers',cursive;font-size:clamp(4rem,12vw,7rem);color:${cfg.kanjiColor};-webkit-text-stroke:4px #000;text-shadow:5px 5px 0 #000;animation:kPop .6s .5s both;line-height:1">
+          ${score}<span style="font-size:.45em;color:rgba(255,255,255,.5)">/10</span>
+        </div>
+        <div style="font-family:'Nunito',sans-serif;font-size:clamp(.8rem,2.5vw,1rem);font-weight:800;color:var(--gold2);letter-spacing:2px;animation:bPop .4s .9s both">
+          +${gained} XP PIRATE 🏴‍☠️
+        </div>
+        <div style="font-size:clamp(1.2rem,3.5vw,1.8rem);letter-spacing:4px;animation:bPop .4s 1.1s both">
+          ${starsStr(score,10)}
+        </div>
+        <div style="font-family:'Bangers',cursive;font-size:clamp(1rem,3vw,1.4rem);color:${cfg.kanjiColor};letter-spacing:3px;text-shadow:2px 2px 0 #000;animation:bPop .5s .7s both;text-align:center;padding:0 10px">
+          ${cfg.lines[0]}<br>${cfg.lines[1]||''}
+        </div>
+      </div>
+    </div>`;
+  } else {
+    // defeat: full width char with slash overlay
+    panelsHTML = `
+    <div class="cine-panels layout-1">
+      <div class="cine-panel tint-red from-bot" style="position:relative">
+        <div class="spd"></div>
+        <img src="${charImg}" alt="${isle.charName}" onerror="this.src='${FALLBACK[n]}'" style="filter:grayscale(.5) contrast(1.2)">
+        <div class="cine-slash show" id="cineSlash">
+          <div class="slash-line" style="top:35%;transform:rotate(-8deg)"></div>
+          <div class="slash-line" style="top:55%;transform:rotate(-12deg);opacity:.6"></div>
+        </div>
+        <div class="cine-bubble" style="border-color:#e63946">${cfg.bubble}</div>
+        <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);font-family:'Bangers',cursive;font-size:clamp(1.2rem,4vw,1.8rem);color:#e63946;-webkit-text-stroke:2px #000;text-shadow:3px 3px 0 #000;white-space:nowrap;animation:kShake .6s .4s both;z-index:10">
+          ${score}/10 — ${cfg.lines[0]}
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // Kanji overlay
+  const kanjiType = isVictory ? 'pop' : 'shake';
+  const kanji = makeKanji(cfg.kanji, cfg.kanjiColor, 500, kanjiType);
+
+  const bottomHTML = `
+    <button class="btn btn-gold" onclick="skipCine()">🗺️ RETOUR À LA CARTE</button>
+    <button class="btn btn-outline" onclick="skipCine();setTimeout(()=>retry(${n}),200)">🔁 REJOUER</button>`;
+
+  // SFX
+  if(isVictory){
+    setTimeout(()=>sfxCineVictory(), 200);
+    if(score===10) setTimeout(()=>sfxFanfare(), 900);
+  } else {
+    setTimeout(()=>sfxCineDefeat(), 100);
+    setTimeout(()=>sfxSlash(), 350);
+  }
+  // Burst
+  setTimeout(()=>{
+    document.querySelectorAll('#cine-scene .cine-panel').forEach(p=>p.classList.add('burst'));
+  }, 600);
+
+  showCine(panelsHTML, kanji, bottomHTML, ISLE_INTRO[n]?ISLE_INTRO[n].bg:'#0a0d1a', cfg.particles, afterCallback);
+}
+
+function startIsland(n){
+  sfxIsland();
+  // Show intro cinematic FIRST, then load quiz
+  playIntroScene(n, ()=>_launchIsland(n));
+}
+
+function _launchIsland(n){
+  setTimeout(()=>speakChar(n,'intro'),400);
+  currentIsland=n; answers={};
+  const isle=ISLANDS[n];
+  const isWrite = isle.mode === 'write';
+
+  document.getElementById('map-sec').style.display='none';
+  const qs=document.getElementById('quiz-sec'); qs.style.display='block';
+  document.getElementById('qTitle').textContent=isle.name;
+  document.getElementById('qProgFill').style.width='0%';
+  document.getElementById('qProgLbl').textContent='0 / '+isle.qs.length;
+  window.scrollTo(0,0);
+
+  // Level track bar for write mode
+  let levelTrackHtml = '';
+  if (isWrite) {
+    const steps = [
+      {lv:1, label:'⭐ Niveau 1'},
+      {lv:2, label:'⭐⭐ Niveau 2'},
+      {lv:3, label:'⭐⭐⭐ Niveau 3'}
+    ];
+    levelTrackHtml = `<div class="level-track">` +
+      steps.map(s => `<div class="level-step" id="lvstep${n}_${s.lv}">${s.label}</div>`).join(
+        `<span style="color:#1f2937;font-size:.7rem">›</span>`
+      ) + `</div>`;
+  }
+
+  const keys=['A','B','C','D','E'];
+  const emojiFallback=['🍖','🗺️','⚔️','📚','🎯','🍳','🦌','💀'];
+  let html = levelTrackHtml;
+
+  isle.qs.forEach((e,i)=>{
+    const msg=isle.msgs[i%isle.msgs.length];
+    const charImg=charImages[n]||FALLBACK[n];
+    const levelBadge = isWrite ? `<span class="level-badge lv${e.level}">Niv.${e.level}</span>` : '';
+
+    const bodyHtml = isWrite
+      ? buildWriteBody(e, i, charImg, msg, isle, levelBadge)
+      : buildMCQBody(e, i, charImg, msg, isle, keys);
+
+    html += bodyHtml;
+  });
+
+  html+=`<div class="submit-wrap"><button class="btn btn-gold" onclick="corriger(${n})">⚓ CORRIGER MES RÉPONSES</button></div>`;
+  document.getElementById('qContainer').innerHTML=html;
+  updateStreakDots();
+  if (isWrite) updateLevelSteps(n);
+}
+
+// Build MCQ question card (islands 1-4)
+function buildMCQBody(e, i, charImg, msg, isle, keys) {
+  const n = currentIsland;
+  return `
+  <div class="q-card" id="card${i}">
+    <div class="streak-bar" id="streakBar${i}">
+      🔥 Série : <div class="streak-dots" id="streakDots${i}">
+        ${[0,1,2,3,4].map(j=>`<div class="streak-dot" id="sd${i}_${j}"></div>`).join('')}
+      </div>
+    </div>
+    <div class="char-panel">
+      <div class="char-panel-img">
+        <img src="${charImg}" alt="${isle.charName}" onerror="this.src='${FALLBACK[n]}'">
+        <div class="char-skel" style="display:none"></div>
+      </div>
+      <div class="char-panel-speech">
+        <div class="char-name-badge">${isle.charName.toUpperCase()}</div>
+        <div class="speech-bubble">${msg}</div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="q-num">Question ${i+1} sur ${isle.qs.length}</div>
+      <div class="q-txt">${fmtQ(e.q)}</div>
+      <div class="opts" id="opts${i}">
+        ${e.o.map((opt,j)=>`
+          <button class="opt" id="lbl${i}_${j}" onclick="selectOpt(${i},${j},'${opt}')">
+            <span class="opt-key">${keys[j]}</span>${opt}
+          </button>`).join('')}
+      </div>
+      <div class="fb" id="fb${i}"></div>
+      <div class="expl" id="exp${i}"></div>
+    </div>
+  </div>`;
+}
+
+// Build WRITE question card (islands 5-8)
+function buildWriteBody(e, i, charImg, msg, isle, levelBadge) {
+  const n = currentIsland;
+  const accents = ['é','è','ê','ë','à','â','î','ï','ô','û','ù','ç'];
+  const accentBtns = accents.map(a =>
+    `<button class="acc-btn" onclick="insertAccent(${i},'${a}')" tabindex="-1">${a}</button>`
+  ).join('');
+
+  // Format question: replace {v} with styled verb placeholder
+  const qFormatted = e.q.replace('{v}',
+    `<span class="q-blank" style="min-width:90px;display:inline-block;text-align:center">_____</span>`
+  );
+
+  return `
+  <div class="q-card" id="card${i}">
+    <div class="streak-bar" id="streakBar${i}">
+      🔥 Série : <div class="streak-dots" id="streakDots${i}">
+        ${[0,1,2,3,4].map(j=>`<div class="streak-dot" id="sd${i}_${j}"></div>`).join('')}
+      </div>
+    </div>
+    <div class="char-panel">
+      <div class="char-panel-img">
+        <img src="${charImg}" alt="${isle.charName}" onerror="this.src='${FALLBACK[n]}'">
+        <div class="char-skel" style="display:none"></div>
+      </div>
+      <div class="char-panel-speech">
+        <div class="char-name-badge">${isle.charName.toUpperCase()}</div>
+        <div class="speech-bubble">${msg}</div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="q-num" style="display:flex;align-items:center;gap:8px">
+        Question ${i+1} sur ${isle.qs.length} ${levelBadge}
+      </div>
+      <div class="q-txt">${qFormatted}</div>
+      <div class="write-zone">
+        <div class="write-prompt">
+          Verbe à conjuguer : <span class="verb-badge">${e.verb}</span>
+          <button class="hint-btn" onclick="toggleHint(${i})">💡 Indice</button>
+        </div>
+        <div class="hint-box" id="hint${i}">${e.hint}</div>
+        <div class="write-input-wrap">
+          <input
+            class="write-input"
+            id="inp${i}"
+            type="text"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            placeholder="Écris la forme correcte…"
+            oninput="onWriteInput(${i})"
+            onkeydown="onWriteKey(event,${i})"
+          >
+        </div>
+        <div class="accent-bar">${accentBtns}</div>
+      </div>
+      <div class="fb" id="fb${i}"></div>
+      <div class="expl" id="exp${i}"></div>
+    </div>
+  </div>`;
+}
+
+function fmtQ(q){
+  // MCQ mode uses __ placeholder
+  return q.replace('__','<span class="q-blank">___</span>');
+}
+
+// ═══ STREAK DOTS ═══
+function updateStreakDots(){
+  const isle=ISLANDS[currentIsland];
+  isle.qs.forEach((_,i)=>{
+    for(let j=0;j<5;j++){
+      const dot=document.getElementById(`sd${i}_${j}`);
+      if(dot) dot.className='streak-dot'+(j<streak?' lit':'');
+    }
+  });
+}
+
+// ═══ SELECT OPTION ═══
+function selectOpt(qi,oi,val){
+  sfxSwoosh();
+  const isle=ISLANDS[currentIsland];
+  if (isle.mode === 'write') return; // write mode uses onWriteInput instead
+  answers[qi]={oi,val};
+  isle.qs[qi].o.forEach((_,j)=>{
+    const b=document.getElementById('lbl'+qi+'_'+j);
+    if(b) b.classList.remove('selected');
+  });
+  document.getElementById('lbl'+qi+'_'+oi).classList.add('selected');
+  const answered=Object.keys(answers).length;
+  const total=isle.qs.length;
+  document.getElementById('qProgFill').style.width=Math.round(answered/total*100)+'%';
+  document.getElementById('qProgLbl').textContent=answered+' / '+total;
+}
+
+// ═══ WRITE MODE HELPERS ═══
+
+// Insert accent character at cursor position in input
+function insertAccent(i, char) {
+  const inp = document.getElementById('inp'+i);
+  if (!inp || inp.disabled) return;
+  sfxSwoosh();
+  const start = inp.selectionStart;
+  const end = inp.selectionEnd;
+  const val = inp.value;
+  inp.value = val.slice(0,start) + char + val.slice(end);
+  inp.setSelectionRange(start+1, start+1);
+  inp.focus();
+  onWriteInput(i);
+}
+
+// Live input handler: track filled count for progress
+function onWriteInput(i) {
+  const inp = document.getElementById('inp'+i);
+  if (!inp) return;
+  answers[i] = { val: inp.value.trim() };
+  // Update progress bar
+  const total = ISLANDS[currentIsland].qs.length;
+  const filled = Object.keys(answers).filter(k => answers[k].val.length > 0).length;
+  document.getElementById('qProgFill').style.width = Math.round(filled/total*100)+'%';
+  document.getElementById('qProgLbl').textContent = filled + ' / ' + total;
+}
+
+// Enter key moves to next input
+function onWriteKey(event, i) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    const next = document.getElementById('inp'+(i+1));
+    if (next && !next.disabled) next.focus();
+  }
+}
+
+// Toggle hint visibility
+function toggleHint(i) {
+  const hb = document.getElementById('hint'+i);
+  if (!hb) return;
+  hb.classList.toggle('show');
+}
+
+// Update level step indicator
+function updateLevelSteps(n) {
+  const isle = ISLANDS[n];
+  if (!isle || isle.mode !== 'write') return;
+  const levels = [1,2,3];
+  levels.forEach(lv => {
+    const el = document.getElementById('lvstep'+n+'_'+lv);
+    if (!el) return;
+    const qs = isle.qs.filter(q => q.level === lv);
+    const answered = qs.filter((q,_) => {
+      const qi = isle.qs.indexOf(q);
+      return answers[qi] && answers[qi].val.length > 0;
+    });
+    if (answered.length === qs.length && qs.length > 0) {
+      el.className = 'level-step done';
+    } else if (answered.length > 0) {
+      el.className = 'level-step active';
+    } else {
+      el.className = 'level-step';
+    }
+  });
+}
+
+// ═══ CORRECT ═══
+function corriger(n){
+  const isle=ISLANDS[n]; let score=0;
+  const isWrite = isle.mode === 'write';
+  const comboWords=['PARFAIT!','INCROYABLE!','SUPERBE!','EXCELLENT!','BRAVO!','GUM GUM!','NAKAMA!'];
+
+  isle.qs.forEach((e,i)=>{
+    const ans = answers[i];
+    const fb  = document.getElementById('fb'+i);
+    const expl= document.getElementById('exp'+i);
+
+    if (isWrite) {
+      // ── WRITE MODE correction ──────────────────────────────────────
+      const inp = document.getElementById('inp'+i);
+      if (inp) inp.disabled = true;
+
+      const rawAnswer = (ans && ans.val) ? ans.val.trim() : '';
+
+      if (!rawAnswer) {
+        fb.innerHTML = '⚠️ Pas de réponse ! La bonne réponse était : <span class="answer-reveal">'+e.a+'</span>';
+        fb.className = 'fb show ko';
+        streak = 0;
+        if (inp) inp.classList.add('wrong-input');
+      } else {
+        // Strict: accents required, case-insensitive
+        const correct = rawAnswer.toLowerCase() === e.a.toLowerCase();
+        if (correct) {
+          score++; streak++;
+          fb.innerHTML = '✅ Excellent ! <span class="answer-reveal">'+e.a+'</span>';
+          fb.className = 'fb show ok';
+          if (inp) inp.classList.add('correct-input');
+          setTimeout(()=>fxCorrect(comboWords[Math.floor(Math.random()*comboWords.length)]),80+i*40);
+          sfxOK(); sfxPow();
+          speakChar(currentIsland,'correct');
+          if(streak>=3) starRain(4);
+          if(streak>=5){sfxCombo();setTimeout(()=>showToast('🔥 Série de '+streak+' ! INCROYABLE !'),400)}
+        } else {
+          streak = 0;
+          // Show what they wrote vs correct
+          const wrongHtml = rawAnswer.split('').map((ch,ci) => {
+            const expected = e.a[ci] || '';
+            return ch === expected
+              ? `<span style="color:var(--green)">${ch}</span>`
+              : `<span style="color:var(--red);text-decoration:underline">${ch}</span>`;
+          }).join('');
+          fb.innerHTML = `❌ Tu as écrit : <strong>${wrongHtml}</strong><br>✔ Bonne réponse : <span class="answer-reveal">${e.a}</span>`;
+          fb.className = 'fb show ko';
+          if (inp) inp.classList.add('wrong-input');
+          sfxKO(); sfxSlash(); fxWrong();
+          speakChar(currentIsland,'wrong');
+        }
+      }
+    } else {
+      // ── MCQ MODE correction ────────────────────────────────────────
+      isle.qs[i].o.forEach((_,j)=>{
+        const b=document.getElementById('lbl'+i+'_'+j);
+        if(b) b.disabled=true;
+      });
+      if(!ans){
+        fb.innerHTML='⚠️ Pas de réponse !';fb.className='fb show ko';streak=0;
+      } else {
+        const correct=ans.val===e.a;
+        if(correct){
+          score++;streak++;
+          fb.innerHTML='✅ Parfait !';fb.className='fb show ok';
+          document.getElementById('lbl'+i+'_'+ans.oi).classList.add('correct');
+          setTimeout(()=>fxCorrect(comboWords[Math.floor(Math.random()*comboWords.length)]),100+i*50);
+          sfxOK(); sfxPow();
+          speakChar(currentIsland,'correct');
+          if(streak>=3)starRain(4);
+          if(streak>=5){sfxCombo();setTimeout(()=>showToast('🔥 Série de '+streak+' ! INCROYABLE !'),400)}
+        } else {
+          streak=0;
+          fb.innerHTML='❌ Raté ! La bonne réponse : <strong>'+e.a+'</strong>';fb.className='fb show ko';
+          document.getElementById('lbl'+i+'_'+ans.oi).classList.add('wrong');
+          e.o.forEach((opt,j)=>{
+            if(opt===e.a) document.getElementById('lbl'+i+'_'+j).classList.add('correct');
+          });
+          sfxKO(); sfxSlash(); fxWrong();
+          speakChar(currentIsland,'wrong');
+        }
+      }
+    }
+
+    // Detailed explanation always shown
+    expl.innerHTML = '💡 ' + e.exp;
+    expl.className = 'expl show';
+    updateStreakDots();
+  });
+
+  const gained=score*2;xp+=gained;completedIslands[n]=score;
+  document.getElementById('stars'+n).textContent=starsStr(score,10);
+  document.getElementById('isle'+n).classList.add('done');
+  updateHUD();checkBadges();
+
+  if(score===10){sfxPerfect();starRain(12);setTimeout(()=>fxCorrect('NAKAMA! 10/10!'),300);setTimeout(()=>speakChar(currentIsland,'perfect'),800)}
+
+  const results=[
+    {min:10,emoji:'🏆',txt:'LÉGENDAIRE ! Digne du Roi des Pirates !'},
+    {min:8,emoji:'⭐',txt:'EXCELLENT ! Tu es un vrai Nakama !'},
+    {min:6,emoji:'😄',txt:'Bien joué, Moussaillon courageux !'},
+    {min:4,emoji:'😅',txt:'Continue l\'entraînement !'},
+    {min:0,emoji:'💪',txt:'Ne lâche pas ! La mer t\'attend !'}
+  ];
+  const res=results.find(r=>score>=r.min)||results[results.length-1];
+  const charImg=charImages[n]||FALLBACK[n];
+
+  const html=`
+  <div class="result-card" id="resCard">
+    <div class="result-banner">
+      <img src="${charImg}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="result-banner-emoji" style="display:none">${res.emoji}</div>
+      <div class="result-lines"></div>
+      <div class="result-banner-overlay"></div>
+      <div class="result-score-overlay">
+        <div class="result-score-big">${score}/10</div>
+      </div>
+    </div>
+    <div class="result-body">
+      <div class="result-title">${res.txt}</div>
+      <div class="result-stars">${starsStr(score,10)}</div>
+      <div class="result-xp">+${gained} XP pirate 🏴‍☠️ — Total : ${xp} XP</div>
+      <button class="btn btn-gold" onclick="goBack()">🗺️ RETOUR À LA CARTE</button>
+      <button class="btn btn-outline" onclick="retry(${n})">🔁 REJOUER CETTE ÎLE</button>
+    </div>
+  </div>`;
+
+  document.getElementById('qContainer').innerHTML+=html;
+  setTimeout(()=>{
+    document.getElementById('resCard').scrollIntoView({behavior:'smooth',block:'center'});
+  },400);
+
+  // SAVE to localStorage (for GAS sync)
+  saveProgress();
+
+  // Show cinematic end scene
+  setTimeout(()=>{
+    playEndScene(n, score, ()=>{
+      // after closing scene, scroll to result card
+      const rc = document.getElementById('resCard');
+      if(rc) setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'center'}),200);
+    });
+  }, 600);
+}
+
+// ═══ SAVE PROGRESS (localStorage + ready for GAS) ═══
+function saveProgress(){
+  const data={xp,streak,completedIslands,timestamp:new Date().toISOString()};
+  try{localStorage.setItem('academie_pirate_v3',JSON.stringify(data))}catch(e){}
+  // If deployed as GAS, post to doPost:
+  if(typeof WEBAPP_URL!=='undefined'&&WEBAPP_URL){
+    fetch(WEBAPP_URL,{method:'POST',body:JSON.stringify(data)}).catch(()=>{});
+  }
+}
+
+function loadProgress(){
+  try{
+    const s=localStorage.getItem('academie_pirate_v3');
+    if(!s)return;
+    const d=JSON.parse(s);
+    xp=d.xp||0;streak=d.streak||0;completedIslands=d.completedIslands||{};
+    // Restore stars
+    Object.keys(completedIslands).forEach(n=>{
+      document.getElementById('stars'+n).textContent=starsStr(completedIslands[n],10);
+      document.getElementById('isle'+n).classList.add('done');
+    });
+    updateHUD();
+  }catch(e){}
+}
+
+// ═══ NAV ═══
+function goBack(){
+  document.getElementById('quiz-sec').style.display='none';
+  document.getElementById('map-sec').style.display='block';
+  answers={};window.scrollTo(0,0);
+}
+function retry(n){answers={};startIsland(n)}
+
+// ═══ INIT ═══
+async function init(){
+  initVoices();
+  // Start loading bg images (non-blocking)
+  loadBgStrips();
+  // Load character images
+  await loadJikanImages();
+  // Load saved progress
+  loadProgress();
+  updateHUD();
+  // Hide loading screen
+  setTimeout(()=>document.getElementById('loading').classList.add('gone'),2600);
+}
+init();
+
+// Optional: expose WEBAPP_URL for GAS deployment
+// Set this to your deployed Google Apps Script URL
+var WEBAPP_URL = '';
+</script>
+
+<!-- ═══ CINEMATIC SCENE OVERLAY ═══ -->
+<div id="cine-scene">
+  <canvas id="cine-canvas"></canvas>
+  <div class="cine-flash" id="cineFlash"></div>
+  <button class="cine-skip" onclick="skipCine()">PASSER ⏭</button>
+  <div class="cine-panels" id="cinePanels"></div>
+  <div class="cine-bottom" id="cineBottom"></div>
+</div>
+</body>
+</html>
+
