@@ -2016,10 +2016,6 @@ function showCombatGif(type){
 function closeCombatVideo(){const v=document.getElementById('combat-video'),o=document.getElementById('combat-overlay');v.pause();v.src='';o.classList.remove('active')}
 
 
-// ═══ MUSIQUE One Piece — BGM via audio HTML5 ═══
-let bgmAudio = null;
-let bgmEnabled = false;
-
 // URLs audio One Piece (libres de droits / YouTube embed)
 const BGM_TRACKS = {
   map:     'https://www.youtube.com/embed/4iIcnEFFwHs?autoplay=1&loop=1&playlist=4iIcnEFFwHs',
@@ -2123,10 +2119,10 @@ function toggleBGM(){
 const CHAR_QUOTES = {
   1:['Je serai le Roi des Pirates !','Mes nakamas comptent plus que tout !','Je vais gagner, crois-moi !','La viande ! Allez, on y va !'],
   2:['Je ne me perdrai jamais !','Rien ne peut arrêter mon épée !','Je deviendrai le plus grand épéiste !','Pour mon capitaine, je donne tout !'],
-  3:["L'argent et les cartes, voilà ce qui compte !",'Je naviguerai sur toutes les mers !','Avec ma météo, rien ne m'arrête !',"Ne touchez pas à mes nakamas !"],
-  4:["Je suis le grand capitaine Usopp !",'J'ai dix mille soldats derrière moi !',"Mon courage grandit à chaque défi !",'Mon lance-pierres ne rate jamais !'],
-  5:['Mes pieds sont mes armes redoutables !','Je cuisinerai pour tous mes nakamas !','Jamais je ne laisse quelqu'un mourir de faim !','Je trouverai le All Blue un jour !'],
-  6:["Je ne suis pas content du tout !",'Je soignerai tous mes nakamas !',"La médecine peut tout guérir !",'Luffy m'a appris la valeur des amis !'],
+  3:["L'argent et les cartes, voilà ce qui compte !",'Je naviguerai sur toutes les mers !','Avec ma météo, rien ne m arrête !',"Ne touchez pas à mes nakamas !"],
+  4:["Je suis le grand capitaine Usopp !",'J ai dix mille soldats derrière moi !',"Mon courage grandit à chaque défi !",'Mon lance-pierres ne rate jamais !'],
+  5:['Mes pieds sont mes armes redoutables !','Je cuisinerai pour tous mes nakamas !','Jamais je ne laisse quelqu un mourir de faim !','Je trouverai le All Blue un jour !'],
+  6:["Je ne suis pas content du tout !",'Je soignerai tous mes nakamas !',"La médecine peut tout guérir !",'Luffy m a appris la valeur des amis !'],
   7:['La connaissance est la vraie arme.','Je veux découvrir la véritable histoire.','Je veux vivre ! Emmenez-moi avec vous !','Les Ponéglyphes révèlent tout.'],
   8:['Yohohoho ! Puis-je voir votre culotte ?','La musique unit tous les nakamas !','Je suis mort mais mon âme chante encore !','Je reverrai Laboon, je le promets !']
 };
