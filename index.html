@@ -1936,7 +1936,7 @@ function showAvatarScreen(){
 function updateHeaderAvatar(){
   var img=document.getElementById('headerAvatarImg');
   var nameEl=document.getElementById('headerAvatarName');
-  if(img)img.src=playerData.avatarImg||'';if(nameEl)nameEl.textContent=playerData.name||'Pirate';
+  if(img){var av=AVATARS&&AVATARS.find(function(a){return a.id===selectedAvatarId;});img.src=(av&&av.img)||playerData.avatarImg||'assets/images/avatars/luffy.png';img.onerror=function(){this.src='assets/images/avatars/luffy.png';};}if(nameEl)nameEl.textContent=playerData.name||'Pirate';
 }
 
 function loadPlayerData(){
@@ -1965,36 +1965,37 @@ function loadProgress(){
 function goBack(){document.getElementById('quiz-sec').style.display='none';document.getElementById('map-sec').style.display='block';answers={};window.scrollTo(0,0)}
 function retry(n){answers={};startIsland(n)}
 
-// ═══ COMBAT GIF SYSTEM ═══
 
-// ═══ GIFs par résultat ═══
+// ═══ GIFs One Piece — fournis par Safwan ═══
 const GIFS_CORRECT = [
-  'https://media0.giphy.com/media/1K8NlomCFNuKcGlHxT/giphy.gif',   // Luffy attaque
-  'https://media2.giphy.com/media/SlTl6ZzuU0QOdSXCvi/giphy.gif',   // Luffy Gear 5
-  'https://media2.giphy.com/media/aQ9t3f4Klbr5Ppx2w7/giphy.gif',   // Luffy victoire
+  'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
+  'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
+  'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
+  'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
 ];
 const GIFS_WRONG = [
-  'https://media2.giphy.com/media/l378ejxoQzb5aXsd2/giphy.gif',    // triste
-  'https://media4.giphy.com/media/C3brYLms1bhv2/giphy.gif',        // déçu
+  'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
+  'https://media.giphy.com/media/U8fhZ6bL4gm0eZ7NJH/giphy.gif',
+  'https://media.giphy.com/media/l4EoSBIpWo73b9bW0/giphy.gif',
 ];
 const GIFS_PERFECT = [
-  'https://media2.giphy.com/media/DwZ392mpIdkvrvTnjm/giphy.gif',   // Luffy roi des pirates
-  'https://media3.giphy.com/media/ybu0oMW3RdE3ZwaXw4/giphy.gif',   // Gear 5 fou
+  'https://media.giphy.com/media/vplUlYHL0WnaE/giphy.gif',
+  'https://media.giphy.com/media/Muqc4t03A8sz4ksa5i/giphy.gif',
+  'https://media.giphy.com/media/1195W96ZIyUra8/giphy.gif',
 ];
-// GIFs fin d île par personnage (8 îles)
 const GIFS_ISLE_WIN = [
-  'https://media0.giphy.com/media/1K8NlomCFNuKcGlHxT/giphy.gif',   // île 1 - Luffy
-  'https://media2.giphy.com/media/SlTl6ZzuU0QOdSXCvi/giphy.gif',   // île 2 - Gear5
-  'https://media1.giphy.com/media/IEZy0MXCCxBShZaloq/giphy.gif',   // île 3 - Luffy vs Lucci
-  'https://media2.giphy.com/media/aQ9t3f4Klbr5Ppx2w7/giphy.gif',   // île 4
-  'https://media2.giphy.com/media/DwZ392mpIdkvrvTnjm/giphy.gif',   // île 5 - Roi pirates
-  'https://media3.giphy.com/media/ybu0oMW3RdE3ZwaXw4/giphy.gif',   // île 6 - Gear5
-  'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',   // île 7 - Luffy
-  'https://media1.giphy.com/media/S1kK8O1BRD4IfTXbwo/giphy.gif',   // île 8 - Luffy epic
+  'https://media.giphy.com/media/PEMfdDHDcfEQw/giphy.gif',
+  'https://media.giphy.com/media/z8499G57Bne3m/giphy.gif',
+  'https://media.giphy.com/media/p8WDYgByyFJTy/giphy.gif',
+  'https://media.giphy.com/media/12K8GGWstl229G/giphy.gif',
+  'https://media.giphy.com/media/PoK3zuKMTYqNUFFbaG/giphy.gif',
+  'https://media.giphy.com/media/SJXzadwbexJEAZ9S1B/giphy.gif',
+  'https://media.giphy.com/media/Godtj62ewycxy/giphy.gif',
+  'https://media.giphy.com/media/ckq3M52jTUH4f5UYWp/giphy.gif',
 ];
 const GIFS_ISLE_LOSE = [
-  'https://media2.giphy.com/media/l378ejxoQzb5aXsd2/giphy.gif',    // défaite triste
-  'https://media4.giphy.com/media/C3brYLms1bhv2/giphy.gif',        // défaite
+  'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
+  'https://media.giphy.com/media/s55XB0bzfwo9y/giphy.gif',
 ];
 
 let gifTimer=null;
@@ -2009,6 +2010,48 @@ function showCombatGif(type){
   gifTimer=setTimeout(()=>overlay.classList.remove('active'),2500);
 }
 function closeCombatVideo(){const v=document.getElementById('combat-video'),o=document.getElementById('combat-overlay');v.pause();v.src='';o.classList.remove('active')}
+
+
+// ═══ MUSIQUE One Piece — BGM via audio HTML5 ═══
+let bgmAudio = null;
+let bgmEnabled = false;
+
+// URLs audio One Piece (libres de droits / YouTube embed)
+const BGM_TRACKS = {
+  map:     'https://www.youtube.com/embed/4iIcnEFFwHs?autoplay=1&loop=1&playlist=4iIcnEFFwHs',
+  battle:  'https://www.youtube.com/embed/4iIcnEFFwHs?autoplay=1&loop=1&playlist=4iIcnEFFwHs',
+  victory: 'https://www.youtube.com/embed/4iIcnEFFwHs?autoplay=1&loop=1&playlist=4iIcnEFFwHs',
+};
+
+function toggleBGM(){
+  bgmEnabled = !bgmEnabled;
+  var btn = document.getElementById('bgmToggleBtn');
+  if(bgmEnabled){
+    if(btn) btn.textContent = '🔊';
+    startBGM();
+  } else {
+    if(btn) btn.textContent = '🔇';
+    stopBGM();
+  }
+}
+
+function startBGM(){
+  if(!bgmEnabled) return;
+  var frame = document.getElementById('bgmFrame');
+  if(!frame){
+    frame = document.createElement('iframe');
+    frame.id = 'bgmFrame';
+    frame.style.cssText = 'position:fixed;bottom:-100px;left:-100px;width:1px;height:1px;opacity:0;pointer-events:none;';
+    frame.allow = 'autoplay';
+    document.body.appendChild(frame);
+  }
+  frame.src = BGM_TRACKS.battle;
+}
+
+function stopBGM(){
+  var frame = document.getElementById('bgmFrame');
+  if(frame){ frame.src = ''; }
+}
 
 // ═══ INIT ═══
 async function init(){
