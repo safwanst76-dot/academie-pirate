@@ -665,7 +665,7 @@ header { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
     <div class="av-name-lbl">⚓ Ton nom de pirate</div>
     <input class="av-name-input" id="avNameInput" type="text"
       placeholder="Ex: Luffy, Nakama, Zoro…" maxlength="20"
-      oninput="updateAvatarPreview()">
+      oninput="if(typeof updateAvatarPreview==='function')updateAvatarPreview()">
   </div>
 
   <!-- Choix avatar -->
@@ -1917,6 +1917,7 @@ function updateAvatarPreview(){
 }
 
 function startAdventure(){
+  if(!selectedAvatarId){ showToast('⚠️ Choisis un personnage !'); return; }
   var av=AVATARS.find(function(a){return a.id===selectedAvatarId;})||AVATARS[0];
   var inp=document.getElementById('avNameInput');
   var nameVal=inp?inp.value.trim():'';
@@ -2165,8 +2166,7 @@ async function init(){
   await loadJikanImages();
   loadProgress();
   updateHUD();
-  buildAvatarGrid();
-  updateAvatarPreview();
+  await loadAvatars();
   const alreadyPlayed = loadPlayerData();
   setTimeout(()=>{
     document.getElementById('loading').classList.add('gone');
