@@ -1,0 +1,16 @@
+{
+  "correct": [
+    "https://media0.giphy.com/media/1K8NlomCFNuKcGlHxT/giphy.gif",
+    "https://media2.giphy.com/media/tIZUToOMEFGM0/giphy.gif",
+    "https://media2.giphy.com/media/aQ9t3f4Klbr5Ppx2w7/giphy.gif"
+  ],
+  "wrong": [
+    "https://media2.giphy.com/media/l378ejxoQzb5aXsd2/giphy.gif"
+  ],
+  "perfect": [
+    "https://media0.giphy.com/media/GeQpHmRmfDV3AspDil/giphy.gif"
+  ],
+  "intro": [
+    "https://media2.giphy.com/media/nQDKSeRlIyfmw/giphy.gif"
+  ]
+}
