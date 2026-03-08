@@ -33,19 +33,19 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--white);min
 .bg-strip{
   position:absolute;top:0;height:100%;
   display:flex;flex-direction:column;gap:4px;
-  animation:stripScroll 20s linear infinite;opacity:0.06;
+  animation:stripScroll 20s linear infinite;opacity:0.28;
 }
 .bg-strip:nth-child(1){left:0;width:22%;animation-duration:18s}
 .bg-strip:nth-child(2){left:23%;width:18%;animation-duration:24s;animation-direction:reverse}
 .bg-strip:nth-child(3){left:42%;width:25%;animation-duration:20s}
 .bg-strip:nth-child(4){left:68%;width:16%;animation-duration:16s;animation-direction:reverse}
 .bg-strip:nth-child(5){left:85%;width:15%;animation-duration:22s}
-.bg-strip img{width:100%;object-fit:cover;border:2px solid rgba(255,255,255,.1);flex-shrink:0}
+.bg-strip img{width:100%;object-fit:cover;border:2px solid rgba(255,215,0,.2);flex-shrink:0;filter:contrast(1.3) saturate(1.5) brightness(1.1)}
 @keyframes stripScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
 
 .halftone{position:fixed;inset:0;z-index:1;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.018) 1px,transparent 1px);background-size:22px 22px}
 .speed-lines{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg,transparent 3.5deg,rgba(255,255,255,.012) 3.5deg,rgba(255,255,255,.012) 4deg);opacity:.5}
-.color-overlay{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 15% 20%,rgba(230,57,70,.06) 0%,transparent 65%),radial-gradient(ellipse 50% 70% at 85% 80%,rgba(58,134,255,.07) 0%,transparent 65%),radial-gradient(ellipse 60% 40% at 50% 50%,rgba(245,166,35,.04) 0%,transparent 70%)}
+.color-overlay{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 15% 20%,rgba(230,57,70,.10) 0%,transparent 65%),radial-gradient(ellipse 50% 70% at 85% 80%,rgba(58,134,255,.10) 0%,transparent 65%),radial-gradient(ellipse 60% 40% at 50% 50%,rgba(245,166,35,.06) 0%,transparent 70%)}
 
 /* ═══════════════════════════════════════
    LOADING SCREEN
@@ -462,9 +462,166 @@ header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
   border-radius:4px;padding:2px 8px;
   text-shadow:1px 1px 0 #000;
 }
+
+/* ═══ AVATAR SCREEN ═══ */
+#avatar-screen{
+  position:fixed;inset:0;z-index:3000;
+  background:linear-gradient(135deg,#0a0d1a 0%,#1a0005 50%,#050020 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:20px;padding:24px;overflow-y:auto;
+  transition:opacity .5s,visibility .5s;
+}
+#avatar-screen.gone{opacity:0;visibility:hidden;pointer-events:none}
+
+.av-title{
+  font-family:'Bangers',cursive;font-size:clamp(2.2rem,8vw,4rem);
+  letter-spacing:4px;text-align:center;
+  background:linear-gradient(135deg,#f97316,#ffd700,#e63946);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:none;animation:titlePulse 1.4s ease-in-out infinite;
+}
+.av-subtitle{font-family:'Nunito',sans-serif;font-size:.9rem;color:rgba(255,255,255,.6);
+  letter-spacing:2px;text-transform:uppercase;text-align:center;}
+
+.av-name-wrap{display:flex;flex-direction:column;gap:8px;width:min(360px,90vw)}
+.av-name-lbl{font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:800;
+  color:var(--gold);letter-spacing:2px;text-transform:uppercase;}
+.av-name-input{
+  background:rgba(255,255,255,.07);border:2px solid rgba(255,215,0,.3);
+  border-radius:12px;padding:12px 16px;color:#fff;font-family:'Nunito',sans-serif;
+  font-size:1.1rem;font-weight:700;outline:none;width:100%;box-sizing:border-box;
+  transition:border-color .2s;
+}
+.av-name-input:focus{border-color:var(--gold);}
+.av-name-input::placeholder{color:rgba(255,255,255,.3);}
+
+.av-section-title{font-family:'Bangers',cursive;font-size:1.4rem;letter-spacing:3px;
+  color:var(--gold2);text-shadow:2px 2px 0 #000;margin-top:4px;}
+
+.av-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+  width:min(520px,95vw);max-height:280px;overflow-y:auto;
+  padding:4px;
+}
+@media(min-width:500px){.av-grid{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:700px){.av-grid{grid-template-columns:repeat(6,1fr)}}
+
+.av-char{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  cursor:pointer;padding:8px 4px;border-radius:12px;
+  border:2px solid transparent;transition:all .2s;
+  background:rgba(255,255,255,.04);
+}
+.av-char:hover{background:rgba(255,215,0,.1);border-color:rgba(255,215,0,.3);transform:translateY(-2px)}
+.av-char.selected{border-color:var(--gold);background:rgba(255,215,0,.15);
+  box-shadow:0 0 16px rgba(255,215,0,.4);}
+.av-char img{width:56px;height:56px;object-fit:cover;border-radius:50%;
+  border:2px solid rgba(255,255,255,.2);background:#111;}
+.av-char.selected img{border-color:var(--gold);}
+.av-char-name{font-family:'Nunito',sans-serif;font-size:.6rem;font-weight:800;
+  color:rgba(255,255,255,.7);letter-spacing:.5px;text-align:center;}
+.av-char.selected .av-char-name{color:var(--gold);}
+
+.av-selected-preview{
+  display:flex;align-items:center;gap:16px;padding:14px 20px;
+  background:rgba(255,255,255,.05);border:2px solid rgba(255,215,0,.2);
+  border-radius:16px;width:min(360px,90vw);box-sizing:border-box;
+}
+.av-preview-img{width:72px;height:72px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--gold);box-shadow:0 0 20px rgba(255,215,0,.4);}
+.av-preview-info{display:flex;flex-direction:column;gap:4px;}
+.av-preview-name{font-family:'Bangers',cursive;font-size:1.6rem;letter-spacing:2px;
+  color:#fff;text-shadow:2px 2px 0 #000;}
+.av-preview-char{font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;
+  color:var(--gold);letter-spacing:1px;}
+.av-preview-quote{font-family:'Nunito',sans-serif;font-size:.7rem;
+  color:rgba(255,255,255,.5);font-style:italic;}
+
+.av-start-btn{
+  font-family:'Bangers',cursive;font-size:1.6rem;letter-spacing:3px;
+  padding:14px 40px;border-radius:16px;border:none;cursor:pointer;
+  background:linear-gradient(135deg,#e63946,#f97316);color:#fff;
+  text-shadow:2px 2px 0 rgba(0,0,0,.5);
+  box-shadow:0 4px 20px rgba(230,57,70,.4),0 0 0 3px rgba(255,255,255,.1);
+  transition:all .2s;
+}
+.av-start-btn:hover{transform:scale(1.05);box-shadow:0 6px 30px rgba(230,57,70,.6),0 0 0 3px rgba(255,255,255,.2)}
+.av-start-btn:active{transform:scale(.97)}
+
+/* Avatar affiché dans le header */
+.hud-avatar{display:flex;align-items:center;gap:8px;cursor:pointer}
+.hud-avatar img{width:36px;height:36px;border-radius:50%;border:2px solid var(--gold);
+  object-fit:cover;transition:transform .2s;}
+.hud-avatar img:hover{transform:scale(1.1)}
+.hud-avatar-name{font-family:'Bangers',cursive;font-size:1rem;letter-spacing:1px;color:var(--gold)}
+
+
+/* ═══ QUESTION BOSS ═══ */
+.boss-question{
+  background:linear-gradient(135deg,rgba(230,57,70,.15),rgba(0,0,0,.3));
+  border:2px solid var(--red);border-radius:16px;
+  padding:16px;position:relative;overflow:hidden;
+}
+.boss-question::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(230,57,70,.05) 8px,rgba(230,57,70,.05) 9px);
+  pointer-events:none;
+}
+.boss-banner{
+  display:flex;align-items:center;gap:12px;margin-bottom:12px;
+  padding:8px 12px;background:rgba(230,57,70,.2);border-radius:8px;
+  border-left:4px solid var(--red);
+}
+.boss-banner-img{width:52px;height:52px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--red);box-shadow:0 0 16px rgba(230,57,70,.5);}
+.boss-banner-text{display:flex;flex-direction:column;gap:2px;}
+.boss-banner-label{font-family:'Bangers',cursive;font-size:.75rem;letter-spacing:2px;
+  color:var(--red);text-shadow:1px 1px 0 #000;}
+.boss-banner-name{font-family:'Bangers',cursive;font-size:1.3rem;letter-spacing:2px;
+  color:#fff;text-shadow:2px 2px 0 #000;}
+.boss-banner-hp{display:flex;align-items:center;gap:6px;margin-top:2px}
+.boss-hp-bar{height:6px;flex:1;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
+.boss-hp-fill{height:100%;background:linear-gradient(90deg,#e63946,#f97316);
+  width:100%;border-radius:99px;transition:width .5s ease;}
+.boss-hp-lbl{font-size:.6rem;font-family:'Nunito',sans-serif;font-weight:800;
+  color:rgba(255,255,255,.6);white-space:nowrap;}
+
 </style>
 </head>
 <body>
+
+<!-- ═══ AVATAR SELECTION SCREEN ═══ -->
+<div id="avatar-screen">
+  <div class="av-title">🏴‍☠️ ACADÉMIE PIRATE</div>
+  <div class="av-subtitle">Crée ton identité de pirate !</div>
+
+  <!-- Nom -->
+  <div class="av-name-wrap">
+    <div class="av-name-lbl">⚓ Ton nom de pirate</div>
+    <input class="av-name-input" id="avNameInput" type="text"
+      placeholder="Ex: Luffy, Nakama, Zoro…" maxlength="20"
+      oninput="updateAvatarPreview()">
+  </div>
+
+  <!-- Choix avatar -->
+  <div class="av-section-title">Choisis ton personnage</div>
+  <div class="av-grid" id="avGrid"></div>
+
+  <!-- Aperçu -->
+  <div class="av-selected-preview" id="avPreview">
+    <img class="av-preview-img" id="avPreviewImg" src="" alt="avatar">
+    <div class="av-preview-info">
+      <div class="av-preview-name" id="avPreviewName">Ton nom ici</div>
+      <div class="av-preview-char" id="avPreviewChar">Choisit un personnage</div>
+      <div class="av-preview-quote" id="avPreviewQuote">…</div>
+    </div>
+  </div>
+
+  <button class="av-start-btn" id="avStartBtn" onclick="startAdventure()">
+    ⚔️ COMMENCER L'AVENTURE !
+  </button>
+</div>
+
 
 <!-- ═══ LOADING ═══ -->
 <div id="loading">
@@ -492,6 +649,10 @@ header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 
 <!-- ═══ HEADER ═══ -->
 <header>
+  <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
+    <img id="headerAvatarImg" src="" alt="avatar" onerror="this.src=''">
+    <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
+  </div>
   <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
   <div class="logo-sub">Maîtrise la grammaire — Conquiers les Mers !</div>
   <div class="hud">
@@ -778,7 +939,8 @@ const ISLANDS = {
       {q:"Ils ont combatt__ vaillamment.",o:["er","u"],a:"u",exp:"'Combattre' → participe passé = 'combattu' (verbe en -re)"},
       {q:"Nous allons navigu__ vers le sud.",o:["er","é"],a:"er",exp:"Après 'allons' → infinitif en -er"},
       {q:"Luffy a décid__ de partir.",o:["er","é"],a:"é",exp:"'a décidé' : participe passé avec avoir → -é"},
-      {q:"Peux-tu vérifi__ cette route ?",o:["er","é"],a:"er",exp:"Après 'peux' → infinitif en -er"}
+      {q:"Peux-tu vérifi__ cette route ?",o:["er","é"],a:"er",exp:"Après 'peux' → infinitif en -er"},
+      {q:"⚔️ BOSS — Arlong frappe ! Choisis la bonne forme !<br><em>\"Luffy a ____ nager jusqu\'à l\'île.\"</em>",o:["réussir","réussi","réussit"],a:"réussi",exp:"Avec AVOIR → participe passé : réussi. 'a réussi' = passé composé.",isBoss:true,bossName:"Arlong",bossImg:"https://cdn.myanimelist.net/images/characters/9/84452.jpg"}
     ]
   },
   2:{
@@ -794,7 +956,8 @@ const ISLANDS = {
       {q:"Nous sommes all__ à l'aventure.",o:["és","é"],a:"és",exp:"Être + nous (masculin/mixte pluriel) → -és"},
       {q:"Elles sont retourn__ au navire.",o:["ées","és"],a:"ées",exp:"Être + féminin pluriel → -ées"},
       {q:"Le pirate a trouv__ un trésor.",o:["é","és"],a:"é",exp:"Avoir → invariable → -é"},
-      {q:"La capitaine est ven__ nous aider.",o:["ue","u"],a:"ue",exp:"Être + féminin : 'venu' → 'venue'"}
+      {q:"La capitaine est ven__ nous aider.",o:["ue","u"],a:"ue",exp:"Être + féminin : 'venu' → 'venue'"},
+      {q:"⚔️ BOSS — Don Krieg attaque ! Laquelle est correcte ?<br><em>\"Nami est ____ sur le Merry.\"</em>",o:["monté","montée","montés"],a:"montée",exp:"Avec ÊTRE, le participe s\'accorde : Nami est féminin singulier → montée.",isBoss:true,bossName:"Don Krieg",bossImg:"https://cdn.myanimelist.net/images/characters/5/56693.jpg"}
     ]
   },
   3:{
@@ -810,7 +973,8 @@ const ISLANDS = {
       {q:"Zoro et Luffy sont mont__ sur le pont.",o:["és","ées"],a:"és",exp:"Être + masculin ou mixte pluriel → -és"},
       {q:"La sentinelle est rest__ à bord.",o:["ée","é"],a:"ée",exp:"Être + féminin singulier : 'restée'"},
       {q:"Les équipiers sont reparti__ au combat.",o:["s",""],a:"s",exp:"'Partir' pluriel masculin → 'repartis'"},
-      {q:"La navigatrice est retourn__ à la carte.",o:["ée","é"],a:"ée",exp:"Être + féminin singulier → -ée"}
+      {q:"La navigatrice est retourn__ à la carte.",o:["ée","é"],a:"ée",exp:"Être + féminin singulier → -ée"},
+      {q:"⚔️ BOSS — Mihawk défie Zoro ! Choisis !<br><em>\"Les épées se sont ____ dans l\'air.\"</em>",o:["croisé","croisées","croisés"],a:"croisées",exp:"Avec ÊTRE + pronom, accord avec le sujet : épées = féminin pluriel → croisées.",isBoss:true,bossName:"Mihawk",bossImg:"https://cdn.myanimelist.net/images/characters/10/52519.jpg"}
     ]
   },
   4:{
@@ -826,7 +990,8 @@ const ISLANDS = {
       {q:"Les archéologues sont all__ fouiller.",o:["és","ées"],a:"és",exp:"Être + groupe masculin/mixte pluriel → -és"},
       {q:"Les étudiantes ont termin__ leur devoir.",o:["é","ées"],a:"é",exp:"Avoir → participe invariable avec le sujet → -é"},
       {q:"Elles sont rest__ studieuses.",o:["ées","és"],a:"ées",exp:"Être + féminin pluriel → -ées"},
-      {q:"Il a fallu travaill__ dur.",o:["er","é"],a:"er",exp:"Après 'fallu' (infinitif sous-jacent) → infinitif en -er"}
+      {q:"Il a fallu travaill__ dur.",o:["er","é"],a:"er",exp:"Après 'fallu' (infinitif sous-jacent) → infinitif en -er"},
+      {q:"⚔️ BOSS — Crocodile surgit ! Quelle forme ?<br><em>\"Robin s\'est ____ de ses ennemis.\"</em>",o:["débarrassé","débarrassée","débarrassés"],a:"débarrassée",exp:"Avec ÊTRE, accord avec Robin = féminin singulier → débarrassée.",isBoss:true,bossName:"Crocodile",bossImg:"https://cdn.myanimelist.net/images/characters/3/56699.jpg"}
     ]
   },
   5:{
@@ -842,7 +1007,8 @@ const ISLANDS = {
       {level:2,q:"Les soldats sont {v} sur le bateau. (monter)",verb:"monter",subject:"les soldats",aux:"être",genre:"m",nombre:"p",a:"montés",hint:"Avec ÊTRE + masculin pluriel → ajouter -és. Monté → montés",exp:"Avec <strong>être</strong>, accord au <strong>masculin pluriel</strong> : monté → <strong>montés</strong> (on ajoute -s)."},
       {level:3,q:"Les guerrières sont {v} victorieuses. (rentrer)",verb:"rentrer",subject:"les guerrières",aux:"être",genre:"f",nombre:"p",a:"rentrées",hint:"Avec ÊTRE + féminin pluriel → ajouter -ées. Rentré → rentrées",exp:"Avec <strong>être</strong>, accord au <strong>féminin pluriel</strong> : rentré → <strong>rentrées</strong> (on ajoute -es)."},
       {level:3,q:"Usopp pouvait {v} n'importe qui. (tromper)",verb:"tromper",subject:"Usopp",aux:"pouvoir",genre:"m",nombre:"s",a:"tromper",hint:"Après 'pouvait' (imparfait de pouvoir) → infinitif.",exp:"Après <strong>pouvait</strong> (forme de pouvoir), on utilise l'<strong>infinitif</strong> : tromper."},
-      {level:3,q:"Les deux amies sont {v} ensemble. (tomber)",verb:"tomber",subject:"les deux amies",aux:"être",genre:"f",nombre:"p",a:"tombées",hint:"Avec ÊTRE + féminin pluriel → tomber → tombées",exp:"Avec <strong>être</strong>, accord au <strong>féminin pluriel</strong> : tombé → <strong>tombées</strong>."}
+      {level:3,q:"Les deux amies sont {v} ensemble. (tomber)",verb:"tomber",subject:"les deux amies",aux:"être",genre:"f",nombre:"p",a:"tombées",hint:"Avec ÊTRE + féminin pluriel → tomber → tombées",exp:"Avec <strong>être</strong>, accord au <strong>féminin pluriel</strong> : tombé → <strong>tombées</strong>."},
+      {q:"⚔️ BOSS — Perona attaque ! Laquelle est juste ?<br><em>\"Usopp a ____ son ennemi avec précision.\"</em>",a:"visé",o:["viser","visé","visée"],exp:"Après avoir, participe passé invariable avec avoir : visé.",isBoss:true,bossName:"Perona",bossImg:"https://cdn.myanimelist.net/images/characters/10/69395.jpg"}
     ]
   },
   6:{
@@ -858,7 +1024,8 @@ const ISLANDS = {
       {level:2,q:"La serveuse est {v} servir les clients. (venir)",verb:"venir",subject:"la serveuse",aux:"être",genre:"f",nombre:"s",a:"venue",hint:"Avec ÊTRE + féminin singulier → venu → venue.",exp:"Avec <strong>être</strong> au féminin singulier : venu → <strong>venue</strong>."},
       {level:3,q:"Sanji et Zoro sont {v} en mer. (partir)",verb:"partir",subject:"Sanji et Zoro",aux:"être",genre:"m",nombre:"p",a:"partis",hint:"Avec ÊTRE + masculin pluriel (groupe mixte) → parti → partis.",exp:"Avec <strong>être</strong>, groupe mixte ou masculin → pluriel masculin : parti → <strong>partis</strong>."},
       {level:3,q:"Il aurait fallu {v} plus tôt. (partir)",verb:"partir",subject:"il",aux:"falloir",genre:"m",nombre:"s",a:"partir",hint:"Après 'fallu' → infinitif. Partir reste partir.",exp:"<strong>Aurait fallu</strong> est suivi de l'<strong>infinitif</strong> : partir."},
-      {level:3,q:"Les deux amies sont {v} au marché. (aller)",verb:"aller",subject:"les deux amies",aux:"être",genre:"f",nombre:"p",a:"allées",hint:"Avec ÊTRE + féminin pluriel → aller → allées.",exp:"Avec <strong>être</strong> au féminin pluriel : allé → <strong>allées</strong>."}
+      {level:3,q:"Les deux amies sont {v} au marché. (aller)",verb:"aller",subject:"les deux amies",aux:"être",genre:"f",nombre:"p",a:"allées",hint:"Avec ÊTRE + féminin pluriel → aller → allées.",exp:"Avec <strong>être</strong> au féminin pluriel : allé → <strong>allées</strong>."},
+      {q:"⚔️ BOSS — Absalom surgit ! Choisis !<br><em>\"Sanji a ____ un repas parfait.\"</em>",a:"préparé",o:["préparer","préparé","préparée"],exp:"Avec avoir, pas d\'accord : préparé reste invariable.",isBoss:true,bossName:"Absalom",bossImg:"https://cdn.myanimelist.net/images/characters/12/56700.jpg"}
     ]
   },
   7:{
@@ -874,7 +1041,8 @@ const ISLANDS = {
       {level:2,q:"Chopper pouvait {v} ses ennemis. (vaincre)",verb:"vaincre",subject:"Chopper",aux:"pouvoir",genre:"m",nombre:"s",a:"vaincre",hint:"Après 'pouvait' → infinitif. Vaincre reste vaincre.",exp:"Après <strong>pouvait</strong> (pouvoir à l'imparfait), on utilise l'<strong>infinitif</strong> : vaincre."},
       {level:3,q:"Les deux médecins sont {v} ensemble. (travailler)",verb:"travailler",subject:"les deux médecins",aux:"être",genre:"m",nombre:"p",a:"travaillés",hint:"Avec ÊTRE + masculin pluriel → travailler → travaillés.",exp:"Avec <strong>être</strong> au masculin pluriel : travaillé → <strong>travaillés</strong>."},
       {level:3,q:"Les malades sont {v} à temps. (arriver)",verb:"arriver",subject:"les malades",aux:"être",genre:"m",nombre:"p",a:"arrivés",hint:"Avec ÊTRE + masculin pluriel → arriver → arrivés.",exp:"Avec <strong>être</strong> au masculin pluriel : arrivé → <strong>arrivés</strong>."},
-      {level:3,q:"Les deux guerrières sont {v} blessées. (tomber)",verb:"tomber",subject:"les deux guerrières",aux:"être",genre:"f",nombre:"p",a:"tombées",hint:"Avec ÊTRE + féminin pluriel → tomber → tombées.",exp:"Avec <strong>être</strong> au féminin pluriel : tombé → <strong>tombées</strong>."}
+      {level:3,q:"Les deux guerrières sont {v} blessées. (tomber)",verb:"tomber",subject:"les deux guerrières",aux:"être",genre:"f",nombre:"p",a:"tombées",hint:"Avec ÊTRE + féminin pluriel → tomber → tombées.",exp:"Avec <strong>être</strong> au féminin pluriel : tombé → <strong>tombées</strong>."},
+      {q:"⚔️ BOSS — Hogback défie Chopper ! Quelle réponse ?<br><em>\"Les patients se sont ____ grâce au médecin.\"</em>",a:"rétablis",o:["rétabli","rétablis","rétablies"],exp:"Se sont + rétabli : accord avec patients = masculin pluriel → rétablis.",isBoss:true,bossName:"Hogback",bossImg:"https://cdn.myanimelist.net/images/characters/6/69397.jpg"}
     ]
   },
   8:{
@@ -890,7 +1058,8 @@ const ISLANDS = {
       {level:2,q:"Les spectatrices sont {v} dans la salle. (entrer)",verb:"entrer",subject:"les spectatrices",aux:"être",genre:"f",nombre:"p",a:"entrées",hint:"Avec ÊTRE + féminin pluriel → entrer → entrées.",exp:"Avec <strong>être</strong> au féminin pluriel : entré → <strong>entrées</strong>."},
       {level:3,q:"Brook et Nami sont {v} danser. (aller)",verb:"aller",subject:"Brook et Nami",aux:"être",genre:"m",nombre:"p",a:"allés",hint:"Groupe mixte avec ÊTRE → masculin pluriel → aller → allés.",exp:"Groupe mixte avec <strong>être</strong> → accord masculin pluriel : aller → <strong>allés</strong>."},
       {level:3,q:"Il aurait pu {v} plus fort. (chanter)",verb:"chanter",subject:"il",aux:"pouvoir",genre:"m",nombre:"s",a:"chanter",hint:"Après 'pu' (participe de pouvoir) → infinitif.",exp:"<strong>Aurait pu</strong> est suivi de l'<strong>infinitif</strong> : chanter."},
-      {level:3,q:"Les deux chanteuses sont {v} applaudies. (tomber)",verb:"tomber",subject:"les deux chanteuses",aux:"être",genre:"f",nombre:"p",a:"tombées",hint:"Avec ÊTRE + féminin pluriel → tomber → tombées.",exp:"Avec <strong>être</strong> au féminin pluriel : tombé → <strong>tombées</strong>."}
+      {level:3,q:"Les deux chanteuses sont {v} applaudies. (tomber)",verb:"tomber",subject:"les deux chanteuses",aux:"être",genre:"f",nombre:"p",a:"tombées",hint:"Avec ÊTRE + féminin pluriel → tomber → tombées.",exp:"Avec <strong>être</strong> au féminin pluriel : tombé → <strong>tombées</strong>."},
+      {q:"⚔️ BOSS — Ryuma surgit ! Choisis !<br><em>\"Les notes se sont ____ dans la nuit.\"</em>",a:"envolées",o:["envolé","envolés","envolées"],exp:"notes = féminin pluriel → envolées. Accord avec le sujet avec ÊTRE.",isBoss:true,bossName:"Ryuma",bossImg:"https://cdn.myanimelist.net/images/characters/2/99173.jpg"}
     ]
   }
 };
@@ -927,16 +1096,71 @@ function sfxSwoosh(){if(!sfxEnabled)return;try{const c=getActx(),o=c.createOscil
 function sfxPow(){if(!sfxEnabled)return;noiseBurst(.08,.4,0);tone(120,'sine',.15,.5,0);tone(80,'sine',.2,.3,.05)}
 function sfxSlash(){if(!sfxEnabled)return;try{const c=getActx(),o=c.createOscillator(),g=c.createGain(),filt=c.createBiquadFilter();filt.type='highpass';filt.frequency.value=2000;o.connect(filt);filt.connect(g);g.connect(c.destination);o.type='sawtooth';o.frequency.setValueAtTime(1200,c.currentTime);o.frequency.exponentialRampToValueAtTime(200,c.currentTime+.18);g.gain.setValueAtTime(.25*masterVol,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.2);o.start();o.stop(c.currentTime+.22);noiseBurst(.12,.25,.02)}catch(e){}}
 function sfxIsland(){if(!sfxEnabled)return;[392,523,659].forEach((f,i)=>tone(f,'triangle',.25,.2,i*.12))}
-function setVolume(v){masterVol=parseFloat(v)}
+function setVolume(v){masterVol=parseFloat(v);if(ytPlayer&&ytReady){try{ytPlayer.setVolume(Math.round(masterVol*65))}catch(e){}}}
 function toggleSfx(){sfxEnabled=!sfxEnabled;const btn=document.getElementById('btnSfx');btn.classList.toggle('active',sfxEnabled);btn.classList.toggle('muted',!sfxEnabled);btn.innerHTML=(sfxEnabled?'💥':'🔇')+' Effets'}
 function toggleVoice(){voiceEnabled=!voiceEnabled;const btn=document.getElementById('btnVoice');btn.classList.toggle('active',voiceEnabled);btn.classList.toggle('muted',!voiceEnabled);btn.innerHTML=(voiceEnabled?'🗣️':'🔕')+' Voix';if(!voiceEnabled&&window.speechSynthesis)window.speechSynthesis.cancel()}
+// ─── YouTube Music Player ───
+let ytPlayer=null,ytReady=false,ytLoaded=false;
+// IDs de vidéos One Piece OST (audio seul, pas de bruit visuel)
+const YT_TRACKS={
+  map:   'yj3xsaZZzI8',   // We Are! OST
+  quiz:  'HYXPVbGVFsI',   // Overtaken
+  win:   'NqqEoHsqMRQ',   // Binks no Sake
+  boss:  'bxk3dppXrTs',   // Luffy's Fierce Attack
+};
+let ytCurrentTrack='map';
+
+window.onYouTubeIframeAPIReady=function(){
+  ytReady=true;
+  const div=document.createElement('div');
+  div.id='yt-player-el';
+  div.style.cssText='position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;z-index:-1';
+  document.body.appendChild(div);
+  ytPlayer=new YT.Player('yt-player-el',{
+    height:'1',width:'1',
+    videoId:YT_TRACKS.map,
+    playerVars:{autoplay:0,loop:1,controls:0,disablekb:1,fs:0,
+                playlist:YT_TRACKS.map,origin:location.origin||'https://safwanst76-dot.github.io'},
+    events:{
+      onReady:(e)=>{if(musicPlaying){e.target.setVolume(Math.round(masterVol*65));e.target.playVideo()}},
+      onStateChange:(e)=>{if(e.data===0&&musicPlaying)ytPlayer.playVideo()},
+      onError:()=>{}
+    }
+  });
+};
+
+function loadYTApi(){
+  if(document.getElementById('yt-api-script'))return;
+  const s=document.createElement('script');
+  s.id='yt-api-script';
+  s.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(s);
+}
+
+function ytPlay(track){
+  ytCurrentTrack=track||ytCurrentTrack;
+  if(!ytPlayer||!ytReady)return;
+  try{
+    ytPlayer.loadVideoById({videoId:YT_TRACKS[ytCurrentTrack],startSeconds:0});
+    ytPlayer.setVolume(Math.round(masterVol*65));
+    if(musicPlaying)ytPlayer.playVideo();
+  }catch(e){}
+}
+
 function toggleMusic(){
   try{getActx().resume()}catch(e){}
+  if(!ytLoaded){ytLoaded=true;loadYTApi()}
   musicPlaying=!musicPlaying;
   const btn=document.getElementById('btnMusic');
   btn.classList.toggle('active',musicPlaying);
   btn.classList.toggle('muted',!musicPlaying);
   btn.innerHTML='🎵 Musique '+(musicPlaying?'▶':'⏸');
+  if(ytPlayer&&ytReady){
+    try{
+      if(musicPlaying){ytPlayer.setVolume(Math.round(masterVol*65));ytPlayer.playVideo()}
+      else ytPlayer.pauseVideo();
+    }catch(e){}
+  }
 }
 
 // ═══ VOICE ═══
@@ -1087,6 +1311,15 @@ function showCine(panelsHTML, kanjiEl, bottomHTML, bgColor, particleType, callba
   panels.className = 'cine-panels';
   panels.innerHTML = panelsHTML;
   document.getElementById('cineBottom').innerHTML = bottomHTML;
+  // Griser les boutons pendant 2.8s pour que l'animation soit visible
+  setTimeout(()=>{
+    document.querySelectorAll('#cineBottom .btn').forEach(b=>{
+      b.disabled=false;b.style.opacity='1';
+    });
+  }, 2800);
+  document.querySelectorAll('#cineBottom .btn').forEach(b=>{
+    b.disabled=true;b.style.opacity='0.4';
+  });
   // FIX #6 : kanji ajouté directement à #cine-scene (overlay absolu sur toute la scène)
   if(kanjiEl){
     // Retirer un éventuel kanji précédent
@@ -1143,7 +1376,14 @@ function playIntroScene(n, afterCallback){
     </div>`;
 
   const kanji=makeKanji(cfg.kanji,cfg.kanjiColor,600,'pop');
-  const bottomHTML=`<button class="btn btn-gold" onclick="skipCine()">⚔️ COMMENCER L'ÎLE !</button>`;
+  const pName=(typeof playerData!=='undefined'&&playerData.name)?playerData.name:'Moussaillon';
+  const bottomHTML=`
+    <div style="font-family:'Nunito',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:1px;margin-bottom:6px">
+      Prêt(e) <strong style="color:var(--gold)">${pName}</strong> ?
+    </div>
+    <button class="btn btn-gold" onclick="skipCine();setTimeout(()=>_launchIsland(${n}),50)">⚔️ COMMENCER L'ÎLE !</button>
+    <button class="btn btn-outline btn-sm" onclick="skipCine()">⏭ PASSER</button>
+  `;
 
   setTimeout(()=>sfxCineDrum(),50);
   setTimeout(()=>sfxCineRiser(),300);
@@ -1264,8 +1504,17 @@ function _launchIsland(n){
 
 function buildMCQBody(e,i,charImg,msg,isle,keys){
   const n=currentIsland;
+  const bossBanner=e.isBoss?`<div class="boss-banner">
+      <img class="boss-banner-img" src="${e.bossImg||''}" alt="${e.bossName||'BOSS'}" onerror="this.style.display='none'">
+      <div class="boss-banner-text">
+        <div class="boss-banner-label">⚔️ COMBAT FINAL</div>
+        <div class="boss-banner-name">${e.bossName||'BOSS'}</div>
+        <div class="boss-banner-hp"><div class="boss-hp-bar"><div class="boss-hp-fill"></div></div>
+          <div class="boss-hp-lbl">HP: ██████████ 100%</div></div>
+      </div></div>`:'';
   return `
-  <div class="q-card" id="card${i}">
+  <div class="q-card${e.isBoss?' boss-question':''}" id="card${i}">
+  ${bossBanner}
     <div class="streak-bar" id="streakBar${i}">
       🔥 Série : <div class="streak-dots" id="streakDots${i}">
         ${[0,1,2,3,4].map(j=>`<div class="streak-dot" id="sd${i}_${j}"></div>`).join('')}
@@ -1297,8 +1546,21 @@ function buildWriteBody(e,i,charImg,msg,isle,levelBadge){
   const accents=['é','è','ê','ë','à','â','î','ï','ô','û','ù','ç'];
   const accentBtns=accents.map(a=>`<button class="acc-btn" onclick="insertAccent(${i},'${a}')" tabindex="-1">${a}</button>`).join('');
   const qFormatted=e.q.replace('{v}',`<span class="q-blank" style="min-width:90px;display:inline-block;text-align:center">_____</span>`);
+  const bossBannerW=e.isBoss?`
+    <div class="boss-banner">
+      <img class="boss-banner-img" src="${e.bossImg||''}" alt="${e.bossName||'BOSS'}" onerror="this.style.display='none'">
+      <div class="boss-banner-text">
+        <div class="boss-banner-label">⚔️ COMBAT FINAL</div>
+        <div class="boss-banner-name">${e.bossName||'BOSS'}</div>
+        <div class="boss-banner-hp">
+          <div class="boss-hp-bar"><div class="boss-hp-fill"></div></div>
+          <div class="boss-hp-lbl">HP: ██████████ 100%</div>
+        </div>
+      </div>
+    </div>`:'';
   return `
-  <div class="q-card" id="card${i}">
+  <div class="q-card${e.isBoss?' boss-question':''}" id="card${i}">
+  ${bossBannerW}
     <div class="streak-bar" id="streakBar${i}">
       🔥 Série : <div class="streak-dots" id="streakDots${i}">
         ${[0,1,2,3,4].map(j=>`<div class="streak-dot" id="sd${i}_${j}"></div>`).join('')}
@@ -1510,7 +1772,143 @@ function corriger(n){
       const rc=document.getElementById('resCard');
       if(rc)setTimeout(()=>rc.scrollIntoView({behavior:'smooth',block:'center'}),200);
     });
-  },600);
+  },800);
+}
+
+
+// ═══════════════════════════════════════════════
+// SYSTÈME AVATAR — données + logique
+// ═══════════════════════════════════════════════
+
+const AVATARS = [
+  // Équipage Chapeau de Paille
+  {id:'luffy',  name:'Luffy',   color:'#e63946', quote:'Je serai Roi des Pirates !',
+   img:'https://cdn.myanimelist.net/images/characters/9/310307.jpg'},
+  {id:'zoro',   name:'Zoro',    color:'#22c55e', quote:'Je ne me perdrai jamais !',
+   img:'https://cdn.myanimelist.net/images/characters/3/100534.jpg'},
+  {id:'nami',   name:'Nami',    color:'#f59e0b', quote:'L'argent ET la grammaire !',
+   img:'https://cdn.myanimelist.net/images/characters/2/69389.jpg'},
+  {id:'usopp',  name:'Usopp',   color:'#92400e', quote:'J'ai 8000 hommes !',
+   img:'https://cdn.myanimelist.net/images/characters/9/69387.jpg'},
+  {id:'sanji',  name:'Sanji',   color:'#3b82f6', quote:'Pour mes Nakamas !',
+   img:'https://cdn.myanimelist.net/images/characters/8/69390.jpg'},
+  {id:'chopper',name:'Chopper', color:'#ec4899', quote:'Je suis pas content !',
+   img:'https://cdn.myanimelist.net/images/characters/7/69391.jpg'},
+  {id:'robin',  name:'Robin',   color:'#8b5cf6', quote:'La connaissance est une arme.',
+   img:'https://cdn.myanimelist.net/images/characters/6/69392.jpg'},
+  {id:'brook',  name:'Brook',   color:'#6366f1', quote:'Yohohoho ! Puis-je voir ?',
+   img:'https://cdn.myanimelist.net/images/characters/4/69389.jpg'},
+  // Alliés / Antagonistes
+  {id:'ace',    name:'Ace',     color:'#f97316', quote:'Je ne regretterai jamais !',
+   img:'https://cdn.myanimelist.net/images/characters/5/284121.jpg'},
+  {id:'shanks', name:'Shanks',  color:'#dc2626', quote:'Je mise sur cette génération !',
+   img:'https://cdn.myanimelist.net/images/characters/3/99170.jpg'},
+  {id:'law',    name:'Law',     color:'#0ea5e9', quote:'Room… Shambles !',
+   img:'https://cdn.myanimelist.net/images/characters/2/236545.jpg'},
+  {id:'hancock',name:'Hancock', color:'#f43f5e', quote:'L'amour est invincible !',
+   img:'https://cdn.myanimelist.net/images/characters/3/91667.jpg'},
+  // Fallback images via Jikan API (plus fiables)
+];
+
+// Fallback images depuis Wikimedia si MAL ne charge pas
+const AVATAR_FALLBACKS = {
+  luffy:  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/One_Piece_character_Nami.png/220px-One_Piece_character_Nami.png',
+  zoro:   '',usopp:'',sanji:'',chopper:'',robin:'',brook:'',ace:'',shanks:'',law:'',hancock:''
+};
+
+let selectedAvatarId = 'luffy';
+let playerName = '';
+let playerData = {name:'Pirate', avatarId:'luffy', avatarImg:''};
+
+function buildAvatarGrid(){
+  const grid = document.getElementById('avGrid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  AVATARS.forEach(av => {
+    const div = document.createElement('div');
+    div.className = 'av-char' + (av.id === selectedAvatarId ? ' selected' : '');
+    div.onclick = () => selectAvatar(av.id);
+    div.innerHTML = \`
+      <img src="\${av.img}" alt="\${av.name}"
+        onerror="this.src='https://i.imgur.com/KuFrBwL.png'">
+      <div class="av-char-name">\${av.name}</div>
+    \`;
+    grid.appendChild(div);
+  });
+}
+
+function selectAvatar(id){
+  selectedAvatarId = id;
+  document.querySelectorAll('.av-char').forEach(el => {
+    el.classList.toggle('selected', el.querySelector('.av-char-name').textContent === 
+      AVATARS.find(a=>a.id===id)?.name);
+  });
+  updateAvatarPreview();
+}
+
+function updateAvatarPreview(){
+  const av = AVATARS.find(a => a.id === selectedAvatarId) || AVATARS[0];
+  const nameVal = (document.getElementById('avNameInput')?.value||'').trim();
+  document.getElementById('avPreviewImg').src = av.img;
+  document.getElementById('avPreviewName').textContent = nameVal || 'Ton nom ici';
+  document.getElementById('avPreviewChar').textContent = 'Personnage : ' + av.name;
+  document.getElementById('avPreviewQuote').textContent = av.quote;
+}
+
+function startAdventure(){
+  const av = AVATARS.find(a => a.id === selectedAvatarId) || AVATARS[0];
+  const nameVal = (document.getElementById('avNameInput')?.value||'').trim();
+  playerData = {
+    name: nameVal || 'Pirate',
+    avatarId: av.id,
+    avatarImg: av.img,
+    avatarColor: av.color,
+    avatarQuote: av.quote,
+    charName: av.name
+  };
+  playerName = playerData.name;
+  // Sauvegarder
+  try { localStorage.setItem('ap_player', JSON.stringify(playerData)); } catch(e){}
+  // Mettre à jour le header
+  updateHeaderAvatar();
+  // Fermer l'écran
+  const screen = document.getElementById('avatar-screen');
+  screen.classList.add('gone');
+  // Petite fanfare de démarrage
+  setTimeout(() => sfxCineVictory(), 300);
+}
+
+function showAvatarScreen(){
+  const screen = document.getElementById('avatar-screen');
+  screen.classList.remove('gone');
+  // Pré-remplir
+  if(playerData.name && playerData.name !== 'Pirate'){
+    document.getElementById('avNameInput').value = playerData.name;
+  }
+  selectAvatar(playerData.avatarId || 'luffy');
+  updateAvatarPreview();
+}
+
+function updateHeaderAvatar(){
+  const img = document.getElementById('headerAvatarImg');
+  const nameEl = document.getElementById('headerAvatarName');
+  if(img) img.src = playerData.avatarImg || '';
+  if(nameEl) nameEl.textContent = playerData.name || 'Pirate';
+}
+
+function loadPlayerData(){
+  try{
+    const saved = localStorage.getItem('ap_player');
+    if(saved){
+      playerData = JSON.parse(saved);
+      playerName = playerData.name;
+      selectedAvatarId = playerData.avatarId || 'luffy';
+      updateHeaderAvatar();
+      // Si déjà joué, ne pas montrer l'écran
+      return true;
+    }
+  }catch(e){}
+  return false;
 }
 
 // ═══ SAVE/LOAD ═══
@@ -1562,7 +1960,19 @@ async function init(){
   await loadJikanImages();
   loadProgress();
   updateHUD();
-  setTimeout(()=>document.getElementById('loading').classList.add('gone'),2600);
+  buildAvatarGrid();
+  updateAvatarPreview();
+  const alreadyPlayed = loadPlayerData();
+  setTimeout(()=>{
+    document.getElementById('loading').classList.add('gone');
+    // Afficher l'écran avatar seulement si nouveau joueur
+    if(!alreadyPlayed){
+      // L'écran avatar est déjà visible (pas .gone), pas besoin de l'ouvrir
+    } else {
+      // Déjà joué : cacher directement l'écran avatar
+      document.getElementById('avatar-screen').classList.add('gone');
+    }
+  }, 2600);
 }
 init();
 
