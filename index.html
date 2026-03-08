@@ -639,6 +639,18 @@ header { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
 .boss-banner { flex-wrap: wrap; gap: 8px; }
 .boss-banner-img { width: 40px !important; height: 40px !important; }
 
+
+/* ── GIF résultat ── */
+.result-gif-wrap{text-align:center;margin:10px 0}
+.result-gif{width:100%;max-width:320px;border-radius:12px;border:3px solid var(--gold2);box-shadow:0 0 20px rgba(255,200,0,.3)}
+
+/* ── Avatars grid taille correcte ── */
+.av-char{width:80px!important;min-width:80px!important;cursor:pointer;transition:transform .2s}
+.av-char img{width:72px!important;height:72px!important;object-fit:cover;border-radius:50%;border:2px solid rgba(255,255,255,.2)}
+.av-char.selected img{border:3px solid var(--gold2)!important;box-shadow:0 0 12px var(--gold2)}
+.av-char-name{font-size:.6rem!important;text-align:center;color:rgba(255,255,255,.7);margin-top:3px}
+#avGrid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:10px}
+
 </style>
 </head>
 <body>
@@ -1741,7 +1753,7 @@ function corriger(n){
           fb.className='fb show ok';
           if(inp)inp.classList.add('correct-input');
           setTimeout(()=>fxCorrect(comboWords[Math.floor(Math.random()*comboWords.length)]),80+i*40);
-          sfxOK();sfxPow();speakChar(currentIsland,'correct');showCombatGif('correct');
+          sfxOK();sfxPow();speakChar(currentIsland,'correct');showCombatGif(score===10?'perfect':'correct');
           if(streak>=3)starRain(4);
           if(streak>=5){sfxCombo();setTimeout(()=>showToast('🔥 Série de '+streak+' ! INCROYABLE !'),400)}
         } else {
@@ -1767,7 +1779,7 @@ function corriger(n){
           fb.innerHTML='✅ Parfait !';fb.className='fb show ok';
           document.getElementById('lbl'+i+'_'+ans.oi).classList.add('correct');
           setTimeout(()=>fxCorrect(comboWords[Math.floor(Math.random()*comboWords.length)]),100+i*50);
-          sfxOK();sfxPow();speakChar(currentIsland,'correct');showCombatGif('correct');
+          sfxOK();sfxPow();speakChar(currentIsland,'correct');showCombatGif(score===10?'perfect':'correct');
           if(streak>=3)starRain(4);
           if(streak>=5){sfxCombo();setTimeout(()=>showToast('🔥 Série de '+streak+' ! INCROYABLE !'),400)}
         } else {
@@ -1812,6 +1824,10 @@ function corriger(n){
     <div class="result-body">
       <div class="result-title">${res.txt}</div>
       <div class="result-stars">${starsStr(score,10)}</div>
+      <div class="result-gif-wrap">
+        <img src="${score===10?GIFS_PERFECT[0]:score>=6?GIFS_ISLE_WIN[(n-1)%GIFS_ISLE_WIN.length]:GIFS_ISLE_LOSE[0]}"
+             alt="reaction" class="result-gif" onerror="this.style.display='none'">
+      </div>
       <div class="result-xp">+${gained} XP pirate 🏴‍☠️ — Total : ${xp} XP</div>
       <button class="btn btn-gold" onclick="goBack()">🗺️ RETOUR À LA CARTE</button>
       <button class="btn btn-outline" onclick="retry(${n})">🔁 REJOUER CETTE ÎLE</button>
@@ -1950,18 +1966,40 @@ function goBack(){document.getElementById('quiz-sec').style.display='none';docum
 function retry(n){answers={};startIsland(n)}
 
 // ═══ COMBAT GIF SYSTEM ═══
-const GIFS_CORRECT=[
-  'https://media1.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif',
-  'https://media1.giphy.com/media/l3vR85GV1HLfB5544/giphy.gif',
-  'https://media.giphy.com/media/xUOwGhOrNY0MQnWRRS/giphy.gif',
+
+// ═══ GIFs par résultat ═══
+const GIFS_CORRECT = [
+  'https://media0.giphy.com/media/1K8NlomCFNuKcGlHxT/giphy.gif',   // Luffy attaque
+  'https://media2.giphy.com/media/SlTl6ZzuU0QOdSXCvi/giphy.gif',   // Luffy Gear 5
+  'https://media2.giphy.com/media/aQ9t3f4Klbr5Ppx2w7/giphy.gif',   // Luffy victoire
 ];
-const GIFS_WRONG=[
-  'https://media.giphy.com/media/3oEjHGr1Fhz0kyv8Ig/giphy.gif',
-  'https://media.giphy.com/media/xUOwG2xzNGa9FGqxfy/giphy.gif',
+const GIFS_WRONG = [
+  'https://media2.giphy.com/media/l378ejxoQzb5aXsd2/giphy.gif',    // triste
+  'https://media4.giphy.com/media/C3brYLms1bhv2/giphy.gif',        // déçu
 ];
+const GIFS_PERFECT = [
+  'https://media2.giphy.com/media/DwZ392mpIdkvrvTnjm/giphy.gif',   // Luffy roi des pirates
+  'https://media3.giphy.com/media/ybu0oMW3RdE3ZwaXw4/giphy.gif',   // Gear 5 fou
+];
+// GIFs fin d île par personnage (8 îles)
+const GIFS_ISLE_WIN = [
+  'https://media0.giphy.com/media/1K8NlomCFNuKcGlHxT/giphy.gif',   // île 1 - Luffy
+  'https://media2.giphy.com/media/SlTl6ZzuU0QOdSXCvi/giphy.gif',   // île 2 - Gear5
+  'https://media1.giphy.com/media/IEZy0MXCCxBShZaloq/giphy.gif',   // île 3 - Luffy vs Lucci
+  'https://media2.giphy.com/media/aQ9t3f4Klbr5Ppx2w7/giphy.gif',   // île 4
+  'https://media2.giphy.com/media/DwZ392mpIdkvrvTnjm/giphy.gif',   // île 5 - Roi pirates
+  'https://media3.giphy.com/media/ybu0oMW3RdE3ZwaXw4/giphy.gif',   // île 6 - Gear5
+  'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',   // île 7 - Luffy
+  'https://media1.giphy.com/media/S1kK8O1BRD4IfTXbwo/giphy.gif',   // île 8 - Luffy epic
+];
+const GIFS_ISLE_LOSE = [
+  'https://media2.giphy.com/media/l378ejxoQzb5aXsd2/giphy.gif',    // défaite triste
+  'https://media4.giphy.com/media/C3brYLms1bhv2/giphy.gif',        // défaite
+];
+
 let gifTimer=null;
 function showCombatGif(type){
-  const list=type==='correct'?GIFS_CORRECT:GIFS_WRONG;
+  const list=type==='perfect'?GIFS_PERFECT:type==='correct'?GIFS_CORRECT:GIFS_WRONG;
   const src=list[Math.floor(Math.random()*list.length)];
   const overlay=document.getElementById('combat-gif-overlay');
   const img=document.getElementById('combat-gif-img');
