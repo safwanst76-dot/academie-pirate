@@ -1782,91 +1782,30 @@ function corriger(n){
 
 const AVATARS = [
   {id:'luffy',  name:'Luffy',   color:'#e63946', quote:"Je serai Roi des Pirates !",
-   img:'https://cdn.myanimelist.net/images/characters/9/310307.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/40'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/6/6d/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png'},
   {id:'zoro',   name:'Zoro',    color:'#22c55e', quote:"Je ne me perdrai jamais !",
-   img:'https://cdn.myanimelist.net/images/characters/3/100534.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/62'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/1/15/Roronoa_Zoro_Anime_Post_Timeskip_Infobox.png'},
   {id:'nami',   name:'Nami',    color:'#f59e0b', quote:"L'argent ET la grammaire !",
-   img:'https://cdn.myanimelist.net/images/characters/2/69389.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/723'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/e/e2/Nami_Anime_Post_Timeskip_Infobox.png'},
   {id:'usopp',  name:'Usopp',   color:'#92400e', quote:"J'ai 8000 hommes !",
-   img:'https://cdn.myanimelist.net/images/characters/9/69387.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/724'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/0/0d/Usopp_Anime_Post_Timeskip_Infobox.png'},
   {id:'sanji',  name:'Sanji',   color:'#3b82f6', quote:"Pour mes Nakamas !",
-   img:'https://cdn.myanimelist.net/images/characters/8/69390.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/725'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/a/a2/Sanji_Anime_Post_Timeskip_Infobox.png'},
   {id:'chopper',name:'Chopper', color:'#ec4899', quote:"Je ne suis pas content !",
-   img:'https://cdn.myanimelist.net/images/characters/7/69391.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/726'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/5/5d/Tony_Tony_Chopper_Anime_Post_Timeskip_Infobox.png'},
   {id:'robin',  name:'Robin',   color:'#8b5cf6', quote:"La connaissance est une arme.",
-   img:'https://cdn.myanimelist.net/images/characters/6/69392.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/727'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/6/6b/Nico_Robin_Anime_Post_Timeskip_Infobox.png'},
   {id:'brook',  name:'Brook',   color:'#6366f1', quote:"Yohohoho ! Puis-je voir ?",
-   img:'https://cdn.myanimelist.net/images/characters/4/69389.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/1491'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/f/f0/Brook_Anime_Post_Timeskip_Infobox.png'},
   {id:'ace',    name:'Ace',     color:'#f97316', quote:"Je ne regrette rien !",
-   img:'https://cdn.myanimelist.net/images/characters/5/284121.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/118'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/9/9a/Portgas_D._Ace_Anime_Infobox.png'},
   {id:'shanks', name:'Shanks',  color:'#dc2626', quote:"Je mise sur toi !",
-   img:'https://cdn.myanimelist.net/images/characters/3/99170.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/284'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/9/9d/Shanks_Anime_Infobox.png'},
   {id:'law',    name:'Law',     color:'#0ea5e9', quote:"Room. Shambles !",
-   img:'https://cdn.myanimelist.net/images/characters/2/236545.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/11736'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/3/33/Trafalgar_D._Water_Law_Anime_Post_Timeskip_Infobox.png'},
   {id:'hancock',name:'Hancock', color:'#f43f5e', quote:"L'amour est invincible !",
-   img:'https://cdn.myanimelist.net/images/characters/3/91667.jpg',
-   jikan:'https://api.jikan.moe/v4/characters/3645'},
+   img:'https://static.wikia.nocookie.net/onepiece/images/5/5a/Boa_Hancock_Anime_Infobox.png'},
 ]
-
-// Fallback images depuis Wikimedia si MAL ne charge pas
-const AVATAR_FALLBACKS = {
-  luffy:  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/One_Piece_character_Nami.png/220px-One_Piece_character_Nami.png',
-  zoro:   '',usopp:'',sanji:'',chopper:'',robin:'',brook:'',ace:'',shanks:'',law:'',hancock:''
-};
-
-let selectedAvatarId = 'luffy';
-let playerName = '';
-let playerData = {name:'Pirate', avatarId:'luffy', avatarImg:''};
-
-function buildAvatarGrid(){
-  var grid = document.getElementById('avGrid');
-  if(!grid) return;
-  grid.innerHTML = '';
-  AVATARS.forEach(function(av){
-    var div = document.createElement('div');
-    div.className = 'av-char' + (av.id === selectedAvatarId ? ' selected' : '');
-    div.onclick = (function(id){ return function(){ selectAvatar(id); }; })(av.id);
-    var img = document.createElement('img');
-    img.alt = av.name;
-    img.src = av.img;
-    img.onerror = (function(a, el){
-      return function(){
-        fetch(a.jikan + '/pictures')
-          .then(function(r){ return r.json(); })
-          .then(function(d){ if(d.data&&d.data[0]){ el.src=d.data[0].jpg.image_url; a.img=d.data[0].jpg.image_url; } })
-          .catch(function(){ el.style.opacity='0.3'; });
-      };
-    })(av, img);
-    var nameDiv = document.createElement('div');
-    nameDiv.className = 'av-char-name';
-    nameDiv.textContent = av.name;
-    div.appendChild(img);
-    div.appendChild(nameDiv);
-    grid.appendChild(div);
-  });
-}
-function selectAvatar(id){
-  selectedAvatarId = id;
-  document.querySelectorAll('.av-char').forEach(function(el){
-    var nm = el.querySelector('.av-char-name');
-    var av = AVATARS.find(function(a){ return a.id===id; });
-    el.classList.toggle('selected', !!(nm && av && nm.textContent === av.name));
-  });
-  updateAvatarPreview();
-}
-function updateAvatarPreview(){
-  var av = AVATARS.find(function(a){ return a.id===selectedAvatarId; }) || AVATARS[0];
   var inp = document.getElementById('avNameInput');
   var nameVal = inp ? inp.value.trim() : '';
   var previewImg = document.getElementById('avPreviewImg');
