@@ -113,7 +113,7 @@ function loadPlayerData() {
       selectedAvatarId = playerData.avatarId || 'luffy';
       updateHeaderAvatar();
       loadProgress();
-      return true;
+      return false; // pas d'auto-avance
     }
   } catch(e) {}
   return false;

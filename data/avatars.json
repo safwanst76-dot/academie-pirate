@@ -6,84 +6,84 @@
       "name": "Luffy",
       "color": "#e63946",
       "quote": "Je serai Roi des Pirates !",
-      "img": "https://cdn.myanimelist.net/images/characters/9/310307.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjZTYzOTQ2Ii8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4+04oCN4pig77iPPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "zoro",
       "name": "Zoro",
       "color": "#22c55e",
       "quote": "Je ne me perdrai jamais !",
-      "img": "https://cdn.myanimelist.net/images/characters/3/100534.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjMjJjNTVlIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7impTvuI88L3RleHQ+PC9zdmc+"
     },
     {
       "id": "nami",
       "name": "Nami",
       "color": "#f59e0b",
       "quote": "L'argent ET la grammaire !",
-      "img": "https://cdn.myanimelist.net/images/characters/2/69389.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjZjU5ZTBiIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5e677iPPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "usopp",
       "name": "Usopp",
       "color": "#92400e",
       "quote": "J'ai 8000 hommes !",
-      "img": "https://cdn.myanimelist.net/images/characters/9/69387.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjOTI0MDBlIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn46vPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "sanji",
       "name": "Sanji",
       "color": "#3b82f6",
       "quote": "Pour mes Nakamas !",
-      "img": "https://cdn.myanimelist.net/images/characters/8/69390.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjM2I4MmY2Ii8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5SlPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "chopper",
       "name": "Chopper",
       "color": "#ec4899",
       "quote": "Je ne suis pas content !",
-      "img": "https://cdn.myanimelist.net/images/characters/7/69391.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjZWM0ODk5Ii8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn6aMPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "robin",
       "name": "Robin",
       "color": "#8b5cf6",
       "quote": "La connaissance est une arme.",
-      "img": "https://cdn.myanimelist.net/images/characters/6/69392.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjOGI1Y2Y2Ii8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5OWPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "brook",
       "name": "Brook",
       "color": "#6366f1",
       "quote": "Yohohoho ! Puis-je voir ?",
-      "img": "https://cdn.myanimelist.net/images/characters/4/69389.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjNjM2NmYxIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn461PC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "ace",
       "name": "Ace",
       "color": "#f97316",
       "quote": "Je ne regrette rien !",
-      "img": "https://cdn.myanimelist.net/images/characters/5/284121.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjZjk3MzE2Ii8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4yLPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "shanks",
       "name": "Shanks",
       "color": "#dc2626",
       "quote": "Je mise sur toi !",
-      "img": "https://cdn.myanimelist.net/images/characters/3/99170.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjZGMyNjI2Ii8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn426PC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "law",
       "name": "Law",
       "color": "#0ea5e9",
       "quote": "Room. Shambles !",
-      "img": "https://cdn.myanimelist.net/images/characters/2/236545.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjMGVhNWU5Ii8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5KKPC90ZXh0Pjwvc3ZnPg=="
     },
     {
       "id": "hancock",
       "name": "Hancock",
       "color": "#f43f5e",
       "quote": "L'amour est invincible !",
-      "img": "https://cdn.myanimelist.net/images/characters/3/91667.jpg"
+      "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjUwIiBmaWxsPSIjZjQzZjVlIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LXNpemU9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn5KYPC90ZXh0Pjwvc3ZnPg=="
     }
   ]
 }
