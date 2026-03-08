@@ -586,6 +586,59 @@ header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;back
 .boss-hp-lbl{font-size:.6rem;font-family:'Nunito',sans-serif;font-weight:800;
   color:rgba(255,255,255,.6);white-space:nowrap;}
 
+
+/* ═══ RESPONSIVE MOBILE FIRST ═══ */
+* { box-sizing: border-box; }
+
+/* Mobile base (< 480px) */
+.av-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
+.av-char img { width: 44px !important; height: 44px !important; }
+.av-start-btn { font-size: 1.2rem !important; padding: 12px 24px !important; width: 100%; }
+.av-name-input { font-size: 1rem !important; }
+.av-title { font-size: clamp(1.8rem, 7vw, 4rem) !important; }
+.av-selected-preview { flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+
+#avatar-screen { padding: 16px !important; gap: 14px !important; }
+.av-name-wrap { width: 100% !important; max-width: 100% !important; }
+
+/* Header responsive */
+header { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
+.hud { flex-wrap: wrap; gap: 4px; }
+.hud-pill { font-size: 0.65rem; padding: 2px 6px; }
+
+/* Map responsive */
+#map-sec { padding: 12px 8px !important; }
+.map-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+@media(min-width: 600px) {
+  .map-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .av-grid { grid-template-columns: repeat(4, 1fr) !important; }
+}
+@media(min-width: 900px) {
+  .map-grid { grid-template-columns: repeat(4, 1fr) !important; }
+  .av-grid { grid-template-columns: repeat(6, 1fr) !important; }
+}
+
+/* Quiz responsive */
+#quiz-sec { padding: 10px 8px !important; }
+.q-card { padding: 12px !important; }
+.char-panel { flex-direction: column; align-items: flex-start; gap: 8px; }
+@media(min-width: 500px) {
+  .char-panel { flex-direction: row; }
+}
+
+/* Cine scene responsive */
+.cine-bubble { font-size: clamp(0.7rem, 2.5vw, 1rem) !important; }
+#cineBottom { padding: 8px 12px !important; gap: 8px !important; }
+#cineBottom .btn { font-size: clamp(0.8rem, 3vw, 1rem) !important; padding: 8px 16px !important; }
+
+/* Sound bar responsive */
+#sound-bar { flex-wrap: wrap; gap: 6px; padding: 6px 10px; }
+.snd-btn { font-size: 0.7rem !important; padding: 4px 8px !important; }
+
+/* Boss banner responsive */
+.boss-banner { flex-wrap: wrap; gap: 8px; }
+.boss-banner-img { width: 40px !important; height: 40px !important; }
+
 </style>
 </head>
 <body>
@@ -1825,6 +1878,51 @@ const AVATARS = [
   var quoteEl = document.getElementById('avPreviewQuote');
   if(quoteEl) quoteEl.textContent = av.quote;
 }
+function buildAvatarGrid(){
+  var grid = document.getElementById('avGrid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  AVATARS.forEach(function(av){
+    var div = document.createElement('div');
+    div.className = 'av-char' + (av.id === selectedAvatarId ? ' selected' : '');
+    div.onclick = (function(id){ return function(){ selectAvatar(id); }; })(av.id);
+    var img = document.createElement('img');
+    img.alt = av.name;
+    img.src = av.img;
+    img.onerror = function(){ this.style.opacity='0.3'; };
+    var nameDiv = document.createElement('div');
+    nameDiv.className = 'av-char-name';
+    nameDiv.textContent = av.name;
+    div.appendChild(img);
+    div.appendChild(nameDiv);
+    grid.appendChild(div);
+  });
+}
+
+function selectAvatar(id){
+  selectedAvatarId = id;
+  document.querySelectorAll('.av-char').forEach(function(el){
+    var nm = el.querySelector('.av-char-name');
+    var av = AVATARS.find(function(a){ return a.id===id; });
+    el.classList.toggle('selected', !!(nm && av && nm.textContent === av.name));
+  });
+  updateAvatarPreview();
+}
+
+function updateAvatarPreview(){
+  var av = AVATARS.find(function(a){ return a.id===selectedAvatarId; }) || AVATARS[0];
+  var inp = document.getElementById('avNameInput');
+  var nameVal = inp ? inp.value.trim() : '';
+  var previewImg = document.getElementById('avPreviewImg');
+  if(previewImg){ previewImg.src = av.img || ''; }
+  var nameEl = document.getElementById('avPreviewName');
+  if(nameEl) nameEl.textContent = nameVal || 'Ton nom ici';
+  var charEl = document.getElementById('avPreviewChar');
+  if(charEl) charEl.textContent = 'Personnage : ' + av.name;
+  var quoteEl = document.getElementById('avPreviewQuote');
+  if(quoteEl) quoteEl.textContent = av.quote;
+}
+
 function startAdventure(){
   var av = AVATARS.find(function(a){ return a.id===selectedAvatarId; }) || AVATARS[0];
   var inp = document.getElementById('avNameInput');
