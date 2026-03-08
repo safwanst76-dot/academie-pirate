@@ -1796,7 +1796,7 @@ const AVATARS = [
   {id:'sanji',  name:'Sanji',   color:'#3b82f6', quote:"Pour mes Nakamas !",
    img:'https://cdn.myanimelist.net/images/characters/8/69390.jpg',
    jikan:'https://api.jikan.moe/v4/characters/725'},
-  {id:'chopper',name:'Chopper', color:'#ec4899', quote:"Je suis pas content !",
+  {id:'chopper',name:'Chopper', color:'#ec4899', quote:"Je ne suis pas content !",
    img:'https://cdn.myanimelist.net/images/characters/7/69391.jpg',
    jikan:'https://api.jikan.moe/v4/characters/726'},
   {id:'robin',  name:'Robin',   color:'#8b5cf6', quote:"La connaissance est une arme.",
@@ -1817,7 +1817,7 @@ const AVATARS = [
   {id:'hancock',name:'Hancock', color:'#f43f5e', quote:"L'amour est invincible !",
    img:'https://cdn.myanimelist.net/images/characters/3/91667.jpg',
    jikan:'https://api.jikan.moe/v4/characters/3645'},
-];
+]
 
 // Fallback images depuis Wikimedia si MAL ne charge pas
 const AVATAR_FALLBACKS = {
@@ -1830,56 +1830,66 @@ let playerName = '';
 let playerData = {name:'Pirate', avatarId:'luffy', avatarImg:''};
 
 function buildAvatarGrid(){
-  const grid = document.getElementById('avGrid');
+  var grid = document.getElementById('avGrid');
   if(!grid) return;
   grid.innerHTML = '';
-  AVATARS.forEach(av => {
-    const div = document.createElement('div');
+  AVATARS.forEach(function(av){
+    var div = document.createElement('div');
     div.className = 'av-char' + (av.id === selectedAvatarId ? ' selected' : '');
-    div.onclick = () => selectAvatar(av.id);
-    div.innerHTML = `
-      <img src="${av.img}" alt="${av.name}"
-        onerror="this.src='https://i.imgur.com/KuFrBwL.png'">
-      <div class="av-char-name">${av.name}</div>
-    `;
+    div.onclick = (function(id){ return function(){ selectAvatar(id); }; })(av.id);
+    var img = document.createElement('img');
+    img.alt = av.name;
+    img.src = av.img;
+    img.onerror = (function(a, el){
+      return function(){
+        fetch(a.jikan + '/pictures')
+          .then(function(r){ return r.json(); })
+          .then(function(d){ if(d.data&&d.data[0]){ el.src=d.data[0].jpg.image_url; a.img=d.data[0].jpg.image_url; } })
+          .catch(function(){ el.style.opacity='0.3'; });
+      };
+    })(av, img);
+    var nameDiv = document.createElement('div');
+    nameDiv.className = 'av-char-name';
+    nameDiv.textContent = av.name;
+    div.appendChild(img);
+    div.appendChild(nameDiv);
     grid.appendChild(div);
   });
 }
-
 function selectAvatar(id){
   selectedAvatarId = id;
-  document.querySelectorAll('.av-char').forEach(el => {
-    el.classList.toggle('selected', el.querySelector('.av-char-name').textContent === 
-      AVATARS.find(a=>a.id===id)?.name);
+  document.querySelectorAll('.av-char').forEach(function(el){
+    var nm = el.querySelector('.av-char-name');
+    var av = AVATARS.find(function(a){ return a.id===id; });
+    el.classList.toggle('selected', !!(nm && av && nm.textContent === av.name));
   });
   updateAvatarPreview();
 }
-
 function updateAvatarPreview(){
-  const av = AVATARS.find(a => a.id === selectedAvatarId) || AVATARS[0];
-  const nameVal = (document.getElementById('avNameInput')?.value||'').trim();
-  const previewImg = document.getElementById('avPreviewImg');
+  var av = AVATARS.find(function(a){ return a.id===selectedAvatarId; }) || AVATARS[0];
+  var inp = document.getElementById('avNameInput');
+  var nameVal = inp ? inp.value.trim() : '';
+  var previewImg = document.getElementById('avPreviewImg');
   if(previewImg){
     previewImg.src = av.img || '';
-    previewImg.onerror = async () => {
-      try{
-        const r = await fetch(av.jikan + '/pictures');
-        const d = await r.json();
-        if(d.data && d.data[0]) { previewImg.src = d.data[0].jpg.image_url; av.img = d.data[0].jpg.image_url; }
-      }catch(e){ previewImg.src = ''; }
+    previewImg.onerror = function(){
+      fetch(av.jikan + '/pictures')
+        .then(function(r){ return r.json(); })
+        .then(function(d){ if(d.data&&d.data[0]){ previewImg.src=d.data[0].jpg.image_url; av.img=d.data[0].jpg.image_url; } })
+        .catch(function(){});
     };
   }
-  const nameEl = document.getElementById('avPreviewName');
+  var nameEl = document.getElementById('avPreviewName');
   if(nameEl) nameEl.textContent = nameVal || 'Ton nom ici';
-  const charEl = document.getElementById('avPreviewChar');
+  var charEl = document.getElementById('avPreviewChar');
   if(charEl) charEl.textContent = 'Personnage : ' + av.name;
-  const quoteEl = document.getElementById('avPreviewQuote');
+  var quoteEl = document.getElementById('avPreviewQuote');
   if(quoteEl) quoteEl.textContent = av.quote;
 }
-
 function startAdventure(){
-  const av = AVATARS.find(a => a.id === selectedAvatarId) || AVATARS[0];
-  const nameVal = (document.getElementById('avNameInput')?.value||'').trim();
+  var av = AVATARS.find(function(a){ return a.id===selectedAvatarId; }) || AVATARS[0];
+  var inp = document.getElementById('avNameInput');
+  var nameVal = inp ? inp.value.trim() : '';
   playerData = {
     name: nameVal || 'Pirate',
     avatarId: av.id,
@@ -1889,17 +1899,12 @@ function startAdventure(){
     charName: av.name
   };
   playerName = playerData.name;
-  // Sauvegarder
   try { localStorage.setItem('ap_player', JSON.stringify(playerData)); } catch(e){}
-  // Mettre à jour le header
   updateHeaderAvatar();
-  // Fermer l'écran
-  const screen = document.getElementById('avatar-screen');
-  screen.classList.add('gone');
-  // Petite fanfare de démarrage
-  setTimeout(() => sfxCineVictory(), 300);
+  var screen = document.getElementById('avatar-screen');
+  if(screen) screen.classList.add('gone');
+  setTimeout(function(){ sfxCineVictory(); }, 300);
 }
-
 function showAvatarScreen(){
   const screen = document.getElementById('avatar-screen');
   screen.classList.remove('gone');
