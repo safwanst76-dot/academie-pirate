@@ -6,7 +6,6 @@
 async function showChildSelect() {
   const children = await dbGetChildren();
 
-  // Créer l'overlay
   let overlay = document.getElementById('child-select-overlay');
   if (!overlay) {
     overlay = document.createElement('div');
@@ -69,8 +68,6 @@ async function showChildSelect() {
   }
 
   overlay.classList.add('visible');
-
-  // Position sous le header
   if (typeof positionLoginScreen === 'function') positionLoginScreen();
 }
 
@@ -80,7 +77,6 @@ function hideChildSelect() {
 }
 
 async function selectChild(childId, childObj) {
-  // Si child passé en string (depuis HTML onclick)
   const child = typeof childObj === 'string' ? JSON.parse(childObj) : childObj;
   dbSetActiveChild(child);
   hideChildSelect();
@@ -91,6 +87,9 @@ async function selectChild(childId, childObj) {
     await dbMigrateLocalStorage(childId);
     sessionStorage.setItem('migrated_' + childId, '1');
   }
+
+  // ── Charger la progression de CET enfant depuis la DB ──
+  if (typeof loadProgress === 'function') await loadProgress();
 
   navigateTo('carte');
 }
