@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>☠️ Académie Pirate — One Piece Quiz</title>
 <link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/login.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
@@ -652,12 +653,55 @@ header { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
 .av-char.selected img{border:3px solid var(--gold2)!important;box-shadow:0 0 12px var(--gold2)}
 .av-char-name{font-size:.6rem!important;text-align:center;color:rgba(255,255,255,.7);margin-top:3px}
 #avGrid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:10px}
-
 </style>
-</head>
 <body>
 
 <!-- ═══ AVATAR SELECTION SCREEN ═══ -->
+
+<div id="login-screen">
+
+  <!-- GIF animé One Piece (aléatoire) -->
+  <div class="login-gif-wrap">
+    <img class="login-gif" id="loginGif" src="" alt="One Piece">
+  </div>
+
+  <div class="login-title">🏴‍☠️ ACADÉMIE PIRATE</div>
+  <div class="login-subtitle">Rejoins l'équipage !</div>
+
+  <!-- Formulaire -->
+  <div class="login-card">
+
+    <!-- Étape 1 : saisie email -->
+    <div id="loginStep1">
+      <div class="login-label">⚓ Ton email de pirate</div>
+      <input class="login-input" id="loginEmail" type="email"
+        placeholder="ex: luffy@grandbleu.com" maxlength="80">
+      <button class="login-btn" onclick="sbSendMagicLink()">
+        🚀 ENVOYER LE LIEN MAGIQUE !
+      </button>
+      <div class="login-hint">Tu recevras un lien par email pour te connecter — pas de mot de passe !</div>
+    </div>
+
+    <!-- Étape 2 : confirmation envoi -->
+    <div id="loginStep2" style="display:none">
+      <div class="login-success-icon">📬</div>
+      <div class="login-success-title">Lien envoyé !</div>
+      <div class="login-success-text">
+        Vérifie ta boîte mail et clique sur le lien pour rejoindre l'équipage !
+      </div>
+      <button class="login-btn-outline" onclick="showLoginStep1()">
+        ← Changer d'email
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Jouer sans compte -->
+  <button class="login-skip" onclick="skipLogin()">
+    Jouer sans compte →
+  </button>
+
+</div>
 <div id="avatar-screen">
   <div class="av-title">🏴‍☠️ ACADÉMIE PIRATE</div>
   <div class="av-subtitle">Crée ton identité de pirate !</div>
@@ -2183,5 +2227,6 @@ init();
 var WEBAPP_URL='';
 </script>
 <script src="js/audio-engine.js"></script>
+    
 </body>
 </html>

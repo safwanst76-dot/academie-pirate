@@ -139,4 +139,126 @@ async function sbInit() {
 }
 
 // Lancer au démarrage
+document.addEventListener('DOMContentLoaded', sbInit);const LOGIN_GIFS = [
+  "https://media.giphy.com/media/SJXzadwbexJEAZ9S1B/giphy.gif",
+  "https://media.giphy.com/media/9VnXVHOIJgwnfNTK7Q/giphy.gif",
+  "https://media.giphy.com/media/2i4xbkUhHrOuY/giphy.gif",
+  "https://media.giphy.com/media/IjqnkYbnr6aHe/giphy.gif",
+];
+document.addEventListener("DOMContentLoaded", function() {
+  var gifEl = document.getElementById("loginGif");
+  if (gifEl) gifEl.src = LOGIN_GIFS[Math.floor(Math.random() * LOGIN_GIFS.length)];
+});
+
+
+// ── Afficher/cacher les étapes du login ──
+function showLoginStep1() {
+  document.getElementById('loginStep1').style.display = 'flex';
+  document.getElementById('loginStep1').style.flexDirection = 'column';
+  document.getElementById('loginStep1').style.gap = '14px';
+  document.getElementById('loginStep2').style.display = 'none';
+}
+
+// ── Envoyer le magic link ──
+async function sbSendMagicLink() {
+  const email = document.getElementById('loginEmail').value.trim();
+  if (!email || !email.includes('@')) {
+    showToast('⚠️ Entre un email valide !'); return;
+  }
+  const btn = document.querySelector('.login-btn');
+  btn.textContent = '⏳ Envoi en cours…'; btn.disabled = true;
+
+  const { error } = await sb.auth.signInWithOtp({
+    email: email,
+    options: {
+      emailRedirectTo: window.location.href
+    }
+  });
+
+  btn.disabled = false; btn.textContent = '🚀 ENVOYER LE LIEN MAGIQUE !';
+
+  if (error) { showToast('❌ ' + error.message); return; }
+
+  // Afficher confirmation
+  document.getElementById('loginStep1').style.display = 'none';
+  document.getElementById('loginStep2').style.display = 'flex';
+  document.getElementById('loginStep2').style.flexDirection = 'column';
+  document.getElementById('loginStep2').style.gap = '14px';
+  document.getElementById('loginStep2').style.alignItems = 'center';
+}
+
+// ── Jouer sans compte (mode invité) ──
+function skipLogin() {
+  document.getElementById('login-screen').classList.add('gone');
+  // Afficher l'écran avatar comme avant
+  var avatarScreen = document.getElementById('avatar-screen');
+  if (avatarScreen) avatarScreen.classList.remove('gone');
+}
+
+// ── Init Supabase au chargement ──
+async function sbInit() {
+  // Écouter les changements de session (retour depuis magic link)
+  sb.auth.onAuthStateChange(async (event, session) => {
+    if (event === 'SIGNED_IN' && session) {
+      await handleSignedIn(session.user);
+    }
+  });
+
+  // Vérifier si déjà connecté
+  const user = await sbGetUser();
+  if (user) {
+    await handleSignedIn(user);
+    return;
+  }
+
+  // Sinon afficher le login
+  document.getElementById('login-screen').classList.remove('gone');
+}
+
+// ── Gérer l'utilisateur connecté ──
+async function handleSignedIn(user) {
+  // Masquer login
+  document.getElementById('login-screen').classList.add('gone');
+
+  // Récupérer ou créer le profil
+  let profile = await sbGetProfile(user.id);
+  if (!profile) {
+    // Nouvel utilisateur → créer profil
+    await sb.from('profiles').insert({
+      id: user.id,
+      username: user.email.split('@')[0],
+      avatar_id: 'luffy'
+    });
+    profile = { username: user.email.split('@')[0], avatar_id: 'luffy' };
+    // Afficher l'écran avatar pour choisir son perso
+    var avatarScreen = document.getElementById('avatar-screen');
+    if (avatarScreen) avatarScreen.classList.remove('gone');
+  } else {
+    // Utilisateur connu → charger ses données
+    playerData = {
+      name: profile.username || 'Pirate',
+      avatarId: profile.avatar_id || 'luffy',
+      avatarImg: 'assets/images/avatars/' + (profile.avatar_id || 'luffy') + '.png',
+      avatarColor: '#e63946', avatarQuote: '', charName: profile.avatar_id || 'Luffy'
+    };
+    playerName = playerData.name;
+    updateHeaderAvatar();
+    showToast('🏴‍☠️ Bon retour ' + playerData.name + ' !');
+
+    // Charger progression depuis Supabase
+    const prog = await sbLoadProgression();
+    if (prog && prog.length > 0) {
+      prog.forEach(p => {
+        try {
+          let local = JSON.parse(localStorage.getItem(progressKey()) || '{}');
+          local['isle_' + p.isle_id] = { xp: p.xp, completed: p.completed };
+          localStorage.setItem(progressKey(), JSON.stringify(local));
+        } catch(e) {}
+      });
+    }
+  }
+}
+
+// Lancer au démarrage
 document.addEventListener('DOMContentLoaded', sbInit);
+
