@@ -259,6 +259,11 @@ function updateNavActive() {
 // INIT
 // ══════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
+  // Bloquer le router si Supabase traite un magic link
+  if (window.location.hash.includes("access_token")) {
+    console.log("🔑 Magic link détecté — router suspendu");
+    return;
+  }
   // Construire la navbar (visible seulement quand connecté)
   buildNavBar();
 

@@ -98,6 +98,10 @@ function skipLogin() {
 // ═══════════════════════════════════════
 
 async function sbInit() {
+  // Laisser Supabase traiter le token dans lURL avant tout
+  if (window.location.hash.includes("access_token")) {
+    await new Promise(r => setTimeout(r, 800));
+  }
   sb.auth.onAuthStateChange(async (event, session) => {
     if (event === 'SIGNED_IN' && session) {
       await handleSignedIn(session.user);
