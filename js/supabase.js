@@ -171,7 +171,7 @@ async function sbSendMagicLink() {
   const { error } = await sb.auth.signInWithOtp({
     email: email,
     options: {
-      emailRedirectTo: window.location.href
+      emailRedirectTo: "https://safwanst76-dot.github.io/academie-pirate"
     }
   });
 
