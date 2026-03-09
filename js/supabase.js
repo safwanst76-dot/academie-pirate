@@ -190,9 +190,10 @@ async function sbSendMagicLink() {
 // ── Jouer sans compte (mode invité) ──
 function skipLogin() {
   document.getElementById('login-screen').classList.add('gone');
+  document.getElementById('pirate-nav')?.classList.add('visible');;
   // Afficher l'écran avatar comme avant
   var avatarScreen = document.getElementById('avatar-screen');
-  if (avatarScreen) avatarScreen.classList.remove('gone');
+  if (avatarScreen) avatarScreen.classList.remove('gone'); navigateTo('carte');;
 }
 
 // ── Init Supabase au chargement ──
@@ -219,6 +220,7 @@ async function sbInit() {
 async function handleSignedIn(user) {
   // Masquer login
   document.getElementById('login-screen').classList.add('gone');
+  document.getElementById('pirate-nav')?.classList.add('visible');;
 
   // Récupérer ou créer le profil
   let profile = await sbGetProfile(user.id);
@@ -232,7 +234,7 @@ async function handleSignedIn(user) {
     profile = { username: user.email.split('@')[0], avatar_id: 'luffy' };
     // Afficher l'écran avatar pour choisir son perso
     var avatarScreen = document.getElementById('avatar-screen');
-    if (avatarScreen) avatarScreen.classList.remove('gone');
+    if (avatarScreen) avatarScreen.classList.remove('gone'); navigateTo('carte');;
   } else {
     // Utilisateur connu → charger ses données
     playerData = {
