@@ -136,6 +136,7 @@ async function sbInit() {
 
   updateHeaderAvatar();
   showToast('🏴‍☠️ Bon retour ' + playerData.name + ' !');
+    showChildSelect();
 }
 
 // Lancer au démarrage
@@ -246,6 +247,7 @@ async function handleSignedIn(user) {
     playerName = playerData.name;
     updateHeaderAvatar();
     showToast('🏴‍☠️ Bon retour ' + playerData.name + ' !');
+    showChildSelect();
 
     // Charger progression depuis Supabase
     const prog = await sbLoadProgression();

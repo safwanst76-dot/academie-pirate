@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════════════════════
+   child-select.css — Écran sélection profil enfant
+   ═══════════════════════════════════════════════════════════ */
+
+#child-select-overlay {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px 16px 40px;
+}
+#child-select-overlay.visible { display: flex; }
+
+.cs-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.cs-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
+  letter-spacing: 4px;
+  text-align: center;
+  background: linear-gradient(135deg, #f97316, #ffd700, #e63946);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cs-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: .85rem;
+  color: rgba(255,255,255,.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -12px;
+}
+
+/* ── Grille profils ── */
+.cs-profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.cs-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 10px;
+  border-radius: 16px;
+  border: 2px solid rgba(255,215,0,.15);
+  background: rgba(0,0,0,.55);
+  cursor: pointer;
+  transition: all .2s;
+}
+.cs-profile:hover {
+  border-color: rgba(255,215,0,.5);
+  transform: translateY(-4px);
+  background: rgba(255,215,0,.08);
+}
+
+.cs-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,215,0,.3);
+  background: rgba(255,255,255,.05);
+  position: relative;
+}
+.cs-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.cs-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.cs-avatar-add {
+  background: rgba(255,215,0,.1);
+  border-color: rgba(255,215,0,.3);
+  border-style: dashed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgba(255,215,0,.6);
+}
+
+.cs-name {
+  font-family: 'Bangers', cursive;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+.cs-xp {
+  font-family: 'Nunito', sans-serif;
+  font-size: .7rem;
+  font-weight: 700;
+  color: rgba(255,215,0,.7);
+  text-align: center;
+}
+
+/* ── Formulaire ajout enfant ── */
+.cs-form {
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 360px;
+  background: rgba(0,0,0,.7);
+  border: 2px solid rgba(255,215,0,.2);
+  border-radius: 20px;
+  padding: 24px 20px;
+}
+.cs-form-title {
+  font-family: 'Bangers', cursive;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #ffd700;
+}
+.cs-input {
+  background: rgba(255,255,255,.07);
+  border: 2px solid rgba(255,215,0,.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.cs-input:focus { border-color: rgba(255,215,0,.7); }
+.cs-input.shake { animation: shake .4s; }
+@keyframes shake {
+  0%,100%{transform:translateX(0)} 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)}
+}
+
+/* ── Avatar picker ── */
+.cs-avatar-pick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+.cs-av-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  background: rgba(255,255,255,.05);
+}
+.cs-av-opt:hover { border-color: rgba(255,215,0,.4); }
+.cs-av-opt.selected { border-color: #ffd700; background: rgba(255,215,0,.1); }
+.cs-av-opt img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+.cs-av-opt span {
+  font-family: 'Nunito', sans-serif;
+  font-size: .6rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.6);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── Boutons ── */
+.cs-btn-create {
+  font-family: 'Bangers', cursive;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 12px 24px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #e63946, #f97316);
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.5);
+  box-shadow: 0 4px 20px rgba(230,57,70,.4);
+  transition: all .2s;
+  width: 100%;
+}
+.cs-btn-create:hover { transform: scale(1.03); filter: brightness(1.1); }
+.cs-btn-create:disabled { opacity: .5; transform: none; }
+
+.cs-btn-cancel {
+  background: none;
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.5);
+  font-family: 'Nunito', sans-serif;
+  font-size: .85rem;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.cs-btn-cancel:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+
+.cs-logout {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.3);
+  font-family: 'Nunito', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: color .2s;
+  margin-top: 8px;
+}
+.cs-logout:hover { color: rgba(255,255,255,.7); }
