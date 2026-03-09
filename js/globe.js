@@ -1,349 +1,397 @@
 // ═══════════════════════════════════════════════════════
-// CARTE AU TRÉSOR — Académie Pirate
-// Continents style carte ancienne réaliste
+// CARTE AU TRÉSOR v4 — Style parchemin pirate
+// Fond beige/doré usé + continents + décos One Piece
 // ═══════════════════════════════════════════════════════
 
 const CONTINENTS = [
   {
     id: 'french', name: 'Grand Bleu', subject: 'Français', universe: 'One Piece',
-    emoji: '🏴‍☠️', color: '#e63946',
-    chars: ['Nami', 'Luffy', 'Robin'], charColors: ['#f59e0b','#e63946','#6366f1'],
+    emoji: '🏴‍☠️', color: '#c0392b', fillColor: '#c8774a',
+    chars: ['Nami','Luffy','Robin'], charColors: ['#f59e0b','#e63946','#6366f1'],
     desc: "Maîtrise la grammaire avec l'équipage Chapeau de Paille !",
     locked: false,
-    // Amérique (Nord+Sud)
-    path: `M 82,48 C 88,42 102,40 114,44 C 126,48 132,56 134,66
-           C 136,76 130,84 138,92 C 146,100 148,110 144,120
-           C 140,130 130,138 128,150 C 126,162 132,172 128,182
-           C 124,192 112,198 104,194 C 96,190 90,180 88,168
-           C 86,156 90,144 86,132 C 82,120 72,114 70,102
-           C 68,90 74,78 82,48 Z
-           M 104,202 C 110,198 120,200 124,208 C 128,216 124,228 118,236
-           C 112,244 102,248 96,242 C 90,236 92,224 96,214
-           C 98,208 100,204 104,202 Z`,
-    labelX: 104, labelY: 110, subX: 104, subY: 124, emojiX: 88, emojiY: 62,
+    // Amériques
+    path: `M85,35 C90,28 102,26 110,30 C118,34 121,44 120,52 C124,57 129,62 130,70
+           C131,78 127,87 122,93 C127,99 130,108 127,116 C124,124 115,128 111,136
+           C114,143 113,153 108,160 C103,167 95,170 91,177 C88,184 89,194 85,201
+           C81,208 73,212 69,219 C65,226 64,236 60,243 C56,250 48,254 45,261
+           C42,268 44,277 40,283 C36,289 28,291 25,287 C22,283 24,275 27,269
+           C23,263 21,254 24,247 C27,240 34,236 36,230 C33,223 32,214 35,207
+           C38,200 45,196 48,189 C45,182 43,173 46,166 C49,159 56,155 59,148
+           C62,141 62,131 67,125 C72,119 80,116 84,110 C88,104 87,94 90,88
+           C86,82 83,74 86,67 C89,60 88,48 85,35Z
+           M28,295 C32,290 39,289 43,293 C47,297 47,306 43,310
+           C39,314 32,312 29,308 C26,304 26,298 28,295Z`,
+    labelX: 80, labelY: 125, subX: 80, subY: 138, emojiX: 64, emojiY: 50,
   },
   {
     id: 'math', name: 'Pays du Feu', subject: 'Maths', universe: 'Naruto',
-    emoji: '⚔️', color: '#ff6b35',
+    emoji: '⚔️', color: '#8B4513', fillColor: '#c8a96e',
     chars: ['Sakura','Naruto','Tsunade'], charColors: ['#ec4899','#f97316','#eab308'],
     desc: 'Entraîne-toi aux calculs comme un vrai ninja !',
     locked: true,
     // Europe
-    path: `M 268,52 C 276,46 288,44 298,48 C 308,52 314,62 318,72
-           C 322,82 320,94 316,102 C 312,110 304,116 310,124
-           C 316,132 320,142 316,150 C 312,158 300,162 290,158
-           C 280,154 274,144 272,132 C 270,120 274,108 270,98
-           C 266,88 258,80 260,68 C 262,58 264,54 268,52 Z
-           M 296,52 C 304,46 318,44 326,50 C 334,56 332,68 326,72
-           C 320,76 310,72 304,66 C 298,60 294,54 296,52 Z`,
-    labelX: 293, labelY: 104, subX: 293, subY: 118, emojiX: 278, emojiY: 66,
+    path: `M245,42 C250,36 260,34 268,38 C276,42 279,52 277,60
+           C281,65 287,69 287,76 C287,83 282,90 278,95
+           C282,99 285,106 282,113 C279,120 271,124 265,121
+           C268,128 267,136 262,141 C257,146 249,147 244,142
+           C239,137 239,129 242,123 C237,118 233,111 235,104
+           C232,98 228,90 230,83 C232,76 239,72 243,66
+           C239,60 236,52 239,46 C241,40 244,42 245,42Z
+           M266,40 C271,34 281,33 286,39 C291,45 289,56 283,60
+           C277,64 270,60 267,54 C264,48 264,43 266,40Z`,
+    labelX: 260, labelY: 95, subX: 260, subY: 108, emojiX: 244, emojiY: 52,
   },
   {
     id: 'history', name: 'Magnolia', subject: 'Histoire', universe: 'Fairy Tail',
-    emoji: '✨', color: '#8b5cf6',
+    emoji: '✨', color: '#6B3FA0', fillColor: '#b8a0d8',
     chars: ['Erza','Lucy','Wendy'], charColors: ['#ef4444','#eab308','#3b82f6'],
     desc: 'Voyage dans le temps avec la guilde Fairy Tail !',
     locked: true,
     // Afrique
-    path: `M 310,168 C 320,160 336,158 348,164 C 360,170 366,184 366,198
-           C 366,212 360,226 366,238 C 372,250 374,264 368,276
-           C 362,288 348,296 336,292 C 324,288 316,276 312,262
-           C 308,248 310,232 308,218 C 306,204 304,192 310,168 Z`,
-    labelX: 337, labelY: 228, subX: 337, subY: 242, emojiX: 322, emojiY: 178,
+    path: `M278,150 C284,143 295,140 304,144 C313,148 318,159 318,169
+           C323,176 329,182 329,191 C329,200 323,208 321,217
+           C325,225 326,235 322,244 C318,253 309,258 303,256
+           C297,265 291,272 284,270 C277,268 273,260 271,251
+           C267,243 265,234 267,225 C264,217 260,208 262,199
+           C264,190 270,184 273,175 C270,167 268,157 272,150 C273,147 276,150 278,150Z`,
+    labelX: 295, labelY: 210, subX: 295, subY: 223, emojiX: 280, emojiY: 158,
   },
   {
     id: 'science', name: 'Kanto', subject: 'Sciences', universe: 'Pokémon',
-    emoji: '🌿', color: '#22c55e',
+    emoji: '🌿', color: '#1a6b35', fillColor: '#7ab87a',
     chars: ['Misty','Dawn','May'], charColors: ['#ef4444','#3b82f6','#ec4899'],
     desc: 'Explore la nature et les créatures avec tes Pokémon !',
     locked: true,
     // Asie
-    path: `M 420,44 C 436,36 460,34 478,42 C 496,50 506,66 510,84
-           C 514,102 508,120 514,136 C 520,152 524,168 516,180
-           C 508,192 490,198 472,196 C 454,194 438,184 428,170
-           C 418,156 416,138 420,122 C 424,106 432,94 428,78
-           C 424,64 416,50 420,44 Z
-           M 490,60 C 500,54 514,54 520,62 C 526,70 522,82 514,86
-           C 506,90 496,86 492,78 C 488,70 486,64 490,60 Z
-           M 508,100 C 518,96 530,98 534,106 C 538,114 532,124 524,126
-           C 516,128 508,122 506,114 C 504,108 504,102 508,100 Z`,
-    labelX: 472, labelY: 122, subX: 472, subY: 136, emojiX: 454, emojiY: 56,
+    path: `M358,32 C367,25 382,23 395,30 C408,37 415,51 417,65
+           C423,71 431,77 433,86 C435,95 430,106 424,113
+           C429,120 432,130 429,139 C426,148 416,153 409,150
+           C412,158 411,168 404,174 C397,180 387,180 381,175
+           C376,182 368,188 360,184 C352,180 349,170 351,161
+           C346,155 340,147 341,138 C337,131 332,122 334,113
+           C330,106 326,97 329,88 C332,79 341,74 346,67
+           C341,60 338,51 342,44 C345,37 354,34 358,32Z
+           M410,34 C417,27 429,27 435,34 C441,41 439,54 432,58
+           C425,62 416,58 413,51 C410,44 408,38 410,34Z
+           M436,80 C443,73 456,73 461,81 C466,89 463,102 455,106
+           C447,110 437,105 434,97 C431,89 431,83 436,80Z`,
+    labelX: 388, labelY: 118, subX: 388, subY: 131, emojiX: 369, emojiY: 44,
   },
   {
     id: 'geography', name: 'Namek', subject: 'Géographie', universe: 'Dragon Ball Z',
-    emoji: '💥', color: '#3b82f6',
+    emoji: '💥', color: '#1a3a8b', fillColor: '#6a9ad4',
     chars: ['Bulma','Android 18','Videl'], charColors: ['#3b82f6','#6366f1','#ec4899'],
     desc: "Parcours l'univers avec Goku et ses amis !",
     locked: true,
-    // Océanie + Antarctique stylisé
-    path: `M 490,222 C 502,214 518,214 528,222 C 538,230 540,246 534,258
-           C 528,270 514,276 502,272 C 490,268 484,254 486,240
-           C 487,232 488,226 490,222 Z
-           M 524,238 C 534,232 548,234 554,244 C 560,254 556,268 546,272
-           C 536,276 524,270 520,260 C 516,250 518,242 524,238 Z`,
-    labelX: 518, labelY: 248, subX: 518, subY: 262, emojiX: 500, emojiY: 228,
+    // Australie
+    path: `M448,202 C457,193 473,191 486,198 C499,205 506,221 503,236
+           C500,251 488,262 476,264 C464,266 451,257 446,244
+           C441,231 441,211 448,202Z
+           M492,185 C499,178 513,178 520,187 C527,196 523,210 515,214
+           C507,218 496,213 493,204 C490,195 487,189 492,185Z
+           M524,218 C530,211 542,211 547,219 C552,227 549,240 541,244
+           C533,248 522,243 520,234 C518,225 520,222 524,218Z`,
+    labelX: 488, labelY: 230, subX: 488, subY: 243, emojiX: 458, emojiY: 208,
   }
 ];
 
 function buildTreasureMap() {
   const container = document.getElementById('globe-container');
   if (!container) return;
-
   container.id = 'treasure-map';
   container.style.cssText = '';
   container.innerHTML = '';
 
   const svgNS = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(svgNS, 'svg');
-  svg.setAttribute('viewBox', '0 0 620 310');
+  svg.setAttribute('viewBox', '0 0 580 320');
   svg.style.cssText = 'width:100%;height:auto;display:block;';
 
-  // ── Defs ──
+  // ── DEFS ──
   const defs = document.createElementNS(svgNS, 'defs');
 
-  // Gradient fond océan
-  const oceanGrad = document.createElementNS(svgNS, 'radialGradient');
-  oceanGrad.id = 'ocean'; oceanGrad.setAttribute('cx','50%'); oceanGrad.setAttribute('cy','50%'); oceanGrad.setAttribute('r','80%');
-  [['0%','#0d1f35'],['60%','#071424'],['100%','#030a12']].forEach(([o,c])=>{
-    const s = document.createElementNS(svgNS,'stop'); s.setAttribute('offset',o); s.setAttribute('stop-color',c); oceanGrad.appendChild(s);
+  // Gradient parchemin fond
+  const pg = document.createElementNS(svgNS,'radialGradient');
+  pg.id='parchment'; pg.setAttribute('cx','50%'); pg.setAttribute('cy','45%'); pg.setAttribute('r','75%');
+  [['0%','#d4b483'],['40%','#c8a55a'],['75%','#b8923a'],['100%','#8B6914']].forEach(([o,c])=>{
+    const s=document.createElementNS(svgNS,'stop'); s.setAttribute('offset',o); s.setAttribute('stop-color',c); pg.appendChild(s);
   });
-  defs.appendChild(oceanGrad);
+  defs.appendChild(pg);
+
+  // Gradient océan (eau sur parchemin = bleu pastel ancien)
+  const og = document.createElementNS(svgNS,'radialGradient');
+  og.id='ocean'; og.setAttribute('cx','40%'); og.setAttribute('cy','40%'); og.setAttribute('r','80%');
+  [['0%','#8ab4c8'],['60%','#6a9ab8'],['100%','#4a7a98']].forEach(([o,c])=>{
+    const s=document.createElementNS(svgNS,'stop'); s.setAttribute('offset',o); s.setAttribute('stop-color',c); og.appendChild(s);
+  });
+  defs.appendChild(og);
 
   // Glow filter
-  const glowF = document.createElementNS(svgNS,'filter'); glowF.id='glow';
-  glowF.setAttribute('x','-30%'); glowF.setAttribute('y','-30%');
-  glowF.setAttribute('width','160%'); glowF.setAttribute('height','160%');
-  const feB = document.createElementNS(svgNS,'feGaussianBlur');
-  feB.setAttribute('stdDeviation','4'); feB.setAttribute('result','blur');
-  const feM = document.createElementNS(svgNS,'feMerge');
-  const n1 = document.createElementNS(svgNS,'feMergeNode'); n1.setAttribute('in','blur');
-  const n2 = document.createElementNS(svgNS,'feMergeNode'); n2.setAttribute('in','SourceGraphic');
-  feM.appendChild(n1); feM.appendChild(n2); glowF.appendChild(feB); glowF.appendChild(feM);
-  defs.appendChild(glowF);
+  const gf=document.createElementNS(svgNS,'filter'); gf.id='glow';
+  gf.setAttribute('x','-30%'); gf.setAttribute('y','-30%'); gf.setAttribute('width','160%'); gf.setAttribute('height','160%');
+  const fb=document.createElementNS(svgNS,'feGaussianBlur'); fb.setAttribute('stdDeviation','4'); fb.setAttribute('result','blur');
+  const fm=document.createElementNS(svgNS,'feMerge');
+  [['blur'],['SourceGraphic']].forEach(([i])=>{
+    const n=document.createElementNS(svgNS,'feMergeNode'); n.setAttribute('in',i); fm.appendChild(n);
+  });
+  gf.appendChild(fb); gf.appendChild(fm); defs.appendChild(gf);
+
+  // Texture hachures continents
+  const pat=document.createElementNS(svgNS,'pattern'); pat.id='relief';
+  pat.setAttribute('patternUnits','userSpaceOnUse'); pat.setAttribute('width','8'); pat.setAttribute('height','8');
+  pat.setAttribute('patternTransform','rotate(30)');
+  const pl=document.createElementNS(svgNS,'line'); pl.setAttribute('x1','0'); pl.setAttribute('y1','0');
+  pl.setAttribute('x2','0'); pl.setAttribute('y2','8'); pl.setAttribute('stroke','rgba(0,0,0,0.08)'); pl.setAttribute('stroke-width','1');
+  pat.appendChild(pl); defs.appendChild(pat);
 
   svg.appendChild(defs);
 
-  // ── Fond océan ──
-  const bg = document.createElementNS(svgNS,'rect');
-  bg.setAttribute('width','620'); bg.setAttribute('height','310');
-  bg.setAttribute('fill','url(#ocean)');
-  svg.appendChild(bg);
+  // ── FOND PARCHEMIN ──
+  const bg=document.createElementNS(svgNS,'rect'); bg.setAttribute('width','580'); bg.setAttribute('height','320');
+  bg.setAttribute('fill','url(#parchment)'); svg.appendChild(bg);
 
-  // ── Grille de navigation ──
-  for(let x=40;x<620;x+=40){
-    const l=document.createElementNS(svgNS,'line');
-    l.setAttribute('x1',x);l.setAttribute('y1',0);l.setAttribute('x2',x);l.setAttribute('y2',310);
-    l.setAttribute('stroke','rgba(100,160,220,0.07)');l.setAttribute('stroke-width','0.5');
-    svg.appendChild(l);
-  }
-  for(let y=40;y<310;y+=40){
-    const l=document.createElementNS(svgNS,'line');
-    l.setAttribute('x1',0);l.setAttribute('y1',y);l.setAttribute('x2',620);l.setAttribute('y2',y);
-    l.setAttribute('stroke','rgba(100,160,220,0.07)');l.setAttribute('stroke-width','0.5');
-    svg.appendChild(l);
-  }
+  // ── OCÉAN (rectangle intérieur légèrement teinté) ──
+  const ocean=document.createElementNS(svgNS,'rect'); ocean.setAttribute('x','12'); ocean.setAttribute('y','12');
+  ocean.setAttribute('width','556'); ocean.setAttribute('height','296'); ocean.setAttribute('rx','4');
+  ocean.setAttribute('fill','url(#ocean)'); ocean.setAttribute('opacity','0.55'); svg.appendChild(ocean);
 
-  // ── Vagues décoratives ──
-  const waveD = [
-    'M 10,30 Q 30,24 50,30 Q 70,36 90,30',
-    'M 160,20 Q 185,14 210,20',
-    'M 380,15 Q 405,9 430,15',
-    'M 550,25 Q 575,19 600,25',
-    'M 10,160 Q 35,154 60,160',
-    'M 200,155 Q 225,149 250,155',
-    'M 570,160 Q 595,154 615,160',
-    'M 10,280 Q 40,274 70,280 Q 100,286 130,280',
-    'M 400,290 Q 430,284 460,290',
-    'M 560,275 Q 585,269 610,275',
-  ];
-  waveD.forEach(d=>{
-    const p=document.createElementNS(svgNS,'path');
-    p.setAttribute('d',d); p.setAttribute('fill','none');
-    p.setAttribute('stroke','rgba(59,130,246,0.3)'); p.setAttribute('stroke-width','1.2');
-    svg.appendChild(p);
+  // ── BORDURE PARCHEMIN usée ──
+  // Bord extérieur décoratif
+  const border=document.createElementNS(svgNS,'rect'); border.setAttribute('x','4'); border.setAttribute('y','4');
+  border.setAttribute('width','572'); border.setAttribute('height','312'); border.setAttribute('rx','6');
+  border.setAttribute('fill','none'); border.setAttribute('stroke','#6b4c10'); border.setAttribute('stroke-width','3');
+  svg.appendChild(border);
+  const border2=document.createElementNS(svgNS,'rect'); border2.setAttribute('x','8'); border2.setAttribute('y','8');
+  border2.setAttribute('width','564'); border2.setAttribute('height','304'); border2.setAttribute('rx','4');
+  border2.setAttribute('fill','none'); border2.setAttribute('stroke','#8B6914'); border2.setAttribute('stroke-width','1');
+  border2.setAttribute('opacity','0.6'); svg.appendChild(border2);
+
+  // ── COINS DÉCORATION ──
+  [
+    [18,18], [562,18], [18,302], [562,302]
+  ].forEach(([x,y])=>{
+    const c=document.createElementNS(svgNS,'circle'); c.setAttribute('cx',x); c.setAttribute('cy',y); c.setAttribute('r','5');
+    c.setAttribute('fill','none'); c.setAttribute('stroke','#6b4c10'); c.setAttribute('stroke-width','1.5'); svg.appendChild(c);
   });
 
-  // ── Titre carte ──
-  const mapTitle = document.createElementNS(svgNS,'text');
-  mapTitle.setAttribute('x','310'); mapTitle.setAttribute('y','16');
-  mapTitle.setAttribute('text-anchor','middle');
-  mapTitle.setAttribute('font-family','Bangers, cursive');
-  mapTitle.setAttribute('font-size','9'); mapTitle.setAttribute('letter-spacing','3');
-  mapTitle.setAttribute('fill','rgba(255,215,0,0.3)');
-  mapTitle.textContent = '— GRAND LINE — ☠ — ONE PIECE —';
-  svg.appendChild(mapTitle);
+  // ── GRILLE NAVIGATION style ancien ──
+  for(let x=40;x<580;x+=40){
+    const l=document.createElementNS(svgNS,'line'); l.setAttribute('x1',x); l.setAttribute('y1',0); l.setAttribute('x2',x); l.setAttribute('y2',320);
+    l.setAttribute('stroke','rgba(80,50,10,0.12)'); l.setAttribute('stroke-width','0.5'); l.setAttribute('stroke-dasharray','2,6'); svg.appendChild(l);
+  }
+  for(let y=40;y<320;y+=40){
+    const l=document.createElementNS(svgNS,'line'); l.setAttribute('x1',0); l.setAttribute('y1',y); l.setAttribute('x2',580); l.setAttribute('y2',y);
+    l.setAttribute('stroke','rgba(80,50,10,0.12)'); l.setAttribute('stroke-width','0.5'); l.setAttribute('stroke-dasharray','2,6'); svg.appendChild(l);
+  }
 
-  // ── Continents ──
-  CONTINENTS.forEach(c => {
-    const g = document.createElementNS(svgNS,'g');
-    g.style.cursor = 'pointer';
+  // ── VAGUES style parchemin ──
+  ['M20,35 Q45,28 70,35 Q95,42 120,35','M200,22 Q228,15 256,22','M320,18 Q348,11 376,18','M440,28 Q465,21 490,28',
+   'M20,160 Q48,153 76,160','M220,155 Q248,148 276,155','M460,158 Q488,151 516,158',
+   'M20,285 Q50,278 80,285 Q110,292 140,285','M350,290 Q378,283 406,290','M480,280 Q508,273 536,280'].forEach(d=>{
+    const p=document.createElementNS(svgNS,'path'); p.setAttribute('d',d); p.setAttribute('fill','none');
+    p.setAttribute('stroke','rgba(30,80,130,0.35)'); p.setAttribute('stroke-width','1.5'); svg.appendChild(p);
+  });
 
-    // Ombre
-    const shadow = document.createElementNS(svgNS,'path');
-    shadow.setAttribute('d', c.path);
-    shadow.setAttribute('fill','rgba(0,0,0,0.45)');
-    shadow.setAttribute('transform','translate(4,4)');
-    g.appendChild(shadow);
+  // ── TITRE CARTE ──
+  // Bandeau titre style parchemin
+  const titleBg=document.createElementNS(svgNS,'rect'); titleBg.setAttribute('x','185'); titleBg.setAttribute('y','6');
+  titleBg.setAttribute('width','210'); titleBg.setAttribute('height','20'); titleBg.setAttribute('rx','3');
+  titleBg.setAttribute('fill','rgba(107,76,16,0.3)'); svg.appendChild(titleBg);
+  const tt=document.createElementNS(svgNS,'text'); tt.setAttribute('x','290'); tt.setAttribute('y','20');
+  tt.setAttribute('text-anchor','middle'); tt.setAttribute('font-family','Bangers, cursive');
+  tt.setAttribute('font-size','10'); tt.setAttribute('letter-spacing','3'); tt.setAttribute('fill','rgba(60,30,5,0.7)');
+  tt.textContent='— GRAND LINE — ☠ — ONE PIECE —'; svg.appendChild(tt);
 
-    // Corps du continent
-    const shape = document.createElementNS(svgNS,'path');
-    shape.setAttribute('d', c.path);
-    shape.setAttribute('fill', c.locked ? `${c.color}40` : `${c.color}cc`);
-    shape.setAttribute('stroke', c.locked ? 'rgba(255,255,255,0.12)' : `${c.color}`);
-    shape.setAttribute('stroke-width','1.5');
-    shape.setAttribute('stroke-linejoin','round');
-    g.appendChild(shape);
+  // ── DÉCO : Poulpe/Kraken coin bas gauche ──
+  const kraken=document.createElementNS(svgNS,'text'); kraken.setAttribute('x','165'); kraken.setAttribute('y','300');
+  kraken.setAttribute('font-size','28'); kraken.setAttribute('opacity','0.25'); kraken.textContent='🐙'; svg.appendChild(kraken);
 
-    // Relief (highlight intérieur)
-    const highlight = document.createElementNS(svgNS,'path');
-    highlight.setAttribute('d', c.path);
-    highlight.setAttribute('fill','none');
-    highlight.setAttribute('stroke','rgba(255,255,255,0.12)');
-    highlight.setAttribute('stroke-width','4');
-    highlight.setAttribute('stroke-linejoin','round');
-    g.appendChild(highlight);
+  // ── DÉCO : Bateau pirate ──
+  const ship=document.createElementNS(svgNS,'text'); ship.setAttribute('x','198'); ship.setAttribute('y','62');
+  ship.setAttribute('font-size','22'); ship.setAttribute('opacity','0.35'); ship.textContent='⛵'; svg.appendChild(ship);
+
+  // ── DÉCO : Bateau 2 ──
+  const ship2=document.createElementNS(svgNS,'text'); ship2.setAttribute('x','480'); ship2.setAttribute('y','170');
+  ship2.setAttribute('font-size','18'); ship2.setAttribute('opacity','0.3'); ship2.textContent='🚢'; svg.appendChild(ship2);
+
+  // ── LUFFY (tête de Luffy) ──
+  // Chapeau de paille stylisé + visage SVG
+  const luffyG = document.createElementNS(svgNS,'g');
+  luffyG.setAttribute('transform','translate(275,155)');
+  luffyG.setAttribute('opacity','0.4');
+  // Chapeau
+  const hat=document.createElementNS(svgNS,'ellipse'); hat.setAttribute('cx','0'); hat.setAttribute('cy','-18');
+  hat.setAttribute('rx','22'); hat.setAttribute('ry','8'); hat.setAttribute('fill','#d4a017'); hat.setAttribute('stroke','#8B6914'); hat.setAttribute('stroke-width','1.5'); luffyG.appendChild(hat);
+  const hatTop=document.createElementNS(svgNS,'ellipse'); hatTop.setAttribute('cx','0'); hatTop.setAttribute('cy','-22');
+  hatTop.setAttribute('rx','14'); hatTop.setAttribute('ry','6'); hatTop.setAttribute('fill','#c8900a'); luffyG.appendChild(hatTop);
+  const hatBand=document.createElementNS(svgNS,'line'); hatBand.setAttribute('x1','-22'); hatBand.setAttribute('y1','-18');
+  hatBand.setAttribute('x2','22'); hatBand.setAttribute('y2','-18'); hatBand.setAttribute('stroke','#e63946'); hatBand.setAttribute('stroke-width','2'); luffyG.appendChild(hatBand);
+  // Visage
+  const face=document.createElementNS(svgNS,'circle'); face.setAttribute('cx','0'); face.setAttribute('cy','-4');
+  face.setAttribute('r','14'); face.setAttribute('fill','#e8c090'); face.setAttribute('stroke','#8B6914'); face.setAttribute('stroke-width','1'); luffyG.appendChild(face);
+  // Sourire
+  const smile=document.createElementNS(svgNS,'path'); smile.setAttribute('d','M -6,2 Q 0,8 6,2');
+  smile.setAttribute('fill','none'); smile.setAttribute('stroke','#5a3010'); smile.setAttribute('stroke-width','1.5'); smile.setAttribute('stroke-linecap','round'); luffyG.appendChild(smile);
+  // Yeux
+  [-5,5].forEach(x=>{
+    const eye=document.createElementNS(svgNS,'circle'); eye.setAttribute('cx',x); eye.setAttribute('cy','-7');
+    eye.setAttribute('r','2.5'); eye.setAttribute('fill','#1a0a00'); luffyG.appendChild(eye);
+  });
+  // Cicatrice
+  const scar=document.createElementNS(svgNS,'line'); scar.setAttribute('x1','5'); scar.setAttribute('y1','-4');
+  scar.setAttribute('x2','7'); scar.setAttribute('y2','0'); scar.setAttribute('stroke','#e63946'); scar.setAttribute('stroke-width','1.5'); scar.setAttribute('stroke-linecap','round'); luffyG.appendChild(scar);
+  svg.appendChild(luffyG);
+
+  // ── X DU TRÉSOR (là où est le One Piece) ──
+  const xMark=document.createElementNS(svgNS,'text'); xMark.setAttribute('x','290'); xMark.setAttribute('y','180');
+  xMark.setAttribute('text-anchor','middle'); xMark.setAttribute('font-size','14');
+  xMark.setAttribute('fill','#e63946'); xMark.setAttribute('opacity','0.6'); xMark.setAttribute('font-weight','bold');
+  xMark.setAttribute('font-family','Bangers, cursive'); xMark.textContent='✕'; svg.appendChild(xMark);
+
+  // Chemin pointillé vers le trésor
+  const treasure_path=document.createElementNS(svgNS,'path');
+  treasure_path.setAttribute('d','M 80,130 Q 150,200 230,185 Q 270,178 290,178');
+  treasure_path.setAttribute('fill','none'); treasure_path.setAttribute('stroke','#e63946');
+  treasure_path.setAttribute('stroke-width','1.5'); treasure_path.setAttribute('stroke-dasharray','4,3');
+  treasure_path.setAttribute('opacity','0.5'); svg.appendChild(treasure_path);
+
+  // ── CONTINENTS ──
+  CONTINENTS.forEach(c=>{
+    const g=document.createElementNS(svgNS,'g'); g.style.cursor='pointer';
+
+    // Ombre portée
+    const sh=document.createElementNS(svgNS,'path'); sh.setAttribute('d',c.path);
+    sh.setAttribute('fill','rgba(0,0,0,0.25)'); sh.setAttribute('transform','translate(3,3)'); g.appendChild(sh);
+
+    // Remplissage continent (couleur terre style parchemin)
+    const sp=document.createElementNS(svgNS,'path'); sp.setAttribute('d',c.path);
+    sp.setAttribute('fill', c.locked ? `${c.fillColor}70` : `${c.fillColor}ee`);
+    sp.setAttribute('stroke', c.locked ? 'rgba(80,50,10,0.3)' : '#6b3a10');
+    sp.setAttribute('stroke-width','1.5'); sp.setAttribute('stroke-linejoin','round'); g.appendChild(sp);
+
+    // Relief hachures
+    const hp=document.createElementNS(svgNS,'path'); hp.setAttribute('d',c.path);
+    hp.setAttribute('fill','url(#relief)'); g.appendChild(hp);
+
+    // Contour intérieur (effet elevation)
+    const hl=document.createElementNS(svgNS,'path'); hl.setAttribute('d',c.path);
+    hl.setAttribute('fill','none'); hl.setAttribute('stroke','rgba(255,220,150,0.4)');
+    hl.setAttribute('stroke-width','2'); hl.setAttribute('stroke-linejoin','round'); g.appendChild(hl);
+
+    // Couleur bordure matière (petit trait de couleur)
+    if(!c.locked){
+      const accent=document.createElementNS(svgNS,'path'); accent.setAttribute('d',c.path);
+      accent.setAttribute('fill','none'); accent.setAttribute('stroke',c.color);
+      accent.setAttribute('stroke-width','2.5'); accent.setAttribute('stroke-linejoin','round');
+      accent.setAttribute('opacity','0.6'); g.appendChild(accent);
+    }
 
     // Emoji
-    const em = document.createElementNS(svgNS,'text');
-    em.setAttribute('x', c.emojiX); em.setAttribute('y', c.emojiY);
-    em.setAttribute('text-anchor','middle'); em.setAttribute('font-size','14');
-    em.textContent = c.emoji;
-    g.appendChild(em);
+    const em=document.createElementNS(svgNS,'text'); em.setAttribute('x',c.emojiX); em.setAttribute('y',c.emojiY);
+    em.setAttribute('text-anchor','middle'); em.setAttribute('font-size','13'); em.textContent=c.emoji; g.appendChild(em);
 
     // Nom continent
-    const lbl = document.createElementNS(svgNS,'text');
-    lbl.setAttribute('x', c.labelX); lbl.setAttribute('y', c.labelY);
-    lbl.setAttribute('text-anchor','middle');
-    lbl.setAttribute('font-family','Bangers, cursive');
-    lbl.setAttribute('font-size','11'); lbl.setAttribute('letter-spacing','1');
-    lbl.setAttribute('fill', c.locked ? 'rgba(255,255,255,0.4)' : '#fff');
-    lbl.setAttribute('stroke','rgba(0,0,0,0.8)'); lbl.setAttribute('stroke-width','3');
-    lbl.setAttribute('paint-order','stroke');
-    lbl.textContent = c.name;
-    g.appendChild(lbl);
+    const lb=document.createElementNS(svgNS,'text'); lb.setAttribute('x',c.labelX); lb.setAttribute('y',c.labelY);
+    lb.setAttribute('text-anchor','middle'); lb.setAttribute('font-family','Bangers, cursive');
+    lb.setAttribute('font-size','10'); lb.setAttribute('letter-spacing','1');
+    lb.setAttribute('fill', c.locked ? 'rgba(60,30,5,0.45)' : 'rgba(40,15,0,0.9)');
+    lb.setAttribute('stroke','rgba(255,220,150,0.6)'); lb.setAttribute('stroke-width','2.5'); lb.setAttribute('paint-order','stroke');
+    lb.textContent=c.name; g.appendChild(lb);
 
-    // Matière
-    const sub = document.createElementNS(svgNS,'text');
-    sub.setAttribute('x', c.subX); sub.setAttribute('y', c.subY);
-    sub.setAttribute('text-anchor','middle');
-    sub.setAttribute('font-family','Nunito, sans-serif');
-    sub.setAttribute('font-size','8'); sub.setAttribute('font-weight','800');
-    sub.setAttribute('letter-spacing','1.5');
-    sub.setAttribute('fill', c.locked ? 'rgba(255,255,255,0.3)' : '#ffd700');
-    sub.setAttribute('stroke','rgba(0,0,0,0.8)'); sub.setAttribute('stroke-width','2');
-    sub.setAttribute('paint-order','stroke');
-    sub.textContent = c.subject.toUpperCase();
-    g.appendChild(sub);
+    // Matière (en couleur vive)
+    const sb=document.createElementNS(svgNS,'text'); sb.setAttribute('x',c.subX); sb.setAttribute('y',c.subY);
+    sb.setAttribute('text-anchor','middle'); sb.setAttribute('font-family','Bangers, cursive');
+    sb.setAttribute('font-size','8'); sb.setAttribute('letter-spacing','1.5');
+    sb.setAttribute('fill', c.locked ? 'rgba(60,30,5,0.35)' : c.color);
+    sb.setAttribute('stroke','rgba(255,220,150,0.7)'); sb.setAttribute('stroke-width','2'); sb.setAttribute('paint-order','stroke');
+    sb.textContent=c.subject.toUpperCase(); g.appendChild(sb);
 
     // Verrou
     if(c.locked){
-      const lkC = document.createElementNS(svgNS,'circle');
-      lkC.setAttribute('cx', String(Number(c.emojiX)+14));
-      lkC.setAttribute('cy', String(Number(c.emojiY)-4));
-      lkC.setAttribute('r','7');
-      lkC.setAttribute('fill','rgba(0,0,0,0.75)');
-      lkC.setAttribute('stroke','rgba(255,255,255,0.2)'); lkC.setAttribute('stroke-width','1');
-      g.appendChild(lkC);
-      const lkT = document.createElementNS(svgNS,'text');
-      lkT.setAttribute('x', String(Number(c.emojiX)+14));
-      lkT.setAttribute('y', String(Number(c.emojiY)));
-      lkT.setAttribute('text-anchor','middle'); lkT.setAttribute('font-size','9');
-      lkT.textContent = '🔒';
-      g.appendChild(lkT);
+      const lc=document.createElementNS(svgNS,'circle');
+      lc.setAttribute('cx',String(Number(c.emojiX)+14)); lc.setAttribute('cy',String(Number(c.emojiY)-5)); lc.setAttribute('r','7');
+      lc.setAttribute('fill','rgba(107,76,16,0.8)'); lc.setAttribute('stroke','rgba(255,220,150,0.4)'); lc.setAttribute('stroke-width','1'); g.appendChild(lc);
+      const lt=document.createElementNS(svgNS,'text');
+      lt.setAttribute('x',String(Number(c.emojiX)+14)); lt.setAttribute('y',String(Number(c.emojiY)));
+      lt.setAttribute('text-anchor','middle'); lt.setAttribute('font-size','9'); lt.textContent='🔒'; g.appendChild(lt);
     }
 
     // Hover
     if(!c.locked){
-      g.addEventListener('mouseenter',()=>{
-        shape.setAttribute('fill',`${c.color}ff`);
-        g.setAttribute('filter','url(#glow)');
-      });
-      g.addEventListener('mouseleave',()=>{
-        shape.setAttribute('fill',`${c.color}cc`);
-        g.removeAttribute('filter');
-      });
+      g.addEventListener('mouseenter',()=>{ sp.setAttribute('fill',`${c.fillColor}`); g.setAttribute('filter','url(#glow)'); });
+      g.addEventListener('mouseleave',()=>{ sp.setAttribute('fill',`${c.fillColor}ee`); g.removeAttribute('filter'); });
     }
-    g.addEventListener('click',()=> showContinentPanel(c));
+    g.addEventListener('click',()=>showContinentPanel(c));
     svg.appendChild(g);
   });
 
-  // ── Crâne central ──
-  const skull = document.createElementNS(svgNS,'text');
-  skull.setAttribute('x','310'); skull.setAttribute('y','175');
-  skull.setAttribute('text-anchor','middle'); skull.setAttribute('font-size','20');
-  skull.setAttribute('opacity','0.25'); skull.textContent='☠️';
-  svg.appendChild(skull);
-
-  // ── Boussole ──
-  const cx=578, cy=278;
-  const compG = document.createElementNS(svgNS,'g');
-  const compC = document.createElementNS(svgNS,'circle');
-  compC.setAttribute('cx',cx); compC.setAttribute('cy',cy); compC.setAttribute('r','18');
-  compC.setAttribute('fill','rgba(0,0,0,0.5)');
-  compC.setAttribute('stroke','rgba(139,105,20,0.5)'); compC.setAttribute('stroke-width','1');
-  compG.appendChild(compC);
-  [['N',0,-12,'#e63946'],['S',0,12,'#777'],['E',12,0,'#777'],['O',-12,0,'#777']].forEach(([l,dx,dy,col])=>{
-    const t=document.createElementNS(svgNS,'text');
-    t.setAttribute('x',cx+dx); t.setAttribute('y',cy+dy+3);
-    t.setAttribute('text-anchor','middle');
-    t.setAttribute('font-family','Bangers, cursive'); t.setAttribute('font-size','7');
-    t.setAttribute('fill',col); t.textContent=l; compG.appendChild(t);
+  // ── BOUSSOLE style parchemin ──
+  const cx=544, cy=288;
+  const cg=document.createElementNS(svgNS,'g');
+  // Fond boussole
+  const cBg=document.createElementNS(svgNS,'circle'); cBg.setAttribute('cx',cx); cBg.setAttribute('cy',cy); cBg.setAttribute('r','24');
+  cBg.setAttribute('fill','rgba(212,180,100,0.7)'); cBg.setAttribute('stroke','#6b4c10'); cBg.setAttribute('stroke-width','1.5'); cg.appendChild(cBg);
+  const cBg2=document.createElementNS(svgNS,'circle'); cBg2.setAttribute('cx',cx); cBg2.setAttribute('cy',cy); cBg2.setAttribute('r','18');
+  cBg2.setAttribute('fill','none'); cBg2.setAttribute('stroke','#6b4c10'); cBg2.setAttribute('stroke-width','1'); cBg2.setAttribute('opacity','0.5'); cg.appendChild(cBg2);
+  // Flèches N/S
+  const arrow=document.createElementNS(svgNS,'path');
+  arrow.setAttribute('d',`M ${cx},${cy-18} L ${cx-4},${cy} L ${cx},${cy-6} Z`);
+  arrow.setAttribute('fill','#e63946'); cg.appendChild(arrow);
+  const arrow2=document.createElementNS(svgNS,'path');
+  arrow2.setAttribute('d',`M ${cx},${cy+18} L ${cx-4},${cy} L ${cx},${cy+6} Z`);
+  arrow2.setAttribute('fill','rgba(60,30,5,0.6)'); cg.appendChild(arrow2);
+  const arrow3=document.createElementNS(svgNS,'path');
+  arrow3.setAttribute('d',`M ${cx},${cy-18} L ${cx+4},${cy} L ${cx},${cy-6} Z`);
+  arrow3.setAttribute('fill','rgba(60,30,5,0.4)'); cg.appendChild(arrow3);
+  // Labels
+  [['N',0,-20,'#e63946'],['S',0,24,'rgba(60,30,5,0.7)'],['E',22,3,'rgba(60,30,5,0.7)'],['O',-22,3,'rgba(60,30,5,0.7)']].forEach(([l,dx,dy,col])=>{
+    const t=document.createElementNS(svgNS,'text'); t.setAttribute('x',cx+dx); t.setAttribute('y',cy+dy);
+    t.setAttribute('text-anchor','middle'); t.setAttribute('font-family','Bangers, cursive'); t.setAttribute('font-size','8');
+    t.setAttribute('fill',col); t.textContent=l; cg.appendChild(t);
   });
-  const cStar=document.createElementNS(svgNS,'text');
-  cStar.setAttribute('x',cx); cStar.setAttribute('y',cy+3);
-  cStar.setAttribute('text-anchor','middle'); cStar.setAttribute('font-size','8');
-  cStar.setAttribute('fill','rgba(255,215,0,0.5)'); cStar.textContent='✦';
-  compG.appendChild(cStar);
-  svg.appendChild(compG);
+  svg.appendChild(cg);
 
   container.appendChild(svg);
 }
 
 function showContinentPanel(c) {
-  let overlay = document.getElementById('globe-overlay');
-  if(!overlay){
-    overlay = document.createElement('div');
-    overlay.id = 'globe-overlay';
-    overlay.onclick = hideContinentPanel;
-    document.body.appendChild(overlay);
-  }
-  overlay.classList.add('visible');
+  const route = typeof getCurrentRoute === 'function' ? getCurrentRoute() : 'carte';
+  const globeSec = document.getElementById('globe-sec');
+  let panel = document.getElementById('globe-panel');
+  if (!panel) { panel = document.createElement('div'); panel.id='globe-panel'; globeSec?.appendChild(panel); }
+  if (globeSec && panel.parentElement !== globeSec) globeSec.appendChild(panel);
 
-  const panel = document.getElementById('globe-panel');
-  if(!panel) return;
-
+  panel.style.cssText = `
+    position:relative;bottom:auto;left:auto;transform:none;
+    width:100%;max-width:min(680px,96vw);border-radius:16px;
+    border:2px solid rgba(255,215,0,.25);margin-top:14px;
+    display:flex;flex-direction:column;gap:14px;
+    background:linear-gradient(160deg,#0a0d1a,#120820);
+    padding:22px 20px;box-shadow:0 8px 40px rgba(0,0,0,.6);
+  `;
   panel.innerHTML = `
     <div class="gp-header">
       <div class="gp-emoji">${c.emoji}</div>
-      <div>
-        <div class="gp-name">${c.name}</div>
-        <div class="gp-universe" style="color:${c.color}">${c.universe}</div>
-      </div>
-      <button class="gp-close" onclick="hideContinentPanel()">✕</button>
+      <div><div class="gp-name">${c.name}</div>
+        <div class="gp-universe" style="color:${c.color}">${c.universe}</div></div>
     </div>
     <div class="gp-subject">📚 ${c.subject}</div>
     <div class="gp-desc">${c.desc}</div>
-    <div class="gp-chars">
-      ${c.chars.map((ch,i)=>`
-        <span class="gp-char-badge" style="border-color:${c.charColors[i]}55;color:${c.charColors[i]}">
-          👤 ${ch}
-        </span>`).join('')}
-    </div>
+    <div class="gp-chars">${c.chars.map((ch,i)=>`<span class="gp-char-badge" style="border-color:${c.charColors[i]}55;color:${c.charColors[i]}">👤 ${ch}</span>`).join('')}</div>
     ${c.locked
       ? `<div class="gp-locked-msg">🔒 Bientôt disponible !</div>`
-      : `<button class="gp-play-btn"
-           style="background:linear-gradient(135deg,${c.color},${c.color}99)"
-           onclick="hideContinentPanel();document.getElementById('map-sec').scrollIntoView({behavior:'smooth'})">
-           ⚔️ COMMENCER L'AVENTURE !
-         </button>`
-    }
+      : `<button class="gp-play-btn" style="background:linear-gradient(135deg,${c.color},${c.color}99)"
+           onclick="navigateTo('iles')">⚔️ COMMENCER L'AVENTURE !</button>`}
   `;
-  panel.classList.add('visible');
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
 }
 
 function hideContinentPanel() {
-  document.getElementById('globe-panel')?.classList.remove('visible');
-  document.getElementById('globe-overlay')?.classList.remove('visible');
+  const p=document.getElementById('globe-panel');
+  if(p){ p.style.display='none'; p.classList.remove('visible'); }
+  const o=document.getElementById('globe-overlay');
+  if(o) o.classList.remove('visible');
 }
 
 document.addEventListener('DOMContentLoaded', buildTreasureMap);
