@@ -1981,10 +1981,6 @@ function loadPlayerData(){
     if(saved){playerData=JSON.parse(saved);playerName=playerData.name;selectedAvatarId=playerData.avatarId||'luffy';updateHeaderAvatar();return false;}
   }catch(e){}return false;
 }
-
-// ═══ SAVE/LOAD ═══
-}
-
 // ═══ NAV ═══
 function goBack(){
   playBGM('map');document.getElementById('quiz-sec').style.display='none';document.getElementById('map-sec').style.display='block';answers={};window.scrollTo(0,0)}

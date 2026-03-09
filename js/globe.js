@@ -83,7 +83,7 @@ function buildTreasureMap() {
 
   // ── IMAGE ONE PIECE MAP EN FOND ──
   const img = document.createElementNS(svgNS, 'image');
-  img.setAttribute('href', 'assets/images/onepiece-map.png');
+  img.setAttribute('href', '/academie-pirate/assets/images/onepiece-map.png');
   img.setAttribute('x', '0'); img.setAttribute('y', '0');
   img.setAttribute('width', '520'); img.setAttribute('height', '390');
   img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
