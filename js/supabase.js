@@ -271,7 +271,7 @@ function positionLoginScreen() {
   const login = document.getElementById('login-screen');
   if (!header || !login) return;
   const h = header.getBoundingClientRect().bottom;
-  login.style.top = h + 'px';
+  login.style.top = (h + 20) + "px";
   login.style.height = `calc(100vh - ${h}px)`;
 }
 
