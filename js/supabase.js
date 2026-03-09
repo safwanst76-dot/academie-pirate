@@ -264,3 +264,16 @@ async function handleSignedIn(user) {
 // Lancer au démarrage
 document.addEventListener('DOMContentLoaded', sbInit);
 
+
+// ── Login positionné sous le header ──
+function positionLoginScreen() {
+  const header = document.querySelector('header');
+  const login = document.getElementById('login-screen');
+  if (!header || !login) return;
+  const h = header.getBoundingClientRect().bottom;
+  login.style.top = h + 'px';
+  login.style.height = `calc(100vh - ${h}px)`;
+}
+
+window.addEventListener('load', positionLoginScreen);
+window.addEventListener('resize', positionLoginScreen);
