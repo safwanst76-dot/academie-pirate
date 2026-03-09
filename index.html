@@ -7,6 +7,7 @@
 <title>☠️ Académie Pirate — One Piece Quiz</title>
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/globe.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
@@ -800,7 +801,25 @@ header { flex-wrap: wrap; gap: 6px; padding: 8px 12px; }
 </div>
 
 <!-- ═══ MAP ═══ -->
-<section id="map-sec">
+<!-- ═══ GLOBE 3D ═══ -->
+<section id="globe-sec">
+  <div class="globe-title">🌍 CARTE DU MONDE</div>
+  <div class="globe-subtitle">Choisis ton univers et commence l'aventure</div>
+  <div id="globe-container"></div>
+  <div class="globe-legend">
+    <div class="globe-legend-item" onclick="showContinentPanel(CONTINENTS[0])"><div class="globe-legend-dot" style="background:#e63946"></div>Français — One Piece</div>
+    <div class="globe-legend-item locked"><div class="globe-legend-dot" style="background:#ff6b35"></div>Maths — Naruto</div>
+    <div class="globe-legend-item locked"><div class="globe-legend-dot" style="background:#8b5cf6"></div>Histoire — Fairy Tail</div>
+    <div class="globe-legend-item locked"><div class="globe-legend-dot" style="background:#22c55e"></div>Sciences — Pokémon</div>
+    <div class="globe-legend-item locked"><div class="globe-legend-dot" style="background:#3b82f6"></div>Géographie — DBZ</div>
+  </div>
+  <div id="globe-panel"></div>
+</section>
+<div class="world-divider">
+  <div class="world-divider-line"></div>
+  <div class="world-divider-text">— GRAND LINE —</div>
+  <div class="world-divider-line"></div>
+</div><section id="map-sec">
   <div class="sec-title">⚓ CARTE DU MONDE</div>
   <div class="sec-sub">Choisis ton île et commence l'aventure</div>
   <div class="panel-frame">
@@ -2226,6 +2245,8 @@ init();
 
 var WEBAPP_URL='';
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/globe.js"></script>
 <script src="js/audio-engine.js"></script>
     
 </body>
