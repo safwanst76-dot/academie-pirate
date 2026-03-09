@@ -1,12 +1,11 @@
 /* ═══════════════════════════════════════
-   GLOBE 3D — Académie Pirate
+   CARTE AU TRÉSOR 2D — Académie Pirate
 ═══════════════════════════════════════ */
 
-/* Section globe */
 #globe-sec {
   position: relative; z-index: 5;
   display: flex; flex-direction: column; align-items: center;
-  padding: 24px 14px; gap: 16px;
+  padding: 24px 14px 0; gap: 10px;
 }
 
 .globe-title {
@@ -24,121 +23,104 @@
   text-align: center;
 }
 
-/* Conteneur globe */
-#globe-container {
-  width: min(500px, 95vw);
-  height: min(500px, 95vw);
-  position: relative;
-  cursor: grab;
-  border-radius: 50%;
+/* ── Carte ── */
+#treasure-map {
+  width: min(700px, 96vw) !important;
+  height: auto !important;
+  border-radius: 12px;
+  overflow: hidden;
   box-shadow:
-    0 0 60px rgba(59,130,246,.2),
-    0 0 120px rgba(230,57,70,.1),
-    inset 0 0 60px rgba(0,0,0,.5);
+    0 0 0 3px #8B6914,
+    0 0 0 6px #2a1a00,
+    0 8px 40px rgba(0,0,0,.7);
 }
-#globe-container:active { cursor: grabbing; }
 
-/* Légende des continents */
-.globe-legend {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  justify-content: center; max-width: 500px;
+#treasure-map svg {
+  width: 100%; height: auto; display: block;
 }
-.globe-legend-item {
-  display: flex; align-items: center; gap: 6px;
-  font-family: 'Nunito', sans-serif; font-size: .7rem;
-  font-weight: 700; color: rgba(255,255,255,.7);
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 20px; padding: 4px 10px;
-  cursor: pointer; transition: all .2s;
-}
-.globe-legend-item:hover {
-  background: rgba(255,255,255,.1);
-  border-color: rgba(255,255,255,.3);
-  transform: translateY(-1px);
-}
-.globe-legend-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  flex-shrink: 0;
-}
-.globe-legend-item.locked { opacity: .5; }
-.globe-legend-item.locked::after { content: ' 🔒'; }
 
-/* Panneau infos continent */
+.continent-zone { cursor: pointer; }
+.continent-zone.locked { cursor: pointer; opacity: .85; }
+
+/* ── Panneau ── */
 #globe-panel {
-  position: fixed; bottom: -100%; left: 50%; transform: translateX(-50%);
-  width: min(400px, 95vw); z-index: 9000;
-  background: rgba(5, 8, 20, 0.97);
+  position: fixed;
+  bottom: -100%; left: 50%; transform: translateX(-50%);
+  width: min(420px, 96vw); z-index: 9000;
+  background: linear-gradient(160deg, #0a0d1a 0%, #120820 100%);
   border-radius: 24px 24px 0 0;
-  border: 2px solid rgba(255,215,0,.2);
+  border: 2px solid rgba(255,215,0,.3);
   border-bottom: none;
-  padding: 24px;
+  padding: 24px 20px;
   transition: bottom .4s cubic-bezier(.4,0,.2,1);
   display: flex; flex-direction: column; gap: 14px;
-  box-shadow: 0 -10px 60px rgba(0,0,0,.5);
+  box-shadow: 0 -10px 60px rgba(0,0,0,.6);
 }
 #globe-panel.visible { bottom: 0; }
+
+#globe-overlay {
+  display: none; position: fixed; inset: 0; z-index: 8999;
+  background: rgba(0,0,0,.45);
+}
+#globe-overlay.visible { display: block; }
 
 .gp-header {
   display: flex; align-items: center; gap: 12px;
   border-bottom: 2px solid rgba(255,215,0,.2);
-  padding-bottom: 12px;
+  padding-bottom: 14px;
 }
-.gp-emoji { font-size: 2.5rem; }
+.gp-emoji { font-size: 2.8rem; line-height: 1; }
 .gp-name {
-  font-family: 'Bangers', cursive; font-size: 1.6rem;
-  letter-spacing: 2px; color: #fff;
+  font-family: 'Bangers', cursive; font-size: 1.8rem;
+  letter-spacing: 2px; color: #fff; line-height: 1;
 }
 .gp-universe {
   font-family: 'Nunito', sans-serif; font-size: .8rem;
-  font-weight: 700; letter-spacing: 1px;
+  font-weight: 700; letter-spacing: 1px; margin-top: 2px;
 }
 .gp-close {
   margin-left: auto; background: rgba(255,255,255,.1);
-  border: none; color: #fff; width: 32px; height: 32px;
-  border-radius: 50%; cursor: pointer; font-size: 1rem;
-  display: flex; align-items: center; justify-content: center;
-  transition: background .2s;
+  border: none; color: #fff; width: 34px; height: 34px;
+  border-radius: 50%; cursor: pointer; font-size: 1.1rem;
+  flex-shrink: 0; transition: background .2s;
 }
-.gp-close:hover { background: rgba(255,255,255,.2); }
+.gp-close:hover { background: rgba(255,255,255,.25); }
 
 .gp-subject {
   font-family: 'Nunito', sans-serif; font-size: .8rem;
-  font-weight: 800; color: #ffd700; letter-spacing: 1px;
+  font-weight: 800; color: #ffd700; letter-spacing: 2px;
   text-transform: uppercase;
 }
 .gp-desc {
-  font-family: 'Nunito', sans-serif; font-size: .85rem;
-  color: rgba(255,255,255,.7); line-height: 1.5;
+  font-family: 'Nunito', sans-serif; font-size: .9rem;
+  color: rgba(255,255,255,.75); line-height: 1.6;
 }
-.gp-chars {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
+.gp-chars { display: flex; flex-wrap: wrap; gap: 8px; }
 .gp-char-badge {
-  font-family: 'Nunito', sans-serif; font-size: .7rem;
-  font-weight: 700; padding: 4px 10px;
+  font-family: 'Nunito', sans-serif; font-size: .75rem;
+  font-weight: 700; padding: 5px 12px;
   border: 1px solid; border-radius: 20px;
-  background: rgba(255,255,255,.05);
+  background: rgba(255,255,255,.06);
 }
 .gp-play-btn {
-  font-family: 'Bangers', cursive; font-size: 1.3rem;
+  font-family: 'Bangers', cursive; font-size: 1.4rem;
   letter-spacing: 2px; padding: 14px;
   border-radius: 14px; border: none; cursor: pointer;
   color: #fff; text-shadow: 2px 2px 0 rgba(0,0,0,.5);
-  box-shadow: 0 4px 20px rgba(0,0,0,.3);
   transition: all .2s; width: 100%;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
 }
-.gp-play-btn:hover { transform: scale(1.03); filter: brightness(1.2); }
-.gp-locked {
+.gp-play-btn:hover { transform: scale(1.03); filter: brightness(1.15); }
+.gp-locked-msg {
   font-family: 'Bangers', cursive; font-size: 1.2rem;
-  letter-spacing: 2px; color: #888; text-align: center;
-  padding: 12px; border: 2px dashed #333; border-radius: 12px;
+  letter-spacing: 2px; color: #666; text-align: center;
+  padding: 14px; border: 2px dashed #333; border-radius: 12px;
 }
 
-/* Séparateur entre globe et map */
+/* Séparateur */
 .world-divider {
   display: flex; align-items: center; gap: 12px;
-  width: min(500px, 90vw); margin: 8px auto;
+  width: min(600px, 90vw); margin: 4px auto 0;
 }
 .world-divider-line {
   flex: 1; height: 1px;
@@ -146,11 +128,5 @@
 }
 .world-divider-text {
   font-family: 'Bangers', cursive; font-size: .9rem;
-  letter-spacing: 3px; color: rgba(255,215,0,.5);
-  white-space: nowrap;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  #globe-container { width: 90vw; height: 90vw; }
+  letter-spacing: 3px; color: rgba(255,215,0,.5); white-space: nowrap;
 }
