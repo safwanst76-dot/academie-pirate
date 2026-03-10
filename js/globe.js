@@ -29,7 +29,7 @@ const CONTINENTS = [
     emoji: '✨', color: '#8b5cf6',
     chars: ['Erza','Lucy','Wendy'], charColors: ['#ef4444','#eab308','#3b82f6'],
     desc: 'Voyage dans le temps avec la guilde Fairy Tail !',
-    locked: true,
+    locked: false,
     // Zone centre-bas (continent principal de la carte OP)
     zone: 'M 245,115 L 295,108 L 340,115 L 368,128 L 375,148 L 368,168 L 355,182 L 335,190 L 308,192 L 282,188 L 262,178 L 248,162 L 240,144 L 242,128 Z',
     labelX: 308, labelY: 155, subX: 308, subY: 168, emojiX: 260, emojiY: 125,
