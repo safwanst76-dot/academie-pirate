@@ -1,6 +1,8 @@
 // ═══════════════════════════════════════
 // CINEMATIC.JS — Académie Pirate
 // Scènes d'intro/fin + moteur particules
+// FIX #3 : sfxCineDrum / sfxCineRiser / sfxCineVictory / sfxCineDefeat
+//           supprimés ici — définis UNE SEULE FOIS dans audio-engine.js
 // ═══════════════════════════════════════
 
 const ISLE_INTRO = {
@@ -44,7 +46,6 @@ const ISLE_END = {
     {tier:'fail',kanji:'失敗',kanjiColor:'#e63946',tint:'tint-red',lines:['Pas encore…','Courage !'],particles:'slash',bubble:"Même Robin a mis des années à tout apprendre. Courage !",sfx:'ko'},
   ],
 };
-// Îles 5–8 : réutilisent les configs 1–4
 for (let i = 5; i <= 8; i++) ISLE_END[i] = ISLE_END[i - 4];
 
 // ── PARTICLE ENGINE ──
@@ -52,13 +53,15 @@ let _cineAF = null;
 
 function startParticles(type) {
   const cv = document.getElementById('cine-canvas');
+  if (!cv) return;
   const ctx = cv.getContext('2d');
   cv.width = window.innerWidth; cv.height = window.innerHeight;
   const P = [], W = cv.width, H = cv.height;
+
   if (type === 'fire')   { for (let i=0;i<80;i++) P.push({x:Math.random()*W,y:H+10,vx:(Math.random()-.5)*3,vy:-(2+Math.random()*5),r:3+Math.random()*6,life:1,col:`hsl(${20+Math.random()*40},100%,${50+Math.random()*30}%)`}); }
-  else if (type === 'ice')    { for (let i=0;i<60;i++) P.push({x:Math.random()*W,y:-10,vx:(Math.random()-.5)*2,vy:1+Math.random()*4,r:2+Math.random()*5,life:1,col:`hsl(${190+Math.random()*40},80%,${70+Math.random()*20}%)`}); }
-  else if (type === 'sparks') { for (let i=0;i<100;i++) P.push({x:W/2+(Math.random()-.5)*W*.6,y:H/2+(Math.random()-.5)*H*.6,vx:(Math.random()-.5)*8,vy:(Math.random()-.5)*8,r:1+Math.random()*3,life:1,col:`hsl(${40+Math.random()*30},100%,${60+Math.random()*30}%)`}); }
-  else if (type === 'slash')  { for (let i=0;i<40;i++) P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*6,vy:-(1+Math.random()*3),r:1+Math.random()*3,life:1,col:`hsl(${350+Math.random()*20},90%,55%)`}); }
+  else if (type==='ice')    { for (let i=0;i<60;i++) P.push({x:Math.random()*W,y:-10,vx:(Math.random()-.5)*2,vy:1+Math.random()*4,r:2+Math.random()*5,life:1,col:`hsl(${190+Math.random()*40},80%,${70+Math.random()*20}%)`}); }
+  else if (type==='sparks') { for (let i=0;i<100;i++) P.push({x:W/2+(Math.random()-.5)*W*.6,y:H/2+(Math.random()-.5)*H*.6,vx:(Math.random()-.5)*8,vy:(Math.random()-.5)*8,r:1+Math.random()*3,life:1,col:`hsl(${40+Math.random()*30},100%,${60+Math.random()*30}%)`}); }
+  else if (type==='slash')  { for (let i=0;i<40;i++) P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*6,vy:-(1+Math.random()*3),r:1+Math.random()*3,life:1,col:`hsl(${350+Math.random()*20},90%,55%)`}); }
 
   function loop() {
     ctx.clearRect(0,0,W,H);
@@ -85,6 +88,59 @@ function stopParticles() {
   if (cv) cv.getContext('2d').clearRect(0,0,cv.width,cv.height);
 }
 
+// ── SCENE CORE ──
+let _cineCallback = null;
+
+function flashScreen(cb) {
+  const f = document.getElementById('cineFlash');
+  if (!f) { if(cb) cb(); return; }
+  f.classList.remove('fire'); void f.offsetWidth; f.classList.add('fire');
+  if (cb) setTimeout(cb, 180);
+}
+
+function showCine(panelsHTML, kanjiEl, bottomHTML, bgColor, particleType, callback) {
+  const scene  = document.getElementById('cine-scene');
+  const panels = document.getElementById('cinePanels');
+  if (!scene || !panels) return;
+
+  panels.className = 'cine-panels';
+  panels.innerHTML = panelsHTML;
+  document.getElementById('cineBottom').innerHTML = bottomHTML;
+
+  // Bloquer boutons 2.8s pour forcer la lecture
+  document.querySelectorAll('#cineBottom .btn').forEach(b => {
+    b.disabled = true; b.style.opacity = '0.4';
+  });
+  setTimeout(() => {
+    document.querySelectorAll('#cineBottom .btn').forEach(b => {
+      b.disabled = false; b.style.opacity = '1';
+    });
+  }, 2800);
+
+  // Kanji overlay sur #cine-scene
+  if (kanjiEl) {
+    const old = scene.querySelector('.cine-kanji');
+    if (old) old.remove();
+    scene.appendChild(kanjiEl);
+  }
+
+  scene.style.background = bgColor || '#000';
+  scene.classList.add('active');
+  _cineCallback = callback || null;
+  if (particleType) setTimeout(() => startParticles(particleType), 300);
+}
+
+function closeCine() {
+  stopParticles();
+  const scene = document.getElementById('cine-scene');
+  if (!scene) return;
+  scene.classList.remove('active');
+  document.getElementById('cinePanels').innerHTML = '';
+  document.getElementById('cineBottom').innerHTML = '';
+  const k = scene.querySelector('.cine-kanji');
+  if (k) k.remove();
+  if (_cineCallback) { _cineCallback(); _cineCallback = null; }
+}
 
 function skipCine() { flashScreen(() => closeCine()); }
 
@@ -93,7 +149,23 @@ function makeKanji(text, color, delay, type) {
   el.className = 'cine-kanji';
   el.textContent = text;
   el.style.color = color || '#f97316';
-  setTimeout(() => el.classList.add(type || 'pop'), delay || 0);
+  el.style.cssText += `;
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    font-family:'Bangers',cursive;
+    font-size:clamp(3rem,10vw,7rem);
+    font-weight:900;
+    -webkit-text-stroke:3px #000;
+    text-shadow:4px 4px 0 #000;
+    z-index:8050;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .3s;
+  `;
+  setTimeout(() => {
+    el.style.opacity = '1';
+    el.classList.add(type || 'pop');
+  }, delay || 0);
   return el;
 }
 
@@ -102,6 +174,7 @@ function playIntroScene(n, afterCallback) {
   const cfg = ISLE_INTRO[n] || ISLE_INTRO[1];
   const charImg = charImages[n] || FALLBACK[n];
   const isle = ISLANDS[n];
+  if (!isle) { if (afterCallback) afterCallback(); return; }
 
   const panels = `
     <div class="cine-panel ${cfg.tint} from-left">
@@ -127,6 +200,7 @@ function playIntroScene(n, afterCallback) {
 
   const kanji = makeKanji(cfg.kanji, cfg.kanjiColor, 600, 'pop');
   const pName = (typeof playerData !== 'undefined' && playerData.name) ? playerData.name : 'Moussaillon';
+
   const bottomHTML = `
     <div style="font-family:'Nunito',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:1px;margin-bottom:6px">
       Prêt(e) <strong style="color:var(--gold)">${pName}</strong> ?
@@ -135,10 +209,13 @@ function playIntroScene(n, afterCallback) {
     <button class="btn btn-outline btn-sm" onclick="skipCine()">⏭ PASSER</button>
   `;
 
-  setTimeout(() => sfxCineDrum(), 50);
-  setTimeout(() => sfxCineRiser(), 300);
+  // FIX #3 : sfxCineDrum / sfxCineRiser viennent d'audio-engine.js uniquement
+  setTimeout(() => { if(typeof sfxCineDrum  === 'function') sfxCineDrum();  }, 50);
+  setTimeout(() => { if(typeof sfxCineRiser === 'function') sfxCineRiser(); }, 300);
   setTimeout(() => flashScreen(), 400);
-  setTimeout(() => { document.querySelectorAll('#cine-scene .cine-panel').forEach(p => p.classList.add('burst')); }, 700);
+  setTimeout(() => {
+    document.querySelectorAll('#cine-scene .cine-panel').forEach(p => p.classList.add('burst'));
+  }, 700);
 
   showCine(panels, kanji, bottomHTML, cfg.bg, cfg.particles, afterCallback);
   document.getElementById('cinePanels').classList.add('layout-3');
@@ -151,6 +228,8 @@ function playEndScene(n, score, afterCallback) {
   const cfg = endCfgs[tier];
   const charImg = charImages[n] || FALLBACK[n];
   const isle = ISLANDS[n];
+  if (!isle) { if (afterCallback) afterCallback(); return; }
+
   const gained = score * 2;
   const isVictory = score >= 6;
 
@@ -197,16 +276,20 @@ function playEndScene(n, score, afterCallback) {
     <button class="btn btn-outline" onclick="skipCine();setTimeout(()=>retry(${n}),200)">🔁 REJOUER</button>`;
 
   if (isVictory) {
-    playBGM('victory', false);
-    setTimeout(() => sfxCineVictory(), 200);
-    if (score === 10) setTimeout(() => sfxFanfare(), 900);
+    if (typeof playBGM === 'function') playBGM('victory', false);
+    setTimeout(() => { if(typeof sfxCineVictory === 'function') sfxCineVictory(); }, 200);
+    if (score === 10) setTimeout(() => { if(typeof sfxFanfare === 'function') sfxFanfare(); }, 900);
   } else {
-    playBGM('defeat', false);
-    setTimeout(() => sfxCineDefeat(), 100);
-    setTimeout(() => sfxSlash(), 350);
+    if (typeof playBGM === 'function') playBGM('defeat', false);
+    setTimeout(() => { if(typeof sfxCineDefeat === 'function') sfxCineDefeat(); }, 100);
+    setTimeout(() => { if(typeof sfxSlash === 'function') sfxSlash(); }, 350);
   }
-  setTimeout(() => { document.querySelectorAll('#cine-scene .cine-panel').forEach(p => p.classList.add('burst')); }, 600);
+  setTimeout(() => {
+    document.querySelectorAll('#cine-scene .cine-panel').forEach(p => p.classList.add('burst'));
+  }, 600);
 
   showCine(panelsHTML, kanji, bottomHTML, ISLE_INTRO[n] ? ISLE_INTRO[n].bg : '#0a0d1a', cfg.particles, afterCallback);
   document.getElementById('cinePanels').classList.add(layoutClass);
 }
+
+console.info('🏴‍☠️ cinematic.js chargé — sfxCine* depuis audio-engine.js uniquement');
