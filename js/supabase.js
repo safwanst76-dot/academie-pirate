@@ -170,10 +170,8 @@ async function sbSendMagicLink() {
 // ─── Jouer sans compte ───
 function skipLogin() {
   hideLoginPage();
-  document.getElementById('pirate-nav')?.classList.add('visible');
   const avatarScreen = document.getElementById('avatar-screen');
-  if (avatarScreen) avatarScreen.classList.remove('gone');
-  navigateTo('carte');
+  if (avatarScreen) { avatarScreen.classList.remove('gone'); avatarScreen.style.display = ''; }
 }
 
 // ═══════════════════════════════════════
@@ -300,7 +298,7 @@ function startChildOnboarding(userId, email) {
       });
       if (typeof _orig === 'function') _orig(avatarId, name);
       showToast('🏴‍☠️ Bienvenue ' + (name || 'Pirate') + ' !');
-      navigateTo('carte');
+      showMapPage();
     };
   } else {
     sb.from('profiles').upsert({
@@ -308,7 +306,7 @@ function startChildOnboarding(userId, email) {
       username: email.split('@')[0],
       avatar_id: 'luffy',
       role: 'enfant'
-    }).then(() => navigateTo('carte'));
+    }.then(() => showMapPage());
   }
 }
 
@@ -428,19 +426,61 @@ async function showParentDashboard(userId, parentProfile) {
 // ENFANT CONNU → JEU DIRECT
 // ═══════════════════════════════════════
 
+// ═══════════════════════════════════════
+// AFFICHER LA CARTE DES ÎLES
+// ═══════════════════════════════════════
+
+function showMapPage() {
+  document.body.classList.remove('login-active');
+
+  // ── Mettre à jour l'URL vers #/carte sans déclencher hashchange en boucle ──
+  if (!window.location.hash.includes('#/carte')) {
+    window.location.replace(
+      window.location.pathname + window.location.search + '#/carte'
+    );
+    // Le hashchange va déclencher handleRoute() → showCarte() du router
+    // On s'arrête ici pour laisser le router prendre la main
+    return;
+  }
+
+  // ── Si déjà sur #/carte, affichage direct (appelé par le router) ──
+  ['login-screen','avatar-screen','role-choice-screen',
+   'parent-dashboard','parent-onboard-screen'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) { el.style.display = 'none'; el.classList.add('gone'); }
+  });
+  var quizSec = document.getElementById('quiz-sec');
+  if (quizSec) quizSec.style.display = 'none';
+
+  var loading = document.getElementById('loading');
+  if (loading) loading.classList.add('gone');
+
+  var mapSec   = document.getElementById('map-sec');
+  var globeSec = document.getElementById('globe-sec');
+  var worldDiv = document.querySelector('.world-divider');
+  if (mapSec)   { mapSec.style.display   = 'block'; mapSec.classList.remove('gone'); }
+  if (globeSec) { globeSec.style.display = 'block'; globeSec.classList.remove('gone'); }
+  if (worldDiv) { worldDiv.style.display = 'flex'; }
+
+  if (typeof playBGM === 'function') playBGM('map');
+  window.scrollTo(0, 0);
+}
+
 async function handleEnfant(user, profile) {
-  playerData = {
-    name: profile.username || 'Pirate',
-    avatarId: profile.avatar_id || 'luffy',
-    avatarImg: 'assets/images/avatars/' + (profile.avatar_id || 'luffy') + '.png',
-    avatarColor: '#e63946',
-    avatarQuote: '',
-    charName: profile.avatar_id || 'Luffy'
-  };
-  playerName = playerData.name;
-  updateHeaderAvatar();
-  showToast('🏴‍☠️ Bon retour ' + playerData.name + ' !');
-  navigateTo('carte');
+  if (typeof playerData !== 'undefined') {
+    playerData = {
+      name: profile.username || 'Pirate',
+      avatarId: profile.avatar_id || 'luffy',
+      avatarImg: 'assets/images/avatars/' + (profile.avatar_id || 'luffy') + '.png',
+      avatarColor: '#e63946',
+      avatarQuote: '',
+      charName: profile.avatar_id || 'Luffy'
+    };
+  }
+  if (typeof playerName !== 'undefined') playerName = profile.username || 'Pirate';
+  if (typeof updateHeaderAvatar === 'function') updateHeaderAvatar();
+  showToast('🏴‍☠️ Bon retour ' + (profile.username || 'Pirate') + ' !');
+  showMapPage();
 }
 
 // ═══════════════════════════════════════

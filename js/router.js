@@ -14,6 +14,9 @@ const ROUTES = {
 function getSection(id) { return document.getElementById(id); }
 
 function hideAll() {
+  // Retirer le mode login du body (header redevient visible)
+  document.body.classList.remove('login-active');
+
   // Login
   const login = getSection('login-screen');
   if (login) login.classList.add('gone');
@@ -46,6 +49,7 @@ function hideAll() {
 // ══════════════════════════════
 function showLogin() {
   hideAll();
+  document.body.classList.add('login-active');
   const login = getSection('login-screen');
   if (login) login.classList.remove('gone');
   document.title = 'Académie Pirate — Connexion';
@@ -63,11 +67,9 @@ function showCarte() {
   const divider = document.querySelector('.world-divider');
   if (divider) divider.style.display = 'flex';
 
-  // Panneau info continent EN DESSOUS de la carte (pas en overlay)
   const panel = getSection('globe-panel');
   if (panel) {
     panel.classList.remove('visible');
-    // Déplacer le panneau dans globe-sec si pas déjà fait
     const globeSec = getSection('globe-sec');
     if (globeSec && panel.parentElement !== globeSec) {
       globeSec.appendChild(panel);
@@ -82,7 +84,6 @@ function showCarte() {
 
   document.title = 'Académie Pirate — Carte du Monde';
 
-  // Rebuild la carte si pas encore fait
   if (typeof buildTreasureMap === 'function') {
     const container = getSection('globe-container');
     if (container && !container.querySelector('svg')) buildTreasureMap();
@@ -117,7 +118,7 @@ function navigateTo(route) {
 }
 
 function getCurrentRoute() {
-  const hash = window.location.hash; // ex: #/carte
+  const hash = window.location.hash;
   if (!hash || hash === '#' || hash === '#/') return 'login';
   const route = hash.replace('#/', '').split('/')[0];
   return route || 'login';
@@ -129,7 +130,6 @@ function handleRoute() {
   if (handler) {
     handler();
   } else {
-    // Route inconnue → login
     navigateTo('login');
   }
 }
@@ -158,11 +158,9 @@ window.showContinentPanel = function(c) {
   const route = getCurrentRoute();
 
   if (route === 'carte') {
-    // Afficher en dessous de la carte
     const panel = getSection('globe-panel');
     if (!panel) return;
 
-    // S'assurer que le panneau est dans globe-sec
     const globeSec = getSection('globe-sec');
     if (globeSec && panel.parentElement !== globeSec) {
       globeSec.appendChild(panel);
@@ -203,11 +201,9 @@ window.showContinentPanel = function(c) {
       }
     `;
 
-    // Scroll doux vers le panneau
     setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 
   } else {
-    // Comportement original sur les autres pages
     if (typeof window._originalShowContinentPanel === 'function') {
       window._originalShowContinentPanel(c);
     }
@@ -226,34 +222,13 @@ window.hideContinentPanel = function() {
 };
 
 // ══════════════════════════════
-// NAVIGATION UI — Barre de nav entre pages
+// NAVIGATION UI — supprimée (boutons Carte/Îles gérés par header)
 // ══════════════════════════════
 function buildNavBar() {
-  // Ne pas recréer si déjà là
-  if (document.getElementById('pirate-nav')) return;
-
-  const nav = document.createElement('div');
-  nav.id = 'pirate-nav';
-  nav.innerHTML = `
-    <button class="pnav-btn" data-route="carte" onclick="navigateTo('carte')">🗺️ Carte</button>
-    <button class="pnav-btn" data-route="iles" onclick="navigateTo('iles')">🏝️ Îles Pirates</button>
-  `;
-
-  // Insérer après le header principal
-  const header = document.querySelector('#hdr') || document.querySelector('header');
-  if (header) {
-    header.insertAdjacentElement('afterend', nav);
-  } else {
-    document.body.insertAdjacentElement('afterbegin', nav);
-  }
+  // Désactivé — la navbar #pirate-nav est masquée via CSS header.css
 }
 
-function updateNavActive() {
-  const route = getCurrentRoute();
-  document.querySelectorAll('.pnav-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.route === route);
-  });
-}
+function updateNavActive() {}
 
 // ══════════════════════════════
 // INIT
@@ -261,11 +236,9 @@ function updateNavActive() {
 document.addEventListener('DOMContentLoaded', () => {
   // Bloquer le router si Supabase traite un magic link
   if (window.location.hash.includes("access_token")) {
-    console.log("🔑 Magic link détecté — router suspendu");
+    console.log("🔑 Magic link détecté — router suspendu, Supabase gère la redirection");
     return;
   }
-  // Construire la navbar (visible seulement quand connecté)
-  buildNavBar();
 
   // Si pas de hash → login
   if (!window.location.hash || window.location.hash === '#') {
@@ -274,39 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleRoute();
   }
 
-  // Mettre à jour le style actif de la nav à chaque changement
   window.addEventListener('hashchange', updateNavActive);
 });
 
-// ── CSS navbar injecté dynamiquement ──
-const navStyle = document.createElement('style');
-navStyle.textContent = `
-#pirate-nav {
-  display: none; /* caché par défaut, affiché quand connecté */
-  align-items: center; justify-content: center; gap: 10px;
-  padding: 8px 14px;
-  background: rgba(0,0,0,0.4);
-  border-bottom: 1px solid rgba(255,215,0,0.15);
-  position: relative; z-index: 100;
-}
-#pirate-nav.visible { display: flex; }
-
-.pnav-btn {
-  font-family: 'Bangers', cursive;
-  font-size: 1rem; letter-spacing: 2px;
-  padding: 6px 18px; border-radius: 20px;
-  border: 2px solid rgba(255,215,0,0.2);
-  background: transparent; color: rgba(255,255,255,0.5);
-  cursor: pointer; transition: all .2s;
-}
-.pnav-btn:hover {
-  border-color: rgba(255,215,0,0.5);
-  color: #ffd700; background: rgba(255,215,0,0.08);
-}
-.pnav-btn.active {
-  border-color: #ffd700; color: #ffd700;
-  background: rgba(255,215,0,0.12);
-  box-shadow: 0 0 12px rgba(255,215,0,0.2);
-}
-`;
-document.head.appendChild(navStyle);
+// ── CSS navbar retiré (géré par header.css) ──
