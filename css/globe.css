@@ -1,200 +1,203 @@
-/* ═══════════════════════════════════════════════════════════
-   GLOBE.CSS — Page Carte du Monde
-   Mobile-first · Centré · Override main.css
-═══════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════
+   GLOBE.CSS — Académie Pirate
+   Carte du monde SVG · Panneau continent
+   Mobile-first
+   ═══════════════════════════════════════════════ */
 
-/* ── Conteneur principal page Carte ── */
+/* ── Section globe ── */
 #globe-sec {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 16px 12px 40px;
-  box-sizing: border-box;
-  gap: 0;
+  padding: 12px 12px 80px;
+  gap: 14px;
   position: relative;
-  z-index: 5;
+  z-index: 1;
+  width: 100%;
 }
 
-/* ── Titre "Carte du Monde" ── */
-#globe-sec .sec-title {
+/* ── Titre section ── */
+.globe-title {
   font-family: 'Bangers', cursive;
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  letter-spacing: 4px;
+  font-size: clamp(1.4rem, 5vw, 2rem);
   color: var(--gold2);
-  margin: 0 0 12px;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #000;
   text-align: center;
 }
+.globe-subtitle {
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,.45);
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: -8px;
+}
 
-/* ── Conteneur SVG/canvas de la carte ── */
-#globe-container {
+/* ── Conteneur carte ── */
+#globe-container,
+#treasure-map {
   width: 100%;
-  max-width: min(720px, 96vw);
-  min-height: 280px;
-  aspect-ratio: 4 / 3;
-  border-radius: 10px;
+  max-width: min(900px, 96vw);
+  border-radius: 16px;
   overflow: hidden;
-  border: 2.5px solid rgba(255,215,0,.3);
-  box-shadow: 0 8px 40px rgba(0,0,0,.6);
+  border: 2px solid rgba(245,166,35,.2);
+  box-shadow: 0 8px 40px rgba(0,0,0,.5);
   background: #0a0d1a;
-  position: relative;
+  cursor: pointer;
 }
-
-#globe-container > * {
-  width: 100% !important;
-  height: 100% !important;
+#globe-container svg,
+#treasure-map svg {
+  width: 100%;
+  height: auto;
   display: block;
+  touch-action: manipulation;
 }
 
-/* ── Séparateur Grand Line ── */
-.world-divider {
+/* ── Légende matières ── */
+.globe-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+}
+.legend-badge {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 0 8px;
-  font-family: 'Bangers', cursive;
-  font-size: clamp(.75rem, 2vw, .95rem);
-  letter-spacing: 4px;
-  color: rgba(255,215,0,.4);
-  width: 100%;
-  max-width: min(560px, 94vw);
-}
-.world-divider::before,
-.world-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,215,0,.3));
-}
-.world-divider::after {
-  background: linear-gradient(270deg, transparent, rgba(255,215,0,.3));
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
 }
 
-/* ── Panneau info continent (s'affiche SOUS la carte) ── */
+/* ── Panneau continent ── */
 #globe-panel {
-  width: 100%;
-  max-width: min(720px, 96vw);
-  box-sizing: border-box;
-  margin-top: 0;
+  width: fit-content;
+  min-width: min(320px, 92vw);
+  max-width: min(520px, 92vw);
+  align-self: center;
   border-radius: 16px;
+  border: 2px solid rgba(255,215,0,.25);
   background: linear-gradient(160deg, #0a0d1a 0%, #120820 100%);
-  border: 2px solid rgba(255,215,0,.2);
-  box-shadow: 0 8px 40px rgba(0,0,0,.5);
-  padding: 14px 16px;
-  display: none; /* montré par le router */
+  padding: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.7);
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
 }
 
-/* Styles internes du panneau */
 .gp-header {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 10px;
+  gap: 12px;
 }
-.gp-emoji { font-size: 2.2rem; line-height: 1; }
+.gp-emoji {
+  font-size: clamp(2rem, 6vw, 2.5rem);
+  flex-shrink: 0;
+}
 .gp-name {
   font-family: 'Bangers', cursive;
-  font-size: clamp(1.4rem, 5vw, 2rem);
-  letter-spacing: 3px;
-  color: #fff;
-  text-shadow: 2px 2px 0 #000;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: var(--gold2);
+  letter-spacing: 2px;
   line-height: 1;
 }
 .gp-universe {
-  font-family: 'Nunito', sans-serif;
-  font-size: .8rem;
-  font-weight: 800;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.8rem, 2.5vw, 1rem);
   letter-spacing: 1px;
+  opacity: .8;
   margin-top: 2px;
 }
 .gp-subject {
-  font-family: 'Nunito', sans-serif;
-  font-size: .75rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--gold);
-  margin-bottom: 8px;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.9rem, 3vw, 1.1rem);
+  color: var(--white);
+  letter-spacing: 1px;
 }
 .gp-desc {
   font-family: 'Nunito', sans-serif;
-  font-size: .85rem;
-  color: rgba(255,255,255,.7);
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,.6);
   line-height: 1.5;
-  margin-bottom: 12px;
+  font-weight: 700;
 }
 .gp-chars {
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  gap: 6px;
 }
 .gp-char-badge {
-  font-family: 'Nunito', sans-serif;
-  font-size: .72rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: var(--fs-xs);
   font-weight: 800;
-  padding: 4px 10px;
-  border-radius: 99px;
-  border: 1.5px solid;
-  background: rgba(255,255,255,.04);
 }
 .gp-locked-msg {
-  font-family: 'Bangers', cursive;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  color: rgba(255,255,255,.4);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
-  padding: 12px;
-  border: 1px dashed rgba(255,255,255,.15);
-  border-radius: 8px;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.9rem, 3vw, 1.1rem);
+  color: rgba(255,255,255,.4);
+  letter-spacing: 1.5px;
 }
 .gp-play-btn {
   width: 100%;
-  font-family: 'Bangers', cursive;
-  font-size: 1.1rem;
-  letter-spacing: 3px;
-  padding: 10px;
+  padding: 14px;
   border: none;
-  border-radius: 14px;
+  border-radius: 12px;
   color: #fff;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  letter-spacing: 2px;
   cursor: pointer;
-  text-shadow: 2px 2px 0 rgba(0,0,0,.4);
-  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
   transition: transform .15s, box-shadow .15s;
+  min-height: var(--tap-min);
   -webkit-tap-highlight-color: transparent;
 }
-.gp-play-btn:hover  { transform: scale(1.02); }
+.gp-play-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,.4); }
 .gp-play-btn:active { transform: scale(.97); }
 
-/* ═══════════════════════════════
-   RESPONSIVE MOBILE-FIRST
-═══════════════════════════════ */
+/* ── Globe overlay (fond semi-transparent mobile) ── */
+#globe-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 200;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+#globe-overlay.visible { display: block; }
 
-/* Mobile (< 480px) */
-@media (max-width: 480px) {
-  #globe-sec { padding: 10px 8px 28px; }
-  #globe-container {
-    max-width: 100%;
-    border-radius: 8px;
-    border-width: 2px;
-  }
-  #globe-panel { max-width: 100%; padding: 14px 12px; border-radius: 12px; }
-  .world-divider { max-width: 100%; }
-  .gp-play-btn { font-size: 1.2rem; padding: 12px; }
+/* ─────────────── RESPONSIVE ─────────────── */
+
+@media (min-width: 480px) {
+  #globe-sec { padding: 16px 16px 80px; }
+  #globe-panel { padding: 20px; }
 }
 
-/* Tablette (≥ 600px) */
-@media (min-width: 600px) {
-  #globe-container { max-width: min(680px, 90vw); }
-  #globe-panel { max-width: min(680px, 90vw); }
-  .world-divider { max-width: min(600px, 90vw); }
+@media (min-width: 768px) {
+  #globe-container,
+  #treasure-map { max-width: min(1050px, 92vw); }
+  #globe-panel   { max-width: min(520px, 88vw); }
+  .gp-play-btn   { font-size: 1.2rem; }
 }
 
-/* Desktop (≥ 1024px) */
 @media (min-width: 1024px) {
-  #globe-sec { padding: 24px 20px 48px; }
-  #globe-container { max-width: 760px; }
-  #globe-panel { max-width: 760px; }
-  .world-divider { max-width: 640px; }
+  #globe-sec { padding: 24px 24px 80px; }
+  #globe-container,
+  #treasure-map { max-width: min(1080px, 88vw); }
+  #globe-panel   { max-width: 520px; padding: 24px; }
 }
