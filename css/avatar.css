@@ -1,94 +1,213 @@
 /* ═══════════════════════════════════════
-   AVATAR.CSS — Académie Pirate
-   Écran de création d'identité pirate
+   AVATAR SCREEN — Académie Pirate
+   Design enfant : cartes rondes, colorées, lisibles
 ═══════════════════════════════════════ */
 
 #avatar-screen {
-  position: fixed; inset: 0; z-index: 10;
-  background: rgba(0,0,0,0.6);
-  display: flex; flex-direction: column; align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: linear-gradient(135deg, #0a0d1a 0%, #1a0820 50%, #050820 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  padding: 28px 20px 40px;
   overflow-y: auto;
-  padding: max(100px, 12vh) 16px 40px;
-  gap: 14px;
+  transition: opacity .5s, visibility .5s;
 }
 #avatar-screen.gone { opacity: 0; visibility: hidden; pointer-events: none; }
 
+/* ── Titre ── */
 .av-title {
   font-family: 'Bangers', cursive;
-  font-size: clamp(2rem, 8vw, 3.2rem);
-  letter-spacing: 4px; text-align: center;
-  background: linear-gradient(135deg, #f97316, #ffd700, #e63946);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  letter-spacing: 4px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffd700, #f97316, #e63946);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .av-subtitle {
   font-family: 'Nunito', sans-serif;
-  font-size: .85rem; color: rgba(255,255,255,.6);
-  letter-spacing: 3px; text-transform: uppercase; text-align: center;
+  font-size: .9rem;
+  color: rgba(255,255,255,.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -12px;
 }
+
+/* ── Champ nom ── */
 .av-name-wrap {
-  display: flex; flex-direction: column; gap: 6px;
-  width: min(340px, 88vw);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: min(360px, 90vw);
 }
 .av-name-lbl {
   font-family: 'Nunito', sans-serif;
-  font-size: .75rem; font-weight: 800;
-  color: #ffd700; letter-spacing: 2px; text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .av-name-input {
   background: rgba(255,255,255,.07);
   border: 2px solid rgba(255,215,0,.3);
-  border-radius: 12px; padding: 12px 16px;
-  color: #fff; font-family: 'Nunito', sans-serif;
-  font-size: 1rem; font-weight: 700;
-  outline: none; width: 100%;
+  border-radius: 14px;
+  padding: 12px 16px;
+  color: #fff;
+  font-family: 'Bangers', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color .2s, box-shadow .2s;
 }
-.av-name-input:focus { border-color: rgba(255,215,0,.7); }
+.av-name-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255,215,0,.15);
+}
+.av-name-input::placeholder { color: rgba(255,255,255,.2); }
 
+/* ── Titre section grille ── */
 .av-section-title {
   font-family: 'Bangers', cursive;
-  font-size: 1.1rem; letter-spacing: 3px;
-  color: rgba(255,215,0,.7); text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  color: var(--gold2);
+  text-align: center;
+  margin-bottom: -8px;
 }
 
+/* ── Grille avatars ── */
 .av-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  gap: 10px;
-  width: min(400px, 92vw);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: min(520px, 95vw);
 }
-.av-card {
-  background: rgba(255,255,255,.06);
-  border: 2px solid rgba(255,255,255,.1);
-  border-radius: 14px; padding: 10px 6px;
-  cursor: pointer; text-align: center;
-  transition: all .2s; display: flex; flex-direction: column;
-  align-items: center; gap: 6px;
-}
-.av-card:hover { border-color: rgba(255,215,0,.5); background: rgba(255,215,0,.08); transform: scale(1.04); }
-.av-card.selected { border-color: #ffd700; background: rgba(255,215,0,.15); box-shadow: 0 0 20px rgba(255,215,0,.3); }
-.av-card img { width: 64px; height: 64px; object-fit: cover; border-radius: 50%; border: 2px solid rgba(255,255,255,.2); }
-.av-card-name { font-family: 'Nunito', sans-serif; font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.8); }
+@media (min-width: 500px) { .av-grid { grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 700px) { .av-grid { grid-template-columns: repeat(6, 1fr); } }
 
+/* ── Carte avatar ── */
+.av-char {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px 6px;
+  border-radius: 16px;
+  border: 2.5px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.04);
+  transition: all .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.av-char:hover {
+  background: rgba(255,215,0,.1);
+  border-color: rgba(255,215,0,.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.4);
+}
+.av-char.selected {
+  border-color: var(--gold);
+  background: rgba(255,215,0,.15);
+  box-shadow: 0 0 20px rgba(255,215,0,.35);
+  transform: translateY(-2px);
+}
+
+/* Photo ronde */
+.av-char img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid rgba(255,255,255,.15);
+  background: #111;
+  transition: border-color .2s;
+}
+.av-char.selected img { border-color: var(--gold); }
+
+/* Nom */
+.av-char-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: .65rem;
+  font-weight: 900;
+  color: rgba(255,255,255,.6);
+  letter-spacing: .5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.av-char.selected .av-char-name { color: var(--gold); }
+
+/* ── Prévisualisation sélection ── */
 .av-selected-preview {
-  display: flex; align-items: center; gap: 14px;
-  background: rgba(255,215,0,.08);
-  border: 2px solid rgba(255,215,0,.3);
-  border-radius: 16px; padding: 14px;
-  width: min(340px, 88vw);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,.05);
+  border: 2px solid rgba(255,215,0,.25);
+  border-radius: 18px;
+  width: min(360px, 90vw);
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
 }
-.av-preview-img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #ffd700; flex-shrink: 0; }
-.av-preview-info { display: flex; flex-direction: column; gap: 4px; }
-.av-preview-name { font-family: 'Bangers', cursive; font-size: 1.3rem; letter-spacing: 2px; color: #ffd700; }
-.av-preview-char { font-family: 'Nunito', sans-serif; font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.7); }
-.av-preview-quote { font-family: 'Nunito', sans-serif; font-size: .72rem; color: rgba(255,255,255,.45); font-style: italic; }
+.av-preview-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 16px rgba(255,215,0,.35);
+  flex-shrink: 0;
+}
+.av-preview-info { display: flex; flex-direction: column; gap: 3px; }
+.av-preview-name {
+  font-family: 'Bangers', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  line-height: 1;
+}
+.av-preview-char {
+  font-family: 'Nunito', sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+.av-preview-quote {
+  font-family: 'Nunito', sans-serif;
+  font-size: .7rem;
+  color: rgba(255,255,255,.45);
+  font-style: italic;
+}
 
+/* ── Bouton commencer ── */
 .av-start-btn {
-  font-family: 'Bangers', cursive; font-size: 1.5rem;
-  letter-spacing: 3px; padding: 14px 32px;
-  border-radius: 16px; border: none; cursor: pointer;
+  font-family: 'Bangers', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  padding: 14px 36px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
   background: linear-gradient(135deg, #e63946, #f97316);
-  color: #fff; text-shadow: 2px 2px 0 rgba(0,0,0,.5);
-  box-shadow: 0 6px 30px rgba(230,57,70,.5);
-  transition: all .2s; width: min(340px, 88vw);
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.4);
+  box-shadow: 0 4px 20px rgba(230,57,70,.45), 0 0 0 3px rgba(255,255,255,.08);
+  transition: all .2s;
+  width: min(360px, 90vw);
 }
-.av-start-btn:hover { transform: scale(1.04); filter: brightness(1.1); }
+.av-start-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 28px rgba(230,57,70,.6);
+}
+.av-start-btn:active { transform: scale(.97); }
