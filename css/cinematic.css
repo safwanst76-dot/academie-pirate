@@ -1,0 +1,117 @@
+/* ═══════════════════════════════════════
+   CINEMATIC.CSS — Académie Pirate
+   Scène cinématique, canvas, panels manga,
+   flash, skip, bottom bar
+═══════════════════════════════════════ */
+
+#cine-scene {
+  position: fixed; inset: 0; z-index: 8000;
+  background: #000;
+  display: none; flex-direction: column;
+  align-items: center; justify-content: center;
+  overflow: hidden;
+}
+#cine-scene.active { display: flex; }
+
+#cine-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+}
+
+.cine-flash {
+  position: absolute; inset: 0;
+  background: #fff; opacity: 0;
+  pointer-events: none; transition: opacity .1s;
+  z-index: 8010;
+}
+.cine-flash.on { opacity: 1; }
+
+.cine-skip {
+  position: absolute; top: 16px; right: 16px; z-index: 8020;
+  font-family: 'Bangers', cursive; font-size: .9rem; letter-spacing: 2px;
+  padding: 6px 16px; border-radius: 20px;
+  border: 2px solid rgba(255,255,255,.3);
+  background: rgba(0,0,0,.5); color: rgba(255,255,255,.7);
+  cursor: pointer; transition: all .2s;
+}
+.cine-skip:hover { border-color: #ffd700; color: #ffd700; }
+
+/* ── PANELS MANGA ── */
+.cine-panels {
+  position: absolute; inset: 0;
+  display: grid; gap: 4px;
+  padding: 4px; z-index: 8005;
+}
+
+.cine-panel {
+  background: var(--card);
+  border: 3px solid #fff;
+  border-radius: 4px;
+  overflow: hidden; position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.cine-panel img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+}
+
+/* ── SPEECH BUBBLE ── */
+.speech-bubble {
+  position: absolute; background: #fff; color: #000;
+  font-family: 'Nunito', sans-serif; font-size: .85rem; font-weight: 800;
+  padding: 8px 14px; border-radius: 16px;
+  max-width: 70%; text-align: center; line-height: 1.4;
+  box-shadow: 3px 3px 0 #000;
+  animation: bubbleIn .3s cubic-bezier(.175,.885,.32,1.275);
+  z-index: 8006;
+}
+@keyframes bubbleIn {
+  from { transform: scale(0) rotate(-5deg); opacity: 0 }
+  to   { transform: scale(1) rotate(0);     opacity: 1 }
+}
+
+/* ── BOTTOM BAR ── */
+.cine-bottom {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  z-index: 8015;
+  background: linear-gradient(transparent, rgba(0,0,0,.9));
+  padding: 30px 20px 20px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.cine-char-name {
+  font-family: 'Bangers', cursive; font-size: 1.3rem;
+  letter-spacing: 3px; color: #ffd700;
+  text-shadow: 2px 2px 0 #000;
+}
+.cine-text {
+  font-family: 'Nunito', sans-serif; font-size: .95rem;
+  font-weight: 700; color: #fff; line-height: 1.5;
+  min-height: 3em;
+}
+.cine-tap {
+  font-family: 'Nunito', sans-serif; font-size: .7rem;
+  font-weight: 700; color: rgba(255,255,255,.4);
+  letter-spacing: 2px; text-align: right;
+  animation: tapBlink 1.2s ease infinite;
+}
+@keyframes tapBlink { 0%,100% { opacity: .4 } 50% { opacity: 1 } }
+
+/* ── KANJI FX ── */
+.kanji-fx {
+  position: fixed; pointer-events: none; z-index: 8100;
+  font-family: 'Bangers', cursive; font-size: 4rem;
+  font-weight: 900; color: #ffd700;
+  -webkit-text-stroke: 3px #000;
+  text-shadow: 4px 4px 0 #000;
+  animation: kanjiFade 1s ease forwards;
+}
+@keyframes kanjiFade {
+  0%   { opacity: 1; transform: scale(1.5) rotate(-10deg) }
+  100% { opacity: 0; transform: scale(0.8) rotate(5deg) translateY(-40px) }
+}
+
+/* ── PARTICLE CANVAS ── */
+#particle-canvas {
+  position: fixed; inset: 0; z-index: 7999;
+  pointer-events: none;
+}

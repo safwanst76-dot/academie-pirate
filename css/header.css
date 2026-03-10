@@ -1,0 +1,213 @@
+/* ═══════════════════════════════════════
+   HEADER.CSS — Académie Pirate
+   Header, HUD, badges, sound bar, loading,
+   voice subtitle, effets visuels (toast, flash, attack)
+═══════════════════════════════════════ */
+
+/* ── HEADER ── */
+header#hdr {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: linear-gradient(180deg, rgba(8,12,24,.98) 0%, rgba(8,12,24,.9) 100%);
+  border-bottom: 2px solid rgba(255,215,0,.2);
+  padding: 10px 16px 8px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  box-shadow: 0 4px 30px rgba(0,0,0,.6);
+}
+header#hdr.gone { display: none; }
+
+.hud-avatar {
+  position: absolute; left: 14px; top: 10px;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  cursor: pointer; transition: transform .2s;
+}
+.hud-avatar:hover { transform: scale(1.08); }
+.hud-avatar img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,215,0,.5); }
+.hud-avatar-name { font-family: 'Nunito', sans-serif; font-size: .6rem; font-weight: 800; color: rgba(255,215,0,.8); max-width: 60px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.logo {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  letter-spacing: 3px; color: #ffd700;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.8);
+}
+.logo-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: .65rem; font-weight: 700;
+  color: rgba(255,255,255,.4); letter-spacing: 2px;
+  text-transform: uppercase; text-align: center;
+}
+
+.hud {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+}
+.hud-pill {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px; padding: 4px 12px;
+  font-family: 'Nunito', sans-serif; font-size: .75rem; font-weight: 700;
+  display: flex; align-items: center; gap: 4px;
+}
+.hud-pill b { color: #ffd700; }
+
+/* ── XP BAR ── */
+.xp-wrap {
+  width: min(320px, 88vw);
+  display: flex; flex-direction: column; gap: 3px;
+}
+.xp-track {
+  height: 6px; background: rgba(255,255,255,.1);
+  border-radius: 3px; overflow: hidden;
+}
+.xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f97316, #ffd700);
+  border-radius: 3px; transition: width .5s ease;
+}
+.xp-lbl {
+  font-family: 'Nunito', sans-serif; font-size: .6rem; font-weight: 700;
+  color: rgba(255,255,255,.4); text-align: right;
+}
+
+/* ── BADGES ── */
+.badges {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+}
+.bdg {
+  position: relative; font-size: 1.2rem; cursor: default;
+  filter: grayscale(1) opacity(.3); transition: all .3s;
+}
+.bdg.earned { filter: none; animation: badgePop .5s cubic-bezier(.175,.885,.32,1.275); }
+@keyframes badgePop { from { transform: scale(0) rotate(-20deg) } to { transform: scale(1) rotate(0) } }
+.bdg-tip {
+  position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,.9); color: #ffd700;
+  font-family: 'Nunito', sans-serif; font-size: .65rem; font-weight: 700;
+  padding: 4px 8px; border-radius: 6px; white-space: nowrap;
+  pointer-events: none; opacity: 0; transition: opacity .2s;
+}
+.bdg:hover .bdg-tip { opacity: 1; }
+
+/* ── SOUND BAR ── */
+#sound-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(8,12,24,.95);
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 8px 12px; display: flex; align-items: center;
+  gap: 8px; flex-wrap: wrap;
+}
+.snd-btn {
+  font-family: 'Nunito', sans-serif; font-size: .7rem; font-weight: 800;
+  padding: 5px 10px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.4); cursor: pointer; transition: all .2s;
+}
+.snd-btn.active { background: rgba(255,215,0,.15); border-color: rgba(255,215,0,.4); color: #ffd700; }
+.vol-wrap { display: flex; align-items: center; gap: 6px; margin-left: auto; font-size: .8rem; }
+.vol-slider { width: 80px; accent-color: #ffd700; }
+
+/* ── LOADING ── */
+#loading {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--bg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; transition: opacity .5s;
+}
+#loading.gone { opacity: 0; pointer-events: none; }
+.load-jolly { font-size: 4rem; animation: loadBounce 1s ease infinite; }
+@keyframes loadBounce { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
+.load-title {
+  font-family: 'Bangers', cursive; font-size: 2.5rem;
+  letter-spacing: 6px; color: #ffd700;
+  text-shadow: 3px 3px 0 #000;
+}
+.load-sub {
+  font-family: 'Nunito', sans-serif; font-size: .85rem;
+  color: rgba(255,255,255,.5); letter-spacing: 2px;
+}
+.load-track {
+  width: min(280px, 80vw); height: 8px;
+  background: rgba(255,255,255,.1); border-radius: 4px; overflow: hidden;
+}
+.load-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #e63946, #ffd700);
+  border-radius: 4px; animation: loadBar 2.4s ease forwards;
+}
+@keyframes loadBar { to { width: 100%; } }
+
+/* ── VOICE SUBTITLE ── */
+#voice-sub {
+  position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%);
+  z-index: 150; font-family: 'Nunito', sans-serif;
+  font-size: .9rem; font-weight: 800;
+  background: rgba(0,0,0,.85); color: #ffd700;
+  padding: 6px 16px; border-radius: 20px;
+  white-space: nowrap; opacity: 0; transition: opacity .3s;
+  pointer-events: none;
+}
+#voice-sub.visible { opacity: 1; }
+
+/* ── TOAST ── */
+#toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+  z-index: 300;
+  background: linear-gradient(135deg, #f97316, #ffd700);
+  color: #000; font-family: 'Bangers', cursive;
+  font-size: 1.1rem; letter-spacing: 2px;
+  padding: 10px 24px; border-radius: 30px;
+  opacity: 0; transition: all .3s; pointer-events: none;
+  box-shadow: 0 4px 20px rgba(249,115,22,.5);
+}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── SCREEN FLASH ── */
+.screen-flash {
+  position: fixed; inset: 0; z-index: 500;
+  pointer-events: none; opacity: 0;
+}
+.screen-flash.green { background: rgba(6,214,160,.3); animation: flashAnim .3s ease; }
+.screen-flash.red   { background: rgba(230,57,70,.3);  animation: flashAnim .3s ease; }
+@keyframes flashAnim { 0% { opacity: 1 } 100% { opacity: 0 } }
+
+/* ── ATTACK FX ── */
+.attack-correct {
+  position: fixed; top: 35%; left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  font-family: 'Bangers', cursive;
+  font-size: clamp(3rem,10vw,5rem); letter-spacing: 4px;
+  color: #06d6a0; -webkit-text-stroke: 3px #000;
+  text-shadow: 4px 4px 0 #000;
+  z-index: 600; pointer-events: none;
+}
+.attack-correct.fire { animation: attackIn .7s cubic-bezier(.175,.885,.32,1.275) forwards; }
+@keyframes attackIn {
+  0%  { transform: translate(-50%,-50%) scale(0) rotate(-10deg); opacity: 1 }
+  60% { transform: translate(-50%,-50%) scale(1.2) rotate(3deg);  opacity: 1 }
+  100%{ transform: translate(-50%,-50%) scale(1)   rotate(0);     opacity: 0 }
+}
+.attack-wrong {
+  position: fixed; inset: 0; z-index: 600;
+  pointer-events: none; display: flex;
+  align-items: center; justify-content: center; opacity: 0;
+}
+.attack-wrong.fire { animation: wrongFlash .4s ease forwards; }
+@keyframes wrongFlash { 0% { opacity: 1 } 100% { opacity: 0 } }
+.slash-line {
+  position: absolute; left: 0; right: 0;
+  height: 4px; background: rgba(230,57,70,.6);
+  transform: rotate(-8deg);
+}
+.slash-line:nth-child(2) { transform: rotate(5deg); top: 45%; }
+.slash-line:nth-child(3) { transform: rotate(-15deg); top: 55%; }
+
+/* ── COLOR OVERLAY ── */
+.color-overlay {
+  position: fixed; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(8,12,24,.5) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(8,12,24,.7) 100%
+  );
+}
