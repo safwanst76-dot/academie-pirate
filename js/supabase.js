@@ -435,12 +435,7 @@ function showMapPage() {
 
   // ── Mettre à jour l'URL vers #/carte sans déclencher hashchange en boucle ──
   if (!window.location.hash.includes('#/carte')) {
-    window.location.replace(
-      window.location.pathname + window.location.search + '#/carte'
-    );
-    // Le hashchange va déclencher handleRoute() → showCarte() du router
-    // On s'arrête ici pour laisser le router prendre la main
-    return;
+    history.replaceState(null, '', window.location.pathname + '#/carte');
   }
 
   // ── Si déjà sur #/carte, affichage direct (appelé par le router) ──
