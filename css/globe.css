@@ -29,7 +29,8 @@
 /* ── Conteneur SVG/canvas de la carte ── */
 #globe-container {
   width: 100%;
-  max-width: min(560px, 94vw);
+  max-width: min(720px, 96vw);
+  min-height: 280px;
   aspect-ratio: 4 / 3;
   border-radius: 10px;
   overflow: hidden;
@@ -73,14 +74,14 @@
 /* ── Panneau info continent (s'affiche SOUS la carte) ── */
 #globe-panel {
   width: 100%;
-  max-width: min(560px, 94vw);
+  max-width: min(720px, 96vw);
   box-sizing: border-box;
   margin-top: 0;
   border-radius: 16px;
   background: linear-gradient(160deg, #0a0d1a 0%, #120820 100%);
   border: 2px solid rgba(255,215,0,.2);
   box-shadow: 0 8px 40px rgba(0,0,0,.5);
-  padding: 20px 18px;
+  padding: 14px 16px;
   display: none; /* montré par le router */
 }
 
@@ -151,9 +152,9 @@
 .gp-play-btn {
   width: 100%;
   font-family: 'Bangers', cursive;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   letter-spacing: 3px;
-  padding: 14px;
+  padding: 10px;
   border: none;
   border-radius: 14px;
   color: #fff;
@@ -185,15 +186,15 @@
 
 /* Tablette (≥ 600px) */
 @media (min-width: 600px) {
-  #globe-container { max-width: min(600px, 90vw); }
-  #globe-panel { max-width: min(600px, 90vw); }
+  #globe-container { max-width: min(680px, 90vw); }
+  #globe-panel { max-width: min(680px, 90vw); }
   .world-divider { max-width: min(600px, 90vw); }
 }
 
 /* Desktop (≥ 1024px) */
 @media (min-width: 1024px) {
   #globe-sec { padding: 24px 20px 48px; }
-  #globe-container { max-width: 640px; }
-  #globe-panel { max-width: 640px; }
+  #globe-container { max-width: 760px; }
+  #globe-panel { max-width: 760px; }
   .world-divider { max-width: 640px; }
 }
