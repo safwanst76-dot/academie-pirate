@@ -19,8 +19,8 @@ body.login-active #voice-sub {
   align-items: center;
   justify-content: center;
   overflow-y: auto;
-  background: rgba(5, 8, 16, 0.84);
-  backdrop-filter: blur(2px);
+  background: rgba(5, 8, 16, 0.45);
+  backdrop-filter: blur(0px);
   transition: opacity .4s, visibility .4s;
   padding: 20px 0 40px;
 }
