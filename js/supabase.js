@@ -306,7 +306,7 @@ function startChildOnboarding(userId, email) {
       username: email.split('@')[0],
       avatar_id: 'luffy',
       role: 'enfant'
-    }.then(() => showMapPage());
+    }).then(() => showMapPage());
   }
 }
 
