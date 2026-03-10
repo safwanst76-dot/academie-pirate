@@ -145,6 +145,37 @@ const ISLANDS = {
 // ── STATE ──
 let xp = 0, completedIslands = {}, currentIsland = 0, streak = 0, answers = {};
 
+// ── GIFs résultats ──
+const GIFS_CORRECT = [
+  'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
+  'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
+  'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
+  'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
+];
+const GIFS_WRONG = [
+  'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
+  'https://media.giphy.com/media/U8fhZ6bL4gm0eZ7NJH/giphy.gif',
+  'https://media.giphy.com/media/l4EoSBIpWo73b9bW0/giphy.gif',
+];
+const GIFS_PERFECT = [
+  'https://media.giphy.com/media/vplUlYHL0WnaE/giphy.gif',
+  'https://media.giphy.com/media/Muqc4t03A8sz4ksa5i/giphy.gif',
+];
+const GIFS_ISLE_WIN = [
+  'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
+  'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
+  'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
+  'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
+  'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
+  'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
+  'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
+  'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
+];
+const GIFS_ISLE_LOSE = [
+  'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
+  'https://media.giphy.com/media/U8fhZ6bL4gm0eZ7NJH/giphy.gif',
+];
+
 // ── QUIZ CORE ──
 function startIsland(n) {
   playBGM('isle-' + n);
@@ -286,6 +317,7 @@ function fmtQ(q) { return q.replace('__', '<span class="q-blank">___</span>'); }
 
 function updateStreakDots() {
   const isle = ISLANDS[currentIsland];
+  if (!isle) return;
   isle.qs.forEach((_, i) => {
     for (let j = 0; j < 5; j++) {
       const dot = document.getElementById(`sd${i}_${j}`);
@@ -362,7 +394,7 @@ function corriger(n) {
 
   isle.qs.forEach((e, i) => {
     const ans = answers[i];
-    const fb = document.getElementById('fb' + i);
+    const fb  = document.getElementById('fb'  + i);
     const expl = document.getElementById('exp' + i);
 
     if (isWrite) {
@@ -388,7 +420,9 @@ function corriger(n) {
           streak = 0;
           const wrongHtml = rawAnswer.split('').map((ch, ci) => {
             const expected = e.a[ci] || '';
-            return ch === expected ? `<span style="color:var(--green)">${ch}</span>` : `<span style="color:var(--red);text-decoration:underline">${ch}</span>`;
+            return ch === expected
+              ? `<span style="color:var(--green)">${ch}</span>`
+              : `<span style="color:var(--red);text-decoration:underline">${ch}</span>`;
           }).join('');
           fb.innerHTML = `❌ Tu as écrit : <strong>${wrongHtml}</strong><br>✔ Bonne réponse : <span class="answer-reveal">${e.a}</span>`;
           fb.className = 'fb show ko';
@@ -435,7 +469,7 @@ function corriger(n) {
     {min:8, emoji:'⭐',txt:'EXCELLENT ! Tu es un vrai Nakama !'},
     {min:6, emoji:'😄',txt:'Bien joué, Moussaillon courageux !'},
     {min:4, emoji:'😅',txt:"Continue l'entraînement !"},
-    {min:0, emoji:'💪',txt:'Ne lâche pas ! La mer t\'attend !'}
+    {min:0, emoji:'💪',txt:"Ne lâche pas ! La mer t'attend !"}
   ];
   const res = results.find(r => score >= r.min) || results[results.length-1];
   const charImg = charImages[n] || FALLBACK[n];
@@ -453,7 +487,7 @@ function corriger(n) {
       <div class="result-title">${res.txt}</div>
       <div class="result-stars">${starsStr(score, 10)}</div>
       <div class="result-gif-wrap">
-        <img src="${score===10?GIFS_PERFECT[0]:score>=6?GIFS_ISLE_WIN[(n-1)%GIFS_ISLE_WIN.length]:GIFS_ISLE_LOSE[0]}"
+        <img src="${score===10 ? GIFS_PERFECT[0] : score>=6 ? GIFS_ISLE_WIN[(n-1)%GIFS_ISLE_WIN.length] : GIFS_ISLE_LOSE[0]}"
              alt="reaction" class="result-gif" onerror="this.style.display='none'">
       </div>
       <div class="result-xp">+${gained} XP pirate 🏴‍☠️ — Total : ${xp} XP</div>

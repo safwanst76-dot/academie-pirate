@@ -1,19 +1,12 @@
 // ═══════════════════════════════════════
 // HUD + BADGES + VISUAL FX — Académie Pirate
 // ═══════════════════════════════════════
+// NOTE : xp, streak, completedIslands, answers, currentIsland,
+// GIFS_*, goBack(), retry(), updateStreakDots()
+// sont définis dans quiz.js — on ne les redéclare PAS ici.
+// ═══════════════════════════════════════
 
-// ── Variables globales d'état du jeu ──
-// Ces variables sont partagées entre quiz.js, hud.js, save.js, etc.
-// On les déclare ici avec var pour être sûr qu'elles sont globales.
-// Si déjà déclarées ailleurs, var ne les écrase pas.
-if (typeof xp               === 'undefined') var xp               = 0;
-if (typeof streak           === 'undefined') var streak           = 0;
-if (typeof completedIslands === 'undefined') var completedIslands = {};
-if (typeof currentIsland    === 'undefined') var currentIsland    = 0;
-if (typeof answers          === 'undefined') var answers          = {};
-
-// ── Niveaux ──
-const LEVELS = [
+var LEVELS = [
   {min:0,  name:"Mousse"},
   {min:10, name:"Matelot"},
   {min:25, name:"Quartier-Maître"},
@@ -58,7 +51,6 @@ function showToast(msg) {
   setTimeout(function() { t.classList.remove('show'); }, 3000);
 }
 
-// ── Badges ──
 var BADGE_RULES = [
   {id:'b0', check: function() { return Object.keys(completedIslands).length >= 1; }, msg:'🌊 Première île conquise !'},
   {id:'b1', check: function() { return Object.values(completedIslands).some(function(s) { return s === 10; }); }, msg:'⚔️ Score PARFAIT 10/10 !'},
@@ -80,7 +72,6 @@ function checkBadges() {
   });
 }
 
-// ── Visual FX ──
 function fxCorrect(word) {
   var el = document.getElementById('attackCorrect');
   if (!el) return;
@@ -123,83 +114,5 @@ function starRain(n) {
     })(i);
   }
 }
-
-function updateStreakDots() {
-  var bar = document.getElementById('streak-bar');
-  if (!bar) return;
-  bar.innerHTML = '';
-  for (var i = 0; i < 5; i++) {
-    var dot = document.createElement('div');
-    dot.className = 'streak-dot' + (i < streak ? ' on' : '');
-    bar.appendChild(dot);
-  }
-}
-
-// ── GIFs combat ──
-var GIFS_CORRECT = [
-  'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
-  'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
-  'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
-  'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
-];
-var GIFS_WRONG = [
-  'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
-  'https://media.giphy.com/media/U8fhZ6bL4gm0eZ7NJH/giphy.gif',
-  'https://media.giphy.com/media/l4EoSBIpWo73b9bW0/giphy.gif',
-];
-var GIFS_PERFECT = [
-  'https://media.giphy.com/media/vplUlYHL0WnaE/giphy.gif',
-  'https://media.giphy.com/media/Muqc4t03A8sz4ksa5i/giphy.gif',
-];
-
-function showCombatGif(type) {
-  var overlay = document.getElementById('combat-gif-overlay');
-  var img     = document.getElementById('combat-gif-img');
-  if (!overlay || !img) return;
-  var list = type === 'wrong' ? GIFS_WRONG : type === 'perfect' ? GIFS_PERFECT : GIFS_CORRECT;
-  img.src = list[Math.floor(Math.random() * list.length)];
-  overlay.classList.add('active');
-  setTimeout(function() { overlay.classList.remove('active'); }, 1800);
-}
-
-function closeCombatVideo() {
-  var overlay = document.getElementById('combat-overlay');
-  var video   = document.getElementById('combat-video');
-  if (overlay) overlay.classList.remove('active');
-  if (video) { video.pause(); video.src = ''; }
-}
-
-// ── Navigation ──
-function goBack() {
-  if (typeof playBGM === 'function') playBGM('map');
-  var quiz = document.getElementById('quiz-sec');
-  var map  = document.getElementById('map-sec');
-  if (quiz) quiz.style.display = 'none';
-  if (map)  map.style.display  = 'block';
-  answers = {};
-  window.scrollTo(0, 0);
-}
-
-function retry(n) {
-  answers = {};
-  if (typeof startIsland === 'function') startIsland(n);
-}
-
-// ── Expose global ──
-window.updateHUD      = updateHUD;
-window.starsStr       = starsStr;
-window.showToast      = showToast;
-window.checkBadges    = checkBadges;
-window.fxCorrect      = fxCorrect;
-window.fxWrong        = fxWrong;
-window.starRain       = starRain;
-window.updateStreakDots = updateStreakDots;
-window.showCombatGif  = showCombatGif;
-window.closeCombatVideo = closeCombatVideo;
-window.goBack         = goBack;
-window.retry          = retry;
-window.GIFS_CORRECT   = GIFS_CORRECT;
-window.GIFS_WRONG     = GIFS_WRONG;
-window.GIFS_PERFECT   = GIFS_PERFECT;
 
 console.info('🏴‍☠️ hud.js chargé');
