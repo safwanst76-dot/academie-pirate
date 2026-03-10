@@ -117,10 +117,31 @@ document.addEventListener("DOMContentLoaded", function() {
 // ═══════════════════════════════════════
 
 function showLoginStep1() {
-  document.getElementById('loginStep1').style.display = 'flex';
-  document.getElementById('loginStep1').style.flexDirection = 'column';
-  document.getElementById('loginStep1').style.gap = '14px';
-  document.getElementById('loginStep2').style.display = 'none';
+  const s1 = document.getElementById('loginStep1');
+  const s2 = document.getElementById('loginStep2');
+  if (s1) { s1.style.display = 'flex'; s1.style.flexDirection = 'column'; s1.style.gap = '12px'; }
+  if (s2) s2.style.display = 'none';
+}
+
+function switchLoginTab(tab) {
+  const tabNew    = document.getElementById('tabNew');
+  const tabReturn = document.getElementById('tabReturn');
+  const label     = document.getElementById('loginFormLabel');
+  const hint      = document.getElementById('loginFormHint');
+  if (tab === 'new') {
+    if (tabNew)    tabNew.classList.add('active');
+    if (tabReturn) tabReturn.classList.remove('active');
+    if (label) label.textContent = '⚓ Ton email de pirate';
+    if (hint)  hint.textContent  = 'Tu recevras un lien par email — pas de mot de passe !';
+  } else {
+    if (tabNew)    tabNew.classList.remove('active');
+    if (tabReturn) tabReturn.classList.add('active');
+    if (label) label.textContent = '⚓ Ton email de connexion';
+    if (hint)  hint.textContent  = 'Tu as déjà un compte ? Entre ton email et reçois un lien de connexion instantané !';
+  }
+  showLoginStep1();
+  const inp = document.getElementById('loginEmail');
+  if (inp) inp.focus();
 }
 
 async function sbSendMagicLink() {

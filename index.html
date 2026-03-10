@@ -96,12 +96,35 @@
   </button>
 </div>
 
-<!-- ═══ LOADING ═══ -->
-<div id="loading">
-  <div class="load-jolly">🏴‍☠️</div>
-  <div class="load-title">ACADÉMIE PIRATE</div>
-  <div class="load-sub">Chargement du Grand Bleu…</div>
-  <div class="load-track"><div class="load-fill"></div></div>
+<!-- ═══ LOGIN ═══ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-gif-wrap">
+      <img class="login-gif" id="loginGif" src="" alt="One Piece">
+    </div>
+    <div class="login-title">🏴‍☠️ ACADÉMIE PIRATE</div>
+    <div class="login-subtitle">Rejoins l'équipage !</div>
+    <div class="login-tabs">
+      <button class="login-tab active" id="tabNew" onclick="switchLoginTab('new')">✨ Nouveau</button>
+      <button class="login-tab" id="tabReturn" onclick="switchLoginTab('return')">⚓ Déjà un compte</button>
+    </div>
+    <div class="login-form" id="loginStep1">
+      <div class="login-label" id="loginFormLabel">⚓ Ton email de pirate</div>
+      <input class="login-input" id="loginEmail" type="email"
+        placeholder="ex: luffy@grandbleu.com" maxlength="80"
+        onkeydown="if(event.key==='Enter') sbSendMagicLink()">
+      <button class="login-btn" onclick="sbSendMagicLink()">🚀 ENVOYER LE LIEN MAGIQUE !</button>
+      <div class="login-hint" id="loginFormHint">Tu recevras un lien par email — pas de mot de passe !</div>
+    </div>
+    <div id="loginStep2" style="display:none;flex-direction:column;align-items:center;gap:12px;text-align:center;">
+      <div style="font-size:3rem">🏴‍☠️</div>
+      <div class="login-step2-title">Lien envoyé, Capitaine !</div>
+      <div class="login-step2-text">Vérifie ta boîte mail et clique sur le lien !</div>
+      <button class="login-btn" onclick="showLoginStep1()">← Changer d'email</button>
+    </div>
+    <div class="login-sep"><span>ou</span></div>
+    <button class="login-skip" onclick="skipLogin()">Jouer sans compte →</button>
+  </div>
 </div>
 
 <!-- ═══ MANGA BG ═══ -->
