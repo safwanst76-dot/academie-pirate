@@ -83,6 +83,7 @@ function startAdventure() {
   var screen = document.getElementById('avatar-screen');
   if (screen) screen.classList.add('gone');
   setTimeout(function() { try { sfxCineVictory(); } catch(e) {} }, 300);
+  navigateTo('carte');
 }
 
 function showAvatarScreen() {
