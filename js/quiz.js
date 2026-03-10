@@ -142,8 +142,8 @@ const ISLANDS = {
   }
 };
 
-// ── STATE ──
-let xp = 0, completedIslands = {}, currentIsland = 0, streak = 0, answers = {};
+// ── STATE — var pour être vraiment global (accessible depuis hud.js, save.js, etc.) ──
+var xp = 0, completedIslands = {}, currentIsland = 0, streak = 0, answers = {};
 
 // ── GIFs résultats ──
 var GIFS_CORRECT = [

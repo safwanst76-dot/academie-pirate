@@ -15,12 +15,8 @@
 <link rel="stylesheet" href="css/quiz.css">
 <link rel="stylesheet" href="css/cinematic.css">
 <link rel="stylesheet" href="css/header.css">
-
-<!-- JS librairies -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<!-- JS app (ordre de dépendances) -->
 <script src="js/supabase.js"></script>
 <script src="js/db.js"></script>
 <script src="js/islands.js"></script>
@@ -39,62 +35,6 @@
 <script src="js/router.js"></script>
 </head>
 <body>
-
-<!-- ═══ LOGIN ═══ -->
-<div id="login-screen">
-  <div class="login-gif-wrap">
-    <img class="login-gif" id="loginGif" src="" alt="One Piece">
-  </div>
-  <div class="login-title">🏴‍☠️ ACADÉMIE PIRATE</div>
-  <div class="login-subtitle">Rejoins l'équipage !</div>
-  <div class="login-card">
-    <div id="loginStep1">
-      <div class="login-label">⚓ Ton email de pirate</div>
-      <input class="login-input" id="loginEmail" type="email"
-        placeholder="ex: luffy@grandbleu.com" maxlength="80">
-      <button class="login-btn" onclick="sbSendMagicLink()">
-        🚀 ENVOYER LE LIEN MAGIQUE !
-      </button>
-      <div class="login-hint">Tu recevras un lien par email pour te connecter — pas de mot de passe !</div>
-    </div>
-    <div id="loginStep2" style="display:none">
-      <div class="login-success-icon">🏴‍☠️</div>
-      <div class="login-success-title">Message du Capitaine envoyé !</div>
-      <div class="login-success-text">
-        Vérifie ta boîte mail et clique sur le lien pour rejoindre l'équipage !
-      </div>
-      <button class="login-btn-outline" onclick="showLoginStep1()">
-        ← Changer d'email
-      </button>
-    </div>
-  </div>
-  <button class="login-skip" onclick="skipLogin()">Jouer sans compte →</button>
-</div>
-
-<!-- ═══ AVATAR SCREEN ═══ -->
-<div id="avatar-screen">
-  <div class="av-title">🏴‍☠️ ACADÉMIE PIRATE</div>
-  <div class="av-subtitle">Crée ton identité de pirate !</div>
-  <div class="av-name-wrap">
-    <div class="av-name-lbl">⚓ Ton nom de pirate</div>
-    <input class="av-name-input" id="avNameInput" type="text"
-      placeholder="Ex: Luffy, Nakama, Zoro…" maxlength="20"
-      oninput="if(typeof updateAvatarPreview==='function')updateAvatarPreview()">
-  </div>
-  <div class="av-section-title">Choisis ton personnage</div>
-  <div class="av-grid" id="avGrid"></div>
-  <div class="av-selected-preview" id="avPreview">
-    <img class="av-preview-img" id="avPreviewImg" src="" alt="avatar">
-    <div class="av-preview-info">
-      <div class="av-preview-name" id="avPreviewName">Ton nom ici</div>
-      <div class="av-preview-char" id="avPreviewChar">Choisit un personnage</div>
-      <div class="av-preview-quote" id="avPreviewQuote">…</div>
-    </div>
-  </div>
-  <button class="av-start-btn" id="avStartBtn" onclick="startAdventure()">
-    ⚔️ COMMENCER L'AVENTURE !
-  </button>
-</div>
 
 <!-- ═══ LOGIN ═══ -->
 <div id="login-screen">
@@ -125,6 +65,39 @@
     <div class="login-sep"><span>ou</span></div>
     <button class="login-skip" onclick="skipLogin()">Jouer sans compte →</button>
   </div>
+</div>
+
+<!-- ═══ AVATAR SCREEN ═══ -->
+<div id="avatar-screen">
+  <div class="av-title">🏴‍☠️ ACADÉMIE PIRATE</div>
+  <div class="av-subtitle">Crée ton identité de pirate !</div>
+  <div class="av-name-wrap">
+    <div class="av-name-lbl">⚓ Ton nom de pirate</div>
+    <input class="av-name-input" id="avNameInput" type="text"
+      placeholder="Ex: Luffy, Nakama, Zoro…" maxlength="20"
+      oninput="if(typeof updateAvatarPreview==='function')updateAvatarPreview()">
+  </div>
+  <div class="av-section-title">Choisis ton personnage</div>
+  <div class="av-grid" id="avGrid"></div>
+  <div class="av-selected-preview" id="avPreview">
+    <img class="av-preview-img" id="avPreviewImg" src="" alt="avatar">
+    <div class="av-preview-info">
+      <div class="av-preview-name" id="avPreviewName">Ton nom ici</div>
+      <div class="av-preview-char" id="avPreviewChar">Choisit un personnage</div>
+      <div class="av-preview-quote" id="avPreviewQuote">…</div>
+    </div>
+  </div>
+  <button class="av-start-btn" id="avStartBtn" onclick="startAdventure()">
+    ⚔️ COMMENCER L'AVENTURE !
+  </button>
+</div>
+
+<!-- ═══ LOADING ═══ -->
+<div id="loading">
+  <div class="load-jolly">🏴‍☠️</div>
+  <div class="load-title">ACADÉMIE PIRATE</div>
+  <div class="load-sub">Chargement du Grand Bleu…</div>
+  <div class="load-track"><div class="load-fill"></div></div>
 </div>
 
 <!-- ═══ MANGA BG ═══ -->
@@ -202,111 +175,94 @@
   <div class="sec-sub" style="font-family:'Bangers',cursive;font-size:clamp(1.2rem,3vw,1.8rem);color:#ffd700;letter-spacing:3px;font-weight:normal;margin-bottom:16px">⚓ CHOISIS TON ÎLE ET COMMENCE L'AVENTURE !</div>
   <div class="panel-frame">
     <div class="map-grid" id="mapGrid">
-
       <div class="isle" id="isle1" onclick="startIsland(1)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel1">🍖</div>
           <img class="isle-char-img" id="img1" src="" alt="Luffy" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #1</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #1</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">🏴‍☠️ ÎLE DE LUFFY</div><div class="isle-topic">⚡ é ou er ?</div></div>
           <div class="isle-stars" id="stars1">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
       <div class="isle" id="isle2" onclick="startIsland(2)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel2">🗺️</div>
           <img class="isle-char-img" id="img2" src="" alt="Nami" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #2</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #2</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">🧭 ÎLE DE NAMI</div><div class="isle-topic">📜 Passé composé</div></div>
           <div class="isle-stars" id="stars2">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
       <div class="isle" id="isle3" onclick="startIsland(3)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel3">⚔️</div>
           <img class="isle-char-img" id="img3" src="" alt="Zoro" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #3</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #3</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">⚔️ ÎLE DE ZORO</div><div class="isle-topic">🛡️ Accord avec être</div></div>
           <div class="isle-stars" id="stars3">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
       <div class="isle" id="isle4" onclick="startIsland(4)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel4">📚</div>
           <img class="isle-char-img" id="img4" src="" alt="Robin" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #4</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #4</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">📖 ÎLE DE ROBIN</div><div class="isle-topic">🏆 Défi pirate final</div></div>
           <div class="isle-stars" id="stars4">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
       <div class="isle" id="isle5" onclick="startIsland(5)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel5">🎯</div>
           <img class="isle-char-img" id="img5" src="" alt="Usopp" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #5 ✍️</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #5 ✍️</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">🎯 ÎLE D'USOPP</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
           <div class="isle-stars" id="stars5">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
       <div class="isle" id="isle6" onclick="startIsland(6)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel6">🍳</div>
           <img class="isle-char-img" id="img6" src="" alt="Sanji" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #6 ✍️</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #6 ✍️</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">🍳 ÎLE DE SANJI</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
           <div class="isle-stars" id="stars6">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
       <div class="isle" id="isle7" onclick="startIsland(7)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel7">🦌</div>
           <img class="isle-char-img" id="img7" src="" alt="Chopper" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #7 ✍️</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #7 ✍️</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">🦌 ÎLE DE CHOPPER</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
           <div class="isle-stars" id="stars7">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
       <div class="isle" id="isle8" onclick="startIsland(8)">
         <div class="isle-img-zone">
           <div class="isle-skel" id="skel8">💀</div>
           <img class="isle-char-img" id="img8" src="" alt="Brook" style="display:none">
-          <div class="isle-fade"></div>
-          <div class="isle-label">ÎLE #8 ✍️</div>
+          <div class="isle-fade"></div><div class="isle-label">ÎLE #8 ✍️</div>
         </div>
         <div class="isle-foot">
           <div><div class="isle-name">💀 ÎLE DE BROOK</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
           <div class="isle-stars" id="stars8">☆☆☆☆☆☆☆☆☆☆</div>
         </div>
       </div>
-
     </div>
   </div>
   <div class="world-line">— Grand Line — ☠ — One Piece —</div>
@@ -349,20 +305,20 @@
 <script>
 async function init() {
   if (typeof initVoicesFR === 'function') initVoicesFR();
-  if (typeof initVoices === 'function') initVoices();
-  setTimeout(function() { if(typeof playBGM==='function') playBGM('map'); }, 500);
-  if (typeof loadBgStrips === 'function') loadBgStrips();
+  if (typeof initVoices   === 'function') initVoices();
+  setTimeout(function() { if (typeof playBGM === 'function') playBGM('map'); }, 500);
+  if (typeof loadBgStrips    === 'function') loadBgStrips();
   if (typeof loadJikanImages === 'function') await loadJikanImages();
-  if (typeof loadProgress === 'function') loadProgress();
-  if (typeof updateHUD === 'function') updateHUD();
-  if (typeof loadAvatars === 'function') await loadAvatars();
+  if (typeof loadProgress    === 'function') loadProgress();
+  if (typeof updateHUD       === 'function') updateHUD();
+  if (typeof loadAvatars     === 'function') await loadAvatars();
   else if (typeof buildAvatarGrid === 'function') { buildAvatarGrid(); updateAvatarPreview(); }
-  const alreadyPlayed = (typeof loadPlayerData === 'function') ? loadPlayerData() : false;
+  var alreadyPlayed = (typeof loadPlayerData === 'function') ? loadPlayerData() : false;
   setTimeout(function() {
-    document.getElementById('loading').classList.add('gone');
-    if (alreadyPlayed) {
-      document.getElementById('avatar-screen').classList.add('gone');
-    }
+    var loading      = document.getElementById('loading');
+    var avatarScreen = document.getElementById('avatar-screen');
+    if (loading)      loading.classList.add('gone');
+    if (alreadyPlayed && avatarScreen) avatarScreen.classList.add('gone');
   }, 2600);
 }
 init();
