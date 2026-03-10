@@ -146,22 +146,22 @@ const ISLANDS = {
 let xp = 0, completedIslands = {}, currentIsland = 0, streak = 0, answers = {};
 
 // ── GIFs résultats ──
-const GIFS_CORRECT = [
+var GIFS_CORRECT = [
   'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
   'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
   'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
   'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
 ];
-const GIFS_WRONG = [
+var GIFS_WRONG = [
   'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
   'https://media.giphy.com/media/U8fhZ6bL4gm0eZ7NJH/giphy.gif',
   'https://media.giphy.com/media/l4EoSBIpWo73b9bW0/giphy.gif',
 ];
-const GIFS_PERFECT = [
+var GIFS_PERFECT = [
   'https://media.giphy.com/media/vplUlYHL0WnaE/giphy.gif',
   'https://media.giphy.com/media/Muqc4t03A8sz4ksa5i/giphy.gif',
 ];
-const GIFS_ISLE_WIN = [
+var GIFS_ISLE_WIN = [
   'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
   'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
   'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
@@ -171,7 +171,7 @@ const GIFS_ISLE_WIN = [
   'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
   'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
 ];
-const GIFS_ISLE_LOSE = [
+var GIFS_ISLE_LOSE = [
   'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
   'https://media.giphy.com/media/U8fhZ6bL4gm0eZ7NJH/giphy.gif',
 ];
