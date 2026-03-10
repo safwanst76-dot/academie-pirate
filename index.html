@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="css/quiz.css">
 <link rel="stylesheet" href="css/cinematic.css">
 <link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/quiz-histoire.css">
 
 <!-- JS — libs externes -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
@@ -148,6 +149,25 @@
   </div>
 </div>
 
+<!-- HISTOIRE — LISTE DES ÎLES -->
+<section id="histoire-iles-sec" style="display:none">
+  <div class="hist-map-header">
+    <div class="hist-map-title">🐉 MAGNOLIA — HISTOIRE</div>
+    <div class="hist-map-sub">6ème · 5ème — Univers Dragon Ball Z</div>
+  </div>
+  <div class="hist-islands-grid" id="hist-islands-grid"></div>
+</section>
+
+<!-- HISTOIRE — QUIZ -->
+<section id="histoire-quiz-sec" style="display:none">
+  <div class="hist-quiz-header">
+    <div class="hist-quiz-title" id="hist-qTitle">ÎLE DE GOKU</div>
+    <div class="hist-prog-bar"><div class="hist-prog-fill" id="hist-qProgFill"></div></div>
+    <div class="hist-prog-lbl" id="hist-qProgLbl">0 / 11</div>
+  </div>
+  <div id="hist-qContainer"></div>
+</section>
+
 <!-- ═══ GLOBE / CARTE DU MONDE ═══ -->
 <section id="globe-sec">
   <div style="font-family:'Bangers',cursive;font-size:clamp(1.6rem,5vw,2.5rem);letter-spacing:4px;text-align:center;color:#ffd700;text-shadow:2px 2px 0 #000;margin-bottom:10px">🗺️ CARTE DU MONDE</div>
@@ -262,6 +282,7 @@
 <script src="js/globe.js"></script>
 <script src="js/child-select.js"></script>
 <script src="js/router.js"></script>
+<script src="js/quiz-histoire.js"></script>
 
 <!-- ═══ INIT UNIFIÉ ═══ -->
 <script>

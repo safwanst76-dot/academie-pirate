@@ -4,10 +4,11 @@
 // ═══════════════════════════════════════════════════════
 
 const ROUTES = {
-  'login'  : showLogin,
-  'carte'  : showCarte,
-  'iles'   : showIles,
-  'quiz'   : showQuiz,
+  'login'    : showLogin,
+  'carte'    : showCarte,
+  'iles'     : showIles,
+  'quiz'     : showQuiz,
+  'histoire' : showHistoire,
 };
 
 // ── Sections HTML ──
@@ -35,6 +36,11 @@ function hideAll() {
   // Îles
   const map = getSection('map-sec');
   if (map) map.style.display = 'none';
+
+  var hIles = document.getElementById('histoire-iles-sec');
+  var hQuiz = document.getElementById('histoire-quiz-sec');
+  if (hIles) hIles.style.display = 'none';
+  if (hQuiz) hQuiz.style.display = 'none';
 
   // Quiz
   const quiz = getSection('quiz-sec');
@@ -108,6 +114,19 @@ function showQuiz() {
   const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'block';
   document.title = 'Académie Pirate — Quiz';
+}
+
+// ══════════════════════════════
+// PAGE : HISTOIRE
+// ══════════════════════════════
+function showHistoire() {
+  hideAll();
+  var sec = document.getElementById('histoire-iles-sec');
+  if (sec) {
+    sec.style.display = 'block';
+    if (typeof buildHistoireGrid === 'function') buildHistoireGrid();
+  }
+  document.title = 'Académie Pirate — Histoire';
 }
 
 // ══════════════════════════════
@@ -195,7 +214,7 @@ window.showContinentPanel = function(c) {
         ? `<div class="gp-locked-msg">🔒 Bientôt disponible !</div>`
         : `<button class="gp-play-btn"
              style="background:linear-gradient(135deg,${c.color},${c.color}99)"
-             onclick="navigateTo('iles')">
+             onclick="navigateTo('${c.id === 'history' ? 'histoire' : 'iles'}')">
              ⚔️ COMMENCER L'AVENTURE !
            </button>`
       }
