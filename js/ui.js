@@ -3,23 +3,24 @@
 // Toast, flash, combat GIF, star rain
 // ═══════════════════════════════════════
 
-const GIFS_CORRECT = [
+// var au lieu de const → évite le conflit avec quiz.js qui déclare les mêmes tableaux
+var GIFS_CORRECT = [
   'https://media.giphy.com/media/T7Qx28nEdo9NK/giphy.gif',
   'https://media0.giphy.com/media/TXSxuSHx9i6TNeBSry/giphy.gif',
   'https://media.giphy.com/media/tIZUToOMEFGM0/giphy.gif',
   'https://media.giphy.com/media/7BW9U2cJPQZ0s/giphy.gif',
 ];
-const GIFS_WRONG = [
+var GIFS_WRONG = [
   'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
   'https://media.giphy.com/media/U8fhZ6bL4gm0eZ7NJH/giphy.gif',
   'https://media.giphy.com/media/l4EoSBIpWo73b9bW0/giphy.gif',
 ];
-const GIFS_PERFECT = [
+var GIFS_PERFECT = [
   'https://media.giphy.com/media/vplUlYHL0WnaE/giphy.gif',
   'https://media.giphy.com/media/Muqc4t03A8sz4ksa5i/giphy.gif',
   'https://media.giphy.com/media/1195W96ZIyUra8/giphy.gif',
 ];
-const GIFS_ISLE_WIN = [
+var GIFS_ISLE_WIN = [
   'https://media.giphy.com/media/PEMfdDHDcfEQw/giphy.gif',
   'https://media.giphy.com/media/z8499G57Bne3m/giphy.gif',
   'https://media.giphy.com/media/p8WDYgByyFJTy/giphy.gif',
@@ -29,7 +30,7 @@ const GIFS_ISLE_WIN = [
   'https://media.giphy.com/media/Godtj62ewycxy/giphy.gif',
   'https://media.giphy.com/media/ckq3M52jTUH4f5UYWp/giphy.gif',
 ];
-const GIFS_ISLE_LOSE = [
+var GIFS_ISLE_LOSE = [
   'https://media.giphy.com/media/9QPhSxfiHKdGdJfrlT/giphy.gif',
   'https://media.giphy.com/media/s55XB0bzfwo9y/giphy.gif',
 ];
