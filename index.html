@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>☠️ Académie Pirate — One Piece Quiz</title>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+<!-- CSS — ordre : base → composants → pages -->
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/login.css">
@@ -15,24 +17,10 @@
 <link rel="stylesheet" href="css/quiz.css">
 <link rel="stylesheet" href="css/cinematic.css">
 <link rel="stylesheet" href="css/header.css">
+
+<!-- JS — libs externes -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
-<script src="js/db.js"></script>
-<script src="js/islands.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/hud.js"></script>
-<script src="js/save.js"></script>
-<script src="js/audio-engine.js"></script>
-<script src="js/avatar.js"></script>
-<script src="js/cinematic.js"></script>
-<script src="js/quiz.js"></script>
-<script src="js/progression.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/parent.js"></script>
-<script src="js/globe.js"></script>
-<script src="js/child-select.js"></script>
-<script src="js/router.js"></script>
 </head>
 <body>
 
@@ -107,19 +95,19 @@
 <div class="color-overlay"></div>
 
 <!-- ═══ EFFECTS ═══ -->
-<div class="attack-correct" id="attackCorrect" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);pointer-events:none">PARFAIT!</div>
-<div class="attack-wrong" id="attackWrong" style="position:fixed;inset:0;opacity:0;pointer-events:none">
+<div class="attack-correct" id="attackCorrect">PARFAIT!</div>
+<div class="attack-wrong" id="attackWrong">
   <div class="slash-line"></div>
   <div class="slash-line"></div>
   <div class="slash-line"></div>
 </div>
 <div class="screen-flash" id="screenFlash"></div>
-<div id="toast" style="position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-100px);opacity:0">🏆 Badge débloqué !</div>
+<div id="toast">🏆 Badge débloqué !</div>
 
 <!-- ═══ HEADER ═══ -->
 <header id="hdr">
   <div class="header-top">
-    <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar · Modifier ton nom">
+    <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
       <img id="headerAvatarImg" src="" alt="avatar" onerror="this.src=''">
       <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
     </div>
@@ -151,9 +139,9 @@
 
 <!-- ═══ SOUND BAR ═══ -->
 <div id="sound-bar">
-  <button class="snd-btn" id="btnMusic" onclick="toggleMusic()" title="Musique We Are!">🎵 Musique</button>
+  <button class="snd-btn" id="btnMusic" onclick="toggleMusic()" title="Musique">🎵 Musique</button>
   <button class="snd-btn active" id="btnSfx" onclick="toggleSfx()" title="Effets sonores">💥 Effets</button>
-  <button class="snd-btn active" id="btnVoice" onclick="toggleVoice()" title="Voix des personnages">🗣️ Voix</button>
+  <button class="snd-btn active" id="btnVoice" onclick="toggleVoice()" title="Voix">🗣️ Voix</button>
   <div class="vol-wrap">
     🔊
     <input type="range" class="vol-slider" id="volSlider" min="0" max="1" step="0.05" value="0.5" oninput="setVolume(this.value)">
@@ -179,92 +167,36 @@
   <div class="panel-frame">
     <div class="map-grid" id="mapGrid">
       <div class="isle" id="isle1" onclick="startIsland(1)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel1">🍖</div>
-          <img class="isle-char-img" id="img1" src="" alt="Luffy" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #1</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">🏴‍☠️ ÎLE DE LUFFY</div><div class="isle-topic">⚡ é ou er ?</div></div>
-          <div class="isle-stars" id="stars1">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel1">🍖</div><img class="isle-char-img" id="img1" src="" alt="Luffy" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #1</div></div>
+        <div class="isle-foot"><div><div class="isle-name">🏴‍☠️ ÎLE DE LUFFY</div><div class="isle-topic">⚡ é ou er ?</div></div><div class="isle-stars" id="stars1">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
       <div class="isle" id="isle2" onclick="startIsland(2)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel2">🗺️</div>
-          <img class="isle-char-img" id="img2" src="" alt="Nami" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #2</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">🧭 ÎLE DE NAMI</div><div class="isle-topic">📜 Passé composé</div></div>
-          <div class="isle-stars" id="stars2">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel2">🗺️</div><img class="isle-char-img" id="img2" src="" alt="Nami" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #2</div></div>
+        <div class="isle-foot"><div><div class="isle-name">🧭 ÎLE DE NAMI</div><div class="isle-topic">📜 Passé composé</div></div><div class="isle-stars" id="stars2">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
       <div class="isle" id="isle3" onclick="startIsland(3)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel3">⚔️</div>
-          <img class="isle-char-img" id="img3" src="" alt="Zoro" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #3</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">⚔️ ÎLE DE ZORO</div><div class="isle-topic">🛡️ Accord avec être</div></div>
-          <div class="isle-stars" id="stars3">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel3">⚔️</div><img class="isle-char-img" id="img3" src="" alt="Zoro" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #3</div></div>
+        <div class="isle-foot"><div><div class="isle-name">⚔️ ÎLE DE ZORO</div><div class="isle-topic">🛡️ Accord avec être</div></div><div class="isle-stars" id="stars3">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
       <div class="isle" id="isle4" onclick="startIsland(4)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel4">📚</div>
-          <img class="isle-char-img" id="img4" src="" alt="Robin" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #4</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">📖 ÎLE DE ROBIN</div><div class="isle-topic">🏆 Défi pirate final</div></div>
-          <div class="isle-stars" id="stars4">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel4">📚</div><img class="isle-char-img" id="img4" src="" alt="Robin" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #4</div></div>
+        <div class="isle-foot"><div><div class="isle-name">📖 ÎLE DE ROBIN</div><div class="isle-topic">🏆 Défi pirate final</div></div><div class="isle-stars" id="stars4">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
       <div class="isle" id="isle5" onclick="startIsland(5)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel5">🎯</div>
-          <img class="isle-char-img" id="img5" src="" alt="Usopp" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #5 ✍️</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">🎯 ÎLE D'USOPP</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
-          <div class="isle-stars" id="stars5">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel5">🎯</div><img class="isle-char-img" id="img5" src="" alt="Usopp" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #5 ✍️</div></div>
+        <div class="isle-foot"><div><div class="isle-name">🎯 ÎLE D'USOPP</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars5">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
       <div class="isle" id="isle6" onclick="startIsland(6)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel6">🍳</div>
-          <img class="isle-char-img" id="img6" src="" alt="Sanji" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #6 ✍️</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">🍳 ÎLE DE SANJI</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
-          <div class="isle-stars" id="stars6">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel6">🍳</div><img class="isle-char-img" id="img6" src="" alt="Sanji" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #6 ✍️</div></div>
+        <div class="isle-foot"><div><div class="isle-name">🍳 ÎLE DE SANJI</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars6">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
       <div class="isle" id="isle7" onclick="startIsland(7)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel7">🦌</div>
-          <img class="isle-char-img" id="img7" src="" alt="Chopper" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #7 ✍️</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">🦌 ÎLE DE CHOPPER</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
-          <div class="isle-stars" id="stars7">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel7">🦌</div><img class="isle-char-img" id="img7" src="" alt="Chopper" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #7 ✍️</div></div>
+        <div class="isle-foot"><div><div class="isle-name">🦌 ÎLE DE CHOPPER</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars7">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
       <div class="isle" id="isle8" onclick="startIsland(8)">
-        <div class="isle-img-zone">
-          <div class="isle-skel" id="skel8">💀</div>
-          <img class="isle-char-img" id="img8" src="" alt="Brook" style="display:none">
-          <div class="isle-fade"></div><div class="isle-label">ÎLE #8 ✍️</div>
-        </div>
-        <div class="isle-foot">
-          <div><div class="isle-name">💀 ÎLE DE BROOK</div><div class="isle-topic">✍️ Écrire le verbe (niv. progressif)</div></div>
-          <div class="isle-stars" id="stars8">☆☆☆☆☆☆☆☆☆☆</div>
-        </div>
+        <div class="isle-img-zone"><div class="isle-skel" id="skel8">💀</div><img class="isle-char-img" id="img8" src="" alt="Brook" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #8 ✍️</div></div>
+        <div class="isle-foot"><div><div class="isle-name">💀 ÎLE DE BROOK</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars8">☆☆☆☆☆☆☆☆☆☆</div></div>
       </div>
     </div>
   </div>
@@ -304,27 +236,54 @@
   <div class="cine-bottom" id="cineBottom"></div>
 </div>
 
-<!-- ═══ INIT ═══ -->
+<!-- ═══════════════════════════════════════
+     JS — Ordre de chargement critique
+     1. Config/données (pas de deps)
+     2. Utilitaires UI
+     3. Audio
+     4. Fonctionnalités (save, avatar, cinematic)
+     5. Quiz (dépend de tout)
+     6. Pages et navigation
+     7. Init en dernier
+═══════════════════════════════════════ -->
+<script src="js/supabase.js"></script>
+<script src="js/db.js"></script>
+<script src="js/islands.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/audio-engine.js"></script>
+<script src="js/save.js"></script>
+<script src="js/avatar.js"></script>
+<script src="js/cinematic.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/progression.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/parent.js"></script>
+<script src="js/globe.js"></script>
+<script src="js/child-select.js"></script>
+<script src="js/router.js"></script>
+
+<!-- ═══ INIT UNIFIÉ ═══ -->
 <script>
 async function init() {
-  // Montrer le loading screen dès le départ
   var loadEl = document.getElementById('loading');
-  if (loadEl) { loadEl.style.display = 'flex'; }
+  if (loadEl) loadEl.style.display = 'flex';
 
   if (typeof initVoicesFR === 'function') initVoicesFR();
-  if (typeof initVoices   === 'function') initVoices();
-  setTimeout(function() { if (typeof playBGM === 'function') playBGM('map'); }, 500);
-  if (typeof loadBgStrips    === 'function') loadBgStrips();
+  if (typeof initVoices === 'function') initVoices();
+  if (typeof loadBgStrips === 'function') loadBgStrips();
   if (typeof loadJikanImages === 'function') await loadJikanImages();
-  if (typeof loadProgress    === 'function') loadProgress();
-  if (typeof updateHUD       === 'function') updateHUD();
-  if (typeof loadAvatars     === 'function') await loadAvatars();
-  else if (typeof buildAvatarGrid === 'function') { buildAvatarGrid(); updateAvatarPreview(); }
+  if (typeof loadAvatars === 'function') await loadAvatars();
+  else if (typeof buildAvatarGrid === 'function') { buildAvatarGrid(); if (typeof updateAvatarPreview === 'function') updateAvatarPreview(); }
+
   var alreadyPlayed = (typeof loadPlayerData === 'function') ? loadPlayerData() : false;
+  if (typeof loadProgress === 'function') loadProgress();
+  if (typeof updateHUD === 'function') updateHUD();
+
   setTimeout(function() {
-    var loading      = document.getElementById('loading');
+    var loading = document.getElementById('loading');
     var avatarScreen = document.getElementById('avatar-screen');
-    if (loading)      loading.classList.add('gone');
+    if (loading) loading.classList.add('gone');
     if (alreadyPlayed && avatarScreen) avatarScreen.classList.add('gone');
   }, 2600);
 }

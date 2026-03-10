@@ -1,117 +1,148 @@
 /* ═══════════════════════════════════════
    CINEMATIC.CSS — Académie Pirate
-   Scène cinématique, canvas, panels manga,
-   flash, skip, bottom bar
+   Scène cinématique complète : canvas, panels,
+   kanji, tints, layouts, animations, speech
 ═══════════════════════════════════════ */
 
-#cine-scene {
-  position: fixed; inset: 0; z-index: 8000;
-  background: #000;
-  display: none; flex-direction: column;
-  align-items: center; justify-content: center;
-  overflow: hidden;
+/* ── SCENE CONTAINER ── */
+#cine-scene{
+  position:fixed;inset:0;z-index:8000;
+  background:#000;
+  display:none;flex-direction:column;
+  overflow:hidden;
 }
-#cine-scene.active { display: flex; }
+#cine-scene.active{display:flex}
 
-#cine-canvas {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-}
+#cine-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:8001}
 
-.cine-flash {
-  position: absolute; inset: 0;
-  background: #fff; opacity: 0;
-  pointer-events: none; transition: opacity .1s;
-  z-index: 8010;
-}
-.cine-flash.on { opacity: 1; }
+/* ── FLASH ── */
+.cine-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:8010}
+.cine-flash.fire{animation:cineFlashAnim .2s ease}
+@keyframes cineFlashAnim{0%{opacity:1}100%{opacity:0}}
 
-.cine-skip {
-  position: absolute; top: 16px; right: 16px; z-index: 8020;
-  font-family: 'Bangers', cursive; font-size: .9rem; letter-spacing: 2px;
-  padding: 6px 16px; border-radius: 20px;
-  border: 2px solid rgba(255,255,255,.3);
-  background: rgba(0,0,0,.5); color: rgba(255,255,255,.7);
-  cursor: pointer; transition: all .2s;
+/* ── SKIP BUTTON ── */
+.cine-skip{
+  position:absolute;top:16px;right:16px;z-index:8020;
+  font-family:'Bangers',cursive;font-size:.9rem;letter-spacing:2px;
+  padding:6px 16px;border-radius:20px;
+  border:2px solid rgba(255,255,255,.3);
+  background:rgba(0,0,0,.5);color:rgba(255,255,255,.7);
+  cursor:pointer;transition:all .2s;
 }
-.cine-skip:hover { border-color: #ffd700; color: #ffd700; }
+.cine-skip:hover{border-color:#ffd700;color:#ffd700}
 
-/* ── PANELS MANGA ── */
-.cine-panels {
-  position: absolute; inset: 0;
-  display: grid; gap: 4px;
-  padding: 4px; z-index: 8005;
+/* ── PANELS GRID ── */
+.cine-panels{
+  position:absolute;inset:0;
+  display:grid;gap:4px;padding:4px;
+  z-index:8005;
 }
+.cine-panels.layout-1{grid-template-columns:1fr;grid-template-rows:1fr}
+.cine-panels.layout-2{grid-template-columns:1fr 1fr;grid-template-rows:1fr}
+.cine-panels.layout-3{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.cine-panels.layout-3 .cine-panel:first-child{grid-row:1/3}
 
-.cine-panel {
-  background: var(--card);
-  border: 3px solid #fff;
-  border-radius: 4px;
-  overflow: hidden; position: relative;
-  display: flex; align-items: center; justify-content: center;
+/* ── PANEL ── */
+.cine-panel{
+  background:var(--card);border:3px solid #fff;
+  border-radius:4px;overflow:hidden;
+  position:relative;display:flex;
+  align-items:center;justify-content:center;
 }
-.cine-panel img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top center;
-}
+.cine-panel img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
-/* ── SPEECH BUBBLE ── */
-.speech-bubble {
-  position: absolute; background: #fff; color: #000;
-  font-family: 'Nunito', sans-serif; font-size: .85rem; font-weight: 800;
-  padding: 8px 14px; border-radius: 16px;
-  max-width: 70%; text-align: center; line-height: 1.4;
-  box-shadow: 3px 3px 0 #000;
-  animation: bubbleIn .3s cubic-bezier(.175,.885,.32,1.275);
-  z-index: 8006;
-}
-@keyframes bubbleIn {
-  from { transform: scale(0) rotate(-5deg); opacity: 0 }
-  to   { transform: scale(1) rotate(0);     opacity: 1 }
+/* Speed lines overlay */
+.spd{
+  position:absolute;inset:0;pointer-events:none;z-index:3;
+  background:repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,transparent 4deg,
+    rgba(255,255,255,.04) 4deg,rgba(255,255,255,.04) 5deg
+  );
+  mix-blend-mode:screen;
 }
 
-/* ── BOTTOM BAR ── */
-.cine-bottom {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  z-index: 8015;
-  background: linear-gradient(transparent, rgba(0,0,0,.9));
-  padding: 30px 20px 20px;
-  display: flex; flex-direction: column; gap: 10px;
+/* ── TINTS ── */
+.tint-gold .spd{background:repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg,transparent 4deg,rgba(245,166,35,.06) 4deg,rgba(245,166,35,.06) 5deg)}
+.tint-blue .spd{background:repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg,transparent 4deg,rgba(58,134,255,.06) 4deg,rgba(58,134,255,.06) 5deg)}
+.tint-red .spd{background:repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg,transparent 4deg,rgba(230,57,70,.06) 4deg,rgba(230,57,70,.06) 5deg)}
+.tint-gold{border-color:rgba(245,166,35,.5)}
+.tint-blue{border-color:rgba(58,134,255,.5)}
+.tint-red{border-color:rgba(230,57,70,.5)}
+
+/* ── PANEL ANIMATIONS ── */
+.cine-panel.from-left{transform:translateX(-100%);opacity:0}
+.cine-panel.from-right{transform:translateX(100%);opacity:0}
+.cine-panel.from-top{transform:translateY(-100%);opacity:0}
+.cine-panel.from-bot{transform:translateY(100%);opacity:0}
+.cine-panel.burst{transform:none;opacity:1;transition:transform .5s cubic-bezier(.175,.885,.32,1.275),opacity .3s}
+
+/* ── LABEL ── */
+.cine-label{
+  position:absolute;top:8px;left:8px;z-index:9;
+  font-family:'Bangers',cursive;font-size:.85rem;letter-spacing:2px;
+  color:#fff;background:rgba(0,0,0,.7);
+  border:1.5px solid rgba(255,255,255,.2);
+  border-radius:4px;padding:2px 8px;
+  text-shadow:1px 1px 0 #000;
 }
-.cine-char-name {
-  font-family: 'Bangers', cursive; font-size: 1.3rem;
-  letter-spacing: 3px; color: #ffd700;
-  text-shadow: 2px 2px 0 #000;
+
+/* ── SPEECH BUBBLE (cine) ── */
+.cine-bubble{
+  position:absolute;bottom:12px;left:12px;right:12px;z-index:8;
+  background:rgba(255,255,255,.92);color:#1a1a2e;
+  font-family:'Nunito',sans-serif;font-size:clamp(.7rem,2.5vw,1rem);font-weight:800;
+  padding:8px 14px;border-radius:16px;
+  max-width:85%;text-align:center;line-height:1.4;
+  box-shadow:3px 3px 0 #000;border:2px solid #000;
+  animation:bubbleIn .3s cubic-bezier(.175,.885,.32,1.275);
 }
-.cine-text {
-  font-family: 'Nunito', sans-serif; font-size: .95rem;
-  font-weight: 700; color: #fff; line-height: 1.5;
-  min-height: 3em;
-}
-.cine-tap {
-  font-family: 'Nunito', sans-serif; font-size: .7rem;
-  font-weight: 700; color: rgba(255,255,255,.4);
-  letter-spacing: 2px; text-align: right;
-  animation: tapBlink 1.2s ease infinite;
-}
-@keyframes tapBlink { 0%,100% { opacity: .4 } 50% { opacity: 1 } }
+@keyframes bubbleIn{from{transform:scale(0) rotate(-5deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+
+/* ── SLASH OVERLAY ── */
+.cine-slash{position:absolute;inset:0;z-index:7;pointer-events:none;opacity:0}
+.cine-slash.show{opacity:1}
+.cine-slash-line{position:absolute;width:120%;height:4px;background:linear-gradient(90deg,transparent,var(--red) 30%,var(--red) 70%,transparent);left:-10%;box-shadow:0 0 20px var(--red)}
+
+/* ── SCORE DISPLAY ── */
+.cine-score{text-align:center}
+.cine-score-num{font-family:'Bangers',cursive;font-size:clamp(3rem,10vw,5rem);letter-spacing:2px;line-height:1;-webkit-text-stroke:3px #000;text-shadow:4px 4px 0 #000}
+.cine-score-lbl{font-family:'Nunito',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:3px;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:4px}
 
 /* ── KANJI FX ── */
-.kanji-fx {
-  position: fixed; pointer-events: none; z-index: 8100;
-  font-family: 'Bangers', cursive; font-size: 4rem;
-  font-weight: 900; color: #ffd700;
-  -webkit-text-stroke: 3px #000;
-  text-shadow: 4px 4px 0 #000;
-  animation: kanjiFade 1s ease forwards;
+.cine-kanji{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  font-family:'Bangers',cursive;font-size:clamp(4rem,15vw,8rem);
+  font-weight:900;letter-spacing:6px;
+  -webkit-text-stroke:4px #000;
+  text-shadow:6px 6px 0 #000,0 0 60px currentColor;
+  z-index:8008;pointer-events:none;opacity:0;
+  white-space:nowrap;
 }
-@keyframes kanjiFade {
-  0%   { opacity: 1; transform: scale(1.5) rotate(-10deg) }
-  100% { opacity: 0; transform: scale(0.8) rotate(5deg) translateY(-40px) }
+.cine-kanji.pop{animation:kanjiPop .6s cubic-bezier(.175,.885,.32,1.275) forwards}
+.cine-kanji.shake{animation:kanjiShake .6s ease forwards}
+@keyframes kanjiPop{0%{opacity:0;transform:translate(-50%,-50%) scale(0) rotate(-20deg)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.3) rotate(5deg)}100%{opacity:.7;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+@keyframes kanjiShake{0%{opacity:0;transform:translate(-50%,-50%) scale(0)}20%{opacity:1;transform:translate(-50%,-50%) scale(1.2)}40%{transform:translate(-48%,-50%) scale(1)}60%{transform:translate(-52%,-50%) scale(1)}80%{transform:translate(-49%,-50%) scale(1)}100%{opacity:.6;transform:translate(-50%,-50%) scale(.9)}}
+@keyframes kShake{0%{transform:translateX(-50%) scale(0);opacity:0}30%{transform:translateX(-50%) scale(1.2);opacity:1}50%{transform:translateX(-48%) scale(1)}70%{transform:translateX(-52%) scale(1)}100%{transform:translateX(-50%) scale(1);opacity:1}}
+
+/* ── BOTTOM BAR ── */
+.cine-bottom{
+  position:absolute;bottom:0;left:0;right:0;
+  background:#000;border-top:3px solid var(--gold);
+  padding:10px 14px;display:flex;gap:8px;flex-wrap:wrap;
+  justify-content:center;flex-shrink:0;z-index:8015;
 }
 
-/* ── PARTICLE CANVAS ── */
-#particle-canvas {
-  position: fixed; inset: 0; z-index: 7999;
-  pointer-events: none;
+/* ── ANIMATION KEYFRAMES ── */
+@keyframes bPop{from{opacity:0;transform:scale(.5) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:500px){
+  .cine-panels.layout-2{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+  .cine-panels.layout-3{grid-template-columns:1fr;grid-template-rows:auto auto auto}
+  .cine-panels.layout-3 .cine-panel:first-child{grid-row:auto}
+  .cine-bubble{font-size:clamp(.65rem,2.5vw,.9rem)!important}
+  .cine-bottom{padding:8px 12px!important;gap:8px!important}
+  .cine-bottom .btn{font-size:clamp(.8rem,3vw,1rem)!important;padding:8px 16px!important}
 }

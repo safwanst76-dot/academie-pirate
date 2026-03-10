@@ -4,9 +4,10 @@
 // ═══════════════════════════════════════
 
 function saveProgress() {
-  // 1. localStorage immédiat
+  // 1. localStorage immédiat (utilise progressKey si disponible)
+  var key = (typeof progressKey === 'function') ? progressKey() : 'academie_pirate_v3';
   var data = { xp: xp, streak: streak, completedIslands: completedIslands, timestamp: new Date().toISOString() };
-  try { localStorage.setItem('academie_pirate_v3', JSON.stringify(data)); } catch(e) {}
+  try { localStorage.setItem(key, JSON.stringify(data)); } catch(e) {}
 
   // 2. Supabase DB si enfant actif
   var child = (typeof dbGetActiveChild === 'function') ? dbGetActiveChild() : null;
@@ -15,12 +16,9 @@ function saveProgress() {
   Object.entries(completedIslands).forEach(function(entry) {
     var isleId = parseInt(entry[0]);
     var score  = entry[1];
-    dbSaveProgression(child.id, 'french1', isleId, {
-      xp:             isleId * 2,
-      score:          score,
-      completed:      score > 0,
-      time_spent_sec: 0
-    }).catch(function(e) { console.warn('DB saveProgress:', e); });
+    // dbSaveProgression(childId, islandId, score, xpGained)
+    dbSaveProgression(child.id, isleId, score, score * 2)
+      .catch(function(e) { console.warn('DB saveProgress:', e); });
   });
 }
 
@@ -46,14 +44,15 @@ async function loadProgress() {
           }
         });
         updateHUD();
-        return; // DB chargée — on s'arrête là
+        return; // DB chargée
       }
     } catch(e) { console.warn('DB loadProgress:', e); }
   }
 
   // 2. Fallback localStorage
   try {
-    var s = localStorage.getItem('academie_pirate_v3');
+    var key = (typeof progressKey === 'function') ? progressKey() : 'academie_pirate_v3';
+    var s = localStorage.getItem(key);
     if (!s) return;
     var d = JSON.parse(s);
     xp               = d.xp || 0;

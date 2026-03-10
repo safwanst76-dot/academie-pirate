@@ -200,15 +200,75 @@ async function dbGetProgression(childId) {
 }
 
 // ═══════════════════════════════════════════════════════════
+// ENFANT ACTIF (session courante)
+// ═══════════════════════════════════════════════════════════
+var _activeChild = null;
+
+function dbSetActiveChild(child) {
+  _activeChild = child;
+}
+
+function dbGetActiveChild() {
+  return _activeChild;
+}
+
+// ═══════════════════════════════════════════════════════════
+// PROGRESSION PAR LEÇON (wrapper pour save.js)
+// Retourne un objet { isleId: { score, xp, completed }, ... }
+// ═══════════════════════════════════════════════════════════
+async function dbGetLessonProgression(childId, lessonId) {
+  try {
+    var rows = await dbGetProgression(childId);
+    var result = {};
+    rows.forEach(function(row) {
+      result[row.island_id] = {
+        score: row.score || 0,
+        xp: row.xp || 0,
+        completed: (row.score || 0) > 0
+      };
+    });
+    return result;
+  } catch (e) {
+    console.warn('dbGetLessonProgression:', e.message);
+    return {};
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// MIGRATION LOCALSTORAGE → DB (première connexion)
+// ═══════════════════════════════════════════════════════════
+async function dbMigrateLocalStorage(childId) {
+  try {
+    var s = localStorage.getItem('academie_pirate_v3');
+    if (!s) return;
+    var d = JSON.parse(s);
+    if (!d.completedIslands) return;
+    var entries = Object.entries(d.completedIslands);
+    for (var i = 0; i < entries.length; i++) {
+      var isleId = parseInt(entries[i][0]);
+      var score = entries[i][1];
+      await dbSaveProgression(childId, isleId, score, score * 2);
+    }
+    console.info('Migration localStorage → DB terminée pour', childId);
+  } catch (e) {
+    console.warn('dbMigrateLocalStorage:', e.message);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
 // EXPOSE GLOBAL
 // ═══════════════════════════════════════════════════════════
-window.dbGetChildren         = dbGetChildren;
-window.dbCreateChild         = dbCreateChild;
-window.dbUpdateChild         = dbUpdateChild;
-window.dbDeleteChild         = dbDeleteChild;
-window.dbGetParentProfile    = dbGetParentProfile;
-window.dbUpsertParentProfile = dbUpsertParentProfile;
-window.dbSaveProgression     = dbSaveProgression;
-window.dbGetProgression      = dbGetProgression;
+window.dbGetChildren           = dbGetChildren;
+window.dbCreateChild           = dbCreateChild;
+window.dbUpdateChild           = dbUpdateChild;
+window.dbDeleteChild           = dbDeleteChild;
+window.dbGetParentProfile      = dbGetParentProfile;
+window.dbUpsertParentProfile   = dbUpsertParentProfile;
+window.dbSaveProgression       = dbSaveProgression;
+window.dbGetProgression        = dbGetProgression;
+window.dbSetActiveChild        = dbSetActiveChild;
+window.dbGetActiveChild        = dbGetActiveChild;
+window.dbGetLessonProgression  = dbGetLessonProgression;
+window.dbMigrateLocalStorage   = dbMigrateLocalStorage;
 
 console.info('🏴‍☠️ db.js chargé');
