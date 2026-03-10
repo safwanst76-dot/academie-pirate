@@ -118,11 +118,14 @@
 
 <!-- ═══ HEADER ═══ -->
 <header id="hdr">
-  <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
-    <img id="headerAvatarImg" src="" alt="avatar" onerror="this.src=''">
-    <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
+  <div class="header-top">
+    <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar · Modifier ton nom">
+      <img id="headerAvatarImg" src="" alt="avatar" onerror="this.src=''">
+      <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
+    </div>
+    <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
+    <div class="header-spacer"></div>
   </div>
-  <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
   <div class="logo-sub">Maîtrise la grammaire — Conquiers les Mers !</div>
   <div class="hud">
     <div class="hud-pill">⭐ XP <b id="hXP">0</b></div>

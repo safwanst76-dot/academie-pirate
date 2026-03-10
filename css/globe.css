@@ -1,74 +1,90 @@
 /* ═══════════════════════════════════════
-   CARTE AU TRÉSOR — Académie Pirate
+   GLOBE / CARTE DU MONDE — Responsive
 ═══════════════════════════════════════ */
 
 #globe-sec {
-  position: relative; z-index: 5;
-  display: flex; flex-direction: column; align-items: center;
-  padding: 20px 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 12px 32px;
+  gap: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#treasure-map {
-  width: min(680px, 96vw);
-  border-radius: 10px;
+/* Titre "Carte du Monde" */
+#globe-sec > .sec-title,
+#globe-sec > h2 {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: 4px;
+  color: var(--gold2);
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+/* Conteneur carte SVG */
+#globe-container {
+  width: 100%;
+  max-width: min(560px, 96vw);
+  aspect-ratio: 4/3;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow:
-    0 0 0 3px #8B6914,
-    0 0 0 6px #2a1a00,
-    0 8px 40px rgba(0,0,0,.8);
+  border: 3px solid rgba(255,215,0,.3);
+  box-shadow: 0 8px 40px rgba(0,0,0,.6), 0 0 0 1px rgba(255,215,0,.08);
+  background: #0a0d1a;
 }
 
-#treasure-map svg { width:100%; height:auto; display:block; }
+#globe-container svg,
+#globe-container img,
+#globe-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
-/* Panneau */
+/* Séparateur Grand Line */
+.world-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 0 6px;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.8rem, 2.5vw, 1rem);
+  letter-spacing: 4px;
+  color: rgba(255,215,0,.4);
+  width: 100%;
+  max-width: min(560px, 96vw);
+}
+.world-divider::before,
+.world-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,.3));
+}
+.world-divider::after {
+  background: linear-gradient(270deg, transparent, rgba(255,215,0,.3));
+}
+
+/* Panneau info continent (sous la carte) */
 #globe-panel {
-  position: fixed;
-  bottom: -100%; left: 50%; transform: translateX(-50%);
-  width: min(420px, 96vw); z-index: 9000;
-  background: linear-gradient(160deg, #0a0d1a 0%, #120820 100%);
-  border-radius: 24px 24px 0 0;
-  border: 2px solid rgba(255,215,0,.3); border-bottom: none;
-  padding: 24px 20px;
-  transition: bottom .4s cubic-bezier(.4,0,.2,1);
-  display: flex; flex-direction: column; gap: 14px;
-  box-shadow: 0 -10px 60px rgba(0,0,0,.6);
-}
-#globe-panel.visible { bottom: 0; }
-
-#globe-overlay {
-  display: none; position: fixed; inset: 0; z-index: 8999;
-  background: rgba(0,0,0,.5);
-}
-#globe-overlay.visible { display: block; }
-
-.gp-header {
-  display: flex; align-items: center; gap: 12px;
-  border-bottom: 2px solid rgba(255,215,0,.2); padding-bottom: 14px;
-}
-.gp-emoji { font-size: 2.8rem; line-height: 1; }
-.gp-name { font-family:'Bangers',cursive; font-size:1.8rem; letter-spacing:2px; color:#fff; line-height:1; }
-.gp-universe { font-family:'Nunito',sans-serif; font-size:.8rem; font-weight:700; letter-spacing:1px; margin-top:2px; }
-.gp-close {
-  margin-left: auto; background: rgba(255,255,255,.1);
-  border: none; color: #fff; width: 34px; height: 34px;
-  border-radius: 50%; cursor: pointer; font-size: 1.1rem; flex-shrink: 0;
-}
-.gp-subject { font-family:'Nunito',sans-serif; font-size:.8rem; font-weight:800; color:#ffd700; letter-spacing:2px; text-transform:uppercase; }
-.gp-desc { font-family:'Nunito',sans-serif; font-size:.9rem; color:rgba(255,255,255,.75); line-height:1.6; }
-.gp-chars { display:flex; flex-wrap:wrap; gap:8px; }
-.gp-char-badge { font-family:'Nunito',sans-serif; font-size:.75rem; font-weight:700; padding:5px 12px; border:1px solid; border-radius:20px; background:rgba(255,255,255,.06); }
-.gp-play-btn {
-  font-family:'Bangers',cursive; font-size:1.4rem; letter-spacing:2px; padding:14px;
-  border-radius:14px; border:none; cursor:pointer; color:#fff;
-  text-shadow:2px 2px 0 rgba(0,0,0,.5); transition:all .2s; width:100%;
-}
-.gp-play-btn:hover { transform:scale(1.03); filter:brightness(1.15); }
-.gp-locked-msg {
-  font-family:'Bangers',cursive; font-size:1.2rem; letter-spacing:2px; color:#666;
-  text-align:center; padding:14px; border:2px dashed #333; border-radius:12px;
+  width: 100%;
+  max-width: min(560px, 96vw);
+  box-sizing: border-box;
+  margin-top: 12px;
 }
 
-/* Séparateur */
-.world-divider { display:flex; align-items:center; gap:12px; width:min(600px,90vw); margin:8px auto 0; }
-.world-divider-line { flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(255,215,0,.3),transparent); }
-.world-divider-text { font-family:'Bangers',cursive; font-size:.9rem; letter-spacing:3px; color:rgba(255,215,0,.5); white-space:nowrap; }
+/* Responsive : carte pleine largeur sur mobile */
+@media (max-width: 480px) {
+  #globe-sec { padding: 8px 8px 24px; }
+  #globe-container { max-width: 100%; border-radius: 8px; border-width: 2px; }
+  #globe-panel { max-width: 100%; }
+  .world-divider { font-size: .75rem; }
+}
+
+@media (min-width: 900px) {
+  #globe-container { max-width: 680px; }
+  #globe-panel { max-width: 680px; }
+}

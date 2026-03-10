@@ -1,13 +1,8 @@
 // ═══════════════════════════════════════
 // HUD + BADGES + VISUAL FX — Académie Pirate
 // ═══════════════════════════════════════
-
-// Fallback si hud.js se charge avant quiz.js
-var xp               = typeof xp               !== 'undefined' ? xp               : 0;
-var streak           = typeof streak           !== 'undefined' ? streak           : 0;
-var completedIslands = typeof completedIslands !== 'undefined' ? completedIslands : {};
-var currentIsland    = typeof currentIsland    !== 'undefined' ? currentIsland    : 0;
-var answers          = typeof answers          !== 'undefined' ? answers          : {};
+// xp, streak, completedIslands, currentIsland, answers
+// sont déclarés dans quiz.js — on ne les redéclare PAS ici.
 
 var LEVELS = [
   {min:0,  name:"Mousse"},
