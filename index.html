@@ -93,7 +93,7 @@
 </div>
 
 <!-- ═══ LOADING ═══ -->
-<div id="loading">
+<div id="loading" style="display:none">
   <div class="load-jolly">🏴‍☠️</div>
   <div class="load-title">ACADÉMIE PIRATE</div>
   <div class="load-sub">Chargement du Grand Bleu…</div>
@@ -107,14 +107,14 @@
 <div class="color-overlay"></div>
 
 <!-- ═══ EFFECTS ═══ -->
-<div class="attack-correct" id="attackCorrect">PARFAIT!</div>
-<div class="attack-wrong" id="attackWrong">
+<div class="attack-correct" id="attackCorrect" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);pointer-events:none">PARFAIT!</div>
+<div class="attack-wrong" id="attackWrong" style="position:fixed;inset:0;opacity:0;pointer-events:none">
   <div class="slash-line"></div>
   <div class="slash-line"></div>
   <div class="slash-line"></div>
 </div>
 <div class="screen-flash" id="screenFlash"></div>
-<div id="toast">🏆 Badge débloqué !</div>
+<div id="toast" style="position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-100px);opacity:0">🏆 Badge débloqué !</div>
 
 <!-- ═══ HEADER ═══ -->
 <header id="hdr">
@@ -307,6 +307,10 @@
 <!-- ═══ INIT ═══ -->
 <script>
 async function init() {
+  // Montrer le loading screen dès le départ
+  var loadEl = document.getElementById('loading');
+  if (loadEl) { loadEl.style.display = 'flex'; }
+
   if (typeof initVoicesFR === 'function') initVoicesFR();
   if (typeof initVoices   === 'function') initVoices();
   setTimeout(function() { if (typeof playBGM === 'function') playBGM('map'); }, 500);

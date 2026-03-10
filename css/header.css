@@ -1,25 +1,29 @@
-/* ═══════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════
    HEADER.CSS — Académie Pirate
-   Layout : avatar gauche | logo centré | vide droite
-   + HUD complet en dessous
-═══════════════════════════════════════ */
+   Mobile-first · Sticky · Override main.css
+   RÈGLE : ne jamais toucher main.css ni quiz.css
+═══════════════════════════════════════════════════════════ */
 
+/* ── Reset forcé sur header (override main.css position:relative) ── */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: linear-gradient(180deg, #050810 0%, #0f1629 100%);
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: linear-gradient(180deg, #050810 0%, #0f1629 100%) !important;
   border-bottom: 3px solid var(--gold);
-  padding: 8px 16px 10px;
-  text-align: center;
-  box-shadow: 0 4px 48px rgba(245,166,35,.12), 0 0 0 1px rgba(245,166,35,.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
+  box-shadow: 0 4px 24px rgba(245,166,35,.15);
+
+  /* Layout flex column centré */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 5px;
+  padding: 8px 14px 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Bande manga colorée en haut */
+/* Bande décorative top */
 header::before {
   content: '';
   position: absolute;
@@ -31,97 +35,104 @@ header::before {
   );
 }
 
-/* ── Rangée 1 : avatar | logo | spacer ── */
+/* ── Rangée 1 : avatar gauche | logo centré | spacer droit ── */
 .header-top {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 760px;
+  max-width: 720px;
 }
 
-/* Avatar élève — haut gauche, cliquable → choix avatar/nom */
+/* Avatar cliquable */
 .hud-avatar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
   cursor: pointer;
   flex-shrink: 0;
-  min-width: 54px;
+  min-width: 48px;
   transition: transform .2s;
+  -webkit-tap-highlight-color: transparent;
 }
-.hud-avatar:hover { transform: scale(1.05); }
+.hud-avatar:hover, .hud-avatar:active { transform: scale(1.08); }
+
 .hud-avatar img {
-  width: 42px; height: 42px;
+  width: 40px; height: 40px;
   border-radius: 50%;
   border: 2.5px solid var(--gold);
   object-fit: cover;
-  box-shadow: 0 0 12px rgba(255,215,0,.35);
+  box-shadow: 0 0 12px rgba(255,215,0,.3);
+  background: #111;
 }
 .hud-avatar-name {
   font-family: 'Bangers', cursive;
-  font-size: .78rem;
+  font-size: .7rem;
   letter-spacing: 1px;
   color: var(--gold);
   line-height: 1;
 }
 
-/* Logo centré */
+/* Logo centré — override main.css display:block */
 .logo {
-  font-family: 'Bangers', cursive;
-  font-size: clamp(1.3rem, 3.5vw, 2.2rem);
-  letter-spacing: 4px;
-  line-height: 1;
+  font-family: 'Bangers', cursive !important;
+  font-size: clamp(1.2rem, 3.5vw, 2rem) !important;
+  letter-spacing: 3px;
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 40%, var(--red) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 14px rgba(245,166,35,.3));
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
   flex: 1;
   text-align: center;
+  display: block !important;
+  line-height: 1.1;
 }
 
-/* Spacer symétrique à droite pour équilibrer l'avatar */
-.header-spacer { min-width: 54px; }
+.header-spacer { min-width: 48px; flex-shrink: 0; }
 
 /* ── Rangée 2 : sous-titre ── */
 .logo-sub {
-  font-size: .62rem;
-  color: #4a5568;
+  font-size: .6rem;
+  color: #374151;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: -4px 0 0;
+  text-align: center;
+  margin-top: -2px;
 }
 
 /* ── Rangée 3 : HUD pills ── */
 .hud {
-  display: flex;
+  display: flex !important;
   justify-content: center;
-  gap: 6px;
+  gap: 5px;
   flex-wrap: wrap;
+  margin-top: 2px;
 }
 .hud-pill {
   background: rgba(255,255,255,.05);
   border: 1.5px solid rgba(255,255,255,.1);
   border-radius: 20px;
-  padding: 4px 11px;
-  font-size: .72rem;
+  padding: 3px 10px;
+  font-size: .68rem;
   font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   font-family: 'Nunito', sans-serif;
 }
-.hud-pill b { color: var(--gold); font-size: .82rem; }
+.hud-pill b { color: var(--gold); font-size: .75rem; }
 
 /* ── Rangée 4 : barre XP ── */
-.xp-wrap { width: min(400px, 88vw); }
+.xp-wrap {
+  width: min(360px, 90vw);
+  margin: 0;
+}
 .xp-track {
-  height: 8px;
+  height: 7px;
   background: rgba(255,255,255,.07);
   border-radius: 99px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.08);
 }
 .xp-fill {
   height: 100%;
@@ -130,10 +141,10 @@ header::before {
   transition: width .7s cubic-bezier(.4,0,.2,1);
 }
 .xp-lbl {
-  font-size: .61rem;
+  font-size: .58rem;
   color: #374151;
   text-align: right;
-  margin-top: 2px;
+  margin-top: 1px;
   font-weight: 700;
   font-family: 'Nunito', sans-serif;
 }
@@ -142,11 +153,12 @@ header::before {
 .badges {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  margin: 0;
 }
 .bdg {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   opacity: .15;
   filter: grayscale(1);
   transition: all .4s;
@@ -158,22 +170,17 @@ header::before {
   filter: none;
   animation: badgePop .7s cubic-bezier(.175,.885,.32,1.275);
 }
-@keyframes badgePop {
-  0%   { transform: scale(0); }
-  70%  { transform: scale(1.3); }
-  100% { transform: scale(1); }
-}
 .bdg-tip {
   display: none;
   position: absolute;
-  bottom: 120%; left: 50%;
+  bottom: 130%; left: 50%;
   transform: translateX(-50%);
   background: var(--card2);
   border: 1px solid var(--gold);
   color: var(--white);
-  font-size: .6rem;
+  font-size: .58rem;
   white-space: nowrap;
-  padding: 4px 8px;
+  padding: 3px 7px;
   border-radius: 6px;
   z-index: 50;
   font-family: 'Nunito', sans-serif;
@@ -181,39 +188,42 @@ header::before {
 }
 .bdg:hover .bdg-tip { display: block; }
 
-/* ── Masquer header & pirate-nav sur login ── */
+/* ── Masquer header + éléments sur page login ── */
 body.login-active header,
-body.login-active #pirate-nav,
 body.login-active #sound-bar,
 body.login-active #voice-sub {
   display: none !important;
 }
 
-/* ── Supprimer la barre pirate-nav (Carte / Îles Pirates) ── */
+/* ── Masquer la navbar #pirate-nav (boutons Carte/Îles) ── */
 #pirate-nav { display: none !important; }
 
-/* ── Responsive ── */
-@media (max-width: 480px) {
-  .logo            { font-size: clamp(1rem, 5vw, 1.6rem); }
-  .hud-pill        { font-size: .62rem; padding: 3px 8px; }
-  .hud-avatar img  { width: 36px; height: 36px; }
-  header           { padding: 8px 10px 10px; }
+/* ═══════════════════════════════
+   RESPONSIVE MOBILE-FIRST
+═══════════════════════════════ */
+
+/* Tablette (≥ 600px) */
+@media (min-width: 600px) {
+  header { padding: 10px 20px 12px; gap: 6px; }
+  .hud-avatar img { width: 44px; height: 44px; }
+  .hud-pill { font-size: .72rem; padding: 4px 12px; }
+  .logo { font-size: clamp(1.6rem, 4vw, 2.4rem) !important; }
+  .logo-sub { display: block; }
+  .bdg { font-size: 1.3rem; }
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE MOBILE FIRST
-═══════════════════════════════════════ */
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+  header { padding: 10px 32px 12px; }
+  .logo { font-size: 2.2rem !important; }
+}
 
-/* Header compact sur petit écran */
-@media (max-width: 600px) {
-  header { padding: 6px 10px 8px; gap: 4px; }
-  .logo  { font-size: 1.3rem; letter-spacing: 2px; }
+/* Mobile serré (< 380px) */
+@media (max-width: 380px) {
+  .hud-pill { font-size: .58rem; padding: 2px 6px; }
+  .hud-avatar img { width: 34px; height: 34px; }
+  .logo { font-size: 1.1rem !important; letter-spacing: 1px; }
   .logo-sub { display: none; }
-  .hud-pill { font-size: .6rem; padding: 3px 7px; }
-  .hud-pill b { font-size: .7rem; }
-  .hud-avatar img { width: 32px; height: 32px; }
-  .hud-avatar-name { font-size: .65rem; }
-  .xp-wrap { width: 100%; }
-  .badges { gap: 6px; }
-  .bdg { font-size: 1rem; }
+  .badges { gap: 5px; }
+  .bdg { font-size: .9rem; }
 }
