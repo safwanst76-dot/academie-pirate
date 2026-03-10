@@ -1,98 +1,285 @@
+/* ═══════════════════════════════════════════════════════
+   LOGIN.CSS — Académie Pirate
+   Page de connexion : header masqué, écran plein page
+   Avatar élève affiché en haut à gauche bien en évidence
+═══════════════════════════════════════════════════════ */
+
+/* ── Quand le login est visible : masquer tout le header ── */
+body.login-active header,
+body.login-active #sound-bar,
+body.login-active #voice-sub {
+  display: none !important;
+}
+
+/* ── Écran login : plein écran ── */
 #login-screen {
   position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 10;
-  background: rgba(0,0,0,0.55);
-  display: flex; flex-direction: column; align-items: center;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   overflow-y: auto;
-  padding-top: 40px;
-  padding-bottom: 24px;
-  gap: 16px;
+  background: rgba(5, 8, 16, 0.82);
+  backdrop-filter: blur(2px);
+  transition: opacity .4s, visibility .4s;
 }
-#login-screen.gone { opacity: 0; visibility: hidden; pointer-events: none; }
 
+#login-screen.gone {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ── Avatar élève — haut gauche très visible ── */
+#login-avatar-badge {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(5, 8, 16, 0.8);
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  border-radius: 50px;
+  padding: 8px 20px 8px 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0,0,0,.5), 0 0 20px rgba(255,215,0,.1);
+  transition: all .2s;
+}
+
+#login-avatar-badge.hidden { display: none; }
+
+#login-avatar-badge img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2.5px solid #ffd700;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255,215,0,.5);
+}
+
+#login-avatar-badge .lab-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#login-avatar-badge .lab-name {
+  font-family: 'Bangers', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: #ffd700;
+  text-shadow: 0 0 12px rgba(255,215,0,.6);
+  line-height: 1;
+}
+
+#login-avatar-badge .lab-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: .62rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.35);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ── Carte centrale ── */
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: min(460px, 92vw);
+  padding: 20px 0 48px;
+}
+
+/* GIF */
 .login-gif-wrap {
-  width: min(260px, 75vw);
-  border-radius: 16px; overflow: hidden;
-  border: 3px solid rgba(255,215,0,.4);
-  box-shadow: 0 0 30px rgba(255,100,0,.4);
-  flex-shrink: 0;
+  width: min(260px, 70vw);
+  height: min(260px, 70vw);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 3px solid rgba(255,215,0,.35);
+  box-shadow: 0 0 50px rgba(255,215,0,.12), 0 8px 40px rgba(0,0,0,.7);
+  background: #0f1629;
 }
-.login-gif { width: 100%; height: auto; display: block; }
 
+.login-gif-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Titre */
 .login-title {
   font-family: 'Bangers', cursive;
-  font-size: clamp(2rem, 8vw, 3.2rem);
-  letter-spacing: 4px; text-align: center;
-  background: linear-gradient(135deg, #f97316, #ffd700, #e63946);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  font-size: clamp(2.4rem, 8vw, 3.2rem);
+  letter-spacing: 5px;
+  color: #ffd700;
+  text-shadow: 3px 3px 0 #000, 0 0 40px rgba(255,215,0,.5);
+  text-align: center;
+  line-height: 1;
+  margin: 0;
 }
+
 .login-subtitle {
   font-family: 'Nunito', sans-serif;
-  font-size: .85rem; color: rgba(255,255,255,.6);
-  letter-spacing: 3px; text-transform: uppercase; text-align: center;
+  font-size: .82rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.3);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -10px;
 }
-.login-card {
-  background: rgba(0,0,0,0.7);
-  border: 2px solid rgba(255,215,0,.25);
-  border-radius: 20px; padding: 22px;
-  width: min(340px, 88vw); box-sizing: border-box;
-  display: flex; flex-direction: column; gap: 14px;
+
+/* Formulaire email */
+.login-form {
+  width: 100%;
+  background: rgba(0,0,0,.6);
+  border: 2px solid rgba(255,215,0,.12);
+  border-radius: 20px;
+  padding: 22px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.5);
 }
+
 .login-label {
   font-family: 'Nunito', sans-serif;
-  font-size: .75rem; font-weight: 800;
-  color: #ffd700; letter-spacing: 2px; text-transform: uppercase;
+  font-size: .7rem;
+  font-weight: 900;
+  color: #ffd700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-.login-input {
-  background: rgba(255,255,255,.07);
-  border: 2px solid rgba(255,215,0,.3);
-  border-radius: 12px; padding: 12px 16px;
-  color: #fff; font-family: 'Nunito', sans-serif;
-  font-size: 1rem; font-weight: 700;
-  outline: none; width: 100%; box-sizing: border-box;
-}
-.login-input:focus { border-color: rgba(255,215,0,.7); }
-.login-btn {
-  font-family: 'Bangers', cursive; font-size: 1.3rem;
-  letter-spacing: 2px; padding: 12px 24px;
-  border-radius: 14px; border: none; cursor: pointer;
-  background: linear-gradient(135deg, #e63946, #f97316);
-  color: #fff; text-shadow: 2px 2px 0 rgba(0,0,0,.5);
-  box-shadow: 0 4px 20px rgba(230,57,70,.4);
-  transition: all .2s; width: 100%;
-}
-.login-btn:hover { transform: scale(1.03); filter: brightness(1.1); }
-.login-hint {
-  font-family: 'Nunito', sans-serif; font-size: .72rem;
-  color: rgba(255,255,255,.4); text-align: center; line-height: 1.5;
-}
-.login-success-icon { font-size: 2.5rem; text-align: center; }
-.login-success-title {
-  font-family: 'Bangers', cursive; font-size: 1.6rem;
-  letter-spacing: 2px; color: #ffd700; text-align: center;
-}
-.login-success-text {
-  font-family: 'Nunito', sans-serif; font-size: .85rem;
-  color: rgba(255,255,255,.7); text-align: center; line-height: 1.5;
-}
-.login-btn-outline {
-  font-family: 'Nunito', sans-serif; font-size: .85rem; font-weight: 700;
-  padding: 8px 20px; border-radius: 10px; cursor: pointer;
-  background: transparent; border: 2px solid rgba(255,215,0,.4);
-  color: rgba(255,255,255,.6); transition: all .2s; width: 100%;
-}
-.login-skip {
-  font-family: 'Nunito', sans-serif; font-size: .8rem; font-weight: 700;
-  color: rgba(255,255,255,.35); background: none; border: none;
-  cursor: pointer; letter-spacing: 1px; transition: color .2s;
-  text-decoration: underline; text-underline-offset: 3px;
-}
-.login-skip:hover { color: rgba(255,255,255,.7); }
 
-@media (max-height: 700px) {
-  #login-screen { padding-top: max(120px, 15vh); gap: 10px; }
-  .login-gif-wrap { width: min(180px, 60vw); }
-  .login-title { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+.login-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255,255,255,.07);
+  border: 2px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.login-input:focus {
+  border-color: rgba(255,215,0,.45);
+  box-shadow: 0 0 0 3px rgba(255,215,0,.08);
+}
+
+.login-input::placeholder { color: rgba(255,255,255,.2); }
+
+.login-btn {
+  width: 100%;
+  font-family: 'Bangers', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  padding: 14px 24px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #e63946, #f97316);
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.4);
+  box-shadow: 0 4px 20px rgba(230,57,70,.4);
+  transition: all .2s;
+}
+
+.login-btn:hover  { transform: scale(1.02); box-shadow: 0 6px 28px rgba(230,57,70,.6); }
+.login-btn:active { transform: scale(.98); }
+.login-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+.login-hint {
+  font-family: 'Nunito', sans-serif;
+  font-size: .73rem;
+  color: rgba(255,255,255,.25);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Étape 2 — email envoyé */
+#loginStep2 {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.login-step2-icon  { font-size: 3.5rem; }
+
+.login-step2-title {
+  font-family: 'Bangers', cursive;
+  font-size: 1.7rem;
+  letter-spacing: 3px;
+  color: #ffd700;
+}
+
+.login-step2-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: .85rem;
+  color: rgba(255,255,255,.45);
+  line-height: 1.7;
+}
+
+/* Séparateur OU */
+.login-sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.login-sep::before,
+.login-sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,.08);
+}
+
+.login-sep span {
+  font-family: 'Nunito', sans-serif;
+  font-size: .68rem;
+  color: rgba(255,255,255,.2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Bouton jouer sans compte */
+.login-skip {
+  font-family: 'Nunito', sans-serif;
+  font-size: .85rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.3);
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  padding: 8px;
+  transition: color .2s;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,.1);
+}
+
+.login-skip:hover { color: rgba(255,255,255,.55); }
+
+@media (max-height: 680px) {
+  .login-gif-wrap { width: min(160px, 45vw); height: min(160px, 45vw); }
+  .login-title    { font-size: 1.8rem; }
+  .login-card     { gap: 12px; padding-top: 10px; }
 }
