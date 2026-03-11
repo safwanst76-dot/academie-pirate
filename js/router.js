@@ -127,11 +127,11 @@ function showQuiz() {
 // PAGE : HISTOIRE
 // ══════════════════════════════
 function showHistoire() {
+  hideAll();
   if (typeof stopBGM === 'function') stopBGM();
   setTimeout(function() {
     if (typeof playBGM === 'function') playBGM('dbz-battle');
   }, 300);
-  hideAll();
   var sec = document.getElementById('histoire-iles-sec');
   if (sec) {
     sec.style.display = 'block';

@@ -1,9 +1,10 @@
 /* ═══════════════════════════════════════════════════════════
-   QUIZ-HISTOIRE.CSS v3 — Académie Pirate
-   ✅ FIX images : object-fit contain — personnages non tronqués
+   QUIZ-HISTOIRE.CSS v4 — Académie Pirate
+   ✅ FIX cinématique : height:100vh sur .hist-cine-inner
+   ✅ FIX char-wrap : position absolute + height 100% correct
+   ✅ FIX images grille : object-fit contain — non tronqués
    ✅ Fond animé DBZ (strips verticaux)
    ✅ Contraste fort sur les cartes quiz
-   ✅ Cinématique plein écran avec image perso en grand
    ═══════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════
@@ -145,10 +146,6 @@
 
 /* ══════════════════════════════════
    ✅ FIX IMAGES — personnage non tronqué
-   object-fit: contain  → image entière visible
-   object-position: bottom → pieds ancrés en bas
-   padding → espace autour du perso
-   background dégradé → fond élégant
    ══════════════════════════════════ */
 .hist-isle-img-wrap {
   position: relative;
@@ -161,12 +158,14 @@
 .hist-isle-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;         /* ← FIX : affiche le perso en entier */
-  object-position: center bottom;  /* ← ancré en bas */
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
-  padding: 8px 6px 0;          /* ← espace pour que la tête ne soit pas coupée */
+  padding: 8px 6px 0;
   box-sizing: border-box;
   transition: transform .4s ease;
+  /* Fond noir transparent sur les PNG avec fond noir */
+  mix-blend-mode: lighten;
 }
 .hist-isle-card:hover .hist-isle-img { transform: scale(1.05); }
 
@@ -289,7 +288,7 @@
 }
 
 /* ══════════════════════════════════
-   CARTE QUESTION — CONTRASTE FORT
+   CARTE QUESTION
    ══════════════════════════════════ */
 .hist-q-card {
   margin: 14px 12px;
@@ -308,7 +307,6 @@
   box-shadow: 0 0 32px rgba(230,57,70,.35), 0 6px 28px rgba(0,0,0,.7) !important;
 }
 
-/* Boss banner */
 .hist-boss-banner {
   background: linear-gradient(135deg, #200006, #3d0010);
   border-bottom: 1px solid rgba(230,57,70,.4);
@@ -357,19 +355,19 @@
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
-/* ✅ FIX image ronde du perso dans la bulle aussi */
 .hist-char-img {
   width: clamp(44px, 11vw, 60px);
   height: clamp(44px, 11vw, 60px);
   border-radius: 50%;
   border: 2px solid var(--isle-color, #f97316);
-  object-fit: contain;          /* ← contain pour voir le visage entier */
+  object-fit: contain;
   object-position: top center;
   flex-shrink: 0;
   box-shadow: 0 0 12px var(--isle-color, #f9731655);
   background: rgba(0,0,0,.3);
   padding: 2px;
   box-sizing: border-box;
+  mix-blend-mode: lighten;
 }
 .hist-char-fallback {
   width: clamp(44px, 11vw, 60px);
@@ -395,7 +393,6 @@
   flex: 1;
 }
 
-/* Question */
 .hist-q-number {
   font-family: 'Nunito', sans-serif;
   font-size: .7rem;
@@ -415,7 +412,7 @@
   text-shadow: 0 1px 3px rgba(0,0,0,.8);
 }
 
-/* ── Options — contraste maximum ── */
+/* ── Options ── */
 .hist-opts {
   display: flex;
   flex-direction: column;
@@ -446,7 +443,6 @@
   transform: translateX(3px);
 }
 .hist-opt:active { transform: scale(.98); }
-
 .hist-opt.hist-selected {
   border-color: var(--isle-color, #f97316);
   background: rgba(249,115,22,.18);
@@ -524,7 +520,6 @@
 }
 .hist-expl.hist-show { display: block; }
 
-/* Bouton corriger */
 .hist-submit-wrap {
   text-align: center;
   padding: 24px 16px 48px;
@@ -599,7 +594,6 @@
   background: linear-gradient(160deg, rgba(0,0,0,.2), rgba(0,0,0,.5));
 }
 
-/* ✅ FIX image résultats aussi */
 .hist-result-avatar {
   position: absolute;
   right: 0;
@@ -607,10 +601,11 @@
   height: 100%;
   width: auto;
   max-width: 60%;
-  object-fit: contain;          /* ← contain pour voir le perso entier */
+  object-fit: contain;
   object-position: bottom right;
   opacity: .9;
   filter: saturate(1.3);
+  mix-blend-mode: lighten;
   mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
   -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
 }
@@ -667,7 +662,8 @@
 }
 
 /* ══════════════════════════════════
-   CINÉMATIQUE DBZ — PLEIN ÉCRAN
+   ✅ CINÉMATIQUE DBZ — FIX PLEIN ÉCRAN
+   Le personnage doit occuper toute la hauteur viewport
    ══════════════════════════════════ */
 #hist-cine-overlay {
   position: fixed;
@@ -679,8 +675,11 @@
   pointer-events: auto;
 }
 
+/* ✅ FIX CRITIQUE : height 100vh + overflow hidden */
 .hist-cine-inner {
   width: 100%;
+  height: 100vh;           /* ← FIX : hauteur explicite viewport */
+  min-height: 100vh;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -688,24 +687,30 @@
   overflow: hidden;
 }
 
-/* Personnage côté droit — pleine hauteur, non tronqué */
+/* ✅ FIX : char-wrap occupe toute la hauteur du parent */
 .hist-cine-char-wrap {
   position: absolute;
   right: 0;
+  top: 0;                  /* ← FIX : ancré en haut, pas juste en bas */
   bottom: 0;
-  height: 100%;
+  height: 100%;            /* ← hérite du parent 100vh */
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   z-index: 1;
   pointer-events: none;
 }
+
+/* ✅ FIX : image utilise la hauteur du wrapper */
 .hist-cine-char {
-  height: min(90vh, 800px);
+  height: 95%;             /* ← 95% de 100vh = presque toute la hauteur */
+  max-height: 95vh;
   max-width: 55vw;
+  width: auto;
   object-fit: contain;
   object-position: bottom center;
   filter: drop-shadow(-8px 0 30px rgba(0,0,0,.9)) saturate(1.4);
+  mix-blend-mode: lighten;  /* ← élimine le fond noir des PNG */
   animation: hist-char-enter .6s cubic-bezier(.17,.67,.3,1.1) .2s both;
   transform-origin: bottom right;
 }
@@ -860,8 +865,8 @@
   .hist-q-card { margin: 10px 8px; }
   .hist-opts { padding: 0 10px; }
   .hist-opt { padding: 11px 12px; }
-  .hist-cine-content { max-width: 60vw; }
-  .hist-cine-char { max-width: 50vw; }
+  .hist-cine-content { max-width: 58vw; }
+  .hist-cine-char { max-width: 48vw; }
 }
 @media (min-width: 768px) {
   .hist-q-card { max-width: 740px; margin: 14px auto; }
@@ -869,5 +874,5 @@
   .hist-result-card { max-width: 700px; margin: 20px auto; }
 }
 @media (min-width: 1024px) {
-  .hist-cine-char { height: min(95vh, 900px); }
+  .hist-cine-char { height: min(95vh, 900px); max-height: 95vh; }
 }

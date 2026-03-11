@@ -1,7 +1,8 @@
 // ═══════════════════════════════════════════════════════════
-// QUIZ-HISTOIRE.JS v3 — Académie Pirate
+// QUIZ-HISTOIRE.JS v4 — Académie Pirate
+// ✅ FIX avatars : mapping corrigé (3=Piccolo, 4=Gohan, 5=Trunks, 7=Android18, 8=Babidi)
+// ✅ FIX audio : hist_playBGM robuste avec audio HTML5 direct
 // ✅ FIX clics : data-v au lieu de JSON.stringify dans onclick
-// ✅ FIX images : object-fit contain + padding
 // ✅ Musique extensible par île (propriété bgm)
 // ═══════════════════════════════════════════════════════════
 
@@ -30,29 +31,94 @@ var HIST_GIFS_LOSE = [
   'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWR0eDY5OGJpcTIxMTAyY2c1cTM1N2lxODkxd3Btb2FpdXk2cm9uYiZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/LgpHGoIh3pXSPYAlif/giphy.gif'
 ];
 
-// ── Avatars DBZ locaux ──
+// ══════════════════════════════════════════════════════
+// ✅ AVATARS DBZ — MAPPING CORRIGÉ v4
+// 1=Goku, 2=Vegeta, 3=Piccolo(NEW), 4=Gohan(NEW),
+// 5=Trunks(NEW), 6=Krilin, 7=Android18(NEW), 8=Babidi(NEW)
+// Placer les fichiers dans assets/images/dbz/
+// ══════════════════════════════════════════════════════
 var HIST_AVATARS = {
-  1:'assets/images/dbz/1.png',
-  2:'assets/images/dbz/2.png',
-  3:'assets/images/dbz/3.png',
-  4:'assets/images/dbz/4.png',
-  5:'assets/images/dbz/5.png',
-  6:'assets/images/dbz/6.png',
-  7:'assets/images/dbz/7.png',
-  8:'assets/images/dbz/8.png'
+  1: 'assets/images/dbz/1.png',   // Goku
+  2: 'assets/images/dbz/2.png',   // Vegeta
+  3: 'assets/images/dbz/3.png',   // Piccolo  ← nouveau fichier
+  4: 'assets/images/dbz/4.png',   // Gohan    ← nouveau fichier
+  5: 'assets/images/dbz/5.png',   // Trunks   ← nouveau fichier
+  6: 'assets/images/dbz/6.png',   // Krilin
+  7: 'assets/images/dbz/7.png',   // Android 18 ← nouveau fichier (remplace Bulma)
+  8: 'assets/images/dbz/8.png'    // Babidi   ← nouveau fichier (remplace Yamcha)
+};
+
+// ✅ BOSS AVATARS — images séparées pour les cinématiques de boss
+var HIST_BOSS_AVATARS = {
+  'Freezer':    'assets/images/dbz/freezer.png',
+  'Cell':       'assets/images/dbz/cell.png',      // nouveau fichier
+  'Broly':      'assets/images/dbz/broly.png',     // nouveau fichier
+  'Majin Buu':  'assets/images/dbz/majinbuu.png',
+  'Beerus':     'assets/images/dbz/beerus.png',
+  'Babidi':     'assets/images/dbz/babidi.png',    // nouveau fichier
+  'Black Goku': 'assets/images/dbz/blackgoku.png',
+  'Zamasu':     'assets/images/dbz/zamasu.png'
 };
 
 var HIST_FALLBACK = {
-  1:'🐉',2:'👑',3:'🟢',4:'⚡',5:'⚔️',6:'🥋',7:'💡',8:'🌟'
+  1:'🐉', 2:'👑', 3:'👽', 4:'💥', 5:'⚔️', 6:'🥋', 7:'🤖', 8:'👹'
 };
 
-// ── Musique par île ──
-// Pour ajouter une nouvelle île avec une autre musique :
-// bgm: 'nom-de-la-piste' (doit exister dans BGM_TRACKS de audio-engine.js)
+// ══════════════════════════════════════════════════════
+// ✅ AUDIO ENGINE DBZ — robuste avec fallback
+// Gère les MP3 spécifiques à cette île
+// Nommage attendu : assets/audio/dbz-battle.mp3
+//                   assets/audio/dbz-victory.mp3
+//                   assets/audio/dbz-map.mp3
+// ══════════════════════════════════════════════════════
+var _hist_audioEl = null;
+var _hist_currentTrack = '';
+
 function hist_playBGM(track) {
-  try {
-    if (typeof playBGM === 'function') playBGM(track);
-  } catch(e) { console.warn('hist_playBGM:', e); }
+  if (!track) return;
+
+  // ── 1. Si audio-engine.js global est disponible, l'utiliser en priorité
+  if (typeof playBGM === 'function') {
+    try { playBGM(track); return; } catch(e) { /* fallback ci-dessous */ }
+  }
+
+  // ── 2. Fallback : audio HTML5 direct
+  if (_hist_currentTrack === track && _hist_audioEl && !_hist_audioEl.paused) return;
+
+  var paths = [
+    'assets/audio/' + track + '.mp3',
+    'assets/sounds/' + track + '.mp3',
+    'audio/' + track + '.mp3',
+    'sounds/' + track + '.mp3'
+  ];
+
+  if (!_hist_audioEl) {
+    _hist_audioEl = new Audio();
+    _hist_audioEl.loop = true;
+    _hist_audioEl.volume = 0.45;
+  }
+
+  _hist_currentTrack = track;
+
+  // Essayer chaque chemin jusqu'à succès
+  (function tryPaths(i) {
+    if (i >= paths.length) {
+      console.warn('[hist_playBGM] Aucun fichier audio trouvé pour :', track);
+      return;
+    }
+    _hist_audioEl.src = paths[i];
+    _hist_audioEl.load();
+    var p = _hist_audioEl.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(function() { tryPaths(i + 1); });
+    }
+  })(0);
+}
+
+function hist_stopBGM() {
+  if (typeof stopBGM === 'function') { try { stopBGM(); return; } catch(e) {} }
+  if (_hist_audioEl) { _hist_audioEl.pause(); _hist_audioEl.currentTime = 0; }
+  _hist_currentTrack = '';
 }
 
 // ══════════════════════════════════════════════════════
@@ -91,12 +157,7 @@ async function loadHistBgStrips() {
 function loadHistBgFallback() {
   var bg = document.getElementById('hist-bg');
   if (!bg || bg.children.length > 0) return;
-  var imgs = [
-    'assets/images/dbz/1.png','assets/images/dbz/2.png',
-    'assets/images/dbz/3.png','assets/images/dbz/4.png',
-    'assets/images/dbz/5.png','assets/images/dbz/6.png',
-    'assets/images/dbz/7.png','assets/images/dbz/8.png'
-  ];
+  var imgs = Object.values(HIST_AVATARS);
   for (var s = 0; s < 5; s++) {
     var strip = document.createElement('div');
     strip.className = 'hist-bg-strip';
@@ -109,10 +170,10 @@ function loadHistBgFallback() {
   }
 }
 
-// ══════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════
 // DONNÉES : 8 ÎLES × 11 QUESTIONS
-// bgm : piste audio à jouer pour cette île
-// ══════════════════════════════════════════════════════
+// bgm : nom du fichier MP3 dans assets/audio/ (sans extension)
+// ══════════════════════════════════════════════════════════════
 const ISLANDS_HISTOIRE = {
 
   1:{name:"ÎLE DE GOKU",charName:"Goku",color:"#f97316",topic:"L'Égypte Ancienne",level:"6ème",bgm:"dbz-battle",
@@ -174,7 +235,7 @@ const ISLANDS_HISTOIRE = {
       {q:"Quel est le livre sacré du judaïsme ?",o:["La Bible","La Torah","Le Coran","Les Vedas"],a:"La Torah",exp:"La Torah (les 5 premiers livres de la Bible) est le texte fondateur du judaïsme."},
       {q:"Qui est le fondateur du christianisme ?",o:["Moïse","Abraham","Jésus de Nazareth","Saint Paul"],a:"Jésus de Nazareth",exp:"Jésus de Nazareth est le fondateur du christianisme. Ses disciples ont répandu son message."},
       {q:"Qui est le prophète de l'islam ?",o:["Moïse","Abraham","Jésus","Mohammad"],a:"Mohammad",exp:"Mohammad (570-632 apr. J.-C.) est le prophète de l'islam. Il reçut le Coran à La Mecque et Médine."},
-      {q:"Comment s'appelle le livre sacré de l'islam ?",o:["La Torah","La Bible","Le Coran","Les Évangiles"],a:"Le Coran",exp:"Le Coran est la parole de Dieu (Allah) révélée à Mahomet par l'ange Jibril (Gabriel)."},
+      {q:"Comment s'appelle le livre sacré de l'islam ?",o:["La Torah","La Bible","Le Coran","Les Évangiles"],a:"Le Coran",exp:"Le Coran est la parole de Dieu (Allah) révélée à Mohammed par l'ange Jibril (Gabriel)."},
       {q:"Quelle ville est sainte pour l'islam, lieu de naissance de Mohammad ?",o:["Jérusalem","Médine","La Mecque","Bagdad"],a:"La Mecque",exp:"La Mecque est la ville la plus sainte de l'islam. Les musulmans y font le pèlerinage (hajj)."},
       {q:"Comment appelle-t-on le lieu de culte des chrétiens ?",o:["La mosquée","La synagogue","Le temple","L'église"],a:"L'église",exp:"Les chrétiens prient dans une église. Les juifs dans une synagogue, les musulmans dans une mosquée."},
       {q:"Qu'est-ce que le monothéisme ?",o:["La croyance en plusieurs dieux","La croyance en un seul Dieu","Le refus de toute religion","La croyance en des esprits"],a:"La croyance en un seul Dieu",exp:"Mono = un seul. Théisme = croyance en Dieu. Monothéisme = croyance en un seul Dieu unique."},
@@ -203,8 +264,8 @@ const ISLANDS_HISTOIRE = {
   6:{name:"ÎLE DE KRILIN",charName:"Krilin",color:"#f59e0b",topic:"L'Islam et son Expansion",level:"5ème",bgm:"dbz-battle",
     msgs:["Destructo-Disk de savoir !","Même sans cheveux, on peut être brillant !","Android 18 me regarde... je dois réussir !","Continue, tu es fort !","La connaissance, c'est mon vrai pouvoir !"],
     qs:[
-      {q:"En quelle année l'Hégire marque-t-elle le début de l'islam ?",o:["En 570 apr. J.-C.","En 622 apr. J.-C.","En 632 apr. J.-C.","En 750 apr. J.-C."],a:"En 622 apr. J.-C.",exp:"622 apr. J.-C. est l'année de l'Hégire : la fuite de Mahomet de La Mecque à Médine. Début du calendrier islamique."},
-      {q:"Qu'est-ce que l'Hégire ?",o:["La mort de Mahomet","La fuite de Mahomet de La Mecque à Médine","La conquête de Jérusalem","La révélation du Coran"],a:"La fuite de Mahomet de La Mecque à Médine",exp:"L'Hégire (622) est le point de départ du calendrier islamique."},
+      {q:"En quelle année l'Hégire marque-t-elle le début de l'islam ?",o:["En 570 apr. J.-C.","En 622 apr. J.-C.","En 632 apr. J.-C.","En 750 apr. J.-C."],a:"En 622 apr. J.-C.",exp:"622 apr. J.-C. est l'année de l'Hégire : la fuite de Mohammad de La Mecque à Médine. Début du calendrier islamique."},
+      {q:"Qu'est-ce que l'Hégire ?",o:["La mort de Mohammad","La fuite de Mohammad de La Mecque à Médine","La conquête de Jérusalem","La révélation du Coran"],a:"La fuite de Mohammad de La Mecque à Médine",exp:"L'Hégire (622) est le point de départ du calendrier islamique."},
       {q:"Comment s'appelle la communauté des croyants musulmans ?",o:["La Oumma","La Sharia","La Sunna","La Fatwa"],a:"La Oumma",exp:"La Oumma est la communauté universelle des musulmans, par-delà les frontières et nationalités."},
       {q:"Quelle période est surnommée l'Âge d'or islamique ?",o:["L'Empire byzantin","La civilisation arabo-islamique du IXe au XIe siècle","L'Empire perse","L'Empire ottoman"],a:"La civilisation arabo-islamique du IXe au XIe siècle",exp:"Du IXe au XIe s., les savants musulmans ont enrichi les sciences (médecine, mathématiques, astronomie)."},
       {q:"Qui est Ibn Battouta ?",o:["Un calife de Bagdad","Un grand voyageur et géographe arabe","Un général","Un philosophe"],a:"Un grand voyageur et géographe arabe",exp:"Ibn Battouta (XIVe s.) a parcouru 120 000 km et décrit 44 pays dans son récit 'La Rihla'."},
@@ -217,8 +278,8 @@ const ISLANDS_HISTOIRE = {
     ]
   },
 
-  7:{name:"ÎLE DE BULMA",charName:"Bulma",color:"#06b6d4",topic:"Chrétienté et Croisades",level:"5ème",bgm:"dbz-battle",
-    msgs:["Mon radar détecte les erreurs !","Je suis plus intelligente que toi ET papa !","Capsule Corp sponsorise ta réussite !","Bien joué, presque aussi fort que Vegeta !","Allez, encore un effort !"],
+  7:{name:"ÎLE D'ANDROID 18",charName:"Android 18",color:"#06b6d4",topic:"Chrétienté et Croisades",level:"5ème",bgm:"dbz-battle",
+    msgs:["Mon radar détecte les erreurs !","Je suis plus forte que n'importe quel Super Saiyan !","Capsule Corp ne peut rien pour toi ici !","Bien joué, presque aussi fort que Vegeta !","Allez, encore un effort !"],
     qs:[
       {q:"Quand commence la première croisade ?",o:["En 1054","En 1095","En 1187","En 1291"],a:"En 1095",exp:"La première croisade est lancée en 1095 par le pape Urbain II au concile de Clermont."},
       {q:"Quel est l'objectif principal des croisades ?",o:["Conquérir Rome","Reprendre Jérusalem aux musulmans","Envahir Byzance","Convertir les vikings"],a:"Reprendre Jérusalem aux musulmans",exp:"Les croisades visent à libérer les Lieux Saints (Jérusalem, Bethléem, Nazareth)."},
@@ -234,8 +295,8 @@ const ISLANDS_HISTOIRE = {
     ]
   },
 
-  8:{name:"ÎLE DE YAMCHA",charName:"Yamcha",color:"#e63946",topic:"Renaissance et Grandes Découvertes",level:"5ème",bgm:"dbz-battle",
-    msgs:["Fuga Zanmaiken ! Réponds vite !","Je ne suis pas si faible en histoire !","Bulma était impressionnée par mes réponses !","Continue, tu bats Vegeta en histoire !","Le loup du désert sait son cours !"],
+  8:{name:"ÎLE DE BABIDI",charName:"Babidi",color:"#e63946",topic:"Renaissance et Grandes Découvertes",level:"5ème",bgm:"dbz-battle",
+    msgs:["Pui Pui ! Réponds ou tu disparais !","Ma magie punit les ignorants !","Dabura serait déçu de tes erreurs !","Continue… tu résistes à mes pouvoirs !","Le sorcier des étoiles connaît son cours !"],
     qs:[
       {q:"Qu'est-ce que la Renaissance ?",o:["Une révolution politique","Un mouvement culturel de retour aux arts et savoirs antiques","Une guerre religieuse","Une épidémie de peste"],a:"Un mouvement culturel de retour aux arts et savoirs antiques",exp:"La Renaissance (XVe-XVIe s.) est née en Italie. Elle redécouvre l'Antiquité dans les arts, sciences et philosophie."},
       {q:"Qui est Christophe Colomb ?",o:["Un explorateur portugais","Un explorateur génois au service de l'Espagne","Un navigateur français","Un marin anglais"],a:"Un explorateur génois au service de l'Espagne",exp:"Christophe Colomb découvre l'Amérique le 12 octobre 1492 en cherchant une route vers l'Asie."},
@@ -265,9 +326,9 @@ const HIST_ISLE_INTRO = {
   3:{bg:'#001a05',lines:['ROME…','… ÉTERNELLE !!','César te regarde !'],kanji:'永遠 !!',kanjiColor:'#22c55e',bubble:"Makanko Sappo ! On démarre Rome avec puissance."},
   4:{bg:'#0d0020',lines:['RELIGIONS…','… MONOTHÉISTES !!','Trois révélations, un seul Dieu !'],kanji:'信仰 !!',kanjiColor:'#a78bfa',bubble:"Super Saiyan 2 ! La foi et la connaissance sont ma force !"},
   5:{bg:'#050014',lines:['MOYEN-ÂGE…','… MÉDIÉVAL !!','Les châteaux te défient !'],kanji:'中世 !!',kanjiColor:'#8b5cf6',bubble:"Je viens du futur — les chevaliers n'ont aucun secret pour moi !"},
-  6:{bg:'#1a1000',lines:['ISLAM…','… ÂGE D\'OR !!','Bagdad t\'accueille !'],kanji:'知識 !!',kanjiColor:'#f59e0b',bubble:"Destructo-Disk ! On va tout ecraser sur l'Islam !"},
-  7:{bg:'#00101a',lines:['CROISADES…','… ET CHRÉTIENTÉ !!','Jérusalem t\'attend !'],kanji:'十字 !!',kanjiColor:'#06b6d4',bubble:"Mon radar détecte toutes les erreurs historiques !"},
-  8:{bg:'#1a0000',lines:['RENAISSANCE…','… GRANDES DÉCOUVERTES !!','Colomb a besoin de toi !'],kanji:'発見 !!',kanjiColor:'#e63946',bubble:"Le Loup du Désert est là ! On explore le XVe siècle !"}
+  6:{bg:'#1a1000',lines:['ISLAM…','… ÂGE D\'OR !!','Bagdad t\'accueille !'],kanji:'知識 !!',kanjiColor:'#f59e0b',bubble:"Destructo-Disk ! On va tout écraser sur l'Islam !"},
+  7:{bg:'#00101a',lines:['CROISADES…','… ET CHRÉTIENTÉ !!','Jérusalem t\'attend !'],kanji:'十字 !!',kanjiColor:'#06b6d4',bubble:"Infinite Energy ! Aucune erreur ne m'échappe !"},
+  8:{bg:'#1a0000',lines:['RENAISSANCE…','… GRANDES DÉCOUVERTES !!','Colomb a besoin de toi !'],kanji:'発見 !!',kanjiColor:'#e63946',bubble:"Bibbidi Bobbidi Boo ! Je vais tester tes connaissances !"}
 };
 
 // ══════════════════════════════════════════════════════════════
@@ -319,8 +380,6 @@ function hist_launchIsland(n) {
       '<div class="hist-boss-hp"><div class="hist-boss-hp-fill"></div></div>' +
       '</div>' : '';
 
-    // ✅ FIX CLICS : data-v au lieu de JSON.stringify dans onclick
-    // Évite les conflits de guillemets qui cassaient le HTML
     const opts = e.o.map(function(opt, j) {
       var safeVal = opt.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
       return '<label class="hist-opt" id="hist-lbl' + i + '_' + j + '"' +
@@ -358,17 +417,14 @@ function hist_selectOpt(qi, oi, val) {
   if (typeof sfxSwoosh === 'function') sfxSwoosh();
   hist_answers[qi] = {oi: oi, val: val};
 
-  // Désélectionner toutes les options de cette question
   ISLANDS_HISTOIRE[hist_currentIsland].qs[qi].o.forEach(function(_, j) {
     var b = document.getElementById('hist-lbl' + qi + '_' + j);
     if (b) b.classList.remove('hist-selected');
   });
 
-  // Sélectionner la bonne
   var sel = document.getElementById('hist-lbl' + qi + '_' + oi);
   if (sel) sel.classList.add('hist-selected');
 
-  // Mettre à jour la barre de progression
   const total = ISLANDS_HISTOIRE[hist_currentIsland].qs.length;
   document.getElementById('hist-qProgFill').style.width = Math.round(Object.keys(hist_answers).length / total * 100) + '%';
   document.getElementById('hist-qProgLbl').textContent = Object.keys(hist_answers).length + ' / ' + total;
@@ -385,7 +441,6 @@ function hist_corriger(n) {
     const fb = document.getElementById('hist-fb' + i);
     const expl = document.getElementById('hist-exp' + i);
 
-    // Bloquer les clics sur les options
     e.o.forEach(function(_, j) {
       var b = document.getElementById('hist-lbl' + i + '_' + j);
       if (b) b.style.pointerEvents = 'none';
@@ -428,7 +483,6 @@ function hist_corriger(n) {
   if (typeof updateHUD === 'function') updateHUD();
   if (typeof saveProgress === 'function') saveProgress();
 
-  // Musique selon le résultat
   if (score === 10) {
     hist_playBGM('dbz-victory');
   } else {
@@ -505,7 +559,7 @@ function hist_retry(n) {
 }
 
 // ══════════════════════════════════════════════════════════════
-// CINÉMATIQUE DBZ — plein écran avec personnage
+// ✅ CINÉMATIQUE DBZ — FIX plein écran personnage non tronqué
 // ══════════════════════════════════════════════════════════════
 function hist_playCinematic(n, callback) {
   const cfg = HIST_ISLE_INTRO[n];
@@ -521,7 +575,7 @@ function hist_playCinematic(n, callback) {
   }
 
   ov.innerHTML =
-    '<div class="hist-cine-inner" style="background:' + cfg.bg + '">' +
+    '<div class="hist-cine-inner" style="background:' + cfg.bg + ';min-height:100vh;height:100vh">' +
       '<div class="hist-cine-char-wrap">' +
         '<img src="' + avatar + '" alt="' + isle.charName + '" class="hist-cine-char"' +
           ' onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' +
@@ -540,12 +594,11 @@ function hist_playCinematic(n, callback) {
       '<button class="hist-skip-btn" onclick="hist_skipCine()">⏭ PASSER</button>' +
     '</div>';
 
-  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;pointer-events:auto';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;display:flex;align-items:stretch;justify-content:stretch;opacity:0;transition:opacity 0.3s;pointer-events:auto';
   ov._cb = callback;
   requestAnimationFrame(function() { ov.style.opacity = '1'; });
   ov._t = setTimeout(function() { hist_skipCine(); }, 4500);
 
-  // Voix synthétique
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
     var utt = new SpeechSynthesisUtterance(cfg.bubble);
@@ -600,4 +653,4 @@ function buildHistoireGrid() {
   grid.innerHTML = html;
 }
 
-console.info('🐉 quiz-histoire.js v3 chargé — fix clics + musique extensible');
+console.info('🐉 quiz-histoire.js v4 — avatars corrigés + audio robuste + ciné fix');
