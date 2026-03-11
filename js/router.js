@@ -15,6 +15,7 @@ const ROUTES = {
 function getSection(id) { return document.getElementById(id); }
 
 function hideAll() {
+  var currentRoute = window.location.hash;
   // Retirer le mode login du body (header redevient visible)
   document.body.classList.remove('login-active');
 
@@ -107,6 +108,7 @@ function showIles() {
   hideAll();
   const map = getSection('map-sec');
   if (map) map.style.display = 'block';
+  if (typeof playBGM === 'function') playBGM('map');
   document.title = 'Académie Pirate — Îles Pirates';
 }
 
@@ -124,6 +126,10 @@ function showQuiz() {
 // PAGE : HISTOIRE
 // ══════════════════════════════
 function showHistoire() {
+  if (typeof stopBGM === 'function') stopBGM();
+  setTimeout(function() {
+    if (typeof playBGM === 'function') playBGM('dbz-battle');
+  }, 300);
   hideAll();
   var sec = document.getElementById('histoire-iles-sec');
   if (sec) {
