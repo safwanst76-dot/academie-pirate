@@ -485,3 +485,46 @@ function goBack() {
 }
 
 function retry(n) { answers = {}; startIsland(n); }
+
+// ══════════════════════════════════
+// 📱 RESPONSIVE MOBILE — Ajustements dynamiques
+// ══════════════════════════════════
+
+function adjustQuizResponsive() {
+  // Ajuster les polices selon la largeur
+  const w = window.innerWidth;
+  const base = w < 375 ? 0.95 : w < 768 ? 1 : 1.1;
+  
+  document.querySelectorAll('.q-txt').forEach(el => {
+    el.style.fontSize = `clamp(${base}rem, ${base + 0.2}vw, ${base + 0.3}rem)`;
+  });
+  
+  // Ajuster la hauteur du panel personnage sur très petits écrans
+  const charPanel = document.querySelector('.char-panel');
+  if (charPanel && w < 375) {
+    charPanel.style.height = 'auto';
+  }
+  
+  // Empêcher le zoom sur double-tap des boutons
+  document.querySelectorAll('.opt, .btn, .acc-btn, .hint-btn').forEach(btn => {
+    btn.style.touchAction = 'manipulation';
+  });
+}
+
+// Appliquer au chargement et aux changements d'orientation
+document.addEventListener('DOMContentLoaded', adjustQuizResponsive);
+window.addEventListener('resize', adjustQuizResponsive);
+window.addEventListener('orientationchange', adjustQuizResponsive);
+
+// Support tactile : effet de pression au touch
+document.addEventListener('touchstart', function(e) {
+  if (e.target.closest('.opt, .btn, .acc-btn, .hint-btn')) {
+    e.target.closest('.opt, .btn, .acc-btn, .hint-btn').style.transform = 'scale(0.98)';
+  }
+}, {passive: true});
+
+document.addEventListener('touchend', function(e) {
+  if (e.target.closest('.opt, .btn, .acc-btn, .hint-btn')) {
+    e.target.closest('.opt, .btn, .acc-btn, .hint-btn').style.transform = '';
+  }
+});
