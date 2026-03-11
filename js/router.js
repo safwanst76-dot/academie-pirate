@@ -41,6 +41,8 @@ function hideAll() {
   var hQuiz = document.getElementById('histoire-quiz-sec');
   if (hIles) hIles.style.display = 'none';
   if (hQuiz) hQuiz.style.display = 'none';
+  var histBg = document.getElementById('hist-bg');
+  if (histBg) histBg.classList.remove('visible');
 
   // Quiz
   const quiz = getSection('quiz-sec');
@@ -126,6 +128,9 @@ function showHistoire() {
     sec.style.display = 'block';
     if (typeof buildHistoireGrid === 'function') buildHistoireGrid();
   }
+  var histBg = document.getElementById('hist-bg');
+  if (histBg) histBg.classList.add('visible');
+  if (typeof loadHistBgStrips === 'function') loadHistBgStrips();
   document.title = 'Académie Pirate — Histoire';
 }
 
