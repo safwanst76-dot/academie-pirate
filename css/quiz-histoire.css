@@ -1,14 +1,13 @@
 /* ═══════════════════════════════════════════════════════════
-   QUIZ-HISTOIRE.CSS v2 — Académie Pirate
-   Thème Dragon Ball Z — Mobile-first
-   ✅ Fond animé DBZ (strips verticaux animés)
+   QUIZ-HISTOIRE.CSS v3 — Académie Pirate
+   ✅ FIX images : object-fit contain — personnages non tronqués
+   ✅ Fond animé DBZ (strips verticaux)
    ✅ Contraste fort sur les cartes quiz
-   ✅ Cinématique avec image perso en grand
-   ✅ Cohérent avec manga-bg One Piece
+   ✅ Cinématique plein écran avec image perso en grand
    ═══════════════════════════════════════════════════════════ */
 
 /* ══════════════════════════════════
-   FOND ANIMÉ DBZ — identique manga-bg
+   FOND ANIMÉ DBZ
    ══════════════════════════════════ */
 #hist-bg {
   position: fixed;
@@ -54,15 +53,20 @@
 }
 
 /* Overlay sombre sur le fond */
-#hist-overlay {
-  display: none;
+#histoire-iles-sec::before,
+#histoire-quiz-sec::before {
+  content: '';
   position: fixed;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(160deg, rgba(8,4,18,.82) 0%, rgba(12,4,8,.75) 50%, rgba(8,4,18,.82) 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(8,4,18,.82) 0%,
+    rgba(12,4,8,.75) 50%,
+    rgba(8,4,18,.82) 100%
+  );
   pointer-events: none;
 }
-#hist-overlay.visible { display: block; }
 
 /* ══════════════════════════════════
    SECTIONS
@@ -75,6 +79,7 @@
   width: 100%;
   min-height: 100vh;
   padding-bottom: 80px;
+  pointer-events: auto;
 }
 
 /* ══════════════════════════════════
@@ -127,45 +132,48 @@
   transition: transform .2s, box-shadow .2s, border-color .2s;
   -webkit-tap-highlight-color: transparent;
 }
-.hist-isle-card:hover  {
+.hist-isle-card:hover {
   transform: translateY(-4px) scale(1.02);
   border-color: var(--isle-color);
   box-shadow: 0 8px 32px rgba(0,0,0,.7), 0 0 20px var(--isle-color, #f9731633);
 }
 .hist-isle-card:active { transform: scale(.97); }
-.hist-isle-card.done   {
+.hist-isle-card.done {
   border-color: var(--isle-color);
   box-shadow: 0 0 20px var(--isle-color, #f9731644);
 }
 
+/* ══════════════════════════════════
+   ✅ FIX IMAGES — personnage non tronqué
+   object-fit: contain  → image entière visible
+   object-position: bottom → pieds ancrés en bas
+   padding → espace autour du perso
+   background dégradé → fond élégant
+   ══════════════════════════════════ */
 .hist-isle-img-wrap {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
+  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%);
   overflow: hidden;
-  background: rgba(0,0,0,.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hist-isle-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center center;
+  object-fit: contain;         /* ← FIX : affiche le perso en entier */
+  object-position: center bottom;  /* ← ancré en bas */
   display: block;
-  padding: 8px;
-  transition: transform .4s ease;
+  padding: 8px 6px 0;          /* ← espace pour que la tête ne soit pas coupée */
   box-sizing: border-box;
+  transition: transform .4s ease;
 }
-
-.hist-isle-card:hover .hist-isle-img {
-  transform: scale(1.06);
-}
+.hist-isle-card:hover .hist-isle-img { transform: scale(1.05); }
 
 .hist-isle-img-fallback {
   display: none;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -173,10 +181,11 @@
   font-size: clamp(3rem, 10vw, 5rem);
   font-weight: 900;
 }
+
 .hist-isle-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 60%;
+  height: 45%;
   pointer-events: none;
 }
 
@@ -284,13 +293,14 @@
    ══════════════════════════════════ */
 .hist-q-card {
   margin: 14px 12px;
-  background: rgba(8,6,20,.97);   /* quasi opaque — contraste max */
+  background: rgba(8,6,20,.97);
   border-radius: 18px;
   border: 2px solid rgba(255,255,255,.09);
   padding: 0 0 16px;
   box-shadow: 0 6px 28px rgba(0,0,0,.7);
   overflow: hidden;
   transition: border-color .3s;
+  pointer-events: auto;
 }
 .hist-q-card:hover { border-color: var(--isle-color, rgba(255,255,255,.15)); }
 .hist-boss-q {
@@ -337,7 +347,7 @@
   to   { opacity: .55; box-shadow: none; }
 }
 
-/* Bulle personnage */
+/* ── Bulle personnage dans quiz ── */
 .hist-char-bubble {
   display: flex;
   align-items: center;
@@ -346,15 +356,20 @@
   background: rgba(0,0,0,.35);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
+
+/* ✅ FIX image ronde du perso dans la bulle aussi */
 .hist-char-img {
   width: clamp(44px, 11vw, 60px);
   height: clamp(44px, 11vw, 60px);
   border-radius: 50%;
   border: 2px solid var(--isle-color, #f97316);
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;          /* ← contain pour voir le visage entier */
+  object-position: top center;
   flex-shrink: 0;
   box-shadow: 0 0 12px var(--isle-color, #f9731655);
+  background: rgba(0,0,0,.3);
+  padding: 2px;
+  box-sizing: border-box;
 }
 .hist-char-fallback {
   width: clamp(44px, 11vw, 60px);
@@ -380,6 +395,7 @@
   flex: 1;
 }
 
+/* Question */
 .hist-q-number {
   font-family: 'Nunito', sans-serif;
   font-size: .7rem;
@@ -393,18 +409,19 @@
   font-family: 'Nunito', sans-serif;
   font-size: clamp(1rem, 3vw, 1.15rem);
   font-weight: 900;
-  color: #ffffff;               /* blanc pur — contraste max */
+  color: #ffffff;
   line-height: 1.5;
   padding: 0 16px 14px;
   text-shadow: 0 1px 3px rgba(0,0,0,.8);
 }
 
-/* Options — fond solide, contraste maximum */
+/* ── Options — contraste maximum ── */
 .hist-opts {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 0 14px;
+  pointer-events: auto;
 }
 .hist-opt {
   display: flex;
@@ -413,14 +430,17 @@
   padding: 13px 14px;
   border-radius: 12px;
   border: 2px solid rgba(255,255,255,.13);
-  background: rgba(255,255,255,.07);  /* fond visible */
+  background: rgba(255,255,255,.07);
   cursor: pointer;
   transition: all .18s;
   min-height: 50px;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
 }
-.hist-opt:hover  {
+.hist-opt:hover {
   border-color: var(--isle-color, #f97316);
   background: rgba(249,115,22,.12);
   transform: translateX(3px);
@@ -461,12 +481,12 @@
   font-family: 'Nunito', sans-serif;
   font-size: clamp(.88rem, 2.6vw, 1rem);
   font-weight: 800;
-  color: #ffffff;               /* blanc pur */
+  color: #ffffff;
   line-height: 1.3;
   text-shadow: 0 1px 2px rgba(0,0,0,.6);
 }
 
-/* Feedback */
+/* ── Feedback & Explication ── */
 .hist-fb {
   display: none;
   margin: 10px 14px 0;
@@ -542,9 +562,7 @@
   margin: 0 auto 12px;
   text-shadow: none;
 }
-.hist-btn-gold:hover {
-  box-shadow: 0 6px 28px rgba(249,115,22,.65);
-}
+.hist-btn-gold:hover { box-shadow: 0 6px 28px rgba(249,115,22,.65); }
 .hist-btn-outline {
   background: transparent;
   border: 2px solid rgba(249,115,22,.5);
@@ -576,20 +594,25 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  height: clamp(140px, 35vw, 200px);
+  height: clamp(160px, 40vw, 240px);
   overflow: hidden;
   background: linear-gradient(160deg, rgba(0,0,0,.2), rgba(0,0,0,.5));
 }
+
+/* ✅ FIX image résultats aussi */
 .hist-result-avatar {
   position: absolute;
-  right: 0; bottom: 0;
+  right: 0;
+  bottom: 0;
   height: 100%;
-  object-fit: cover;
-  object-position: top;
-  opacity: .85;
+  width: auto;
+  max-width: 60%;
+  object-fit: contain;          /* ← contain pour voir le perso entier */
+  object-position: bottom right;
+  opacity: .9;
   filter: saturate(1.3);
-  mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, transparent);
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, transparent);
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
 }
 .hist-result-score-wrap {
   position: absolute;
@@ -613,7 +636,6 @@
   letter-spacing: 2px;
   margin-top: 4px;
 }
-
 .hist-result-body {
   padding: 20px 16px 28px;
   display: flex;
@@ -646,7 +668,6 @@
 
 /* ══════════════════════════════════
    CINÉMATIQUE DBZ — PLEIN ÉCRAN
-   avec image perso en grand
    ══════════════════════════════════ */
 #hist-cine-overlay {
   position: fixed;
@@ -655,6 +676,7 @@
   display: none;
   align-items: stretch;
   justify-content: stretch;
+  pointer-events: auto;
 }
 
 .hist-cine-inner {
@@ -666,7 +688,7 @@
   overflow: hidden;
 }
 
-/* Image du personnage — côté droit, pleine hauteur */
+/* Personnage côté droit — pleine hauteur, non tronqué */
 .hist-cine-char-wrap {
   position: absolute;
   right: 0;
@@ -682,14 +704,14 @@
   height: min(90vh, 800px);
   max-width: 55vw;
   object-fit: contain;
-  object-position: bottom;
+  object-position: bottom center;
   filter: drop-shadow(-8px 0 30px rgba(0,0,0,.9)) saturate(1.4);
   animation: hist-char-enter .6s cubic-bezier(.17,.67,.3,1.1) .2s both;
   transform-origin: bottom right;
 }
 @keyframes hist-char-enter {
   from { transform: translateX(80px) scale(.85); opacity: 0; }
-  to   { transform: translateX(0)   scale(1);   opacity: 1; }
+  to   { transform: translateX(0)    scale(1);   opacity: 1; }
 }
 .hist-cine-char-emoji {
   font-size: clamp(6rem, 20vw, 12rem);
@@ -723,7 +745,7 @@
 }
 @keyframes hist-kanji-pop {
   from { transform: scale(0) rotate(-20deg); opacity: 0; }
-  to   { transform: scale(1) rotate(0deg);  opacity: 1; }
+  to   { transform: scale(1) rotate(0deg);   opacity: 1; }
 }
 
 .hist-cine-lines {
@@ -741,7 +763,11 @@
   white-space: nowrap;
 }
 .hist-cine-line:nth-child(2) { animation-delay: .25s; }
-.hist-cine-line:nth-child(3) { animation-delay: .5s; font-size: clamp(1rem, 3.5vw, 1.8rem); color: rgba(255,255,255,.7); }
+.hist-cine-line:nth-child(3) {
+  animation-delay: .5s;
+  font-size: clamp(1rem, 3.5vw, 1.8rem);
+  color: rgba(255,255,255,.7);
+}
 @keyframes hist-line-in {
   from { transform: translateX(-50px); opacity: 0; }
   to   { transform: translateX(0);     opacity: 1; }
@@ -794,10 +820,11 @@
   border-radius: 24px;
   cursor: pointer;
   transition: all .2s;
+  pointer-events: auto;
 }
 .hist-skip-btn:hover { background: rgba(0,0,0,.9); color: #fff; }
 
-/* Particules / lignes de vitesse (derrière le texte) */
+/* Lignes de vitesse DBZ */
 .hist-cine-inner::after {
   content: '';
   position: absolute;
@@ -811,6 +838,18 @@
   );
   pointer-events: none;
   z-index: 0;
+}
+
+/* ══════════════════════════════════
+   FORCE POINTER-EVENTS (anti-blocage)
+   ══════════════════════════════════ */
+#histoire-quiz-sec,
+#histoire-quiz-sec * {
+  pointer-events: auto;
+}
+#hist-bg,
+#hist-bg * {
+  pointer-events: none !important;
 }
 
 /* ══════════════════════════════════
@@ -831,14 +870,4 @@
 }
 @media (min-width: 1024px) {
   .hist-cine-char { height: min(95vh, 900px); }
-}
-
-/* FORCE CLICS */
-#histoire-quiz-sec,
-#histoire-quiz-sec * {
-  pointer-events: auto !important;
-}
-#hist-bg,
-#hist-bg * {
-  pointer-events: none !important;
 }
