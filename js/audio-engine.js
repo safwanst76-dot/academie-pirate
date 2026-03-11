@@ -40,6 +40,13 @@ var BGM_TRACKS = {
   'dbz-isle':    'assets/audio/bgm/dbz-isle.mp3',
 };
 
+var BGM_START = {
+  'dbz-map':     0,
+  'dbz-isle':    8,
+  'dbz-battle':  0,
+  'dbz-victory': 22,
+};
+
 function playBGM(track, loop) {
   if (loop === undefined) loop = true;
   if (!musicPlaying) return;
@@ -51,6 +58,8 @@ function playBGM(track, loop) {
     bgmAudio = new Audio(src);
     bgmAudio.loop = loop;
     bgmAudio.volume = masterVol * 0.35;
+    var start = BGM_START[track];
+    if (start) bgmAudio.currentTime = start;
     bgmAudio.play().catch(function() {});
     currentBGM = src;
   } catch(e) {}
