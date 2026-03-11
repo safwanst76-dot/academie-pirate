@@ -36,14 +36,14 @@ var HIST_GIFS_LOSE = [
 
 // ── Avatars DBZ locaux ──
 var HIST_AVATARS = {
-  1:'assets/images/dbz/goku.png',
-  2:'assets/images/dbz/vegeta.png',
-  3:'assets/images/dbz/piccolo.png',
-  4:'assets/images/dbz/gohan.png',
-  5:'assets/images/dbz/trunks.png',
-  6:'assets/images/dbz/krilin.png',
-  7:'assets/images/dbz/bulma.png',
-  8:'assets/images/dbz/yamcha.png'
+  1:'assets/images/dbz/1.png',
+  2:'assets/images/dbz/2.png',
+  3:'assets/images/dbz/3.png',
+  4:'assets/images/dbz/4.png',
+  5:'assets/images/dbz/5.png',
+  6:'assets/images/dbz/6.png',
+  7:'assets/images/dbz/7.png',
+  8:'assets/images/dbz/8.png'
 };
 
 var HIST_FALLBACK = {
@@ -479,9 +479,19 @@ function hist_playCinematic(n, callback) {
   ov._cb = callback;
   requestAnimationFrame(function(){ov.style.opacity='1';});
   ov._t = setTimeout(function(){hist_skipCine();}, 4500);
+
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    var utt = new SpeechSynthesisUtterance(cfg.bubble);
+    utt.lang = 'fr-FR';
+    utt.rate = 0.9;
+    utt.pitch = 1.1;
+    window.speechSynthesis.speak(utt);
+  }
 }
 
 function hist_skipCine() {
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
   var ov=document.getElementById('hist-cine-overlay'); if(!ov) return;
   clearTimeout(ov._t); var cb=ov._cb;
   ov.style.opacity='0';

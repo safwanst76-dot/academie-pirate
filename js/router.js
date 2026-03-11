@@ -43,6 +43,8 @@ function hideAll() {
   if (hQuiz) hQuiz.style.display = 'none';
   var histBg = document.getElementById('hist-bg');
   if (histBg) histBg.classList.remove('visible');
+  var histOv = document.getElementById('hist-overlay');
+  if (histOv) histOv.classList.remove('visible');
 
   // Quiz
   const quiz = getSection('quiz-sec');
@@ -131,6 +133,8 @@ function showHistoire() {
   var histBg = document.getElementById('hist-bg');
   if (histBg) histBg.classList.add('visible');
   if (typeof loadHistBgStrips === 'function') loadHistBgStrips();
+  var histOv = document.getElementById('hist-overlay');
+  if (histOv) histOv.classList.add('visible');
   document.title = 'Académie Pirate — Histoire';
 }
 

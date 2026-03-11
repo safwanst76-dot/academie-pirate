@@ -54,20 +54,15 @@
 }
 
 /* Overlay sombre sur le fond */
-#histoire-iles-sec::before,
-#histoire-quiz-sec::before {
-  content: '';
+#hist-overlay {
+  display: none;
   position: fixed;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    160deg,
-    rgba(8,4,18,.82) 0%,
-    rgba(12,4,8,.75) 50%,
-    rgba(8,4,18,.82) 100%
-  );
+  background: linear-gradient(160deg, rgba(8,4,18,.82) 0%, rgba(12,4,8,.75) 50%, rgba(8,4,18,.82) 100%);
   pointer-events: none;
 }
+#hist-overlay.visible { display: block; }
 
 /* ══════════════════════════════════
    SECTIONS
