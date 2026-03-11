@@ -105,30 +105,32 @@
     var isDbz = (typeof track === 'string') && track.startsWith('dbz-');
 
     if (isDbz) {
-      // ── Si musique One Piece en cours → la couper ──
-      if (typeof _originalPlayBGM === 'function') {
-        window.stopBGM && window.stopBGM();
+      // ── Couper la musique One Piece (MP3 natif) si elle tourne ──
+      if (bgmAudio) {
+        try { bgmAudio.pause(); bgmAudio.currentTime = 0; bgmAudio = null; currentBGM = null; } catch(e) {}
       }
 
-      // ── Si même track DBZ déjà en lecture → rien faire ──
-      if (_ytCurrent === track && _ytReady && _ytPlayer &&
-          _ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) return;
+      // ── Même track DBZ déjà en lecture → rien faire ──
+      if (_ytCurrent === track && _ytReady && _ytPlayer) {
+        try {
+          if (_ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) return;
+        } catch(e) {}
+      }
 
       if (!_ytReady) {
         _ytPending = track;
-        // S'assurer que le conteneur existe déjà
         if (document.readyState !== 'loading') _ensureContainer();
         else document.addEventListener('DOMContentLoaded', _ensureContainer);
         return;
       }
 
-      // ── Couper l'éventuel track DBZ précédent ──
       _ytStop();
       _ytLoad(track);
 
     } else {
-      // ── Track non-DBZ → audio-engine.js original ──
+      // ── Track non-DBZ → couper YouTube + lancer MP3 original ──
       _ytStop();
+      // Respecter le flag musicPlaying de l'engine original
       if (typeof _originalPlayBGM === 'function') {
         _originalPlayBGM(track);
       }
