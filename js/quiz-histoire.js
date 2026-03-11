@@ -532,3 +532,7 @@ function buildHistoireGrid() {
 }
 
 console.info('🐉 quiz-histoire.js v2 chargé — fond DBZ + avatars + cinématique OK');
+setTimeout(function() {
+  console.log('BGM_TRACKS keys:', typeof BGM_TRACKS !== 'undefined' ? Object.keys(BGM_TRACKS) : 'UNDEFINED');
+  console.log('playBGM exists:', typeof playBGM);
+}, 2000);

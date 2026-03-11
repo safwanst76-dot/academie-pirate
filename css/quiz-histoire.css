@@ -827,3 +827,13 @@
 @media (min-width: 1024px) {
   .hist-cine-char { height: min(95vh, 900px); }
 }
+
+/* FORCE CLICS */
+#histoire-quiz-sec,
+#histoire-quiz-sec * {
+  pointer-events: auto !important;
+}
+#hist-bg,
+#hist-bg * {
+  pointer-events: none !important;
+}
