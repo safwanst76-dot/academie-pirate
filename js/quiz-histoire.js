@@ -60,9 +60,15 @@ var HIST_BGM = {
 
 function hist_playBGM(type) {
   try {
-    var map = {battle:'dbz-battle', victory:'dbz-victory', map:'dbz-map', isle:'dbz-isle'};
-    if (typeof playBGM === 'function') playBGM(map[type] || 'dbz-battle');
-  } catch(e) {}
+    var map = {
+      battle:  'dbz-battle',
+      victory: 'dbz-victory',
+      map:     'dbz-map',
+      isle:    'dbz-isle'
+    };
+    var track = map[type] || 'dbz-battle';
+    if (typeof playBGM === 'function') playBGM(track);
+  } catch(e) { console.warn('hist_playBGM:', e); }
 }
 
 // ══════════════════════════════════════════════════════
