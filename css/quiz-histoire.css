@@ -49,8 +49,8 @@
   object-fit: cover;
   display: block;
   border-radius: 4px;
-  opacity: .55;
-  filter: saturate(1.3) brightness(.7);
+  opacity: .18;
+  filter: saturate(.8) brightness(.5);
 }
 
 /* Overlay sombre sur le fond */
@@ -60,12 +60,7 @@
   position: fixed;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    160deg,
-    rgba(8,4,18,.82) 0%,
-    rgba(12,4,8,.75) 50%,
-    rgba(8,4,18,.82) 100%
-  );
+  background: rgba(4, 2, 12, 0.72);
   pointer-events: none;
 }
 
@@ -101,7 +96,7 @@
   font-family: 'Nunito', sans-serif;
   font-size: .85rem;
   font-weight: 800;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.75);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 4px;
@@ -127,9 +122,9 @@
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  background: rgba(10,8,20,.9);
-  border: 2px solid rgba(255,255,255,.08);
-  box-shadow: 0 4px 24px rgba(0,0,0,.6);
+  background: rgba(16, 10, 36, 0.96);
+  border: 2px solid rgba(255,255,255,.15);
+  box-shadow: 0 4px 24px rgba(0,0,0,.8);
   transition: transform .2s, box-shadow .2s, border-color .2s;
   -webkit-tap-highlight-color: transparent;
 }
@@ -190,14 +185,14 @@
 
 .hist-isle-body {
   padding: 10px 12px 14px;
-  background: rgba(6,4,16,.95);
-  border-top: 1px solid rgba(255,255,255,.06);
+  background: rgba(10,6,30,.96);
+  border-top: 1px solid rgba(255,255,255,.12);
 }
 .hist-isle-num {
   font-family: 'Nunito', sans-serif;
   font-size: .7rem;
   font-weight: 900;
-  color: rgba(255,255,255,.3);
+  color: rgba(255,255,255,.55);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -213,7 +208,7 @@
   font-family: 'Nunito', sans-serif;
   font-size: .72rem;
   font-weight: 800;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.95);
   letter-spacing: .5px;
   text-transform: uppercase;
   line-height: 1.3;
@@ -246,7 +241,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6,4,16,.97);
+  background: rgba(10,6,30,.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 2px solid rgba(249,115,22,.25);
@@ -282,7 +277,7 @@
   font-family: 'Nunito', sans-serif;
   font-size: .72rem;
   font-weight: 800;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.7);
   margin-top: 3px;
   text-align: right;
 }
@@ -292,11 +287,11 @@
    ══════════════════════════════════ */
 .hist-q-card {
   margin: 14px 12px;
-  background: rgba(8,6,20,.97);
+  background: rgba(30, 22, 65, 0.97);
   border-radius: 18px;
-  border: 2px solid rgba(255,255,255,.09);
+  border: 2px solid rgba(255,255,255,.25);
   padding: 0 0 16px;
-  box-shadow: 0 6px 28px rgba(0,0,0,.7);
+  box-shadow: 0 6px 28px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.05);
   overflow: hidden;
   transition: border-color .3s;
   pointer-events: auto;
@@ -351,7 +346,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 14px 10px;
-  background: rgba(0,0,0,.35);
+  background: rgba(0,0,0,.20);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
@@ -381,16 +376,17 @@
   display: none;
 }
 .hist-bubble-txt {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.30);
   border-radius: 14px 14px 14px 0;
   padding: 8px 13px;
   font-family: 'Nunito', sans-serif;
   font-size: clamp(.8rem, 2.4vw, .92rem);
-  font-weight: 800;
-  color: rgba(255,255,255,.8);
+  font-weight: 900;
+  color: #ffffff;
   line-height: 1.4;
   flex: 1;
+  text-shadow: 0 1px 4px rgba(0,0,0,.8);
 }
 
 .hist-q-number {
@@ -407,9 +403,10 @@
   font-size: clamp(1rem, 3vw, 1.15rem);
   font-weight: 900;
   color: #ffffff;
+  font-weight: 900;
   line-height: 1.5;
   padding: 0 16px 14px;
-  text-shadow: 0 1px 3px rgba(0,0,0,.8);
+  text-shadow: 0 2px 8px rgba(0,0,0,1);
 }
 
 /* ── Options ── */
@@ -426,8 +423,8 @@
   gap: 10px;
   padding: 13px 14px;
   border-radius: 12px;
-  border: 2px solid rgba(255,255,255,.13);
-  background: rgba(255,255,255,.07);
+  border: 2px solid rgba(255,255,255,.35);
+  background: rgba(255,255,255,.14);
   cursor: pointer;
   transition: all .18s;
   min-height: 50px;
@@ -476,10 +473,10 @@
 .hist-opt-txt {
   font-family: 'Nunito', sans-serif;
   font-size: clamp(.88rem, 2.6vw, 1rem);
-  font-weight: 800;
+  font-weight: 900;
   color: #ffffff;
   line-height: 1.3;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  text-shadow: 0 1px 6px rgba(0,0,0,1);
 }
 
 /* ── Feedback & Explication ── */
@@ -577,7 +574,7 @@
   overflow: hidden;
   border: 2px solid var(--isle-color, #f97316);
   box-shadow: 0 8px 40px rgba(0,0,0,.7), 0 0 30px var(--isle-color, #f9731633);
-  background: rgba(8,6,20,.98);
+  background: rgba(26,20,58,.98);
   animation: hist-res-appear .5s cubic-bezier(.34,1.56,.64,1) both;
 }
 @keyframes hist-res-appear {
@@ -657,7 +654,7 @@
   font-family: 'Nunito', sans-serif;
   font-size: .85rem;
   font-weight: 800;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.95);
   text-align: center;
 }
 
