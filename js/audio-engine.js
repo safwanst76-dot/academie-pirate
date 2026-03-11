@@ -34,6 +34,10 @@ var BGM_TRACKS = {
   'isle-6':'assets/audio/bgm/isle-6.mp3',
   'isle-7':'assets/audio/bgm/isle-7.mp3',
   'isle-8':'assets/audio/bgm/isle-8.mp3',
+  'dbz-battle':  'assets/audio/bgm/dbz-battle.mp3',
+  'dbz-victory': 'assets/audio/bgm/dbz-victory.mp3',
+  'dbz-map':     'assets/audio/bgm/dbz-map.mp3',
+  'dbz-isle':    'assets/audio/bgm/dbz-isle.mp3',
 };
 
 function playBGM(track, loop) {

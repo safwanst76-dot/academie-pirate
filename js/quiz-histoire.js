@@ -59,12 +59,10 @@ var HIST_BGM = {
 };
 
 function hist_playBGM(type) {
-  // Si le système BGM principal est disponible, on injecte une piste DBZ
-  var trackId = HIST_BGM[type] || HIST_BGM.isle;
-  if (typeof YT_TRACKS !== 'undefined' && typeof playBGM === 'function') {
-    YT_TRACKS['hist-' + type] = trackId;
-    playBGM('hist-' + type);
-  }
+  try {
+    var map = {battle:'dbz-battle', victory:'dbz-victory', map:'dbz-map', isle:'dbz-isle'};
+    if (typeof playBGM === 'function') playBGM(map[type] || 'dbz-battle');
+  } catch(e) {}
 }
 
 // ══════════════════════════════════════════════════════
