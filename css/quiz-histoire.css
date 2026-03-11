@@ -141,17 +141,21 @@
 .hist-isle-img-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: rgba(0,0,0,.4);
+  background: rgba(0,0,0,.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hist-isle-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
   transition: transform .4s ease;
+  max-height: 100%;
 }
 .hist-isle-card:hover .hist-isle-img { transform: scale(1.06); }
 

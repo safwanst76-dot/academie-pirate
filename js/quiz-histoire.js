@@ -9,29 +9,28 @@
 // ═══════════════════════════════════════════════════════════
 
 // ── GIFs DBZ (Giphy) ──
-var HIST_GIFS_CORRECT = [
-  'https://media.giphy.com/media/xT9IgHEXg5AIJL7X4s/giphy.gif',
-  'https://media.giphy.com/media/l41YtZOb9EUABnuqA/giphy.gif',
-  'https://media.giphy.com/media/6bWNGXXAv4e9W/giphy.gif'
-];
-var HIST_GIFS_WRONG = [
-  'https://media.giphy.com/media/3oEjHLzm4BCF8zfPy0/giphy.gif',
-  'https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif',
-  'https://media.giphy.com/media/YTFNjnjiry9JStoVeA/giphy.gif'
-];
 var HIST_GIFS_PERFECT = [
-  'https://media.giphy.com/media/RrVzUOXldFe8M/giphy.gif',
-  'https://media.giphy.com/media/11ZZSKRsQBzJIY/giphy.gif',
-  'https://media.giphy.com/media/Vuw9m5wXviFIQ/giphy.gif'
+  'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTg2M3V1aW9pcmNvOGMydGxxNmV1aW1xcXZ2bmdyazcza3VzOHI4YyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/8TrnpRGoEHwgJyUzdx/giphy.gif',
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTE2eG9iYXJqdm4yMWVlZmxiNnVidG44YzMxdTRmbmQ3cGpzNzh4YSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MUOEQ4hUrzGz6/giphy.gif',
+  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjI0dnd2NHg0ZnZzd3hyN29rbXp6cmFzM3FqeHhsenlyb3NnN2V5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dmFXUZ5up1T896HP8B/giphy.gif'
 ];
 var HIST_GIFS_WIN = [
-  'https://media.giphy.com/media/26BRHMrJ7UxLOXD8s/giphy.gif',
-  'https://media.giphy.com/media/wbcMnfMqMYGZW/giphy.gif',
-  'https://media.giphy.com/media/rEDFbGbmNIGQw/giphy.gif'
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTE2eG9iYXJqdm4yMWVlZmxiNnVidG44YzMxdTRmbmQ3cGpzNzh4YSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/EjLTU9HAnnskywtJ9j/giphy.gif',
+  'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTg2M3V1aW9pcmNvOGMydGxxNmV1aW1xcXZ2bmdyazcza3VzOHI4YyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/6BXC2QXk4utJm/giphy.gif',
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3emRwa29vdzBhMTRncTEycG1ucmZ3cW13cThpYjJtb2JqcmU0ZTI0eCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/XqtPxCcZF2Lsip14Uk/giphy.gif',
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWR0eDY5OGJpcTIxMTAyY2c1cTM1N2lxODkxd3Btb2FpdXk2cm9uYiZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/LgpHGoIh3pXSPYAlif/giphy.gif',
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MXV0cDNocnVjaWVkNjBrbTB2ZXptZ2F0eDkwNTMzcDh4c2wxcmt5dCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/UL2pY1IRDzDAjmeoqS/giphy.gif'
+];
+var HIST_GIFS_CORRECT = [
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eTE2eG9iYXJqdm4yMWVlZmxiNnVidG44YzMxdTRmbmQ3cGpzNzh4YSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/vThGQEkz4f9eg/giphy.gif',
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aGpleGQydWlkZWFkeHJxZXoybG5heWdub2RxY3JnNThxOWRrdGRwMSZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/l4GomTccooD6M/giphy.gif'
+];
+var HIST_GIFS_WRONG = [
+  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDdrcDd6Ynl4NWh6bG5sbGdnYXZiN3piZWdycjUwcWUyc212NzBlbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/whXLLjSHDaBckGK4ir/giphy.gif'
 ];
 var HIST_GIFS_LOSE = [
-  'https://media.giphy.com/media/3oEjHLzm4BCF8zfPy0/giphy.gif',
-  'https://media.giphy.com/media/xT5LMzIK1AdZJ4cYW4/giphy.gif'
+  'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDdrcDd6Ynl4NWh6bG5sbGdnYXZiN3piZWdycjUwcWUyc212NzBlbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/whXLLjSHDaBckGK4ir/giphy.gif',
+  'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWR0eDY5OGJpcTIxMTAyY2c1cTM1N2lxODkxd3Btb2FpdXk2cm9uYiZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/LgpHGoIh3pXSPYAlif/giphy.gif'
 ];
 
 // ── Avatars DBZ locaux ──
