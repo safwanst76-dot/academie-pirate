@@ -108,6 +108,7 @@ function showIles() {
   hideAll();
   const map = getSection('map-sec');
   if (map) map.style.display = 'block';
+  if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') playBGM('map');
   document.title = 'Académie Pirate — Îles Pirates';
 }

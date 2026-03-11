@@ -497,10 +497,15 @@ function hist_playCinematic(n, callback) {
 
 function hist_skipCine() {
   if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-  var ov=document.getElementById('hist-cine-overlay'); if(!ov) return;
-  clearTimeout(ov._t); var cb=ov._cb;
-  ov.style.opacity='0';
-  setTimeout(function(){ov.style.display='none'; ov.innerHTML=''; if(cb) cb();}, 350);
+  var ov = document.getElementById('hist-cine-overlay');
+  if (!ov) return;
+  clearTimeout(ov._t);
+  var cb = ov._cb;
+  ov.style.display = 'none';
+  ov.style.pointerEvents = 'none';
+  ov.style.zIndex = '-1';
+  ov.innerHTML = '';
+  if (cb) cb();
 }
 
 // ══════════════════════════════════════════════════════════════
