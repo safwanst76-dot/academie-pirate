@@ -308,6 +308,8 @@ function hist_launchIsland(n) {
   const isle = ISLANDS_HISTOIRE[n];
   document.getElementById('histoire-iles-sec').style.display = 'none';
   document.getElementById('histoire-quiz-sec').style.display = 'block';
+  document.getElementById('histoire-quiz-sec').style.pointerEvents = 'auto';
+  document.getElementById('histoire-quiz-sec').style.zIndex = '5';
   window.scrollTo(0,0);
 
   document.getElementById('hist-qTitle').textContent = isle.name + ' — ' + isle.topic;
