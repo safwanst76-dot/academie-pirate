@@ -49,8 +49,8 @@
   object-fit: cover;
   display: block;
   border-radius: 4px;
-  opacity: .55;
-  filter: saturate(1.3) brightness(.7);
+  opacity: .65; /* ↑ de .55 à .65 */
+  filter: saturate(1.3) brightness(.75); /* ↑ brightness de .7 à .75 */
 }
 
 /* Overlay sombre sur le fond */
@@ -62,9 +62,9 @@
   z-index: 1;
   background: linear-gradient(
     160deg,
-    rgba(8,4,18,.82) 0%,
-    rgba(12,4,8,.75) 50%,
-    rgba(8,4,18,.82) 100%
+    rgba(8,4,18,.75) 0%, /* ↓ opacity de .82 à .75 */
+    rgba(12,4,8,.68) 50%, /* ↓ opacity de .75 à .68 */
+    rgba(8,4,18,.75) 100% /* ↓ opacity de .82 à .75 */
   );
   pointer-events: none;
 }
@@ -101,7 +101,7 @@
   font-family: 'Nunito', sans-serif;
   font-size: .85rem;
   font-weight: 800;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.75); /* ↑ de .45 à .75 */
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 4px;
@@ -128,7 +128,7 @@
   overflow: hidden;
   cursor: pointer;
   background: rgba(10,8,20,.9);
-  border: 2px solid rgba(255,255,255,.08);
+  border: 2px solid rgba(255,255,255,.15); /* ↑ de .08 à .15 */
   box-shadow: 0 4px 24px rgba(0,0,0,.6);
   transition: transform .2s, box-shadow .2s, border-color .2s;
   -webkit-tap-highlight-color: transparent;
@@ -151,7 +151,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.55) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.45) 100%); /* ↑ brightness */
   overflow: hidden;
 }
 
@@ -164,7 +164,6 @@
   padding: 8px 6px 0;
   box-sizing: border-box;
   transition: transform .4s ease;
-  /* Fond noir transparent sur les PNG avec fond noir */
   mix-blend-mode: lighten;
 }
 .hist-isle-card:hover .hist-isle-img { transform: scale(1.05); }
@@ -190,14 +189,14 @@
 
 .hist-isle-body {
   padding: 10px 12px 14px;
-  background: rgba(6,4,16,.95);
-  border-top: 1px solid rgba(255,255,255,.06);
+  background: rgba(12,10,28,.95); /* ↑ brightness de 6,4,16 à 12,10,28 */
+  border-top: 1px solid rgba(255,255,255,.12); /* ↑ de .06 à .12 */
 }
 .hist-isle-num {
   font-family: 'Nunito', sans-serif;
   font-size: .7rem;
   font-weight: 900;
-  color: rgba(255,255,255,.3);
+  color: rgba(255,255,255,.65); /* ↑ de .3 à .65 */
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -213,7 +212,7 @@
   font-family: 'Nunito', sans-serif;
   font-size: .72rem;
   font-weight: 800;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.85); /* ↑ de .5 à .85 */
   letter-spacing: .5px;
   text-transform: uppercase;
   line-height: 1.3;
@@ -246,10 +245,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6,4,16,.97);
+  background: rgba(10,8,24,.97); /* ↑ brightness de 6,4,16 à 10,8,24 */
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 2px solid rgba(249,115,22,.25);
+  border-bottom: 2px solid rgba(249,115,22,.35); /* ↑ de .25 à .35 */
   padding: 10px 16px 8px;
   box-shadow: 0 4px 20px rgba(0,0,0,.5);
 }
@@ -266,7 +265,7 @@
 .hist-prog-bar {
   width: 100%;
   height: 7px;
-  background: rgba(255,255,255,.1);
+  background: rgba(255,255,255,.18); /* ↑ de .1 à .18 */
   border-radius: 8px;
   margin-top: 6px;
   overflow: hidden;
@@ -282,7 +281,7 @@
   font-family: 'Nunito', sans-serif;
   font-size: .72rem;
   font-weight: 800;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.75); /* ↑ de .4 à .75 */
   margin-top: 3px;
   text-align: right;
 }
@@ -292,43 +291,43 @@
    ══════════════════════════════════ */
 .hist-q-card {
   margin: 14px 12px;
-  background: rgba(8,6,20,.97);
+  background: rgba(14,12,32,.95); /* ↑ brightness de 8,6,20 à 14,12,32 */
   border-radius: 18px;
-  border: 2px solid rgba(255,255,255,.09);
+  border: 2px solid rgba(255,255,255,.2); /* ↑ de .09 à .2 */
   padding: 0 0 16px;
   box-shadow: 0 6px 28px rgba(0,0,0,.7);
   overflow: hidden;
   transition: border-color .3s;
   pointer-events: auto;
 }
-.hist-q-card:hover { border-color: var(--isle-color, rgba(255,255,255,.15)); }
+.hist-q-card:hover { border-color: var(--isle-color, rgba(255,255,255,.25)); }
 .hist-boss-q {
   border-color: #e63946 !important;
   box-shadow: 0 0 32px rgba(230,57,70,.35), 0 6px 28px rgba(0,0,0,.7) !important;
 }
 
 .hist-boss-banner {
-  background: linear-gradient(135deg, #200006, #3d0010);
-  border-bottom: 1px solid rgba(230,57,70,.4);
+  background: linear-gradient(135deg, #2a0008, #4a0014); /* ↑ brightness */
+  border-bottom: 1px solid rgba(230,57,70,.5); /* ↑ de .4 à .5 */
   padding: 12px 16px;
   text-align: center;
 }
 .hist-boss-label {
   font-family: 'Bangers', cursive;
   font-size: .85rem;
-  color: #e63946;
+  color: #ff6b7a; /* ↑ brightness de #e63946 à #ff6b7a */
   letter-spacing: 3px;
 }
 .hist-boss-name {
   font-family: 'Bangers', cursive;
   font-size: clamp(1.4rem, 5vw, 2rem);
-  color: #ffd700;
+  color: #ffe066; /* ↑ brightness de #ffd700 à #ffe066 */
   letter-spacing: 4px;
   text-shadow: 2px 2px 0 #000, 0 0 20px #e63946;
 }
 .hist-boss-hp {
   height: 8px;
-  background: rgba(255,255,255,.1);
+  background: rgba(255,255,255,.18); /* ↑ de .1 à .18 */
   border-radius: 8px;
   margin-top: 8px;
   overflow: hidden;
@@ -351,8 +350,8 @@
   align-items: center;
   gap: 10px;
   padding: 12px 14px 10px;
-  background: rgba(0,0,0,.35);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  background: rgba(0,0,0,.5); /* ↑ de .35 à .5 */
+  border-bottom: 1px solid rgba(255,255,255,.12); /* ↑ de .06 à .12 */
 }
 
 .hist-char-img {
@@ -381,14 +380,14 @@
   display: none;
 }
 .hist-bubble-txt {
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.12); /* ↑ de .07 à .12 */
+  border: 1px solid rgba(255,255,255,.25); /* ↑ de .12 à .25 */
   border-radius: 14px 14px 14px 0;
   padding: 8px 13px;
   font-family: 'Nunito', sans-serif;
   font-size: clamp(.8rem, 2.4vw, .92rem);
   font-weight: 800;
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.95); /* ↑ de .8 à .95 */
   line-height: 1.4;
   flex: 1;
 }
@@ -412,7 +411,7 @@
   text-shadow: 0 1px 3px rgba(0,0,0,.8);
 }
 
-/* ── Options ── */
+/* ── Options ─ */
 .hist-opts {
   display: flex;
   flex-direction: column;
@@ -426,8 +425,8 @@
   gap: 10px;
   padding: 13px 14px;
   border-radius: 12px;
-  border: 2px solid rgba(255,255,255,.13);
-  background: rgba(255,255,255,.07);
+  border: 2px solid rgba(255,255,255,.3); /* ↑ de .13 à .3 */
+  background: rgba(255,255,255,.15); /* ↑ de .07 à .15 */
   cursor: pointer;
   transition: all .18s;
   min-height: 50px;
@@ -439,38 +438,38 @@
 }
 .hist-opt:hover {
   border-color: var(--isle-color, #f97316);
-  background: rgba(249,115,22,.12);
+  background: rgba(249,115,22,.18); /* ↑ de .12 à .18 */
   transform: translateX(3px);
 }
 .hist-opt:active { transform: scale(.98); }
 .hist-opt.hist-selected {
   border-color: var(--isle-color, #f97316);
-  background: rgba(249,115,22,.18);
+  background: rgba(249,115,22,.25); /* ↑ de .18 à .25 */
   box-shadow: 0 0 14px rgba(249,115,22,.3), inset 0 0 10px rgba(249,115,22,.1);
 }
 .hist-opt.hist-correct {
   border-color: #06d6a0 !important;
-  background: rgba(6,214,160,.18) !important;
+  background: rgba(6,214,160,.25) !important; /* ↑ de .18 à .25 */
   box-shadow: 0 0 12px rgba(6,214,160,.3) !important;
 }
 .hist-opt.hist-wrong {
   border-color: #e63946 !important;
-  background: rgba(230,57,70,.18) !important;
-  opacity: .85;
+  background: rgba(230,57,70,.25) !important; /* ↑ de .18 à .25 */
+  opacity: .9; /* ↑ de .85 à .9 */
 }
 
 .hist-opt-key {
   min-width: 30px;
   height: 30px;
   border-radius: 8px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.25); /* ↑ de .1 à .25 */
+  border: 1px solid rgba(255,255,255,.4); /* ↑ de .18 à .4 */
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Bangers', cursive;
   font-size: .9rem;
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.9); /* ↑ de .7 à .9 */
   flex-shrink: 0;
 }
 .hist-opt-txt {
@@ -495,27 +494,27 @@
 }
 .hist-fb.hist-ok {
   display: block;
-  background: rgba(6,214,160,.18);
-  border: 1px solid rgba(6,214,160,.5);
-  color: #06d6a0;
+  background: rgba(6,214,160,.25); /* ↑ de .18 à .25 */
+  border: 1px solid rgba(6,214,160,.6); /* ↑ de .5 à .6 */
+  color: #4ade80; /* ↑ brightness de #06d6a0 à #4ade80 */
 }
 .hist-fb.hist-ko {
   display: block;
-  background: rgba(230,57,70,.18);
-  border: 1px solid rgba(230,57,70,.5);
-  color: #ff8a8a;
+  background: rgba(230,57,70,.25); /* ↑ de .18 à .25 */
+  border: 1px solid rgba(230,57,70,.6); /* ↑ de .5 à .6 */
+  color: #fca5a5; /* ↑ brightness de #ff8a8a à #fca5a5 */
 }
 .hist-expl {
   display: none;
   margin: 8px 14px 0;
   padding: 10px 14px;
   border-radius: 10px;
-  background: rgba(58,134,255,.1);
-  border: 1px solid rgba(58,134,255,.3);
+  background: rgba(100,160,255,.15); /* ↑ brightness et opacity de 58,134,255,.1 à 100,160,255,.15 */
+  border: 1px solid rgba(100,160,255,.4); /* ↑ de .3 à .4 */
   font-family: 'Nunito', sans-serif;
   font-size: clamp(.8rem, 2vw, .88rem);
   font-weight: 700;
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.95); /* ↑ de .75 à .95 */
   line-height: 1.55;
 }
 .hist-expl.hist-show { display: block; }
@@ -547,21 +546,21 @@
 .hist-btn:active { transform: scale(.97); }
 
 .hist-btn-gold {
-  background: linear-gradient(135deg, #f97316 0%, #ffd700 100%);
-  color: #150a00;
+  background: linear-gradient(135deg, #fb923c 0%, #fde047 100%); /* ↑ brightness */
+  color: #1a0f00; /* ↓ brightness pour contraste */
   font-weight: 900;
-  box-shadow: 0 4px 20px rgba(249,115,22,.45);
+  box-shadow: 0 4px 20px rgba(249,115,22,.55); /* ↑ de .45 à .55 */
   width: 100%;
   max-width: 380px;
   display: block;
   margin: 0 auto 12px;
   text-shadow: none;
 }
-.hist-btn-gold:hover { box-shadow: 0 6px 28px rgba(249,115,22,.65); }
+.hist-btn-gold:hover { box-shadow: 0 6px 28px rgba(249,115,22,.75); }
 .hist-btn-outline {
   background: transparent;
-  border: 2px solid rgba(249,115,22,.5);
-  color: #f97316;
+  border: 2px solid rgba(249,115,22,.7); /* ↑ de .5 à .7 */
+  color: #fdba74; /* ↑ brightness de #f97316 à #fdba74 */
   width: 100%;
   max-width: 380px;
   display: block;
@@ -577,7 +576,7 @@
   overflow: hidden;
   border: 2px solid var(--isle-color, #f97316);
   box-shadow: 0 8px 40px rgba(0,0,0,.7), 0 0 30px var(--isle-color, #f9731633);
-  background: rgba(8,6,20,.98);
+  background: rgba(14,12,32,.98); /* ↑ brightness de 8,6,20 à 14,12,32 */
   animation: hist-res-appear .5s cubic-bezier(.34,1.56,.64,1) both;
 }
 @keyframes hist-res-appear {
@@ -591,7 +590,7 @@
   align-items: flex-end;
   height: clamp(160px, 40vw, 240px);
   overflow: hidden;
-  background: linear-gradient(160deg, rgba(0,0,0,.2), rgba(0,0,0,.5));
+  background: linear-gradient(160deg, rgba(0,0,0,.15), rgba(0,0,0,.4)); /* ↑ brightness */
 }
 
 .hist-result-avatar {
@@ -603,8 +602,8 @@
   max-width: 60%;
   object-fit: contain;
   object-position: bottom right;
-  opacity: .9;
-  filter: saturate(1.3);
+  opacity: .95; /* ↑ de .9 à .95 */
+  filter: saturate(1.4) brightness(1.05); /* ↑ saturate et brightness */
   mix-blend-mode: lighten;
   mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
   -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
@@ -618,7 +617,7 @@
 .hist-result-score {
   font-family: 'Bangers', cursive;
   font-size: clamp(2.8rem, 11vw, 4.5rem);
-  color: #ffd700;
+  color: #ffe066; /* ↑ brightness de #ffd700 à #ffe066 */
   text-shadow: 3px 3px 0 #000, 0 0 30px #f97316;
   letter-spacing: 4px;
   line-height: 1;
@@ -641,7 +640,7 @@
 .hist-result-topic {
   font-family: 'Bangers', cursive;
   font-size: clamp(.9rem, 2.5vw, 1.05rem);
-  color: var(--isle-color, #f97316);
+  color: var(--isle-color, #fdba74); /* ↑ brightness */
   letter-spacing: 2px;
 }
 .hist-result-stars {
@@ -657,13 +656,12 @@
   font-family: 'Nunito', sans-serif;
   font-size: .85rem;
   font-weight: 800;
-  color: rgba(255,255,255,.5);
+  color: rgba(255,255,255,.8); /* ↑ de .5 à .8 */
   text-align: center;
 }
 
 /* ══════════════════════════════════
    ✅ CINÉMATIQUE DBZ — FIX PLEIN ÉCRAN
-   Le personnage doit occuper toute la hauteur viewport
    ══════════════════════════════════ */
 #hist-cine-overlay {
   position: fixed;
@@ -675,25 +673,24 @@
   pointer-events: auto;
 }
 
-/* ✅ FIX CRITIQUE : height 100vh + overflow hidden */
 .hist-cine-inner {
   width: 100%;
-  height: 100vh;           /* ← FIX : hauteur explicite viewport */
+  height: 100vh;
   min-height: 100vh;
   display: flex;
   align-items: stretch;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(ellipse at center, rgba(20,15,40,.95) 0%, rgba(8,4,18,.98) 100%); /* fond légèrement plus clair */
 }
 
-/* ✅ FIX : char-wrap occupe toute la hauteur du parent */
 .hist-cine-char-wrap {
   position: absolute;
   right: 0;
-  top: 0;                  /* ← FIX : ancré en haut, pas juste en bas */
+  top: 0;
   bottom: 0;
-  height: 100%;            /* ← hérite du parent 100vh */
+  height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -701,16 +698,15 @@
   pointer-events: none;
 }
 
-/* ✅ FIX : image utilise la hauteur du wrapper */
 .hist-cine-char {
-  height: 95%;             /* ← 95% de 100vh = presque toute la hauteur */
+  height: 95%;
   max-height: 95vh;
   max-width: 55vw;
   width: auto;
   object-fit: contain;
   object-position: bottom center;
-  filter: drop-shadow(-8px 0 30px rgba(0,0,0,.9)) saturate(1.4);
-  mix-blend-mode: lighten;  /* ← élimine le fond noir des PNG */
+  filter: drop-shadow(-8px 0 30px rgba(0,0,0,.9)) saturate(1.5) brightness(1.05); /* ↑ saturate et brightness */
+  mix-blend-mode: lighten;
   animation: hist-char-enter .6s cubic-bezier(.17,.67,.3,1.1) .2s both;
   transform-origin: bottom right;
 }
@@ -727,7 +723,6 @@
   animation: hist-char-enter .5s ease .2s both;
 }
 
-/* Contenu textuel — côté gauche */
 .hist-cine-content {
   position: relative;
   z-index: 2;
@@ -747,6 +742,7 @@
   text-shadow: 4px 4px 0 #000, 0 0 50px currentColor;
   animation: hist-kanji-pop .5s cubic-bezier(.17,.67,.3,1.3) both;
   line-height: 1;
+  color: #fdba74; /* ↑ brightness */
 }
 @keyframes hist-kanji-pop {
   from { transform: scale(0) rotate(-20deg); opacity: 0; }
@@ -763,7 +759,7 @@
   font-size: clamp(1.3rem, 5vw, 2.4rem);
   color: #ffffff;
   letter-spacing: 4px;
-  text-shadow: 3px 3px 0 #000, 0 0 20px rgba(255,255,255,.3);
+  text-shadow: 3px 3px 0 #000, 0 0 20px rgba(255,255,255,.4); /* ↑ de .3 à .4 */
   animation: hist-line-in .4s ease both;
   white-space: nowrap;
 }
@@ -771,7 +767,7 @@
 .hist-cine-line:nth-child(3) {
   animation-delay: .5s;
   font-size: clamp(1rem, 3.5vw, 1.8rem);
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.9); /* ↑ de .7 à .9 */
 }
 @keyframes hist-line-in {
   from { transform: translateX(-50px); opacity: 0; }
@@ -779,9 +775,9 @@
 }
 
 .hist-cine-bubble {
-  background: rgba(0,0,0,.7);
+  background: rgba(0,0,0,.85); /* ↑ de .7 à .85 pour meilleur contraste */
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3); /* ↑ de .15 à .3 */
   border-radius: 14px;
   padding: 14px 18px;
   max-width: min(360px, 85vw);
@@ -800,12 +796,13 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   text-shadow: 1px 1px 0 #000;
+  color: #fdba74; /* ↑ brightness */
 }
 .hist-cine-bubble-text {
   font-family: 'Nunito', sans-serif;
   font-size: clamp(.85rem, 2.5vw, 1rem);
   font-weight: 800;
-  color: rgba(255,255,255,.85);
+  color: rgba(255,255,255,.95); /* ↑ de .85 à .95 */
   line-height: 1.5;
 }
 
@@ -814,10 +811,10 @@
   bottom: clamp(16px, 4vh, 28px);
   right: clamp(16px, 4vw, 28px);
   z-index: 10;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.75); /* ↑ de .6 à .75 */
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.2);
-  color: rgba(255,255,255,.65);
+  border: 1px solid rgba(255,255,255,.35); /* ↑ de .2 à .35 */
+  color: rgba(255,255,255,.9); /* ↑ de .65 à .9 */
   font-family: 'Bangers', cursive;
   font-size: clamp(.85rem, 2vw, 1rem);
   letter-spacing: 2px;
@@ -827,9 +824,8 @@
   transition: all .2s;
   pointer-events: auto;
 }
-.hist-skip-btn:hover { background: rgba(0,0,0,.9); color: #fff; }
+.hist-skip-btn:hover { background: rgba(0,0,0,.95); color: #fff; }
 
-/* Lignes de vitesse DBZ */
 .hist-cine-inner::after {
   content: '';
   position: absolute;
@@ -838,8 +834,8 @@
     105deg,
     transparent 0,
     transparent 40px,
-    rgba(255,255,255,.015) 40px,
-    rgba(255,255,255,.015) 41px
+    rgba(255,255,255,.025) 40px, /* ↑ de .015 à .025 */
+    rgba(255,255,255,.025) 41px
   );
   pointer-events: none;
   z-index: 0;
