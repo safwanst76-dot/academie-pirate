@@ -39,7 +39,7 @@ const CONTINENTS = [
     emoji: '🌿', color: '#22c55e',
     chars: ['Misty','Dawn','May'], charColors: ['#ef4444','#3b82f6','#ec4899'],
     desc: 'Explore la nature et les créatures avec tes Pokémon !',
-    locked: true,
+    locked: false,
     // Zone droite/Asie
     zone: 'M 385,45 L 420,38 L 455,42 L 472,58 L 470,78 L 462,95 L 448,108 L 428,114 L 408,110 L 392,98 L 384,80 L 382,62 Z',
     labelX: 428, labelY: 78, subX: 428, subY: 91, emojiX: 392, emojiY: 55,
@@ -202,7 +202,7 @@ function showContinentPanel(c) {
     ${c.locked
       ? `<div class="gp-locked-msg">🔒 Bientôt disponible !</div>`
       : `<button class="gp-play-btn" style="background:linear-gradient(135deg,${c.color},${c.color}99)"
-           onclick="navigateTo('iles')">⚔️ COMMENCER L'AVENTURE !</button>`}
+           onclick="navigateTo('${c.id}')">⚔️ COMMENCER L'AVENTURE !</button>`}
   `;
   setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
 }

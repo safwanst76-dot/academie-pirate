@@ -1,0 +1,869 @@
+/* ═══════════════════════════════════════════════════════════
+   QUIZ-KANTO.CSS — Académie Pirate
+   Pays : Kanto · Matière : Sciences Physiques
+   Univers : DEMON SLAYER — Rouge sang · Noir · Wisteria
+   Calqué sur quiz-histoire.css (Magnolia/DBZ)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ═══════════════════
+   VARIABLES DS
+   ═══════════════════ */
+:root {
+  --ds-crimson:   #8B0000;
+  --ds-blood:     #C0392B;
+  --ds-flame:     #E55E00;
+  --ds-wisteria:  #7B5FA0;
+  --ds-gold:      #D4AF37;
+  --ds-dark:      #0d0508;
+  --ds-panel:     rgba(20, 5, 8, .94);
+  --ds-border:    rgba(192, 57, 43, .4);
+  --ds-glow:      rgba(139, 0, 0, .5);
+}
+
+/* ══════════════════════════════════
+   FOND ANIMÉ DEMON SLAYER
+   (strips verticaux avec persos DS)
+   ══════════════════════════════════ */
+#kanto-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+#kanto-bg.visible { opacity: 1; }
+
+.kanto-bg-strip {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: kanto-strip-scroll 32s linear infinite;
+  will-change: transform;
+}
+.kanto-bg-strip:nth-child(even)  { animation-direction: reverse; animation-duration: 40s; }
+.kanto-bg-strip:nth-child(3)     { animation-duration: 26s; }
+.kanto-bg-strip:nth-child(5)     { animation-duration: 44s; }
+
+@keyframes kanto-strip-scroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+.kanto-bg-strip img {
+  width: 100%;
+  aspect-ratio: 9/13;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  opacity: .6;
+  /* Teinte Demon Slayer : contrasté, légèrement rouge */
+  filter: saturate(1.3) brightness(.65) sepia(.15) hue-rotate(-10deg);
+}
+
+/* Overlay DS sur le fond */
+#kanto-iles-sec::before,
+#kanto-quiz-sec::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(13, 2, 4, .6) 0%,
+    rgba(20, 5, 8, .5) 50%,
+    rgba(13, 2, 4, .6) 100%
+  );
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════
+   SECTIONS PRINCIPALES
+   ══════════════════════════════════ */
+#kanto-iles-sec,
+#kanto-quiz-sec {
+  display: none;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  pointer-events: auto;
+}
+
+/* ══════════════════════════════════
+   HEADER GRILLE ÎLES
+   ══════════════════════════════════ */
+.kanto-map-header {
+  text-align: center;
+  padding: 24px 16px 16px;
+}
+.kanto-map-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  color: var(--ds-blood);
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 0 #000, 0 0 30px var(--ds-glow), 0 0 60px rgba(139,0,0,.3);
+}
+.kanto-map-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: .85rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.75);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* ══════════════════════════════════
+   GRILLE DES ÎLES
+   ══════════════════════════════════ */
+.kanto-islands-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 12px 14px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (min-width: 580px) { .kanto-islands-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .kanto-islands-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ── Carte île ── */
+.kanto-isle-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--ds-panel);
+  border: 2px solid rgba(192, 57, 43, .25);
+  box-shadow: 0 4px 24px rgba(0,0,0,.7);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.kanto-isle-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--isle-color, var(--ds-blood));
+  box-shadow: 0 8px 32px rgba(0,0,0,.7), 0 0 20px var(--isle-color, var(--ds-glow));
+}
+.kanto-isle-card:active  { transform: scale(.97); }
+.kanto-isle-card.done    {
+  border-color: var(--isle-color, var(--ds-blood));
+  box-shadow: 0 0 20px var(--isle-color, var(--ds-glow));
+}
+
+/* Image personnage dans la carte */
+.kanto-isle-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.5) 100%);
+  overflow: hidden;
+}
+.kanto-isle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+  padding: 8px 6px 0;
+  box-sizing: border-box;
+  transition: transform .4s ease;
+  mix-blend-mode: lighten;
+}
+.kanto-isle-card:hover .kanto-isle-img { transform: scale(1.06); }
+
+.kanto-isle-img-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(3rem, 10vw, 5rem);
+}
+.kanto-isle-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  pointer-events: none;
+}
+
+.kanto-isle-body {
+  padding: 10px 12px 14px;
+  background: rgba(15, 4, 6, .95);
+  border-top: 1px solid rgba(192,57,43,.2);
+}
+.kanto-isle-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: .7rem;
+  font-weight: 900;
+  color: rgba(255,255,255,.85);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.kanto-isle-name {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  letter-spacing: 2px;
+  line-height: 1.1;
+  margin: 2px 0;
+  text-shadow: 1px 1px 0 #000;
+}
+.kanto-isle-topic {
+  font-family: 'Nunito', sans-serif;
+  font-size: .72rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.9);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.kanto-isle-level {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  font-size: .68rem;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+.kanto-isle-stars {
+  font-size: .78rem;
+  color: var(--ds-gold);
+  margin-top: 5px;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════
+   HEADER QUIZ STICKY
+   ══════════════════════════════════ */
+#kanto-quiz-sec { padding-top: 0; }
+
+.kanto-quiz-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 2, 4, .96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 2px solid rgba(192, 57, 43, .5);
+  padding: 10px 16px 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.6);
+}
+.kanto-quiz-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: var(--ds-blood);
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kanto-prog-bar {
+  width: 100%;
+  height: 7px;
+  background: rgba(255,255,255,.15);
+  border-radius: 8px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+.kanto-prog-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ds-crimson), var(--ds-blood), var(--ds-flame));
+  border-radius: 8px;
+  transition: width .4s ease;
+  box-shadow: 0 0 8px var(--ds-glow);
+}
+.kanto-prog-lbl {
+  font-family: 'Nunito', sans-serif;
+  font-size: .72rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.7);
+  margin-top: 3px;
+  text-align: right;
+}
+
+/* ══════════════════════════════════
+   CARTE QUESTION
+   ══════════════════════════════════ */
+.kanto-q-card {
+  margin: 14px 12px;
+  background: var(--ds-panel);
+  border-radius: 18px;
+  border: 2px solid rgba(192,57,43,.3);
+  padding: 0 0 16px;
+  box-shadow: 0 6px 28px rgba(0,0,0,.8);
+  overflow: hidden;
+  transition: border-color .3s;
+  pointer-events: auto;
+}
+.kanto-q-card:hover { border-color: var(--isle-color, var(--ds-border)); }
+
+/* ── Boss banner ── */
+.kanto-boss-q {
+  border-color: var(--ds-crimson) !important;
+  box-shadow: 0 0 40px rgba(139,0,0,.5), 0 6px 28px rgba(0,0,0,.8) !important;
+}
+.kanto-boss-banner {
+  background: linear-gradient(135deg, #2a0008, #4a0015);
+  border-bottom: 1px solid rgba(139,0,0,.6);
+  padding: 12px 16px;
+  text-align: center;
+}
+.kanto-boss-label {
+  font-family: 'Bangers', cursive;
+  font-size: .85rem;
+  color: var(--ds-blood);
+  letter-spacing: 3px;
+}
+.kanto-boss-name {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  color: var(--ds-gold);
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 0 #000, 0 0 20px var(--ds-blood);
+}
+.kanto-boss-hp {
+  height: 8px;
+  background: rgba(255,255,255,.2);
+  border-radius: 8px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+.kanto-boss-hp-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--ds-crimson), var(--ds-blood));
+  border-radius: 8px;
+  animation: kanto-hp-pulse 1s ease-in-out infinite alternate;
+}
+@keyframes kanto-hp-pulse {
+  from { opacity: 1; box-shadow: 0 0 8px var(--ds-glow); }
+  to   { opacity: .5; box-shadow: none; }
+}
+
+/* ── Bulle personnage ── */
+.kanto-char-bubble {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px 10px;
+  background: rgba(139,0,0,.15);
+  border-bottom: 1px solid rgba(192,57,43,.25);
+}
+.kanto-char-img {
+  width: clamp(44px, 11vw, 60px);
+  height: clamp(44px, 11vw, 60px);
+  border-radius: 50%;
+  border: 2px solid var(--isle-color, var(--ds-blood));
+  object-fit: contain;
+  object-position: top center;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px var(--isle-color, var(--ds-glow));
+  background: rgba(0,0,0,.4);
+  padding: 2px;
+  box-sizing: border-box;
+  mix-blend-mode: lighten;
+}
+.kanto-char-fallback {
+  width: clamp(44px, 11vw, 60px);
+  height: clamp(44px, 11vw, 60px);
+  border-radius: 50%;
+  border: 2px solid var(--isle-color, var(--ds-blood));
+  font-size: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  display: none;
+}
+.kanto-bubble-txt {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 14px 14px 14px 0;
+  padding: 8px 13px;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.8rem, 2.4vw, .92rem);
+  font-weight: 800;
+  color: rgba(255,255,255,.95);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.kanto-q-number {
+  font-family: 'Nunito', sans-serif;
+  font-size: .7rem;
+  font-weight: 900;
+  color: var(--isle-color, var(--ds-blood));
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 16px 4px;
+}
+.kanto-q-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.15rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.5;
+  padding: 0 16px 14px;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6);
+}
+
+/* ══════════════════════════════════
+   OPTIONS
+   ══════════════════════════════════ */
+.kanto-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 14px;
+  pointer-events: auto;
+}
+.kanto-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 2px solid rgba(192,57,43,.35);
+  background: rgba(139,0,0,.1);
+  cursor: pointer;
+  transition: all .18s;
+  min-height: 50px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  pointer-events: auto;
+  user-select: none;
+}
+.kanto-opt:hover {
+  border-color: var(--isle-color, var(--ds-blood));
+  background: rgba(139,0,0,.25);
+  transform: translateX(3px);
+}
+.kanto-opt:active { transform: scale(.98); }
+.kanto-opt.kanto-selected {
+  border-color: var(--isle-color, var(--ds-blood));
+  background: rgba(139,0,0,.35);
+  box-shadow: 0 0 14px var(--ds-glow), inset 0 0 10px rgba(139,0,0,.15);
+}
+.kanto-opt.kanto-correct {
+  border-color: #06d6a0 !important;
+  background: rgba(6,214,160,.3) !important;
+  box-shadow: 0 0 12px rgba(6,214,160,.3) !important;
+}
+.kanto-opt.kanto-wrong {
+  border-color: #ff4444 !important;
+  background: rgba(255,68,68,.25) !important;
+  opacity: .9;
+}
+.kanto-opt-key {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(192,57,43,.3);
+  border: 1px solid rgba(192,57,43,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bangers', cursive;
+  font-size: .9rem;
+  color: var(--ds-gold);
+  flex-shrink: 0;
+}
+.kanto-opt-txt {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.88rem, 2.6vw, 1rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+/* ══════════════════════════════════
+   FEEDBACK & EXPLICATION
+   ══════════════════════════════════ */
+.kanto-fb {
+  display: none;
+  margin: 10px 14px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.83rem, 2.3vw, .93rem);
+  font-weight: 800;
+  line-height: 1.4;
+}
+.kanto-fb.kanto-ok {
+  display: block;
+  background: rgba(6,214,160,.3);
+  border: 1px solid rgba(6,214,160,.7);
+  color: #ffffff;
+}
+.kanto-fb.kanto-ko {
+  display: block;
+  background: rgba(192,57,43,.3);
+  border: 1px solid rgba(192,57,43,.7);
+  color: #ffffff;
+}
+.kanto-expl {
+  display: none;
+  margin: 8px 14px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(123,95,160,.2);
+  border: 1px solid rgba(123,95,160,.5);
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.8rem, 2vw, .88rem);
+  font-weight: 700;
+  color: rgba(255,255,255,.95);
+  line-height: 1.55;
+}
+.kanto-expl.kanto-show { display: block; }
+
+.kanto-submit-wrap {
+  text-align: center;
+  padding: 24px 16px 48px;
+}
+
+/* ══════════════════════════════════
+   BOUTONS
+   ══════════════════════════════════ */
+.kanto-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  letter-spacing: 2px;
+  transition: transform .15s, box-shadow .15s;
+  min-height: 50px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.kanto-btn:hover  { transform: translateY(-2px); }
+.kanto-btn:active { transform: scale(.97); }
+
+.kanto-btn-red {
+  background: linear-gradient(135deg, var(--ds-crimson), var(--ds-blood));
+  color: #fff;
+  box-shadow: 0 4px 20px var(--ds-glow);
+  width: 100%;
+  max-width: 380px;
+  display: block;
+  margin: 0 auto 12px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+}
+.kanto-btn-red:hover { box-shadow: 0 6px 28px rgba(192,57,43,.7); }
+
+.kanto-btn-outline {
+  background: transparent;
+  border: 2px solid rgba(192,57,43,.5);
+  color: var(--ds-blood);
+  width: 100%;
+  max-width: 380px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════
+   RÉSULTATS
+   ══════════════════════════════════ */
+.kanto-result-card {
+  margin: 20px 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--isle-color, var(--ds-blood));
+  box-shadow: 0 8px 40px rgba(0,0,0,.8), 0 0 30px var(--isle-color, var(--ds-glow));
+  background: var(--ds-panel);
+  animation: kanto-res-appear .5s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes kanto-res-appear {
+  from { opacity:0; transform:scale(.9) translateY(20px); }
+  to   { opacity:1; transform:scale(1)  translateY(0); }
+}
+
+.kanto-result-banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: clamp(160px, 40vw, 240px);
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(50,0,10,.3), rgba(20,0,5,.5));
+}
+.kanto-result-avatar {
+  position: absolute;
+  right: 0; bottom: 0;
+  height: 100%; width: auto;
+  max-width: 60%;
+  object-fit: contain;
+  object-position: bottom right;
+  opacity: .95;
+  filter: saturate(1.3) brightness(1.05);
+  mix-blend-mode: lighten;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 50%, transparent 95%);
+}
+.kanto-result-score-wrap {
+  position: absolute;
+  left: 20px; bottom: 20px;
+  z-index: 2;
+}
+.kanto-result-score {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(2.8rem, 11vw, 4.5rem);
+  color: var(--ds-gold);
+  text-shadow: 3px 3px 0 #000, 0 0 30px var(--ds-blood);
+  letter-spacing: 4px;
+  line-height: 1;
+}
+.kanto-result-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+.kanto-result-body {
+  padding: 20px 16px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.kanto-result-topic {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.9rem, 2.5vw, 1.05rem);
+  color: var(--isle-color, var(--ds-blood));
+  letter-spacing: 2px;
+}
+.kanto-result-stars  { font-size: clamp(.9rem, 3vw, 1.1rem); letter-spacing: 2px; }
+.kanto-result-gif    { max-width: min(280px, 85vw); border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.6); }
+.kanto-result-xp {
+  font-family: 'Nunito', sans-serif;
+  font-size: .85rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.95);
+  text-align: center;
+}
+
+/* ══════════════════════════════════
+   CINÉMATIQUE DS — PLEIN ÉCRAN
+   ══════════════════════════════════ */
+#kanto-cine-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  display: none;
+  align-items: stretch;
+  justify-content: stretch;
+  pointer-events: auto;
+}
+
+.kanto-cine-inner {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  /* Fond DS : dégradé rouge-noir avec texture */
+  background: radial-gradient(ellipse at center, rgba(80,10,15,.92) 0%, rgba(13,2,4,.97) 100%);
+}
+
+/* Motif lignes de vitesse DS */
+.kanto-cine-inner::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    108deg,
+    transparent 0,
+    transparent 38px,
+    rgba(192,57,43,.04) 38px,
+    rgba(192,57,43,.04) 39px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Motif wisteria décoratif */
+.kanto-cine-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 40%;
+  height: 100%;
+  background: radial-gradient(ellipse at top right, rgba(123,95,160,.15) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Personnage à droite */
+.kanto-cine-char-wrap {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 1;
+  pointer-events: none;
+}
+.kanto-cine-char {
+  height: 95%;
+  max-height: 95vh;
+  max-width: 55vw;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(-8px 0 30px rgba(139,0,0,.8)) saturate(1.4) brightness(1.05);
+  mix-blend-mode: lighten;
+  animation: kanto-char-enter .6s cubic-bezier(.17,.67,.3,1.1) .2s both;
+  transform-origin: bottom right;
+}
+@keyframes kanto-char-enter {
+  from { transform: translateX(80px) scale(.85); opacity: 0; }
+  to   { transform: translateX(0)    scale(1);   opacity: 1; }
+}
+.kanto-cine-char-emoji {
+  font-size: clamp(6rem, 20vw, 12rem);
+  align-items: flex-end;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  filter: drop-shadow(-4px 0 20px rgba(0,0,0,.8));
+  animation: kanto-char-enter .5s ease .2s both;
+}
+
+/* Contenu texte gauche */
+.kanto-cine-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(20px, 5vw, 60px);
+  max-width: 55vw;
+  gap: clamp(12px, 2.5vh, 24px);
+}
+.kanto-cine-kanji {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(3rem, 14vw, 8rem);
+  font-weight: 900;
+  text-shadow: 4px 4px 0 #000, 0 0 50px currentColor;
+  animation: kanto-kanji-pop .5s cubic-bezier(.17,.67,.3,1.3) both;
+  line-height: 1;
+}
+@keyframes kanto-kanji-pop {
+  from { transform: scale(0) rotate(-20deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+.kanto-cine-lines {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1.5vh, 12px);
+}
+.kanto-cine-line {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.3rem, 5vw, 2.4rem);
+  color: #ffffff;
+  letter-spacing: 4px;
+  text-shadow: 3px 3px 0 #000, 0 0 20px rgba(255,255,255,.3);
+  animation: kanto-line-in .4s ease both;
+  white-space: nowrap;
+}
+.kanto-cine-line:nth-child(2) { animation-delay: .25s; }
+.kanto-cine-line:nth-child(3) {
+  animation-delay: .5s;
+  font-size: clamp(1rem, 3.5vw, 1.8rem);
+  color: rgba(255,255,255,.85);
+}
+@keyframes kanto-line-in {
+  from { transform: translateX(-50px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+.kanto-cine-bubble {
+  background: rgba(13,2,4,.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(192,57,43,.5);
+  border-radius: 14px;
+  padding: 14px 18px;
+  max-width: min(360px, 85vw);
+  animation: kanto-bubble-in .5s ease .75s both;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+@keyframes kanto-bubble-in {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.kanto-cine-char-name {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.9rem, 2.5vw, 1.1rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 #000;
+}
+.kanto-cine-bubble-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.85rem, 2.5vw, 1rem);
+  font-weight: 800;
+  color: rgba(255,255,255,.95);
+  line-height: 1.5;
+}
+
+/* Bouton skip */
+.kanto-skip-btn {
+  position: absolute;
+  bottom: clamp(16px, 4vh, 28px);
+  right: clamp(16px, 4vw, 28px);
+  z-index: 10;
+  background: rgba(13,2,4,.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(192,57,43,.5);
+  color: rgba(255,255,255,.9);
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.85rem, 2vw, 1rem);
+  letter-spacing: 2px;
+  padding: 9px 18px;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all .2s;
+  pointer-events: auto;
+}
+.kanto-skip-btn:hover { background: rgba(139,0,0,.6); border-color: var(--ds-blood); }
+
+/* ══════════════════════════════════
+   FORCE POINTER-EVENTS
+   ══════════════════════════════════ */
+#kanto-quiz-sec, #kanto-quiz-sec * { pointer-events: auto; }
+#kanto-bg, #kanto-bg *             { pointer-events: none !important; }
+
+/* ══════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════ */
+@media (max-width: 479px) {
+  .kanto-islands-grid { gap: 10px; padding: 10px; }
+  .kanto-q-card       { margin: 10px 8px; }
+  .kanto-opts         { padding: 0 10px; }
+  .kanto-opt          { padding: 11px 12px; }
+  .kanto-cine-content { max-width: 58vw; }
+  .kanto-cine-char    { max-width: 48vw; }
+}
+@media (min-width: 768px) {
+  .kanto-q-card        { max-width: 740px; margin: 14px auto; }
+  .kanto-submit-wrap   { padding: 28px 0 60px; }
+  .kanto-result-card   { max-width: 700px; margin: 20px auto; }
+}
+@media (min-width: 1024px) {
+  .kanto-cine-char { height: min(95vh, 900px); }
+}

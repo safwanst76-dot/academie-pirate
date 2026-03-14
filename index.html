@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="css/cinematic.css">
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/quiz-histoire.css">
+<link rel="stylesheet" href="css/quiz-kanto.css">
 
 <!-- JS — libs externes -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
@@ -149,8 +150,14 @@
   </div>
 </div>
 
+<!-- ═══ FONDS ANIMÉS ═══ -->
 <div id="hist-bg"></div>
 <div id="hist-overlay"></div>
+<div id="kanto-bg"></div>
+
+<!-- ═══════════════════════════════════════
+     MAGNOLIA — HISTOIRE × DBZ
+═══════════════════════════════════════ -->
 
 <!-- HISTOIRE — LISTE DES ÎLES -->
 <section id="histoire-iles-sec" style="display:none">
@@ -171,6 +178,31 @@
   <div id="hist-qContainer"></div>
 </section>
 
+<!-- ═══════════════════════════════════════
+     KANTO — SCIENCES × DEMON SLAYER
+═══════════════════════════════════════ -->
+
+<!-- KANTO — LISTE DES ÎLES -->
+<section id="kanto-iles-sec" style="display:none">
+  <div class="kanto-map-header">
+    <div class="kanto-map-title">⚔️ KANTO — SCIENCES</div>
+    <div class="kanto-map-sub">6ème · 5ème — Univers Demon Slayer</div>
+  </div>
+  <div class="kanto-islands-grid" id="kanto-islands-grid"></div>
+</section>
+
+<!-- KANTO — QUIZ -->
+<section id="kanto-quiz-sec" style="display:none">
+  <div class="kanto-quiz-header">
+    <div class="kanto-quiz-title" id="kanto-qTitle">ÎLE DE TANJIRO</div>
+    <div class="kanto-prog-bar">
+      <div class="kanto-prog-fill" id="kanto-qProgFill"></div>
+    </div>
+    <div class="kanto-prog-lbl" id="kanto-qProgLbl">0 / 11</div>
+  </div>
+  <div id="kanto-qContainer"></div>
+</section>
+
 <!-- ═══ GLOBE / CARTE DU MONDE ═══ -->
 <section id="globe-sec">
   <div style="font-family:'Bangers',cursive;font-size:clamp(1.6rem,5vw,2.5rem);letter-spacing:4px;text-align:center;color:#ffd700;text-shadow:2px 2px 0 #000;margin-bottom:10px">🗺️ CARTE DU MONDE</div>
@@ -184,7 +216,7 @@
   <div class="world-divider-line"></div>
 </div>
 
-<!-- ═══ MAP ÎLES ═══ -->
+<!-- ═══ MAP ÎLES — GRAND BLEU (One Piece / Français) ═══ -->
 <section id="map-sec">
   <div class="sec-sub" style="font-family:'Bangers',cursive;font-size:clamp(1.2rem,3vw,1.8rem);color:#ffd700;letter-spacing:3px;font-weight:normal;margin-bottom:16px">⚓ CHOISIS TON ÎLE ET COMMENCE L'AVENTURE !</div>
   <div class="panel-frame">
@@ -226,7 +258,7 @@
   <div class="world-line">— Grand Line — ☠ — One Piece —</div>
 </section>
 
-<!-- ═══ QUIZ ═══ -->
+<!-- ═══ QUIZ — GRAND BLEU ═══ -->
 <section id="quiz-sec">
   <div class="qhdr">
     <button class="back-btn" onclick="goBack()">← Carte</button>
@@ -261,13 +293,16 @@
 
 <!-- ═══════════════════════════════════════
      JS — Ordre de chargement critique
-     1. Config/données (pas de deps)
-     2. Utilitaires UI
-     3. Audio
-     4. Fonctionnalités (save, avatar, cinematic)
-     5. Quiz (dépend de tout)
-     6. Pages et navigation
-     7. Init en dernier
+     1. Config Supabase
+     2. DB helpers
+     3. Données îles + images
+     4. UI utilitaires
+     5. HUD
+     6. Audio (engine + patches par monde)
+     7. Save / Avatar / Cinematic
+     8. Quiz par monde
+     9. Navigation + Auth
+     10. Init en dernier
 ═══════════════════════════════════════ -->
 <script src="js/supabase.js"></script>
 <script src="js/db.js"></script>
@@ -276,6 +311,7 @@
 <script src="js/hud.js"></script>
 <script src="js/audio-engine.js"></script>
 <script src="js/audio-engine-dbz-patch.js"></script>
+<script src="js/audio-engine-kanto-patch.js"></script>
 <script src="js/save.js"></script>
 <script src="js/avatar.js"></script>
 <script src="js/cinematic.js"></script>
@@ -287,6 +323,7 @@
 <script src="js/child-select.js"></script>
 <script src="js/router.js"></script>
 <script src="js/quiz-histoire.js"></script>
+<script src="js/quiz-kanto.js"></script>
 
 <!-- ═══ INIT UNIFIÉ ═══ -->
 <script>
@@ -295,18 +332,21 @@ async function init() {
   if (loadEl) loadEl.style.display = 'flex';
 
   if (typeof initVoicesFR === 'function') initVoicesFR();
-  if (typeof initVoices === 'function') initVoices();
+  if (typeof initVoices   === 'function') initVoices();
   if (typeof loadBgStrips === 'function') loadBgStrips();
   if (typeof loadJikanImages === 'function') await loadJikanImages();
   if (typeof loadAvatars === 'function') await loadAvatars();
-  else if (typeof buildAvatarGrid === 'function') { buildAvatarGrid(); if (typeof updateAvatarPreview === 'function') updateAvatarPreview(); }
+  else if (typeof buildAvatarGrid === 'function') {
+    buildAvatarGrid();
+    if (typeof updateAvatarPreview === 'function') updateAvatarPreview();
+  }
 
   var alreadyPlayed = (typeof loadPlayerData === 'function') ? loadPlayerData() : false;
   if (typeof loadProgress === 'function') loadProgress();
-  if (typeof updateHUD === 'function') updateHUD();
+  if (typeof updateHUD    === 'function') updateHUD();
 
   setTimeout(function() {
-    var loading = document.getElementById('loading');
+    var loading      = document.getElementById('loading');
     var avatarScreen = document.getElementById('avatar-screen');
     if (loading) loading.classList.add('gone');
     if (alreadyPlayed && avatarScreen) avatarScreen.classList.add('gone');

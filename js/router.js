@@ -9,6 +9,7 @@ const ROUTES = {
   'iles'     : showIles,
   'quiz'     : showQuiz,
   'histoire' : showHistoire,
+  'kanto'    : showKanto, 
 };
 
 // ── Sections HTML ──
@@ -50,6 +51,12 @@ function hideAll() {
   // Quiz
   const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'none';
+
+  // ── KANTO : AJOUTER CE BLOC ──
+  const kantoSec = getSection('kanto-sec');
+  if (kantoSec) kantoSec.style.display = 'none';
+  const kantoPanel = getSection('kanto-panel');
+  if (kantoPanel) kantoPanel.style.display = 'none';
 
   // Panneau continent
   hideContinentPanel?.();
