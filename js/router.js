@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════
 // ROUTER — Académie Pirate
-// Hash routing : #/login | #/carte | #/iles | #/quiz
+// Hash routing : #/login | #/carte | #/iles | #/quiz | #/kanto
 // ═══════════════════════════════════════════════════════
 
 const ROUTES = {
@@ -52,11 +52,16 @@ function hideAll() {
   const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'none';
 
-  // ── KANTO : AJOUTER CE BLOC ──
-  const kantoSec = getSection('kanto-sec');
-  if (kantoSec) kantoSec.style.display = 'none';
-  const kantoPanel = getSection('kanto-panel');
-  if (kantoPanel) kantoPanel.style.display = 'none';
+  // ── KANTO : MASQUER LES SECTIONS (IDs exacts du HTML) ──
+  const kantoIles = document.getElementById('kanto-iles-sec');
+  if (kantoIles) kantoIles.style.display = 'none';
+  
+  const kantoQuiz = document.getElementById('kanto-quiz-sec');
+  if (kantoQuiz) kantoQuiz.style.display = 'none';
+  
+  const kantoBg = document.getElementById('kanto-bg');
+  if (kantoBg) kantoBg.classList.remove('visible');
+  // ── FIN BLOC KANTO ──
 
   // Panneau continent
   hideContinentPanel?.();
@@ -151,25 +156,27 @@ function showHistoire() {
   if (histOv) histOv.classList.add('visible');
   document.title = 'Académie Pirate — Histoire';
 }
+
 // ══════════════════════════════
 // PAGE : KANTO — Sciences × Pokémon
 // ══════════════════════════════
 function showKanto() {
   hideAll();
   
-  // Afficher les sections Kanto (IDs exacts depuis ton HTML)
+  // Afficher la section îles Kanto
   const kantoIles = document.getElementById('kanto-iles-sec');
   if (kantoIles) kantoIles.style.display = 'block';
   
+  // Masquer la section quiz Kanto (sera affichée par buildKantoGrid si besoin)
   const kantoQuiz = document.getElementById('kanto-quiz-sec');
-  if (kantoQuiz) kantoQuiz.style.display = 'none'; // Caché par défaut, affiché par buildKantoGrid si besoin
+  if (kantoQuiz) kantoQuiz.style.display = 'none';
   
   // Charger la grille d'îles si la fonction existe (dans quiz-kanto.js)
   if (typeof buildKantoGrid === 'function') {
     buildKantoGrid();
   }
   
-  // Background Kanto
+  // Background Kanto — UNE SEULE DÉCLARATION
   const kantoBg = document.getElementById('kanto-bg');
   if (kantoBg) kantoBg.classList.add('visible');
   
@@ -179,6 +186,7 @@ function showKanto() {
   
   document.title = 'Académie Pirate — Kanto';
 }
+
 // ══════════════════════════════
 // NAVIGATION
 // ══════════════════════════════
@@ -244,6 +252,9 @@ window.showContinentPanel = function(c) {
       padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
     `;
 
+    // 🔧 FIX : Gérer history, kanto, et le reste
+    const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : 'iles';
+
     panel.innerHTML = `
       <div class="gp-header">
         <div class="gp-emoji">${c.emoji}</div>
@@ -264,7 +275,7 @@ window.showContinentPanel = function(c) {
         ? `<div class="gp-locked-msg">🔒 Bientôt disponible !</div>`
         : `<button class="gp-play-btn"
              style="background:linear-gradient(135deg,${c.color},${c.color}99)"
-             onclick="navigateTo('${c.id === 'history' ? 'histoire' : 'iles'}')">
+             onclick="navigateTo('${targetRoute}')">
              ⚔️ COMMENCER L'AVENTURE !
            </button>`
       }
