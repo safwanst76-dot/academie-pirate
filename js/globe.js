@@ -35,7 +35,7 @@ const CONTINENTS = [
     labelX: 308, labelY: 155, subX: 308, subY: 168, emojiX: 260, emojiY: 125,
   },
   {
-    id: 'science', name: 'Kanto', subject: 'Sciences', universe: 'Pokémon',
+    id: 'kanto', name: 'Kanto', subject: 'Sciences', universe: 'Pokémon',
     emoji: '🌿', color: '#22c55e',
     chars: ['Misty','Dawn','May'], charColors: ['#ef4444','#3b82f6','#ec4899'],
     desc: 'Explore la nature et les créatures avec tes Pokémon !',

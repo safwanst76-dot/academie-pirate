@@ -151,7 +151,34 @@ function showHistoire() {
   if (histOv) histOv.classList.add('visible');
   document.title = 'Académie Pirate — Histoire';
 }
-
+// ══════════════════════════════
+// PAGE : KANTO — Sciences × Pokémon
+// ══════════════════════════════
+function showKanto() {
+  hideAll();
+  
+  // Afficher les sections Kanto (IDs exacts depuis ton HTML)
+  const kantoIles = document.getElementById('kanto-iles-sec');
+  if (kantoIles) kantoIles.style.display = 'block';
+  
+  const kantoQuiz = document.getElementById('kanto-quiz-sec');
+  if (kantoQuiz) kantoQuiz.style.display = 'none'; // Caché par défaut, affiché par buildKantoGrid si besoin
+  
+  // Charger la grille d'îles si la fonction existe (dans quiz-kanto.js)
+  if (typeof buildKantoGrid === 'function') {
+    buildKantoGrid();
+  }
+  
+  // Background Kanto
+  const kantoBg = document.getElementById('kanto-bg');
+  if (kantoBg) kantoBg.classList.add('visible');
+  
+  // Musique optionnelle
+  if (typeof stopBGM === 'function') stopBGM();
+  if (typeof playBGM === 'function') playBGM('kanto-theme');
+  
+  document.title = 'Académie Pirate — Kanto';
+}
 // ══════════════════════════════
 // NAVIGATION
 // ══════════════════════════════
