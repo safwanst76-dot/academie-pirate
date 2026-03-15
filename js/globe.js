@@ -35,10 +35,11 @@ const CONTINENTS = [
     labelX: 308, labelY: 155, subX: 308, subY: 168, emojiX: 260, emojiY: 125,
   },
   {
-    id: 'kanto', name: 'Kanto', subject: 'Sciences', universe: 'Pokémon',
-    emoji: '🌿', color: '#22c55e',
-    chars: ['Misty','Dawn','May'], charColors: ['#ef4444','#3b82f6','#ec4899'],
-    desc: 'Explore la nature et les créatures avec tes Pokémon !',
+    // ✅ CORRECTION : universe Demon Slayer (pas Pokémon) + chars DS + desc Sciences DS
+    id: 'kanto', name: 'Kanto', subject: 'Sciences', universe: 'Demon Slayer',
+    emoji: '⚔️', color: '#C0392B',
+    chars: ['Tanjiro','Zenitsu','Inosuke'], charColors: ['#C0392B','#D4AF37','#22c55e'],
+    desc: "Maîtrise la transmission de l'information avec les chasseurs de démons !",
     locked: false,
     // Zone droite/Asie
     zone: 'M 385,45 L 420,38 L 455,42 L 472,58 L 470,78 L 462,95 L 448,108 L 428,114 L 408,110 L 392,98 L 384,80 L 382,62 Z',
@@ -179,7 +180,7 @@ function buildTreasureMap() {
 function showContinentPanel(c) {
   const globeSec = document.getElementById('globe-sec');
   let panel = document.getElementById('globe-panel');
-  if(!panel){ panel=document.createElement('div'); panel.id='globe-panel'; globeSec?.appendChild(panel); }
+  if(!panel){ panel=document.createElement('div'); panel.id='globe-panel'; if(globeSec) globeSec.appendChild(panel); }
   if(globeSec && panel.parentElement !== globeSec) globeSec.appendChild(panel);
 
   panel.style.cssText = `

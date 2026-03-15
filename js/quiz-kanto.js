@@ -18,28 +18,31 @@ var SUPABASE_URL_KANTO = 'https://bwxzrqsvccqmzvonsswi.supabase.co';
 var BUCKET_KANTO       = 'island-demon-slayer';
 var KANTO_STORAGE      = SUPABASE_URL_KANTO + '/storage/v1/object/public/' + BUCKET_KANTO;
 
-// URLs des personnages (characters/ dans le bucket)
+// ✅ CORRECTION : extensions exactes vérifiées dans le bucket via diagnostic
+// tanjiro→.jpg  zenitsu→.jpg  inosuke→.jpg  giyu→.png  shinobu→.png
+// rengoku→.jpg  tengen→.jpg   muichiro→.jpg
 var KANTO_AVATARS = {
-  1: KANTO_STORAGE + '/characters/tanjiro.png',
-  2: KANTO_STORAGE + '/characters/zenitsu.png',
-  3: KANTO_STORAGE + '/characters/inosuke.png',
+  1: KANTO_STORAGE + '/characters/tanjiro.jpg',
+  2: KANTO_STORAGE + '/characters/zenitsu.jpg',
+  3: KANTO_STORAGE + '/characters/inosuke.jpg',
   4: KANTO_STORAGE + '/characters/giyu.png',
   5: KANTO_STORAGE + '/characters/shinobu.png',
-  6: KANTO_STORAGE + '/characters/rengoku.png',
-  7: KANTO_STORAGE + '/characters/tengen.png',
-  8: KANTO_STORAGE + '/characters/muichiro.png',
+  6: KANTO_STORAGE + '/characters/rengoku.jpg',
+  7: KANTO_STORAGE + '/characters/tengen.jpg',
+  8: KANTO_STORAGE + '/characters/muichiro.jpg',
 };
 
-// Boss pour chaque île (question finale)
+// ✅ CORRECTION : uniquement des fichiers CONFIRMÉS dans le bucket
+// muzan/akaza/daki/rui/gyomei/sanemi n'existent pas → remplacés par fichiers disponibles
 var KANTO_BOSS_AVATARS = {
-  'Muzan':     KANTO_STORAGE + '/characters/muzan.png',
-  'Akaza':     KANTO_STORAGE + '/characters/akaza.png',
-  'Kokushibo': KANTO_STORAGE + '/characters/kokushibo.png',
-  'Daki':      KANTO_STORAGE + '/characters/daki.png',
-  'Rui':       KANTO_STORAGE + '/characters/rui.png',
-  'Gyomei':    KANTO_STORAGE + '/characters/gyomei.png',
-  'Sanemi':    KANTO_STORAGE + '/characters/sanemi.png',
-  'Obanai':    KANTO_STORAGE + '/characters/obanai.png',
+  'Muzan':     KANTO_STORAGE + '/characters/nakime.jpeg',   // ✓ existe dans bucket
+  'Akaza':     KANTO_STORAGE + '/characters/gyutaro.jpg',   // ✓ existe dans bucket
+  'Kokushibo': KANTO_STORAGE + '/characters/kokushibo.png', // ✓ existe dans bucket
+  'Daki':      KANTO_STORAGE + '/characters/kanao.jpg',     // ✓ existe dans bucket
+  'Rui':       KANTO_STORAGE + '/characters/nezuko.jpeg',   // ✓ existe dans bucket
+  'Gyomei':    KANTO_STORAGE + '/characters/giyu.png',      // ✓ existe dans bucket
+  'Sanemi':    KANTO_STORAGE + '/characters/inosuke.jpg',   // ✓ existe dans bucket
+  'Obanai':    KANTO_STORAGE + '/characters/obanai.jpeg',   // ✓ existe dans bucket
 };
 
 // Fallback emoji si l'image Supabase ne charge pas
@@ -55,25 +58,29 @@ var KANTO_GIFS_CORRECT = [];
 var KANTO_GIFS_WRONG   = [];
 var KANTO_GIFS_LOSE    = [];
 
-// Valeurs par défaut (fallback si Supabase pas dispo)
+// ✅ CORRECTION : fallback 100% Supabase Storage (noms vérifiés via diagnostic)
 var KANTO_GIFS_DEFAULTS = {
   perfect: [
     KANTO_STORAGE + '/gifs/perfect/perfect_tanjiro.gif',
-    'https://media.giphy.com/media/WQaaoV5Tpq9Y0e7kIw/giphy.gif',
+    KANTO_STORAGE + '/gifs/perfect/perfect_mitsuri.gif',
+    KANTO_STORAGE + '/gifs/perfect/perfect_ds.gif',
   ],
   correct: [
     KANTO_STORAGE + '/gifs/correct/correct_tanjiro.gif',
     KANTO_STORAGE + '/gifs/correct/correct_zenitsu.gif',
-    'https://media3.giphy.com/media/fTn01fiFdTd5pL60ln/giphy.gif',
+    KANTO_STORAGE + '/gifs/correct/correct_mitsuri.gif',
+    KANTO_STORAGE + '/gifs/correct/correct_fight.gif',
+    KANTO_STORAGE + '/gifs/correct/correct_crunchyroll.gif',
   ],
   wrong: [
     KANTO_STORAGE + '/gifs/wrong/wrong_zenitsu.gif',
     KANTO_STORAGE + '/gifs/wrong/wrong_giyu.gif',
-    'https://media3.giphy.com/media/4ajQEQgTHvKxNWGFCK/giphy.gif',
+    KANTO_STORAGE + '/gifs/wrong/wrong_ds1.gif',
+    KANTO_STORAGE + '/gifs/wrong/wrong_ds2.gif',
   ],
   lose: [
     KANTO_STORAGE + '/gifs/wrong/wrong_zenitsu.gif',
-    'https://media3.giphy.com/media/4ajQEQgTHvKxNWGFCK/giphy.gif',
+    KANTO_STORAGE + '/gifs/wrong/wrong_ds1.gif',
   ],
 };
 
@@ -96,7 +103,7 @@ async function loadKantoAssets() {
     });
     console.info('⚔️  Kanto assets chargés depuis Supabase :', data.length, 'entrées');
   } catch (e) {
-    console.warn('⚔️  Kanto assets — fallback Giphy/Storage :', e.message);
+    console.warn('⚔️  Kanto assets — fallback Storage :', e.message);
   }
 
   // Compléter avec les defaults si vides
@@ -165,7 +172,8 @@ async function loadKantoBgStrips() {
 // ══════════════════════════════════════════════════════════════
 var KANTO_ISLE_INTRO = {
   1: { bg:'#1a0005', lines:['SIGNAUX…','… DE LUMIÈRE !!','La voie du chasseur commence !'], kanji:'信号 !!', kanjiColor:'#C0392B', bubble:"Tanjiro te guide ! Qu'est-ce qu'un signal ? Voyons si tu le sais !" },
-  2: { bg:'#0a0015', lines:['ÉMETTEUR…','… ET RÉCEPTEUR !!','Qui envoie ? Qui reçoit ?'], kanji:'送受 !!', kanjiColor:'#3b82f6', bubble:"Le style de l'eau exige précision. Qui émet ? Qui reçoit ? Réponds !" },
+  // ✅ CORRECTION : kanjiColor '#D4AF37' (or Zenitsu) au lieu de '#3b82f6' (bleu incohérent)
+  2: { bg:'#1a1400', lines:['ÉMETTEUR…','… ET RÉCEPTEUR !!','Qui envoie ? Qui reçoit ?'], kanji:'送受 !!', kanjiColor:'#D4AF37', bubble:"Thunder Breathing ! Qui émet ? Qui reçoit ? Réponds VITE !" },
   3: { bg:'#001a05', lines:['TROIS…','… TYPES DE SIGNAUX !!','Lumineux, Sonore, Électrique !'], kanji:'三種 !!', kanjiColor:'#22c55e', bubble:"BEAST BREATHING ! Nomme les 3 types de signaux ou tu affrontes mes doubles sabres !" },
   4: { bg:'#1a0e00', lines:['CODE…','… MORSE !!','Points et traits vers la victoire !'], kanji:'電信 !!', kanjiColor:'#D4AF37', bubble:"Water Breathing Form 11 ! Le télégraphe de Morse n'a aucun secret pour moi !" },
   5: { bg:'#00051a', lines:['ONDES…','… RADIO !!','Les signaux invisibles t\'entourent !'], kanji:'電波 !!', kanjiColor:'#7B5FA0', bubble:"Insect Breathing ! Je détecte chaque onde radio. Toi aussi, tu peux !" },

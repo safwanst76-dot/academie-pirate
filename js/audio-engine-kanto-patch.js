@@ -18,24 +18,30 @@
   // Mapping track-id → fichier MP3 dans Supabase
   // Les noms doivent correspondre exactement à ce qui a été uploadé
   var SUPABASE_FILES = {
+    // ✅ CORRECTION : 'kanto-theme' ajouté (router.js l'appelait, causait un silence)
+    'kanto-theme':   'bgm_map.mp3',
     'kanto-map':     'bgm_map.mp3',
     'kanto-battle':  'bgm_battle.mp3',
     'kanto-victory': 'bgm_victory.mp3',
     'kanto-boss':    'bgm_boss.mp3',
     'kanto-quiz':    'bgm_quiz.mp3',
-    'kanto-isle':    'bgm_01.mp3',   // musique d'île générique DS
+    'kanto-isle':    'bgm_01.mp3',
     'kanto-isle-1':  'bgm_01.mp3',
     'kanto-isle-2':  'bgm_02.mp3',
     'kanto-isle-3':  'bgm_03.mp3',
     'kanto-isle-4':  'bgm_map.mp3',
     'kanto-isle-5':  'bgm_battle.mp3',
-    'kanto-isle-6':  'bgm_quiz.mp3',
-    'kanto-isle-7':  'bgm_01.mp3',
+    // ✅ CORRECTION : île 6 → bgm_01 (épique Rengoku, pas bgm_quiz)
+    'kanto-isle-6':  'bgm_01.mp3',
+    // ✅ CORRECTION : île 7 → bgm_02 (différent de île 1)
+    'kanto-isle-7':  'bgm_02.mp3',
     'kanto-isle-8':  'bgm_boss.mp3',
   };
 
   // Fallback YouTube si Supabase ET local sont indisponibles
   var YT_IDS = {
+    // ✅ CORRECTION : 'kanto-theme' ajouté
+    'kanto-theme':   '4o6wKKUB4z8',
     'kanto-map':     '4o6wKKUB4z8',  // Kamado Tanjiro no Uta
     'kanto-battle':  'rD2Kj3ivNME',  // Gurenge
     'kanto-victory': 'SVhHhtG4DPM',  // Flame Hashira Theme
@@ -47,8 +53,9 @@
     'kanto-isle-3':  '1mlLv97kxFI',
     'kanto-isle-4':  '4o6wKKUB4z8',
     'kanto-isle-5':  'rD2Kj3ivNME',
-    'kanto-isle-6':  'BqVnDDjSIiM',
-    'kanto-isle-7':  'lawxxhiqEGc',
+    // ✅ CORRECTION : cohérent avec SUPABASE_FILES
+    'kanto-isle-6':  'lawxxhiqEGc',
+    'kanto-isle-7':  'CEp-alXpKYI',
     'kanto-isle-8':  'SVhHhtG4DPM',
   };
 
