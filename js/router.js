@@ -57,19 +57,19 @@ function hideAll() {
   const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'none';
 
-  // ── KANTO : MASQUER LES SECTIONS (IDs exacts du HTML) ──
+  // ── KANTO : MASQUER LES SECTIONS ──
   const kantoIles = document.getElementById('kanto-iles-sec');
   if (kantoIles) kantoIles.style.display = 'none';
-  
   const kantoQuiz = document.getElementById('kanto-quiz-sec');
   if (kantoQuiz) kantoQuiz.style.display = 'none';
-  
   const kantoBg = document.getElementById('kanto-bg');
   if (kantoBg) kantoBg.classList.remove('visible');
-  // ── FIN BLOC KANTO ──
+
+  // ✅ FIX double fond : restaurer #manga-bg quand on quitte Kanto
+  const mangaBg = document.getElementById('manga-bg');
+  if (mangaBg) mangaBg.style.display = '';
 
   // Panneau continent
-  // ✅ CORRECTION : ?. remplacé par if() pour compatibilité navigateur
   if (typeof hideContinentPanel === 'function') hideContinentPanel();
 }
 
@@ -172,6 +172,10 @@ function showHistoire() {
 // ══════════════════════════════
 function showKanto() {
   hideAll();
+
+  // ✅ FIX double fond : masquer le fond One Piece quand Kanto est actif
+  const mangaBg = document.getElementById('manga-bg');
+  if (mangaBg) mangaBg.style.display = 'none';
   
   // Afficher la section îles Kanto
   const kantoIles = document.getElementById('kanto-iles-sec');
@@ -188,13 +192,11 @@ function showKanto() {
   const kantoBg = document.getElementById('kanto-bg');
   if (kantoBg) kantoBg.classList.add('visible');
   
-  // ✅ CORRECTION : 'kanto-map' au lieu de 'kanto-theme' (inexistant dans audio patch)
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') {
     setTimeout(function() { playBGM('kanto-map'); }, 300);
   }
 
-  // ✅ CORRECTION : déléguer les fonctions async à quiz-kanto.js
   if (typeof loadKantoAssets   === 'function') loadKantoAssets();
   if (typeof loadKantoProgress === 'function') loadKantoProgress();
   if (typeof loadKantoBgStrips === 'function') loadKantoBgStrips();

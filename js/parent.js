@@ -41,6 +41,13 @@ async function showParentDashboard() {
   if (!container) return;
 
   var email = user ? (user.email || '') : '';
+
+  // ✅ Afficher le nom du parent dans le header
+  var displayName = email.split('@')[0] || '👤';
+  var parentBtn  = document.getElementById('headerParentBtn');
+  var parentNameEl = document.getElementById('headerParentName');
+  if (parentBtn) parentBtn.style.display = 'flex';
+  if (parentNameEl) parentNameEl.textContent = '👤 ' + displayName;
   var childrenHtml = '';
 
   if (children.length === 0) {

@@ -113,10 +113,15 @@
       <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
     </div>
     <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
-    <!-- ✅ NOUVEAU : Bouton Carte permanent — visible sur toutes les pages sauf login -->
-    <button class="header-carte-btn" onclick="navigateTo('carte')" title="Carte du monde">
-      🗺️ Carte
-    </button>
+    <!-- ✅ NOUVEAU : Bouton Carte permanent + accès compte parent -->
+    <div class="header-right">
+      <button class="header-carte-btn" onclick="navigateTo('carte')" title="Carte du monde">
+        🗺️ Carte
+      </button>
+      <div class="header-parent-btn" id="headerParentBtn" onclick="navigateTo('parent')" title="Mon compte" style="display:none">
+        <span id="headerParentName">👤</span>
+      </div>
+    </div>
   </div>
   <div class="logo-sub">Maîtrise la grammaire — Conquiers les Mers !</div>
   <div class="hud">

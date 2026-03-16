@@ -88,8 +88,15 @@ header::before {
   line-height: 1.1;
 }
 
+/* ✅ NOUVEAU — Conteneur droit : Carte + nom parent groupés */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
 /* ✅ NOUVEAU — Bouton Carte permanent dans le header
-   Remplace .header-spacer qui était vide
    Visible sur toutes les pages sauf login (masqué via body.login-active) */
 .header-carte-btn {
   font-family: 'Bangers', cursive;
@@ -113,6 +120,31 @@ header::before {
   transform: scale(1.05);
 }
 .header-carte-btn:active { transform: scale(.97); }
+
+/* ✅ NOUVEAU — Bouton nom du parent connecté */
+.header-parent-btn {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.65rem, 1.8vw, .8rem);
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.06);
+  border: 1.5px solid rgba(255,255,255,.15);
+  border-radius: 20px;
+  padding: 4px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background .2s, border-color .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.header-parent-btn:hover {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.35);
+  color: #fff;
+}
 
 /* ── Rangée 2 : sous-titre ── */
 .logo-sub {
