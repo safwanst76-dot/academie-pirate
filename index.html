@@ -7,7 +7,6 @@
 <title>☠️ Académie Pirate — One Piece Quiz</title>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 
-<!-- CSS — ordre : base → composants → pages -->
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/login.css">
@@ -19,8 +18,8 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/quiz-histoire.css">
 <link rel="stylesheet" href="css/quiz-kanto.css">
+<link rel="stylesheet" href="css/parent.css">
 
-<!-- JS — libs externes -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -114,7 +113,10 @@
       <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
     </div>
     <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
-    <div class="header-spacer"></div>
+    <!-- ✅ NOUVEAU : Bouton Carte permanent — visible sur toutes les pages sauf login -->
+    <button class="header-carte-btn" onclick="navigateTo('carte')" title="Carte du monde">
+      🗺️ Carte
+    </button>
   </div>
   <div class="logo-sub">Maîtrise la grammaire — Conquiers les Mers !</div>
   <div class="hud">
@@ -139,7 +141,7 @@
 <!-- ═══ VOICE SUBTITLE ═══ -->
 <div id="voice-sub"></div>
 
-<!-- ═══ SOUND BAR ═══ -->
+<!-- ═══ SOUND BAR — inchangée ═══ -->
 <div id="sound-bar">
   <button class="snd-btn" id="btnMusic" onclick="toggleMusic()" title="Musique">🎵 Musique</button>
   <button class="snd-btn active" id="btnSfx" onclick="toggleSfx()" title="Effets sonores">💥 Effets</button>
@@ -156,10 +158,16 @@
 <div id="kanto-bg"></div>
 
 <!-- ═══════════════════════════════════════
+     TABLEAU DE BORD PARENT
+     Rempli dynamiquement par parent.js
+═══════════════════════════════════════ -->
+<section id="parent-sec" style="display:none">
+  <div id="parent-content"></div>
+</section>
+
+<!-- ═══════════════════════════════════════
      MAGNOLIA — HISTOIRE × DBZ
 ═══════════════════════════════════════ -->
-
-<!-- HISTOIRE — LISTE DES ÎLES -->
 <section id="histoire-iles-sec" style="display:none">
   <div class="hist-map-header">
     <div class="hist-map-title">🐉 MAGNOLIA — HISTOIRE</div>
@@ -168,7 +176,6 @@
   <div class="hist-islands-grid" id="hist-islands-grid"></div>
 </section>
 
-<!-- HISTOIRE — QUIZ -->
 <section id="histoire-quiz-sec" style="display:none">
   <div class="hist-quiz-header">
     <div class="hist-quiz-title" id="hist-qTitle">ÎLE DE GOKU</div>
@@ -181,8 +188,6 @@
 <!-- ═══════════════════════════════════════
      KANTO — SCIENCES × DEMON SLAYER
 ═══════════════════════════════════════ -->
-
-<!-- KANTO — LISTE DES ÎLES -->
 <section id="kanto-iles-sec" style="display:none">
   <div class="kanto-map-header">
     <div class="kanto-map-title">⚔️ KANTO — SCIENCES</div>
@@ -191,7 +196,6 @@
   <div class="kanto-islands-grid" id="kanto-islands-grid"></div>
 </section>
 
-<!-- KANTO — QUIZ -->
 <section id="kanto-quiz-sec" style="display:none">
   <div class="kanto-quiz-header">
     <div class="kanto-quiz-title" id="kanto-qTitle">ÎLE DE TANJIRO</div>
@@ -216,7 +220,7 @@
   <div class="world-divider-line"></div>
 </div>
 
-<!-- ═══ MAP ÎLES — GRAND BLEU (One Piece / Français) ═══ -->
+<!-- ═══ MAP ÎLES — GRAND BLEU ═══ -->
 <section id="map-sec">
   <div class="sec-sub" style="font-family:'Bangers',cursive;font-size:clamp(1.2rem,3vw,1.8rem);color:#ffd700;letter-spacing:3px;font-weight:normal;margin-bottom:16px">⚓ CHOISIS TON ÎLE ET COMMENCE L'AVENTURE !</div>
   <div class="panel-frame">
@@ -291,19 +295,6 @@
   <div class="cine-bottom" id="cineBottom"></div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     JS — Ordre de chargement critique
-     1. Config Supabase
-     2. DB helpers
-     3. Données îles + images
-     4. UI utilitaires
-     5. HUD
-     6. Audio (engine + patches par monde)
-     7. Save / Avatar / Cinematic
-     8. Quiz par monde
-     9. Navigation + Auth
-     10. Init en dernier
-═══════════════════════════════════════ -->
 <script src="js/supabase.js"></script>
 <script src="js/db.js"></script>
 <script src="js/islands.js"></script>
@@ -325,8 +316,6 @@
 <script src="js/quiz-kanto.js"></script>
 <script src="js/router.js"></script>
 
-
-<!-- ═══ INIT UNIFIÉ ═══ -->
 <script>
 async function init() {
   var loadEl = document.getElementById('loading');

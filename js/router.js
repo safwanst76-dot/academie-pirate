@@ -1,40 +1,49 @@
 // ═══════════════════════════════════════════════════════
 // ROUTER — Académie Pirate
-// Hash routing : #/login | #/carte | #/iles | #/quiz | #/histoire | #/kanto
-// ✅ FIX #5 — playBGM('kanto-map') au lieu de 'kanto-theme' inexistant
-// ✅ FIX #6 — showKanto() délègue à quiz-kanto.js sans dupliquer la logique
+// Hash routing : #/login | #/parent | #/carte | #/iles | #/quiz | #/histoire | #/kanto
 // ═══════════════════════════════════════════════════════
 
-var ROUTES = {
+const ROUTES = {
   'login'    : showLogin,
+  'parent'   : showParentDashboard,
   'carte'    : showCarte,
   'iles'     : showIles,
   'quiz'     : showQuiz,
   'histoire' : showHistoire,
-  'kanto'    : showKanto,
+  'kanto'    : showKanto, 
 };
 
+// ── Sections HTML ──
 function getSection(id) { return document.getElementById(id); }
 
 function hideAll() {
+  var currentRoute = window.location.hash;
+  // Retirer le mode login du body (header redevient visible)
   document.body.classList.remove('login-active');
 
-  var login = getSection('login-screen');
+  // Login
+  const login = getSection('login-screen');
   if (login) login.classList.add('gone');
 
-  var avatar = getSection('avatar-screen');
+  // Avatar
+  const avatar = getSection('avatar-screen');
   if (avatar) avatar.classList.add('gone');
 
-  var globe = getSection('globe-sec');
+  // Tableau de bord parent
+  const parentSec = document.getElementById('parent-sec');
+  if (parentSec) parentSec.style.display = 'none';
+
+  // Globe/Carte
+  const globe = getSection('globe-sec');
   if (globe) globe.style.display = 'none';
 
-  var divider = document.querySelector('.world-divider');
+  const divider = document.querySelector('.world-divider');
   if (divider) divider.style.display = 'none';
 
-  var map = getSection('map-sec');
+  // Îles
+  const map = getSection('map-sec');
   if (map) map.style.display = 'none';
 
-  // Magnolia / Histoire
   var hIles = document.getElementById('histoire-iles-sec');
   var hQuiz = document.getElementById('histoire-quiz-sec');
   if (hIles) hIles.style.display = 'none';
@@ -44,18 +53,23 @@ function hideAll() {
   var histOv = document.getElementById('hist-overlay');
   if (histOv) histOv.classList.remove('visible');
 
-  // Grand Bleu quiz
-  var quiz = getSection('quiz-sec');
+  // Quiz
+  const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'none';
 
-  // Kanto
-  var kantoIles = document.getElementById('kanto-iles-sec');
+  // ── KANTO : MASQUER LES SECTIONS (IDs exacts du HTML) ──
+  const kantoIles = document.getElementById('kanto-iles-sec');
   if (kantoIles) kantoIles.style.display = 'none';
-  var kantoQuiz = document.getElementById('kanto-quiz-sec');
+  
+  const kantoQuiz = document.getElementById('kanto-quiz-sec');
   if (kantoQuiz) kantoQuiz.style.display = 'none';
-  var kantoBg = document.getElementById('kanto-bg');
+  
+  const kantoBg = document.getElementById('kanto-bg');
   if (kantoBg) kantoBg.classList.remove('visible');
+  // ── FIN BLOC KANTO ──
 
+  // Panneau continent
+  // ✅ CORRECTION : ?. remplacé par if() pour compatibilité navigateur
   if (typeof hideContinentPanel === 'function') hideContinentPanel();
 }
 
@@ -65,7 +79,7 @@ function hideAll() {
 function showLogin() {
   hideAll();
   document.body.classList.add('login-active');
-  var login = getSection('login-screen');
+  const login = getSection('login-screen');
   if (login) login.classList.remove('gone');
   document.title = 'Académie Pirate — Connexion';
 }
@@ -75,22 +89,32 @@ function showLogin() {
 // ══════════════════════════════
 function showCarte() {
   hideAll();
-  var globe = getSection('globe-sec');
+
+  const globe = getSection('globe-sec');
   if (globe) globe.style.display = 'flex';
-  var divider = document.querySelector('.world-divider');
+
+  const divider = document.querySelector('.world-divider');
   if (divider) divider.style.display = 'flex';
-  var panel = getSection('globe-panel');
+
+  const panel = getSection('globe-panel');
   if (panel) {
     panel.classList.remove('visible');
-    var globeSec = getSection('globe-sec');
+    const globeSec = getSection('globe-sec');
     if (globeSec && panel.parentElement !== globeSec) {
       globeSec.appendChild(panel);
-      panel.style.cssText = 'position:relative;bottom:auto;left:auto;transform:none;width:100%;max-width:min(680px,96vw);border-radius:16px;border:2px solid rgba(255,215,0,.2);margin-top:16px;display:none;';
+      panel.style.cssText = `
+        position: relative; bottom: auto; left: auto;
+        transform: none; width: 100%; max-width: min(680px, 96vw);
+        border-radius: 16px; border: 2px solid rgba(255,215,0,.2);
+        margin-top: 16px; display: none;
+      `;
     }
   }
+
   document.title = 'Académie Pirate — Carte du Monde';
+
   if (typeof buildTreasureMap === 'function') {
-    var container = getSection('globe-container');
+    const container = getSection('globe-container');
     if (container && !container.querySelector('svg')) buildTreasureMap();
   }
 }
@@ -100,7 +124,7 @@ function showCarte() {
 // ══════════════════════════════
 function showIles() {
   hideAll();
-  var map = getSection('map-sec');
+  const map = getSection('map-sec');
   if (map) map.style.display = 'block';
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') playBGM('map');
@@ -108,17 +132,17 @@ function showIles() {
 }
 
 // ══════════════════════════════
-// PAGE : QUIZ GRAND BLEU
+// PAGE : QUIZ
 // ══════════════════════════════
 function showQuiz() {
   hideAll();
-  var quiz = getSection('quiz-sec');
+  const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'block';
   document.title = 'Académie Pirate — Quiz';
 }
 
 // ══════════════════════════════
-// PAGE : HISTOIRE / MAGNOLIA
+// PAGE : HISTOIRE
 // ══════════════════════════════
 function showHistoire() {
   hideAll();
@@ -141,37 +165,41 @@ function showHistoire() {
 
 // ══════════════════════════════
 // PAGE : KANTO — Sciences × Demon Slayer
-// ✅ FIX #6 — hideAll() puis délégation TOTALE à showKanto() de quiz-kanto.js
-//    On ne duplique plus la logique ici. quiz-kanto.js est chargé après router.js,
-//    donc au moment où handleRoute() appelle ROUTES['kanto'], showKanto() de
-//    quiz-kanto.js est déjà définie et écrase cette déclaration.
-//    Cette fonction sert de FALLBACK si quiz-kanto.js n'est pas encore chargé.
+// ✅ CORRECTION : cette fonction sert de déclencheur uniquement.
+//    La vraie logique async (assets, progression, bgStrips) est dans
+//    showKanto() de quiz-kanto.js, chargé après router.js — il écrase
+//    cette déclaration au moment de l'exécution.
 // ══════════════════════════════
 function showKanto() {
   hideAll();
-  document.title = 'Académie Pirate — Kanto';
-
-  // ✅ FIX #5 — 'kanto-map' existe dans audio-engine-kanto-patch.js (plus 'kanto-theme')
+  
+  // Afficher la section îles Kanto
+  const kantoIles = document.getElementById('kanto-iles-sec');
+  if (kantoIles) kantoIles.style.display = 'block';
+  
+  // Masquer la section quiz
+  const kantoQuiz = document.getElementById('kanto-quiz-sec');
+  if (kantoQuiz) kantoQuiz.style.display = 'none';
+  
+  // Charger la grille d'îles (définie dans quiz-kanto.js)
+  if (typeof buildKantoGrid === 'function') buildKantoGrid();
+  
+  // Background Kanto
+  const kantoBg = document.getElementById('kanto-bg');
+  if (kantoBg) kantoBg.classList.add('visible');
+  
+  // ✅ CORRECTION : 'kanto-map' au lieu de 'kanto-theme' (inexistant dans audio patch)
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') {
     setTimeout(function() { playBGM('kanto-map'); }, 300);
   }
 
-  // Afficher la section îles
-  var kantoIles = document.getElementById('kanto-iles-sec');
-  if (kantoIles) kantoIles.style.display = 'block';
-
-  // Fond animé
-  var kantoBg = document.getElementById('kanto-bg');
-  if (kantoBg) kantoBg.classList.add('visible');
-
-  // Construire la grille si dispo (définie dans quiz-kanto.js)
-  if (typeof buildKantoGrid === 'function') buildKantoGrid();
-
-  // Charger assets et progression (fonctions async de quiz-kanto.js)
+  // ✅ CORRECTION : déléguer les fonctions async à quiz-kanto.js
   if (typeof loadKantoAssets   === 'function') loadKantoAssets();
   if (typeof loadKantoProgress === 'function') loadKantoProgress();
   if (typeof loadKantoBgStrips === 'function') loadKantoBgStrips();
+  
+  document.title = 'Académie Pirate — Kanto';
 }
 
 // ══════════════════════════════
@@ -182,69 +210,93 @@ function navigateTo(route) {
 }
 
 function getCurrentRoute() {
-  var hash = window.location.hash;
+  const hash = window.location.hash;
   if (!hash || hash === '#' || hash === '#/') return 'login';
-  return hash.replace('#/', '').split('/')[0] || 'login';
+  const route = hash.replace('#/', '').split('/')[0];
+  return route || 'login';
 }
 
 function handleRoute() {
-  var route   = getCurrentRoute();
-  var handler = ROUTES[route];
-  if (handler) { handler(); } else { navigateTo('login'); }
+  const route = getCurrentRoute();
+  const handler = ROUTES[route];
+  if (handler) {
+    handler();
+  } else {
+    navigateTo('login');
+  }
 }
 
+// ── Écouter les changements de hash ──
 window.addEventListener('hashchange', handleRoute);
 
-// ── Patches navigation ──
+// ── Patch : goBack() redirige vers iles ──
 window._originalGoBack = window.goBack;
-window.goBack = function() { navigateTo('iles'); };
+window.goBack = function() {
+  navigateTo('iles');
+};
 
+// ── Patch : startIsland() reste sur quiz ──
 window._originalStartIsland = window.startIsland;
 window.startIsland = function(n) {
-  if (typeof window._originalStartIsland === 'function') window._originalStartIsland(n);
+  if (typeof window._originalStartIsland === 'function') {
+    window._originalStartIsland(n);
+  }
   navigateTo('quiz');
 };
 
-// ── Patch showContinentPanel — affiche le panneau sous la carte ──
+// ── Patch : showContinentPanel affiche EN DESSOUS sur page carte ──
 window._originalShowContinentPanel = window.showContinentPanel;
 window.showContinentPanel = function(c) {
-  var route = getCurrentRoute();
+  const route = getCurrentRoute();
 
   if (route === 'carte') {
-    var panel = getSection('globe-panel');
+    const panel = getSection('globe-panel');
     if (!panel) return;
-    var globeSec = getSection('globe-sec');
-    if (globeSec && panel.parentElement !== globeSec) globeSec.appendChild(panel);
 
-    panel.style.cssText = 'position:relative;bottom:auto;left:auto;transform:none;' +
-      'width:100%;max-width:min(680px,96vw);border-radius:16px;' +
-      'border:2px solid rgba(255,215,0,.25);margin-top:16px;' +
-      'display:flex;flex-direction:column;gap:14px;' +
-      'background:linear-gradient(160deg,#0a0d1a 0%,#120820 100%);' +
-      'padding:24px 20px;box-shadow:0 8px 40px rgba(0,0,0,.5);';
+    const globeSec = getSection('globe-sec');
+    if (globeSec && panel.parentElement !== globeSec) {
+      globeSec.appendChild(panel);
+    }
 
-    var targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'french' ? 'iles' : c.id;
+    panel.style.cssText = `
+      position: relative; bottom: auto; left: auto; transform: none;
+      width: 100%; max-width: min(680px, 96vw);
+      border-radius: 16px; border: 2px solid rgba(255,215,0,.25);
+      margin-top: 16px; display: flex; flex-direction: column; gap: 14px;
+      background: linear-gradient(160deg, #0a0d1a 0%, #120820 100%);
+      padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
+    `;
 
-    var charsHtml = c.chars.map(function(ch, i) {
-      return '<span class="gp-char-badge" style="border-color:' + c.charColors[i] + '55;color:' + c.charColors[i] + '">👤 ' + ch + '</span>';
-    }).join('');
+    // 🔧 FIX : Gérer history, kanto, et le reste
+    const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : 'iles';
 
-    var playBtn = c.locked
-      ? '<div class="gp-locked-msg">🔒 Bientôt disponible !</div>'
-      : '<button class="gp-play-btn" style="background:linear-gradient(135deg,' + c.color + ',' + c.color + '99)" onclick="navigateTo(\'' + targetRoute + '\')">⚔️ COMMENCER L\'AVENTURE !</button>';
+    panel.innerHTML = `
+      <div class="gp-header">
+        <div class="gp-emoji">${c.emoji}</div>
+        <div>
+          <div class="gp-name">${c.name}</div>
+          <div class="gp-universe" style="color:${c.color}">${c.universe}</div>
+        </div>
+      </div>
+      <div class="gp-subject">📚 ${c.subject}</div>
+      <div class="gp-desc">${c.desc}</div>
+      <div class="gp-chars">
+        ${c.chars.map((ch, i) => `
+          <span class="gp-char-badge" style="border-color:${c.charColors[i]}55;color:${c.charColors[i]}">
+            👤 ${ch}
+          </span>`).join('')}
+      </div>
+      ${c.locked
+        ? `<div class="gp-locked-msg">🔒 Bientôt disponible !</div>`
+        : `<button class="gp-play-btn"
+             style="background:linear-gradient(135deg,${c.color},${c.color}99)"
+             onclick="navigateTo('${targetRoute}')">
+             ⚔️ COMMENCER L'AVENTURE !
+           </button>`
+      }
+    `;
 
-    panel.innerHTML =
-      '<div class="gp-header">' +
-        '<div class="gp-emoji">' + c.emoji + '</div>' +
-        '<div><div class="gp-name">' + c.name + '</div>' +
-        '<div class="gp-universe" style="color:' + c.color + '">' + c.universe + '</div></div>' +
-      '</div>' +
-      '<div class="gp-subject">📚 ' + c.subject + '</div>' +
-      '<div class="gp-desc">' + c.desc + '</div>' +
-      '<div class="gp-chars">' + charsHtml + '</div>' +
-      playBtn;
-
-    setTimeout(function() { panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 100);
+    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 
   } else {
     if (typeof window._originalShowContinentPanel === 'function') {
@@ -253,31 +305,66 @@ window.showContinentPanel = function(c) {
   }
 };
 
+// ── Patch : hideContinentPanel ──
 window.hideContinentPanel = function() {
-  var panel = getSection('globe-panel');
+  const panel = getSection('globe-panel');
   if (panel) {
     panel.classList.remove('visible');
     if (getCurrentRoute() === 'carte') panel.style.display = 'none';
   }
-  var overlay = getSection('globe-overlay');
+  const overlay = getSection('globe-overlay');
   if (overlay) overlay.classList.remove('visible');
 };
 
-function buildNavBar() {}
+// ══════════════════════════════
+// NAVIGATION UI — supprimée (boutons Carte/Îles gérés par header)
+// ══════════════════════════════
+function buildNavBar() {
+  // Désactivé — la navbar #pirate-nav est masquée via CSS header.css
+}
+
 function updateNavActive() {}
 
 // ══════════════════════════════
 // INIT
 // ══════════════════════════════
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
+  // Magic link Supabase : le hash contient access_token
+  // On laisse Supabase traiter la session AUTH, puis on redirige vers le tableau de bord parent
   if (window.location.hash.includes("access_token")) {
-    console.log("🔑 Magic link détecté — router suspendu");
+    console.log("🔑 Magic link détecté — attente traitement Supabase…");
+
+    var _mlChecks = 0;
+    var _mlInterval = setInterval(function() {
+      _mlChecks++;
+      var h = window.location.hash;
+      // Supabase a nettoyé le hash → auth terminée
+      if (!h.includes("access_token")) {
+        clearInterval(_mlInterval);
+        console.log("🔑 Auth terminée — redirection vers tableau de bord parent");
+        navigateTo('parent');
+      }
+      // Timeout 5s — forcer la redirection
+      if (_mlChecks > 50) {
+        clearInterval(_mlInterval);
+        console.log("🔑 Timeout — redirection forcée vers parent");
+        window.location.hash = '';
+        navigateTo('parent');
+      }
+    }, 100);
+
+    window.addEventListener('hashchange', updateNavActive);
     return;
   }
+
+  // Si pas de hash → login
   if (!window.location.hash || window.location.hash === '#') {
     navigateTo('login');
   } else {
     handleRoute();
   }
+
   window.addEventListener('hashchange', updateNavActive);
 });
+
+// ── CSS navbar retiré (géré par header.css) ──

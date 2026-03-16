@@ -35,7 +35,7 @@ header::before {
   );
 }
 
-/* ── Rangée 1 : avatar gauche | logo centré | spacer droit ── */
+/* ── Rangée 1 : avatar gauche | logo centré | bouton carte droit ── */
 .header-top {
   display: flex !important;
   align-items: center;
@@ -88,7 +88,31 @@ header::before {
   line-height: 1.1;
 }
 
-.header-spacer { min-width: 48px; flex-shrink: 0; }
+/* ✅ NOUVEAU — Bouton Carte permanent dans le header
+   Remplace .header-spacer qui était vide
+   Visible sur toutes les pages sauf login (masqué via body.login-active) */
+.header-carte-btn {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.75rem, 2.2vw, .95rem);
+  letter-spacing: 1.5px;
+  color: var(--gold);
+  background: rgba(255, 215, 0, .1);
+  border: 1.5px solid rgba(255, 215, 0, .4);
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  min-width: 70px;
+  transition: background .2s, border-color .2s, transform .15s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.header-carte-btn:hover {
+  background: rgba(255, 215, 0, .22);
+  border-color: var(--gold);
+  transform: scale(1.05);
+}
+.header-carte-btn:active { transform: scale(.97); }
 
 /* ── Rangée 2 : sous-titre ── */
 .logo-sub {
@@ -210,12 +234,14 @@ body.login-active #voice-sub {
   .logo { font-size: clamp(1.6rem, 4vw, 2.4rem) !important; }
   .logo-sub { display: block; }
   .bdg { font-size: 1.3rem; }
+  .header-carte-btn { font-size: .9rem; padding: 6px 16px; }
 }
 
 /* Desktop (≥ 1024px) */
 @media (min-width: 1024px) {
   header { padding: 10px 32px 12px; }
   .logo { font-size: 2.2rem !important; }
+  .header-carte-btn { font-size: 1rem; padding: 7px 18px; }
 }
 
 /* Mobile serré (< 380px) */
@@ -226,4 +252,5 @@ body.login-active #voice-sub {
   .logo-sub { display: none; }
   .badges { gap: 5px; }
   .bdg { font-size: .9rem; }
+  .header-carte-btn { font-size: .7rem; padding: 4px 9px; min-width: 56px; }
 }
