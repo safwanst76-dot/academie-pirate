@@ -94,9 +94,18 @@ async function showParentDashboard() {
     '</div>' +
 
     '<div class="pd-section">' +
-      '<button class="pd-btn-play" onclick="showChildSelect()">🎮 JOUER MAINTENANT</button>' +
+      '<button class="pd-btn-play" id="pd-play-btn">🎮 JOUER MAINTENANT</button>' +
       '<button class="pd-btn-logout" onclick="handleLogout()">← Se déconnecter</button>' +
     '</div>';
+
+  // ✅ Attacher le listener "Jouer" APRÈS injection HTML
+  // Utilise les enfants déjà chargés (_pdChildren) sans appel DB supplémentaire
+  var playBtn = document.getElementById('pd-play-btn');
+  if (playBtn) {
+    playBtn.addEventListener('click', function() {
+      _pdLaunchChildSelect(children);
+    });
+  }
 
   // ✅ Attacher les listeners après injection du HTML (évite tout onclick inline avec data)
   container.querySelectorAll('.pd-child-card[data-child-id]').forEach(function(card) {
@@ -106,6 +115,40 @@ async function showParentDashboard() {
       if (childObj) showChildResults(cid, childObj);
     });
   });
+}
+
+// ══════════════════════════════════════════════════════════════
+// LANCER LA SÉLECTION D'ENFANT (sans rechargement DB)
+// Utilise les enfants déjà chargés depuis showParentDashboard()
+// → évite le lock Supabase et les appels DB redondants
+// ══════════════════════════════════════════════════════════════
+function _pdLaunchChildSelect(cachedChildren) {
+  // Si child-select.js est disponible et que la session est stable → l'utiliser
+  // Sinon : si 1 seul enfant → le sélectionner directement
+  // Si plusieurs : afficher un mini-sélecteur interne
+
+  if (cachedChildren && cachedChildren.length === 1) {
+    // Un seul enfant → sélection directe sans overlay
+    var child = cachedChildren[0];
+    if (typeof dbSetActiveChild === 'function') dbSetActiveChild(child);
+    if (typeof loadProgress === 'function') loadProgress();
+    if (typeof navigateTo === 'function') navigateTo('carte');
+    return;
+  }
+
+  // Plusieurs enfants ou 0 → utiliser showChildSelect() normal
+  // mais avec un fallback si ça échoue
+  try {
+    if (typeof showChildSelect === 'function') {
+      showChildSelect();
+    } else {
+      // showChildSelect indisponible → naviguer vers la carte directement
+      if (typeof navigateTo === 'function') navigateTo('carte');
+    }
+  } catch(e) {
+    console.warn('[Parent] showChildSelect error:', e.message);
+    if (typeof navigateTo === 'function') navigateTo('carte');
+  }
 }
 
 // ══════════════════════════════════════════════════════════════
