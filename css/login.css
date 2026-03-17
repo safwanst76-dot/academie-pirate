@@ -293,3 +293,15 @@ body.login-active #voice-sub {
   #login-child-pin-wrap { gap: 5px !important; }
   .login-tab { font-size: .7rem !important; padding: 10px 4px !important; }
 }
+
+/* ── Fix carré jaune : cacher la bordure de l'avatar quand l'image est vide ── */
+/* header.css applique border:2.5px solid var(--gold) sur .hud-avatar img
+   Quand src="" l'img est hidden (display:none) mais son espace reste.
+   On cache toute la bordure quand l'img est masquée. */
+.hud-avatar img[style*="display:none"],
+.hud-avatar img:not([src]),
+.hud-avatar img[src=""] {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}

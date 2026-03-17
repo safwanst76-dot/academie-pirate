@@ -138,7 +138,10 @@
 <header id="hdr">
   <div class="header-top">
     <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
-      <img id="headerAvatarImg" src="" alt="avatar" onerror="this.src=''">
+      <img id="headerAvatarImg" src="" alt="avatar"
+           style="display:none"
+           onerror="this.style.display='none'"
+           onload="this.style.display=(this.src&&this.src!==window.location.href)?'block':'none'">
       <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
     </div>
     <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
@@ -382,7 +385,6 @@
 ==================================================-->
 <script src="js/supabase.js"></script>
 <script src="js/db.js"></script>
-<script src="js/db-patch.js"></script>
 <script src="js/islands.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/hud.js"></script>
@@ -390,7 +392,6 @@
 <script src="js/audio-engine-dbz-patch.js"></script>
 <script src="js/audio-engine-kanto-patch.js"></script>
 <script src="js/save.js"></script>
-<script src="js/save-patch.js"></script>
 <script src="js/avatar.js"></script>
 <script src="js/cinematic.js"></script>
 <script src="js/quiz.js"></script>

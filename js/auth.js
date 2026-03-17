@@ -931,7 +931,10 @@ async function afLaunchChild(child) {
   // Mettre à jour le header avec l'avatar de l'enfant
   var img  = document.getElementById('headerAvatarImg');
   var name = document.getElementById('headerAvatarName');
-  if (img)  img.src  = 'assets/images/avatars/' + (child.avatar_id || 'luffy') + '.png';
+  if (img) {
+    img.src = 'assets/images/avatars/' + (child.avatar_id || 'luffy') + '.png';
+    img.style.display = 'block';
+  }
   if (name) name.textContent = child.username;
 
   // Charger la progression DB de l'enfant

@@ -112,9 +112,22 @@ function showCarte() {
 
   document.title = 'Académie Pirate — Carte du Monde';
 
+  // globe.js renomme globe-container → treasure-map lors du premier appel.
+  // On cherche les deux IDs et on reconstruit si aucun SVG trouvé.
   if (typeof buildTreasureMap === 'function') {
-    const container = getSection('globe-container');
-    if (container && !container.querySelector('svg')) buildTreasureMap();
+    const container = getSection('globe-container') || getSection('treasure-map');
+    if (!container) {
+      // Le div n'existe pas encore — le créer dynamiquement
+      const globeSec = getSection('globe-sec');
+      if (globeSec) {
+        const div = document.createElement('div');
+        div.id = 'globe-container';
+        globeSec.insertBefore(div, globeSec.firstChild.nextSibling || null);
+      }
+      buildTreasureMap();
+    } else if (!container.querySelector('svg')) {
+      buildTreasureMap();
+    }
   }
 }
 
