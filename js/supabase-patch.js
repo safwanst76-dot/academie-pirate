@@ -139,21 +139,62 @@
     }
   });
 
-  // ── 8. Exposer switchLoginTab si non défini ──
-  if (typeof window.switchLoginTab === 'undefined') {
-    window.switchLoginTab = function (tab) {
-      var tabNew    = document.getElementById('tabNew');
-      var tabReturn = document.getElementById('tabReturn');
-      var label     = document.getElementById('loginFormLabel');
-      var hint      = document.getElementById('loginFormHint');
-      if (tabNew)    tabNew.classList.toggle('active', tab === 'new');
-      if (tabReturn) tabReturn.classList.toggle('active', tab === 'return');
-      if (label) label.textContent = tab === 'new' ? '⚓ Ton email de pirate' : '⚓ Ton email capitaine';
-      if (hint)  hint.textContent  = tab === 'new'
-        ? 'Tu recevras un lien par email — pas de mot de passe !'
-        : 'On t\'envoie un lien de connexion instantané !';
-    };
-  }
+  // ── 8. switchLoginTab — gère 3 onglets : new | return | child ──
+  window.switchLoginTab = function (tab) {
+    var tabNew    = document.getElementById('tabNew');
+    var tabReturn = document.getElementById('tabReturn');
+    var tabChild  = document.getElementById('tabChild');
+    var step1     = document.getElementById('loginStep1');
+    var step2     = document.getElementById('loginStep2');
+    var childForm = document.getElementById('loginChildForm');
+    var label     = document.getElementById('loginFormLabel');
+    var hint      = document.getElementById('loginFormHint');
+
+    [tabNew, tabReturn, tabChild].forEach(function(t){ if(t) t.classList.remove('active'); });
+    if (step1)     step1.style.display     = 'none';
+    if (step2)     step2.style.display     = 'none';
+    if (childForm) childForm.style.display = 'none';
+
+    if (tab === 'child') {
+      if (tabChild)  tabChild.classList.add('active');
+      if (childForm) { childForm.style.display = 'flex'; childForm.style.flexDirection = 'column'; childForm.style.gap = '14px'; }
+      if (typeof afLoginChildByPin === 'function') afLoginChildByPin();
+    } else {
+      if (tab === 'new') {
+        if (tabNew) tabNew.classList.add('active');
+        if (label)  label.textContent = '⚓ Ton email de pirate';
+        if (hint)   hint.textContent  = 'Tu recevras un lien par email — pas de mot de passe !';
+      } else {
+        if (tabReturn) tabReturn.classList.add('active');
+        if (label)     label.textContent = '⚓ Ton email capitaine';
+        if (hint)      hint.textContent  = 'On t\'envoie un lien de connexion instantané !';
+      }
+      if (step1) { step1.style.display = 'flex'; step1.style.flexDirection = 'column'; step1.style.gap = '12px'; }
+      var emailInp = document.getElementById('loginEmail');
+      if (emailInp) setTimeout(function(){ emailInp.focus(); }, 80);
+    }
+  };
+
+  // ── 9. loginPinInput / loginPinKey — navigation cases PIN ──
+  window.loginPinInput = function (e, idx) {
+    var val = e.target.value.replace(/\D/g, '');
+    e.target.value = val.slice(-1);
+    if (val && idx < 5) {
+      var next = document.getElementById('login-child-pin-' + (idx + 1));
+      if (next) next.focus();
+    }
+    var pin = '';
+    for (var i = 0; i < 6; i++) { var ip = document.getElementById('login-child-pin-' + i); pin += ip ? (ip.value||'') : ''; }
+    if (pin.length === 6) setTimeout(function(){ if (typeof afSubmitChildPinLogin === 'function') afSubmitChildPinLogin(); }, 120);
+  };
+
+  window.loginPinKey = function (e, idx) {
+    if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+      var prev = document.getElementById('login-child-pin-' + (idx - 1));
+      if (prev) { prev.value = ''; prev.focus(); }
+    }
+    if (e.key === 'Enter') { if (typeof afSubmitChildPinLogin === 'function') afSubmitChildPinLogin(); }
+  };
 
   console.info('🏴‍☠️ supabase-patch.js v3 chargé — auth.js branché');
 })();

@@ -40,10 +40,15 @@
     </div>
     <div class="login-title">🏴‍☠️ ACADÉMIE PIRATE</div>
     <div class="login-subtitle">Rejoins l'équipage !</div>
+
+    <!-- 3 onglets : Nouveau · Parent · Enfant -->
     <div class="login-tabs">
-      <button class="login-tab active" id="tabNew" onclick="switchLoginTab('new')">✨ Nouveau</button>
-      <button class="login-tab" id="tabReturn" onclick="switchLoginTab('return')">⚓ Déjà un compte</button>
+      <button class="login-tab active" id="tabNew"    onclick="switchLoginTab('new')">✨ Nouveau</button>
+      <button class="login-tab"        id="tabReturn" onclick="switchLoginTab('return')">⚓ Parent</button>
+      <button class="login-tab"        id="tabChild"  onclick="switchLoginTab('child')">👶 Enfant</button>
     </div>
+
+    <!-- Formulaire parent (magic link) -->
     <div class="login-form" id="loginStep1">
       <div class="login-label" id="loginFormLabel">⚓ Ton email de pirate</div>
       <input class="login-input" id="loginEmail" type="email"
@@ -52,11 +57,54 @@
       <button class="login-btn" onclick="sbSendMagicLink()">🚀 ENVOYER LE LIEN MAGIQUE !</button>
       <div class="login-hint" id="loginFormHint">Tu recevras un lien par email — pas de mot de passe !</div>
     </div>
+
+    <!-- Étape 2 confirmation email -->
     <div id="loginStep2" style="display:none;flex-direction:column;align-items:center;gap:12px;text-align:center;">
       <div style="font-size:3rem">🏴‍☠️</div>
       <div class="login-step2-title">Lien envoyé, Capitaine !</div>
       <div class="login-step2-text">Vérifie ta boîte mail et clique sur le lien magique !</div>
     </div>
+
+    <!-- Formulaire enfant (PIN 6 chiffres) -->
+    <div class="login-form" id="loginChildForm" style="display:none">
+      <div style="text-align:center">
+        <div style="font-size:2rem;margin-bottom:4px">🧒</div>
+        <div class="login-label" style="text-align:center;display:block;margin-bottom:4px">
+          Entre ton code secret
+        </div>
+        <div style="font-family:'Nunito',sans-serif;font-size:.75rem;
+             color:rgba(255,255,255,.35);margin-bottom:12px">
+          Ton parent t'a donné un code à 6 chiffres
+        </div>
+      </div>
+      <div id="login-child-pin-wrap" style="display:flex;gap:8px;justify-content:center">
+        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
+          id="login-child-pin-0" autocomplete="off" class="login-pin-input"
+          onkeydown="loginPinKey(event,0)" oninput="loginPinInput(event,0)">
+        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
+          id="login-child-pin-1" autocomplete="off" class="login-pin-input"
+          onkeydown="loginPinKey(event,1)" oninput="loginPinInput(event,1)">
+        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
+          id="login-child-pin-2" autocomplete="off" class="login-pin-input"
+          onkeydown="loginPinKey(event,2)" oninput="loginPinInput(event,2)">
+        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
+          id="login-child-pin-3" autocomplete="off" class="login-pin-input"
+          onkeydown="loginPinKey(event,3)" oninput="loginPinInput(event,3)">
+        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
+          id="login-child-pin-4" autocomplete="off" class="login-pin-input"
+          onkeydown="loginPinKey(event,4)" oninput="loginPinInput(event,4)">
+        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
+          id="login-child-pin-5" autocomplete="off" class="login-pin-input"
+          onkeydown="loginPinKey(event,5)" oninput="loginPinInput(event,5)">
+      </div>
+      <div id="login-child-pin-error" style="display:none;font-family:'Nunito',sans-serif;
+           font-size:.8rem;font-weight:800;color:#f87171;text-align:center;padding:4px 0;"></div>
+      <button class="login-btn" id="login-child-pin-btn" onclick="afSubmitChildPinLogin()"
+        style="background:linear-gradient(135deg,#7b5fa0,#4f46e5)">
+        🏴‍☠️ ENTRER !
+      </button>
+    </div>
+
     <div class="login-sep"><span>OU</span></div>
     <button class="login-skip" onclick="skipLogin()">Jouer sans compte →</button>
   </div>

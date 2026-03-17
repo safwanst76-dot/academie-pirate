@@ -42,9 +42,11 @@ async function _getChildren(parentId) {
 
 async function _createParentProfile(userId, email, prenom, nom, phone) {
   var res = await sb.from('profiles_parents').upsert({
-    id: userId, email: email, prenom: prenom, nom: nom,
-    phone: phone || null,
-    created_at: new Date().toISOString()
+    id:     userId,
+    email:  email,
+    prenom: prenom,
+    nom:    nom,
+    phone:  phone || null
   }, { onConflict: 'id' }).select().maybeSingle();
   return res.data || null;
 }
@@ -55,11 +57,10 @@ async function _createChildProfile(parentId, username, avatarId, pin) {
     parent_id: parentId,
     username:  username,
     avatar_id: avatarId || 'luffy',
-    pin_hash:  pinHash,
     pin:       pin,
+    pin_hash:  pinHash,
     xp_total:  0,
-    level:     1,
-    created_at: new Date().toISOString()
+    level:     1
   }).select().maybeSingle();
   return res.data || null;
 }
@@ -944,3 +945,59 @@ window.afHidePinEntry        = afHidePinEntry;
 window.afSignOut             = afSignOut;
 
 console.info('🏴‍☠️ auth-flow.js v2 chargé — Parent onboarding + PIN enfant');
+
+// ══════════════════════════════════════════
+// LOGIN ENFANT PAR PIN — onglet "Enfant" de la page login
+// ══════════════════════════════════════════
+
+window.afLoginChildByPin     = afLoginChildByPin;
+window.afSubmitChildPinLogin = afSubmitChildPinLogin;
+
+function afLoginChildByPin() {
+  for (var i = 0; i < 6; i++) {
+    var inp = document.getElementById('login-child-pin-' + i);
+    if (inp) inp.value = '';
+  }
+  var errEl = document.getElementById('login-child-pin-error');
+  if (errEl) errEl.style.display = 'none';
+  setTimeout(function () {
+    var first = document.getElementById('login-child-pin-0');
+    if (first) first.focus();
+  }, 80);
+}
+
+async function afSubmitChildPinLogin() {
+  var pin = '';
+  for (var i = 0; i < 6; i++) {
+    var inp = document.getElementById('login-child-pin-' + i);
+    pin += inp ? (inp.value || '') : '';
+  }
+  var errEl = document.getElementById('login-child-pin-error');
+  var btn   = document.getElementById('login-child-pin-btn');
+
+  if (pin.length !== 6) {
+    if (errEl) { errEl.textContent = '⚠️ Entre les 6 chiffres de ton code !'; errEl.style.display = 'block'; }
+    return;
+  }
+  if (btn) { btn.textContent = '⏳ Vérification…'; btn.disabled = true; }
+  if (errEl) errEl.style.display = 'none';
+
+  try {
+    var res = await sb.from('child_profiles').select('*').eq('pin', pin).maybeSingle();
+    if (!res.data) {
+      if (errEl) { errEl.textContent = '❌ Code incorrect. Demande le bon PIN à ton parent !'; errEl.style.display = 'block'; }
+      var wrap = document.getElementById('login-child-pin-wrap');
+      if (wrap) { wrap.style.animation = 'none'; void wrap.offsetWidth; wrap.style.animation = 'pinShake .4s ease'; }
+      for (var j = 0; j < 6; j++) { var ip = document.getElementById('login-child-pin-' + j); if (ip) ip.value = ''; }
+      var first = document.getElementById('login-child-pin-0');
+      if (first) first.focus();
+      return;
+    }
+    if (typeof showToast === 'function') showToast('🏴‍☠️ Bienvenue ' + res.data.username + ' !');
+    afLaunchChild(res.data);
+  } catch (e) {
+    if (errEl) { errEl.textContent = '❌ Erreur : ' + e.message; errEl.style.display = 'block'; }
+  } finally {
+    if (btn) { btn.textContent = '🏴‍☠️ ENTRER !'; btn.disabled = false; }
+  }
+}
