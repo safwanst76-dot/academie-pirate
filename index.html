@@ -513,35 +513,19 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function () {
     if (typeof KANTO_STORAGE === 'undefined') return;
 
-    // Corriger l'avatar de Shinobu si c'est le même que Giyu
-    var imgGiyu    = KANTO_AVATARS && KANTO_AVATARS[4];
-    var imgShinobu = KANTO_AVATARS && KANTO_AVATARS[5];
-    if (imgGiyu && imgShinobu && imgGiyu === imgShinobu) {
-      // Les deux pointent sur la même URL — corriger Shinobu
-      KANTO_AVATARS[5] = KANTO_STORAGE + '/characters/mitsuri.jpg';
-      console.info('[fix] KANTO_AVATARS[5] corrigé → mitsuri.jpg');
-    }
-
-    // Test si shinobu.png charge, sinon utiliser mitsuri
-    var testImg = new Image();
-    testImg.onload = function () {
-      console.info('[fix] shinobu.png OK');
-    };
-    testImg.onerror = function () {
-      if (typeof KANTO_AVATARS !== 'undefined') {
-        KANTO_AVATARS[5] = KANTO_STORAGE + '/characters/mitsuri.jpg';
-        console.info('[fix] shinobu.png manquant → mitsuri.jpg');
-        // Recharger la grille si elle est déjà affichée
-        var grid = document.getElementById('kanto-islands-grid');
-        if (grid && grid.children.length > 0) {
-          grid.innerHTML = '';
-          if (typeof buildKantoGrid === 'function') buildKantoGrid();
-        }
+    // Forcer Giyu (#4) → obanai.jpeg (confirmé dans le bucket)
+    // Shinobu (#5) → shinobu.png (déjà correct)
+    setTimeout(function () {
+      if (typeof KANTO_AVATARS === 'undefined' || typeof KANTO_STORAGE === 'undefined') return;
+      KANTO_AVATARS[4] = KANTO_STORAGE + '/characters/obanai.jpeg';
+      console.info('[fix] KANTO_AVATARS[4] → obanai.jpeg');
+      // Recharger la grille si déjà affichée
+      var grid = document.getElementById('kanto-islands-grid');
+      if (grid && grid.children.length > 0) {
+        grid.innerHTML = '';
+        if (typeof buildKantoGrid === 'function') buildKantoGrid();
       }
-    };
-    if (typeof KANTO_AVATARS !== 'undefined' && KANTO_AVATARS[5]) {
-      testImg.src = KANTO_AVATARS[5];
-    }
+    }, 500);
   }, 1000);
 
   // ── Fix 3 : s'assurer que loadKantoBgStrips remplit tout l'écran ──
@@ -551,7 +535,9 @@ document.addEventListener('DOMContentLoaded', function () {
   window.loadKantoBgStrips = function () {
     var bg = document.getElementById('kanto-bg');
     if (!bg) return;
-    if (bg.children.length > 0) return; // déjà rempli
+    // Toujours s'assurer qu'il y a exactement 5 strips
+    if (bg.children.length >= 5) return;
+    bg.innerHTML = ''; // vider et reconstruire proprement
 
     if (typeof KANTO_AVATARS === 'undefined' || typeof KANTO_BOSS_AVATARS === 'undefined') {
       // Attendre que les scripts soient chargés
