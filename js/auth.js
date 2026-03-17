@@ -44,7 +44,7 @@ async function _createParentProfile(userId, email, prenom, nom, phone) {
   var res = await sb.from('profiles_parents').upsert({
     id: userId, email: email, prenom: prenom, nom: nom,
     phone: phone || null,
-    updated_at: new Date().toISOString()
+    created_at: new Date().toISOString()
   }, { onConflict: 'id' }).select().maybeSingle();
   return res.data || null;
 }
