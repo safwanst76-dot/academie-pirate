@@ -1,186 +1,76 @@
-// ═══════════════════════════════════════════════════════════
-// PARENT.JS — Académie Pirate
-// Tableau de bord parent : profil + gestion enfants + résultats
-// ✅ FIX : plus de JSON.stringify dans les attributs onclick HTML
-//    → utilise data-child-id + _pdChildren Map globale
-// ═══════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
+// PARENT.JS v2 — Académie Pirate
+// ─ Résultats enfant (showChildResults) + helpers dashboard
+// ─ showParentDashboard() est SUPPRIMÉ ici → géré par afShowParentDashboard (auth.js)
+// ─ _pdChildren : cache partagé, alimenté par auth.js ET ici
+// ═══════════════════════════════════════════════════════════════
 
-// Cache des objets enfants indexés par id — évite tout JSON dans le HTML
+// Cache global enfants (utilisé par showChildResults)
+// auth.js alimente ce cache via _bindDashboardEvents → showChildResults(id, childObj)
 var _pdChildren = {};
 
 // ── Déconnexion ──
 function handleLogout() {
-  if (typeof sbSignOut === 'function') sbSignOut();
+  if (typeof afSignOut === 'function') afSignOut();
+  else if (typeof sbSignOut === 'function') sbSignOut();
   else location.reload();
 }
 
 // ── Lien invitation ──
 function getChildInviteLink(parentEmail) {
-  var base = 'https://safwanst76-dot.github.io/academie-pirate';
-  return base + '?parent=' + encodeURIComponent(parentEmail);
+  return 'https://safwanst76-dot.github.io/academie-pirate?parent=' + encodeURIComponent(parentEmail);
 }
 
 // ══════════════════════════════════════════════════════════════
-// TABLEAU DE BORD PARENT
+// showParentDashboard() : alias vers afShowParentDashboard
+// ─ Conservé pour compatibilité avec les scripts qui appellent
+//   encore showParentDashboard() (supabase.js stubs, router.js, etc.)
+// ─ supabase-patch.js remplace ROUTES['parent'] directement mais
+//   ce stub sert de filet de sécurité.
 // ══════════════════════════════════════════════════════════════
-async function showParentDashboard() {
-  if (typeof hideAll === 'function') hideAll();
-  document.title = 'Académie Pirate — Tableau de bord';
-
-  var sec = document.getElementById('parent-sec');
-  if (sec) sec.style.display = 'block';
-
-  var user = (typeof sbGetUser === 'function') ? sbGetUser() : null;
-  var children = [];
-  try {
-    if (typeof dbGetChildren === 'function') children = await dbGetChildren() || [];
-  } catch(e) { children = []; }
-
-  var container = document.getElementById('parent-content');
-  if (!container) return;
-
-  var email = user ? (user.email || '') : '';
-
-  // Afficher le nom du parent dans le header
-  var displayName = email.split('@')[0] || '';
-  var parentBtn   = document.getElementById('headerParentBtn');
-  var parentNameEl = document.getElementById('headerParentName');
-  if (parentBtn && displayName) parentBtn.style.display = 'flex';
-  if (parentNameEl && displayName) parentNameEl.textContent = '👤 ' + displayName;
-
-  // ✅ Stocker les enfants dans le cache global (pas de JSON dans le HTML)
-  _pdChildren = {};
-  children.forEach(function(c) { _pdChildren[c.id] = c; });
-
-  var childrenHtml = '';
-  if (children.length === 0) {
-    childrenHtml =
-      '<div class="pd-empty">Aucun aventurier lié pour l\'instant.' +
-      '<br><span>Utilise le bouton ci-dessous pour créer le profil de ton enfant.</span></div>';
-  } else {
-    childrenHtml = children.map(function(child) {
-      var lvl = child.level || 1;
-      var xp  = child.xp_total || 0;
-      var av  = child.avatar_id || 'luffy';
-      // ✅ data-child-id uniquement — pas de JSON dans l'attribut
-      return '<div class="pd-child-card" data-child-id="' + child.id + '">' +
-        '<div class="pd-child-avatar">' +
-          '<img src="assets/images/avatars/' + av + '.png" ' +
-               'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" ' +
-               'alt="' + child.username + '">' +
-          '<div class="pd-child-avatar-fallback">🏴‍☠️</div>' +
-        '</div>' +
-        '<div class="pd-child-info">' +
-          '<div class="pd-child-name">' + child.username + '</div>' +
-          '<div class="pd-child-stats">⭐ ' + xp + ' XP · Niveau ' + lvl + '</div>' +
-        '</div>' +
-        '<div class="pd-child-arrow">→ Voir résultats</div>' +
-      '</div>';
-    }).join('');
-  }
-
-  container.innerHTML =
-    '<div class="pd-section">' +
-      '<div class="pd-section-title">⚓ PROFIL CAPITAINE</div>' +
-      '<div class="pd-profile">' +
-        '<div class="pd-profile-email">✉️ ' + email + '</div>' +
-      '</div>' +
-    '</div>' +
-
-    '<div class="pd-section">' +
-      '<div class="pd-section-title">👦 MES AVENTURIERS</div>' +
-      childrenHtml +
-      '<button class="pd-btn-add" onclick="showChildSelect()">＋ Ajouter un aventurier</button>' +
-    '</div>' +
-
-    '<div class="pd-section">' +
-      '<button class="pd-btn-play" id="pd-play-btn">🎮 JOUER MAINTENANT</button>' +
-      '<button class="pd-btn-logout" onclick="handleLogout()">← Se déconnecter</button>' +
-    '</div>';
-
-  // ✅ Attacher le listener "Jouer" APRÈS injection HTML
-  // Utilise les enfants déjà chargés (_pdChildren) sans appel DB supplémentaire
-  var playBtn = document.getElementById('pd-play-btn');
-  if (playBtn) {
-    playBtn.addEventListener('click', function() {
-      _pdLaunchChildSelect(children);
-    });
-  }
-
-  // ✅ Attacher les listeners après injection du HTML (évite tout onclick inline avec data)
-  container.querySelectorAll('.pd-child-card[data-child-id]').forEach(function(card) {
-    card.addEventListener('click', function() {
-      var cid = card.getAttribute('data-child-id');
-      var childObj = _pdChildren[cid];
-      if (childObj) showChildResults(cid, childObj);
-    });
-  });
-}
-
-// ══════════════════════════════════════════════════════════════
-// LANCER LA SÉLECTION D'ENFANT (sans rechargement DB)
-// Utilise les enfants déjà chargés depuis showParentDashboard()
-// → évite le lock Supabase et les appels DB redondants
-// ══════════════════════════════════════════════════════════════
-function _pdLaunchChildSelect(cachedChildren) {
-  // Si child-select.js est disponible et que la session est stable → l'utiliser
-  // Sinon : si 1 seul enfant → le sélectionner directement
-  // Si plusieurs : afficher un mini-sélecteur interne
-
-  if (cachedChildren && cachedChildren.length === 1) {
-    // Un seul enfant → sélection directe sans overlay
-    var child = cachedChildren[0];
-    if (typeof dbSetActiveChild === 'function') dbSetActiveChild(child);
-    if (typeof loadProgress === 'function') loadProgress();
-    if (typeof navigateTo === 'function') navigateTo('carte');
-    return;
-  }
-
-  // Plusieurs enfants ou 0 → utiliser showChildSelect() normal
-  // mais avec un fallback si ça échoue
-  try {
-    if (typeof showChildSelect === 'function') {
-      showChildSelect();
-    } else {
-      // showChildSelect indisponible → naviguer vers la carte directement
-      if (typeof navigateTo === 'function') navigateTo('carte');
-    }
-  } catch(e) {
-    console.warn('[Parent] showChildSelect error:', e.message);
-    if (typeof navigateTo === 'function') navigateTo('carte');
+function showParentDashboard() {
+  if (typeof afShowParentDashboard === 'function') {
+    afShowParentDashboard();
   }
 }
 
 // ══════════════════════════════════════════════════════════════
-// RÉSULTATS D'UN ENFANT
+// UTILITAIRE : trouver les données d'une île par son ID
 // ══════════════════════════════════════════════════════════════
 function _getIslandData(islandId) {
-  if (islandId && islandId.startsWith('kanto_')) {
+  if (!islandId) return null;
+
+  if (islandId.startsWith('kanto_')) {
     var n = parseInt(islandId.replace('kanto_', ''));
     if (typeof ISLANDS_KANTO !== 'undefined' && ISLANDS_KANTO[n]) {
       return { isle: ISLANDS_KANTO[n], world: 'Kanto · Sciences', emoji: '⚔️' };
     }
   }
-  if (islandId && islandId.startsWith('hist_')) {
+  if (islandId.startsWith('hist_')) {
     var n2 = parseInt(islandId.replace('hist_', ''));
     if (typeof ISLANDS_HISTOIRE !== 'undefined' && ISLANDS_HISTOIRE[n2]) {
       return { isle: ISLANDS_HISTOIRE[n2], world: 'Magnolia · Histoire', emoji: '🐉' };
     }
   }
   var n3 = parseInt(islandId);
-  if (!isNaN(n3)) {
-    if (typeof ISLANDS !== 'undefined' && ISLANDS[n3]) {
-      return { isle: ISLANDS[n3], world: 'Grand Bleu · Français', emoji: '🏴‍☠️' };
-    }
+  if (!isNaN(n3) && typeof ISLANDS !== 'undefined' && ISLANDS[n3]) {
+    return { isle: ISLANDS[n3], world: 'Grand Bleu · Français', emoji: '🏴‍☠️' };
   }
   return null;
 }
 
+// ══════════════════════════════════════════════════════════════
+// RÉSULTATS D'UN ENFANT
+// ══════════════════════════════════════════════════════════════
 async function showChildResults(childId, childObj) {
-  var child = childObj || _pdChildren[childId] || { username: '?', level: 1, avatar_id: 'luffy' };
+  var child = childObj || _pdChildren[childId] || { username: '?', level: 1, xp_total: 0, avatar_id: 'luffy' };
 
   var container = document.getElementById('parent-content');
   if (!container) return;
+
+  // Passer en mode résultats
+  var sec = document.getElementById('parent-sec');
+  if (sec) sec.style.display = 'block';
 
   container.innerHTML = '<div class="pd-loading">⏳ Chargement des résultats de ' + child.username + '…</div>';
 
@@ -189,38 +79,43 @@ async function showChildResults(childId, childObj) {
     if (typeof dbGetProgression === 'function') {
       prog = await dbGetProgression(childId) || [];
     }
-  } catch(e) { prog = []; }
+  } catch (e) { prog = []; }
 
-  var worlds   = {};
-  var totalXP  = 0;
-  var totalOk  = 0;
-  var totalQs  = 0;
+  // ── Calculs globaux ──
+  var worlds  = {};
+  var totalXP = 0;
+  var totalOk = 0;
+  var totalQs = 0;
 
-  prog.forEach(function(row) {
-    totalXP += row.xp || 0;
+  prog.forEach(function (row) {
+    totalXP += row.xp   || 0;
     totalOk += row.score || 0;
-    var data = _getIslandData(row.island_id || '');
-    totalQs += data && data.isle && data.isle.qs ? data.isle.qs.length : (row.total || 11);
+    var data  = _getIslandData(row.island_id || '');
+    var qLen  = data && data.isle && data.isle.qs ? data.isle.qs.length : (row.total || 11);
+    totalQs  += qLen;
+
     var world = data ? data.world : 'Autre';
     var emoji = data ? data.emoji : '📚';
     if (!worlds[world]) worlds[world] = { emoji: emoji, islands: [] };
     worlds[world].islands.push({ row: row, data: data });
   });
 
-  var pct = totalQs > 0 ? Math.round(totalOk / totalQs * 100) : 0;
+  var pct       = totalQs > 0 ? Math.round(totalOk / totalQs * 100) : 0;
   var fillClass = pct >= 70 ? 'pd-fill-good' : pct >= 40 ? 'pd-fill-mid' : 'pd-fill-low';
   var valClass  = pct >= 70 ? 'pd-good'      : pct >= 40 ? 'pd-mid'      : 'pd-low';
 
+  // ── HTML ──
   var html =
-    '<button class="pd-back-btn" onclick="showParentDashboard()">← Retour</button>' +
+    '<button class="pd-back-btn" onclick="afShowParentDashboard()">← Retour</button>' +
 
     '<div class="pd-results-header">' +
       '<div class="pd-results-avatar">' +
-        '<img src="assets/images/avatars/' + (child.avatar_id || 'luffy') + '.png" ' +
-             'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'" alt="">' +
+        '<img src="assets/images/avatars/' + (child.avatar_id || 'luffy') + '.png"' +
+          ' onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"' +
+          ' alt="' + child.username + '">' +
         '<div class="pd-results-avatar-fallback">🏴‍☠️</div>' +
       '</div>' +
-      '<div class="pd-results-child-info">' +
+      '<div>' +
         '<div class="pd-results-name">' + child.username + '</div>' +
         '<div class="pd-results-level">Niveau ' + (child.level || 1) + ' · ' + totalXP + ' XP total</div>' +
       '</div>' +
@@ -229,82 +124,69 @@ async function showChildResults(childId, childObj) {
     '<div class="pd-chart-wrap">' +
       '<div class="pd-chart-title">📊 RÉSUMÉ GÉNÉRAL</div>' +
       '<div class="pd-chart-stats">' +
-        '<div class="pd-stat">' +
-          '<span class="pd-stat-val">' + prog.length + '</span>' +
-          '<span class="pd-stat-lbl">Îles tentées</span>' +
-        '</div>' +
-        '<div class="pd-stat">' +
-          '<span class="pd-stat-val">' + totalOk + '/' + totalQs + '</span>' +
-          '<span class="pd-stat-lbl">Bonnes réponses</span>' +
-        '</div>' +
-        '<div class="pd-stat">' +
-          '<span class="pd-stat-val ' + valClass + '">' + pct + '%</span>' +
-          '<span class="pd-stat-lbl">Réussite globale</span>' +
-        '</div>' +
+        '<div class="pd-stat"><span class="pd-stat-val">' + prog.length + '</span><span class="pd-stat-lbl">Îles tentées</span></div>' +
+        '<div class="pd-stat"><span class="pd-stat-val">' + totalOk + '/' + totalQs + '</span><span class="pd-stat-lbl">Bonnes réponses</span></div>' +
+        '<div class="pd-stat"><span class="pd-stat-val ' + valClass + '">' + pct + '%</span><span class="pd-stat-lbl">Réussite globale</span></div>' +
       '</div>' +
       '<div class="pd-chart-bar-wrap">' +
-        '<div class="pd-chart-bar">' +
-          '<div class="pd-chart-fill ' + fillClass + '" style="width:' + pct + '%"></div>' +
-        '</div>' +
+        '<div class="pd-chart-bar"><div class="pd-chart-fill ' + fillClass + '" style="width:' + pct + '%"></div></div>' +
         '<div class="pd-chart-pct">' + pct + '% de réussite</div>' +
       '</div>' +
     '</div>';
 
   if (prog.length === 0) {
-    html += '<div class="pd-empty">Aucun quiz complété pour l\'instant.<br>' +
-            '<span>L\'enfant doit d\'abord jouer pour voir ses résultats ici.</span></div>';
+    html += '<div class="pd-empty">Aucun quiz complété pour l\'instant.<span>L\'enfant doit d\'abord jouer pour voir ses résultats ici.</span></div>';
   } else {
-    Object.keys(worlds).forEach(function(worldName) {
+    Object.keys(worlds).forEach(function (worldName) {
       var w = worlds[worldName];
       html += '<div class="pd-world-section"><div class="pd-world-title">' + w.emoji + ' ' + worldName + '</div>';
 
-      w.islands.forEach(function(item) {
-        var row       = item.row;
-        var data      = item.data;
-        var isle      = data ? data.isle : null;
-        var score     = row.score || 0;
-        var total     = isle && isle.qs ? isle.qs.length : (row.total || 11);
-        var xp        = row.xp || 0;
-        var isleName  = isle ? (isle.name || row.island_id) : row.island_id;
-        var isleColor = isle ? (isle.color || '#ffd700') : '#ffd700';
-        var spct      = total > 0 ? Math.round(score / total * 100) : 0;
-        var sClass    = spct >= 80 ? 'pd-fill-good' : spct >= 50 ? 'pd-fill-mid' : 'pd-fill-low';
-        var snClass   = spct >= 80 ? 'pd-good'      : spct >= 50 ? 'pd-mid'      : 'pd-low';
-        var stars     = '';
-        for (var i = 0; i < total; i++) stars += i < score ? '⭐' : '☆';
-        var detailId  = 'pd-qs-' + row.island_id;
-        var btnId     = 'pd-btn-' + row.island_id;
+      w.islands.forEach(function (item) {
+        var row      = item.row;
+        var data     = item.data;
+        var isle     = data ? data.isle : null;
+        var score    = row.score || 0;
+        var total    = isle && isle.qs ? isle.qs.length : (row.total || 11);
+        var xp       = row.xp || 0;
+        var isleName = isle ? (isle.name || row.island_id) : row.island_id;
+        var color    = isle ? (isle.color || '#ffd700') : '#ffd700';
+        var spct     = total > 0 ? Math.round(score / total * 100) : 0;
+        var sClass   = spct >= 80 ? 'pd-fill-good' : spct >= 50 ? 'pd-fill-mid' : 'pd-fill-low';
+        var snClass  = spct >= 80 ? 'pd-good'      : spct >= 50 ? 'pd-mid'      : 'pd-low';
+        var stars    = '';
+        for (var si = 0; si < total; si++) stars += si < score ? '⭐' : '☆';
+        var detailId = 'pd-qs-' + row.island_id;
+        var btnId    = 'pd-btn-' + row.island_id;
 
         html +=
           '<div class="pd-isle-block">' +
-            '<div class="pd-isle-header" data-detail="' + detailId + '">' +
-              '<div class="pd-isle-name" style="color:' + isleColor + '">' + isleName + '</div>' +
+            '<div class="pd-isle-header">' +
+              '<div class="pd-isle-name" style="color:' + color + '">' + isleName + '</div>' +
               '<div class="pd-isle-score">' +
                 '<span class="pd-score-num ' + snClass + '">' + score + '/' + total + '</span>' +
-                '<span class="pd-isle-xp">+' + xp + ' XP</span>' +
+                '<span class="pd-isle-xp"> +' + xp + ' XP</span>' +
               '</div>' +
             '</div>' +
             '<div class="pd-isle-stars">' + stars + '</div>' +
-            '<div class="pd-isle-bar">' +
-              '<div class="pd-isle-bar-fill ' + sClass + '" style="width:' + spct + '%"></div>' +
-            '</div>';
+            '<div class="pd-isle-bar"><div class="pd-isle-bar-fill ' + sClass + '" style="width:' + spct + '%"></div></div>';
 
         if (isle && isle.qs && isle.qs.length > 0) {
           html += '<div class="pd-qs-detail" id="' + detailId + '" style="display:none">';
-          isle.qs.forEach(function(q, idx) {
+          isle.qs.forEach(function (q, idx) {
             html +=
               '<div class="pd-q-row">' +
                 '<div class="pd-q-num">Q' + (idx + 1) + '</div>' +
                 '<div class="pd-q-content">' +
-                  '<div class="pd-q-text">' + q.q + '</div>' +
-                  '<div class="pd-q-answer">✅ ' + q.a + '</div>' +
+                  '<div class="pd-q-text">' + (q.q || '') + '</div>' +
+                  '<div class="pd-q-answer">✅ ' + (q.a || '') + '</div>' +
                   (q.exp ? '<div class="pd-q-exp">💡 ' + q.exp + '</div>' : '') +
                 '</div>' +
               '</div>';
           });
           html +=
             '</div>' +
-            '<button class="pd-qs-toggle" id="' + btnId + '" data-detail="' + detailId + '">▼ Voir les questions</button>';
+            '<button class="pd-qs-toggle" id="' + btnId + '"' +
+              ' data-detail="' + detailId + '">▼ Voir les questions</button>';
         }
 
         html += '</div>'; // pd-isle-block
@@ -316,20 +198,50 @@ async function showChildResults(childId, childObj) {
 
   container.innerHTML = html;
 
-  // ✅ Listeners pour toggle questions (pas de onclick inline)
-  container.querySelectorAll('[data-detail]').forEach(function(el) {
-    el.addEventListener('click', function() {
-      toggleIsleDetail(el.getAttribute('data-detail'));
+  // ── Listeners toggle questions ──
+  container.querySelectorAll('.pd-qs-toggle[data-detail]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var detailId = btn.getAttribute('data-detail');
+      var el = document.getElementById(detailId);
+      if (!el) return;
+      var open = el.style.display === 'flex' || el.style.display === 'block';
+      el.style.display = open ? 'none' : 'flex';
+      btn.textContent  = open ? '▼ Voir les questions' : '▲ Masquer les questions';
     });
   });
 }
 
-// Toggle affichage questions
-function toggleIsleDetail(detailId) {
-  var el  = document.getElementById(detailId);
-  var btn = document.getElementById(detailId.replace('pd-qs-', 'pd-btn-'));
-  if (!el) return;
-  var open = el.style.display === 'block';
-  el.style.display = open ? 'none' : 'block';
-  if (btn) btn.textContent = open ? '▼ Voir les questions' : '▲ Masquer les questions';
+// ══════════════════════════════════════════════════════════════
+// LANCER LA SÉLECTION ENFANT depuis le dashboard
+// (utilisé si auth.js utilise encore ce helper)
+// ══════════════════════════════════════════════════════════════
+function _pdLaunchChildSelect(cachedChildren) {
+  if (!cachedChildren || !cachedChildren.length) return;
+
+  if (cachedChildren.length === 1) {
+    var child = cachedChildren[0];
+    if (typeof afLaunchChild === 'function') {
+      // auth.js gère le PIN + le lancement
+      afShowPinEntry
+        ? afShowPinEntry(child, function () { afLaunchChild(child); })
+        : afLaunchChild(child);
+    } else {
+      // Fallback legacy
+      if (typeof dbSetActiveChild === 'function') dbSetActiveChild(child);
+      if (typeof loadProgress   === 'function') loadProgress();
+      if (typeof navigateTo     === 'function') navigateTo('carte');
+    }
+    return;
+  }
+
+  // Plusieurs enfants → auth.js gère le picker
+  if (typeof afShowChildPicker === 'function') {
+    afShowChildPicker(cachedChildren);
+  } else if (typeof showChildSelect === 'function') {
+    showChildSelect();
+  } else {
+    if (typeof navigateTo === 'function') navigateTo('carte');
+  }
 }
+
+console.info('🏴‍☠️ parent.js v2 chargé — showChildResults + helpers');

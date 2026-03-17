@@ -421,6 +421,109 @@
   margin-top: 2px;
 }
 
+/* ── Barre globale résumé ── */
+.pd-chart-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pd-chart-bar {
+  height: 8px;
+  background: rgba(255,255,255,.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.pd-chart-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width .8s cubic-bezier(.4,0,.2,1);
+}
+.pd-chart-fill.pd-fill-good { background: linear-gradient(90deg, #06d6a0, #3a86ff); }
+.pd-chart-fill.pd-fill-mid  { background: linear-gradient(90deg, #f59e0b, #f97316); }
+.pd-chart-fill.pd-fill-low  { background: linear-gradient(90deg, #e63946, #dc2626); }
+.pd-chart-pct {
+  font-family: 'Nunito', sans-serif;
+  font-size: .68rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.35);
+  text-align: right;
+}
+
+/* Couleurs valeurs stats */
+.pd-good { color: #06d6a0 !important; }
+.pd-mid  { color: #f59e0b !important; }
+.pd-low  { color: #e63946 !important; }
+
+/* ── Section monde ── */
+.pd-world-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pd-world-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  color: rgba(255,255,255,.9);
+  letter-spacing: 2px;
+  padding: 6px 0 4px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* ── Bloc île ── */
+.pd-isle-block {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pd-isle-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pd-isle-name {
+  font-family: 'Bangers', cursive;
+  font-size: .92rem;
+  letter-spacing: 1px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pd-isle-score {
+  font-family: 'Nunito', sans-serif;
+  font-size: .72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.pd-score-num   { color: rgba(255,255,255,.7); }
+.pd-isle-xp     { color: rgba(255,215,0,.6); }
+.pd-isle-stars  { font-size: .68rem; color: #ffd700; opacity: .8; letter-spacing: 1px; }
+
+/* Barres couleur */
+.pd-isle-bar-fill.pd-fill-good { background: linear-gradient(90deg, #06d6a0, #3a86ff); }
+.pd-isle-bar-fill.pd-fill-mid  { background: linear-gradient(90deg, #f59e0b, #f97316); }
+.pd-isle-bar-fill.pd-fill-low  { background: linear-gradient(90deg, #e63946, #dc2626); }
+
+/* ── Résultats avatar fallback ── */
+.pd-results-avatar-fallback {
+  font-size: 2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%; height: 100%;
+}
+.pd-results-child-info { flex: 1; min-width: 0; }
+
 /* ════════════════════════════════════════════════════════════
    RESPONSIVE
 ════════════════════════════════════════════════════════════ */
