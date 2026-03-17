@@ -22,8 +22,14 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!--
+  ⚠️  NE PAS ajouter supabase-patch.js ici !
+  Il DOIT être chargé EN DERNIER dans <body> (voir bas de page).
+  Le charger dans <head> provoque un ReferenceError car auth.js
+  n'est pas encore chargé à ce moment.
+-->
 </head>
-<script src="js/supabase-patch.js"></script>
 <body>
 
 <!-- ═══ LOGIN ═══ -->
@@ -49,37 +55,11 @@
     <div id="loginStep2" style="display:none;flex-direction:column;align-items:center;gap:12px;text-align:center;">
       <div style="font-size:3rem">🏴‍☠️</div>
       <div class="login-step2-title">Lien envoyé, Capitaine !</div>
-      <div class="login-step2-text">Vérifie ta boîte mail et clique sur le lien !</div>
-      <button class="login-btn" onclick="showLoginStep1()">← Changer d'email</button>
+      <div class="login-step2-text">Vérifie ta boîte mail et clique sur le lien magique !</div>
     </div>
-    <div class="login-sep"><span>ou</span></div>
+    <div class="login-sep"><span>OU</span></div>
     <button class="login-skip" onclick="skipLogin()">Jouer sans compte →</button>
   </div>
-</div>
-
-<!-- ═══ AVATAR SCREEN ═══ -->
-<div id="avatar-screen">
-  <div class="av-title">🏴‍☠️ ACADÉMIE PIRATE</div>
-  <div class="av-subtitle">Crée ton identité de pirate !</div>
-  <div class="av-name-wrap">
-    <div class="av-name-lbl">⚓ Ton nom de pirate</div>
-    <input class="av-name-input" id="avNameInput" type="text"
-      placeholder="Ex: Luffy, Nakama, Zoro…" maxlength="20"
-      oninput="if(typeof updateAvatarPreview==='function')updateAvatarPreview()">
-  </div>
-  <div class="av-section-title">Choisis ton personnage</div>
-  <div class="av-grid" id="avGrid"></div>
-  <div class="av-selected-preview" id="avPreview">
-    <img class="av-preview-img" id="avPreviewImg" src="" alt="avatar">
-    <div class="av-preview-info">
-      <div class="av-preview-name" id="avPreviewName">Ton nom ici</div>
-      <div class="av-preview-char" id="avPreviewChar">Choisit un personnage</div>
-      <div class="av-preview-quote" id="avPreviewQuote">…</div>
-    </div>
-  </div>
-  <button class="av-start-btn" id="avStartBtn" onclick="startAdventure()">
-    ⚔️ COMMENCER L'AVENTURE !
-  </button>
 </div>
 
 <!-- ═══ LOADING ═══ -->
@@ -109,17 +89,21 @@
 <!-- ═══ HEADER ═══ -->
 <header id="hdr">
   <div class="header-top">
+    <!-- ✅ FIX avatar : onerror pointe vers un avatar réel -->
     <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
-      <img id="headerAvatarImg" src="" alt="avatar" onerror="this.src=''">
+      <img id="headerAvatarImg"
+           src="assets/images/avatars/luffy.png"
+           alt="avatar"
+           onerror="this.src='assets/images/avatars/luffy.png'">
       <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
     </div>
     <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
-    <!-- ✅ NOUVEAU : Bouton Carte permanent + accès compte parent -->
     <div class="header-right">
       <button class="header-carte-btn" onclick="navigateTo('carte')" title="Carte du monde">
         🗺️ Carte
       </button>
-      <div class="header-parent-btn" id="headerParentBtn" onclick="navigateTo('parent')" title="Mon compte" style="display:none">
+      <div class="header-parent-btn" id="headerParentBtn"
+           onclick="navigateTo('parent')" title="Mon compte parent" style="display:none">
         <span id="headerParentName">👤</span>
       </div>
     </div>
@@ -136,160 +120,69 @@
     <div class="xp-lbl" id="xpLbl">0 / 80 XP</div>
   </div>
   <div class="badges">
-    <div class="bdg" id="b0">🌊<span class="bdg-tip">Première île !</span></div>
-    <div class="bdg" id="b1">⚔️<span class="bdg-tip">Score parfait !</span></div>
-    <div class="bdg" id="b2">🔥<span class="bdg-tip">2 îles !</span></div>
-    <div class="bdg" id="b3">💎<span class="bdg-tip">Toutes les îles !</span></div>
-    <div class="bdg" id="b4">👑<span class="bdg-tip">Roi des Pirates !</span></div>
+    <div class="bdg" id="b0">🌊<span class="bdg-tip">Première vague</span></div>
+    <div class="bdg" id="b1">⚔️<span class="bdg-tip">Guerrier</span></div>
+    <div class="bdg" id="b2">🔥<span class="bdg-tip">En feu !</span></div>
+    <div class="bdg" id="b3">💎<span class="bdg-tip">Diamant</span></div>
+    <div class="bdg" id="b4">👑<span class="bdg-tip">Roi des Pirates</span></div>
   </div>
 </header>
 
-<!-- ═══ VOICE SUBTITLE ═══ -->
-<div id="voice-sub"></div>
-
-<!-- ═══ SOUND BAR — inchangée ═══ -->
+<!-- ═══ SOUND BAR ═══ -->
 <div id="sound-bar">
-  <button class="snd-btn" id="btnMusic" onclick="toggleMusic()" title="Musique">🎵 Musique</button>
-  <button class="snd-btn active" id="btnSfx" onclick="toggleSfx()" title="Effets sonores">💥 Effets</button>
-  <button class="snd-btn active" id="btnVoice" onclick="toggleVoice()" title="Voix">🗣️ Voix</button>
-  <div class="vol-wrap">
-    🔊
-    <input type="range" class="vol-slider" id="volSlider" min="0" max="1" step="0.05" value="0.5" oninput="setVolume(this.value)">
-  </div>
+  <span style="font-size:.75rem;font-weight:800;color:rgba(255,255,255,.4);
+    font-family:'Nunito',sans-serif;letter-spacing:1px">🔊 BGM</span>
+  <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.5"
+    oninput="if(typeof setVolume==='function') setVolume(this.value)"
+    style="width:80px;accent-color:var(--gold)">
+  <button onclick="if(typeof stopBGM==='function') stopBGM()"
+    style="font-size:.7rem;font-family:'Nunito',sans-serif;font-weight:800;
+    padding:3px 8px;border-radius:8px;border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);cursor:pointer">
+    ⏹ Stop
+  </button>
 </div>
 
-<!-- ═══ FONDS ANIMÉS ═══ -->
-<div id="hist-bg"></div>
-<div id="hist-overlay"></div>
-<div id="kanto-bg"></div>
-
-<!-- ═══════════════════════════════════════
-     TABLEAU DE BORD PARENT
-     Rempli dynamiquement par parent.js
-═══════════════════════════════════════ -->
+<!-- ═══ PARENT DASHBOARD SECTION ═══ -->
 <section id="parent-sec" style="display:none">
   <div id="parent-content"></div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     MAGNOLIA — HISTOIRE × DBZ
-═══════════════════════════════════════ -->
-<section id="histoire-iles-sec" style="display:none">
-  <div class="hist-map-header">
-    <div class="hist-map-title">🐉 MAGNOLIA — HISTOIRE</div>
-    <div class="hist-map-sub">6ème · 5ème — Univers Dragon Ball Z</div>
-  </div>
-  <div class="hist-islands-grid" id="hist-islands-grid"></div>
-</section>
-
-<section id="histoire-quiz-sec" style="display:none">
-  <div class="hist-quiz-header">
-    <div class="hist-quiz-title" id="hist-qTitle">ÎLE DE GOKU</div>
-    <div class="hist-prog-bar"><div class="hist-prog-fill" id="hist-qProgFill"></div></div>
-    <div class="hist-prog-lbl" id="hist-qProgLbl">0 / 11</div>
-  </div>
-  <div id="hist-qContainer"></div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     KANTO — SCIENCES × DEMON SLAYER
-═══════════════════════════════════════ -->
-<section id="kanto-iles-sec" style="display:none">
-  <div class="kanto-map-header">
-    <div class="kanto-map-title">⚔️ KANTO — SCIENCES</div>
-    <div class="kanto-map-sub">6ème · 5ème — Univers Demon Slayer</div>
-  </div>
-  <div class="kanto-islands-grid" id="kanto-islands-grid"></div>
-</section>
-
-<section id="kanto-quiz-sec" style="display:none">
-  <div class="kanto-quiz-header">
-    <div class="kanto-quiz-title" id="kanto-qTitle">ÎLE DE TANJIRO</div>
-    <div class="kanto-prog-bar">
-      <div class="kanto-prog-fill" id="kanto-qProgFill"></div>
-    </div>
-    <div class="kanto-prog-lbl" id="kanto-qProgLbl">0 / 11</div>
-  </div>
-  <div id="kanto-qContainer"></div>
-</section>
-
-<!-- ═══ GLOBE / CARTE DU MONDE ═══ -->
-<section id="globe-sec">
-  <div style="font-family:'Bangers',cursive;font-size:clamp(1.6rem,5vw,2.5rem);letter-spacing:4px;text-align:center;color:#ffd700;text-shadow:2px 2px 0 #000;margin-bottom:10px">🗺️ CARTE DU MONDE</div>
-  <div id="globe-container"></div>
-  <div id="globe-panel"></div>
-</section>
-
-<div class="world-divider">
+<!-- ═══ GLOBE / CARTE ═══ -->
+<section id="globe-sec" style="display:none"></section>
+<div class="world-divider" style="display:none">
   <div class="world-divider-line"></div>
-  <div class="world-divider-text">— GRAND LINE —</div>
+  <div class="world-divider-text">⚓ GRAND BLEU ⚓</div>
   <div class="world-divider-line"></div>
 </div>
+<div id="globe-panel" style="display:none"></div>
+<div id="globe-overlay"></div>
 
-<!-- ═══ MAP ÎLES — GRAND BLEU ═══ -->
-<section id="map-sec">
-  <div class="sec-sub" style="font-family:'Bangers',cursive;font-size:clamp(1.2rem,3vw,1.8rem);color:#ffd700;letter-spacing:3px;font-weight:normal;margin-bottom:16px">⚓ CHOISIS TON ÎLE ET COMMENCE L'AVENTURE !</div>
-  <div class="panel-frame">
-    <div class="map-grid" id="mapGrid">
-      <div class="isle" id="isle1" onclick="startIsland(1)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel1">🍖</div><img class="isle-char-img" id="img1" src="" alt="Luffy" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #1</div></div>
-        <div class="isle-foot"><div><div class="isle-name">🏴‍☠️ ÎLE DE LUFFY</div><div class="isle-topic">⚡ é ou er ?</div></div><div class="isle-stars" id="stars1">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-      <div class="isle" id="isle2" onclick="startIsland(2)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel2">🗺️</div><img class="isle-char-img" id="img2" src="" alt="Nami" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #2</div></div>
-        <div class="isle-foot"><div><div class="isle-name">🧭 ÎLE DE NAMI</div><div class="isle-topic">📜 Passé composé</div></div><div class="isle-stars" id="stars2">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-      <div class="isle" id="isle3" onclick="startIsland(3)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel3">⚔️</div><img class="isle-char-img" id="img3" src="" alt="Zoro" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #3</div></div>
-        <div class="isle-foot"><div><div class="isle-name">⚔️ ÎLE DE ZORO</div><div class="isle-topic">🛡️ Accord avec être</div></div><div class="isle-stars" id="stars3">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-      <div class="isle" id="isle4" onclick="startIsland(4)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel4">📚</div><img class="isle-char-img" id="img4" src="" alt="Robin" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #4</div></div>
-        <div class="isle-foot"><div><div class="isle-name">📖 ÎLE DE ROBIN</div><div class="isle-topic">🏆 Défi pirate final</div></div><div class="isle-stars" id="stars4">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-      <div class="isle" id="isle5" onclick="startIsland(5)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel5">🎯</div><img class="isle-char-img" id="img5" src="" alt="Usopp" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #5 ✍️</div></div>
-        <div class="isle-foot"><div><div class="isle-name">🎯 ÎLE D'USOPP</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars5">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-      <div class="isle" id="isle6" onclick="startIsland(6)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel6">🍳</div><img class="isle-char-img" id="img6" src="" alt="Sanji" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #6 ✍️</div></div>
-        <div class="isle-foot"><div><div class="isle-name">🍳 ÎLE DE SANJI</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars6">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-      <div class="isle" id="isle7" onclick="startIsland(7)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel7">🦌</div><img class="isle-char-img" id="img7" src="" alt="Chopper" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #7 ✍️</div></div>
-        <div class="isle-foot"><div><div class="isle-name">🦌 ÎLE DE CHOPPER</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars7">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-      <div class="isle" id="isle8" onclick="startIsland(8)">
-        <div class="isle-img-zone"><div class="isle-skel" id="skel8">💀</div><img class="isle-char-img" id="img8" src="" alt="Brook" style="display:none"><div class="isle-fade"></div><div class="isle-label">ÎLE #8 ✍️</div></div>
-        <div class="isle-foot"><div><div class="isle-name">💀 ÎLE DE BROOK</div><div class="isle-topic">✍️ Écrire le verbe</div></div><div class="isle-stars" id="stars8">☆☆☆☆☆☆☆☆☆☆</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="world-line">— Grand Line — ☠ — One Piece —</div>
-</section>
+<!-- ═══ ÎLES ═══ -->
+<section id="map-sec" style="display:none"></section>
 
-<!-- ═══ QUIZ — GRAND BLEU ═══ -->
-<section id="quiz-sec">
-  <div class="qhdr">
-    <button class="back-btn" onclick="goBack()">← Carte</button>
-    <div class="q-island-title" id="qTitle"></div>
-    <div class="q-prog-wrap">
-      <div class="q-prog-track"><div class="q-prog-fill" id="qProgFill" style="width:0%"></div></div>
-      <div class="q-prog-lbl" id="qProgLbl">0 / 10</div>
-    </div>
-  </div>
-  <div id="qContainer"></div>
-</section>
+<!-- ═══ QUIZ ═══ -->
+<section id="quiz-sec" style="display:none"></section>
 
-<!-- ═══ COMBAT GIF OVERLAY ═══ -->
-<div id="combat-gif-overlay">
-  <img id="combat-gif-img" src="" alt="" onerror="document.getElementById('combat-gif-overlay').classList.remove('active')">
-</div>
+<!-- ═══ HISTOIRE (DBZ) ═══ -->
+<div id="hist-bg"></div>
+<div id="hist-overlay"></div>
+<section id="histoire-iles-sec" style="display:none"></section>
+<section id="histoire-quiz-sec" style="display:none"></section>
 
-<!-- ═══ COMBAT VIDEO OVERLAY ═══ -->
-<div id="combat-overlay" onclick="closeCombatVideo()">
+<!-- ═══ KANTO (Sciences × Demon Slayer) ═══ -->
+<div id="kanto-bg"></div>
+<section id="kanto-iles-sec" style="display:none"></section>
+<section id="kanto-quiz-sec" style="display:none"></section>
+
+<!-- ═══ AVATAR SCREEN ═══ -->
+<div id="avatar-screen" class="gone"></div>
+
+<!-- ═══ COMBAT VIDEO ═══ -->
+<div id="combat-video-overlay" onclick="closeCombatVideo()">
   <video id="combat-video" playsinline muted autoplay></video>
-  <div style="position:absolute;top:12px;right:16px;color:rgba(255,255,255,.5);font-size:.75rem;font-family:Nunito,sans-serif;font-weight:800">TAP POUR FERMER</div>
+  <div style="position:absolute;top:12px;right:16px;color:rgba(255,255,255,.5);
+    font-size:.75rem;font-family:Nunito,sans-serif;font-weight:800">TAP POUR FERMER</div>
 </div>
 
 <!-- ═══ CINEMATIC SCENE ═══ -->
@@ -301,6 +194,31 @@
   <div class="cine-bottom" id="cineBottom"></div>
 </div>
 
+<!-- ═══════════════════════════════════════════
+     SCRIPTS — Ordre de chargement IMPORTANT
+     ═══════════════════════════════════════════
+  1. supabase.js     → client Supabase + stubs
+  2. db.js           → helpers DB
+  3. islands.js      → données îles
+  4. ui.js           → utilitaires UI
+  5. hud.js          → HUD
+  6. audio-engine.js → moteur audio
+  7. audio-engine-dbz-patch.js
+  8. audio-engine-kanto-patch.js
+  9. save.js         → persistance locale
+ 10. avatar.js       → écran avatar
+ 11. cinematic.js    → cinématiques
+ 12. quiz.js         → moteur quiz
+ 13. progression.js  → XP / niveaux
+ 14. auth.js         → FLUX AUTH COMPLET (afInit, afShowParentDashboard…)
+ 15. parent.js       → helpers dashboard parent (showChildResults…)
+ 16. globe.js        → carte du monde
+ 17. child-select.js → sélection profil enfant
+ 18. quiz-histoire.js
+ 19. quiz-kanto.js
+ 20. router.js       → hash routing (ROUTES, navigateTo…)
+ 21. supabase-patch.js → DOIT ÊTRE EN DERNIER (remplace sbInit, ROUTES.parent…)
+==================================================-->
 <script src="js/supabase.js"></script>
 <script src="js/db.js"></script>
 <script src="js/islands.js"></script>
@@ -314,14 +232,15 @@
 <script src="js/cinematic.js"></script>
 <script src="js/quiz.js"></script>
 <script src="js/progression.js"></script>
-<script src="js/auth.js"></script>          ← auth-flow.js renommé
+<script src="js/auth.js"></script>
 <script src="js/parent.js"></script>
 <script src="js/globe.js"></script>
 <script src="js/child-select.js"></script>
 <script src="js/quiz-histoire.js"></script>
 <script src="js/quiz-kanto.js"></script>
 <script src="js/router.js"></script>
-<script src="js/supabase-patch.js"></script> ← NOUVEAU, toujours EN DERNIER>
+<!-- ✅ supabase-patch.js EN DERNIER — remplace sbInit + ROUTES.parent -->
+<script src="js/supabase-patch.js"></script>
 
 <script>
 async function init() {
@@ -342,11 +261,12 @@ async function init() {
   if (typeof loadProgress === 'function') loadProgress();
   if (typeof updateHUD    === 'function') updateHUD();
 
-  setTimeout(function() {
+  setTimeout(function () {
     var loading      = document.getElementById('loading');
     var avatarScreen = document.getElementById('avatar-screen');
     if (loading) loading.classList.add('gone');
-    if (alreadyPlayed && avatarScreen) avatarScreen.classList.add('gone');
+    // Ne pas afficher l'écran avatar si l'auth est en cours
+    // (auth.js gère la redirection)
   }, 2600);
 }
 init();

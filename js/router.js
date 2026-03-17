@@ -1,63 +1,61 @@
-// ═══════════════════════════════════════════════════════
-// ROUTER — Académie Pirate
-// Hash routing : #/login | #/parent | #/carte | #/iles | #/quiz | #/histoire | #/kanto
-// ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
+// ROUTER.JS — Académie Pirate
+// Hash routing : #/login | #/parent | #/carte | #/iles
+//               #/quiz  | #/histoire | #/kanto
+//
+// ✅ FIX : le magic link (access_token) n'est PLUS géré ici.
+//    C'est auth.js + supabase-patch.js qui gèrent l'auth via afInit().
+//    Le router ne redirige vers 'parent' QU'APRÈS que l'auth soit établie.
+// ═══════════════════════════════════════════════════════════════
 
+// ── Table de routage ──
 const ROUTES = {
   'login'    : showLogin,
-  'parent'   : showParentDashboard,
+  'parent'   : showParentDashboard, // remplacé par supabase-patch.js → afShowParentDashboard
   'carte'    : showCarte,
   'iles'     : showIles,
   'quiz'     : showQuiz,
   'histoire' : showHistoire,
-  'kanto'    : showKanto, 
+  'kanto'    : showKanto
 };
 
 // ── Sections HTML ──
 function getSection(id) { return document.getElementById(id); }
 
 function hideAll() {
-  var currentRoute = window.location.hash;
-  // Retirer le mode login du body (header redevient visible)
   document.body.classList.remove('login-active');
 
-  // Login
   const login = getSection('login-screen');
   if (login) login.classList.add('gone');
 
-  // Avatar
   const avatar = getSection('avatar-screen');
   if (avatar) avatar.classList.add('gone');
 
-  // Tableau de bord parent
   const parentSec = document.getElementById('parent-sec');
   if (parentSec) parentSec.style.display = 'none';
 
-  // Globe/Carte
   const globe = getSection('globe-sec');
   if (globe) globe.style.display = 'none';
 
   const divider = document.querySelector('.world-divider');
   if (divider) divider.style.display = 'none';
 
-  // Îles
   const map = getSection('map-sec');
   if (map) map.style.display = 'none';
 
-  var hIles = document.getElementById('histoire-iles-sec');
-  var hQuiz = document.getElementById('histoire-quiz-sec');
+  const hIles = document.getElementById('histoire-iles-sec');
+  const hQuiz = document.getElementById('histoire-quiz-sec');
   if (hIles) hIles.style.display = 'none';
   if (hQuiz) hQuiz.style.display = 'none';
-  var histBg = document.getElementById('hist-bg');
+
+  const histBg = document.getElementById('hist-bg');
   if (histBg) histBg.classList.remove('visible');
-  var histOv = document.getElementById('hist-overlay');
+  const histOv = document.getElementById('hist-overlay');
   if (histOv) histOv.classList.remove('visible');
 
-  // Quiz
   const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'none';
 
-  // ── KANTO : MASQUER LES SECTIONS ──
   const kantoIles = document.getElementById('kanto-iles-sec');
   if (kantoIles) kantoIles.style.display = 'none';
   const kantoQuiz = document.getElementById('kanto-quiz-sec');
@@ -65,17 +63,17 @@ function hideAll() {
   const kantoBg = document.getElementById('kanto-bg');
   if (kantoBg) kantoBg.classList.remove('visible');
 
-  // ✅ FIX double fond : restaurer #manga-bg quand on quitte Kanto
+  // Restaurer le fond manga quand on quitte Kanto
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = '';
 
-  // Panneau continent
   if (typeof hideContinentPanel === 'function') hideContinentPanel();
 }
 
 // ══════════════════════════════
-// PAGE : LOGIN
+// PAGES
 // ══════════════════════════════
+
 function showLogin() {
   hideAll();
   document.body.classList.add('login-active');
@@ -84,9 +82,6 @@ function showLogin() {
   document.title = 'Académie Pirate — Connexion';
 }
 
-// ══════════════════════════════
-// PAGE : CARTE DU MONDE
-// ══════════════════════════════
 function showCarte() {
   hideAll();
 
@@ -103,8 +98,8 @@ function showCarte() {
     if (globeSec && panel.parentElement !== globeSec) {
       globeSec.appendChild(panel);
       panel.style.cssText = `
-        position: relative; bottom: auto; left: auto;
-        transform: none; width: 100%; max-width: min(680px, 96vw);
+        position: relative; bottom: auto; left: auto; transform: none;
+        width: 100%; max-width: min(680px, 96vw);
         border-radius: 16px; border: 2px solid rgba(255,215,0,.2);
         margin-top: 16px; display: none;
       `;
@@ -119,9 +114,6 @@ function showCarte() {
   }
 }
 
-// ══════════════════════════════
-// PAGE : ÎLES PIRATES
-// ══════════════════════════════
 function showIles() {
   hideAll();
   const map = getSection('map-sec');
@@ -131,9 +123,6 @@ function showIles() {
   document.title = 'Académie Pirate — Îles Pirates';
 }
 
-// ══════════════════════════════
-// PAGE : QUIZ
-// ══════════════════════════════
 function showQuiz() {
   hideAll();
   const quiz = getSection('quiz-sec');
@@ -141,72 +130,55 @@ function showQuiz() {
   document.title = 'Académie Pirate — Quiz';
 }
 
-// ══════════════════════════════
-// PAGE : HISTOIRE
-// ══════════════════════════════
 function showHistoire() {
   hideAll();
   if (typeof stopBGM === 'function') stopBGM();
-  setTimeout(function() {
+  setTimeout(function () {
     if (typeof playBGM === 'function') playBGM('dbz-battle');
   }, 300);
-  var sec = document.getElementById('histoire-iles-sec');
+  const sec = document.getElementById('histoire-iles-sec');
   if (sec) {
     sec.style.display = 'block';
     if (typeof buildHistoireGrid === 'function') buildHistoireGrid();
   }
-  var histBg = document.getElementById('hist-bg');
+  const histBg = document.getElementById('hist-bg');
   if (histBg) histBg.classList.add('visible');
   if (typeof loadHistBgStrips === 'function') loadHistBgStrips();
-  var histOv = document.getElementById('hist-overlay');
+  const histOv = document.getElementById('hist-overlay');
   if (histOv) histOv.classList.add('visible');
   document.title = 'Académie Pirate — Histoire';
 }
 
-// ══════════════════════════════
-// PAGE : KANTO — Sciences × Demon Slayer
-// ✅ CORRECTION : cette fonction sert de déclencheur uniquement.
-//    La vraie logique async (assets, progression, bgStrips) est dans
-//    showKanto() de quiz-kanto.js, chargé après router.js — il écrase
-//    cette déclaration au moment de l'exécution.
-// ══════════════════════════════
 function showKanto() {
   hideAll();
 
-  // ✅ FIX double fond : masquer le fond One Piece quand Kanto est actif
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = 'none';
-  
-  // Afficher la section îles Kanto
+
   const kantoIles = document.getElementById('kanto-iles-sec');
   if (kantoIles) kantoIles.style.display = 'block';
-  
-  // Masquer la section quiz
+
   const kantoQuiz = document.getElementById('kanto-quiz-sec');
   if (kantoQuiz) kantoQuiz.style.display = 'none';
-  
-  // Charger la grille d'îles (définie dans quiz-kanto.js)
-  if (typeof buildKantoGrid === 'function') buildKantoGrid();
-  
-  // Background Kanto
+
   const kantoBg = document.getElementById('kanto-bg');
   if (kantoBg) kantoBg.classList.add('visible');
-  
-  if (typeof stopBGM === 'function') stopBGM();
-  if (typeof playBGM === 'function') {
-    setTimeout(function() { playBGM('kanto-map'); }, 300);
-  }
 
-  if (typeof loadKantoAssets   === 'function') loadKantoAssets();
-  if (typeof loadKantoProgress === 'function') loadKantoProgress();
-  if (typeof loadKantoBgStrips === 'function') loadKantoBgStrips();
-  
+  if (typeof buildKantoGrid   === 'function') buildKantoGrid();
+  if (typeof loadKantoAssets  === 'function') loadKantoAssets();
+  if (typeof loadKantoProgress=== 'function') loadKantoProgress();
+  if (typeof loadKantoBgStrips=== 'function') loadKantoBgStrips();
+
+  if (typeof stopBGM === 'function') stopBGM();
+  if (typeof playBGM === 'function') setTimeout(function () { playBGM('kanto-map'); }, 300);
+
   document.title = 'Académie Pirate — Kanto';
 }
 
 // ══════════════════════════════
 // NAVIGATION
 // ══════════════════════════════
+
 function navigateTo(route) {
   window.location.hash = '/' + route;
 }
@@ -214,41 +186,30 @@ function navigateTo(route) {
 function getCurrentRoute() {
   const hash = window.location.hash;
   if (!hash || hash === '#' || hash === '#/') return 'login';
-  const route = hash.replace('#/', '').split('/')[0];
-  return route || 'login';
+  return hash.replace('#/', '').split('/')[0] || 'login';
 }
 
 function handleRoute() {
-  const route = getCurrentRoute();
+  const route   = getCurrentRoute();
   const handler = ROUTES[route];
-  if (handler) {
-    handler();
-  } else {
-    navigateTo('login');
-  }
+  if (handler) handler();
+  else navigateTo('login');
 }
 
 // ── Écouter les changements de hash ──
 window.addEventListener('hashchange', handleRoute);
 
-// ── Patch : goBack() redirige vers iles ──
-window._originalGoBack = window.goBack;
-window.goBack = function() {
-  navigateTo('iles');
-};
+// ── Patches utilitaires ──
+window.goBack = function () { navigateTo('iles'); };
 
-// ── Patch : startIsland() reste sur quiz ──
-window._originalStartIsland = window.startIsland;
-window.startIsland = function(n) {
-  if (typeof window._originalStartIsland === 'function') {
-    window._originalStartIsland(n);
-  }
+window.startIsland = function (n) {
+  if (typeof window._originalStartIsland === 'function') window._originalStartIsland(n);
   navigateTo('quiz');
 };
 
-// ── Patch : showContinentPanel affiche EN DESSOUS sur page carte ──
+// ── showContinentPanel : afficher le panneau sous la carte ──
 window._originalShowContinentPanel = window.showContinentPanel;
-window.showContinentPanel = function(c) {
+window.showContinentPanel = function (c) {
   const route = getCurrentRoute();
 
   if (route === 'carte') {
@@ -256,9 +217,7 @@ window.showContinentPanel = function(c) {
     if (!panel) return;
 
     const globeSec = getSection('globe-sec');
-    if (globeSec && panel.parentElement !== globeSec) {
-      globeSec.appendChild(panel);
-    }
+    if (globeSec && panel.parentElement !== globeSec) globeSec.appendChild(panel);
 
     panel.style.cssText = `
       position: relative; bottom: auto; left: auto; transform: none;
@@ -269,7 +228,6 @@ window.showContinentPanel = function(c) {
       padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
     `;
 
-    // 🔧 FIX : Gérer history, kanto, et le reste
     const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : 'iles';
 
     panel.innerHTML = `
@@ -295,8 +253,7 @@ window.showContinentPanel = function(c) {
              onclick="navigateTo('${targetRoute}')">
              ⚔️ COMMENCER L'AVENTURE !
            </button>`
-      }
-    `;
+      }`;
 
     setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
 
@@ -307,8 +264,7 @@ window.showContinentPanel = function(c) {
   }
 };
 
-// ── Patch : hideContinentPanel ──
-window.hideContinentPanel = function() {
+window.hideContinentPanel = function () {
   const panel = getSection('globe-panel');
   if (panel) {
     panel.classList.remove('visible');
@@ -319,54 +275,41 @@ window.hideContinentPanel = function() {
 };
 
 // ══════════════════════════════
-// NAVIGATION UI — supprimée (boutons Carte/Îles gérés par header)
+// INIT DOM
 // ══════════════════════════════
-function buildNavBar() {
-  // Désactivé — la navbar #pirate-nav est masquée via CSS header.css
-}
 
-function updateNavActive() {}
-
-// ══════════════════════════════
-// INIT
-// ══════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  // Magic link Supabase : le hash contient access_token
-  // On laisse Supabase traiter la session AUTH, puis on redirige vers le tableau de bord parent
-  if (window.location.hash.includes("access_token")) {
-    console.log("🔑 Magic link détecté — attente traitement Supabase…");
+  // ✅ FIX : Ne PAS gérer le magic link ici.
+  // auth.js + supabase-patch.js gèrent l'auth AVANT que le router décide la route.
+  // sbInit() (patché) est appelé par le DOMContentLoaded de supabase.js.
+  // Quand l'auth se termine, _handleSignedIn() appelle navigateTo('parent').
+  //
+  // Le router doit juste gérer le hash COURANT (hors magic link).
 
-    var _mlChecks = 0;
-    var _mlInterval = setInterval(function() {
-      _mlChecks++;
-      var h = window.location.hash;
-      // Supabase a nettoyé le hash → auth terminée
-      if (!h.includes("access_token")) {
-        clearInterval(_mlInterval);
-        console.log("🔑 Auth terminée — redirection vers tableau de bord parent");
-        navigateTo('parent');
-      }
-      // Timeout 5s — forcer la redirection
-      if (_mlChecks > 50) {
-        clearInterval(_mlInterval);
-        console.log("🔑 Timeout — redirection forcée vers parent");
-        window.location.hash = '';
-        navigateTo('parent');
-      }
-    }, 100);
+  const hash = window.location.hash;
 
-    window.addEventListener('hashchange', updateNavActive);
+  // Si c'est un magic link → ne pas router, laisser auth.js gérer
+  if (hash.includes('access_token')) {
+    // Rien : supabase-patch.js + auth.js géreront la redirection
     return;
   }
 
-  // Si pas de hash → login
-  if (!window.location.hash || window.location.hash === '#') {
-    navigateTo('login');
-  } else {
-    handleRoute();
+  // Hash vide ou root → déléguer à auth.js (qui appellera showLogin ou Dashboard)
+  if (!hash || hash === '#' || hash === '#/') {
+    // Pas de navigateTo ici : sbInit() s'en charge via afInit()
+    return;
   }
 
-  window.addEventListener('hashchange', updateNavActive);
+  // Hash existant (ex: #/carte) → router normalement
+  handleRoute();
+
+  window.addEventListener('hashchange', function () {
+    // Ignorer les magic links dans les hashchanges
+    if (!window.location.hash.includes('access_token')) handleRoute();
+  });
 });
 
-// ── CSS navbar retiré (géré par header.css) ──
+function buildNavBar() {} // désactivé — géré par header.css
+function updateNavActive() {}
+
+console.info('🔑 router.js chargé — hash routing actif');
