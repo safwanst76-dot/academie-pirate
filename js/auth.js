@@ -160,23 +160,31 @@ function afShowLogin() {
 }
 
 function _buildHeroBg() {
-  var bg = document.getElementById('manga-bg');
-  if (!bg || bg.children.length > 0) return; // déjà rempli par Jikan ou précédemment
+  // ✅ FIX : utiliser un div dédié (#login-hero-bg) au lieu de #manga-bg
+  // #manga-bg est utilisé par les autres pages — le polluer cause le fond
+  // persistant sur la carte et les îles.
+  var existing = document.getElementById('login-hero-bg');
+  if (existing) { existing.style.display = 'flex'; return; }
+
+  var bg = document.createElement('div');
+  bg.id = 'login-hero-bg';
+  bg.style.cssText = [
+    'position:fixed;inset:0;z-index:0;',
+    'display:flex;overflow:hidden;pointer-events:none;'
+  ].join('');
+  document.body.appendChild(bg);
 
   var avatars = [
     'luffy','zoro','nami','usopp','sanji','chopper','robin','brook',
     'ace','shanks','law','hancock'
   ];
-  // Créer 5 strips d'avatars animés comme manga-bg
+
   for (var s = 0; s < 5; s++) {
     var strip = document.createElement('div');
     strip.className = 'bg-strip';
-    // Chaque strip contient une sélection aléatoire d'avatars, dupliquée pour scroll infini
     var imgs = [];
-    for (var k = 0; k < 6; k++) {
-      imgs.push(avatars[(s * 3 + k) % avatars.length]);
-    }
-    var all = imgs.concat(imgs); // doubler pour le scroll
+    for (var k = 0; k < 6; k++) imgs.push(avatars[(s * 3 + k) % avatars.length]);
+    var all = imgs.concat(imgs);
     all.forEach(function(id) {
       var img = document.createElement('img');
       img.src = 'assets/images/avatars/' + id + '.png';
@@ -186,6 +194,11 @@ function _buildHeroBg() {
     });
     bg.appendChild(strip);
   }
+}
+
+function _hideHeroBg() {
+  var bg = document.getElementById('login-hero-bg');
+  if (bg) bg.style.display = 'none';
 }
 
 function _startLoginMusic() {
@@ -956,6 +969,8 @@ function _hideAllScreens() {
     if (el) el.style.display = 'none';
   });
   document.body.classList.remove('login-active');
+  // Masquer le fond héros login — ne doit PAS persister sur les autres pages
+  _hideHeroBg();
 }
 
 function _getOrCreate(id) {

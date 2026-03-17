@@ -25,6 +25,10 @@ function getSection(id) { return document.getElementById(id); }
 function hideAll() {
   document.body.classList.remove('login-active');
 
+  // Masquer le fond héros login (avatar strips)
+  var heroBg = document.getElementById('login-hero-bg');
+  if (heroBg) heroBg.style.display = 'none';
+
   const login = getSection('login-screen');
   if (login) login.classList.add('gone');
 
