@@ -25,7 +25,7 @@ var KANTO_AVATARS = {
   1: KANTO_STORAGE + '/characters/tanjiro.jpg',
   2: KANTO_STORAGE + '/characters/zenitsu.jpg',
   3: KANTO_STORAGE + '/characters/inosuke.jpg',
-  4: KANTO_STORAGE + '/characters/giyu.png',
+  4: KANTO_STORAGE + '/characters/kokushibo.png',
   5: KANTO_STORAGE + '/characters/shinobu.png',
   6: KANTO_STORAGE + '/characters/rengoku.jpg',
   7: KANTO_STORAGE + '/characters/tengen.jpg',
