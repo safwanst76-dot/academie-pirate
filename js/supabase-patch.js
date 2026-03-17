@@ -196,5 +196,92 @@
     if (e.key === 'Enter') { if (typeof afSubmitChildPinLogin === 'function') afSubmitChildPinLogin(); }
   };
 
+  // ── 10. Patch audio Grand Bleu → Supabase Storage ──
+  // Bucket : grand-bleu (public)
+  // URL base : https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/
+  //
+  // Fichiers à uploader dans le bucket (depuis assets/audio/bgm/) :
+  //   map-theme.mp3   → renommer en  map.mp3
+  //   battle-theme.mp3→ renommer en  battle.mp3
+  //   victory-theme.mp3→ renommer en victory.mp3
+  //   defeat-theme.mp3 → renommer en defeat.mp3
+  //   isle-1.mp3 … isle-8.mp3 (noms déjà bons)
+  //
+  var _GB = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/';
+  var _GRAND_BLEU_BGM = {
+    // Îles (déclenchées par quiz.js → playBGM('isle-N'))
+    'isle-1': _GB + 'isle-1.mp3',
+    'isle-2': _GB + 'isle-2.mp3',
+    'isle-3': _GB + 'isle-3.mp3',
+    'isle-4': _GB + 'isle-4.mp3',
+    'isle-5': _GB + 'isle-5.mp3',
+    'isle-6': _GB + 'isle-6.mp3',
+    'isle-7': _GB + 'isle-7.mp3',
+    'isle-8': _GB + 'isle-8.mp3',
+    // Navigation (déclenchées par router.js + quiz.js)
+    'map':     _GB + 'map.mp3',
+    'battle':  _GB + 'battle.mp3',
+    'victory': _GB + 'victory.mp3',
+    'defeat':  _GB + 'defeat.mp3',
+  };
+
+  // Exécution immédiate : supabase-patch.js est chargé en fin de <body>
+  // → DOMContentLoaded est déjà passé, addEventListener ne déclencherait jamais.
+  (function () {
+    var _origPlayBGM = window.playBGM;
+    var _origStopBGM = window.stopBGM;
+    var _origSetVol  = window.setVolume;
+    window._isleAudio = null;
+
+    window.playBGM = function (track, loop) {
+      var url = _GRAND_BLEU_BGM[track];
+
+      // Pas une île Grand Bleu → laisser les patches Kanto/DBZ gérer normalement
+      if (!url) {
+        if (typeof _origPlayBGM === 'function') _origPlayBGM(track, loop);
+        return;
+      }
+
+      // Déjà en cours → ne rien refaire
+      if (window._isleAudio && window._isleAudio.src === url && !window._isleAudio.paused) return;
+
+      // Stopper l'audio île précédent
+      if (window._isleAudio) {
+        try { window._isleAudio.pause(); window._isleAudio.currentTime = 0; } catch(e) {}
+        window._isleAudio = null;
+      }
+
+      var audio = new Audio(url);
+      audio.loop   = (loop !== false);
+      audio.volume = (typeof masterVol !== 'undefined' ? masterVol : 0.5) * 0.35;
+      window._isleAudio = audio;
+      audio.play().catch(function (e) {
+        console.warn('[Grand Bleu BGM] autoplay bloqué, attente clic :', e.message);
+        // Réessayer au premier clic
+        document.addEventListener('click', function _retry() {
+          audio.play().catch(function(){});
+          document.removeEventListener('click', _retry);
+        }, { once: true });
+      });
+    };
+
+    // Patcher stopBGM pour inclure l'audio des îles Grand Bleu
+    window.stopBGM = function () {
+      if (window._isleAudio) {
+        try { window._isleAudio.pause(); window._isleAudio.currentTime = 0; } catch(e) {}
+        window._isleAudio = null;
+      }
+      if (typeof _origStopBGM === 'function') _origStopBGM();
+    };
+
+    // Patcher setVolume pour les îles Grand Bleu
+    window.setVolume = function (v) {
+      if (window._isleAudio) window._isleAudio.volume = parseFloat(v) * 0.35;
+      if (typeof _origSetVol === 'function') _origSetVol(v);
+    };
+
+    console.info('🏴‍☠️ [Grand Bleu BGM] isle-1..8 → Supabase Storage');
+  })();
+
   console.info('🏴‍☠️ supabase-patch.js v3 chargé — auth.js branché');
 })();
