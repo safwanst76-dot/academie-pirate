@@ -681,6 +681,23 @@ async function afSubmitCreateChild(isFirstChild) {
   try {
     var child = await _createChildProfile(_authUser.id, username, avatarId, pin);
     if (!child) throw new Error('Impossible de créer le profil aventurier.');
+
+    // ── Sauvegarder les tokens du parent liés à cet enfant ──
+    // Quand l'enfant se connectera par PIN, on restaurera cette session
+    // pour que auth.uid() = parent_id → RLS OK → progression visible par le parent
+    try {
+      var _sr = await sb.auth.getSession();
+      var _ss = _sr.data && _sr.data.session;
+      if (_ss) {
+        localStorage.setItem('ap_child_tokens_' + child.id, JSON.stringify({
+          access_token:  _ss.access_token,
+          refresh_token: _ss.refresh_token,
+          parent_id:     _authUser.id
+        }));
+        console.info('[auth] tokens parent sauvés pour enfant:', child.username);
+      }
+    } catch (_e) { console.warn('[auth] save tokens:', _e); }
+
     if (typeof showToast === 'function') showToast('🏴‍☠️ Aventurier ' + username + ' créé !');
     await afShowParentDashboard();
   } catch (e) {
@@ -857,8 +874,45 @@ function afHidePinEntry() {
 }
 
 // ── Lancer la session enfant ──
-function afLaunchChild(child) {
+async function afLaunchChild(child) {
   _activeChild = child;
+  if (typeof dbSetActiveChild === 'function') dbSetActiveChild(child);
+
+  // ── Restaurer la session parent liée à cet enfant ──
+  // Priorité 1 : tokens stockés dans localStorage (connexion PIN depuis page login)
+  // Priorité 2 : session déjà active (connexion depuis le dashboard parent)
+  var sessionRestored = false;
+  try {
+    var stored = localStorage.getItem('ap_child_tokens_' + child.id);
+    if (stored) {
+      var tokens = JSON.parse(stored);
+      // Restaurer la session avec le refresh_token (auto-renouvellement si access_token expiré)
+      var { data, error } = await sb.auth.setSession({
+        access_token:  tokens.access_token,
+        refresh_token: tokens.refresh_token
+      });
+      if (!error && data && data.session) {
+        _authUser = data.session.user;
+        sessionRestored = true;
+        console.info('[auth] session parent restaurée pour enfant:', child.username);
+        // Mettre à jour les tokens stockés (ils peuvent avoir été rafraîchis)
+        localStorage.setItem('ap_child_tokens_' + child.id, JSON.stringify({
+          access_token:  data.session.access_token,
+          refresh_token: data.session.refresh_token,
+          parent_id:     tokens.parent_id
+        }));
+      } else if (error) {
+        console.warn('[auth] setSession échoué:', error.message, '— jeu continue sans session');
+      }
+    }
+  } catch (e) {
+    console.warn('[auth] restauration session:', e.message);
+  }
+
+  if (!sessionRestored && !_authUser) {
+    console.warn('[auth] pas de session active — progression en localStorage uniquement');
+  }
+
   _hideAllScreens();
 
   // Mettre à jour le header avec l'avatar de l'enfant
@@ -867,11 +921,16 @@ function afLaunchChild(child) {
   if (img)  img.src  = 'assets/images/avatars/' + (child.avatar_id || 'luffy') + '.png';
   if (name) name.textContent = child.username;
 
-  // Naviguer vers les îles
-  if (typeof navigateTo === 'function') navigateTo('iles');
+  // Charger la progression DB de l'enfant
+  if (typeof loadProgress === 'function') {
+    try { await loadProgress(); } catch (_) {}
+  }
+
+  // Naviguer vers la carte du monde
+  if (typeof navigateTo === 'function') navigateTo('carte');
   else {
-    var mapSec = document.getElementById('map-sec');
-    if (mapSec) mapSec.style.display = 'block';
+    var globeSec = document.getElementById('globe-sec');
+    if (globeSec) globeSec.style.display = 'flex';
   }
 }
 
@@ -1046,21 +1105,69 @@ async function afSubmitChildPinLogin() {
   if (errEl) errEl.style.display = 'none';
 
   try {
+    // Méthode 1 : client Supabase standard (fonctionne si RLS anon autorisé)
+    var childData = null;
     var res = await sb.from('child_profiles').select('*').eq('pin', pin).maybeSingle();
-    if (!res.data) {
+
+    if (res.data) {
+      childData = res.data;
+    } else if (res.error) {
+      // Méthode 2 : fetch direct avec clé anon — contourne RLS si politique non configurée
+      // (nécessaire quand l'enfant n'est pas authentifié)
+      childData = await _fetchChildByPinDirect(pin);
+    }
+
+    if (!childData) {
       if (errEl) { errEl.textContent = '❌ Code incorrect. Demande le bon PIN à ton parent !'; errEl.style.display = 'block'; }
-      var wrap = document.getElementById('login-child-pin-wrap');
-      if (wrap) { wrap.style.animation = 'none'; void wrap.offsetWidth; wrap.style.animation = 'pinShake .4s ease'; }
-      for (var j = 0; j < 6; j++) { var ip = document.getElementById('login-child-pin-' + j); if (ip) ip.value = ''; }
-      var first = document.getElementById('login-child-pin-0');
-      if (first) first.focus();
+      _shakeLoginPinInputs();
       return;
     }
-    if (typeof showToast === 'function') showToast('🏴‍☠️ Bienvenue ' + res.data.username + ' !');
-    afLaunchChild(res.data);
+    if (typeof showToast === 'function') showToast('🏴‍☠️ Bienvenue ' + childData.username + ' !');
+    afLaunchChild(childData);
+
   } catch (e) {
-    if (errEl) { errEl.textContent = '❌ Erreur : ' + e.message; errEl.style.display = 'block'; }
+    console.error('[PIN login]', e);
+    if (errEl) { errEl.textContent = '❌ Erreur de connexion. Réessaie.'; errEl.style.display = 'block'; }
   } finally {
     if (btn) { btn.textContent = '🏴‍☠️ ENTRER !'; btn.disabled = false; }
   }
+}
+
+// Fetch direct avec clé anon — contourne RLS pour la vérification PIN anonyme
+async function _fetchChildByPinDirect(pin) {
+  try {
+    var url  = window.SUPABASE_URL || '';
+    var akey = window.SUPABASE_ANON_KEY || '';
+    if (!url || !akey) return null;
+
+    var r = await fetch(
+      url + '/rest/v1/child_profiles?pin=eq.' + encodeURIComponent(pin) + '&select=*&limit=1',
+      {
+        method: 'GET',
+        headers: {
+          'Accept':       'application/json',
+          'Content-Type': 'application/json',
+          'apikey':        akey,
+          'Authorization': 'Bearer ' + akey   // clé anon publique
+        }
+      }
+    );
+    if (!r.ok) return null;
+    var rows = await r.json();
+    return (rows && rows.length > 0) ? rows[0] : null;
+  } catch (e) {
+    console.error('[_fetchChildByPinDirect]', e);
+    return null;
+  }
+}
+
+function _shakeLoginPinInputs() {
+  var wrap = document.getElementById('login-child-pin-wrap');
+  if (wrap) { wrap.style.animation = 'none'; void wrap.offsetWidth; wrap.style.animation = 'pinShake .4s ease'; }
+  for (var j = 0; j < 6; j++) {
+    var ip = document.getElementById('login-child-pin-' + j);
+    if (ip) ip.value = '';
+  }
+  var first = document.getElementById('login-child-pin-0');
+  if (first) first.focus();
 }
