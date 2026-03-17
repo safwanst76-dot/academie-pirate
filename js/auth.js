@@ -81,43 +81,54 @@ function _hashPin(pin) {
 // ══════════════════════════════════════════
 
 async function afInit() {
-  // Écouter les changements de session Supabase
-  sb.auth.onAuthStateChange(async function(event, session) {
-    if (event === 'SIGNED_IN' && session) {
-      _authUser = session.user;
-      await _handleSignedIn(session.user);
-    } else if (event === 'SIGNED_OUT') {
-      _authUser = null;
-      _parentProfile = null;
-      _activeChild = null;
-      afShowLogin();
-    }
-  });
-
-  // Vérifier session existante
+  // 1. Vérifier session existante EN PREMIER (magic link vient de s'appliquer)
   var sessionRes = await sb.auth.getSession();
   var session = sessionRes.data && sessionRes.data.session;
 
   if (session && session.user) {
     _authUser = session.user;
+    // Écouter les futurs changements
+    sb.auth.onAuthStateChange(async function(event, sess) {
+      if (event === 'SIGNED_OUT') {
+        _authUser = null; _parentProfile = null; _activeChild = null;
+        afShowLogin();
+      }
+    });
     await _handleSignedIn(session.user);
   } else {
+    // Pas de session → login, mais écouter quand même
+    sb.auth.onAuthStateChange(async function(event, sess) {
+      if (event === 'SIGNED_IN' && sess) {
+        _authUser = sess.user;
+        await _handleSignedIn(sess.user);
+      } else if (event === 'SIGNED_OUT') {
+        _authUser = null; _parentProfile = null; _activeChild = null;
+        afShowLogin();
+      }
+    });
     afShowLogin();
   }
 }
 
 async function _handleSignedIn(user) {
+  if (!user) { afShowLogin(); return; }
+
   // 1. Est-ce un parent existant ?
   var profile = await _getParentProfile(user.id);
 
   if (profile) {
     // Parent connu → dashboard
     _parentProfile = profile;
-    await afShowParentDashboard();
+    // Mettre à jour la route vers #/parent
+    if (typeof navigateTo === 'function') navigateTo('parent');
+    else await afShowParentDashboard();
     return;
   }
 
   // 2. Nouvel utilisateur → onboarding parent
+  // Masquer l'écran de chargement s'il est visible
+  var loading = document.getElementById('loading');
+  if (loading) loading.classList.add('gone');
   await afShowParentOnboarding(user);
 }
 
@@ -473,6 +484,21 @@ async function afSubmitCreateChild(isFirstChild) {
 // ══════════════════════════════════════════
 
 async function afShowParentDashboard() {
+  // Guard: si pas d'user, récupérer depuis Supabase
+  if (!_authUser) {
+    var sessionRes = await sb.auth.getSession();
+    var session = sessionRes.data && sessionRes.data.session;
+    if (session && session.user) {
+      _authUser = session.user;
+    } else {
+      afShowLogin(); return;
+    }
+  }
+  // Guard: charger le profil parent si pas encore fait
+  if (!_parentProfile) {
+    _parentProfile = await _getParentProfile(_authUser.id);
+  }
+
   _hideAllScreens();
   document.body.classList.remove('login-active');
 
