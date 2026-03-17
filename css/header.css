@@ -13,7 +13,6 @@ header {
   border-bottom: 3px solid var(--gold);
   box-shadow: 0 4px 24px rgba(245,166,35,.15);
 
-  /* Layout flex column centré */
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -80,15 +79,18 @@ header::before {
   font-size: clamp(1.2rem, 3.5vw, 2rem) !important;
   letter-spacing: 3px;
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 40%, var(--red) 100%);
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
+  /* ✅ FIX : propriété standard requise pour compatibilité navigateurs */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
   flex: 1;
   text-align: center;
   display: block !important;
   line-height: 1.1;
 }
 
-/* ✅ NOUVEAU — Conteneur droit : Carte + nom parent groupés */
+/* ── Conteneur droit : Carte + nom parent groupés ── */
 .header-right {
   display: flex;
   align-items: center;
@@ -96,8 +98,7 @@ header::before {
   flex-shrink: 0;
 }
 
-/* ✅ NOUVEAU — Bouton Carte permanent dans le header
-   Visible sur toutes les pages sauf login (masqué via body.login-active) */
+/* Bouton Carte permanent dans le header */
 .header-carte-btn {
   font-family: 'Bangers', cursive;
   font-size: clamp(.75rem, 2.2vw, .95rem);
@@ -121,7 +122,7 @@ header::before {
 }
 .header-carte-btn:active { transform: scale(.97); }
 
-/* ✅ NOUVEAU — Bouton nom du parent connecté */
+/* Bouton nom du parent connecté */
 .header-parent-btn {
   font-family: 'Bangers', cursive;
   font-size: clamp(.65rem, 1.8vw, .8rem);

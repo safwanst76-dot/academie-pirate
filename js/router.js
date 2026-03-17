@@ -219,9 +219,19 @@ window.addEventListener('hashchange', handleRoute);
 // ── Patches utilitaires ──
 window.goBack = function () { navigateTo('iles'); };
 
+// Sauvegarder le startIsland de quiz.js avant d'écraser
+// (scripts chargés avant router.js → window.startIsland existe déjà)
+window._originalStartIsland = window.startIsland;
+
 window.startIsland = function (n) {
-  if (typeof window._originalStartIsland === 'function') window._originalStartIsland(n);
-  navigateTo('quiz');
+  // Appeler le vrai startIsland de quiz.js (cinématique + _launchIsland)
+  if (typeof window._originalStartIsland === 'function') {
+    window._originalStartIsland(n);
+  }
+  // Mettre à jour le hash sans déclencher hideAll (quiz.js gère l'affichage)
+  if (window.location.hash !== '#/quiz') {
+    history.replaceState(null, '', '#/quiz');
+  }
 };
 
 // ── showContinentPanel : afficher le panneau sous la carte ──

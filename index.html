@@ -29,6 +29,22 @@
   Le charger dans <head> provoque un ReferenceError car auth.js
   n'est pas encore chargé à ce moment.
 -->
+
+<style>
+/* ── Z-index fix : histoire/kanto grid above ::before overlay ── */
+.hist-map-header, .hist-islands-grid,
+.hist-quiz-header, #hist-qContainer,
+.kanto-map-header, .kanto-islands-grid,
+.kanto-quiz-header, #kanto-qContainer {
+  position: relative;
+  z-index: 3;
+}
+/* ── Quiz section must be above everything ── */
+#quiz-sec {
+  position: relative;
+  z-index: 5;
+}
+</style>
 </head>
 <body>
 
@@ -326,18 +342,55 @@
 </section>
 
 <!-- ═══ QUIZ ═══ -->
-<section id="quiz-sec" style="display:none"></section>
+<section id="quiz-sec" style="display:none">
+  <div class="qhdr">
+    <button class="back-btn" onclick="goBack()">← Carte</button>
+    <div class="q-island-title" id="qTitle">ÎLE</div>
+    <div class="q-prog-wrap">
+      <div class="q-prog-track"><div class="q-prog-fill" id="qProgFill" style="width:0%"></div></div>
+      <div class="q-prog-lbl" id="qProgLbl">0 / 0</div>
+    </div>
+    <div class="streak-dots" id="streakDots"></div>
+  </div>
+  <div id="qContainer"></div>
+</section>
 
 <!-- ═══ HISTOIRE (DBZ) ═══ -->
 <div id="hist-bg"></div>
 <div id="hist-overlay"></div>
-<section id="histoire-iles-sec" style="display:none"></section>
-<section id="histoire-quiz-sec" style="display:none"></section>
+<section id="histoire-iles-sec" style="display:none">
+  <div class="hist-map-header">
+    <div class="hist-map-title">🐉 MAGNOLIA — HISTOIRE</div>
+    <div class="hist-map-sub">CM1 · CM2 — Univers Dragon Ball Z</div>
+  </div>
+  <div class="hist-islands-grid" id="hist-islands-grid"></div>
+</section>
+<section id="histoire-quiz-sec" style="display:none">
+  <div class="hist-quiz-header">
+    <div class="hist-quiz-title" id="hist-qTitle">QUIZ</div>
+    <div class="hist-prog-bar"><div class="hist-prog-fill" id="hist-qProgFill" style="width:0%"></div></div>
+    <div class="hist-prog-lbl" id="hist-qProgLbl">0 / 0</div>
+  </div>
+  <div id="hist-qContainer"></div>
+</section>
 
 <!-- ═══ KANTO (Sciences × Demon Slayer) ═══ -->
 <div id="kanto-bg"></div>
-<section id="kanto-iles-sec" style="display:none"></section>
-<section id="kanto-quiz-sec" style="display:none"></section>
+<section id="kanto-iles-sec" style="display:none">
+  <div class="kanto-map-header">
+    <div class="kanto-map-title">⚔️ KANTO — SCIENCES</div>
+    <div class="kanto-map-sub">6ème · 5ème — Univers Demon Slayer</div>
+  </div>
+  <div class="kanto-islands-grid" id="kanto-islands-grid"></div>
+</section>
+<section id="kanto-quiz-sec" style="display:none">
+  <div class="kanto-quiz-header">
+    <div class="kanto-quiz-title" id="kanto-qTitle">QUIZ</div>
+    <div class="kanto-prog-bar"><div class="kanto-prog-fill" id="kanto-qProgFill" style="width:0%"></div></div>
+    <div class="kanto-prog-lbl" id="kanto-qProgLbl">0 / 0</div>
+  </div>
+  <div id="kanto-qContainer"></div>
+</section>
 
 <!-- ═══ AVATAR SCREEN ═══ -->
 <div id="avatar-screen" class="gone"></div>
