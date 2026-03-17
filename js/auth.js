@@ -151,6 +151,64 @@ function afShowLogin() {
     ];
     gif.src = gifs[Math.floor(Math.random() * gifs.length)];
   }
+
+  // Construire le fond héros (avatar strips) si manga-bg est vide
+  _buildHeroBg();
+
+  // Musique — activer et jouer une track aléatoire au premier clic
+  _startLoginMusic();
+}
+
+function _buildHeroBg() {
+  var bg = document.getElementById('manga-bg');
+  if (!bg || bg.children.length > 0) return; // déjà rempli par Jikan ou précédemment
+
+  var avatars = [
+    'luffy','zoro','nami','usopp','sanji','chopper','robin','brook',
+    'ace','shanks','law','hancock'
+  ];
+  // Créer 5 strips d'avatars animés comme manga-bg
+  for (var s = 0; s < 5; s++) {
+    var strip = document.createElement('div');
+    strip.className = 'bg-strip';
+    // Chaque strip contient une sélection aléatoire d'avatars, dupliquée pour scroll infini
+    var imgs = [];
+    for (var k = 0; k < 6; k++) {
+      imgs.push(avatars[(s * 3 + k) % avatars.length]);
+    }
+    var all = imgs.concat(imgs); // doubler pour le scroll
+    all.forEach(function(id) {
+      var img = document.createElement('img');
+      img.src = 'assets/images/avatars/' + id + '.png';
+      img.alt = id;
+      img.loading = 'lazy';
+      strip.appendChild(img);
+    });
+    bg.appendChild(strip);
+  }
+}
+
+function _startLoginMusic() {
+  // Essayer de jouer de la musique — uniquement si l'audio engine est prêt
+  try {
+    if (typeof musicPlaying !== 'undefined') {
+      musicPlaying = true;
+    }
+    var tracks = ['map', 'battle', 'victory'];
+    var track  = tracks[Math.floor(Math.random() * tracks.length)];
+    if (typeof playBGM === 'function') playBGM(track);
+  } catch (e) {
+    // autoplay bloqué — tenter au premier clic
+    var _loginClick = function() {
+      try {
+        if (typeof musicPlaying !== 'undefined') musicPlaying = true;
+        var tracks = ['map', 'battle', 'victory'];
+        if (typeof playBGM === 'function') playBGM(tracks[Math.floor(Math.random() * tracks.length)]);
+      } catch (_) {}
+      document.removeEventListener('click', _loginClick);
+    };
+    document.addEventListener('click', _loginClick, { once: true });
+  }
 }
 
 // ══════════════════════════════════════════
@@ -459,7 +517,12 @@ function _tplCreateChild(isFirstChild) {
     var selected = i === 0;
     return `<div class="af-av-opt${selected ? ' selected' : ''}" data-id="${av.id}"
       onclick="afSelectChildAvatar(this)">
-      <span style="font-size:1.5rem">${av.emoji}</span>
+      <img src="assets/images/avatars/${av.id}.png"
+        onerror="this.style.opacity='.3'"
+        alt="${av.name}"
+        style="width:44px;height:44px;border-radius:50%;object-fit:cover;
+               border:2px solid ${selected ? '#ffd700' : 'rgba(255,255,255,.2)'};
+               transition:border-color .2s;">
       <span>${av.name}</span>
     </div>`;
   }).join('');
@@ -685,7 +748,7 @@ function afShowPinEntry(child, onSuccess) {
   screen.style.display = 'flex';
 
   var pinInputs = [0, 1, 2, 3, 4, 5].map(function (i) {
-    return `<input type="password" maxlength="1" inputmode="numeric" pattern="[0-9]"
+    return `<input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
       id="af-entry-pin-${i}" data-index="${i}" autocomplete="off"
       style="
         width:clamp(38px,10vw,50px);height:clamp(48px,12vw,60px);

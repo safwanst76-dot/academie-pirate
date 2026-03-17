@@ -203,7 +203,121 @@
 <div id="globe-overlay"></div>
 
 <!-- ═══ ÎLES ═══ -->
-<section id="map-sec" style="display:none"></section>
+<section id="map-sec" style="display:none">
+  <div class="sec-sub" style="font-family:'Bangers',cursive;font-size:clamp(1.2rem,3vw,1.8rem);
+       color:#ffd700;letter-spacing:3px;font-weight:normal;margin-bottom:16px;padding:0 14px;text-align:center">
+    ⚓ CHOISIS TON ÎLE ET COMMENCE L'AVENTURE !
+  </div>
+  <div class="panel-frame" style="margin:0 14px">
+    <div class="map-grid" id="mapGrid">
+
+      <div class="isle" id="isle1" onclick="startIsland(1)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel1">🍖</div>
+          <img class="isle-char-img" id="img1" src="" alt="Luffy" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #1</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">🏴‍☠️ ÎLE DE LUFFY</div><div class="isle-topic">⚡ Infinitif ou participe passé ?</div></div>
+          <div class="isle-stars" id="stars1">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle2" onclick="startIsland(2)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel2">🗺️</div>
+          <img class="isle-char-img" id="img2" src="" alt="Nami" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #2</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">🗺️ ÎLE DE NAMI</div><div class="isle-topic">📝 Accord du participe passé</div></div>
+          <div class="isle-stars" id="stars2">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle3" onclick="startIsland(3)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel3">⚔️</div>
+          <img class="isle-char-img" id="img3" src="" alt="Zoro" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #3</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">⚔️ ÎLE DE ZORO</div><div class="isle-topic">🔱 Être — accord pluriel</div></div>
+          <div class="isle-stars" id="stars3">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle4" onclick="startIsland(4)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel4">📚</div>
+          <img class="isle-char-img" id="img4" src="" alt="Robin" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #4</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">📚 ÎLE DE ROBIN</div><div class="isle-topic">🌸 Avoir/être — le grand test</div></div>
+          <div class="isle-stars" id="stars4">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle5" onclick="startIsland(5)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel5">🎯</div>
+          <img class="isle-char-img" id="img5" src="" alt="Usopp" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #5</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">🎯 ÎLE D'USOPP</div><div class="isle-topic">✍️ Mode Écriture — conjugaison</div></div>
+          <div class="isle-stars" id="stars5">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle6" onclick="startIsland(6)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel6">🍳</div>
+          <img class="isle-char-img" id="img6" src="" alt="Sanji" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #6</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">🍳 ÎLE DE SANJI</div><div class="isle-topic">✍️ Mode Écriture — on/ont/sont</div></div>
+          <div class="isle-stars" id="stars6">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle7" onclick="startIsland(7)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel7">🦌</div>
+          <img class="isle-char-img" id="img7" src="" alt="Chopper" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #7</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">🦌 ÎLE DE CHOPPER</div><div class="isle-topic">✍️ Mode Écriture — ces/ses/c'est</div></div>
+          <div class="isle-stars" id="stars7">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+      <div class="isle" id="isle8" onclick="startIsland(8)">
+        <div class="isle-img-zone">
+          <div class="isle-skel" id="skel8">💀</div>
+          <img class="isle-char-img" id="img8" src="" alt="Brook" style="display:none">
+          <div class="isle-fade"></div>
+          <div class="isle-label">ÎLE #8 ⚔️ BOSS</div>
+        </div>
+        <div class="isle-foot">
+          <div><div class="isle-name">💀 ÎLE DE BROOK</div><div class="isle-topic">⚔️ Mode Écriture — BOSS Ryuma</div></div>
+          <div class="isle-stars" id="stars8">☆☆☆☆☆☆☆☆☆☆☆</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ═══ QUIZ ═══ -->
 <section id="quiz-sec" style="display:none"></section>

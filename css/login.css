@@ -20,8 +20,9 @@ body.login-active #voice-sub {
   align-items: center;
   justify-content: center;
   overflow-y: auto;
-  background: rgba(5, 8, 16, 0.45);
-  backdrop-filter: blur(0px);
+  /* transparent : laisse le #manga-bg (z-index:0) visible */
+  background: transparent;
+  backdrop-filter: none;
   transition: opacity .4s, visibility .4s;
   padding: 20px 0 40px;
 }
