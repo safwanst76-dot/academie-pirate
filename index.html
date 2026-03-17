@@ -489,5 +489,101 @@ async function init() {
 init();
 </script>
 
+
+<script>
+/* ── Correctifs Kanto : fond + avatars ── */
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ── Fix 1 : Réinitialiser _kantoBgLoaded à chaque navigation kanto ──
+  // Le flag bloque le rechargement des strips si Jikan a été rate-limité
+  // lors du premier chargement, laissant le fond incomplet.
+  var _origShowKanto = window.showKanto;
+  window.showKanto = function () {
+    // Réinitialiser le flag pour forcer le rechargement des strips
+    if (typeof window._kantoBgLoaded !== 'undefined') window._kantoBgLoaded = false;
+    // Vider les anciens strips pour éviter les doublons
+    var bg = document.getElementById('kanto-bg');
+    if (bg) bg.innerHTML = '';
+    if (typeof _origShowKanto === 'function') _origShowKanto();
+  };
+
+  // ── Fix 2 : Corriger les avatars Kanto en utilisant les URLs Supabase vérifiées ──
+  // shinobu.png → shinobu_kocho.png (nom alternatif possible dans le bucket)
+  // On patch KANTO_AVATARS après le chargement des scripts
+  setTimeout(function () {
+    if (typeof KANTO_STORAGE === 'undefined') return;
+
+    // Corriger l'avatar de Shinobu si c'est le même que Giyu
+    var imgGiyu    = KANTO_AVATARS && KANTO_AVATARS[4];
+    var imgShinobu = KANTO_AVATARS && KANTO_AVATARS[5];
+    if (imgGiyu && imgShinobu && imgGiyu === imgShinobu) {
+      // Les deux pointent sur la même URL — corriger Shinobu
+      KANTO_AVATARS[5] = KANTO_STORAGE + '/characters/mitsuri.jpg';
+      console.info('[fix] KANTO_AVATARS[5] corrigé → mitsuri.jpg');
+    }
+
+    // Test si shinobu.png charge, sinon utiliser mitsuri
+    var testImg = new Image();
+    testImg.onload = function () {
+      console.info('[fix] shinobu.png OK');
+    };
+    testImg.onerror = function () {
+      if (typeof KANTO_AVATARS !== 'undefined') {
+        KANTO_AVATARS[5] = KANTO_STORAGE + '/characters/mitsuri.jpg';
+        console.info('[fix] shinobu.png manquant → mitsuri.jpg');
+        // Recharger la grille si elle est déjà affichée
+        var grid = document.getElementById('kanto-islands-grid');
+        if (grid && grid.children.length > 0) {
+          grid.innerHTML = '';
+          if (typeof buildKantoGrid === 'function') buildKantoGrid();
+        }
+      }
+    };
+    if (typeof KANTO_AVATARS !== 'undefined' && KANTO_AVATARS[5]) {
+      testImg.src = KANTO_AVATARS[5];
+    }
+  }, 1000);
+
+  // ── Fix 3 : s'assurer que loadKantoBgStrips remplit tout l'écran ──
+  // Remplacer la fonction pour qu'elle utilise TOUJOURS les images Supabase en fallback
+  // sans dépendre de Jikan (souvent rate-limité à 429)
+  var _origLoadBgStrips = window.loadKantoBgStrips;
+  window.loadKantoBgStrips = function () {
+    var bg = document.getElementById('kanto-bg');
+    if (!bg) return;
+    if (bg.children.length > 0) return; // déjà rempli
+
+    if (typeof KANTO_AVATARS === 'undefined' || typeof KANTO_BOSS_AVATARS === 'undefined') {
+      // Attendre que les scripts soient chargés
+      setTimeout(window.loadKantoBgStrips, 300);
+      return;
+    }
+
+    // Construire avec les images DS de Supabase (pas Jikan) → garanti sans rate limit
+    var dsImages = Object.values(KANTO_AVATARS).concat(Object.values(KANTO_BOSS_AVATARS));
+    if (!dsImages.length) {
+      if (typeof _origLoadBgStrips === 'function') _origLoadBgStrips();
+      return;
+    }
+
+    for (var s = 0; s < 5; s++) {
+      var strip = document.createElement('div');
+      strip.className = 'kanto-bg-strip';
+      // Doubler les images pour le scroll infini
+      var all = dsImages.concat(dsImages);
+      all.forEach(function (src) {
+        var img = document.createElement('img');
+        img.src = src;
+        img.alt = '';
+        img.loading = 'lazy';
+        strip.appendChild(img);
+      });
+      bg.appendChild(strip);
+    }
+    if (typeof window._kantoBgLoaded !== 'undefined') window._kantoBgLoaded = true;
+  };
+
+});
+</script>
 </body>
 </html>
