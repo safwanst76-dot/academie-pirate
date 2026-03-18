@@ -136,19 +136,21 @@ async function loadKantoBgStrips() {
       var data = await r.json();
       if (data.data && data.data.length) {
         var pics = data.data.slice(0, 20);
-        var perStrip = Math.ceil(pics.length / 5);
-        for (var s = 0; s < 5; s++) {
-          var strip   = document.createElement('div');
-          strip.className = 'kanto-bg-strip';
-          var sliced  = pics.slice(s * perStrip, s * perStrip + perStrip);
-          sliced.concat(sliced).forEach(function (p) {
-            var img = document.createElement('img');
-            img.src = p.jpg.large_image_url || p.jpg.image_url;
-            img.alt = ''; img.loading = 'lazy';
-            strip.appendChild(img);
-          });
-          bg.appendChild(strip);
-        }
+var all  = pics.concat(pics); // doubler pour scroll infini
+for (var s = 0; s < 5; s++) {
+  var strip = document.createElement('div');
+  strip.className = 'kanto-bg-strip';
+  // Round-robin : strip 0 prend indices 0,5,10… strip 1 prend 1,6,11…
+  var stripImgs = all.filter(function(_, i) { return i % 5 === s; });
+  if (!stripImgs.length) stripImgs = all;
+  stripImgs.forEach(function (p) {
+    var img = document.createElement('img');
+    img.src = p.jpg.large_image_url || p.jpg.image_url;
+    img.alt = ''; img.loading = 'lazy';
+    strip.appendChild(img);
+  });
+  bg.appendChild(strip);
+}
         return;
       }
     }
