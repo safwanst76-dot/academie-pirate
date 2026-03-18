@@ -528,36 +528,60 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 500);
   }, 1000);
 
-  // ── Fix 3 : s'assurer que loadKantoBgStrips remplit tout l'écran ──
-  // Remplacer la fonction pour qu'elle utilise TOUJOURS les images Supabase en fallback
-  // sans dépendre de Jikan (souvent rate-limité à 429)
+  // ── Fix 3 : loadKantoBgStrips — Jikan multi-endpoints + fallback Supabase artwork ──
   var _origLoadBgStrips = window.loadKantoBgStrips;
-  window.loadKantoBgStrips = function () {
+  window.loadKantoBgStrips = async function () {
     var bg = document.getElementById('kanto-bg');
-    if (!bg) return;
-    // Toujours s'assurer qu'il y a exactement 5 strips
-    if (bg.children.length >= 5) return;
-    bg.innerHTML = ''; // vider et reconstruire proprement
+    if (!bg || bg.children.length >= 5) return;
+    bg.innerHTML = '';
 
-    if (typeof KANTO_AVATARS === 'undefined' || typeof KANTO_BOSS_AVATARS === 'undefined') {
-      // Attendre que les scripts soient chargés
-      setTimeout(window.loadKantoBgStrips, 300);
-      return;
+    // IDs Jikan pour les personnages DS — on récupère leurs pictures
+    // en parallèle pour éviter le rate limit sur un seul endpoint
+    var DS_CHAR_IDS = [138986, 144001, 144003, 144004, 144005, 144006, 144007, 144008];
+    // Fallback : artwork Supabase si Jikan rate-limite
+    var supabaseArtwork = [
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tanjiro.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/zenitsu.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/inosuke.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/shinobu.png',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/rengoku.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tengen.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/muichiro.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/obanai.jpeg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/kanao.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/mitsuri.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/gyutaro.jpg',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/kokushibo.png',
+      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/nezuko.jpeg',
+    ];
+
+    // Essayer Jikan anime 40748 (1 seul appel, moins de rate limit)
+    var urls = [];
+    try {
+      var r = await fetch('https://api.jikan.moe/v4/anime/40748/pictures');
+      if (r.ok) {
+        var data = await r.json();
+        if (data.data && data.data.length >= 5) {
+          urls = data.data.map(function(p) {
+            return p.jpg.large_image_url || p.jpg.image_url;
+          });
+        }
+      }
+    } catch(e) {}
+
+    // Si Jikan n'a pas donné assez → utiliser Supabase artwork
+    if (urls.length < 5) {
+      urls = supabaseArtwork;
     }
 
-    // Construire avec les images DS de Supabase (pas Jikan) → garanti sans rate limit
-    var dsImages = Object.values(KANTO_AVATARS).concat(Object.values(KANTO_BOSS_AVATARS));
-    if (!dsImages.length) {
-      if (typeof _origLoadBgStrips === 'function') _origLoadBgStrips();
-      return;
-    }
-
+    // Distribuer en round-robin sur 5 strips
+    var doubled = urls.concat(urls);
     for (var s = 0; s < 5; s++) {
       var strip = document.createElement('div');
       strip.className = 'kanto-bg-strip';
-      // Doubler les images pour le scroll infini
-      var all = dsImages.concat(dsImages);
-      all.forEach(function (src) {
+      var stripImgs = doubled.filter(function(_, i) { return i % 5 === s; });
+      if (!stripImgs.length) stripImgs = doubled;
+      stripImgs.forEach(function(src) {
         var img = document.createElement('img');
         img.src = src;
         img.alt = '';
