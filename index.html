@@ -153,12 +153,28 @@
 <!-- ═══ HEADER ═══ -->
 <header id="hdr">
   <div class="header-top">
-    <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
-      <img id="headerAvatarImg" src="" alt="avatar"
-           style="display:none"
-           onerror="this.style.display='none'"
-           onload="this.style.display=(this.src&&this.src!==window.location.href)?'block':'none'">
-      <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
+    <div style="display:flex;align-items:center;gap:6px">
+      <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
+        <img id="headerAvatarImg" src="" alt="avatar"
+             style="display:none"
+             onerror="this.style.display='none'"
+             onload="this.style.display=(this.src&&this.src!==window.location.href)?'block':'none'">
+        <span class="hud-avatar-name" id="headerAvatarName">Pirate</span>
+      </div>
+      <!-- Bouton déconnexion enfant — masqué jusqu'à connexion par PIN -->
+      <button id="childLogoutBtn" onclick="childLogout()"
+        style="display:none;
+               font-family:'Bangers',cursive;font-size:.65rem;letter-spacing:1px;
+               color:rgba(255,100,100,.8);background:rgba(230,57,70,.12);
+               border:1.5px solid rgba(230,57,70,.35);border-radius:20px;
+               padding:3px 8px;cursor:pointer;white-space:nowrap;
+               transition:background .2s,border-color .2s;
+               -webkit-tap-highlight-color:transparent;"
+        onmouseover="this.style.background='rgba(230,57,70,.25)'"
+        onmouseout="this.style.background='rgba(230,57,70,.12)'"
+        title="Se déconnecter">
+        ⏻ Quitter
+      </button>
     </div>
     <span class="logo">🏴‍☠️ ACADÉMIE PIRATE</span>
     <div class="header-right">

@@ -937,6 +937,10 @@ async function afLaunchChild(child) {
   }
   if (name) name.textContent = child.username;
 
+  // Afficher le bouton déconnexion enfant
+  var logoutBtn = document.getElementById('childLogoutBtn');
+  if (logoutBtn) logoutBtn.style.display = 'block';
+
   // Charger la progression DB de l'enfant
   if (typeof loadProgress === 'function') {
     try { await loadProgress(); } catch (_) {}
@@ -1092,6 +1096,31 @@ console.info('🏴‍☠️ auth-flow.js v2 chargé — Parent onboarding + PIN 
 
 window.afLoginChildByPin     = afLoginChildByPin;
 window.afSubmitChildPinLogin = afSubmitChildPinLogin;
+
+// ── Déconnexion enfant ──
+window.childLogout = function () {
+  // Masquer le bouton déconnexion
+  var logoutBtn = document.getElementById('childLogoutBtn');
+  if (logoutBtn) logoutBtn.style.display = 'none';
+
+  // Réinitialiser l'avatar header
+  var img  = document.getElementById('headerAvatarImg');
+  var name = document.getElementById('headerAvatarName');
+  if (img)  { img.src = ''; img.style.display = 'none'; }
+  if (name) name.textContent = 'Pirate';
+
+  // Arrêter la musique
+  if (typeof stopBGM === 'function') stopBGM();
+
+  // Réinitialiser l'enfant actif
+  _activeChild = null;
+  if (typeof dbSetActiveChild === 'function') dbSetActiveChild(null);
+
+  // Retourner à la page login
+  _hideAllScreens();
+  afShowLogin();
+  if (typeof showToast === 'function') showToast('👋 À bientôt !');
+};
 
 function afLoginChildByPin() {
   for (var i = 0; i < 6; i++) {
