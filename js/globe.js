@@ -19,7 +19,7 @@ const CONTINENTS = [
     emoji: '⚔️', color: '#ff6b35',
     chars: ['Sakura','Naruto','Tsunade'], charColors: ['#ec4899','#f97316','#eab308'],
     desc: 'Entraîne-toi aux calculs comme un vrai ninja !',
-    locked: true,
+    locked: false,
     // Zone Europe/Nord-Ouest
     zone: 'M 195,38 L 220,30 L 245,34 L 258,48 L 252,65 L 258,80 L 252,95 L 240,105 L 228,110 L 215,106 L 205,95 L 200,80 L 198,65 L 200,50 Z',
     labelX: 228, labelY: 72, subX: 228, subY: 85, emojiX: 210, emojiY: 46,
