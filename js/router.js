@@ -16,7 +16,8 @@ const ROUTES = {
   'iles'     : showIles,
   'quiz'     : showQuiz,
   'histoire' : showHistoire,
-  'kanto'    : showKanto
+  'kanto'    : showKanto,
+  'pays-du-feu' : showPaysduFeu
 };
 
 // ── Sections HTML ──
@@ -66,6 +67,13 @@ function hideAll() {
   if (kantoQuiz) kantoQuiz.style.display = 'none';
   const kantoBg = document.getElementById('kanto-bg');
   if (kantoBg) kantoBg.classList.remove('visible');
+
+  const pdfIles = document.getElementById('pdf-iles-sec');
+  const pdfQuiz = document.getElementById('pdf-quiz-sec');
+  if (pdfIles) pdfIles.style.display = 'none';
+  if (pdfQuiz) pdfQuiz.style.display = 'none';
+  const pdfBg = document.getElementById('pdf-bg');
+  if (pdfBg) pdfBg.classList.remove('visible');
 
   // Restaurer le fond manga quand on quitte Kanto
   const mangaBg = document.getElementById('manga-bg');
@@ -190,6 +198,28 @@ function showKanto() {
   if (typeof playBGM === 'function') setTimeout(function () { playBGM('kanto-map'); }, 300);
 
   document.title = 'Académie Pirate — Kanto';
+}
+
+function showPaysduFeu() {
+  hideAll();
+
+  const mangaBg = document.getElementById('manga-bg');
+  if (mangaBg) mangaBg.style.display = 'none';
+
+  const pdfBg = document.getElementById('pdf-bg');
+  if (pdfBg) pdfBg.classList.add('visible');
+
+  // quiz-pays-du-feu.js expose showPaysduFeu — mais c'est ce router qui l'appelle
+  // On appelle directement buildPdfGrid + loadPdfProgress depuis quiz-pays-du-feu.js
+  var pdfIles = document.getElementById('pdf-iles-sec');
+  if (pdfIles) pdfIles.style.display = 'block';
+  if (typeof buildPdfGrid     === 'function') buildPdfGrid();
+  if (typeof loadPdfProgress  === 'function') loadPdfProgress();
+  if (typeof loadPdfBgStrips  === 'function') loadPdfBgStrips();
+
+  if (typeof stopBGM === 'function') stopBGM();
+  if (typeof playBGM === 'function') setTimeout(function(){ playBGM('naruto-map'); }, 300);
+  document.title = 'Académie Pirate — Pays du Feu';
 }
 
 // ══════════════════════════════
