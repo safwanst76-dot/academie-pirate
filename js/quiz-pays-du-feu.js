@@ -13,13 +13,13 @@ var BUCKET_PDF         = 'island-pays-du-feu';
 var PDF_STORAGE        = SUPABASE_URL_PDF + '/storage/v1/object/public/' + BUCKET_PDF;
 
 var PDF_AVATARS = {
-  1: PDF_STORAGE + '/gifs/naruto GIF.gif',
+  1: PDF_STORAGE + '/gifs/naruto%20GIF6.gif',
   2: PDF_STORAGE + '/characters/sasuke.png',
   3: PDF_STORAGE + '/characters/sakura.jpg',
-  4: PDF_STORAGE + '/characters/hatake kakashi.jpeg',
-  5: PDF_STORAGE + '/characters/gaara .jpg',
-  6: PDF_STORAGE + '/characters/itachi.jpg',
-  7: PDF_STORAGE + '/characters/minato .jpg',
+  4: PDF_STORAGE + '/characters/hatake%20kakashi.jpeg',
+  5: PDF_STORAGE + '/characters/gaara%20.jpg',
+  6: PDF_STORAGE + '/gifs/itachi%20uchiha%20naruto%20GIF.gif',
+  7: PDF_STORAGE + '/characters/minato%20.jpg',
   8: PDF_STORAGE + '/characters/jiraiya.webp',
 };
 
@@ -595,7 +595,7 @@ async function showPaysduFeu() {
   if (typeof loadPdfBgStrips === 'function') loadPdfBgStrips();
 }
 
-// Charger le fond animé depuis Supabase
+// Charger le fond animé — Jikan Naruto Shippuden (anime 1735) comme les autres mondes
 var _pdfBgLoaded = false;
 async function loadPdfBgStrips() {
   if (_pdfBgLoaded) return;
@@ -604,13 +604,41 @@ async function loadPdfBgStrips() {
   if (!bg) return;
   bg.innerHTML = '';
 
-  // Images Naruto depuis Supabase
-  var imgs = Object.values(PDF_AVATARS);
-  var doubled = imgs.concat(imgs);
+  // ── Priorité 1 : GIFs Naruto déjà dans Supabase (jamais de rate-limit)
+  var supabaseGifs = [
+    PDF_STORAGE + '/gifs/Naruto%20Shippuden%20GIF%20copie.gif',
+    PDF_STORAGE + '/gifs/naruto%20shippuden%20GIF1.gif',
+    PDF_STORAGE + '/gifs/Naruto%20Shippuden%20GIF2.gif',
+    PDF_STORAGE + '/gifs/naruto%20shippuden%20GIF3.gif',
+    PDF_STORAGE + '/gifs/naruto%20shippuden%20GIF5.gif',
+    PDF_STORAGE + '/gifs/naruto%20GIF.gif',
+    PDF_STORAGE + '/gifs/naruto%20GIF6.gif',
+    PDF_STORAGE + '/gifs/itachi%20uchiha%20naruto%20GIF.gif',
+  ];
+
+  // ── Priorité 2 : Jikan anime artworks (si Supabase échoue)
+  var urls = supabaseGifs;
+
+  try {
+    var r = await fetch('https://api.jikan.moe/v4/anime/1735/pictures');
+    if (r.ok) {
+      var data = await r.json();
+      if (data.data && data.data.length >= 8) {
+        urls = data.data.map(function(p) {
+          return p.jpg.large_image_url || p.jpg.image_url;
+        });
+      }
+    }
+  } catch(e) {}
+
+  // Distribuer en round-robin sur 5 strips
+  var doubled = urls.concat(urls);
   for (var s = 0; s < 5; s++) {
     var strip = document.createElement('div');
     strip.className = 'pdf-bg-strip';
-    doubled.filter(function(_,i){ return i%5===s; }).forEach(function(src){
+    var stripImgs = doubled.filter(function(_, i){ return i % 5 === s; });
+    if (!stripImgs.length) stripImgs = doubled.slice(0, 4);
+    stripImgs.forEach(function(src) {
       var img = document.createElement('img');
       img.src = src; img.alt = ''; img.loading = 'lazy';
       strip.appendChild(img);
