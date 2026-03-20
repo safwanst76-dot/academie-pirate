@@ -159,7 +159,7 @@ function showHistoire() {
   hideAll();
   if (typeof stopBGM === 'function') stopBGM();
   setTimeout(function () {
-    if (typeof playBGM === 'function') playBGM('dbz-battle');
+    if (typeof playBGM === 'function') playBGM('dbz-map'); // carte → music map
   }, 300);
   const sec = document.getElementById('histoire-iles-sec');
   if (sec) {
@@ -285,7 +285,8 @@ window.showContinentPanel = function (c) {
       padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
     `;
 
-const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : 'iles';
+    const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : 'iles';
+
     panel.innerHTML = `
       <div class="gp-header">
         <div class="gp-emoji">${c.emoji}</div>

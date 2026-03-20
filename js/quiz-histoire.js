@@ -484,9 +484,11 @@ function hist_corriger(n) {
   if (typeof saveProgress === 'function') saveProgress();
 
   if (score === 10) {
-    hist_playBGM('dbz-victory');
+    hist_playBGM('dbz-victory'); // score parfait → fanfare victoire
+  } else if (score >= 6) {
+    hist_playBGM('dbz-map');     // bon score → retour calme
   } else {
-    hist_playBGM('dbz-map');
+    hist_playBGM('dbz-isle');    // score faible → musique défaite/boss
   }
 
   hist_showResults(n, score);
