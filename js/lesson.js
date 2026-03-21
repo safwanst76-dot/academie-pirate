@@ -904,34 +904,116 @@ function _spawnParticles(container, type, accent) {
 // ══════════════════════════════════════════════════════════════
 // 10. INTÉGRATION — WRAPPERS POUR CHAQUE MONDE
 // ══════════════════════════════════════════════════════════════
+//
+// AUDIT ASSETS (Mars 2026) — règle JS-05 : vérification d'existence avant usage
+//
+// GRAND BLEU  : bucket grand-bleu → AUDIO uniquement (pas de characters uploadés)
+//               → Priorité 1 : charImages[n] (Jikan API, chargé par islands.js)
+//               → Priorité 2 : assets/images/avatars/ (locaux dans le repo)
+//
+// MAGNOLIA    : characters = assets/images/dbz/1.png à 8.png (LOCAUX repo GitHub)
+//               → Pas dans Supabase → chemins locaux directs
+//
+// KANTO       : bucket island-demon-slayer/characters/ (uploadés et confirmés 200)
+//               → tanjiro.jpeg, zenitsu.jpeg, inosuke.jpeg, shinobu.png,
+//                 kanao.jpeg, tengen.jpeg, rengoku.jpg, mitsuri.jpeg, obanai.jpeg
+//
+// PAYS DU FEU : bucket island-pays-du-feu/characters/ + /gifs/ (uploadés et confirmés)
+//               → sasuke.png, sakura.jpg, "hatake kakashi.jpeg", "gaara .jpg",
+//                 "minato .jpg", jiraiya.webp → espaces encodés en %20
+//               → île #1 : gifs/naruto%20GIF6.gif (GIF animé)
+//               → île #6 : gifs/itachi%20uchiha%20naruto%20GIF.gif
+// ══════════════════════════════════════════════════════════════
 
-// Ces fonctions remplacent les appels directs à la cinématique
-// Elles lancent la leçon PUIS la cinématique PUIS le quiz
-
+// ── GRAND BLEU — Français / One Piece ──────────────────────────
+// Les characters ne sont PAS dans Supabase grand-bleu.
+// On utilise charImages[n] (alimenté par islands.js via Jikan API)
+// avec fallback sur les assets locaux du repo.
 function lesson_grand_bleu(n, thenCallback) {
-  var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu';
-  var avatarMap = {1:'/characters/nami.jpg',2:'/characters/luffy.jpg',3:'/characters/robin.jpg',4:'/characters/zoro.jpg',5:'/characters/nami.jpg',6:'/characters/luffy.jpg',7:'/characters/robin.jpg',8:'/characters/zoro.jpg'};
-  var avatar = SUPABASE + (avatarMap[n] || '/characters/luffy.jpg');
+  var LOCAL = {
+    1: 'assets/images/avatars/luffy.png',
+    2: 'assets/images/avatars/nami.png',
+    3: 'assets/images/avatars/zoro.png',
+    4: 'assets/images/avatars/robin.png',
+    5: 'assets/images/avatars/usopp.png',
+    6: 'assets/images/avatars/sanji.png',
+    7: 'assets/images/avatars/chopper.png',
+    8: 'assets/images/avatars/brook.png'
+  };
+  // Priorité : Jikan (charImages chargé par islands.js) > local fallback
+  var avatar = (typeof charImages !== 'undefined' && charImages[n] && charImages[n] !== LOCAL[n])
+    ? charImages[n]
+    : (LOCAL[n] || 'assets/images/avatars/luffy.png');
   showLesson('grandbleu', n, avatar, '#e63946', thenCallback);
 }
 
+// ── MAGNOLIA — Histoire / Dragon Ball Z ────────────────────────
+// Assets DBZ = LOCAUX dans le repo (assets/images/dbz/).
+// Pas dans Supabase. HIST_AVATARS de quiz-histoire.js est la référence.
 function lesson_magnolia(n, thenCallback) {
-  var avatarMap = {1:'assets/images/dbz/1.png',2:'assets/images/dbz/2.png',3:'assets/images/dbz/3.png',4:'assets/images/dbz/4.png',5:'assets/images/dbz/5.png',6:'assets/images/dbz/6.png',7:'assets/images/dbz/7.png',8:'assets/images/dbz/8.png'};
-  var avatar = avatarMap[n] || 'assets/images/dbz/1.png';
+  // Utiliser HIST_AVATARS si disponible (défini dans quiz-histoire.js)
+  var avatar;
+  if (typeof HIST_AVATARS !== 'undefined' && HIST_AVATARS[n]) {
+    avatar = HIST_AVATARS[n];
+  } else {
+    var LOCAL_DBZ = {
+      1: 'assets/images/dbz/1.png',
+      2: 'assets/images/dbz/2.png',
+      3: 'assets/images/dbz/3.png',
+      4: 'assets/images/dbz/4.png',
+      5: 'assets/images/dbz/5.png',
+      6: 'assets/images/dbz/6.png',
+      7: 'assets/images/dbz/7.png',
+      8: 'assets/images/dbz/8.png'
+    };
+    avatar = LOCAL_DBZ[n] || 'assets/images/dbz/1.png';
+  }
   showLesson('magnolia', n, avatar, '#8b5cf6', thenCallback);
 }
 
+// ── KANTO — Sciences / Demon Slayer ────────────────────────────
+// Tous les characters sont dans Supabase island-demon-slayer/characters/
+// Confirmés uploadés. Utiliser KANTO_AVATARS si disponible (quiz-kanto.js).
 function lesson_kanto(n, thenCallback) {
-  var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer';
-  var avatarMap = {1:'/characters/tanjiro.jpeg',2:'/characters/zenitsu.jpeg',3:'/characters/inosuke.jpeg',4:'/characters/shinobu.png',5:'/characters/kanao.jpeg',6:'/characters/tengen.jpeg',7:'/characters/rengoku.jpg',8:'/characters/mitsuri.jpeg'};
-  var avatar = SUPABASE + (avatarMap[n] || '/characters/tanjiro.jpeg');
+  var SUPABASE_DS = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer';
+  // Map exact des fichiers uploadés (noms vérifiés)
+  var KANTO_MAP = {
+    1: SUPABASE_DS + '/characters/tanjiro.jpeg',
+    2: SUPABASE_DS + '/characters/zenitsu.jpeg',
+    3: SUPABASE_DS + '/characters/inosuke.jpeg',
+    4: SUPABASE_DS + '/characters/obanai.jpeg',   // île 4 = obanai (fix appliqué)
+    5: SUPABASE_DS + '/characters/kanao.jpeg',
+    6: SUPABASE_DS + '/characters/tengen.jpeg',
+    7: SUPABASE_DS + '/characters/rengoku.jpg',
+    8: SUPABASE_DS + '/characters/mitsuri.jpeg'
+  };
+  // Priorité : KANTO_AVATARS (quiz-kanto.js) > KANTO_MAP Supabase
+  var avatar = (typeof KANTO_AVATARS !== 'undefined' && KANTO_AVATARS[n])
+    ? KANTO_AVATARS[n]
+    : (KANTO_MAP[n] || KANTO_MAP[1]);
   showLesson('kanto', n, avatar, '#C0392B', thenCallback);
 }
 
+// ── PAYS DU FEU — Maths / Naruto ───────────────────────────────
+// Characters + GIFs dans Supabase island-pays-du-feu/
+// Attention : certains noms ont des espaces → encodés en %20
+// PDF_AVATARS de quiz-pays-du-feu.js est la référence.
 function lesson_paysdufeu(n, thenCallback) {
-  var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu';
-  var avatarMap = {1:'/gifs/naruto%20GIF6.gif',2:'/characters/sasuke.png',3:'/characters/sakura.jpg',4:'/characters/hatake%20kakashi.jpeg',5:'/characters/gaara%20.jpg',6:'/gifs/itachi%20uchiha%20naruto%20GIF.gif',7:'/characters/minato%20.jpg',8:'/characters/jiraiya.webp'};
-  var avatar = SUPABASE + (avatarMap[n] || '/characters/sasuke.png');
+  var SUPABASE_PDF = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu';
+  var PDF_MAP = {
+    1: SUPABASE_PDF + '/gifs/naruto%20GIF6.gif',           // GIF animé île Naruto
+    2: SUPABASE_PDF + '/characters/sasuke.png',
+    3: SUPABASE_PDF + '/characters/sakura.jpg',
+    4: SUPABASE_PDF + '/characters/hatake%20kakashi.jpeg',  // espace encodé
+    5: SUPABASE_PDF + '/characters/gaara%20.jpg',           // espace encodé
+    6: SUPABASE_PDF + '/gifs/itachi%20uchiha%20naruto%20GIF.gif',
+    7: SUPABASE_PDF + '/characters/minato%20.jpg',          // espace encodé
+    8: SUPABASE_PDF + '/characters/jiraiya.webp'
+  };
+  // Priorité : PDF_AVATARS (quiz-pays-du-feu.js) > PDF_MAP
+  var avatar = (typeof PDF_AVATARS !== 'undefined' && PDF_AVATARS[n])
+    ? PDF_AVATARS[n]
+    : (PDF_MAP[n] || PDF_MAP[2]);
   showLesson('paysdufeu', n, avatar, '#F97316', thenCallback);
 }
 
