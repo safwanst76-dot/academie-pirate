@@ -294,7 +294,12 @@ function pdf_startIsland(n) {
   var isle = ISLANDS_PDF[n];
   if (!isle) return;
   pdf_playBGM(isle.bgm || 'naruto-map');
-  pdf_playCinematic(n, function(){ pdf_launchIsland(n); });
+  // Leçon avant cinématique
+  if (typeof lesson_paysdufeu === 'function') {
+    lesson_paysdufeu(n, function() { pdf_playCinematic(n, function(){ pdf_launchIsland(n); }); });
+  } else {
+    pdf_playCinematic(n, function(){ pdf_launchIsland(n); });
+  }
 }
 
 function pdf_launchIsland(n) {

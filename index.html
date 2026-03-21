@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/quiz-histoire.css">
 <link rel="stylesheet" href="css/quiz-kanto.css">
+<link rel="stylesheet" href="css/lesson.css">
 <link rel="stylesheet" href="css/quiz-pays-du-feu.css">
 <link rel="stylesheet" href="css/parent.css">
 
@@ -427,6 +428,12 @@
   <div id="pdf-qContainer"></div>
 </section>
 
+<!-- ═══ PAGE LEÇON ═══ -->
+<div id="lesson-overlay" style="display:none"></div>
+
+<!-- ═══ LESSON OVERLAY ═══ -->
+<div id="lesson-overlay" style="display:none;position:fixed;inset:0;z-index:8500;pointer-events:none"></div>
+
 <!-- ═══ AVATAR SCREEN ═══ -->
 <div id="avatar-screen" class="gone"></div>
 
@@ -492,6 +499,7 @@
 <script src="js/quiz-histoire.js"></script>
 <script src="js/quiz-kanto.js"></script>
 <script src="js/quiz-pays-du-feu.js"></script>
+<script src="js/lesson.js"></script>
 <script src="js/router.js"></script>
 <!-- ✅ supabase-patch.js EN DERNIER — remplace sbInit + ROUTES.parent -->
 <script src="js/supabase-patch.js"></script>
