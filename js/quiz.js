@@ -149,15 +149,17 @@ var xp = 0, completedIslands = {}, currentIsland = 0, streak = 0, answers = {};
 
 // ── QUIZ CORE ──
 function startIsland(n) {
-  playBGM('isle-' + n);
-  setTimeout(function() { speakCharQuote(n); }, 1200);
   sfxIsland();
 
   if (typeof lesson_grand_bleu === 'function') {
     lesson_grand_bleu(n, function() {
+      playBGM('isle-' + n);
+      setTimeout(function() { speakCharQuote(n); }, 1200);
       playIntroScene(n, function() { _launchIsland(n); });
     });
   } else {
+    playBGM('isle-' + n);
+    setTimeout(function() { speakCharQuote(n); }, 1200);
     playIntroScene(n, function() { _launchIsland(n); });
   }
 }
