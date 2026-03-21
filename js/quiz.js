@@ -152,9 +152,15 @@ function startIsland(n) {
   playBGM('isle-' + n);
   setTimeout(function() { speakCharQuote(n); }, 1200);
   sfxIsland();
-  playIntroScene(n, () => _launchIsland(n));
-}
 
+  if (typeof lesson_grand_bleu === 'function') {
+    lesson_grand_bleu(n, function() {
+      playIntroScene(n, function() { _launchIsland(n); });
+    });
+  } else {
+    playIntroScene(n, function() { _launchIsland(n); });
+  }
+}
 function _launchIsland(n) {
   setTimeout(() => speakChar(n, 'intro'), 400);
   currentIsland = n; answers = {};

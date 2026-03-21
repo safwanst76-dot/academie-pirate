@@ -337,7 +337,14 @@ const HIST_ISLE_INTRO = {
 function hist_startIsland(n) {
   var track = (ISLANDS_HISTOIRE[n] && ISLANDS_HISTOIRE[n].bgm) ? ISLANDS_HISTOIRE[n].bgm : 'dbz-battle';
   hist_playBGM(track);
-  hist_playCinematic(n, function() { hist_launchIsland(n); });
+
+  if (typeof lesson_magnolia === 'function') {
+    lesson_magnolia(n, function() {
+      hist_playCinematic(n, function() { hist_launchIsland(n); });
+    });
+  } else {
+    hist_playCinematic(n, function() { hist_launchIsland(n); });
+  }
 }
 
 function hist_launchIsland(n) {

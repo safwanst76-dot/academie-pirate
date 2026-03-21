@@ -518,7 +518,14 @@ function kanto_startIsland(n) {
   var isle = ISLANDS_KANTO[n];
   if (!isle) return;
   kanto_playBGM(isle.bgm || 'kanto-isle');
-  kanto_playCinematic(n, function () { kanto_launchIsland(n); });
+
+  if (typeof lesson_kanto === 'function') {
+    lesson_kanto(n, function() {
+      kanto_playCinematic(n, function() { kanto_launchIsland(n); });
+    });
+  } else {
+    kanto_playCinematic(n, function() { kanto_launchIsland(n); });
+  }
 }
 
 function kanto_launchIsland(n) {
