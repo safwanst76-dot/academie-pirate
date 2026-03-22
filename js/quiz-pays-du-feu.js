@@ -293,11 +293,14 @@ function pdf_skipCine() {
 function pdf_startIsland(n) {
   var isle = ISLANDS_PDF[n];
   if (!isle) return;
-  pdf_playBGM(isle.bgm || 'naruto-map');
-  // Leçon avant cinématique
+  // pdf_playBGM déclenché APRÈS la leçon (règle AU-03 : pas de double audio)
   if (typeof lesson_paysdufeu === 'function') {
-    lesson_paysdufeu(n, function() { pdf_playCinematic(n, function(){ pdf_launchIsland(n); }); });
+    lesson_paysdufeu(n, function() {
+      pdf_playBGM(isle.bgm || 'naruto-map');
+      pdf_playCinematic(n, function(){ pdf_launchIsland(n); });
+    });
   } else {
+    pdf_playBGM(isle.bgm || 'naruto-map');
     pdf_playCinematic(n, function(){ pdf_launchIsland(n); });
   }
 }

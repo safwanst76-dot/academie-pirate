@@ -168,7 +168,11 @@ async function dbUpsertParentProfile(profileData) {
 // ═══════════════════════════════════════════════════════════
 
 async function dbSaveProgression(childId, islandId, score, xpGained) {
-  try {
+  if (!childId || !islandId) {
+    console.warn('[db] dbSaveProgression ignoré — ids manquants', { childId: childId, islandId: islandId });
+    return;
+  }
+try {
     const { data, error } = await getDb()
       .from('progressions')
       .upsert(
