@@ -495,7 +495,7 @@ function hist_corriger(n) {
   } else if (score >= 6) {
     hist_playBGM('dbz-map');     // bon score → retour calme
   } else {
-    hist_playBGM('dbz-isle');    // score faible → musique défaite/boss
+    hist_playBGM('dbz-defeat');    // score faible → musique défaite/boss
   }
 
   hist_showResults(n, score);

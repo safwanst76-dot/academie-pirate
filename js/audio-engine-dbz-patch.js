@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════
-// AUDIO-ENGINE-DBZ-PATCH.JS — Académie Pirate — v4
+// AUDIO-ENGINE-DBZ-PATCH.JS — Académie Pirate — v5
 // ✅ Supabase Storage bucket island-magnolia — UNIQUEMENT
 // ❌ YouTube supprimé — règle AU-01
 // ❌ Autoplay bloqué → retry sur premier clic utilisateur
@@ -12,11 +12,13 @@
   var SUPABASE_BASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/';
 
   // Mapping track → fichier dans bucket island-magnolia
+  // ✅ Noms VÉRIFIÉS dans Supabase bucket island-magnolia (screenshot 22/03/2026)
   var SUPABASE_FILES = {
-    'dbz-map':     'dbz-map.mp3',
-    'dbz-battle':  'dbz-battle.mp3',
-    'dbz-victory': 'dbz-victory.mp3',
-    'dbz-isle':    'dbz-isle.mp3',
+    'dbz-map':     'map.mp3',      // ← map.mp3 dans Supabase
+    'dbz-battle':  'battle.mp3',   // ← battle.mp3 dans Supabase
+    'dbz-victory': 'victory.mp3',  // ← victory.mp3 dans Supabase
+    'dbz-isle':    'dbz-isle.mp3', // ← dbz-isle.mp3 dans Supabase
+    'dbz-defeat':  'defeat.mp3',   // ← defeat.mp3 dans Supabase (nouveau)
   };
 
   // ── État interne ──
@@ -105,6 +107,6 @@
     if (typeof _origSetVolume === 'function') _origSetVolume(v);
   };
 
-  console.info('🐉 audio-engine-dbz-patch.js v4 — Supabase uniquement, YouTube supprimé');
+  console.info('🐉 audio-engine-dbz-patch.js v5 — noms fichiers vérifiés Supabase (map/battle/victory/dbz-isle/defeat)');
 
 })();
