@@ -1,0 +1,203 @@
+/* ═══════════════════════════════════════════════════════════
+   BADGES.CSS — Académie Pirate
+   Overlay unlock + Collection badges
+   Préfixe .bdg-unlock-* et .bdg-collection-* et .bdg-col-*
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Overlay unlock ── */
+.bdg-unlock-overlay {
+  position: fixed; inset: 0; z-index: 9100;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(6px);
+  animation: bdg-overlay-in .3s ease;
+  transition: opacity .4s ease;
+}
+@keyframes bdg-overlay-in {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+/* ── Card unlock ── */
+.bdg-unlock-card {
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, #0a0d1a, #050210);
+  border: 2px solid var(--bdg-color, #ffd700);
+  border-radius: 24px;
+  padding: 32px 28px;
+  width: min(360px, 88vw);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  box-shadow: 0 0 60px var(--bdg-glow, rgba(255,215,0,.4)), 0 20px 60px rgba(0,0,0,.8);
+  animation: bdg-card-in .5s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes bdg-card-in {
+  from { transform: scale(.5) rotate(-5deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);  opacity: 1; }
+}
+
+.bdg-unlock-rarity {
+  font-family: 'Nunito', sans-serif;
+  font-size: .7rem; font-weight: 900;
+  color: var(--bdg-color, #ffd700);
+  letter-spacing: 4px; text-transform: uppercase;
+  padding: 3px 12px;
+  border: 1px solid var(--bdg-color, #ffd700);
+  border-radius: 20px;
+  opacity: .85;
+}
+
+.bdg-unlock-emoji {
+  font-size: clamp(3rem, 12vw, 5rem);
+  animation: bdg-emoji-bounce .6s cubic-bezier(.34,1.56,.64,1) .2s both;
+  line-height: 1; margin: 4px 0;
+  filter: drop-shadow(0 0 20px var(--bdg-color, #ffd700));
+}
+@keyframes bdg-emoji-bounce {
+  from { transform: scale(0) rotate(-20deg); }
+  to   { transform: scale(1) rotate(0deg); }
+}
+
+.bdg-unlock-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.9rem, 3.5vw, 1.1rem);
+  letter-spacing: 4px; color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+}
+
+.bdg-unlock-name {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  letter-spacing: 3px;
+  color: var(--bdg-color, #ffd700);
+  text-shadow: 2px 2px 0 #000, 0 0 30px var(--bdg-glow);
+  text-align: center; line-height: 1;
+}
+
+.bdg-unlock-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.78rem, 2.5vw, .9rem);
+  font-weight: 700; color: rgba(255,255,255,.5);
+  text-align: center; line-height: 1.4;
+}
+
+/* ── Particules ── */
+.bdg-unlock-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.bdg-particle {
+  position: absolute; border-radius: 50%; top: 100%; opacity: 0;
+  animation: bdg-particle-fly linear infinite;
+}
+@keyframes bdg-particle-fly {
+  0%   { transform: translateY(0); opacity: .9; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* ── Collection overlay ── */
+.bdg-collection-overlay {
+  position: fixed; inset: 0; z-index: 8100;
+  display: flex; align-items: flex-end; justify-content: center;
+  transition: opacity .3s;
+}
+.bdg-collection-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+.bdg-collection-panel {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 560px;
+  max-height: 85vh; overflow-y: auto;
+  background: linear-gradient(180deg, #0a0d1a 0%, #050210 100%);
+  border: 2px solid rgba(255,215,0,.2);
+  border-bottom: none;
+  border-radius: 24px 24px 0 0;
+  padding: 20px 16px;
+  display: flex; flex-direction: column; gap: 14px;
+  box-shadow: 0 -8px 40px rgba(0,0,0,.6);
+  transform: translateY(100%);
+  transition: transform .4s cubic-bezier(.34,1.1,.64,1);
+}
+.bdg-panel-in { transform: translateY(0) !important; }
+
+.bdg-collection-header {
+  display: flex; align-items: center; gap: 12px;
+}
+.bdg-collection-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.3rem,5vw,1.6rem);
+  letter-spacing: 3px; color: #ffd700;
+  text-shadow: 1px 1px 0 #000; flex: 1;
+}
+.bdg-collection-count {
+  font-family: 'Nunito', sans-serif;
+  font-size: .78rem; font-weight: 900;
+  color: rgba(255,255,255,.4);
+  background: rgba(255,255,255,.06);
+  border-radius: 10px; padding: 4px 10px;
+}
+.bdg-collection-close {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50%; width: 32px; height: 32px;
+  color: rgba(255,255,255,.5); font-size: .9rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all .15s; -webkit-tap-highlight-color: transparent;
+}
+.bdg-collection-close:hover { background: rgba(255,255,255,.15); color: #fff; }
+
+/* ── Grille badges ── */
+.bdg-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+.bdg-col-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px; padding: 12px 8px;
+  transition: all .2s;
+  cursor: default;
+}
+.bdg-col-item.unlocked {
+  border-color: var(--item-color, rgba(255,215,0,.3));
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 0 12px var(--item-glow, rgba(255,215,0,.2));
+}
+.bdg-col-item.locked { opacity: .45; }
+.bdg-col-emoji {
+  font-size: 1.8rem; line-height: 1;
+}
+.bdg-col-item.unlocked .bdg-col-emoji {
+  filter: drop-shadow(0 0 8px var(--item-color));
+  animation: bdg-col-float 3s ease-in-out infinite;
+}
+@keyframes bdg-col-float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-3px); }
+}
+.bdg-col-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: .65rem; font-weight: 900;
+  color: rgba(255,255,255,.8);
+  text-align: center; line-height: 1.3;
+}
+.bdg-col-rarity {
+  font-family: 'Nunito', sans-serif;
+  font-size: .58rem; font-weight: 700;
+  color: var(--item-color, rgba(255,255,255,.3));
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.bdg-col-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: .6rem; font-weight: 600;
+  color: rgba(255,255,255,.35);
+  text-align: center; line-height: 1.3;
+  display: none;
+}
+.bdg-col-item.unlocked:hover .bdg-col-desc { display: block; }
+
+/* Desktop */
+@media (min-width: 520px) {
+  .bdg-collection-overlay { align-items: center; }
+  .bdg-collection-panel { border-radius: 24px; border-bottom: 2px solid rgba(255,215,0,.2); }
+}

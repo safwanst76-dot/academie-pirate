@@ -993,6 +993,12 @@ async function afLaunchChild(child) {
       window.AP.daily.check(child);
     }
   }, 1500);
+  // Badges — 2s pour laisser la progression se charger
+  setTimeout(function() {
+    if (window.AP && window.AP.badges && typeof window.AP.badges.init === 'function') {
+      window.AP.badges.init();
+    }
+  }, 2000);
 }
 
 // ══════════════════════════════════════════
