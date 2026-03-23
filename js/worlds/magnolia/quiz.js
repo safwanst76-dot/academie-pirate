@@ -486,9 +486,13 @@ function hist_corriger(n) {
   });
 
   hist_xp += score * 2;
-  hist_completedIslands[n] = score;
-  if (typeof updateHUD === 'function') updateHUD();
-  if (typeof saveProgress === 'function') saveProgress();
+hist_completedIslands[n] = score;
+// Sync XP global pour le HUD
+if (typeof xp !== 'undefined') xp += score * 2;
+if (typeof completedIslands !== 'undefined') completedIslands['hist_' + n] = score;
+if (typeof updateHUD    === 'function') updateHUD();
+if (typeof checkBadges  === 'function') checkBadges();
+if (typeof saveProgress === 'function') saveProgress();
 
   if (score === 10) {
     hist_playBGM('dbz-victory'); // score parfait → fanfare victoire
