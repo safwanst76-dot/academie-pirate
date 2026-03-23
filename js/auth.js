@@ -40,13 +40,21 @@ async function _getChildren(parentId) {
   } catch (e) { return []; }
 }
 
-async function _createParentProfile(userId, email, prenom, nom, phone) {
+async function _createParentProfile(userId, email, prenom, nom, phone, emailProgress, emailFeatures) {
+  // emailProgress/emailFeatures = préférences RGPD opt-in
+  var optProgress = typeof emailProgress !== 'undefined' ? emailProgress : true;
+  var optFeatures = typeof emailFeatures !== 'undefined' ? emailFeatures : true;
   var res = await sb.from('profiles_parents').upsert({
-    id:     userId,
-    email:  email,
-    prenom: prenom,
-    nom:    nom,
-    phone:  phone || null
+    id:                   userId,
+    email:                email,
+    prenom:               prenom,
+    nom:                  nom,
+    phone:                phone || null,
+    email_notifications:  true,
+    email_child_progress: optProgress,
+    email_new_features:   optFeatures,
+    consent_date:         new Date().toISOString(),
+    consent_version:      '1.0'
   }, { onConflict: 'id' }).select().maybeSingle();
   return res.data || null;
 }
@@ -294,6 +302,29 @@ function _tplParentOnboard(email) {
           style="${AF_INPUT_STYLE}">
       </div>
 
+      <div style="display:flex;flex-direction:column;gap:10px;padding:14px;background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.2);border-radius:12px;">
+        <div style="font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:900;color:#ffd700;letter-spacing:1px;text-transform:uppercase;">
+          📬 Préférences de communication
+        </div>
+        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+          <input type="checkbox" id="af-opt-progress" checked
+            style="margin-top:3px;width:16px;height:16px;accent-color:#ffd700;cursor:pointer;">
+          <span style="font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.85);line-height:1.4;">
+            M'envoyer un résumé hebdomadaire de la progression de mon enfant
+          </span>
+        </label>
+        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
+          <input type="checkbox" id="af-opt-features" checked
+            style="margin-top:3px;width:16px;height:16px;accent-color:#ffd700;cursor:pointer;">
+          <span style="font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.85);line-height:1.4;">
+            Me notifier des nouveaux cours et fonctionnalités
+          </span>
+        </label>
+        <div style="font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.35);margin-top:2px;">
+          Vous pouvez modifier ces préférences à tout moment dans votre profil. Aucun spam, promis ⚓
+        </div>
+      </div>
+
       <div style="display:flex;flex-direction:column;gap:6px">
         <label style="${AF_LABEL_STYLE}">📧 Email</label>
         <input type="email" value="${email}" readonly
@@ -320,6 +351,8 @@ async function afSubmitParentOnboard(user) {
   var prenom = (document.getElementById('af-onboard-prenom') || {}).value || '';
   var nom    = (document.getElementById('af-onboard-nom')    || {}).value || '';
   var phone  = (document.getElementById('af-onboard-phone')  || {}).value || '';
+  var emailProgress = document.getElementById('af-opt-progress') ? document.getElementById('af-opt-progress').checked : true;
+  var emailFeatures = document.getElementById('af-opt-features') ? document.getElementById('af-opt-features').checked : true;
   var errEl  = document.getElementById('af-onboard-error');
   var btn    = document.querySelector('#af-onboard-form button[type="submit"]');
 
@@ -333,10 +366,11 @@ async function afSubmitParentOnboard(user) {
   if (btn) { btn.textContent = '⏳ Enregistrement…'; btn.disabled = true; }
 
   try {
-    var profile = await _createParentProfile(user.id, user.email, prenom, nom, phone);
+    var profile = await _createParentProfile(user.id, user.email, prenom, nom, phone, emailProgress, emailFeatures);
     if (!profile) throw new Error('Impossible de créer le profil. Réessayez.');
     _parentProfile = profile;
     if (typeof showToast === 'function') showToast('⚓ Bienvenue Capitaine ' + prenom + ' !');
+    if (window.AP && typeof window.AP.trackSignup === 'function') window.AP.trackSignup('complete');
     // Première connexion → créer le profil enfant
     await afShowCreateChild(true);
   } catch (e) {
