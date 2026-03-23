@@ -207,14 +207,19 @@
       return;
     }
 
-    db.from('analytics_events').insert(toSend).then(function (res) {
-      if (res.error) {
-        console.warn('[analytics] insert error:', res.error.message);
-        // Ne pas remettre en queue pour éviter une boucle infinie
+    // Supabase JS v2 : async/await
+    (async function() {
+      try {
+        var res = await db.from('analytics_events').insert(toSend);
+        if (res && res.error) {
+          // Table absente (migration non exécutée) → silence
+          if (res.error.message && res.error.message.includes('analytics_events')) return;
+          console.warn('[analytics] insert error:', res.error.message);
+        }
+      } catch (e) {
+        console.warn('[analytics] network error:', e && e.message);
       }
-    }).catch(function (e) {
-      console.warn('[analytics] network error:', e && e.message);
-    });
+    })();
   }
 
   // ── FUNNEL UPSERT ─────────────────────────────────────────────────
@@ -234,17 +239,32 @@
     };
     var db = typeof sb !== 'undefined' ? sb : (typeof getDb === 'function' ? getDb() : null);
     if (!db) return;
-    db.from('funnel_sessions').upsert(data, { onConflict: 'session_id' })
-      .then(function () { _funnelSynced = true; })
-      .catch(function (e) { console.warn('[analytics] funnel init:', e && e.message); });
+    // Supabase JS v2 : async/await
+    (async function() {
+      try {
+        await db.from('funnel_sessions').upsert(data, { onConflict: 'session_id' });
+        _funnelSynced = true;
+      } catch (e) {
+        if (e && e.message && e.message.includes('funnel_sessions')) return;
+        console.warn('[analytics] funnel init:', e && e.message);
+      }
+    })();
   }
 
   function _upsertFunnel(patch) {
     patch.session_id = _sessionId;
     var db = typeof sb !== 'undefined' ? sb : (typeof getDb === 'function' ? getDb() : null);
     if (!db) return;
-    db.from('funnel_sessions').upsert(patch, { onConflict: 'session_id' })
-      .catch(function (e) { console.warn('[analytics] funnel patch:', e && e.message); });
+    // Supabase JS v2 : pas de .catch() direct — async/await requis
+    (async function() {
+      try {
+        await db.from('funnel_sessions').upsert(patch, { onConflict: 'session_id' });
+      } catch (e) {
+        // Table absente (migration non exécutée) → silence, non-bloquant
+        if (e && e.message && e.message.includes('funnel_sessions')) return;
+        console.warn('[analytics] funnel patch:', e && e.message);
+      }
+    })();
   }
 
   // ── SESSION ID ────────────────────────────────────────────────────
