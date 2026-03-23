@@ -141,6 +141,7 @@ function showCarte() {
 
 function showIles() {
   hideAll();
+  if (window.AP) window.AP.trackWorldEnter('grandbleu');
   const map = getSection('map-sec');
   if (map) map.style.display = 'block';
   if (typeof stopBGM === 'function') stopBGM();
@@ -157,6 +158,7 @@ function showQuiz() {
 
 function showHistoire() {
   hideAll();
+  if (window.AP) window.AP.trackWorldEnter('magnolia');
   if (typeof stopBGM === 'function') stopBGM();
   setTimeout(function () {
     if (typeof playBGM === 'function') playBGM('dbz-map'); // carte → music map
@@ -176,6 +178,7 @@ function showHistoire() {
 
 function showKanto() {
   hideAll();
+  if (window.AP) window.AP.trackWorldEnter('kanto');
 
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = 'none';
@@ -202,6 +205,7 @@ function showKanto() {
 
 function showPaysduFeu() {
   hideAll();
+  if (window.AP) window.AP.trackWorldEnter('paysdufeu');
 
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = 'none';
@@ -236,9 +240,107 @@ function getCurrentRoute() {
   return hash.replace('#/', '').split('/')[0] || 'login';
 }
 
+// ── SEO : meta dynamique par route ──────────────────────────────
+var SEO_ROUTES = {
+  'login':       { title: 'Académie Pirate — Rejoins léquipage !',                                  desc: 'Plateforme d apprentissage gamifiée manga pour enfants CM2-5ème. Français, Maths, Histoire, Sciences.' },
+  'carte':       { title: 'Académie Pirate — Carte du Monde',                                          desc: 'Choisis ton univers manga et pars à l aventure pédagogique !' },
+  'iles':        { title: 'Académie Pirate — Grand Bleu (Français · One Piece)',                       desc: '8 îles de grammaire et conjugaison avec l équipage Chapeau de Paille.' },
+  'quiz':        { title: 'Académie Pirate — Quiz Français',                                           desc: 'Quiz interactif de grammaire française. Niveau CM2-6ème.' },
+  'histoire':    { title: 'Académie Pirate — Magnolia (Histoire · Dragon Ball Z)',                     desc: '8 îles d histoire : Antiquité, Moyen Âge, Islam, Renaissance.' },
+  'kanto':       { title: 'Académie Pirate — Kanto (Sciences · Demon Slayer)',                        desc: '8 îles de sciences physiques : signaux, lumière, électricité, Internet.' },
+  'pays-du-feu': { title: 'Académie Pirate — Pays du Feu (Maths · Naruto)',                           desc: '8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs.' },
+  'parent':      { title: 'Académie Pirate — Dashboard Parent',                                        desc: 'Suivez la progression de votre enfant : XP, îles complétées, résultats détaillés.' },
+};
+
+function _updateSEO(route) {
+  var seo = SEO_ROUTES[route] || SEO_ROUTES['login'];
+  // Title
+  document.title = seo.title;
+  // Meta description
+  var metaDesc = document.querySelector('meta[name="description"]');
+  if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = 'description'; document.head.appendChild(metaDesc); }
+  metaDesc.content = seo.desc;
+  // OG tags
+  _setMeta('og:title',       seo.title);
+  _setMeta('og:description', seo.desc);
+  _setMeta('og:url',         window.location.href);
+  _setMeta('og:type',        'website');
+  _setMeta('og:image',       'https://safwanst76-dot.github.io/academie-pirate/assets/images/og-preview.png');
+  // Twitter Card
+  _setMeta('twitter:card',        'summary_large_image');
+  _setMeta('twitter:title',       seo.title);
+  _setMeta('twitter:description', seo.desc);
+  // Canonical
+  var canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+  canonical.href = window.location.origin + window.location.pathname;
+}
+
+function _setMeta(property, content) {
+  var el = document.querySelector('meta[property="' + property + '"],meta[name="' + property + '"]');
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(property.startsWith('og:') || property.startsWith('twitter:') ? 'property' : 'name', property);
+    document.head.appendChild(el);
+  }
+  el.content = content;
+}
+
+function _injectJSONLD(route, opts) {
+  // Supprimer l'ancien
+  var old = document.getElementById('ap-ld-json');
+  if (old) old.remove();
+
+  var ld = null;
+  opts = opts || {};
+
+  if (route === 'carte') {
+    ld = {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      'name': 'Académie Pirate',
+      'url': 'https://safwanst76-dot.github.io/academie-pirate/',
+      'applicationCategory': 'EducationalApplication',
+      'operatingSystem': 'Web',
+      'description': 'Plateforme d apprentissage gamifiée manga pour enfants 8-13 ans.',
+      'educationalLevel': 'CM2, 6ème, 5ème',
+      'teaches': ['Français', 'Mathématiques', 'Histoire', 'Sciences Physiques'],
+      'inLanguage': 'fr',
+      'audience': { '@type': 'EducationalAudience', 'educationalRole': 'student', 'audienceType': 'children 8-13' },
+      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR', 'description': 'Freemium — 1 île gratuite par monde' }
+    };
+  } else if (route === 'iles' || route === 'histoire' || route === 'kanto' || route === 'pays-du-feu') {
+    var worldNames = { 'iles': 'Grand Bleu — Français', 'histoire': 'Magnolia — Histoire', 'kanto': 'Kanto — Sciences Physiques', 'pays-du-feu': 'Pays du Feu — Mathématiques' };
+    ld = {
+      '@context': 'https://schema.org',
+      '@type': 'Course',
+      'name': 'Académie Pirate · ' + (worldNames[route] || route),
+      'description': SEO_ROUTES[route] ? SEO_ROUTES[route].desc : '',
+      'provider': { '@type': 'Organization', 'name': 'Académie Pirate' },
+      'educationalLevel': 'CM2-5ème',
+      'inLanguage': 'fr',
+      'isAccessibleForFree': true,
+      'courseMode': 'online'
+    };
+  }
+
+  if (ld) {
+    var s = document.createElement('script');
+    s.id = 'ap-ld-json';
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(ld);
+    document.head.appendChild(s);
+  }
+}
+
 function handleRoute() {
   const route   = getCurrentRoute();
   const handler = ROUTES[route];
+  // SEO + JSON-LD à chaque navigation
+  _updateSEO(route);
+  _injectJSONLD(route);
+  // Analytics
+  if (window.AP && typeof window.AP.trackPage === 'function') window.AP.trackPage(route);
   if (handler) handler();
   else navigateTo('login');
 }
@@ -285,7 +387,8 @@ window.showContinentPanel = function (c) {
       padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
     `;
 
-const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : 'iles';
+    const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : 'iles';
+
     panel.innerHTML = `
       <div class="gp-header">
         <div class="gp-emoji">${c.emoji}</div>

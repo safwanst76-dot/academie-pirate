@@ -1,0 +1,36 @@
+# Académie Pirate — EdTech Manga pour enfants
+
+## Description
+Académie Pirate est une plateforme d'apprentissage gamifiée pour enfants (8-13 ans) qui combine univers manga (One Piece, Dragon Ball Z, Naruto, Demon Slayer) et programme officiel de l'Éducation Nationale française.
+
+## Matières enseignées
+- Français (grammaire, conjugaison, orthographe) — univers One Piece
+- Histoire (Antiquité, Moyen Âge, Islam, Croisades, Renaissance) — univers Dragon Ball Z
+- Mathématiques (calcul, fractions, géométrie, nombres relatifs) — univers Naruto
+- Sciences Physiques (signaux, lumière, électricité, Internet) — univers Demon Slayer
+- Géographie (à venir) — univers Dragon Ball Z
+- SVT (à venir) — univers Naruto
+
+## Niveaux scolaires
+CM2 (10-11 ans) · 6ème (11-12 ans) · 5ème (12-13 ans)
+
+## Fonctionnement
+Chaque matière correspond à un "monde" manga avec 8 îles (chapitres) de 11 questions chacune.
+Avant chaque quiz : page leçon avec le héros du monde qui explique la règle du jour.
+Système XP, streaks, badges, cinématiques d'introduction.
+Suivi de progression pour les parents via dashboard dédié.
+
+## Modèle économique
+Freemium : première île gratuite par monde. Abonnement Famille 5€/mois.
+
+## Stack technique
+HTML/CSS/JS vanilla · Supabase (auth + DB + Storage) · GitHub Pages
+
+## URL
+https://safwanst76-dot.github.io/academie-pirate/
+
+## Contact
+Pour partenariats scolaires ou médias : academie-pirate.fr (à venir)
+
+## Droits
+Contenu pédagogique conforme aux programmes officiels de l'Éducation Nationale française.
