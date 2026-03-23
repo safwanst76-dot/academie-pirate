@@ -1,4 +1,59 @@
-# 📜 CONSTITUTION TECHNIQUE — Académie Pirate v2
+# 📜 CONSTITUTION TECHNIQUE — Académie Pirate v3
+
+## ⚡ RÈGLES PRIORITAIRES — HIÉRARCHIE
+
+Les règles suivantes sont **absolues et non-négociables**, dans cet ordre de priorité :
+
+```
+PRIORITÉ 1 — AUTO-AMÉLIORATION   : toute correction connue s'applique automatiquement
+PRIORITÉ 2 — AUTO-CORRECTION     : toute erreur déjà vue ne se reproduit pas
+PRIORITÉ 3 — ZÉRO RÉGRESSION    : ne jamais casser ce qui fonctionne
+PRIORITÉ 4 — NE PAS TOUCHER     : ce qui tourne ne se modifie que chirurgicalement
+PRIORITÉ 5 — LIRE AVANT MODIFIER : lire le fichier réel avant toute modification
+```
+
+---
+
+## RÈGLE ABSOLUE #00 — AUTO-AMÉLIORATION (AA)
+
+**Toute correction effectuée doit être mémorisée et appliquée automatiquement à l'avenir.**
+
+Quand une erreur est corrigée, elle est ajoutée au registre ci-dessous.  
+Claude **doit consulter ce registre avant chaque développement** et appliquer les corrections connues sans qu'on ait besoin de le redemander.
+
+### REGISTRE DES CORRECTIONS CONNUES
+
+| # | Fichier | Erreur connue | Correction automatique à appliquer |
+|---|---|---|---|
+| 1 | `worlds/magnolia/quiz.js` | `hist_corriger()` n'incrémente pas le `xp` global | Toujours ajouter `if (typeof xp !== 'undefined') xp += score * 2;` et `if (typeof completedIslands !== 'undefined') completedIslands['hist_' + n] = score;` après `hist_xp += score * 2;` |
+| 2 | `audio-engine-dbz-patch.js` | Noms fichiers Supabase incorrects | Toujours utiliser `map.mp3`, `battle.mp3`, `victory.mp3`, `dbz-isle.mp3`, `defeat.mp3` (pas `dbz-map.mp3` etc.) |
+| 3 | `js/auth.js` | `playBGM` déclenché avant la leçon | Toujours mettre `playBGM` dans le callback, jamais avant |
+| 4 | Tout nouveau monde | XP local non synchronisé avec `xp` global | Toujours ajouter sync `xp` global et `completedIslands` dans `[monde]_corriger()` |
+| 5 | `analytics.js` | `.then().catch()` non supporté par Supabase JS v2 | Toujours utiliser `async/await` avec `try/catch` |
+| 6 | Tout patch `auth.js` | Scripts Python de patch cassent la syntaxe | Toujours montrer l'ancre exacte + modification manuelle dans VS Code |
+| 7 | `funnel_sessions` | 401 après migration SQL | Toujours exécuter `GRANT USAGE ON SCHEMA public TO anon;` + `GRANT INSERT, UPDATE ON [table] TO anon;` |
+| 8 | `SEO_ROUTES` dans `router.js` | Apostrophes françaises dans single-quotes cassent la syntaxe JS | Toujours utiliser des double-quotes pour les chaînes contenant des apostrophes françaises |
+| 9 | `config.js` | Placé dans `js/` au lieu de la racine | Toujours placer `config.js` à la **racine** du repo (même niveau qu'`index.html`) |
+| 10 | `lesson.js` wrapper Grand Bleu | Pointait vers Supabase `grand-bleu/characters/` inexistant | Toujours utiliser `charImages[n]` (Jikan) → fallback `assets/images/avatars/` |
+
+---
+
+## RÈGLE ABSOLUE #000 — AUTO-CORRECTION (AC)
+
+**Toute erreur déjà identifiée dans ce projet ne doit plus jamais être faite.**
+
+Avant de produire du code, Claude doit vérifier mentalement :
+
+1. ✅ Est-ce que cette modification respecte les corrections du registre AA ?
+2. ✅ Est-ce que j'utilise les bons noms de fichiers Supabase ?
+3. ✅ Est-ce que le XP global est synchronisé dans tous les mondes ?
+4. ✅ Est-ce que j'utilise `async/await` pour Supabase JS v2 ?
+5. ✅ Est-ce que l'ancre que j'utilise correspond au fichier réel actuel (pas ma mémoire) ?
+6. ✅ Est-ce que je touche à un fichier core qui ne doit pas être modifié ?
+
+> **Si une de ces vérifications échoue → STOP. Lire le fichier réel d'abord.**
+
+---
 
 ## RÈGLE ABSOLUE #0 — LIRE AVANT MODIFIER
 
@@ -163,7 +218,7 @@ Ils sont **autorisés uniquement** pour :
 | `LESSONS` | ✅ true | Page leçon active |
 | `ANALYTICS` | ✅ true | Tracking Supabase actif |
 | `DAILY_REWARD` | ✅ true | Daily reward actif |
-| `BADGES` | 🔜 false | À développer |
+| `BADGES` | ✅ true | Badges + trophées actifs |
 | `STRIPE` | 🔜 false | À développer |
 | `NOTIFICATIONS` | 🔜 false | Push web |
 | `BOSS_MECHANIC` | 🔜 false | HP bar boss |
@@ -184,5 +239,15 @@ Ils sont **autorisés uniquement** pour :
 
 ---
 
+## COMMENT METTRE À JOUR CE FICHIER
+
+À chaque correction ou nouvelle erreur identifiée :
+1. Ajouter une ligne dans le **REGISTRE DES CORRECTIONS CONNUES** (règle AA)
+2. Mettre à jour les **FEATURE FLAGS** si une feature change d'état
+3. Mettre à jour les **MONDES** si un nouveau monde est déployé
+4. Incrémenter la version et la date
+
+---
+
 *Dernière mise à jour : 23 mars 2026*
-*Version : 2.0*
+*Version : 3.0*
