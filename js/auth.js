@@ -982,6 +982,12 @@ async function afLaunchChild(child) {
 
   // Naviguer vers la carte du monde
   if (typeof navigateTo === 'function') navigateTo('carte');
+  // Daily reward
+  setTimeout(function() {
+    if (window.AP && window.AP.daily && typeof window.AP.daily.check === 'function') {
+      window.AP.daily.check(child);
+    }
+  }, 1500);
   else {
     var globeSec = document.getElementById('globe-sec');
     if (globeSec) globeSec.style.display = 'flex';

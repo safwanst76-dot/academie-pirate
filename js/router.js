@@ -142,6 +142,7 @@ function showCarte() {
 function showIles() {
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('grandbleu');
+  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('grandbleu');
   const map = getSection('map-sec');
   if (map) map.style.display = 'block';
   if (typeof stopBGM === 'function') stopBGM();
@@ -159,6 +160,7 @@ function showQuiz() {
 function showHistoire() {
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('magnolia');
+  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('magnolia');
   if (typeof stopBGM === 'function') stopBGM();
   setTimeout(function () {
     if (typeof playBGM === 'function') playBGM('dbz-map'); // carte → music map
@@ -179,6 +181,7 @@ function showHistoire() {
 function showKanto() {
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('kanto');
+  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('kanto');
 
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = 'none';
@@ -206,6 +209,7 @@ function showKanto() {
 function showPaysduFeu() {
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('paysdufeu');
+  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('paysdufeu');
 
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = 'none';
@@ -242,14 +246,14 @@ function getCurrentRoute() {
 
 // ── SEO : meta dynamique par route ──────────────────────────────
 var SEO_ROUTES = {
-  'login':       { title: 'Académie Pirate — Rejoins léquipage !',                                  desc: 'Plateforme d apprentissage gamifiée manga pour enfants CM2-5ème. Français, Maths, Histoire, Sciences.' },
-  'carte':       { title: 'Académie Pirate — Carte du Monde',                                          desc: 'Choisis ton univers manga et pars à l aventure pédagogique !' },
-  'iles':        { title: 'Académie Pirate — Grand Bleu (Français · One Piece)',                       desc: '8 îles de grammaire et conjugaison avec l équipage Chapeau de Paille.' },
-  'quiz':        { title: 'Académie Pirate — Quiz Français',                                           desc: 'Quiz interactif de grammaire française. Niveau CM2-6ème.' },
-  'histoire':    { title: 'Académie Pirate — Magnolia (Histoire · Dragon Ball Z)',                     desc: '8 îles d histoire : Antiquité, Moyen Âge, Islam, Renaissance.' },
-  'kanto':       { title: 'Académie Pirate — Kanto (Sciences · Demon Slayer)',                        desc: '8 îles de sciences physiques : signaux, lumière, électricité, Internet.' },
-  'pays-du-feu': { title: 'Académie Pirate — Pays du Feu (Maths · Naruto)',                           desc: '8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs.' },
-  'parent':      { title: 'Académie Pirate — Dashboard Parent',                                        desc: 'Suivez la progression de votre enfant : XP, îles complétées, résultats détaillés.' },
+  'login':       { title: "Académie Pirate — Rejoins l'équipage !",              desc: "Plateforme d'apprentissage gamifiée manga pour enfants CM2-5ème. Français, Maths, Histoire, Sciences." },
+  'carte':       { title: "Académie Pirate — Carte du Monde",                     desc: "Choisis ton univers manga et pars à l'aventure pédagogique !" },
+  'iles':        { title: "Académie Pirate — Grand Bleu (Français · One Piece)",  desc: "8 îles de grammaire et conjugaison avec l'équipage Chapeau de Paille." },
+  'quiz':        { title: "Académie Pirate — Quiz Français",                       desc: "Quiz interactif de grammaire française. Niveau CM2-6ème." },
+  'histoire':    { title: "Académie Pirate — Magnolia (Histoire · Dragon Ball Z)", desc: "8 îles d'histoire : Antiquité, Moyen Âge, Islam, Renaissance." },
+  'kanto':       { title: "Académie Pirate — Kanto (Sciences · Demon Slayer)",    desc: "8 îles de sciences physiques : signaux, lumière, électricité, Internet." },
+  'pays-du-feu': { title: "Académie Pirate — Pays du Feu (Maths · Naruto)",      desc: "8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs." },
+  'parent':      { title: "Académie Pirate — Dashboard Parent",                   desc: "Suivez la progression de votre enfant : XP, îles complétées, résultats détaillés." },
 };
 
 function _updateSEO(route) {
@@ -302,7 +306,7 @@ function _injectJSONLD(route, opts) {
       'url': 'https://safwanst76-dot.github.io/academie-pirate/',
       'applicationCategory': 'EducationalApplication',
       'operatingSystem': 'Web',
-      'description': 'Plateforme d apprentissage gamifiée manga pour enfants 8-13 ans.',
+      'description': 'Plateforme d\'apprentissage gamifiée manga pour enfants 8-13 ans.',
       'educationalLevel': 'CM2, 6ème, 5ème',
       'teaches': ['Français', 'Mathématiques', 'Histoire', 'Sciences Physiques'],
       'inLanguage': 'fr',
