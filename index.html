@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="css/quiz-kanto.css">
 <link rel="stylesheet" href="css/lesson.css">
 <link rel="stylesheet" href="css/features/daily.css">
+<link rel="stylesheet" href="css/features/child-profile.css">
 <link rel="stylesheet" href="css/quiz-pays-du-feu.css">
 <link rel="stylesheet" href="css/parent.css">
 
@@ -167,8 +168,8 @@
 <header id="hdr">
   <div class="header-top">
     <div style="display:flex;align-items:center;gap:6px">
-      <div class="hud-avatar" onclick="showAvatarScreen()" title="Changer d'avatar">
-        <img id="headerAvatarImg" src="" alt="avatar"
+    <div class="hud-avatar" onclick="showChildProfileOrAvatar()" title="Mon profil">
+      <img id="headerAvatarImg" src="" alt="avatar"
              style="display:none"
              onerror="this.style.display='none'"
              onload="this.style.display=(this.src&&this.src!==window.location.href)?'block':'none'">
@@ -522,6 +523,7 @@
 <!-- ═══ LESSON ENGINE — moteur (sans données) ═══ -->
 <script src="js/lesson.js"></script>
 <script src="js/services/daily.js"></script>
+<script src="js/features/child-profile.js"></script>
 <script src="js/router.js"></script>
 <!-- ✅ supabase-patch.js EN DERNIER — remplace sbInit + ROUTES.parent -->
 <script src="js/supabase-patch.js"></script>

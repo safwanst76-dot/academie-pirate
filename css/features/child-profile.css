@@ -1,0 +1,186 @@
+/* ═══════════════════════════════════════════════════════════
+   CHILD-PROFILE.CSS — Académie Pirate
+   Écran profil enfant dédié
+   Préfixe .cp-* — isolation totale
+   Mobile-first
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Overlay ── */
+.cp-overlay {
+  position: fixed; inset: 0; z-index: 8000;
+  display: flex; align-items: flex-end; justify-content: center;
+  transition: opacity .3s ease;
+}
+
+/* ── Backdrop ── */
+.cp-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+/* ── Panel ── */
+.cp-panel {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 520px;
+  max-height: 90vh; overflow-y: auto;
+  background: linear-gradient(180deg, #0a0d1a 0%, #080510 100%);
+  border: 2px solid rgba(255,215,0,.25);
+  border-bottom: none;
+  border-radius: 24px 24px 0 0;
+  padding: clamp(16px,4vw,24px);
+  display: flex; flex-direction: column; gap: 16px;
+  box-shadow: 0 -8px 40px rgba(0,0,0,.6);
+  transform: translateY(100%);
+  transition: transform .4s cubic-bezier(.34,1.1,.64,1);
+}
+.cp-panel-in { transform: translateY(0) !important; }
+
+/* ── Header avatar + nom ── */
+.cp-header {
+  display: flex; align-items: center; gap: 14px;
+}
+.cp-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 3px solid var(--gold, #ffd700);
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255,215,0,.3);
+  flex-shrink: 0;
+}
+.cp-header-info { flex: 1; }
+.cp-username {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  letter-spacing: 3px;
+  color: #ffd700;
+  text-shadow: 2px 2px 0 #000;
+  line-height: 1;
+}
+.cp-level-badge {
+  font-family: 'Nunito', sans-serif;
+  font-size: .78rem; font-weight: 900;
+  color: rgba(255,255,255,.6);
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+.cp-close-btn {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 50%; width: 36px; height: 36px;
+  color: rgba(255,255,255,.6); font-size: 1rem;
+  cursor: pointer; flex-shrink: 0;
+  transition: all .15s; display: flex; align-items: center; justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.cp-close-btn:hover { background: rgba(255,255,255,.15); color: #fff; }
+
+/* ── Section XP ── */
+.cp-xp-section {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,215,0,.15);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.cp-xp-row {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;
+}
+.cp-stat {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: rgba(255,255,255,.04); border-radius: 12px; padding: 10px 8px;
+}
+.cp-stat-val {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  letter-spacing: 2px; color: #ffd700;
+  text-shadow: 1px 1px 0 #000; line-height: 1;
+}
+.cp-stat-lbl {
+  font-family: 'Nunito', sans-serif;
+  font-size: .65rem; font-weight: 800;
+  color: rgba(255,255,255,.4);
+  text-transform: uppercase; letter-spacing: 1px;
+  text-align: center;
+}
+
+/* ── Barre XP ── */
+.cp-xp-bar-wrap { display: flex; align-items: center; gap: 10px; }
+.cp-xp-bar {
+  flex: 1; height: 8px;
+  background: rgba(255,255,255,.08);
+  border-radius: 4px; overflow: hidden;
+}
+.cp-xp-fill {
+  height: 100%; border-radius: 4px;
+  background: linear-gradient(90deg, #ffd700, #f97316);
+  transition: width .8s cubic-bezier(.4,0,.2,1);
+}
+.cp-xp-pct {
+  font-family: 'Nunito', sans-serif;
+  font-size: .72rem; font-weight: 900;
+  color: rgba(255,255,255,.5); min-width: 32px; text-align: right;
+}
+.cp-next-level {
+  font-family: 'Nunito', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  color: rgba(255,255,255,.4); text-align: center;
+}
+.cp-next-level strong { color: rgba(255,215,0,.7); }
+
+/* ── Section mondes ── */
+.cp-worlds-section {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.cp-section-title {
+  font-family: 'Bangers', cursive;
+  font-size: 1rem; letter-spacing: 2px;
+  color: rgba(255,255,255,.4);
+  text-transform: uppercase;
+}
+.cp-world-row {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,.04);
+  border-radius: 12px; padding: 10px 12px;
+}
+.cp-world-emoji { font-size: 1.4rem; flex-shrink: 0; }
+.cp-world-info { flex: 1; }
+.cp-world-name {
+  font-family: 'Bangers', cursive;
+  font-size: .95rem; letter-spacing: 1px; line-height: 1;
+}
+.cp-world-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: .7rem; font-weight: 700;
+  color: rgba(255,255,255,.4); margin-top: 2px;
+}
+.cp-world-bar {
+  height: 4px; background: rgba(255,255,255,.08);
+  border-radius: 2px; overflow: hidden; margin-top: 6px;
+}
+.cp-world-fill {
+  height: 100%; border-radius: 2px;
+  transition: width .6s ease;
+}
+
+/* ── Bouton retour carte ── */
+.cp-play-btn {
+  width: 100%; padding: 14px 20px;
+  background: linear-gradient(135deg, #e63946, #f97316);
+  border: none; border-radius: 14px;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  letter-spacing: 2px; color: #fff;
+  cursor: pointer;
+  transition: transform .15s;
+  box-shadow: 0 4px 20px rgba(230,57,70,.4);
+  -webkit-tap-highlight-color: transparent;
+}
+.cp-play-btn:hover  { transform: scale(1.02) translateY(-1px); }
+.cp-play-btn:active { transform: scale(.97); }
+
+/* ── Responsive desktop ── */
+@media (min-width: 520px) {
+  .cp-overlay { align-items: center; }
+  .cp-panel { border-radius: 24px; border-bottom: 2px solid rgba(255,215,0,.25); max-height: 85vh; }
+}
