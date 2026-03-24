@@ -488,7 +488,7 @@ function hist_corriger(n) {
   hist_xp += score * 2;
 hist_completedIslands[n] = score;
 // Sync XP global pour le HUD
-if (typeof xp !== 'undefined') xp += score * 2;
+if (typeof xp !== 'undefined') xp += score * 2;window._histLastScore = score;
 if (typeof completedIslands !== 'undefined') completedIslands['hist_' + n] = score;
 if (typeof updateHUD    === 'function') updateHUD();
 if (typeof checkBadges  === 'function') checkBadges();
@@ -555,15 +555,29 @@ function hist_showResults(n, score) {
 }
 
 function hist_goBack() {
-  hist_playBGM('dbz-map');
-  var secQuiz = document.getElementById('histoire-quiz-sec');
-  var secIles = document.getElementById('histoire-iles-sec');
-  if (secQuiz) secQuiz.style.display = 'none';
-  if (secIles) secIles.style.display = 'block';
-  hist_answers = {};
-  window.scrollTo(0, 0);
-  var grid = document.getElementById('hist-islands-grid');
-  if (grid) { grid.innerHTML = ''; buildHistoireGrid(); }
+  if (window.AP && window.AP.recap) {
+    window.AP.recap.show('magnolia', window._histLastScore || 0, 10, hist_currentIsland, function() {
+      hist_playBGM('dbz-map');
+      var secQuiz = document.getElementById('histoire-quiz-sec');
+      var secIles = document.getElementById('histoire-iles-sec');
+      if (secQuiz) secQuiz.style.display = 'none';
+      if (secIles) secIles.style.display = 'block';
+      hist_answers = {};
+      window.scrollTo(0, 0);
+      var grid = document.getElementById('hist-islands-grid');
+      if (grid) { grid.innerHTML = ''; buildHistoireGrid(); }
+    });
+  } else {
+    hist_playBGM('dbz-map');
+    var secQuiz = document.getElementById('histoire-quiz-sec');
+    var secIles = document.getElementById('histoire-iles-sec');
+    if (secQuiz) secQuiz.style.display = 'none';
+    if (secIles) secIles.style.display = 'block';
+    hist_answers = {};
+    window.scrollTo(0, 0);
+    var grid = document.getElementById('hist-islands-grid');
+    if (grid) { grid.innerHTML = ''; buildHistoireGrid(); }
+  }
 }
 
 function hist_retry(n) {

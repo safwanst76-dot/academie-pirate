@@ -437,7 +437,7 @@ function corriger(n) {
     updateStreakDots();
   });
 
-  const gained = score * 2; xp += gained; completedIslands[n] = score;
+  const gained = score * 2; xp += gained; window.lastScore = score;completedIslands[n] = score;
   document.getElementById('stars'+n).textContent = starsStr(score, 10);
   document.getElementById('isle'+n).classList.add('done');
   updateHUD(); checkBadges();
@@ -485,11 +485,20 @@ function corriger(n) {
   }, 800);
 }
 
-function goBack() {
-  playBGM('map');
-  document.getElementById('quiz-sec').style.display = 'none';
-  document.getElementById('map-sec').style.display = 'block';
-  answers = {}; window.scrollTo(0, 0);
+ function goBack() {
+  if (window.AP && window.AP.recap) {
+    window.AP.recap.show('grandbleu', lastScore || 0, 10, currentIsland, function() {
+      playBGM('map');
+      document.getElementById('quiz-sec').style.display = 'none';
+      document.getElementById('map-sec').style.display = 'block';
+      answers = {}; window.scrollTo(0, 0);
+    });
+  } else {
+    playBGM('map');
+    document.getElementById('quiz-sec').style.display = 'none';
+    document.getElementById('map-sec').style.display = 'block';
+    answers = {}; window.scrollTo(0, 0);
+  }
 }
 
 function retry(n) { answers = {}; startIsland(n); }

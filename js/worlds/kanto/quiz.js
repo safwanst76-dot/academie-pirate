@@ -686,6 +686,7 @@ function kanto_corriger(n) {
 
   // XP + progression
   var gained = score * 2;
+  window._kantoLastScore = score;
   kanto_xp += gained;
   kanto_completedIslands[n] = score;
 
@@ -786,15 +787,31 @@ function kanto_showResults(n, score) {
 // 11. NAVIGATION
 // ══════════════════════════════════════════════════════════════
 function kanto_goBack() {
-  kanto_playBGM('kanto-map');
-  var secQuiz = document.getElementById('kanto-quiz-sec');
-  var secIles = document.getElementById('kanto-iles-sec');
-  if (secQuiz) secQuiz.style.display = 'none';
-  if (secIles) secIles.style.display = 'block';
-  kanto_answers = {};
-  window.scrollTo(0, 0);
-  var grid = document.getElementById('kanto-islands-grid');
-  if (grid) { grid.innerHTML = ''; buildKantoGrid(); }
+  if (window.AP && window.AP.recap) {
+    var isle = ISLANDS_KANTO[kanto_currentIsland];
+    var total = isle ? isle.qs.length : 11;
+    window.AP.recap.show('kanto', window._kantoLastScore || 0, total, kanto_currentIsland, function() {
+      kanto_playBGM('kanto-map');
+      var secQuiz = document.getElementById('kanto-quiz-sec');
+      var secIles = document.getElementById('kanto-iles-sec');
+      if (secQuiz) secQuiz.style.display = 'none';
+      if (secIles) secIles.style.display = 'block';
+      kanto_answers = {};
+      window.scrollTo(0, 0);
+      var grid = document.getElementById('kanto-islands-grid');
+      if (grid) { grid.innerHTML = ''; buildKantoGrid(); }
+    });
+  } else {
+    kanto_playBGM('kanto-map');
+    var secQuiz = document.getElementById('kanto-quiz-sec');
+    var secIles = document.getElementById('kanto-iles-sec');
+    if (secQuiz) secQuiz.style.display = 'none';
+    if (secIles) secIles.style.display = 'block';
+    kanto_answers = {};
+    window.scrollTo(0, 0);
+    var grid = document.getElementById('kanto-islands-grid');
+    if (grid) { grid.innerHTML = ''; buildKantoGrid(); }
+  }
 }
 
 function kanto_retry(n) {

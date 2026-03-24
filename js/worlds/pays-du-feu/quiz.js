@@ -439,6 +439,7 @@ function pdf_corriger(n) {
 function pdf_showResults(n, score) {
   var isle   = ISLANDS_PDF[n];
   var gained = score * 2;
+  window._pdfLastScore = score;
   var txts   = [
     {min:11,t:'HOKAGE DES MATHS ! 11/11 !!!'},
     {min:9, t:'EXCELLENT ! Niveau Jonin !'},
@@ -492,15 +493,31 @@ function pdf_showResults(n, score) {
 // 11. NAVIGATION
 // ══════════════════════════════════════════════════════════════
 function pdf_goBack() {
-  pdf_playBGM('naruto-map');
-  var secQuiz = document.getElementById('pdf-quiz-sec');
-  var secIles = document.getElementById('pdf-iles-sec');
-  if (secQuiz) secQuiz.style.display='none';
-  if (secIles) secIles.style.display='block';
-  pdf_answers = {};
-  window.scrollTo(0,0);
-  var grid = document.getElementById('pdf-islands-grid');
-  if (grid) { grid.innerHTML=''; buildPdfGrid(); }
+  if (window.AP && window.AP.recap) {
+    var isle = ISLANDS_PDF[pdf_currentIsland];
+    var total = isle ? isle.qs.length : 11;
+    window.AP.recap.show('paysdufeu', window._pdfLastScore || 0, total, pdf_currentIsland, function() {
+      pdf_playBGM('naruto-map');
+      var secQuiz = document.getElementById('pdf-quiz-sec');
+      var secIles = document.getElementById('pdf-iles-sec');
+      if (secQuiz) secQuiz.style.display = 'none';
+      if (secIles) secIles.style.display = 'block';
+      pdf_answers = {};
+      window.scrollTo(0, 0);
+      var grid = document.getElementById('pdf-islands-grid');
+      if (grid) { grid.innerHTML = ''; buildPdfGrid(); }
+    });
+  } else {
+    pdf_playBGM('naruto-map');
+    var secQuiz = document.getElementById('pdf-quiz-sec');
+    var secIles = document.getElementById('pdf-iles-sec');
+    if (secQuiz) secQuiz.style.display = 'none';
+    if (secIles) secIles.style.display = 'block';
+    pdf_answers = {};
+    window.scrollTo(0, 0);
+    var grid = document.getElementById('pdf-islands-grid');
+    if (grid) { grid.innerHTML = ''; buildPdfGrid(); }
+  }
 }
 
 function pdf_retry(n) {
