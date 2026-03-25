@@ -15,25 +15,25 @@ var BUCKET_JJK       = 'island-namek';
 var JJK_STORAGE      = SUPABASE_URL_JJK + '/storage/v1/object/public/' + BUCKET_JJK;
 
 var JJK_AVATARS = {
-  1: JJK_STORAGE + '/characters/yuji.jpg',
+  1: JJK_STORAGE + '/characters/yuji.png',
   2: JJK_STORAGE + '/characters/megumi.jpg',
-  3: JJK_STORAGE + '/characters/nobara.jpg',
+  3: JJK_STORAGE + '/characters/nobara.png',
   4: JJK_STORAGE + '/characters/gojo.jpg',
   5: JJK_STORAGE + '/characters/nanami.jpg',
   6: JJK_STORAGE + '/characters/sukuna.jpg',
   7: JJK_STORAGE + '/characters/todo.jpg',
-  8: JJK_STORAGE + '/characters/inumaki.jpg',
+  8: JJK_STORAGE + '/characters/inumaki.png',
 };
 
 var JJK_BOSS_AVATARS = {
   'Mahito':        JJK_STORAGE + '/characters/mahito.jpg',
-  'Jogo':          JJK_STORAGE + '/characters/jogo.jpg',
-  'Hanami':        JJK_STORAGE + '/characters/hanami.jpg',
+  'Jogo':          JJK_STORAGE + '/characters/jogo.png',
+  'Hanami':        JJK_STORAGE + '/characters/hanami.png',
   'Ryomen Sukuna': JJK_STORAGE + '/characters/sukuna.jpg',
-  'Dagon':         JJK_STORAGE + '/characters/dagon.jpg',
-  'Choso':         JJK_STORAGE + '/characters/choso.jpg',
-  'Geto Suguru':   JJK_STORAGE + '/characters/geto.jpg',
-  'Kenjaku':       JJK_STORAGE + '/characters/kenjaku.jpg',
+  'Dagon':         JJK_STORAGE + '/characters/dagon.png',
+  'Choso':         JJK_STORAGE + '/characters/choso.png',
+  'Geto Suguru':   JJK_STORAGE + '/characters/geto.png',
+  'Kenjaku':       JJK_STORAGE + '/characters/kenjaku.png',
 };
 
 var JJK_FALLBACK = { 1:'🔥', 2:'🐉', 3:'⚔️', 4:'♾️', 5:'💼', 6:'👹', 7:'💪', 8:'🌿' };
@@ -50,7 +50,7 @@ var JJK_GIFS_WIN = [
   'https://media1.giphy.com/media/4HpF6CHNB4jsBTV266/giphy.gif',
 ];
 var JJK_GIFS_LOSE = [
-  'https://media2.giphy.com/media/DlSDrFfiyoDHQO2w3q/giphy.gif',
+  'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGZvajRpNGRpM3B0Z3d6M3MybGg1Nzhpb2hjM3RvNW53dmJ3Zzl0dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8ezz6fUfcWYlDFtKxK/giphy.gif',
 ];
 
 // ══════════════════════════════════════════════════════════════

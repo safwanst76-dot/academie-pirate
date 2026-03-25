@@ -91,14 +91,14 @@ window.AP_CONFIG = {
       jsFiles:     ['js/worlds/pays-du-feu/audio.js', 'js/worlds/pays-du-feu/lesson-data.js', 'js/worlds/pays-du-feu/quiz.js'],
     },
     'namek': {
-      active:      false,   // ← passer à true quand développé
-      locked:      true,
+      active:      true,
+      locked:      false,
       route:       'namek',
       subject:     'Géographie',
-      universe:    'Dragon Ball Z',
-      color:       '#3b82f6',
-      stripeTier:  'premium',
-      jsFiles:     [],
+      universe:    'Jujutsu Kaisen',
+      color:       '#7c3aed',
+      stripeTier:  'free',
+      jsFiles:     ['js/worlds/namek/audio.js', 'js/worlds/namek/lesson-data.js', 'js/worlds/namek/quiz.js'],
     },
     'foret-konoha': {
       active:      false,
