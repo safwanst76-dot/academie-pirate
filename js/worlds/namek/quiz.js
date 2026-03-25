@@ -997,4 +997,58 @@ async function showNamek() {
   await loadJjkProgress();
 }
 
+// ══════════════════════════════════════════════════════════════
+// 15. FOND ANIMÉ — images manga JJK (Jikan API + fallback Supabase)
+// ══════════════════════════════════════════════════════════════
+var _jjkBgLoaded = false;
+
+async function loadJjkBgStrips() {
+  if (_jjkBgLoaded) return;
+  _jjkBgLoaded = true;
+
+  var bg = document.getElementById('jjk-bg');
+  if (!bg) return;
+  bg.innerHTML = '';
+
+  // Fallback : personnages JJK depuis Supabase (toujours disponibles)
+  var supabaseFallback = Object.values(JJK_AVATARS).concat(Object.values(JJK_BOSS_AVATARS));
+
+  var urls = [];
+
+  // Priorité 1 : Jikan API — Jujutsu Kaisen anime (MAL ID 40748)
+  try {
+    var r = await fetch('https://api.jikan.moe/v4/anime/40748/pictures');
+    if (r.ok) {
+      var data = await r.json();
+      if (data.data && data.data.length >= 5) {
+        urls = data.data.map(function(p) {
+          return p.jpg.large_image_url || p.jpg.image_url;
+        });
+      }
+    }
+  } catch(e) {}
+
+  // Priorité 2 : fallback Supabase si Jikan échoue ou rate-limited
+  if (urls.length < 5) {
+    urls = supabaseFallback;
+  }
+
+  // Distribuer en round-robin sur 5 strips (même pattern que kanto/pays-du-feu)
+  var doubled = urls.concat(urls);
+  for (var s = 0; s < 5; s++) {
+    var strip = document.createElement('div');
+    strip.className = 'jjk-bg-strip';
+    var stripImgs = doubled.filter(function(_, i) { return i % 5 === s; });
+    if (!stripImgs.length) stripImgs = doubled.slice(0, 4);
+    stripImgs.forEach(function(src) {
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      img.loading = 'lazy';
+      strip.appendChild(img);
+    });
+    bg.appendChild(strip);
+  }
+}
+
 console.info('🔮 quiz-namek.js chargé — Géographie · JJK · 8 îles × 11 questions · programme officiel 6ème');

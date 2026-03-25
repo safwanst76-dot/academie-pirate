@@ -252,7 +252,8 @@ function showNamek() {
 
   if (typeof buildJjkGrid      === 'function') buildJjkGrid();
   if (typeof loadJjkProgress   === 'function') loadJjkProgress();
-
+  if (typeof loadJjkBgStrips   === 'function') loadJjkBgStrips();
+  
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') setTimeout(function(){ playBGM('jjk-map'); }, 300);
   document.title = 'Académie Pirate — Namek';
