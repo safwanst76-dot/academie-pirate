@@ -50,7 +50,7 @@ const CONTINENTS = [
     emoji: '💥', color: '#3b82f6',
     chars: ['Bulma','Android 18','Videl'], charColors: ['#3b82f6','#6366f1','#ec4899'],
     desc: "Parcours l'univers avec Goku et ses amis !",
-    locked: true,
+    locked: false,
     // Zone bas-droite (Océanie/îles)
     zone: 'M 420,155 L 452,148 L 478,155 L 488,172 L 482,190 L 464,198 L 444,194 L 428,182 L 420,168 Z',
     labelX: 454, labelY: 175, subX: 454, subY: 188, emojiX: 428, emojiY: 162,

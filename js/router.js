@@ -17,7 +17,8 @@ const ROUTES = {
   'quiz'     : showQuiz,
   'histoire' : showHistoire,
   'kanto'    : showKanto,
-  'pays-du-feu' : showPaysduFeu
+  'pays-du-feu' : showPaysduFeu,
+  'namek'    : showNamek
 };
 
 // ── Sections HTML ──
@@ -75,6 +76,12 @@ function hideAll() {
   const pdfBg = document.getElementById('pdf-bg');
   if (pdfBg) pdfBg.classList.remove('visible');
 
+  const jjkIles = document.getElementById('jjk-iles-sec');
+  const jjkQuiz = document.getElementById('jjk-quiz-sec');
+  if (jjkIles) jjkIles.style.display = 'none';
+  if (jjkQuiz) jjkQuiz.style.display = 'none';
+  const jjkBg = document.getElementById('jjk-bg');
+  if (jjkBg) jjkBg.classList.remove('visible');
   // Restaurer le fond manga quand on quitte Kanto
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = '';
@@ -229,7 +236,27 @@ function showPaysduFeu() {
   if (typeof playBGM === 'function') setTimeout(function(){ playBGM('naruto-map'); }, 300);
   document.title = 'Académie Pirate — Pays du Feu';
 }
+function showNamek() {
+  hideAll();
+  if (window.AP) window.AP.trackWorldEnter('namek');
+  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('namek');
 
+  const mangaBg = document.getElementById('manga-bg');
+  if (mangaBg) mangaBg.style.display = 'none';
+
+  const jjkBg = document.getElementById('jjk-bg');
+  if (jjkBg) jjkBg.classList.add('visible');
+
+  var jjkIles = document.getElementById('jjk-iles-sec');
+  if (jjkIles) jjkIles.style.display = 'block';
+
+  if (typeof buildJjkGrid      === 'function') buildJjkGrid();
+  if (typeof loadJjkProgress   === 'function') loadJjkProgress();
+
+  if (typeof stopBGM === 'function') stopBGM();
+  if (typeof playBGM === 'function') setTimeout(function(){ playBGM('jjk-map'); }, 300);
+  document.title = 'Académie Pirate — Namek';
+}
 // ══════════════════════════════
 // NAVIGATION
 // ══════════════════════════════
@@ -391,7 +418,7 @@ window.showContinentPanel = function (c) {
       padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
     `;
 
-   const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : 'iles';
+   const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : c.id === 'geography' ? 'namek' : 'iles';
     panel.innerHTML = `
       <div class="gp-header">
         <div class="gp-emoji">${c.emoji}</div>
