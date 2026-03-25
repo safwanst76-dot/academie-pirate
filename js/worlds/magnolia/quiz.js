@@ -351,6 +351,14 @@ function hist_launchIsland(n) {
   hist_currentIsland = n;
   hist_answers = {};
 
+  // Boss battle — init
+  var _mgIsle = ISLANDS_HISTOIRE[n];
+  if (_mgIsle && _mgIsle.qs && _mgIsle.qs.some(function(q){ return q.isBoss; })) {
+    var _mgBq = _mgIsle.qs.find(function(q){ return q.isBoss; });
+    if (window.AP && window.AP.boss) {
+      window.AP.boss.init('magnolia', _mgBq.bossName || 'BOSS', HIST_BOSS_AVATARS[_mgBq.bossName] || '', 1);
+    }
+  }
   // ── Forcer l'overlay cinématique à zéro ──
   var ov = document.getElementById('hist-cine-overlay');
   if (ov) {
@@ -487,6 +495,13 @@ function hist_corriger(n) {
 
   hist_xp += score * 2;
 hist_completedIslands[n] = score;
+// Boss battle mechanic
+if (window.AP && window.AP.boss) {
+  var _bossQs = isle.qs.filter(function(q){ return q.isBoss; });
+  if (_bossQs.length > 0) {
+    window.AP.boss.hit(score >= 8, true);
+  }
+}
 // Sync XP global pour le HUD
 if (typeof xp !== 'undefined') xp += score * 2;window._histLastScore = score;
 if (typeof completedIslands !== 'undefined') completedIslands['hist_' + n] = score;

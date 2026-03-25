@@ -532,6 +532,15 @@ function kanto_launchIsland(n) {
   kanto_currentIsland = n;
   kanto_answers       = {};
 
+  // Boss battle — init si l'île contient une question boss
+  var _kb = ISLANDS_KANTO[n];
+  if (_kb && _kb.qs && _kb.qs.some(function(q){ return q.isBoss; })) {
+    var _bq = _kb.qs.find(function(q){ return q.isBoss; });
+    if (window.AP && window.AP.boss) {
+      window.AP.boss.init('kanto', _bq.bossName || 'BOSS', _bq.bossImg || '', 1);
+    }
+  }
+
   // Fermer la cinématique proprement
   var ov = document.getElementById('kanto-cine-overlay');
   if (ov) {
@@ -700,6 +709,12 @@ function kanto_corriger(n) {
   // Sauvegarde Supabase directe
   _kantoSaveDB(n, score, gained);
 
+  // Boss battle — résultat
+  if (window.AP && window.AP.boss && window.AP.boss.isActive()) {
+    if (isle.qs.some(function(q){ return q.isBoss; })) {
+      window.AP.boss.hit(score >= isle.qs.length - 1, true);
+    }
+  }
   // BGM résultat
   if (score === isle.qs.length) {
     kanto_playBGM('kanto-victory');

@@ -309,6 +309,15 @@ function pdf_launchIsland(n) {
   pdf_currentIsland = n;
   pdf_answers = {};
 
+  // Boss battle — init si l'île contient une question boss
+  var _pb = ISLANDS_PDF[n];
+  if (_pb && _pb.qs && _pb.qs.some(function(q){ return q.isBoss; })) {
+    var _bq = _pb.qs.find(function(q){ return q.isBoss; });
+    if (window.AP && window.AP.boss) {
+      window.AP.boss.init('paysdufeu', _bq.bossName || 'BOSS', _bq.bossImg || '', 1);
+    }
+  }
+
   var ov = document.getElementById('pdf-cine-overlay');
   if (ov) { ov.style.display='none'; ov.style.zIndex='-1'; ov.innerHTML=''; }
 
@@ -424,6 +433,12 @@ function pdf_corriger(n) {
   // Sauvegarder progression
   pdf_saveProgress(n, score, score * 2);
 
+  // Boss battle — résultat
+  if (window.AP && window.AP.boss && window.AP.boss.isActive()) {
+    if (isle.qs.some(function(q){ return q.isBoss; })) {
+      window.AP.boss.hit(score >= isle.qs.length - 1, true);
+    }
+  }
   // Mettre à jour barre prog à 100%
   var progEl = document.getElementById('pdf-qProgFill');
   var lblEl  = document.getElementById('pdf-qProgLbl');

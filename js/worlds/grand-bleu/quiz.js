@@ -166,6 +166,14 @@ function startIsland(n) {
 function _launchIsland(n) {
   setTimeout(() => speakChar(n, 'intro'), 400);
   currentIsland = n; answers = {};
+  // Boss battle — init
+  var _gbIsle = ISLANDS[n];
+  if (_gbIsle && _gbIsle.qs && _gbIsle.qs.some(function(q){ return q.isBoss; })) {
+    var _gbBq = _gbIsle.qs.find(function(q){ return q.isBoss; });
+    if (window.AP && window.AP.boss) {
+      window.AP.boss.init('grandbleu', _gbBq.bossName || 'BOSS', _gbBq.bossImg || '', 1);
+    }
+  }
   const isle = ISLANDS[n];
   const isWrite = isle.mode === 'write';
   document.getElementById('map-sec').style.display = 'none';
@@ -440,6 +448,14 @@ function corriger(n) {
   const gained = score * 2; xp += gained; window.lastScore = score;completedIslands[n] = score;
   document.getElementById('stars'+n).textContent = starsStr(score, 10);
   document.getElementById('isle'+n).classList.add('done');
+  // Boss battle mechanic
+if (window.AP && window.AP.boss) {
+  var isBossQ = isle.qs.some(function(q) { return q.isBoss; });
+  if (isBossQ) {
+    var bossQ = isle.qs.find(function(q) { return q.isBoss; });
+    window.AP.boss.hit(score === isle.qs.length, true);
+  }
+}
   updateHUD(); checkBadges();
   if (score === 10) { sfxPerfect(); starRain(12); setTimeout(() => fxCorrect('NAKAMA! 10/10!'), 300); setTimeout(() => speakChar(currentIsland,'perfect'), 800); }
 
