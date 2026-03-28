@@ -6,11 +6,11 @@
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
+
 const RESEND_API_KEY   = Deno.env.get('RESEND_API_KEY') ?? '';
 const SUPABASE_URL     = Deno.env.get('SUPABASE_URL') ?? '';
 const SUPABASE_SERVICE = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
-const FROM_EMAIL       = 'Académie Pirate <noreply@academie-pirate.fr>';
-
+const FROM_EMAIL = 'Académie Pirate <onboarding@resend.dev>';
 // Types de notifications
 const NOTIF_TEMPLATES: Record<string, { emoji: string; subject: string }> = {
   'nouveau_monde':  { emoji: '🌍', subject: 'Nouveau monde disponible sur Académie Pirate !' },
