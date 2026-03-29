@@ -986,7 +986,13 @@ async function afLaunchChild(child) {
     var globeSec = document.getElementById('globe-sec');
     if (globeSec) globeSec.style.display = 'flex';
   }
-
+// Web Push — demander permission après connexion enfant
+  setTimeout(function() {
+    if (window.AP_Push && typeof window.AP_Push.init === 'function') {
+      window.AP_Push.init();
+    }
+  }, 2000);
+  
   // Daily reward — 1.5s pour laisser la carte se charger
   setTimeout(function() {
     if (window.AP && window.AP.daily && typeof window.AP.daily.check === 'function') {
