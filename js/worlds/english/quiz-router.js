@@ -15,6 +15,18 @@
 
   var STORAGE_AOT = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/';
 
+  // ── Données cinématiques par île (niveau CM2 = îles 1-8) ──────
+  var AOT_ISLE_INTRO = {
+    1: { bg:'#0a0a00', lines:["L'ALPHABET…","… ANGLAIS !!","26 lettres pour la liberté !"],       kanji:'自由 !!', kanjiColor:'#8b6914', bubble:"L'alphabet, c'est la première étape vers la liberté ! 26 lettres pour conquérir l'anglais !" },
+    2: { bg:'#000a0a', lines:["LES NOMBRES…","… EN ANGLAIS !!","One, two, three — en avant !"],     kanji:'数字 !!', kanjiColor:'#4a5c3f', bubble:"Les chiffres sont des armes. Compte de 1 à 100 comme un vrai soldat de l'Armée d'Exploration !" },
+    3: { bg:'#0a0500', lines:["LES COULEURS…","… DU MONDE !!","Red, blue, green !"],                kanji:'色彩 !!', kanjiColor:'#c0a030', bubble:"Les couleurs du monde sont infinies ! Apprends-les en anglais et peins ta liberté !" },
+    4: { bg:'#050a00', lines:["LES ANIMAUX…","… SAUVAGES !!","Cat, dog, lion !"],                   kanji:'動物 !!', kanjiColor:'#8b6914', bubble:"Même les animaux méritent le respect. Connais leurs noms en anglais, c'est un ordre !" },
+    5: { bg:'#0a0008', lines:["LA FAMILLE…","… EN ANGLAIS !!","Mum, dad, sister !"],                kanji:'家族 !!', kanjiColor:'#4a5c3f', bubble:"La famille, c'est ce qu'on choisit. Apprenons les membres de la famille en anglais !" },
+    6: { bg:'#080005', lines:["LE CORPS…","… HUMAIN !!","Head, shoulders, knees !"],               kanji:'身体 !!', kanjiColor:'#8b6914', bubble:"Connais ton corps comme tu connais ton équipement ! Tête, épaules, genoux et pieds !" },
+    7: { bg:'#00080a', lines:["L'ÉCOLE…","… EN ANGLAIS !!","Teacher, book, Monday !"],             kanji:'学校 !!', kanjiColor:'#4a5c3f', bubble:"À l'école on apprend, on découvre, on grandit ! Voici le vocabulaire de l'école en anglais !" },
+    8: { bg:'#0a0800', lines:["LA MÉTÉO…","… EN ANGLAIS !!","Sunny, rainy, windy !"],              kanji:'天気 !!', kanjiColor:'#8b6914', bubble:"Un bon commandant connaît la météo avant la mission ! Apprenons à décrire le temps qu'il fait !" },
+  };
+
   var NIVEAUX = [
     { code: 'cm2',  nom: 'CM2',  emoji: '⭐',      color: '#8b6914', desc: 'Vocabulaire de base' },
     { code: '6eme', nom: '6ème', emoji: '⭐⭐',     color: '#4a5c3f', desc: 'Grammaire fondamentale' },
@@ -276,14 +288,67 @@
     var ch = _chapitres.find(function(c){ return c.id === chapitreId; });
     if (!ch) return;
 
-    // Leçon avant le quiz — même pattern que lesson_paysdufeu(n, callback)
+    // Pattern exact V1 : leçon → cinématique → quiz
     if (typeof lesson_english === 'function') {
       lesson_english(_currentNiveau, ch.numero, function() {
-        _launchQuiz(chapitreId, ch);
+        // Après leçon → cinématique (comme pdf/jjk)
+        if (typeof playBGM === 'function') playBGM(ch.bgm || 'aot-battle');
+        _playCinematic(ch, function() {
+          _launchQuiz(chapitreId, ch);
+        });
       });
     } else {
-      // Pas de leçon → lancer directement
-      _launchQuiz(chapitreId, ch);
+      if (typeof playBGM === 'function') playBGM(ch.bgm || 'aot-battle');
+      _playCinematic(ch, function() {
+        _launchQuiz(chapitreId, ch);
+      });
+    }
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // CINÉMATIQUE — pattern exact jjk_playCinematic / pdf_playCinematic
+  // ══════════════════════════════════════════════════════════════
+
+  function _playCinematic(ch, callback) {
+    var cfg = AOT_ISLE_INTRO[ch.numero];
+    if (!cfg) { if (callback) callback(); return; }
+
+    // Créer/récupérer l'overlay (créé dynamiquement comme V1)
+    var ov = document.getElementById('aot-cine-overlay');
+    if (!ov) {
+      ov = document.createElement('div');
+      ov.id = 'aot-cine-overlay';
+      document.body.appendChild(ov);
+    }
+
+    ov.innerHTML =
+      '<div class="aot-cine-inner" style="background:' + cfg.bg + ';min-height:100vh;height:100vh">' +
+        '<div class="aot-cine-char-wrap">' +
+          '<img src="' + (ch.hero_image || '') + '" class="aot-cine-char" onerror="this.style.display=\'none\'">' +
+          '<div class="aot-cine-char-emoji" style="color:' + cfg.kanjiColor + '">⚔️</div>' +
+        '</div>' +
+        '<div class="aot-cine-content">' +
+          '<div class="aot-cine-kanji" style="color:' + cfg.kanjiColor + '">' + cfg.kanji + '</div>' +
+          '<div class="aot-cine-lines">' + cfg.lines.map(function(l){ return '<div class="aot-cine-line">' + l + '</div>'; }).join('') + '</div>' +
+          '<div class="aot-cine-bubble">' +
+            '<span class="aot-cine-char-name" style="color:' + cfg.kanjiColor + '">' + (ch.hero_name || '') + '</span>' +
+            '<span class="aot-cine-bubble-text">"' + cfg.bubble + '"</span>' +
+          '</div>' +
+        '</div>' +
+        '<button class="aot-skip-btn" onclick="window.aot_skipCine()">⏭ PASSER</button>' +
+      '</div>';
+
+    ov.style.cssText = 'position:fixed;inset:0;z-index:9500;display:flex;opacity:0;transition:opacity .3s;pointer-events:auto';
+    ov._cb = callback;
+    requestAnimationFrame(function(){ ov.style.opacity = '1'; });
+    ov._t  = setTimeout(window.aot_skipCine, 4500);
+
+    // TTS — identique V1 (fr-FR, rate 0.9, pitch 1.1)
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      var utt = new SpeechSynthesisUtterance(cfg.bubble);
+      utt.lang = 'fr-FR'; utt.rate = 0.9; utt.pitch = 1.1;
+      window.speechSynthesis.speak(utt);
     }
   }
 
@@ -331,6 +396,17 @@
   // ══════════════════════════════════════════════════════════════
   // EXPORTS GLOBAUX
   // ══════════════════════════════════════════════════════════════
+
+  // skipCine global (utilisé dans onclick du bouton PASSER)
+  window.aot_skipCine = function() {
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    var ov = document.getElementById('aot-cine-overlay');
+    if (!ov) return;
+    clearTimeout(ov._t);
+    var cb = ov._cb;
+    ov.style.display = 'none'; ov.style.zIndex = '-1'; ov.innerHTML = '';
+    if (cb) cb();
+  };
 
   window.showEnglish     = showEnglish;   // ← appelé par router.js
   window.aot_showEnglish = showEnglish;
