@@ -324,7 +324,7 @@
     ov.innerHTML =
       '<div class="aot-cine-inner" style="background:' + cfg.bg + ';min-height:100vh;height:100vh">' +
         '<div class="aot-cine-char-wrap">' +
-          '<img src="' + (ch.hero_image || '') + '" class="aot-cine-char" onerror="this.style.display=\'none\'">' +
+          '<img src="' + (ch.hero_image || '') + '" class="aot-cine-char" onerror="this.style.display:'none'">' +
           '<div class="aot-cine-char-emoji" style="color:' + cfg.kanjiColor + '">⚔️</div>' +
         '</div>' +
         '<div class="aot-cine-content">' +
@@ -341,7 +341,7 @@
     ov.style.cssText = 'position:fixed;inset:0;z-index:9500;display:flex;opacity:0;transition:opacity .3s;pointer-events:auto';
     ov._cb = callback;
     requestAnimationFrame(function(){ ov.style.opacity = '1'; });
-    ov._t  = setTimeout(window.aot_skipCine, 4500);
+    ov._t  = setTimeout(window.aot_skipCine, 7000);
 
     // TTS — identique V1 (fr-FR, rate 0.9, pitch 1.1)
     if ('speechSynthesis' in window) {
