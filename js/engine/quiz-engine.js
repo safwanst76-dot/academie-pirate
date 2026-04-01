@@ -299,7 +299,10 @@
     var sw = document.getElementById('aot-submit-wrap');
     if (sw) sw.style.display = 'none';
 
-    // Afficher résultats
+    // Scroll vers le haut pour voir les corrections depuis le début
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Afficher résultats après que l'élève ait eu le temps de voir les corrections
     _showResults();
   }
 
@@ -356,10 +359,12 @@
     var c = document.getElementById('aot-qContainer');
     if (c) c.innerHTML += html;
 
-    // Scroll vers résultats après 400ms (pattern exact V1)
+    // Scroll vers le HAUT pour que l'élève voie les corrections
+    // puis scroll vers résultats après 400ms
+    window.scrollTo(0, 0);
     setTimeout(function(){
       var rc = document.getElementById('aot-resCard');
-      if (rc) rc.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (rc) rc.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 400);
 
     // SFX

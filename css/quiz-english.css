@@ -338,7 +338,7 @@
 .aot-result-body       { padding:16px; }
 .aot-result-topic      { font-family:'Nunito',sans-serif; font-size:.82rem; font-weight:800; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
 .aot-result-stars      { font-size:.85rem; color:var(--aot-brown); margin-bottom:12px; }
-.aot-result-gif        { width:100%; max-height:180px; object-fit:contain; border-radius:12px; margin-bottom:12px; }
+.aot-result-gif        { width:100%; max-height:300px; object-fit:contain; border-radius:12px; margin-bottom:16px; display:block; }
 .aot-result-xp         { font-family:'Nunito',sans-serif; font-size:.85rem; font-weight:900; color:var(--aot-brown); margin-bottom:16px; }
 
 /* ══════════════════════════════════════════════════════
