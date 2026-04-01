@@ -324,7 +324,7 @@
     ov.innerHTML =
       '<div class="aot-cine-inner" style="background:' + cfg.bg + ';min-height:100vh;height:100vh">' +
         '<div class="aot-cine-char-wrap">' +
-          '<img src="' + (ch.hero_image || '') + '" class="aot-cine-char" onerror="this.style.display:'none'">' +
+          '<img src="' + (ch.hero_image || '') + '" class="aot-cine-char" onerror="this.style.display=\'none\'">' +
           '<div class="aot-cine-char-emoji" style="color:' + cfg.kanjiColor + '">⚔️</div>' +
         '</div>' +
         '<div class="aot-cine-content">' +
