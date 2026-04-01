@@ -1,0 +1,398 @@
+/* ═══════════════════════════════════════════════════════════════
+   QUIZ-ENGLISH.CSS — Académie Pirate
+   Univers : ATTACK ON TITAN — Kaki · Marron · Noir
+   Règle CS-04 : mobile-first
+   Règle CS-05 : isolation préfixe .aot-*
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --aot-kaki:   #4a5c3f;
+  --aot-brown:  #8b6914;
+  --aot-dark:   #0a0a0a;
+  --aot-panel:  rgba(10,10,8,.94);
+  --aot-border: rgba(74,92,63,.5);
+  --aot-glow:   rgba(74,92,63,.5);
+  --aot-gold:   #c0a030;
+}
+
+/* ══════════════════════════════════════════════════════
+   FOND ANIMÉ
+   ══════════════════════════════════════════════════════ */
+#aot-bg {
+  position: fixed; inset: 0; z-index: 0;
+  display: flex; gap: 0; overflow: hidden;
+  pointer-events: none; opacity: 0;
+  transition: opacity 1s ease;
+}
+#aot-bg.visible { opacity: 1; }
+
+.aot-bg-strip {
+  flex: 1; display: flex; flex-direction: column; gap: 4px;
+  animation: aot-strip-scroll 32s linear infinite;
+  will-change: transform;
+}
+.aot-bg-strip:nth-child(even) { animation-direction: reverse; animation-duration: 40s; }
+.aot-bg-strip:nth-child(3)    { animation-duration: 26s; }
+.aot-bg-strip:nth-child(5)    { animation-duration: 44s; }
+
+@keyframes aot-strip-scroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+.aot-bg-strip img {
+  width: 100%; aspect-ratio: 9/13; object-fit: cover;
+  display: block; border-radius: 4px; opacity: .5;
+  filter: saturate(1.1) brightness(.55) hue-rotate(30deg);
+}
+
+/* ══════════════════════════════════════════════════════
+   SECTIONS
+   ══════════════════════════════════════════════════════ */
+#aot-levels-sec,
+#aot-iles-sec,
+#aot-quiz-sec {
+  display: none; position: relative; z-index: 2;
+  width: 100%; min-height: 100vh; padding-bottom: 80px;
+  pointer-events: auto;
+}
+
+#aot-levels-sec::before,
+#aot-iles-sec::before,
+#aot-quiz-sec::before {
+  content: ''; position: fixed; inset: 0; z-index: 1;
+  background: linear-gradient(160deg,rgba(10,10,8,.72) 0%,rgba(20,16,8,.62) 50%,rgba(10,10,8,.72) 100%);
+  pointer-events: none;
+}
+
+.aot-map-header, .aot-levels-grid, .aot-islands-grid,
+.aot-quiz-header, #aot-qContainer {
+  position: relative; z-index: 3;
+}
+
+/* ══════════════════════════════════════════════════════
+   HEADER COMMUN
+   ══════════════════════════════════════════════════════ */
+.aot-map-header { text-align: center; padding: 24px 16px 16px; }
+
+.aot-map-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  color: var(--aot-brown); letter-spacing: 4px;
+  text-shadow: 3px 3px 0 #000, 0 0 30px var(--aot-glow);
+}
+.aot-map-sub {
+  font-family: 'Nunito', sans-serif; font-size: .85rem; font-weight: 800;
+  color: rgba(255,255,255,.6); letter-spacing: 2px;
+  text-transform: uppercase; margin-top: 4px;
+}
+
+/* Bouton retour */
+.aot-back-btn {
+  display: inline-block; margin-bottom: 12px;
+  background: rgba(139,105,20,.15); border: 1.5px solid rgba(139,105,20,.4);
+  color: var(--aot-brown); border-radius: 20px; padding: 6px 16px;
+  font-family: 'Bangers', cursive; font-size: .9rem; letter-spacing: 1px;
+  cursor: pointer; transition: all .2s;
+}
+.aot-back-btn:hover { background: rgba(139,105,20,.25); }
+
+/* ══════════════════════════════════════════════════════
+   SÉLECTION NIVEAU
+   ══════════════════════════════════════════════════════ */
+.aot-levels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px; padding: 12px 16px 40px;
+  max-width: 800px; margin: 0 auto;
+}
+@media (min-width: 640px) { .aot-levels-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.aot-level-card {
+  background: var(--aot-panel);
+  border: 2px solid var(--level-color, var(--aot-kaki));
+  border-radius: 18px; padding: 20px 14px;
+  text-align: center; cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0,0,0,.7),
+              0 0 16px rgba(74,92,63,.2);
+  transition: transform .2s, box-shadow .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.aot-level-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 36px rgba(0,0,0,.8),
+              0 0 24px var(--level-color, var(--aot-glow));
+}
+.aot-level-card:active { transform: scale(.97); }
+
+.aot-level-emoji {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  margin-bottom: 8px;
+}
+.aot-level-nom {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  color: var(--level-color, var(--aot-brown));
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 6px;
+}
+.aot-level-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: .72rem; font-weight: 800;
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 12px; line-height: 1.4;
+}
+.aot-level-btn {
+  display: inline-block;
+  background: var(--level-color, var(--aot-kaki));
+  color: #fff; border-radius: 20px;
+  padding: 6px 14px;
+  font-family: 'Bangers', cursive;
+  font-size: .9rem; letter-spacing: 2px;
+}
+
+/* ══════════════════════════════════════════════════════
+   GRILLE DES ÎLES
+   ══════════════════════════════════════════════════════ */
+.aot-islands-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 12px; padding: 12px 14px 32px;
+  max-width: 960px; margin: 0 auto;
+}
+@media (min-width: 580px) { .aot-islands-grid { grid-template-columns: repeat(3,1fr); } }
+@media (min-width: 900px) { .aot-islands-grid { grid-template-columns: repeat(4,1fr); } }
+
+.aot-isle-card {
+  position: relative; border-radius: 16px; overflow: hidden;
+  cursor: pointer; background: var(--aot-panel);
+  border: 2px solid rgba(74,92,63,.2);
+  box-shadow: 0 4px 24px rgba(0,0,0,.7);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.aot-isle-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--isle-color, var(--aot-kaki));
+  box-shadow: 0 8px 32px rgba(0,0,0,.7),
+              0 0 20px var(--isle-color, var(--aot-glow));
+}
+.aot-isle-card:active { transform: scale(.97); }
+.aot-isle-card.done {
+  border-color: var(--isle-color, var(--aot-kaki));
+  box-shadow: 0 0 20px var(--isle-color, var(--aot-glow));
+}
+
+.aot-isle-img-wrap {
+  position: relative; width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.5) 100%);
+  overflow: hidden;
+}
+.aot-isle-img {
+  width: 100%; height: 100%; object-fit: contain;
+  object-position: center bottom; display: block;
+  padding: 8px 6px 0; box-sizing: border-box;
+  transition: transform .4s ease; mix-blend-mode: lighten;
+}
+.aot-isle-card:hover .aot-isle-img { transform: scale(1.06); }
+.aot-isle-img-fallback {
+  display: none; position: absolute; inset: 0;
+  align-items: center; justify-content: center;
+  font-size: clamp(3rem,10vw,5rem);
+}
+.aot-isle-img-fallback[style*="flex"] { display: flex !important; }
+.aot-isle-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 45%; pointer-events: none;
+}
+.aot-isle-body {
+  padding: 10px 12px 14px; background: rgba(8,8,6,.95);
+  border-top: 1px solid rgba(74,92,63,.2);
+}
+.aot-isle-num   { font-family:'Nunito',sans-serif; font-size:.7rem; font-weight:900; color:rgba(255,255,255,.7); letter-spacing:2px; text-transform:uppercase; }
+.aot-isle-name  { font-family:'Bangers',cursive; font-size:clamp(1rem,3vw,1.2rem); letter-spacing:2px; line-height:1.1; margin:2px 0; text-shadow:1px 1px 0 #000; }
+.aot-isle-topic { font-family:'Nunito',sans-serif; font-size:.72rem; font-weight:800; color:rgba(255,255,255,.8); text-transform:uppercase; line-height:1.3; }
+.aot-isle-level { display:inline-block; font-family:'Nunito',sans-serif; font-size:.68rem; font-weight:900; padding:2px 8px; border-radius:20px; border:1px solid; margin-top:5px; letter-spacing:1px; }
+.aot-isle-stars { font-size:.78rem; color:var(--aot-brown); margin-top:5px; line-height:1; }
+
+/* ══════════════════════════════════════════════════════
+   HEADER QUIZ STICKY
+   ══════════════════════════════════════════════════════ */
+#aot-quiz-sec { padding-top: 0; }
+.aot-quiz-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,8,.96);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 2px solid rgba(74,92,63,.5);
+  padding: 10px 16px 8px; box-shadow: 0 4px 20px rgba(0,0,0,.6);
+}
+.aot-quiz-title {
+  font-family:'Bangers',cursive; font-size:clamp(1rem,4vw,1.5rem);
+  color:var(--aot-brown); letter-spacing:2px; text-shadow:2px 2px 0 #000;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.aot-prog-bar  { width:100%; height:7px; background:rgba(255,255,255,.12); border-radius:8px; margin-top:6px; overflow:hidden; }
+.aot-prog-fill { height:100%; background:linear-gradient(90deg,var(--aot-kaki),var(--aot-brown)); border-radius:8px; transition:width .4s ease; box-shadow:0 0 8px var(--aot-glow); }
+.aot-prog-lbl  { font-family:'Nunito',sans-serif; font-size:.72rem; font-weight:800; color:rgba(255,255,255,.6); margin-top:3px; text-align:right; }
+
+/* ══════════════════════════════════════════════════════
+   CARTE QUESTION
+   ══════════════════════════════════════════════════════ */
+.aot-q-card {
+  margin: 14px 12px; background: var(--aot-panel);
+  border-radius: 18px; border: 2px solid var(--aot-border);
+  padding: 0 0 16px; box-shadow: 0 6px 28px rgba(0,0,0,.8);
+  overflow: hidden; transition: border-color .3s;
+}
+.aot-boss-card { border-color: var(--aot-brown); box-shadow: 0 0 30px rgba(139,105,20,.4); }
+
+.aot-boss-banner {
+  background: linear-gradient(135deg,#2a1a04,#8b6914);
+  padding: 10px 16px; text-align: center;
+}
+.aot-boss-label { font-family:'Nunito',sans-serif; font-size:.7rem; font-weight:900; color:rgba(255,255,255,.7); letter-spacing:3px; text-transform:uppercase; }
+.aot-boss-name  { font-family:'Bangers',cursive; font-size:1.4rem; letter-spacing:3px; color:#fff; text-shadow:2px 2px 0 rgba(0,0,0,.5); }
+
+/* Panneau personnage */
+.aot-char-panel  { display:flex; height:100px; border-bottom:2px solid var(--aot-border); }
+.aot-char-img    { width:90px; flex-shrink:0; overflow:hidden; border-right:2px solid var(--aot-border); }
+.aot-char-img img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
+.aot-char-speech { flex:1; padding:10px 12px; background:linear-gradient(135deg,#080806,#12100a); display:flex; flex-direction:column; justify-content:center; gap:5px; }
+.aot-char-name   { font-family:'Bangers',cursive; font-size:.75rem; letter-spacing:2px; color:var(--aot-brown); border-bottom:1px solid rgba(139,105,20,.3); padding-bottom:2px; width:fit-content; }
+.aot-speech-bubble { background:rgba(255,255,255,.92); color:#1a1a0e; border:2px solid #000; border-radius:12px 12px 12px 3px; padding:6px 10px; font-size:.78rem; font-weight:800; line-height:1.3; font-family:'Nunito',sans-serif; box-shadow:2px 2px 0 rgba(0,0,0,.5); }
+
+/* Corps question */
+.aot-q-body { padding:14px; }
+.aot-q-num  { font-size:.62rem; color:rgba(255,255,255,.3); text-transform:uppercase; letter-spacing:2px; font-weight:800; margin-bottom:8px; }
+.aot-q-txt  { font-size:1rem; font-weight:800; line-height:1.6; color:#e2e8f0; margin-bottom:14px; border-left:3px solid var(--aot-brown); padding-left:10px; font-family:'Nunito',sans-serif; }
+
+/* Options */
+.aot-opts { display:flex; flex-direction:column; gap:8px; }
+.aot-opt {
+  display:flex; align-items:center; gap:10px; width:100%;
+  padding:11px 12px; background:rgba(255,255,255,.04);
+  border:2px solid rgba(255,255,255,.08); border-radius:0;
+  cursor:pointer; transition:all .15s; font-size:.9rem; font-weight:800;
+  font-family:'Nunito',sans-serif; color:#fff;
+  -webkit-tap-highlight-color:transparent;
+  text-align: left;
+}
+.aot-opt:hover { border-color:var(--aot-brown); transform:translateX(4px); }
+.aot-opt:disabled { cursor:default; transform:none !important; }
+.aot-opt-key { width:28px; height:28px; background:rgba(255,255,255,.08); border:2px solid rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; font-family:'Bangers',cursive; font-size:.85rem; flex-shrink:0; color:var(--aot-brown); border-radius: 4px; }
+.aot-opt.aot-selected { border-color:var(--aot-brown); background:rgba(139,105,20,.15); }
+.aot-opt.aot-correct  { border-color:#06d6a0 !important; background:rgba(6,214,160,.2) !important; }
+.aot-opt.aot-wrong    { border-color:#ef4444 !important; background:rgba(239,68,68,.2) !important; }
+
+/* Feedback & explication */
+.aot-feedback { display:none; margin:8px 14px 0; padding:6px 12px; border-radius:8px; font-family:'Nunito',sans-serif; font-size:.82rem; font-weight:800; }
+.aot-feedback.aot-ok { display:block; background:rgba(6,214,160,.25); border:1px solid rgba(6,214,160,.6); color:#fff; }
+.aot-feedback.aot-ko { display:block; background:rgba(239,68,68,.25); border:1px solid rgba(239,68,68,.6); color:#fff; }
+.aot-expl { display:none; margin:8px 14px 0; padding:9px 12px; border-radius:10px; background:rgba(139,105,20,.12); border:1px solid rgba(139,105,20,.4); font-family:'Nunito',sans-serif; font-size:clamp(.78rem,2vw,.86rem); font-weight:700; color:rgba(255,255,255,.92); line-height:1.5; }
+.aot-expl.aot-show { display:block; }
+
+/* Submit */
+.aot-submit-wrap { text-align:center; padding:22px 16px 48px; }
+
+/* ══════════════════════════════════════════════════════
+   BOUTONS
+   ══════════════════════════════════════════════════════ */
+.aot-btn {
+  display:inline-block; padding:13px 26px; border-radius:14px; border:none;
+  cursor:pointer; font-family:'Bangers',cursive; font-size:clamp(1rem,3.5vw,1.2rem);
+  letter-spacing:2px; transition:transform .15s, box-shadow .15s; min-height:48px;
+  -webkit-tap-highlight-color:transparent;
+}
+.aot-btn:hover  { transform:translateY(-2px); }
+.aot-btn:active { transform:scale(.97); }
+.aot-btn-main {
+  background:linear-gradient(135deg,var(--aot-kaki),var(--aot-brown));
+  color:#fff; box-shadow:0 4px 20px var(--aot-glow);
+  width:100%; max-width:380px; display:block; margin:0 auto 12px;
+}
+.aot-btn-outline {
+  background:transparent; border:2px solid rgba(139,105,20,.5);
+  color:var(--aot-brown); width:100%; max-width:380px;
+  display:block; margin:0 auto;
+}
+
+/* ══════════════════════════════════════════════════════
+   RÉSULTATS
+   ══════════════════════════════════════════════════════ */
+.aot-result-card {
+  margin:20px 12px; border-radius:20px; overflow:hidden;
+  border:2px solid var(--isle-color, var(--aot-brown));
+  box-shadow:0 8px 40px rgba(0,0,0,.8), 0 0 30px var(--isle-color, var(--aot-glow));
+  background:var(--aot-panel);
+  animation:aot-res-appear .5s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes aot-res-appear {
+  from { opacity:0; transform:scale(.9) translateY(20px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+.aot-result-banner     { position:relative; display:flex; align-items:flex-end; height:clamp(140px,35vw,180px); overflow:hidden; background:linear-gradient(135deg,rgba(74,92,63,.2),rgba(10,10,8,.9)); }
+.aot-result-avatar     { height:100%; object-fit:contain; object-position:bottom; filter:drop-shadow(-4px 0 20px rgba(139,105,20,.6)); }
+.aot-result-score-wrap { flex:1; padding:16px; }
+.aot-result-score      { font-family:'Bangers',cursive; font-size:clamp(2.5rem,10vw,4rem); color:var(--aot-brown); text-shadow:2px 2px 0 #000; }
+.aot-result-title      { font-family:'Nunito',sans-serif; font-size:clamp(.85rem,2.5vw,1rem); font-weight:900; color:#fff; }
+.aot-result-body       { padding:16px; }
+.aot-result-topic      { font-family:'Nunito',sans-serif; font-size:.82rem; font-weight:800; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+.aot-result-stars      { font-size:.85rem; color:var(--aot-brown); margin-bottom:12px; }
+.aot-result-gif        { width:100%; max-height:180px; object-fit:contain; border-radius:12px; margin-bottom:12px; }
+.aot-result-xp         { font-family:'Nunito',sans-serif; font-size:.85rem; font-weight:900; color:var(--aot-brown); margin-bottom:16px; }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE MOBILE-FIRST COMPLET
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .aot-map-title { font-size: 1.5rem; letter-spacing: 2px; }
+  .aot-levels-grid { grid-template-columns: repeat(2,1fr); gap: 10px; padding: 8px 10px 24px; }
+  .aot-level-nom { font-size: 1.2rem; }
+  .aot-islands-grid { grid-template-columns: repeat(2,1fr); gap: 8px; padding: 8px 8px 24px; }
+  .aot-isle-body { padding: 6px 8px 10px; }
+  .aot-isle-name { font-size: .9rem; }
+  .aot-isle-topic { font-size: .65rem; }
+  .aot-opt { font-size: .82rem; padding: 9px 10px; }
+  .aot-q-txt { font-size: .92rem; }
+  .aot-char-panel { height: auto; flex-direction: column; }
+  .aot-char-img { width: 100%; height: 70px; border-right: 0; border-bottom: 2px solid var(--aot-border); }
+  .aot-char-img img { object-position: center 20%; }
+  .aot-btn { font-size: .95rem; padding: 11px 18px; }
+  .aot-result-score { font-size: 2.2rem; }
+  .aot-quiz-title { font-size: .9rem; }
+}
+
+@media (min-width: 600px) {
+  .aot-levels-grid { grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .aot-islands-grid { grid-template-columns: repeat(3,1fr); gap: 14px; }
+  .aot-isle-img-wrap { aspect-ratio: 3/4; }
+  .aot-char-panel { height: 110px; }
+  .aot-char-img { width: 100px; }
+  .aot-q-txt { font-size: 1.05rem; }
+  .aot-opt { font-size: .93rem; }
+  .aot-map-title { font-size: 2.2rem; }
+}
+
+@media (min-width: 1024px) {
+  .aot-islands-grid { grid-template-columns: repeat(4,1fr); max-width: 960px; }
+  #aot-quiz-sec { max-width: 680px; margin: 0 auto; }
+  .aot-q-card { margin: 14px auto; }
+  .aot-char-panel { height: 110px; flex-direction: row; }
+  .aot-char-img { width: 100px; height: 110px; border-right: 2px solid var(--aot-border); border-bottom: 0; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .aot-opt:hover, .aot-isle-card:hover, .aot-level-card:hover { transform: none !important; }
+  .aot-opt:active, .aot-isle-card:active, .aot-level-card:active { transform: scale(.98) !important; }
+}
+
+@media (max-height: 600px) and (orientation: portrait) {
+  .aot-char-panel { height: auto; }
+  .aot-char-img { height: 60px; }
+  .aot-result-banner { height: clamp(100px,28vw,140px); }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .aot-quiz-header { padding-top: env(safe-area-inset-top, 10px); }
+  .aot-submit-wrap { padding-bottom: env(safe-area-inset-bottom, 0); }
+}
