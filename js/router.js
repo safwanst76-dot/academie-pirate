@@ -19,7 +19,7 @@ const ROUTES = {
   'kanto'    : showKanto,
   'pays-du-feu' : showPaysduFeu,
   'namek'    : showNamek,
-  'english'     : showEnglish
+  'english'     : function() { if (typeof showEnglish === 'function') showEnglish(); }
 };
 
 // ── Sections HTML ──
