@@ -316,6 +316,7 @@
   // ══════════════════════════════════════════════════════════════
 
   window.aot_showEnglish = showEnglish;
+  window.showEnglish = showEnglish;
   window.aot_showLevel   = showLevel;
   window.aot_startIsland = startIsland;
   window.buildAotLevels  = showEnglish;  // alias pour router.js
