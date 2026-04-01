@@ -396,6 +396,26 @@ function lesson_paysdufeu(n, thenCallback) {
 }
 
 // ══════════════════════════════════════════════════════════════
+// 10b. ENGLISH (Attack on Titan)
+// ══════════════════════════════════════════════════════════════
+function lesson_english(niveauCode, numeroIle, thenCallback) {
+  var STORAGE_AOT = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/';
+  // Mapping niveau → personnages par île
+  var AVATARS = {
+    'cm2':  { 1:'eren.jpeg', 2:'mikasa.gif', 3:'armin.jpg', 4:'levi.jpg', 5:'historia.png', 6:'jean.jpg', 7:'hange.jpeg', 8:'erwin.jpg' },
+    '6eme': { 1:'armin.jpg', 2:'levi.jpg', 3:'historia.png', 4:'jean.jpg', 5:'hange.jpeg', 6:'erwin.jpg', 7:'connie.jpg', 8:'sasha.jpeg' },
+    '5eme': { 1:'eren.jpeg', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'connie.jpg', 6:'sasha.jpeg', 7:'armin.jpg', 8:'historia.png' },
+    '4eme': { 1:'historia.png', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'eren.jpeg', 6:'historia.png', 7:'jean.jpg', 8:'connie.jpg' },
+  };
+  var niveauIdx = { 'cm2': 1, '6eme': 2, '5eme': 3, '4eme': 4 };
+  var n         = parseInt(niveauIdx[niveauCode] || 1);
+  var lessonKey = n + '_' + numeroIle;  // ex: '1_1', '2_3'
+  var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
+  var avatar    = STORAGE_AOT + (avatarMap[numeroIle] || 'eren.jpeg');
+  showLesson('english', lessonKey, avatar, '#4a5c3f', thenCallback);
+}
+
+// ══════════════════════════════════════════════════════════════
 // 11. UTILITAIRES
 // ══════════════════════════════════════════════════════════════
 function _hexDarken(hex, amount) {

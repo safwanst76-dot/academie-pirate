@@ -27,15 +27,18 @@
   // ══════════════════════════════════════════════════════════════
 
   function showEnglish() {
-    _show('aot-levels-sec');
-    _hide('aot-iles-sec');
-    _hide('aot-quiz-sec');
+    // Masquer TOUT (globe, autres mondes) — règle NR-01
+    if (typeof hideAll === 'function') hideAll();
 
     var mangaBg = document.getElementById('manga-bg');
     if (mangaBg) mangaBg.style.display = 'none';
 
     var aotBg = document.getElementById('aot-bg');
     if (aotBg) aotBg.classList.add('visible');
+
+    _show('aot-levels-sec');
+    _hide('aot-iles-sec');
+    _hide('aot-quiz-sec');
 
     _buildLevels();
     loadAotBgStrips();
@@ -152,6 +155,13 @@
     _currentNiveau = niveauCode;
     var niveau     = NIVEAUX.find(function(n){ return n.code === niveauCode; });
     if (!niveau) return;
+
+    // Masquer globe + autres sections
+    if (typeof hideAll === 'function') hideAll();
+    var mangaBg = document.getElementById('manga-bg');
+    if (mangaBg) mangaBg.style.display = 'none';
+    var aotBg = document.getElementById('aot-bg');
+    if (aotBg) aotBg.classList.add('visible');
 
     var ilesEl = document.getElementById('aot-iles-sec');
     if (ilesEl) {
