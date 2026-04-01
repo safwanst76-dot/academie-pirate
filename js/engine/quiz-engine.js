@@ -1,110 +1,102 @@
 // ═══════════════════════════════════════════════════════════════
-// QUIZ-ENGINE.JS V3 — Académie Pirate
-// Pattern IDENTIQUE V1 (pays-du-feu / namek / kanto) :
-//   → Toutes les questions affichées d'un coup
-//   → Bouton valider quand toutes répondues
-//   → Corrections + GIF ajouté À LA FIN du container
-//   → Scroll vers résultats après 400ms
+// QUIZ-ENGINE.JS V4 — Académie Pirate
+// Pattern PIXEL-PERFECT du pays-du-feu :
+//   1. Toutes les questions d'un coup (innerHTML = html)
+//   2. Bouton "Corriger" TOUJOURS visible en bas
+//   3. corriger() → colore + feedback + expl + appelle showResults()
+//   4. showResults() → innerHTML += html (append à la FIN)
+//   5. setTimeout 400ms → scrollIntoView block:'center'
+//   6. PAS de scrollTo(0,0) dans corriger/showResults
 // ═══════════════════════════════════════════════════════════════
 
 (function () {
   'use strict';
 
   // ── État ──────────────────────────────────────────────────────
-  var _state = {
-    matiere:   null,
-    niveau:    null,
-    chapitre:  null,
-    questions: [],
-    answers:   {},
-    score:     0,
-    xp:        0,
-    onBack:    null,
-  };
+  var _currentChapitre = null;
+  var _currentNiveau   = null;
+  var _currentMatiere  = null;
+  var _questions       = [];
+  var _answers         = {};
+  var _xp              = 0;
+  var _onBack          = null;
 
-  var STORAGE_AOT = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/';
+  var STORAGE_AOT = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot';
 
-  // GIFs depuis bucket island-aot/gifs/
+  // GIFs résultats — bucket island-aot/gifs/
   var AOT_GIFS_PERFECT = [
-    STORAGE_AOT + 'gifs/aot-perfect-1.gif',
-    STORAGE_AOT + 'gifs/aot-perfect-2.gif',
-    STORAGE_AOT + 'gifs/aot-perfect-3.gif',
+    STORAGE_AOT + '/gifs/aot-perfect-1.gif',
+    STORAGE_AOT + '/gifs/aot-perfect-2.gif',
+    STORAGE_AOT + '/gifs/aot-perfect-3.gif',
   ];
   var AOT_GIFS_CORRECT = [
-    STORAGE_AOT + 'gifs/aot-win-1.gif',
-    STORAGE_AOT + 'gifs/aot-win-2.gif',
-    STORAGE_AOT + 'gifs/aot-win-3.gif',
-    STORAGE_AOT + 'gifs/aot-win-4.gif',
-    STORAGE_AOT + 'gifs/aot-win-5.gif',
+    STORAGE_AOT + '/gifs/aot-win-1.gif',
+    STORAGE_AOT + '/gifs/aot-win-2.gif',
+    STORAGE_AOT + '/gifs/aot-win-3.gif',
+    STORAGE_AOT + '/gifs/aot-win-4.gif',
+    STORAGE_AOT + '/gifs/aot-win-5.gif',
   ];
   var AOT_GIFS_LOSE = [
-    STORAGE_AOT + 'gifs/aot-lose-1.gif',
-    STORAGE_AOT + 'gifs/aot-lose-2.gif',
-    STORAGE_AOT + 'gifs/aot-lose-3.gif',
+    STORAGE_AOT + '/gifs/aot-lose-1.gif',
+    STORAGE_AOT + '/gifs/aot-lose-2.gif',
+    STORAGE_AOT + '/gifs/aot-lose-3.gif',
   ];
 
   // ══════════════════════════════════════════════════════════════
-  // POINT D'ENTRÉE
+  // 1. POINT D'ENTRÉE
   // ══════════════════════════════════════════════════════════════
 
   async function launch(chapitreId, opts) {
     opts = opts || {};
-    _state.onBack  = opts.onBack  || null;
-    _state.matiere = opts.matiere || 'english';
-    _state.niveau  = opts.niveau  || 'cm2';
-    _state.answers = {};
-    _state.score   = 0;
+    _onBack          = opts.onBack   || null;
+    _currentNiveau   = opts.niveau   || 'cm2';
+    _currentMatiere  = opts.matiere  || 'english';
+    _answers         = {};
+    _xp              = 0;
 
     try {
-      await _loadChapitre(chapitreId);
-      await _loadQuestions(chapitreId);
+      // Charger chapitre
+      var db = _getDb();
+      var resC = await db.from('chapitres').select('*').eq('id', chapitreId).single();
+      if (resC.error) throw new Error(resC.error.message);
+      _currentChapitre = resC.data;
 
-      if (!_state.questions.length) {
+      // Charger questions
+      var resQ = await db.from('questions')
+        .select('*')
+        .eq('chapitre_id', chapitreId)
+        .eq('actif', true)
+        .order('ordre', { ascending: true });
+      if (resQ.error) throw new Error(resQ.error.message);
+      _questions = resQ.data || [];
+
+      if (!_questions.length) {
         console.error('[QuizEngine] Aucune question:', chapitreId);
         return;
       }
 
-      _showQuizSection();
-      _renderQuiz();
+      // Afficher section quiz
+      _showSection();
 
-      // Musique — après leçon (règle AU-04)
+      // Lancer le rendu (identique à pdf_launchIsland)
+      _launchIsland();
+
+      // Musique (après leçon — règle AU-04)
       if (typeof stopBGM === 'function') stopBGM();
-      if (_state.chapitre && _state.chapitre.bgm && typeof playBGM === 'function') {
-        setTimeout(function(){ playBGM(_state.chapitre.bgm); }, 300);
+      if (_currentChapitre.bgm && typeof playBGM === 'function') {
+        setTimeout(function(){ playBGM(_currentChapitre.bgm); }, 300);
       }
 
     } catch(e) {
-      console.error('[QuizEngine] Erreur launch:', e.message);
+      console.error('[QuizEngine] Erreur:', e.message);
     }
   }
 
   // ══════════════════════════════════════════════════════════════
-  // CHARGEMENT DB
+  // 2. AFFICHER SECTION QUIZ + MASQUER TOUT
   // ══════════════════════════════════════════════════════════════
 
-  async function _loadChapitre(id) {
-    var db = _getDb();
-    var res = await db.from('chapitres').select('*').eq('id', id).single();
-    if (res.error) throw new Error(res.error.message);
-    _state.chapitre = res.data;
-  }
-
-  async function _loadQuestions(id) {
-    var db = _getDb();
-    var res = await db.from('questions')
-      .select('*')
-      .eq('chapitre_id', id)
-      .eq('actif', true)
-      .order('ordre', { ascending: true });
-    if (res.error) throw new Error(res.error.message);
-    _state.questions = res.data || [];
-  }
-
-  // ══════════════════════════════════════════════════════════════
-  // AFFICHAGE SECTION QUIZ
-  // ══════════════════════════════════════════════════════════════
-
-  function _showQuizSection() {
+  function _showSection() {
     var levelsEl = document.getElementById('aot-levels-sec');
     var ilesEl   = document.getElementById('aot-iles-sec');
     var quizEl   = document.getElementById('aot-quiz-sec');
@@ -118,22 +110,21 @@
   }
 
   // ══════════════════════════════════════════════════════════════
-  // RENDU — TOUTES LES QUESTIONS D'UN COUP (pattern V1 exact)
+  // 3. RENDU DES QUESTIONS — identique à pdf_launchIsland
   // ══════════════════════════════════════════════════════════════
 
-  function _renderQuiz() {
-    var ch    = _state.chapitre;
-    var qs    = _state.questions;
+  function _launchIsland() {
+    _answers = {};
+
+    var ch    = _currentChapitre;
+    var qs    = _questions;
     var total = qs.length;
     var keys  = ['A','B','C','D'];
 
     // Header
-    var titleEl = document.getElementById('aot-qTitle');
-    var fillEl  = document.getElementById('aot-qProgFill');
-    var lblEl   = document.getElementById('aot-qProgLbl');
-    if (titleEl) titleEl.textContent = ch.nom + ' — ' + ch.topic;
-    if (fillEl)  fillEl.style.width  = '0%';
-    if (lblEl)   lblEl.textContent   = '0 / ' + total;
+    document.getElementById('aot-qTitle').textContent    = ch.nom + ' — ' + ch.topic;
+    document.getElementById('aot-qProgFill').style.width = '0%';
+    document.getElementById('aot-qProgLbl').textContent  = '0 / ' + total;
 
     var msgs = [
       'Montre-moi ce que tu sais !',
@@ -154,7 +145,7 @@
 
       var isBoss   = q.is_boss || q.type === 'boss';
       var msg      = msgs[i % msgs.length];
-      var heroImg  = ch.hero_image || '';
+      var avatar   = ch.hero_image || '';
       var heroName = ch.hero_name  || '';
 
       var bossBanner = isBoss
@@ -164,12 +155,13 @@
           '</div>'
         : '';
 
+      // Labels cliquables — identique à pdf-lbl pattern
       var optsHtml = opts.map(function(opt, j) {
         var safe = String(opt).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
         return '<label class="aot-opt" ' +
           'id="aot-lbl' + i + '_' + j + '" ' +
           'data-qi="' + i + '" data-oi="' + j + '" data-v="' + safe + '" ' +
-          'onclick="window.AP_QuizEngine._selectOpt(' + i + ',' + j + ',this)">' +
+          'onclick="window.AP_QuizEngine._selectOpt(this.dataset.qi,this.dataset.oi,this.dataset.v)">' +
           '<span class="aot-opt-key">' + keys[j] + '</span>' +
           '<span class="aot-opt-txt">' + String(opt) + '</span>' +
           '</label>';
@@ -180,7 +172,7 @@
           bossBanner +
           '<div class="aot-char-panel">' +
             '<div class="aot-char-img">' +
-              '<img src="' + heroImg + '" alt="' + heroName + '" ' +
+              '<img src="' + avatar + '" alt="' + heroName + '" ' +
               'onerror="this.style.display=\'none\'">' +
             '</div>' +
             '<div class="aot-char-speech">' +
@@ -193,89 +185,80 @@
             '<div class="aot-q-txt">' + q.question + '</div>' +
             '<div class="aot-opts">' + optsHtml + '</div>' +
             '<div class="aot-feedback" id="aot-fb' + i + '"></div>' +
-            '<div class="aot-expl" id="aot-expl' + i + '">' + (q.explication || '') + '</div>' +
+            '<div class="aot-expl"     id="aot-expl' + i + '"></div>' +
           '</div>' +
         '</div>';
     });
 
-    // Bouton valider (masqué, apparaît quand tout est répondu)
+    // Bouton corriger TOUJOURS visible en bas (pattern exact V1)
     html +=
-      '<div class="aot-submit-wrap" id="aot-submit-wrap" style="display:none">' +
+      '<div class="aot-submit-wrap">' +
         '<button class="aot-btn aot-btn-main" ' +
-          'onclick="window.AP_QuizEngine._corriger()">' +
-          '⚔️ VALIDER MES RÉPONSES</button>' +
+          'onclick="window.AP_QuizEngine._corriger()">⚔️ CORRIGER MES RÉPONSES</button>' +
       '</div>';
 
-    var container = document.getElementById('aot-qContainer');
-    if (container) container.innerHTML = html;
+    // innerHTML = html (pattern exact V1 — PAS +=)
+    document.getElementById('aot-qContainer').innerHTML = html;
   }
 
   // ══════════════════════════════════════════════════════════════
-  // SÉLECTION OPTION
+  // 4. SÉLECTION — identique à pdf_selectOpt
   // ══════════════════════════════════════════════════════════════
 
-  function _selectOpt(qi, oi, el) {
-    if (_state.answers[qi] !== undefined) return;
-
-    var q    = _state.questions[qi];
-    var opts = typeof q.options === 'string' ? JSON.parse(q.options) : q.options;
-
-    _state.answers[qi] = opts[oi];
+  function _selectOpt(qi, oi, val) {
+    qi = parseInt(qi); oi = parseInt(oi);
+    var total = _questions[qi] ? (typeof _questions[qi].options === 'string'
+      ? JSON.parse(_questions[qi].options) : _questions[qi].options).length : 4;
 
     // Déselectionner les autres labels de cette question
-    var allLabels = document.querySelectorAll('[id^="aot-lbl' + qi + '_"]');
-    allLabels.forEach(function(l) { l.classList.remove('aot-selected'); });
-    if (el) el.classList.add('aot-selected');
+    for (var j = 0; j < total; j++) {
+      var lbl = document.getElementById('aot-lbl' + qi + '_' + j);
+      if (lbl) lbl.classList.remove('aot-selected');
+    }
+    var sel = document.getElementById('aot-lbl' + qi + '_' + oi);
+    if (sel) sel.classList.add('aot-selected');
+
+    _answers[qi] = val;
 
     // Barre de progression
-    var answered = Object.keys(_state.answers).length;
-    var total    = _state.questions.length;
-    var fillEl   = document.getElementById('aot-qProgFill');
-    var lblEl    = document.getElementById('aot-qProgLbl');
-    if (fillEl) fillEl.style.width = Math.round(answered / total * 100) + '%';
-    if (lblEl)  lblEl.textContent  = answered + ' / ' + total;
-
-    // Afficher bouton valider quand tout est répondu
-    if (answered === total) {
-      var submitWrap = document.getElementById('aot-submit-wrap');
-      if (submitWrap) {
-        submitWrap.style.display = 'block';
-        setTimeout(function(){
-          submitWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 300);
-      }
-    }
+    var filled = Object.keys(_answers).length;
+    var ttl    = _questions.length;
+    var fillEl = document.getElementById('aot-qProgFill');
+    var lblEl  = document.getElementById('aot-qProgLbl');
+    if (fillEl) fillEl.style.width = Math.round(filled / ttl * 100) + '%';
+    if (lblEl)  lblEl.textContent  = filled + ' / ' + ttl;
   }
 
   // ══════════════════════════════════════════════════════════════
-  // CORRECTION (pattern exact V1)
+  // 5. CORRECTION — identique à pdf_corriger
   // ══════════════════════════════════════════════════════════════
 
   function _corriger() {
-    var qs = _state.questions;
-    _state.score = 0;
+    var qs    = _questions;
+    var ch    = _currentChapitre;
+    var score = 0;
 
     qs.forEach(function(q, i) {
       var fb   = document.getElementById('aot-fb' + i);
       var expl = document.getElementById('aot-expl' + i);
-      var ans  = _state.answers[i];
-      var opts = typeof q.options === 'string' ? JSON.parse(q.options) : q.options;
+      var ans  = _answers[i];
+      var opts = document.querySelectorAll('[id^="aot-lbl' + i + '_"]');
 
       // Colorer les labels
-      var allLabels = document.querySelectorAll('[id^="aot-lbl' + i + '_"]');
-      allLabels.forEach(function(lbl) {
+      opts.forEach(function(lbl) {
         lbl.style.pointerEvents = 'none';
-        if (lbl.dataset.v === q.reponse) {
-          lbl.classList.add('aot-correct');
-        }
+        if (lbl.dataset.v === q.reponse) lbl.classList.add('aot-correct');
       });
 
       if (ans === q.reponse) {
-        _state.score++;
+        score++;
         if (fb) { fb.textContent = '✅ Correct !'; fb.className = 'aot-feedback aot-ok'; }
         if (typeof sfxOK === 'function') sfxOK();
       } else {
-        if (fb) { fb.textContent = '❌ ' + (ans ? 'Mauvaise réponse.' : 'Non répondu.'); fb.className = 'aot-feedback aot-ko'; }
+        if (fb) {
+          fb.textContent = '❌ ' + (ans ? 'Mauvaise réponse.' : 'Non répondu.');
+          fb.className   = 'aot-feedback aot-ko';
+        }
         var selLbl = ans
           ? document.querySelector('[id^="aot-lbl' + i + '_"][data-v="' + String(ans).replace(/"/g,'&quot;') + '"]')
           : null;
@@ -283,11 +266,15 @@
         if (typeof sfxKO === 'function') sfxKO();
       }
 
+      // Explication
       if (expl) {
         expl.innerHTML = '💡 ' + (q.explication || '');
         expl.classList.add('aot-show');
       }
     });
+
+    // XP
+    _xp += score * 2;
 
     // Barre à 100%
     var fillEl = document.getElementById('aot-qProgFill');
@@ -295,25 +282,22 @@
     if (fillEl) fillEl.style.width = '100%';
     if (lblEl)  lblEl.textContent  = qs.length + ' / ' + qs.length;
 
-    // Masquer bouton valider
-    var sw = document.getElementById('aot-submit-wrap');
-    if (sw) sw.style.display = 'none';
+    // Sauvegarder
+    _saveProgression(score, qs.length, score * 2);
 
-    // Scroll vers le haut pour voir les corrections depuis le début
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Afficher résultats après que l'élève ait eu le temps de voir les corrections
-    _showResults();
+    // Afficher résultats (PAS de scrollTo ici — identique V1)
+    _showResults(score);
   }
 
   // ══════════════════════════════════════════════════════════════
-  // RÉSULTATS — GIF ajouté À LA FIN (pattern exact V1)
+  // 6. RÉSULTATS — identique à pdf_showResults
+  //    innerHTML += html  →  append à la FIN
+  //    setTimeout 400ms  →  scrollIntoView block:'center'
   // ══════════════════════════════════════════════════════════════
 
-  function _showResults() {
-    var score  = _state.score;
-    var ch     = _state.chapitre;
-    var total  = _state.questions.length;
+  function _showResults(score) {
+    var ch    = _currentChapitre;
+    var total = _questions.length;
 
     var txts = [
       { min: 11, t: 'LÉGENDE DE PARADIS ! 11/11 !!!' },
@@ -323,17 +307,16 @@
       { min: 0,  t: 'Ne lâche pas ! Réessaie !' }
     ];
     var res    = txts.find(function(r){ return score >= r.min; }) || txts[txts.length-1];
-    var gained = score * 2 + (score === total ? 10 : 0);
-    _state.xp  = gained;
+    var gained = score * 2;
 
-    // GIF selon score (pattern exact V1)
+    // GIF selon score — identique V1
     var gif = score === total
       ? AOT_GIFS_PERFECT[Math.floor(Math.random() * AOT_GIFS_PERFECT.length)]
       : score >= Math.ceil(total * 0.6)
         ? AOT_GIFS_CORRECT[score % AOT_GIFS_CORRECT.length]
         : AOT_GIFS_LOSE[0];
 
-    var stars = _state.questions.map(function(_, i){ return i < score ? '⭐' : '☆'; }).join('');
+    var stars = _questions.map(function(_, i){ return i < score ? '⭐' : '☆'; }).join('');
 
     var html =
       '<div class="aot-result-card" id="aot-resCard" style="--isle-color:' + (ch.ile_color || '#4a5c3f') + '">' +
@@ -349,59 +332,69 @@
           '<div class="aot-result-topic">⚔️ ' + (ch.topic || '') + '</div>' +
           '<div class="aot-result-stars">' + stars + '</div>' +
           (gif ? '<img src="' + gif + '" class="aot-result-gif" onerror="this.style.display=\'none\'">' : '') +
-          '<div class="aot-result-xp">+' + gained + ' XP Anglais ⚔️</div>' +
+          '<div class="aot-result-xp">+' + gained + ' XP Anglais ⚔️ — Total : ' + _xp + ' XP</div>' +
           '<button class="aot-btn aot-btn-main" onclick="window.AP_QuizEngine._goBack()">🗺️ RETOUR À LA CARTE</button>' +
-          '<button class="aot-btn aot-btn-outline" onclick="window.AP_QuizEngine._retry()" style="margin-top:10px">🔁 REJOUER</button>' +
+          '<button class="aot-btn aot-btn-outline" style="margin-top:10px" onclick="window.AP_QuizEngine._retry()">🔁 REJOUER</button>' +
         '</div>' +
       '</div>';
 
-    // Ajouter À LA FIN du container (pattern exact V1 : c.innerHTML += html)
+    // ⚠️ PATTERN EXACT V1 : c.innerHTML += html  (append à la FIN, PAS de remplacement)
     var c = document.getElementById('aot-qContainer');
     if (c) c.innerHTML += html;
 
-    // Scroll vers le HAUT pour que l'élève voie les corrections
-    // puis scroll vers résultats après 400ms
-    window.scrollTo(0, 0);
+    // ⚠️ PATTERN EXACT V1 : PAS de scrollTo(0,0) — scroll vers la result-card après 400ms
     setTimeout(function(){
       var rc = document.getElementById('aot-resCard');
-      if (rc) rc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (rc) rc.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 400);
 
-    // SFX
+    // SFX + musique — identique V1
     if (score === total && typeof sfxPerfect === 'function') sfxPerfect();
     else if (score >= Math.ceil(total * 0.6) && typeof sfxFanfare === 'function') sfxFanfare();
-
-    // Musique victoire/défaite
-    if (typeof stopBGM === 'function') stopBGM();
-    if (typeof playBGM === 'function') {
-      setTimeout(function(){
-        playBGM(score >= Math.ceil(total * 0.6) ? 'aot-victory' : 'aot-defeat');
-      }, 300);
-    }
-
-    // Sauvegarder
-    _saveProgression(score, total, gained);
-
-    // Session recap
-    if (window.AP && window.AP.recap) {
-      window.AP.recap.show(_state.matiere, score, total, ch.numero, function() {
-        _goBack();
-      });
-    }
   }
 
   // ══════════════════════════════════════════════════════════════
-  // SAUVEGARDE
+  // 7. NAVIGATION — identique à pdf_goBack / pdf_retry
+  // ══════════════════════════════════════════════════════════════
+
+  function _goBack() {
+    if (typeof playBGM === 'function') playBGM('aot-map');
+    var quizEl = document.getElementById('aot-quiz-sec');
+    var ilesEl = document.getElementById('aot-iles-sec');
+    if (quizEl) quizEl.style.display = 'none';
+    if (ilesEl) ilesEl.style.display = 'block';
+    _answers = {};
+    window.scrollTo(0, 0);
+    if (typeof _onBack === 'function') _onBack();
+  }
+
+  function _retry() {
+    _answers = {};
+    if (typeof lesson_english === 'function') {
+      lesson_english(_currentNiveau, _currentChapitre.numero, function() {
+        _launchIsland();
+        if (_currentChapitre.bgm && typeof playBGM === 'function') {
+          setTimeout(function(){ playBGM(_currentChapitre.bgm); }, 300);
+        }
+      });
+    } else {
+      _launchIsland();
+    }
+    window.scrollTo(0, 0);
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // 8. SAUVEGARDE
   // ══════════════════════════════════════════════════════════════
 
   async function _saveProgression(score, total, xp) {
-    var ch = _state.chapitre;
+    var ch = _currentChapitre;
     if (!ch) return;
-    var islandId = _state.matiere + '_' + _state.niveau + '_' + ch.numero;
+    var islandId = _currentMatiere + '_' + _currentNiveau + '_' + ch.numero;
 
     // Local
     try {
-      var key   = 'ap_' + _state.matiere + '_progress';
+      var key   = 'ap_' + _currentMatiere + '_progress';
       var local = JSON.parse(localStorage.getItem(key) || '{}');
       local[islandId] = { score: score, total: total, xp: xp, date: Date.now() };
       localStorage.setItem(key, JSON.stringify(local));
@@ -421,44 +414,14 @@
         }, { onConflict: 'island_id' });
       }
     } catch(e) {
-      console.warn('[QuizEngine] DB save:', e.message);
+      console.warn('[QuizEngine] save:', e.message);
     }
 
-    // XP global
     try { if (typeof updateHUD === 'function') updateHUD(); } catch(e) {}
   }
 
   // ══════════════════════════════════════════════════════════════
-  // NAVIGATION
-  // ══════════════════════════════════════════════════════════════
-
-  function _goBack() {
-    if (typeof stopBGM === 'function') stopBGM();
-    var quizEl = document.getElementById('aot-quiz-sec');
-    var ilesEl = document.getElementById('aot-iles-sec');
-    if (quizEl) quizEl.style.display = 'none';
-    if (ilesEl) ilesEl.style.display = 'block';
-    _state.answers = {};
-    window.scrollTo(0, 0);
-    if (typeof playBGM === 'function') setTimeout(function(){ playBGM('aot-map'); }, 300);
-    if (typeof _state.onBack === 'function') _state.onBack();
-  }
-
-  function _retry() {
-    _state.answers = {};
-    _state.score   = 0;
-    var c = document.getElementById('aot-qContainer');
-    if (c) c.innerHTML = '';
-    _renderQuiz();
-    window.scrollTo(0, 0);
-    if (typeof stopBGM === 'function') stopBGM();
-    if (_state.chapitre && _state.chapitre.bgm && typeof playBGM === 'function') {
-      setTimeout(function(){ playBGM(_state.chapitre.bgm); }, 300);
-    }
-  }
-
-  // ══════════════════════════════════════════════════════════════
-  // UTILITAIRES
+  // 9. UTILITAIRES
   // ══════════════════════════════════════════════════════════════
 
   function _getDb() {
@@ -487,28 +450,29 @@
     try {
       var key  = 'ap_' + matiereCode + '_progress';
       var data = JSON.parse(localStorage.getItem(key) || '{}');
-      var result = {};
+      var out  = {};
       Object.keys(data).forEach(function(k) {
-        if (k.startsWith(matiereCode + '_' + niveauCode)) result[k] = data[k];
+        if (k.startsWith(matiereCode + '_' + niveauCode)) out[k] = data[k];
       });
-      return result;
+      return out;
     } catch(e) { return {}; }
   }
 
   // ══════════════════════════════════════════════════════════════
-  // EXPORT
+  // 10. EXPORT GLOBAL
   // ══════════════════════════════════════════════════════════════
 
   window.AP_QuizEngine = {
     launch:           launch,
     getChapitres:     getChapitres,
     getLocalProgress: getLocalProgress,
-    _selectOpt:       _selectOpt,
-    _corriger:        _corriger,
-    _goBack:          _goBack,
-    _retry:           _retry,
+    // Exposés pour onclick inline
+    _selectOpt:  _selectOpt,
+    _corriger:   _corriger,
+    _goBack:     _goBack,
+    _retry:      _retry,
   };
 
-  console.info('⚙️ quiz-engine.js v3 chargé — pattern V1 exact (corrections + GIF fin + scroll 400ms)');
+  console.info('⚙️ quiz-engine.js v4 — pattern pixel-perfect V1 (pays-du-feu)');
 
 })();
