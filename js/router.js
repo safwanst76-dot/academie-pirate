@@ -18,7 +18,8 @@ const ROUTES = {
   'histoire' : showHistoire,
   'kanto'    : showKanto,
   'pays-du-feu' : showPaysduFeu,
-  'namek'    : showNamek
+  'namek'    : showNamek,
+  'english'     : showEnglish
 };
 
 // ── Sections HTML ──
@@ -82,6 +83,16 @@ function hideAll() {
   if (jjkQuiz) jjkQuiz.style.display = 'none';
   const jjkBg = document.getElementById('jjk-bg');
   if (jjkBg) jjkBg.classList.remove('visible');
+
+  const aotLevels = document.getElementById('aot-levels-sec');
+  const aotIles   = document.getElementById('aot-iles-sec');
+  const aotQuiz   = document.getElementById('aot-quiz-sec');
+  if (aotLevels) aotLevels.style.display = 'none';
+  if (aotIles)   aotIles.style.display   = 'none';
+  if (aotQuiz)   aotQuiz.style.display   = 'none';
+  const aotBg = document.getElementById('aot-bg');
+  if (aotBg) aotBg.classList.remove('visible');
+
   // Restaurer le fond manga quand on quitte Kanto
   const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = '';
@@ -257,6 +268,28 @@ function showNamek() {
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') setTimeout(function(){ playBGM('jjk-map'); }, 300);
   document.title = 'Académie Pirate — Namek';
+
+  function showEnglish() {
+  hideAll();
+  if (window.AP) window.AP.trackWorldEnter('english');
+  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('english');
+
+  const mangaBg = document.getElementById('manga-bg');
+  if (mangaBg) mangaBg.style.display = 'none';
+
+  const aotBg = document.getElementById('aot-bg');
+  if (aotBg) aotBg.classList.add('visible');
+
+  const aotLevels = document.getElementById('aot-levels-sec');
+  if (aotLevels) aotLevels.style.display = 'block';
+
+  if (typeof buildAotLevels    === 'function') buildAotLevels();
+  if (typeof loadAotBgStrips   === 'function') loadAotBgStrips();
+
+  if (typeof stopBGM === 'function') stopBGM();
+  if (typeof playBGM === 'function') setTimeout(function(){ playBGM('aot-map'); }, 300);
+  document.title = 'Académie Pirate — English';
+}
 }
 // ══════════════════════════════
 // NAVIGATION
@@ -419,7 +452,7 @@ window.showContinentPanel = function (c) {
       padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
     `;
 
-   const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : c.id === 'geography' ? 'namek' : 'iles';
+   const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : c.id === 'geography' ? 'namek' : c.id === 'english' ? 'english' : 'iles';
     panel.innerHTML = `
       <div class="gp-header">
         <div class="gp-emoji">${c.emoji}</div>

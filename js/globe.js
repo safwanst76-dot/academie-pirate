@@ -54,6 +54,15 @@ const CONTINENTS = [
     // Zone bas-droite (Océanie/îles)
     zone: 'M 420,155 L 452,148 L 478,155 L 488,172 L 482,190 L 464,198 L 444,194 L 428,182 L 420,168 Z',
     labelX: 454, labelY: 175, subX: 454, subY: 188, emojiX: 428, emojiY: 162,
+  },
+  {
+    id: 'english', name: 'Paradis', subject: 'Anglais', universe: 'Attack on Titan',
+    emoji: '⚔️', color: '#4a5c3f',
+    chars: ['Eren', 'Mikasa', 'Levi'], charColors: ['#8b6914', '#c0c0c0', '#4a5c3f'],
+    desc: "Maîtrise l'anglais avec les soldats de l'Armée d'Exploration !",
+    locked: false,
+    zone: 'M 280,210 L 320,200 L 355,208 L 368,225 L 362,245 L 348,258 L 325,262 L 302,258 L 285,242 L 278,225 Z',
+    labelX: 323, labelY: 232, subX: 323, subY: 246, emojiX: 288, emojiY: 218,
   }
 ];
 

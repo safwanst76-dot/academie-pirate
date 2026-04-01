@@ -90,6 +90,16 @@ window.AP_CONFIG = {
       stripeTier:  'free',
       jsFiles:     ['js/worlds/pays-du-feu/audio.js', 'js/worlds/pays-du-feu/lesson-data.js', 'js/worlds/pays-du-feu/quiz.js'],
     },
+    'english': {
+      active:      true,
+      locked:      false,
+      route:       'english',
+      subject:     'Anglais',
+      universe:    'Attack on Titan',
+      color:       '#4a5c3f',
+      stripeTier:  'free',
+      jsFiles:     ['js/worlds/english/audio.js', 'js/engine/quiz-engine.js', 'js/worlds/english/quiz-router.js', 'js/worlds/english/lesson-data.js'],
+    },
     'namek': {
       active:      true,
       locked:      false,
