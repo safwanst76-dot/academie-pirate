@@ -1,11 +1,16 @@
-// ═══════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════
 // LESSON-DATA.JS — ⚔️ Paradis — Anglais / Attack on Titan
 // Données pédagogiques : règles, exemples, questions échauffement
 // Moteur : js/lesson.js (ne pas modifier ici)
 // Règle A3 : les données sont séparées du moteur
 // Programme : Anglais CM2 → 4ème — Éducation Nationale France
 // 4 niveaux × 8 îles = 32 leçons
-// ═══════════════════════════════════════════════════════════════════
+// CORRECTIONS v1.1 :
+//   - 3_1 warmup Q1 : go→walk (verbe régulier, cohérent avec la leçon)
+//   - 4_1 warmup Q2 : since→ever (since/for appartient à 4_2)
+//   - 3_4 warmup Q1 : explication should vs must ajoutée
+//   - 3_4 warmup Q2 : rappel règle modale + V-BASE ajouté
+// ═══════════════════════════════════════════════════════════════
 
 window.LESSON_REGISTRY = window.LESSON_REGISTRY || {};
 
@@ -14,13 +19,9 @@ window.LESSON_REGISTRY['english'] = {
   particles: 'star', worldName: 'Paradis',
   avatar: function(niveau, n) {
     var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/';
-    // Niveau 1 CM2
-    var N1 = { 1:'eren.jpeg', 2:'historia.png', 3:'armin.jpg', 4:'levi.jpg', 5:'historia.png', 6:'jean.jpg', 7:'hange.jpeg', 8:'erwin.jpg' };
-    // Niveau 2 6ème
+    var N1 = { 1:'eren.jpeg', 2:'mikasa.gif', 3:'armin.jpg', 4:'levi.jpg', 5:'historia.png', 6:'jean.jpg', 7:'hange.jpeg', 8:'erwin.jpg' };
     var N2 = { 1:'armin.jpg', 2:'levi.jpg', 3:'historia.png', 4:'jean.jpg', 5:'hange.jpeg', 6:'erwin.jpg', 7:'connie.jpg', 8:'sasha.jpeg' };
-    // Niveau 3 5ème
     var N3 = { 1:'eren.jpeg', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'connie.jpg', 6:'sasha.jpeg', 7:'armin.jpg', 8:'historia.png' };
-    // Niveau 4 4ème
     var N4 = { 1:'historia.png', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'eren.jpeg', 6:'historia.png', 7:'jean.jpg', 8:'connie.jpg' };
     var maps = { 1: N1, 2: N2, 3: N3, 4: N4 };
     var map  = maps[niveau] || N1;
@@ -608,7 +609,7 @@ window.LESSON_REGISTRY['english'] = {
     '3_1': {
       heroName: 'Eren Jäger',
       heroQuote: "Le passé m'obsède ! Le Past Simple, c'est pour parler d'actions terminées dans le passé !",
-      rule: "Past Simple régulier : V + -ed (walked, played, finished). Irréguliers : go→went, see→saw, have→had, make→made. Négation : didn't + V-base. Question : Did + sujet + V-base ?",
+      rule: "Past Simple régulier : V + -ed (walked, played, finished). Règles : stop→stopped (double consonne), like→liked (e muet = +d), study→studied (y→ied). Négation : didn't + V-base. Question : Did + sujet + V-base ?",
       sections: [
         {
           icon: '⏪', title: "Past Simple régulier", color: '#4a5c3f',
@@ -622,21 +623,23 @@ window.LESSON_REGISTRY['english'] = {
           ]
         },
         {
-          icon: '⚠️', title: "Verbes irréguliers fréquents", color: '#8b6914',
-          content: "Les <strong>verbes irréguliers</strong> ne prennent pas -ed. Il faut les mémoriser !",
+          icon: '⚠️', title: "Négation et questions au passé", color: '#8b6914',
+          content: "Pour la <strong>négation</strong> et les <strong>questions</strong>, on utilise <strong>didn't</strong> ou <strong>Did</strong> + V-BASE (pas -ed !).",
           examples: [
-            "go→went · come→came · see→saw · have→had · make→made",
-            "take→took · give→gave · know→knew · think→thought",
-            "buy→bought · bring→brought · feel→felt · find→found",
-            "Négatif : I didn't go. / She didn't see. (V-base après didn't !)",
-            "Question : Did you go? / Did she see? — Yes, she did. / No, she didn't."
+            "Négatif : I didn't walk. / She didn't play. (V-BASE après didn't !)",
+            "Question : Did you walk? / Did she play?",
+            "did/didn't + V-BASE → le -ed disparaît car did porte le temps",
+            "I didn't go (jamais 'didn't went') · Did she come? (jamais 'Did she came?')",
+            "Réponses : Yes, I did. / No, she didn't."
           ]
         }
       ],
-      heroTip: "Eren dit : \"Après didn't : toujours la base verbale ! 'I didn't went' est FAUX → 'I didn't go' ✓. Le did porte le passé !\"",
+      heroTip: "Eren dit : \"Après didn't : toujours la base verbale ! 'I didn't went' est FAUX → 'I didn't go' ✓. Le did porte le passé — le verbe reste à la base !\"",
+      // ✅ CORRECTION v1.1 : warmup Q1 — remplacé "go" (irrégulier) par "walk" (régulier)
+      // La leçon 3_1 porte sur les RÉGULIERS. "go" est irrégulier → cohérence pédagogique.
       warmup: [
-        { q: "Mets au Past Simple : I (go) to school.", a: "I went to school.", o: ["I goed to school.", "I goes to school.", "I went to school.", "I gone to school."] },
-        { q: "Forme la négation au passé : She saw the film.", a: "She didn't see the film.", o: ["She didn't saw the film.", "She didn't see the film.", "She doesn't see the film.", "She not saw the film."] }
+        { q: "Mets au Past Simple (régulier) : I (walk) to school yesterday.", a: "I walked to school yesterday.", o: ["I walking to school yesterday.", "I walkd to school yesterday.", "I walked to school yesterday.", "I walks to school yesterday."] },
+        { q: "Forme la négation au passé : She watched TV.", a: "She didn't watch TV.", o: ["She didn't watched TV.", "She didn't watch TV.", "She doesn't watch TV.", "She not watched TV."] }
       ]
     },
 
@@ -721,27 +724,31 @@ window.LESSON_REGISTRY['english'] = {
           examples: [
             "I can swim. / She can speak French. / Can you help me?",
             "Can I open the window? (permission informelle)",
-            "You must study hard. = Tu dois travailler dur. (obligation)",
+            "You must study hard. = Tu dois travailler dur. (OBLIGATION forte)",
             "You must not (mustn't) run here. = Tu ne dois pas courir ici. (interdiction)",
             "Après CAN/MUST : TOUJOURS V-base → He can swim (pas swims !)"
           ]
         },
         {
           icon: '💡', title: "SHOULD, MAY, MIGHT", color: '#8b6914',
-          content: "<strong>SHOULD</strong> = devoir (conseil). <strong>MAY/MIGHT</strong> = peut-être (probabilité).",
+          content: "<strong>SHOULD</strong> = devoir (conseil, recommandation douce). <strong>MAY/MIGHT</strong> = peut-être (probabilité).",
           examples: [
-            "You should eat vegetables. = Tu devrais manger des légumes. (conseil)",
+            "You should eat vegetables. = Tu DEVRAIS manger des légumes. (conseil, pas obligation)",
             "You shouldn't stay up late. = Tu ne devrais pas te coucher tard.",
+            "SHOULD ≠ MUST : should = je te conseille / must = c'est obligatoire",
             "May I come in? = Puis-je entrer ? (permission formelle)",
             "It may rain today. = Il se peut qu'il pleuve. (possibilité ~50%)",
             "It might snow. = Il se pourrait qu'il neige. (possibilité ~30%)"
           ]
         }
       ],
-      heroTip: "Erwin dit : \"Règle d'or des modaux : JAMAIS de -s, -ing ou -ed après ! He can SWIM (pas swims) · She must GO (pas goes) · They should EAT (pas eating) !\"",
+      heroTip: "Erwin dit : \"Règle d'or des modaux : JAMAIS de -s, -ing ou -ed après ! He can SWIM · She must GO · They should EAT · SHOULD = conseil doux / MUST = obligation forte !\"",
+      // ✅ CORRECTION v1.1 — Mineurs améliorés :
+      // Q1 : reformulé pour distinguer SHOULD (conseil) vs MUST (obligation) — l'élève comprend la nuance
+      // Q2 : rappel explicite de la règle modal + V-BASE dans la question elle-même
       warmup: [
-        { q: "Complète : You ___ brush your teeth every day. (conseil fort)", a: "should", o: ["can", "should", "might", "may"] },
-        { q: "Quelle phrase est correcte ?", a: "He can swim.", o: ["He can swims.", "He can swimming.", "He can swim.", "He cans swim."] }
+        { q: "CONSEIL (tu devrais) vs OBLIGATION (tu dois) : Tu veux donner un CONSEIL, pas une obligation — You ___ eat more vegetables.", a: "should", o: ["must", "should", "might", "can"] },
+        { q: "Règle des modaux : modal + V-BASE (jamais -s ni -ing) ! Laquelle EST correcte ?", a: "He can swim.", o: ["He can swims.", "He can swimming.", "He can swim.", "He cans swim."] }
       ]
     },
 
@@ -892,7 +899,7 @@ window.LESSON_REGISTRY['english'] = {
     '4_1': {
       heroName: 'Historia Reiss',
       heroQuote: "Le Present Perfect relie le passé et le présent. J'ai vécu tant de choses qui façonnent qui je suis !",
-      rule: "Present Perfect : HAVE/HAS + participe passé. Usage : expérience de vie, action passée avec effet présent, résultat visible. Marqueurs : ever, never, already, yet, just, since, for.",
+      rule: "Present Perfect : HAVE/HAS + participe passé. Usage : expérience de vie, action passée avec effet présent. Marqueurs : ever, never, already, yet, just. Formation : have/has + pp irréguliers (been, seen, done, gone...).",
       sections: [
         {
           icon: '🔗', title: "Formation du Present Perfect", color: '#4a5c3f',
@@ -906,29 +913,31 @@ window.LESSON_REGISTRY['english'] = {
           ]
         },
         {
-          icon: '⏳', title: "Since vs For + marqueurs clés", color: '#8b6914',
-          content: "<strong>Since</strong> + point de départ / <strong>For</strong> + durée. Marqueurs importants du Present Perfect.",
+          icon: '🔑', title: "Marqueurs clés : ever, never, already, yet, just", color: '#8b6914',
+          content: "Les <strong>marqueurs</strong> du Present Perfect changent le sens de la phrase.",
           examples: [
-            "I have lived here for 5 years. (for + durée)",
-            "I have lived here since 2019. (since + point de départ)",
-            "ever = jamais (question) : Have you ever tried sushi?",
-            "never = jamais (négatif) : I have never been to the USA.",
-            "already = déjà : She has already done it.",
-            "yet = encore / déjà : I haven't done it yet. / Have you done it yet?"
+            "EVER = jamais (questions) : Have you EVER tried sushi?",
+            "NEVER = jamais (négatif) : I have NEVER been to the USA.",
+            "ALREADY = déjà (affirmatif) : She has ALREADY done it.",
+            "YET = encore/déjà (négatif/question) : I haven't done it YET. / Have you done it YET?",
+            "JUST = venir de : He has JUST arrived. (il vient d'arriver)"
           ]
         }
       ],
-      heroTip: "Historia dit : \"SINCE = depuis quand (date/moment) · FOR = depuis combien de temps (durée). Since 2020 vs For 3 years. C'est la différence clé !\"",
+      heroTip: "Historia dit : \"EVER dans les questions · NEVER dans les négatifs · ALREADY = déjà (avant la date prévue) · YET = encore pas fait · JUST = vient de se passer !\"",
+      // ✅ CORRECTION v1.1 — warmup Q2 : supprimé la question sur SINCE/FOR
+      // SINCE/FOR appartient au chapitre 4_2 (PP vs PS). Remplacé par une question
+      // sur les marqueurs EVER/ALREADY/YET — cohérent avec la leçon 4_1.
       warmup: [
         { q: "Complète : I ___ never ___ to Australia. (Present Perfect)", a: "have / been", o: ["have / went", "have / been", "has / been", "did / go"] },
-        { q: "Choisis : I have lived here ___ 2018.", a: "since", o: ["for", "since", "ago", "during"] }
+        { q: "Complète : Have you ___ visited London ? (expérience de vie)", a: "ever", o: ["ever", "just", "since", "for"] }
       ]
     },
 
     '4_2': {
       heroName: 'Levi Ackerman',
       heroQuote: "Present Perfect ou Past Simple ? Je n'ai pas le temps pour les erreurs. Distingue-les précisément !",
-      rule: "Present Perfect : lien avec le présent, pas de moment précis. Past Simple : action terminée à un moment précis (yesterday, in 2020, last week). Erreur classique : I have seen him yesterday ✗ → I saw him yesterday ✓.",
+      rule: "Present Perfect : lien avec le présent, pas de moment précis. Past Simple : action terminée à un moment précis (yesterday, in 2020, last week). SINCE = depuis quand (point). FOR = depuis combien de temps (durée).",
       sections: [
         {
           icon: '🔀', title: "Present Perfect vs Past Simple", color: '#4a5c3f',
@@ -942,18 +951,18 @@ window.LESSON_REGISTRY['english'] = {
           ]
         },
         {
-          icon: '⚠️', title: "Erreurs classiques à éviter", color: '#8b6914',
-          content: "Les <strong>fautes fréquentes</strong> entre Present Perfect et Past Simple.",
+          icon: '⏳', title: "SINCE vs FOR — la règle essentielle", color: '#8b6914',
+          content: "<strong>SINCE</strong> + point de départ (date/moment). <strong>FOR</strong> + durée (combien de temps).",
           examples: [
-            "✗ I have seen him yesterday. → ✓ I saw him yesterday.",
-            "✗ Did you ever visit Paris? → ✓ Have you ever visited Paris?",
-            "✗ I have been born in 2010. → ✓ I was born in 2010.",
-            "Marqueurs PP : ever/never/already/yet/just/since/for/recently",
-            "Marqueurs PS : yesterday/last.../ago/in [année]/when/at [heure]"
+            "I have lived here FOR 5 years. (for + durée)",
+            "I have lived here SINCE 2019. (since + point de départ)",
+            "FOR 3 years / FOR two months / FOR a long time (durée)",
+            "SINCE 2020 / SINCE Monday / SINCE I was young (moment précis)",
+            "✗ I have seen him yesterday → ✓ I saw him yesterday. (date précise = PS)"
           ]
         }
       ],
-      heroTip: "Levi dit : \"La règle ultime : si tu vois 'yesterday, last week, in 2020, at 3pm' → Past Simple. Si tu vois 'ever, never, already, yet, since, for' → Present Perfect.\"",
+      heroTip: "Levi dit : \"Règle ultime : yesterday/last week/in 2020 → Past Simple. Ever/never/already/yet/since/for → Present Perfect. La date précise = PS !\"",
       warmup: [
         { q: "Quel temps ? 'I ___ Tokyo last year.'", a: "visited (Past Simple)", o: ["have visited (PP)", "visited (Past Simple)", "visit (Present Simple)", "am visiting (Continuous)"] },
         { q: "Quel temps ? 'Have you ___ sushi?'", a: "ever eaten (Present Perfect)", o: ["ever eaten (Present Perfect)", "ever ate (Past Simple)", "ever eat (Present Simple)", "ever eating (Continuous)"] }
@@ -1173,4 +1182,4 @@ window.LESSON_REGISTRY['english'] = {
   }
 };
 
-console.info('⚔️ lesson-data-english.js chargé — 32 leçons Anglais · 4 niveaux × 8 îles · programme officiel CM2→4ème');
+console.info('⚔️ lesson-data-english.js v1.1 chargé — 32 leçons · corrections warmup 3_1/3_4/4_1 appliquées');
