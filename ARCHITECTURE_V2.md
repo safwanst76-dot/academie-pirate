@@ -1,6 +1,6 @@
 # ACADÉMIE PIRATE — ARCHITECTURE V2
 *Document de référence — À lire en priorité avant tout développement*
-*Version : 2.1 | Mise à jour : 1er Avril 2026*
+*Version : 2.2 | Mise à jour : 2 Avril 2026*
 
 ---
 
@@ -157,8 +157,8 @@ Supabase DB :
   matieres + niveaux          ✅ FAIT
   chapitres English CM2       ✅ FAIT — 8 chapitres
   questions English CM2       ✅ FAIT — 88 questions (8×11)
-  chapitres 6ème/5ème/4ème    🔜 À CRÉER — 24 chapitres
-  questions 6ème/5ème/4ème    🔜 À CRÉER — 264 questions (24×11)
+  chapitres 6ème/5ème/4ème    ✅ FAIT — 24 chapitres
+  questions 6ème/5ème/4ème    ✅ FAIT — 264 questions (24×11)
 
 Supabase Storage bucket island-aot :
   characters/                 ✅ UPLOADÉ — 10 personnages AOT
@@ -185,7 +185,7 @@ Supabase Storage bucket island-aot :
 
 ---
 
-### Niveau 6ème — A1+ — Grammaire fondamentale 🔜 À CRÉER
+### Niveau 6ème — A1+ — Grammaire fondamentale ✅ EN DB
 
 | # | Île | Topic | Notions clés | Hero | Boss |
 |---|---|---|---|---|---|
@@ -207,7 +207,7 @@ Supabase Storage bucket island-aot :
 
 ---
 
-### Niveau 5ème — A2 — Grammaire intermédiaire 🔜 À CRÉER
+### Niveau 5ème — A2 — Grammaire intermédiaire ✅ EN DB
 
 | # | Île | Topic | Notions clés | Hero | Boss |
 |---|---|---|---|---|---|
@@ -222,7 +222,7 @@ Supabase Storage bucket island-aot :
 
 ---
 
-### Niveau 4ème — B1 — Grammaire avancée 🔜 À CRÉER
+### Niveau 4ème — B1 — Grammaire avancée ✅ EN DB
 
 | # | Île | Topic | Notions clés | Hero | Boss |
 |---|---|---|---|---|---|
@@ -237,25 +237,89 @@ Supabase Storage bucket island-aot :
 
 ---
 
-## CINÉMATIQUE — Données AOT_ISLE_INTRO
+## CINÉMATIQUE — Règle CIN-01 (critique)
 
-Défini dans `js/worlds/english/quiz-router.js`. Structure pour chaque île :
+### Règle CIN-01 — Clé niveau_numero OBLIGATOIRE
+
+**⚠️ ERREUR CLASSIQUE** : utiliser `ISLE_INTRO[ch.numero]` → affiche la cinématique CM2 pour TOUS les niveaux.
+
+**✅ RÈGLE** : la clé doit TOUJOURS combiner le niveau ET le numéro :
 
 ```javascript
-{
-  bg:         '#0a0a00',           // couleur fond cinématique
-  lines:      ["L'ALPHABET…","… ANGLAIS !!","26 lettres !"],  // 3 lignes max
-  kanji:      '自由 !!',           // caractère japonais + !!
-  kanjiColor: '#8b6914',           // couleur kaki/marron/or
-  bubble:     "Texte prononcé par TTS — phrase héros motivante"
-}
+// ✅ CORRECT
+var cfg = MONDE_ISLE_INTRO[_currentNiveau + '_' + ch.numero];
+// ex: 'cm2_1', '6eme_3', '5eme_7', '4eme_2'
+
+// ❌ FAUX — affiche la même cinématique CM2 pour tous les niveaux
+var cfg = MONDE_ISLE_INTRO[ch.numero];
 ```
 
-**Règle cinématique :**
-- Durée : 7000ms (7 secondes) — laisse le TTS terminer
-- TTS : `lang='fr-FR', rate=0.9, pitch=1.1`
-- Auto-skip : `setTimeout(aot_skipCine, 7000)`
-- Bouton : "⏭ PASSER" toujours visible
+### Structure de la variable ISLE_INTRO
+
+Défini dans le quiz-router de chaque monde (ex: `quiz-router.js`).
+**Une entrée par combinaison niveau + numéro.**
+
+```javascript
+var MONDE_ISLE_INTRO = {
+  // ── CM2 ──
+  'cm2_1': { bg:'#0a0a00', lines:["TITRE…","… SOUS-TITRE !!","Accroche !"],
+             kanji:'漢字 !!', kanjiColor:'#couleur',
+             bubble:"Phrase du héros prononcée par TTS — adaptée à la leçon CM2 île 1" },
+  'cm2_2': { ... },
+  // ...8 entrées CM2
+
+  // ── 6ème ──
+  '6eme_1': { bg:'#001008', lines:["TITRE 6ème…","… SOUS-TITRE !!","Accroche !"],
+              kanji:'漢字 !!', kanjiColor:'#couleur',
+              bubble:"Phrase du héros — adaptée à la leçon 6ème île 1" },
+  // ...8 entrées 6ème
+
+  // ── 5ème ──
+  '5eme_1': { ... }, // ...8 entrées 5ème
+
+  // ── 4ème ──
+  '4eme_1': { ... }, // ...8 entrées 4ème
+};
+// Total : 32 entrées par monde (4 niveaux × 8 îles)
+```
+
+### Contenu de la bulle (bubble)
+
+La bulle doit être **adaptée à la leçon du chapitre** :
+- CM2 île 1 (Alphabet) → "L'alphabet, c'est la première étape vers la liberté !"
+- 6ème île 1 (Present Simple) → "He speaks, she goes — maîtrise le +s de la 3ème personne !"
+- 5ème île 2 (Irréguliers) → "Les irréguliers, il faut les répéter jusqu'à les connaître !"
+- 4ème île 7 (Passif) → "Le mur a été attaqué — la voix passive !"
+
+**NE JAMAIS** copier-coller les bulles d'un niveau à l'autre.
+
+### Paramètres TTS et durée
+```javascript
+// TTS — identique pour tous les mondes V2
+utt.lang  = 'fr-FR';  // langue française
+utt.rate  = 0.9;       // légèrement plus lent
+utt.pitch = 1.1;       // légèrement plus aigu
+
+// Durée — 7 secondes pour laisser le TTS terminer
+ov._t = setTimeout(skipCine, 7000);
+```
+
+### Kanji par thème — suggestions
+
+| Thème | Kanji | Prononciation |
+|---|---|---|
+| Liberté / Alphabet | 自由 | Jiyū |
+| Nombres | 数字 | Sūji |
+| Couleurs | 色彩 | Shikisai |
+| Présent Simple | 現在 | Genzai |
+| Passé | 過去 | Kako |
+| Futur | 未来 | Mirai |
+| Révision | 復習 | Fukushū |
+| Expérience | 経験 | Keiken |
+| Comparaison | 比較 | Hikaku |
+| Pouvoir | 力 | Chikara |
+| Famille | 家族 | Kazoku |
+| École | 学校 | Gakkō |
 
 ---
 
@@ -291,13 +355,14 @@ Défini dans `js/worlds/english/quiz-router.js`. Structure pour chaque île :
 ✅ Syntaxe JS validée Node.js
 ```
 
-### 🔜 PHASE 1b — Contenu English (en cours)
+### ✅ PHASE 1b — Contenu English Terminé
 **Objectif** : Remplir les 3 niveaux restants via SQL
 ```
-🔜 migration_english_6eme.sql  — 8 chapitres × 11 questions = 88 questions
-🔜 migration_english_5eme.sql  — 8 chapitres × 11 questions = 88 questions
-🔜 migration_english_4eme.sql  — 8 chapitres × 11 questions = 88 questions
-   Total : 264 nouvelles questions pédagogiques
+✅ migration_english_6eme.sql  — 8 chapitres × 11 questions = 88 questions
+✅ migration_english_5eme.sql  — 8 chapitres × 11 questions = 88 questions
+✅ migration_english_4eme.sql  — 8 chapitres × 11 questions = 88 questions
+✅ fix cinématique — clés niveau_numero (CIN-01)
+   Total : 352 questions en DB (4 niveaux complets)
 ```
 
 ### 🔒 PHASE 2 — Admin Contenu
@@ -350,9 +415,9 @@ Géo Namek        : N2-N4
 | Niveau | Chapitres | CECRL | Status |
 |---|---|---|---|
 | CM2 | Alphabet, Nombres, Couleurs, Animaux, Famille, Corps, École, Météo | A1 | ✅ 88 questions en DB |
-| 6ème | Present Simple, BE/HAVE, Articles, Pluriels, Adjectifs, Prépositions, Questions, Vocab | A1+ | 🔜 À créer |
-| 5ème | Past Simple, Irréguliers, Present Cont., Modaux, Comparatifs, Past Cont., Questions Passé, Révisions | A2 | 🔜 À créer |
-| 4ème | Present Perfect, PP vs PS, WILL, Going To, Superlatifs, Question Tags, Passif, Révisions | B1 | 🔜 À créer |
+| 6ème | Present Simple, BE/HAVE, Articles, Pluriels, Adjectifs, Prépositions, Questions, Vocab | A1+ | ✅ 88 questions en DB |
+| 5ème | Past Simple, Irréguliers, Present Cont., Modaux, Comparatifs, Past Cont., Questions Passé, Révisions | A2 | ✅ 88 questions en DB |
+| 4ème | Present Perfect, PP vs PS, WILL, Going To, Superlatifs, Question Tags, Passif, Révisions | B1 | ✅ 88 questions en DB |
 
 ### Français (monde Grand Bleu — One Piece)
 | Niveau | Thèmes principaux | Status |
@@ -423,6 +488,27 @@ Les autres mondes ne sont jamais touchés lors des modifications English.
 Chaque île a une leçon via `lesson_english(niveauCode, numero, callback)`.
 La leçon utilise les données de `LESSON_REGISTRY['english']` dans `lesson-data.js`.
 
+### Règle CIN-01 — Clé cinématique niveau_numero OBLIGATOIRE
+La variable ISLE_INTRO de chaque monde DOIT utiliser des clés composées :
+`'niveau_code' + '_' + numero_ile` — ex: 'cm2_1', '6eme_3', '4eme_7'.
+
+**Ne JAMAIS utiliser `ISLE_INTRO[ch.numero]`** — cela affiche la cinématique
+CM2 pour TOUS les niveaux. Bug confirmé en production le 2 avril 2026.
+
+```javascript
+// ✅ Correct dans _playCinematic(ch, callback) :
+var cfg = MONDE_ISLE_INTRO[_currentNiveau + '_' + ch.numero];
+// ❌ Faux — même cinématique CM2 pour tous les niveaux :
+var cfg = MONDE_ISLE_INTRO[ch.numero];
+```
+
+La bulle TTS (`bubble`) doit être **adaptée au sujet de la leçon** du niveau concerné.
+32 entrées par monde : 4 niveaux × 8 îles = 32 bulles uniques et pertinentes.
+
+### Règle CIN-02 — Durée et TTS
+Durée minimale : **7000ms** pour laisser le TTS terminer.
+`lang='fr-FR', rate=0.9, pitch=1.1` — identique pour tous les mondes V2.
+
 ### Règle ADM-01 — Contenu sans code
 Tout nouveau contenu (questions/leçons/chapitres) créable depuis l'admin.
 
@@ -482,9 +568,9 @@ CM2  : { 1:eren, 2:mikasa, 3:armin, 4:levi, 5:historia, 6:jean, 7:hange, 8:erwin
 | Config | `config.js` | ✅ english active:true |
 | DB tables | Supabase | ✅ |
 | Questions CM2 | Supabase DB | ✅ 88 questions |
-| Questions 6ème | Supabase DB | 🔜 À créer |
-| Questions 5ème | Supabase DB | 🔜 À créer |
-| Questions 4ème | Supabase DB | 🔜 À créer |
+| Questions 6ème | Supabase DB | ✅ 88 questions |
+| Questions 5ème | Supabase DB | ✅ 88 questions |
+| Questions 4ème | Supabase DB | ✅ 88 questions |
 | Assets bucket | Supabase Storage | ✅ uploadé |
 
 ### Fonctionnalités en production
