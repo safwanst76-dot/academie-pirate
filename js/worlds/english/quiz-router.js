@@ -16,15 +16,44 @@
   var STORAGE_AOT = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/';
 
   // ── Données cinématiques par île (niveau CM2 = îles 1-8) ──────
+  // Clés : 'niveau_numero' — ex: 'cm2_1', '6eme_3', '4eme_7'
   var AOT_ISLE_INTRO = {
-    1: { bg:'#0a0a00', lines:["L'ALPHABET…","… ANGLAIS !!","26 lettres pour la liberté !"],       kanji:'自由 !!', kanjiColor:'#8b6914', bubble:"L'alphabet, c'est la première étape vers la liberté ! 26 lettres pour conquérir l'anglais !" },
-    2: { bg:'#000a0a', lines:["LES NOMBRES…","… EN ANGLAIS !!","One, two, three — en avant !"],     kanji:'数字 !!', kanjiColor:'#4a5c3f', bubble:"Les chiffres sont des armes. Compte de 1 à 100 comme un vrai soldat de l'Armée d'Exploration !" },
-    3: { bg:'#0a0500', lines:["LES COULEURS…","… DU MONDE !!","Red, blue, green !"],                kanji:'色彩 !!', kanjiColor:'#c0a030', bubble:"Les couleurs du monde sont infinies ! Apprends-les en anglais et peins ta liberté !" },
-    4: { bg:'#050a00', lines:["LES ANIMAUX…","… SAUVAGES !!","Cat, dog, lion !"],                   kanji:'動物 !!', kanjiColor:'#8b6914', bubble:"Même les animaux méritent le respect. Connais leurs noms en anglais, c'est un ordre !" },
-    5: { bg:'#0a0008', lines:["LA FAMILLE…","… EN ANGLAIS !!","Mum, dad, sister !"],                kanji:'家族 !!', kanjiColor:'#4a5c3f', bubble:"La famille, c'est ce qu'on choisit. Apprenons les membres de la famille en anglais !" },
-    6: { bg:'#080005', lines:["LE CORPS…","… HUMAIN !!","Head, shoulders, knees !"],               kanji:'身体 !!', kanjiColor:'#8b6914', bubble:"Connais ton corps comme tu connais ton équipement ! Tête, épaules, genoux et pieds !" },
-    7: { bg:'#00080a', lines:["L'ÉCOLE…","… EN ANGLAIS !!","Teacher, book, Monday !"],             kanji:'学校 !!', kanjiColor:'#4a5c3f', bubble:"À l'école on apprend, on découvre, on grandit ! Voici le vocabulaire de l'école en anglais !" },
-    8: { bg:'#0a0800', lines:["LA MÉTÉO…","… EN ANGLAIS !!","Sunny, rainy, windy !"],              kanji:'天気 !!', kanjiColor:'#8b6914', bubble:"Un bon commandant connaît la météo avant la mission ! Apprenons à décrire le temps qu'il fait !" },
+    // ── CM2 ──────────────────────────────────────────────────────
+    'cm2_1': { bg:'#0a0a00', lines:["L'ALPHABET…","… ANGLAIS !!","26 lettres pour la liberté !"],       kanji:'自由 !!', kanjiColor:'#8b6914', bubble:"L'alphabet, c'est la première étape vers la liberté ! 26 lettres pour conquérir l'anglais !" },
+    'cm2_2': { bg:'#000a0a', lines:["LES NOMBRES…","… EN ANGLAIS !!","One, two, three — en avant !"],   kanji:'数字 !!', kanjiColor:'#4a5c3f', bubble:"Les chiffres sont des armes. Compte de 1 à 100 comme un vrai soldat de l'Armée d'Exploration !" },
+    'cm2_3': { bg:'#0a0500', lines:["LES COULEURS…","… DU MONDE !!","Red, blue, green !"],              kanji:'色彩 !!', kanjiColor:'#c0a030', bubble:"Les couleurs du monde sont infinies ! Apprends-les en anglais et peins ta liberté !" },
+    'cm2_4': { bg:'#050a00', lines:["LES ANIMAUX…","… SAUVAGES !!","Cat, dog, lion !"],                 kanji:'動物 !!', kanjiColor:'#8b6914', bubble:"Même les animaux méritent le respect. Connais leurs noms en anglais, c'est un ordre !" },
+    'cm2_5': { bg:'#0a0008', lines:["LA FAMILLE…","… EN ANGLAIS !!","Mum, dad, sister !"],              kanji:'家族 !!', kanjiColor:'#4a5c3f', bubble:"La famille, c'est ce qu'on choisit. Apprenons les membres de la famille en anglais !" },
+    'cm2_6': { bg:'#080005', lines:["LE CORPS…","… HUMAIN !!","Head, shoulders, knees !"],             kanji:'身体 !!', kanjiColor:'#8b6914', bubble:"Connais ton corps comme tu connais ton équipement ! Tête, épaules, genoux et pieds !" },
+    'cm2_7': { bg:'#00080a', lines:["L'ÉCOLE…","… EN ANGLAIS !!","Teacher, book, Monday !"],           kanji:'学校 !!', kanjiColor:'#4a5c3f', bubble:"À l'école on apprend, on découvre, on grandit ! Voici le vocabulaire de l'école en anglais !" },
+    'cm2_8': { bg:'#0a0800', lines:["LA MÉTÉO…","… EN ANGLAIS !!","Sunny, rainy, windy !"],            kanji:'天気 !!', kanjiColor:'#8b6914', bubble:"Un bon commandant connaît la météo avant la mission ! Apprenons à décrire le temps qu'il fait !" },
+    // ── 6ème ─────────────────────────────────────────────────────
+    '6eme_1': { bg:'#00100a', lines:["LE PRÉSENT…","… SIMPLE !!","He speaks, she runs !"],             kanji:'現在 !!', kanjiColor:'#4a5c3f', bubble:"Le Present Simple, c'est l'arme de base ! He speaks, she goes — maîtrise le +s de la 3ème personne !" },
+    '6eme_2': { bg:'#080010', lines:["BE ET HAVE…","… LES FONDATIONS !!","I am, she has !"],           kanji:'存在 !!', kanjiColor:'#8b6914', bubble:"BE et HAVE sont les deux verbes fondamentaux. I am, you are, he IS — pas d'excuses pour les oublier !" },
+    '6eme_3': { bg:'#100800', lines:["A, AN, THE…","… LES ARTICLES !!","A cat, the sun !"],            kanji:'冠詞 !!', kanjiColor:'#c0a030', bubble:"A, an, the — trois petits mots, une grande différence ! Écoute le son, pas la lettre !" },
+    '6eme_4': { bg:'#001008', lines:["LES PLURIELS…","… EN ANGLAIS !!","Cats, children, sheep !"],    kanji:'複数 !!', kanjiColor:'#4a5c3f', bubble:"Un soldat, deux soldats ! Les pluriels en anglais ont leurs règles — et leurs exceptions !" },
+    '6eme_5': { bg:'#100010', lines:["LES ADJECTIFS…","… INVARIABLES !!","Big, beautiful, old !"],    kanji:'形容詞 !!', kanjiColor:'#8b6914', bubble:"Les adjectifs, ce sont les couleurs du langage ! Et en anglais, ils ne s'accordent JAMAIS !" },
+    '6eme_6': { bg:'#001010', lines:["LES PRÉPOSITIONS…","… DE LIEU !","In, on, under !"],            kanji:'前置詞 !!', kanjiColor:'#c0a030', bubble:"La position de tes soldats sur le terrain, c'est comme les prépositions — in, on, under, between !" },
+    '6eme_7': { bg:'#080010', lines:["LES QUESTIONS…","… EN ANGLAIS !!","Do you? Where does?"],       kanji:'質問 !!', kanjiColor:'#4a5c3f', bubble:"Do you speak English? Does she play sports? Les questions au Present Simple, c'est fastoche !" },
+    '6eme_8': { bg:'#100500', lines:["VOCABULAIRE…","… QUOTIDIEN !!","Food, routines, always !"],     kanji:'日常 !!', kanjiColor:'#8b6914', bubble:"La nourriture, c'est ma passion ! Et le vocabulaire quotidien c'est la nourriture de l'esprit !" },
+    // ── 5ème ─────────────────────────────────────────────────────
+    '5eme_1': { bg:'#150000', lines:["LE PASSÉ…","… SIMPLE !!","I walked, she played !"],             kanji:'過去 !!', kanjiColor:'#8b6914', bubble:"Le passé m'obsède ! Le Past Simple parle d'actions terminées — walked, played, stopped !" },
+    '5eme_2': { bg:'#001500', lines:["LES IRRÉGULIERS…","… À MAÎTRISER !!","Go, went, gone !"],      kanji:'不規則 !!', kanjiColor:'#4a5c3f', bubble:"Les irréguliers, c'est comme l'entraînement — il faut les répéter jusqu'à les connaître par cœur !" },
+    '5eme_3': { bg:'#000015', lines:["L'ACTION…","… EN COURS !!","I am running now !"],               kanji:'進行 !!', kanjiColor:'#c0a030', bubble:"Le Present Continuous ! I am explaining grammar RIGHT NOW — l'action est en train de se passer !" },
+    '5eme_4': { bg:'#150010', lines:["LES MODAUX…","… LES POUVOIRS !!","Can, must, should !"],        kanji:'助動詞 !!', kanjiColor:'#8b6914', bubble:"Les modaux expriment la possibilité, l'obligation, le conseil — après eux, toujours la base verbale !" },
+    '5eme_5': { bg:'#001500', lines:["LES COMPARATIFS…","… PLUS GRAND !!","Taller, more beautiful !"], kanji:'比較 !!', kanjiColor:'#4a5c3f', bubble:"Mon cheval est PLUS rapide que le tien ! Plus grand, plus fort — maîtrise les comparatifs !" },
+    '5eme_6': { bg:'#150500', lines:["LE PASSÉ…","… CONTINU !!","Was running, were singing !"],      kanji:'過去進行 !!', kanjiColor:'#c0a030', bubble:"Past ou Continuous ? C'est comme choisir les bonnes armes — les deux ont leur moment !" },
+    '5eme_7': { bg:'#050015', lines:["LES QUESTIONS…","… AU PASSÉ !!","Did she? What happened?"],    kanji:'過去質問 !!', kanjiColor:'#8b6914', bubble:"Les questions au passé permettent de reconstituer l'histoire — Did, WH-, who est sujet ?" },
+    '5eme_8': { bg:'#001510', lines:["RÉVISIONS…","… 5ÈME !!","Tous les temps réunis !"],            kanji:'復習 !!', kanjiColor:'#4a5c3f', bubble:"Récapitulatif 5ème : présent, passé, continu, modaux, comparatifs — tout en un combat final !" },
+    // ── 4ème ─────────────────────────────────────────────────────
+    '4eme_1': { bg:'#0a0020', lines:["LE PRESENT PERFECT…","… L'EXPÉRIENCE !!","I have been, she has seen !"], kanji:'経験 !!', kanjiColor:'#8b6914', bubble:"Le Present Perfect relie le passé et le présent — I have lived tant de choses qui façonnent qui je suis !" },
+    '4eme_2': { bg:'#200005', lines:["SINCE OU FOR…","… LA DURÉE !!","Since 2020, for 3 years !"],   kanji:'継続 !!', kanjiColor:'#4a5c3f', bubble:"Present Perfect ou Past Simple ? Je n'ai pas le temps pour les erreurs — distingue-les précisément !" },
+    '4eme_3': { bg:'#001020', lines:["LE FUTUR WILL…","… LES PRÉDICTIONS !!","It will snow !"],      kanji:'未来 !!', kanjiColor:'#c0a030', bubble:"Le futur avec WILL ! Prédiction, décision spontanée, promesse — will est l'arme du futur incertain !" },
+    '4eme_4': { bg:'#200010', lines:["GOING TO…","… LES PLANS !!","I'm going to study !"],           kanji:'計画 !!', kanjiColor:'#8b6914', bubble:"Going to, c'est pour les plans stratégiques déjà décidés — une attaque préparée, un futur certain !" },
+    '4eme_5': { bg:'#102000', lines:["LES SUPERLATIFS…","… LE MEILLEUR !!","The best, the worst !"], kanji:'最上級 !!', kanjiColor:'#4a5c3f', bubble:"Comparatifs ET superlatifs ! Le plus fort, le meilleur — THE best, THE most difficult !" },
+    '4eme_6': { bg:'#001020', lines:["QUESTION TAGS…","… LA CONFIRMATION !!","isn't she? don't you?"], kanji:'付加疑問 !!', kanjiColor:'#c0a030', bubble:"Les question tags, c'est chercher une confirmation — You understand me, don't you ?" },
+    '4eme_7': { bg:'#200000', lines:["LA VOIX PASSIVE…","… LA TRANSFORMATION !!","Was destroyed !"], kanji:'受動態 !!', kanjiColor:'#8b6914', bubble:"La voix passive ! Le mur a été attaqué — on ne sait pas qui, mais le résultat est là !" },
+    '4eme_8': { bg:'#002010', lines:["RÉVISIONS…","… 4ÈME !!","PP, will, going to, passif !"],       kanji:'総復習 !!', kanjiColor:'#4a5c3f', bubble:"Grande révision de 4ème ! Present Perfect, will, going to, superlatifs, passif — tout réuni !" },
   };
 
   var NIVEAUX = [
@@ -310,7 +339,7 @@
   // ══════════════════════════════════════════════════════════════
 
   function _playCinematic(ch, callback) {
-    var cfg = AOT_ISLE_INTRO[ch.numero];
+    var cfg = AOT_ISLE_INTRO[_currentNiveau + '_' + ch.numero];
     if (!cfg) { if (callback) callback(); return; }
 
     // Créer/récupérer l'overlay (créé dynamiquement comme V1)
