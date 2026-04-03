@@ -19,10 +19,18 @@ window.LESSON_REGISTRY['english'] = {
   particles: 'star', worldName: 'Paradis',
   avatar: function(niveau, n) {
     var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/';
-    var N1 = { 1:'eren.jpeg', 2:'mikasa.gif', 3:'armin.jpg', 4:'levi.jpg', 5:'historia.png', 6:'jean.jpg', 7:'hange.jpeg', 8:'erwin.jpg' };
-    var N2 = { 1:'armin.jpg', 2:'levi.jpg', 3:'historia.png', 4:'jean.jpg', 5:'hange.jpeg', 6:'erwin.jpg', 7:'connie.jpg', 8:'sasha.jpeg' };
-    var N3 = { 1:'eren.jpeg', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'connie.jpg', 6:'sasha.jpeg', 7:'armin.jpg', 8:'historia.png' };
-    var N4 = { 1:'historia.png', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'eren.jpeg', 6:'historia.png', 7:'jean.jpg', 8:'connie.jpg' };
+    // CM2 : personnages iconiques principaux
+    var N1 = { 1:'eren.jpeg',   2:'mikasa.gif',    3:'armin.jpg',  4:'levi.jpg',
+               5:'historia.png', 6:'jean.jpg',      7:'hange.jpeg', 8:'erwin.jpg' };
+    // 6ème : personnages principaux + Warriors (reiner, bertholdt)
+    var N2 = { 1:'armin.jpg',    2:'levi.jpg',      3:'historia.png', 4:'jean.jpg',
+               5:'hange.jpeg',   6:'erwin.jpg',     7:'reiner.jpg',   8:'bertholdt.jpg' };
+    // 5ème : mix Survey Corps + antagonistes (annie, ymir, porco)
+    var N3 = { 1:'eren.jpeg',    2:'levi.jpg',      3:'annie.jpeg', 4:'erwin.jpg',
+               5:'ymir.jpeg',    6:'sasha.jpeg',    7:'porco.jpg',  8:'mikasa.gif' };
+    // 4ème : personnages avancés (zeke, pieck, floch)
+    var N4 = { 1:'historia.png', 2:'levi.jpg',      3:'hange.jpeg', 4:'zeke.jpg',
+               5:'eren.jpeg',    6:'pieck.jpg',     7:'floch.jpg',  8:'armin.jpg' };
     var maps = { 1: N1, 2: N2, 3: N3, 4: N4 };
     var map  = maps[niveau] || N1;
     return SUPABASE + (map[n] || 'eren.jpeg');
@@ -1182,4 +1190,4 @@ window.LESSON_REGISTRY['english'] = {
   }
 };
 
-console.info('⚔️ lesson-data-english.js v1.1 chargé — 32 leçons · corrections warmup 3_1/3_4/4_1 appliquées');
+console.info('⚔️ lesson-data-english.js v1.2 chargé — 32 leçons · 21 personnages AOT · mapping sans répétitions');
