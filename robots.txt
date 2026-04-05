@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://safwanst76-dot.github.io/academie-pirate/sitemap.xml
+Sitemap: https://aca-pirate.ch/sitemap.xml
