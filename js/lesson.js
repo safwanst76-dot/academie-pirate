@@ -80,6 +80,9 @@ function _buildLessonOverlay(lesson, worldCfg, avatarUrl, color, n) {
     _initMinigames(lesson.minigames);
   }
 
+  // ── Leçon dialoguée Phase 3b ────────────────────────────────
+  _initLessonDialog(lesson, accent);
+
   // Auto-skip après 90s (sécurité)
   clearTimeout(_lesson_timer);
   _lesson_timer = setTimeout(function(){ lesson_start(); }, 90000);
@@ -138,6 +141,7 @@ function _buildLessonHTML(lesson, accent, bg, textAccent, avatarUrl, n, worldCfg
       '<div class="lesson-hero-bar-fill" id="lesson-hero-bar-fill" style="background:linear-gradient(90deg,'+accent+','+textAccent+')"></div>' +
     '</div>' +
     '<button class="lesson-skip-hero-btn" onclick="lesson_skipHero()" style="border-color:'+accent+'44;color:'+accent+'">⏭ Passer</button>' +
+    '<div id="lesson-companion-hero"></div>' +
   '</div>' +
   // ─ CONTENU LEÇON ──────────────────────────────────────────
   '<div class="lesson-content-panel" id="lesson-content-panel" style="display:none">' +
@@ -165,7 +169,7 @@ function _buildLessonHTML(lesson, accent, bg, textAccent, avatarUrl, n, worldCfg
       // Échauffement
       '<div class="lesson-warmup">' +
         '<div class="lesson-warmup-title" style="color:'+accent+'">⚡ Échauffement rapide</div>' +
-        '<div class="lesson-warmup-sub">2 questions avant le vrai quiz !</div>' +
+        '<div id="lesson-warmup-intro"></div>' +
         warmupHTML +
       '</div>' +
       // Bouton lancer
@@ -236,6 +240,11 @@ function lessonWarmupSelect(qi, oi, correctAnswer) {
 
   if (typeof sfxOK === 'function' && isCorrect)  sfxOK();
   if (typeof sfxKO === 'function' && !isCorrect) sfxKO();
+
+  // Phase 3b — réaction avatar compagnon
+  if (typeof LessonDialog !== 'undefined') {
+    try { LessonDialog.reactWarmup(qi, isCorrect); } catch(e) {}
+  }
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -480,4 +489,31 @@ function _initMinigames(minigames) {
   tryInit();
 }
 
-console.info('📖 lesson.js chargé — 4 mondes × 8 îles × 2 questions échauffement + mini-jeux Phase 3');
+// ══════════════════════════════════════════════════════════════
+// 13. LEÇON DIALOGUÉE — Phase 3b (ARCHI-01)
+// ══════════════════════════════════════════════════════════════
+function _initLessonDialog(lesson, accent) {
+  if (typeof LessonDialog === 'undefined') return; // rétro-compat
+  setTimeout(function () {
+    try {
+      // Compagnon panneau héros
+      var heroSlot = document.getElementById('lesson-companion-hero');
+      if (heroSlot) {
+        LessonDialog.renderCompanion(heroSlot, { heroName: lesson.heroName || 'le héros' });
+      }
+      // Intro warmup
+      var warmupSlot = document.getElementById('lesson-warmup-intro');
+      if (warmupSlot) {
+        LessonDialog.showWarmupIntro(warmupSlot);
+      }
+      // Émettre événement ARCHI-01
+      if (window.AP && window.AP.events) {
+        window.AP.events.emit('lesson:start', { heroName: lesson.heroName, world: _lesson_world, island: _lesson_island });
+      }
+    } catch (err) {
+      console.warn('[lesson] LessonDialog:', err);
+    }
+  }, 120);
+}
+
+console.info('📖 lesson.js chargé — Phase 3b · avatar compagnon · 4 mondes × 8 îles');
