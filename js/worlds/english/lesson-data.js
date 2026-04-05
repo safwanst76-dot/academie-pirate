@@ -79,6 +79,20 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Eren dit : \"Mémorise l'ordre : A-B-C-D-E-F-G ! Les voyelles AEIOU sont tes alliées. Chante l'alphabet chaque matin !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Les lettres clés',
+          cards: [
+            { front: 'A  E  I  O  U', back: 'Les 5 voyelles', example: 'A-E-I-O-U : retiens-les par cœur !' },
+            { front: 'TH', back: '[θ] ou [ð]', example: 'think [θ] · the [ð]' },
+            { front: 'W', back: '[w] — comme "oui"', example: 'wall, water, what' },
+            { front: 'spelling', back: 'épeler un mot', example: 'How do you spell it? → C-A-T' },
+            { front: 'vowel', back: 'voyelle', example: 'A, E, I, O, U are vowels.' },
+            { front: 'consonant', back: 'consonne', example: 'B, C, D… are consonants.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Combien de lettres comporte l'alphabet anglais ?", a: "26", o: ["24", "26", "28", "30"] },
         { q: "Quelles sont les 5 voyelles de l'alphabet anglais ?", a: "A, E, I, O, U", o: ["A, E, I, O, U", "A, B, C, D, E", "E, I, O, U, Y", "A, I, O, U, W"] }
@@ -122,6 +136,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Mikasa dit : \"Attention : eight → eighth (pas eightth !) · nine → ninth · twelve → twelfth. Ces irréguliers sont des pièges !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Nombres en anglais',
+          cards: [
+            { front: 'twelve', back: '12', example: 'There are twelve months in a year.' },
+            { front: 'twenty', back: '20', example: 'Twenty soldiers crossed the wall.' },
+            { front: 'forty', back: '40 — attention : pas "fourty" !', example: 'Forty days of training.' },
+            { front: 'eighty', back: '80', example: 'Eighty meters of wall.' },
+            { front: 'first', back: '1er — 1st', example: 'The first expedition.' },
+            { front: 'second', back: '2ème — 2nd', example: 'The second titan.' },
+            { front: 'third', back: '3ème — 3rd (pas "threeth" !)', example: 'The third regiment.' },
+            { front: 'eighth', back: '8ème — 8th (pas "eightth" !)', example: 'The eighth day.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Comment écrit-on le nombre 15 en anglais ?", a: "fifteen", o: ["fiveteen", "fifteen", "fifteeen", "fivetin"] },
         { q: "Comment dit-on '3ème' en anglais ?", a: "third", o: ["threeth", "thirteenth", "third", "thirdth"] }
@@ -155,6 +185,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Armin dit : \"En anglais on dit 'colour' (UK) ou 'color' (US). Les deux sont corrects ! L'adjectif se place TOUJOURS avant le nom.\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Les couleurs',
+          cards: [
+            { front: 'red', back: 'rouge', example: 'a red rose — une rose rouge.' },
+            { front: 'blue', back: 'bleu', example: 'blue sky — le ciel bleu.' },
+            { front: 'green', back: 'vert', example: 'green forest — la forêt verte.' },
+            { front: 'yellow', back: 'jaune', example: 'a yellow flower.' },
+            { front: 'white', back: 'blanc', example: 'white walls of the city.' },
+            { front: 'black', back: 'noir', example: 'black night — la nuit noire.' },
+            { front: 'light blue', back: 'bleu clair', example: 'a light blue sky.' },
+            { front: 'dark green', back: 'vert foncé', example: 'a dark green forest.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Comment dit-on 'vert' en anglais ?", a: "green", o: ["grey", "green", "blue", "yellow"] },
         { q: "Quelle phrase est correcte ?", a: "a blue sky", o: ["a sky blue", "blue a sky", "a blue sky", "sky a blue"] }
@@ -188,6 +234,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Levi dit : \"Attention : sheep ne change pas au pluriel ! one sheep / two sheep. Même chose pour fish (souvent). Retiens ces exceptions !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Les animaux',
+          cards: [
+            { front: 'cat', back: 'chat', example: 'The cat sleeps all day.' },
+            { front: 'dog', back: 'chien', example: 'A dog guards the gate.' },
+            { front: 'horse', back: 'cheval', example: 'The horse runs fast.' },
+            { front: 'sheep', back: 'mouton — pluriel identique !', example: 'one sheep / two sheep.' },
+            { front: 'bird', back: 'oiseau', example: 'The bird flies over the wall.' },
+            { front: 'lion', back: 'lion', example: 'The lion roars loudly.' },
+            { front: 'elephant', back: 'éléphant', example: 'An elephant never forgets.' },
+            { front: 'fish', back: 'poisson — souvent invariable', example: 'one fish / two fish.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Comment dit-on 'chien' en anglais ?", a: "dog", o: ["cat", "dog", "bird", "fish"] },
         { q: "Comment dit-on 'cheval' en anglais ?", a: "horse", o: ["cow", "pig", "horse", "sheep"] }
@@ -221,6 +283,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Historia dit : \"his = son/sa (pour un homme) · her = son/sa (pour une femme). Sa sœur : HIS sister (si c'est un garçon) / HER sister (si c'est une fille). L'accord se fait sur le possesseur !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 La famille et les possessifs',
+          cards: [
+            { front: 'mother', back: 'mère', example: 'My mother is brave.' },
+            { front: 'father', back: 'père', example: 'His father was a soldier.' },
+            { front: 'brother', back: 'frère', example: 'My brother joined the Corps.' },
+            { front: 'sister', back: 'sœur', example: 'Her sister is kind.' },
+            { front: 'his', back: 'son / sa (possesseur masculin)', example: 'his sword — son épée.' },
+            { front: 'her', back: 'son / sa (possesseur féminin)', example: 'her shield — son bouclier.' },
+            { front: 'their', back: 'leur / leurs', example: 'Their home was destroyed.' },
+            { front: 'children', back: 'enfants (pluriel de child)', example: 'The children are safe.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Comment dit-on 'mère' en anglais (informel) ?", a: "mum", o: ["mum", "sister", "aunt", "granny"] },
         { q: "Complète : ___ brother is tall. (Il parle de son frère à elle)", a: "Her", o: ["His", "Her", "My", "Your"] }
@@ -254,6 +332,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Jean dit : \"Pluriels irréguliers à retenir : foot→feet · tooth→teeth · child→children. Pas de -s ici ! Piège d'examen classique !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Le corps humain',
+          cards: [
+            { front: 'head', back: 'tête', example: 'The titan head is huge.' },
+            { front: 'hand', back: 'main', example: 'Raise your hand!' },
+            { front: 'foot → feet', back: 'pied → pieds (irrégulier !)', example: 'My feet are tired.' },
+            { front: 'tooth → teeth', back: 'dent → dents (irrégulier !)', example: 'Sharp teeth!' },
+            { front: 'eye', back: 'œil / yeux', example: 'Blue eyes — des yeux bleus.' },
+            { front: 'arm', back: 'bras', example: "The titan's arm is broken." },
+            { front: 'leg', back: 'jambe', example: 'Run with your legs!' },
+            { front: 'back', back: 'dos', example: 'He carries the gear on his back.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quel est le pluriel de 'foot' (pied) ?", a: "feet", o: ["foots", "feet", "feets", "footes"] },
         { q: "Comment dit-on 'genou' en anglais ?", a: "knee", o: ["knee", "elbow", "ankle", "wrist"] }
@@ -288,6 +382,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Hange dit : \"P.E. = Physical Education = EPS. En anglais, les jours et les matières prennent une MAJUSCULE : Monday, English, History !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: "🃏 L'école",
+          cards: [
+            { front: 'Monday', back: 'lundi — avec majuscule !', example: 'Monday is the first school day.' },
+            { front: 'Friday', back: 'vendredi — avec majuscule !', example: 'No school on Friday afternoon.' },
+            { front: 'English', back: 'anglais — avec majuscule !', example: 'I love English class.' },
+            { front: 'Maths', back: 'mathématiques — avec majuscule !', example: 'Maths is my favourite subject.' },
+            { front: 'P.E.', back: 'EPS — Physical Education', example: 'We have P.E. on Wednesday.' },
+            { front: 'pencil', back: 'crayon', example: 'Give me a pencil, please.' },
+            { front: 'ruler', back: 'règle', example: 'Use a ruler to draw a line.' },
+            { front: 'bag', back: 'sac', example: 'My bag is very heavy.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Comment dit-on 'professeur' en anglais ?", a: "teacher", o: ["student", "teacher", "principal", "doctor"] },
         { q: "Comment dit-on 'mercredi' en anglais ?", a: "Wednesday", o: ["Tuesday", "Thursday", "Wednesday", "Monday"] }
@@ -323,6 +433,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Erwin dit : \"What's the weather like today? C'est LA question météo à connaître. Réponse : It's sunny / It's raining / It's cold. Simple et efficace !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 La météo et les saisons',
+          cards: [
+            { front: 'sunny', back: 'ensoleillé', example: 'It is sunny — Il fait soleil.' },
+            { front: 'rainy', back: 'pluvieux', example: 'It is rainy — Il pleut.' },
+            { front: 'cloudy', back: 'nuageux', example: 'It is cloudy — Ciel couvert.' },
+            { front: 'windy', back: 'venteux', example: 'It is windy — Il y a du vent.' },
+            { front: 'cold', back: 'froid', example: 'It is cold — Il fait froid.' },
+            { front: 'hot', back: 'chaud', example: 'It is hot — Il fait chaud.' },
+            { front: 'spring', back: 'printemps', example: 'In spring, flowers bloom.' },
+            { front: 'winter', back: 'hiver', example: 'In winter, it snows.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Comment dit-on 'Il pleut.' en anglais ?", a: "It is raining.", o: ["It is raining.", "The rain is.", "It rains now.", "Rain is here."] },
         { q: "Comment dit-on 'été' en anglais ?", a: "summer", o: ["spring", "autumn", "winter", "summer"] }
@@ -361,6 +487,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Armin dit : \"Règle d'or : He/She/It → +s au verbe. Et pour les questions/négations : does/doesn't efface le -s ! Does he work? (pas works !)\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Present Simple',
+          cards: [
+            { front: 'I work', back: 'je travaille (habitude)', example: 'I work every day.' },
+            { front: 'He works', back: 'il travaille — +s avec He/She/It !', example: 'He works at the Corps.' },
+            { front: "don't", back: 'do not — négation I/You/We/They', example: "I don't like titans." },
+            { front: "doesn't", back: 'does not — négation He/She/It', example: "She doesn't run." },
+            { front: 'Do you...?', back: 'question I/You/We/They', example: 'Do you train every day?' },
+            { front: 'Does he...?', back: 'question He/She/It', example: 'Does he fight well?' },
+            { front: 'always', back: 'toujours — marqueur Present Simple', example: 'I always wake up early.' },
+            { front: 'never', back: 'jamais — marqueur Present Simple', example: 'She never gives up.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quelle forme est correcte ? She ___ French.", a: "speaks", o: ["speak", "speaks", "speaking", "to speak"] },
         { q: "Forme la négation : He plays football.", a: "He doesn't play football.", o: ["He don't play football.", "He doesn't play football.", "He doesn't plays football.", "He not play football."] }
@@ -396,6 +538,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Levi dit : \"Jamais 'he have' — toujours 'he HAS' ! C'est la règle n°1. Et les contractions : I'm / She's / They're — obligatoires à l'oral !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 BE et HAVE',
+          cards: [
+            { front: 'I am', back: 'je suis — contraction : I\'m', example: "I'm a soldier." },
+            { front: 'He is', back: 'il est — contraction : he\'s', example: "He's strong." },
+            { front: 'They are', back: 'ils sont — contraction : they\'re', example: "They're ready." },
+            { front: 'I have', back: 'j\'ai', example: 'I have a sword.' },
+            { front: 'He has', back: 'il a — pas "have" !', example: 'He has a plan.' },
+            { front: 'have got', back: 'avoir (style oral)', example: "I've got a mission." },
+            { front: 'am not', back: 'ne suis pas', example: "I'm not a titan." },
+            { front: "haven't got", back: "n'ai pas", example: "I haven't got time." }
+          ]
+        }
+      ],
       warmup: [
         { q: "Complète : She ___ a very good student.", a: "is", o: ["are", "am", "is", "be"] },
         { q: "Complète : My brother ___ two dogs.", a: "has", o: ["have", "has", "is have", "haves"] }
@@ -430,6 +588,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Historia dit : \"an HOUR (h muet) → an ! / a UNIVERSITY (son [j]) → a ! La règle c'est le SON, pas la lettre écrite. Écoute avant de décider !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Articles A / AN / THE',
+          cards: [
+            { front: 'a', back: 'un/une — avant consonne', example: 'a titan, a wall, a sword.' },
+            { front: 'an', back: 'un/une — avant voyelle ou h muet', example: 'an attack, an hour.' },
+            { front: 'the', back: 'le/la/les — chose connue ou unique', example: 'The wall is high.' },
+            { front: 'an apple', back: 'une pomme — A commence par voyelle', example: 'I eat an apple.' },
+            { front: 'a university', back: 'une université — son [j], pas voyelle !', example: 'She goes to a university.' },
+            { front: 'an hour', back: 'une heure — H muet → voyelle !', example: 'Wait an hour.' },
+            { front: 'the sun', back: 'le soleil — unique au monde', example: 'The sun is bright.' },
+            { front: 'zéro article', back: 'pluriels généraux, matières', example: 'I like Maths. / Cats are cute.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Choisis le bon article : ___ elephant is big.", a: "An", o: ["A", "An", "The", "—"] },
         { q: "Choisis le bon article : I eat ___ breakfast every morning.", a: "—", o: ["a", "an", "the", "—"] }
@@ -464,6 +638,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Jean dit : \"Les pièges classiques : child→children (pas childs !) · woman→women · mouse→mice. Et sheep reste sheep, jamais sheeps !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Pluriels réguliers et irréguliers',
+          cards: [
+            { front: 'cat → cats', back: '+s — règle générale', example: 'two cats on the roof.' },
+            { front: 'box → boxes', back: '+es — après s/x/ch/sh', example: 'three boxes of supplies.' },
+            { front: 'baby → babies', back: 'y → ies (consonne avant y)', example: 'two babies.' },
+            { front: 'leaf → leaves', back: 'f → ves', example: 'autumn leaves.' },
+            { front: 'man → men', back: 'irrégulier !', example: 'The men are brave.' },
+            { front: 'woman → women', back: 'irrégulier !', example: 'The women fight too.' },
+            { front: 'child → children', back: 'irrégulier !', example: 'The children escaped.' },
+            { front: 'mouse → mice', back: 'irrégulier !', example: 'Mice in the walls.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quel est le pluriel de 'child' ?", a: "children", o: ["childs", "childrens", "children", "childes"] },
         { q: "Quel est le pluriel de 'city' ?", a: "cities", o: ["citys", "cities", "cityes", "city"] }
@@ -498,6 +688,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Hange dit : \"JAMAIS d'accord en anglais ! two tall soldiers (pas 'talls'). Et ordre : opinion avant tout, puis taille, âge, couleur, origine !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Adjectifs qualificatifs',
+          cards: [
+            { front: 'big', back: 'grand / gros', example: 'a big titan — un grand titan.' },
+            { front: 'small', back: 'petit', example: 'a small village.' },
+            { front: 'fast', back: 'rapide', example: 'a fast horse.' },
+            { front: 'slow', back: 'lent', example: 'a slow titan.' },
+            { front: 'beautiful', back: 'beau / belle', example: 'a beautiful sunrise.' },
+            { front: 'brave', back: 'courageux', example: 'a brave soldier.' },
+            { front: 'a big house', back: 'adjectif AVANT le nom', example: 'NOT "a house big" !' },
+            { front: 'The house is big', back: 'adjectif après BE', example: 'Her eyes are blue.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quelle phrase est correcte ?", a: "She has a beautiful dress.", o: ["She has a dress beautiful.", "She has a beautifuls dress.", "She has a beautiful dress.", "Beautiful she has a dress."] },
         { q: "Quel est le contraire de 'happy' ?", a: "sad", o: ["angry", "tired", "sad", "bored"] }
@@ -533,6 +739,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Erwin dit : \"Prépositions de temps : AT (heure : at 3pm) · ON (jour : on Monday) · IN (mois/saison : in July, in summer). C'est mémorisable !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Prépositions de lieu et temps',
+          cards: [
+            { front: 'in', back: 'dans / en', example: 'in the box, in January, in winter.' },
+            { front: 'on', back: 'sur / le (jour)', example: 'on the table, on Monday.' },
+            { front: 'under', back: 'sous', example: 'under the wall.' },
+            { front: 'next to', back: 'à côté de', example: "next to Levi's office." },
+            { front: 'at', back: 'à (heure, lieu précis)', example: 'at 8 o\'clock, at school.' },
+            { front: 'between', back: 'entre', example: 'between the two walls.' },
+            { front: 'in front of', back: 'devant', example: 'in front of the gate.' },
+            { front: 'behind', back: 'derrière', example: 'behind the wall.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "The cat is ___ the box. (le chat est DANS la boîte)", a: "in", o: ["on", "under", "in", "behind"] },
         { q: "Quelle préposition pour les jours ? I go to school ___ Monday.", a: "on", o: ["in", "at", "on", "to"] }
@@ -569,6 +791,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Connie dit : \"WH- + do/does + sujet + V-base. Exemple : WHERE does she LIVE? (pas 'lives'). Le -s disparaît car does est là !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Poser des questions',
+          cards: [
+            { front: 'Do you run?', back: 'Est-ce que tu cours ?', example: 'Yes, I do. / No, I don\'t.' },
+            { front: 'Does she fight?', back: 'Est-ce qu\'elle se bat ?', example: 'Yes, she does.' },
+            { front: 'What', back: 'Que / Quoi / Quel', example: 'What do you eat?' },
+            { front: 'Where', back: 'Où', example: 'Where do you live?' },
+            { front: 'When', back: 'Quand', example: 'When does training start?' },
+            { front: 'Who', back: 'Qui', example: 'Who leads the mission?' },
+            { front: 'Why', back: 'Pourquoi', example: 'Why do you fight?' },
+            { front: 'How', back: 'Comment', example: 'How do you do that?' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Forme la question : He lives in Paris.", a: "Does he live in Paris?", o: ["Do he lives in Paris?", "Does he live in Paris?", "Does he lives in Paris?", "Do he live in Paris?"] },
         { q: "Complète la question : ___ does she go to school?", a: "Where", o: ["What", "Who", "Where", "When"] }
@@ -604,6 +842,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Sasha dit : \"I always eat breakfast (toujours après le sujet pour always/never/usually/often). But : Sometimes I eat pizza (peut aller en début !) \"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Vocabulaire quotidien',
+          cards: [
+            { front: 'always', back: 'toujours (100%)', example: 'I always wake up at 6.' },
+            { front: 'usually', back: 'généralement (80%)', example: 'I usually eat breakfast.' },
+            { front: 'often', back: 'souvent (60%)', example: 'I often train in the morning.' },
+            { front: 'sometimes', back: 'parfois (40%)', example: 'I sometimes rest on Sundays.' },
+            { front: 'rarely', back: 'rarement (20%)', example: 'I rarely eat sweets.' },
+            { front: 'never', back: 'jamais (0%)', example: 'I never give up.' },
+            { front: 'bread', back: 'pain', example: 'We eat bread every day.' },
+            { front: 'in the morning', back: 'le matin', example: 'I train in the morning.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Comment dit-on 'petit-déjeuner' en anglais ?", a: "breakfast", o: ["lunch", "dinner", "breakfast", "snack"] },
         { q: "Comment dit-on 'le soir' en anglais ?", a: "in the evening", o: ["in the morning", "at noon", "in the evening", "at night"] }
@@ -645,6 +899,22 @@ window.LESSON_REGISTRY['english'] = {
       heroTip: "Eren dit : \"Après didn't : toujours la base verbale ! 'I didn't went' est FAUX → 'I didn't go' ✓. Le did porte le passé — le verbe reste à la base !\"",
       // ✅ CORRECTION v1.1 : warmup Q1 — remplacé "go" (irrégulier) par "walk" (régulier)
       // La leçon 3_1 porte sur les RÉGULIERS. "go" est irrégulier → cohérence pédagogique.
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Past Simple régulier',
+          cards: [
+            { front: 'walk → walked', back: '+ed — verbe régulier', example: 'I walked to the wall.' },
+            { front: 'stop → stopped', back: 'double consonne finale', example: 'He stopped running.' },
+            { front: 'like → liked', back: 'e muet → +d seulement', example: 'She liked the plan.' },
+            { front: 'study → studied', back: 'y → ied', example: 'They studied the map.' },
+            { front: "didn't + V", back: 'négation Past Simple', example: "I didn't run yesterday." },
+            { front: 'Did + sujet + V?', back: 'question Past Simple', example: 'Did you fight?' },
+            { front: 'yesterday', back: 'hier — marqueur Past Simple', example: 'I trained yesterday.' },
+            { front: 'last week', back: 'la semaine dernière', example: 'Last week was hard.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Mets au Past Simple (régulier) : I (walk) to school yesterday.", a: "I walked to school yesterday.", o: ["I walking to school yesterday.", "I walkd to school yesterday.", "I walked to school yesterday.", "I walks to school yesterday."] },
         { q: "Forme la négation au passé : She watched TV.", a: "She didn't watch TV.", o: ["She didn't watched TV.", "She didn't watch TV.", "She doesn't watch TV.", "She not watched TV."] }
@@ -680,6 +950,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Levi dit : \"Méthode : apprends les irréguliers par groupes de sons : ring/rang/rung · sing/sang/sung · swim/swam/swum → même pattern !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Verbes irréguliers',
+          cards: [
+            { front: 'go → went', back: 'aller — Past Simple', example: 'I went beyond the wall.' },
+            { front: 'see → saw', back: 'voir — Past Simple', example: 'I saw a titan.' },
+            { front: 'write → wrote', back: 'écrire — Past Simple', example: 'She wrote a letter.' },
+            { front: 'buy → bought', back: 'acheter — Past Simple', example: 'He bought supplies.' },
+            { front: 'come → came', back: 'venir — Past Simple', example: 'They came back alive.' },
+            { front: 'run → ran', back: 'courir — Past Simple', example: 'I ran as fast as I could.' },
+            { front: 'take → took', back: 'prendre — Past Simple', example: 'She took the sword.' },
+            { front: 'say → said', back: 'dire — Past Simple', example: 'He said goodbye.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quelle est la forme Past Simple de 'write' ?", a: "wrote", o: ["writed", "written", "wrote", "wrotes"] },
         { q: "Quelle est la forme Past Simple de 'buy' ?", a: "bought", o: ["buyed", "buys", "bought", "boughted"] }
@@ -715,6 +1001,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Hange dit : \"Listen ! I am CURRENTLY speaking → -ing. Markers : now, right now, at the moment, look!, listen! Ces mots déclenchent le Continuous !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Present Continuous',
+          cards: [
+            { front: 'I am running', back: 'je cours (maintenant)', example: "I'm running right now!" },
+            { front: 'He is fighting', back: 'il se bat (en cours)', example: "He's fighting the titan." },
+            { front: 'They are training', back: 'ils s\'entraînent (maintenant)', example: "They're training." },
+            { front: 'run → running', back: 'double consonne finale', example: "She's running fast." },
+            { front: 'write → writing', back: 'e muet disparaît', example: "I'm writing a report." },
+            { front: 'know', back: 'verbe d\'état — PAS de -ing !', example: 'I know (NOT I am knowing).' },
+            { front: 'want', back: 'verbe d\'état — PAS de -ing !', example: 'I want (NOT I am wanting).' },
+            { front: 'now / right now', back: 'maintenant — marqueur Continuous', example: 'I am eating now.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Mets au Present Continuous : She (read) a book now.", a: "She is reading a book now.", o: ["She reads a book now.", "She is reading a book now.", "She reading a book now.", "She is read a book now."] },
         { q: "Quel verbe NE peut PAS s'utiliser en -ing ?", a: "know", o: ["eat", "run", "know", "play"] }
@@ -754,6 +1056,22 @@ window.LESSON_REGISTRY['english'] = {
       // ✅ CORRECTION v1.1 — Mineurs améliorés :
       // Q1 : reformulé pour distinguer SHOULD (conseil) vs MUST (obligation) — l'élève comprend la nuance
       // Q2 : rappel explicite de la règle modal + V-BASE dans la question elle-même
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Verbes modaux',
+          cards: [
+            { front: 'can', back: 'pouvoir / savoir faire', example: 'I can fight titans.' },
+            { front: 'must', back: 'devoir (obligation forte)', example: 'You must train every day.' },
+            { front: 'should', back: 'devoir (conseil)', example: 'You should rest.' },
+            { front: 'may', back: 'pouvoir (permission formelle)', example: 'May I enter?' },
+            { front: 'might', back: 'peut-être (possibilité)', example: 'It might rain tomorrow.' },
+            { front: "can't", back: 'ne peut pas / ne sait pas', example: "I can't fly." },
+            { front: 'modal + V-base', back: 'toujours infinitif après !', example: 'She must go (NOT goes).' },
+            { front: "shouldn't", back: 'ne devrait pas (conseil négatif)', example: "You shouldn't give up." }
+          ]
+        }
+      ],
       warmup: [
         { q: "CONSEIL (tu devrais) vs OBLIGATION (tu dois) : Tu veux donner un CONSEIL, pas une obligation — You ___ eat more vegetables.", a: "should", o: ["must", "should", "might", "can"] },
         { q: "Règle des modaux : modal + V-BASE (jamais -s ni -ing) ! Laquelle EST correcte ?", a: "He can swim.", o: ["He can swims.", "He can swimming.", "He can swim.", "He cans swim."] }
@@ -789,6 +1107,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Connie dit : \"Court → -er · Long → more. Mais good→better, bad→worse : pas de règle ! Et double la consonne finale : big→bigg-er · hot→hott-er !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Comparatifs',
+          cards: [
+            { front: 'taller', back: 'plus grand — adj court + er', example: 'Titans are taller than humans.' },
+            { front: 'more dangerous', back: 'plus dangereux — adj long', example: 'Titans are more dangerous.' },
+            { front: 'as strong as', back: 'aussi fort que', example: 'Mikasa is as strong as Levi.' },
+            { front: 'better', back: 'meilleur — irrégulier (good)', example: 'He is better at combat.' },
+            { front: 'worse', back: 'pire — irrégulier (bad)', example: 'The situation is worse.' },
+            { front: 'faster than', back: 'plus rapide que', example: 'She runs faster than me.' },
+            { front: 'not as tall as', back: 'pas aussi grand que', example: 'I\'m not as tall as Erwin.' },
+            { front: 'farther', back: 'plus loin — irrégulier (far)', example: 'The city is farther away.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Forme le comparatif : tall (grand)", a: "taller", o: ["more tall", "taller", "tallier", "taller than"] },
         { q: "Forme le comparatif : beautiful (beau)", a: "more beautiful", o: ["beautifuler", "more beautiful", "beautifuller", "beautifulier"] }
@@ -824,6 +1158,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Sasha dit : \"While + Past Continuous = action en cours, THEN + Past Simple = interruption. While I was eating, the bell rang !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Past Continuous',
+          cards: [
+            { front: 'was running', back: 'courais — I/He/She/It', example: 'I was running when it attacked.' },
+            { front: 'were fighting', back: 'se battaient — You/We/They', example: 'They were fighting.' },
+            { front: 'while', back: 'pendant que — deux actions simultanées', example: 'While I slept, he worked.' },
+            { front: 'when', back: 'quand — action interrompue', example: 'I was eating when the alarm rang.' },
+            { front: 'was + V-ing', back: 'Past Continuous affirmatif', example: 'She was training.' },
+            { front: "wasn't + V-ing", back: 'Past Continuous négatif', example: "He wasn't sleeping." },
+            { front: 'Were you...?', back: 'question Past Continuous', example: 'Were you training?' },
+            { front: 'at that moment', back: 'à ce moment-là — marqueur', example: 'At that moment, I was fighting.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Choisis le bon temps : Yesterday, I ___ to the cinema.", a: "went", o: ["am going", "go", "went", "was going"] },
         { q: "Choisis le bon temps : She ___ TV when I arrived.", a: "was watching", o: ["watched", "watches", "is watching", "was watching"] }
@@ -859,6 +1209,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Armin dit : \"Piège : 'Who ATE my sandwich?' (who=sujet → pas did) VS 'Who did you SEE?' (who=objet → did). La position du 'qui' change tout !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Questions au passé',
+          cards: [
+            { front: 'Did you go?', back: 'Es-tu allé(e) ?', example: 'Yes, I did. / No, I didn\'t.' },
+            { front: 'What did you do?', back: 'Qu\'as-tu fait ?', example: 'What did you do yesterday?' },
+            { front: 'Where did they go?', back: 'Où sont-ils allés ?', example: 'Where did they fight?' },
+            { front: 'Who + V passé', back: 'Qui... ? (sujet = pas de did)', example: 'Who attacked the wall?' },
+            { front: 'Was it cold?', back: 'Faisait-il froid ?', example: 'Yes, it was.' },
+            { front: 'Were they ready?', back: 'Étaient-ils prêts ?', example: 'No, they weren\'t.' },
+            { front: 'Why did she leave?', back: 'Pourquoi est-elle partie ?', example: 'Why did she leave so fast?' },
+            { front: 'How long did...?', back: 'Combien de temps... ?', example: 'How long did the battle last?' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Forme la question : She went to Paris.", a: "Did she go to Paris?", o: ["Did she went to Paris?", "Did she go to Paris?", "Was she go to Paris?", "Did she goes to Paris?"] },
         { q: "Choisis la bonne question : ___ happened? (qui=sujet)", a: "What", o: ["What did", "What", "Did what", "What does"] }
@@ -894,6 +1260,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Mikasa dit : \"Récapitulatif clé : PRÉSENT simple → habitude / PRÉSENT continuous → maintenant / PASSÉ simple → terminé / PASSÉ continuous → en cours dans passé.\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Révisions 5ème — Pièges classiques',
+          cards: [
+            { front: 'I goed', back: '❌ FAUX — went est irrégulier !', example: 'I went (NOT goed).' },
+            { front: 'She is knowing', back: '❌ FAUX — know est statif !', example: 'She knows (NOT is knowing).' },
+            { front: 'I can to fly', back: '❌ FAUX — modal + V sans to !', example: 'I can fly (NOT to fly).' },
+            { front: 'more faster', back: '❌ FAUX — double comparatif !', example: 'faster (NOT more faster).' },
+            { front: 'I was run', back: '❌ FAUX — Past Continuous = was + V-ing', example: 'I was running.' },
+            { front: 'Did she went', back: '❌ FAUX — Did + V-base !', example: 'Did she go? (NOT went)' },
+            { front: 'V-ed OR irrégulier', back: '✅ Past Simple : choisir le bon !', example: 'walked / went / saw.' },
+            { front: 'now vs yesterday', back: 'Continuous vs Past Simple', example: "I'm eating NOW. I ate YESTERDAY." }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quel temps ? 'She was running when it started to rain.'", a: "Past Continuous + Past Simple", o: ["Present Simple", "Past Continuous + Past Simple", "Present Continuous", "Past Simple only"] },
         { q: "Quelle forme est correcte avec 'must' ?", a: "He must go", o: ["He must goes", "He must going", "He must go", "He musts go"] }
@@ -936,6 +1318,22 @@ window.LESSON_REGISTRY['english'] = {
       // ✅ CORRECTION v1.1 — warmup Q2 : supprimé la question sur SINCE/FOR
       // SINCE/FOR appartient au chapitre 4_2 (PP vs PS). Remplacé par une question
       // sur les marqueurs EVER/ALREADY/YET — cohérent avec la leçon 4_1.
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Present Perfect',
+          cards: [
+            { front: 'have + pp', back: 'Present Perfect — I/You/We/They', example: "I have seen a titan." },
+            { front: 'has + pp', back: 'Present Perfect — He/She/It', example: "She has won the fight." },
+            { front: 'ever', back: 'déjà (dans une question)', example: 'Have you ever fought a titan?' },
+            { front: 'never', back: 'jamais (avec PP)', example: "I've never lost a battle." },
+            { front: 'already', back: 'déjà (dans affirmatif)', example: "I've already read the report." },
+            { front: 'yet', back: 'encore / déjà (question/négatif)', example: "Haven't you finished yet?" },
+            { front: 'just', back: 'tout juste / venir de', example: "I've just arrived." },
+            { front: 'seen / done / gone', back: 'participes passés irréguliers', example: "I've been there." }
+          ]
+        }
+      ],
       warmup: [
         { q: "Complète : I ___ never ___ to Australia. (Present Perfect)", a: "have / been", o: ["have / went", "have / been", "has / been", "did / go"] },
         { q: "Complète : Have you ___ visited London ? (expérience de vie)", a: "ever", o: ["ever", "just", "since", "for"] }
@@ -971,6 +1369,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Levi dit : \"Règle ultime : yesterday/last week/in 2020 → Past Simple. Ever/never/already/yet/since/for → Present Perfect. La date précise = PS !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Present Perfect vs Past Simple',
+          cards: [
+            { front: 'since', back: 'depuis (point de départ)', example: "I've trained since 2020." },
+            { front: 'for', back: 'depuis (durée)', example: "I've lived here for 3 years." },
+            { front: 'I have seen', back: 'PP — moment non précisé', example: "I've seen it (at some point)." },
+            { front: 'I saw', back: 'PS — moment précis', example: 'I saw it yesterday.' },
+            { front: 'yesterday / last / ago', back: 'marqueurs Past Simple', example: 'I went there last week.' },
+            { front: 'ever / never / already', back: 'marqueurs Present Perfect', example: "I've never been there." },
+            { front: 'Have you eaten?', back: 'PP — expérience, pas de moment', example: 'Have you ever eaten sushi?' },
+            { front: 'Did you eat?', back: 'PS — moment précis', example: 'Did you eat this morning?' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quel temps ? 'I ___ Tokyo last year.'", a: "visited (Past Simple)", o: ["have visited (PP)", "visited (Past Simple)", "visit (Present Simple)", "am visiting (Continuous)"] },
         { q: "Quel temps ? 'Have you ___ sushi?'", a: "ever eaten (Present Perfect)", o: ["ever eaten (Present Perfect)", "ever ate (Past Simple)", "ever eat (Present Simple)", "ever eating (Continuous)"] }
@@ -1006,6 +1420,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Hange dit : \"WILL = décision au moment où on parle ou prédiction. GOING TO = plan déjà décidé ou évidence physique. The phone is ringing → I'll answer (spontané) !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Futur avec WILL',
+          cards: [
+            { front: "I'll go", back: 'je irai — I will (contraction)', example: "I'll fight for freedom." },
+            { front: "won't", back: 'will not — forme négative', example: "I won't give up." },
+            { front: 'Will you...?', back: 'Est-ce que tu vas... ?', example: 'Will you join us?' },
+            { front: 'prédiction', back: 'will pour prévoir l\'avenir', example: 'The titans will return.' },
+            { front: 'décision spontanée', back: 'will = décision au moment où on parle', example: "I'll help you!" },
+            { front: 'promesse', back: 'will pour promettre', example: "I'll always protect you." },
+            { front: 'offre', back: 'will pour proposer', example: "I'll carry that for you." },
+            { front: 'will + V-base', back: 'toujours V-base après will !', example: 'She will come (NOT comes).' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Complète avec WILL : I ___ call you tomorrow. (promesse)", a: "will", o: ["am going to", "will", "would", "shall"] },
         { q: "Forme la négation : She will come.", a: "She won't come.", o: ["She will not comes.", "She won't come.", "She willn't come.", "She don't will come."] }
@@ -1041,6 +1471,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Erwin dit : \"Distinguer : WILL = décision maintenant ou prédiction sans preuve / GOING TO = plan déjà fait ou évidence concrète. Look at the sky — it's going to rain !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 BE GOING TO',
+          cards: [
+            { front: "I'm going to fight", back: 'plan décidé à l\'avance', example: "I'm going to join the Corps." },
+            { front: "She's going to win", back: 'évidence visible', example: "She's going to win — look!" },
+            { front: 'going to vs will', back: 'plan vs spontané', example: "I'm going to study. / I'll help now!" },
+            { front: "aren't going to", back: 'négatif going to', example: "They aren't going to give up." },
+            { front: 'Are you going to...?', back: 'question going to', example: 'Are you going to train today?' },
+            { front: 'intention', back: 'going to = intention planifiée', example: "I'm going to be stronger." },
+            { front: 'am/is/are + going to', back: 'accord avec le sujet !', example: 'He IS going to fight.' },
+            { front: 'going to + V-base', back: 'infinitif après going to', example: 'She is going to run.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quel futur ? 'I have decided: I ___ study English.' (plan décidé)", a: "am going to", o: ["will", "am going to", "would", "shall"] },
         { q: "Forme correcte : She (go) to Paris next week. (plan)", a: "She is going to go to Paris next week.", o: ["She will goes to Paris next week.", "She is going to go to Paris next week.", "She going to go to Paris next week.", "She go to Paris next week."] }
@@ -1076,6 +1522,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Eren dit : \"Superlatif = THE + -est OU THE most. Piège : adj en -y → happiest (pas happyest !). Good→best, bad→worst : irréguliers obligatoires !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Superlatifs',
+          cards: [
+            { front: 'the tallest', back: 'le plus grand — adj court', example: 'The Colossal Titan is the tallest.' },
+            { front: 'the most powerful', back: 'le plus puissant — adj long', example: 'Levi is the most powerful.' },
+            { front: 'the best', back: 'le meilleur — irrégulier (good)', example: "He's the best soldier." },
+            { front: 'the worst', back: 'le pire — irrégulier (bad)', example: "It's the worst situation." },
+            { front: 'the farthest', back: 'le plus loin — irrégulier (far)', example: 'The farthest expedition.' },
+            { front: 'THE + superlatif', back: 'toujours avec THE !', example: 'She is THE strongest.' },
+            { front: 'faster and faster', back: 'de plus en plus vite', example: 'The titan gets bigger and bigger.' },
+            { front: 'the more...the more', back: 'plus...plus...', example: 'The more you train, the stronger.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Forme le superlatif : cold (froid)", a: "the coldest", o: ["the most cold", "the coldest", "the coldestest", "coldest"] },
         { q: "Complète : This is ___ film I've ever seen! (good)", a: "the best", o: ["the goodest", "the most good", "the better", "the best"] }
@@ -1111,6 +1573,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Historia dit : \"Règle simple : phrase positive → tag NÉGATIF. Phrase négative → tag POSITIF. Et reprendre l'auxiliaire de la phrase principale, TOUJOURS !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Question Tags',
+          cards: [
+            { front: "She is brave, isn't she?", back: 'affirmatif → tag négatif', example: "She is brave, isn't she?" },
+            { front: "They don't know, do they?", back: 'négatif → tag positif', example: "They don't know, do they?" },
+            { front: "He can fight, can't he?", back: 'modal can → can\'t', example: "He can fight, can't he?" },
+            { front: "You were there, weren't you?", back: 'were → weren\'t', example: "You were there, weren't you?" },
+            { front: "I am right, aren't I?", back: 'am → aren\'t I (exception !)', example: "I am right, aren't I?" },
+            { front: "She has gone, hasn't she?", back: 'has → hasn\'t', example: "She has gone, hasn't she?" },
+            { front: 'même auxiliaire', back: 'tag = auxiliaire de la phrase', example: 'IS → ISN\'T / DO → DON\'T.' },
+            { front: 'pronom sujet', back: 'tag toujours avec pronom', example: 'Levi is strong, isn\'t HE?' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Complète : You speak English, ___ you?", a: "don't", o: ["do", "don't", "didn't", "aren't"] },
         { q: "Complète : She wasn't happy, ___ she?", a: "was", o: ["wasn't", "was", "is", "isn't"] }
@@ -1146,6 +1624,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Jean dit : \"Transforme : Actif = 'Levi trained the soldiers' → Passif = 'The soldiers WERE TRAINED by Levi.' COD devient sujet !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Voix Passive',
+          cards: [
+            { front: 'BE + participe passé', back: 'structure du passif', example: 'The wall is attacked.' },
+            { front: 'The wall was destroyed', back: 'passif Past Simple', example: 'The wall was destroyed by titans.' },
+            { front: 'by', back: 'par (introduit l\'agent)', example: 'He was saved by Mikasa.' },
+            { front: 'actif → passif', back: 'COD devient sujet', example: 'Levi defeated the titan. → The titan was defeated.' },
+            { front: 'is built', back: 'passif présent', example: 'The wall is built every year.' },
+            { front: 'was written', back: 'passif passé', example: 'The report was written by Hange.' },
+            { front: 'will be attacked', back: 'passif futur', example: 'The city will be attacked.' },
+            { front: 'has been found', back: 'passif Present Perfect', example: 'A solution has been found.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Mets à la voix passive : 'They speak English here.'", a: "English is spoken here.", o: ["English speaks here.", "English is spoken here.", "English was spoken here.", "English is speaking here."] },
         { q: "Complète : The cake ___ baked by Sasha yesterday.", a: "was", o: ["is", "were", "was", "has been"] }
@@ -1181,6 +1675,22 @@ window.LESSON_REGISTRY['english'] = {
         }
       ],
       heroTip: "Connie dit : \"Mémo final : PP = have+been/gone/seen... | Will = décision/promesse | Going to = plan/preuve | Superlatif = THE+est/THE most | Passif = be+pp !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Révisions 4ème — Points clés',
+          cards: [
+            { front: "I've done vs I did", back: 'PP (exp. générale) vs PS (moment précis)', example: "I've done it before. / I did it yesterday." },
+            { front: "I'll go vs I'm going to go", back: 'spontané vs plan', example: "I'll help! / I'm going to study." },
+            { front: 'the best vs better', back: 'superlatif vs comparatif', example: 'He is better than me / the best.' },
+            { front: "isn't it? / don't they?", back: 'question tag — accord !', example: "It's cold, isn't it?" },
+            { front: 'was destroyed (by)', back: 'voix passive — BE + pp', example: 'The wall was destroyed by titans.' },
+            { front: 'for 3 years', back: 'durée avec Present Perfect', example: "I've trained for 3 years." },
+            { front: 'since 2020', back: 'depuis (point) avec PP', example: "She's been here since 2020." },
+            { front: 'the more...the better', back: 'plus...mieux...', example: 'The more you train, the better.' }
+          ]
+        }
+      ],
       warmup: [
         { q: "Quel futur ? La météo annonce de la pluie, tu vois des nuages noirs : 'It ___ rain.'", a: "is going to", o: ["will", "is going to", "has", "does"] },
         { q: "Question tag : He has been there, ___ he?", a: "hasn't", o: ["has", "hasn't", "didn't", "wasn't"] }
