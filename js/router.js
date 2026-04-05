@@ -9,18 +9,18 @@
 // ═══════════════════════════════════════════════════════════════
 
 // ── Table de routage ──
-const ROUTES = {
+var ROUTES = {
   'login'      : showLogin,
-  'parent'     : showParentDashboard,
+  'parent'     : showParentDashboard, // remplacé par supabase-patch.js → afShowParentDashboard
   'carte'      : showCarte,
   'iles'       : showIles,
-  'grand-bleu' : showIles,
+  'grand-bleu' : showIles,        // URL-01 : alias canonique du Grand Bleu
   'quiz'       : showQuiz,
   'histoire'   : showHistoire,
   'kanto'      : showKanto,
   'pays-du-feu': showPaysduFeu,
   'namek'      : showNamek,
-  'english'    : function() { if (typeof showEnglish === 'function') showEnglish(); },
+  'english'    : function(silent) { if (typeof showEnglish === 'function') showEnglish(silent); },
   'select'     : function() { if (typeof showChildSelect === 'function') showChildSelect(); }
 };
 
@@ -167,7 +167,7 @@ function showIles() {
   if (map) map.style.display = 'block';
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') playBGM('map');
-  document.title = 'Académie Pirate — Grand Bleu (Français · One Piece)';
+  document.title = 'Académie Pirate — Grand Bleu · Français';
 }
 
 function showQuiz() {
@@ -271,28 +271,27 @@ function showNamek() {
   if (typeof playBGM === 'function') setTimeout(function(){ playBGM('jjk-map'); }, 300);
   document.title = 'Académie Pirate — Namek';
 
-}
-
-// ── showEnglish — monde Anglais / AOT ───────────────────────────
-// Note : showEnglish est aussi défini dans quiz-router.js (window.showEnglish)
-// Ce fallback local ne s'exécute que si quiz-router.js n'est pas chargé
-function _showEnglishFallback(silent) {
+  function showEnglish() {
   hideAll();
-  if (!silent) {
-    if (window.AP) window.AP.trackWorldEnter('english');
-    if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('english');
-  }
-  var mangaBg = document.getElementById('manga-bg');
+  if (window.AP) window.AP.trackWorldEnter('english');
+  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('english');
+
+  const mangaBg = document.getElementById('manga-bg');
   if (mangaBg) mangaBg.style.display = 'none';
-  var aotBg = document.getElementById('aot-bg');
+
+  const aotBg = document.getElementById('aot-bg');
   if (aotBg) aotBg.classList.add('visible');
-  var aotLevels = document.getElementById('aot-levels-sec');
+
+  const aotLevels = document.getElementById('aot-levels-sec');
   if (aotLevels) aotLevels.style.display = 'block';
-  if (typeof buildAotLevels  === 'function') buildAotLevels();
-  if (typeof loadAotBgStrips === 'function') loadAotBgStrips();
+
+  if (typeof buildAotLevels    === 'function') buildAotLevels();
+  if (typeof loadAotBgStrips   === 'function') loadAotBgStrips();
+
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') setTimeout(function(){ playBGM('aot-map'); }, 300);
-  document.title = 'Académie Pirate — Anglais';
+  document.title = 'Académie Pirate — English';
+}
 }
 // ══════════════════════════════
 // NAVIGATION
@@ -304,18 +303,15 @@ function navigateTo(route) {
 
 function getCurrentRoute() {
   var hash = window.location.hash;
-  if (!hash || hash === '#' || hash === '#/') return { main: 'login', sub: null, island: null };
-  var parts = hash.replace('#/', '').split('/');
-  return {
-    main:   parts[0] || 'login',
-    sub:    parts[1] || null,
-    island: parts[2] || null
-  };
+  if (!hash || hash === '#' || hash === '#/') return 'login';
+  return hash.replace('#/', '').split('/')[0] || 'login';
 }
 
-// Rétro-compat : certains appelants attendent une string
-function getCurrentRouteStr() {
-  return getCurrentRoute().main;
+// Sous-route (ex: 'cm2' dans #/english/cm2) — jamais utilisé pour comparer
+function _getSubRoute() {
+  var hash = window.location.hash;
+  var parts = hash.replace('#/', '').split('/');
+  return parts[1] || null;
 }
 
 // ── SEO : meta dynamique par route ──────────────────────────────
@@ -327,15 +323,15 @@ var SEO_ROUTES = {
   'histoire':    { title: "Académie Pirate — Magnolia (Histoire · Dragon Ball Z)", desc: "8 îles d'histoire : Antiquité, Moyen Âge, Islam, Renaissance." },
   'kanto':       { title: "Académie Pirate — Kanto (Sciences · Demon Slayer)",    desc: "8 îles de sciences physiques : signaux, lumière, électricité, Internet." },
   'pays-du-feu': { title: "Académie Pirate — Pays du Feu (Maths · Naruto)",      desc: "8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs." },
-  'parent':      { title: "Académie Pirate — Dashboard Parent",                   desc: "Suivez la progression de votre enfant : XP, îles complétées, résultats détaillés." },
-  'grand-bleu':  { title: "Académie Pirate — Grand Bleu (Français · One Piece)",  desc: "8 îles de grammaire et conjugaison avec l'équipage Chapeau de Paille." },
-  'english':     { title: "Académie Pirate — Anglais (Attack on Titan)",           desc: "Révise l'anglais CM2 à 4ème avec les héros d'Attack on Titan. Programme officiel Éducation Nationale." },
-  'english/cm2': { title: "Quiz Anglais CM2 — Vocabulaire de base · Académie Pirate", desc: "8 îles d'anglais CM2 : alphabet, chiffres, couleurs, animaux, famille. Niveau A1 avec Eren et Mikasa." },
-  'english/6eme':{ title: "Quiz Anglais 6ème — Grammaire fondamentale · Académie Pirate", desc: "8 îles d'anglais 6ème : Present Simple, BE/HAVE, articles, pluriels. Niveau A1+ avec Armin et Levi." },
-  'english/5eme':{ title: "Quiz Anglais 5ème — Grammaire intermédiaire · Académie Pirate", desc: "8 îles d'anglais 5ème : Past Simple, modaux, comparatifs. Niveau A2 avec Eren et Annie." },
-  'english/4eme':{ title: "Quiz Anglais 4ème — Grammaire avancée · Académie Pirate", desc: "8 îles d'anglais 4ème : Present Perfect, futur, voix passive. Niveau B1 avec Historia et Levi." },
-  'namek':       { title: "Académie Pirate — Namek (Géographie · JJK)",            desc: "8 îles de géographie avec l'univers Jujutsu Kaisen. Programme officiel 6ème." },
-  'select':      { title: "Académie Pirate — Choisis ton aventurier",               desc: "Sélectionne ton personnage manga préféré pour commencer l'aventure pédagogique." },
+  'parent':      { title: 'Académie Pirate — Dashboard Parent',                    desc: 'Suivez la progression de votre enfant : XP, îles complétées, résultats détaillés.' },
+  'grand-bleu':  { title: 'Académie Pirate — Grand Bleu · Français One Piece',    desc: '8 îles de grammaire et conjugaison avec les pirates de One Piece. Programme CM2-4ème.' },
+  'english':     { title: 'Académie Pirate — Anglais · Attack on Titan',           desc: "Révise l'anglais CM2 à 4ème avec les héros d'Attack on Titan. Programme officiel." },
+  'english/cm2': { title: 'Quiz Anglais CM2 — Vocabulaire A1 · Académie Pirate',  desc: '8 îles anglais CM2 : alphabet, chiffres, couleurs, animaux, famille. Niveau A1.' },
+  'english/6eme':{ title: 'Quiz Anglais 6ème — Grammaire A1+ · Académie Pirate',  desc: '8 îles anglais 6ème : Present Simple, BE/HAVE, articles, pluriels. Niveau A1+.' },
+  'english/5eme':{ title: 'Quiz Anglais 5ème — Grammaire A2 · Académie Pirate',   desc: '8 îles anglais 5ème : Past Simple, modaux, comparatifs. Niveau A2.' },
+  'english/4eme':{ title: 'Quiz Anglais 4ème — Grammaire B1 · Académie Pirate',   desc: '8 îles anglais 4ème : Present Perfect, futur, voix passive. Niveau B1.' },
+  'namek':       { title: 'Académie Pirate — Namek · Géographie JJK',             desc: '8 îles de géographie avec Jujutsu Kaisen. Programme officiel 6ème.' },
+  'select':      { title: 'Académie Pirate — Choisir ton aventurier',              desc: 'Sélectionne ton personnage manga pour commencer ton aventure pédagogique.' },
 };
 
 function _updateSEO(route) {
@@ -420,35 +416,37 @@ function _injectJSONLD(route, opts) {
 }
 
 function handleRoute() {
-  var parsed  = getCurrentRoute();
-  var main    = parsed.main;
-  var sub     = parsed.sub;
+  var route   = getCurrentRoute();   // toujours une string
+  var sub     = _getSubRoute();      // 'cm2', '6eme', etc. ou null
+  var handler = ROUTES[route];
 
-  // ── Sous-routes English (URL-01) ─────────────────────────────
-  if (main === 'english' && sub) {
-    var validLevels = ['cm2', '6eme', '5eme', '4eme'];
-    if (validLevels.indexOf(sub) !== -1) {
-      _updateSEO('english/' + sub);
-      _injectJSONLD('english');
-      if (window.AP && typeof window.AP.trackPage === 'function') window.AP.trackPage('english/' + sub);
-      // Afficher le monde English puis naviguer vers le bon niveau
-      if (typeof showEnglish === 'function') {
-        showEnglish(true); // true = silent, ne pas repush l'URL
-        setTimeout(function() {
-          if (typeof window.aot_showLevel === 'function') window.aot_showLevel(sub, true);
-        }, 50);
-      }
-      return;
-    }
+  // SEO dynamique — sous-route incluse si présente
+  var seoKey = (sub && route === 'english') ? route + '/' + sub : route;
+  _updateSEO(seoKey);
+  _injectJSONLD(route);
+
+  if (window.AP && typeof window.AP.trackPage === 'function') {
+    window.AP.trackPage(seoKey);
   }
 
-  // ── Route principale ─────────────────────────────────────────
-  var handler = ROUTES[main];
-  _updateSEO(main);
-  _injectJSONLD(main);
-  if (window.AP && typeof window.AP.trackPage === 'function') window.AP.trackPage(main);
-  if (handler) handler();
-  else navigateTo('login');
+  if (handler) {
+    // Sous-routes English : #/english/cm2 → showEnglish puis showLevel(sub)
+    if (route === 'english' && sub) {
+      var validLevels = ['cm2', '6eme', '5eme', '4eme'];
+      if (validLevels.indexOf(sub) !== -1) {
+        handler(true); // silent = ne re-push pas l'URL
+        setTimeout(function() {
+          if (typeof window.aot_showLevel === 'function') {
+            window.aot_showLevel(sub, true);
+          }
+        }, 80);
+        return;
+      }
+    }
+    handler();
+  } else {
+    navigateTo('login');
+  }
 }
 
 // ── Écouter les changements de hash ──

@@ -68,7 +68,7 @@
   // ══════════════════════════════════════════════════════════════
 
   function showEnglish(silent) {
-    // URL-01 : mettre à jour l'URL
+    // URL-01 : push #/english sauf si appelé silencieusement par handleRoute
     if (!silent && window.history && window.history.pushState) {
       history.pushState(null, '', '#/english');
     }
@@ -198,7 +198,7 @@
 
   async function showLevel(niveauCode, silent) {
     _currentNiveau = niveauCode;
-    // URL-01 : mettre à jour l'URL avec le niveau sélectionné
+    // URL-01 : push #/english/cm2 etc.
     if (!silent && window.history && window.history.pushState) {
       history.pushState(null, '', '#/english/' + niveauCode);
     }
@@ -247,7 +247,7 @@
     if (!ilesEl) return;
 
     var backBtn =
-      '<button class="aot-back-btn" onclick="window.aot_showEnglish()">← Changer de niveau</button>';
+      '<button class="aot-back-btn" onclick="history.back()">← Changer de niveau</button>';
 
     var header =
       '<div class="aot-map-header">' +
@@ -447,7 +447,7 @@
 
   window.showEnglish     = showEnglish;   // ← appelé par router.js
   window.aot_showEnglish = showEnglish;
-  window.aot_showLevel   = showLevel;     // ← URL-01 : navigation directe par niveau
+  window.aot_showLevel   = showLevel;     // ← URL-01 navigation directe par niveau
   window.aot_showLevel   = showLevel;
   window.aot_startIsland = startIsland;
   window.buildAotLevels  = showEnglish;
