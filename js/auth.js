@@ -617,25 +617,8 @@ function _tplCreateChild(isFirstChild) {
   // Avatar picker géré par AvatarPicker component (Phase 3a — ARCHI-01)
   var avHtml = '<div id="af-avatar-picker-wrap" style="width:100%"></div>';
 
-  var pinInputs = [0, 1, 2, 3, 4, 5].map(function (i) {
-    return `<input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-      id="af-pin-${i}" data-index="${i}" autocomplete="off"
-      style="
-        width:clamp(38px,10vw,50px);height:clamp(48px,12vw,60px);
-        text-align:center;font-family:'Bangers',cursive;
-        font-size:1.6rem;background:rgba(255,255,255,.07);
-        border:2px solid rgba(255,255,255,.15);border-radius:10px;
-        color:#fff;outline:none;caret-color:#ffd700;
-        transition:border-color .2s;
-      ">`;
-  }).join('');
-
-  var pinDots = [0, 1, 2, 3, 4, 5].map(function (i) {
-    return `<div id="af-pindot-${i}" style="
-      width:clamp(34px,9vw,44px);height:5px;border-radius:3px;
-      background:rgba(255,255,255,.1);transition:background .15s;
-    "></div>`;
-  }).join('');
+  var pinInputs = ''; // non utilisé — on passe à un champ unique
+  var pinDots   = ''; // non utilisé
 
   return `
   <div style="
@@ -675,13 +658,37 @@ function _tplCreateChild(isFirstChild) {
       </div>
 
       <div style="display:flex;flex-direction:column;gap:8px">
-        <label style="${AF_LABEL_STYLE}">🔐 Code PIN enfant (6 chiffres) *</label>
+        <label style="${AF_LABEL_STYLE}">🔐 Code secret enfant (4 à 8 caractères) *</label>
         <div style="font-family:'Nunito',sans-serif;font-size:.72rem;
-             color:rgba(255,255,255,.35);line-height:1.5">
-          Notez-le ! Votre enfant en aura besoin pour se connecter.
+             color:rgba(255,255,255,.45);line-height:1.6;padding:8px 10px;
+             background:rgba(255,215,0,.05);border-radius:8px;
+             border-left:3px solid rgba(255,215,0,.3)">
+          Lettres et chiffres autorisés (ex: <strong style="color:#ffd700">Luffy7</strong>, <strong style="color:#ffd700">Zoro42</strong>).
+          Notez-le bien — votre enfant en aura besoin pour se connecter !
         </div>
-        <div style="display:flex;gap:6px;justify-content:center">${pinInputs}</div>
-        <div style="display:flex;gap:6px;justify-content:center">${pinDots}</div>
+        <input type="text" id="af-pin-field"
+          minlength="4" maxlength="8"
+          autocomplete="new-password"
+          autocorrect="off" autocapitalize="characters" spellcheck="false"
+          placeholder="ex: Luffy7"
+          style="
+            padding:14px 16px;text-align:center;
+            font-family:'Bangers',cursive;font-size:1.8rem;
+            letter-spacing:4px;text-transform:uppercase;
+            background:rgba(255,255,255,.07);
+            border:2px solid rgba(255,255,255,.15);
+            border-radius:12px;color:#ffd700;outline:none;
+            caret-color:#ffd700;width:100%;
+            transition:border-color .2s;
+          "
+          oninput="afPinStrength(this)">
+        <div id="af-pin-strength" style="display:flex;gap:4px;height:4px">
+          <div id="af-ps-1" style="flex:1;border-radius:2px;background:rgba(255,255,255,.1);transition:background .2s"></div>
+          <div id="af-ps-2" style="flex:1;border-radius:2px;background:rgba(255,255,255,.1);transition:background .2s"></div>
+          <div id="af-ps-3" style="flex:1;border-radius:2px;background:rgba(255,255,255,.1);transition:background .2s"></div>
+        </div>
+        <div id="af-pin-hint" style="font-family:'Nunito',sans-serif;font-size:.7rem;
+             color:rgba(255,255,255,.35);text-align:center;min-height:16px"></div>
       </div>
 
       <div id="af-child-error" style="
@@ -738,33 +745,50 @@ function _initAvatarPickerInForm() {
 }
 
 function _bindPinInputs(prefix) {
-  for (var i = 0; i < 6; i++) {
-    (function (idx) {
-      var inp = document.getElementById(prefix + '-' + idx);
-      if (!inp) return;
-      inp.addEventListener('input', function (e) {
-        var val = e.target.value.replace(/\D/g, '');
-        e.target.value = val.slice(-1);
-        var dot = document.getElementById(prefix + 'dot-' + idx);
-        if (dot) dot.style.background = val ? '#ffd700' : 'rgba(255,255,255,.1)';
-        if (val && idx < 5) {
-          var next = document.getElementById(prefix + '-' + (idx + 1));
-          if (next) next.focus();
-        }
-      });
-      inp.addEventListener('keydown', function (e) {
-        if (e.key === 'Backspace' && !inp.value && idx > 0) {
-          var prev = document.getElementById(prefix + '-' + (idx - 1));
-          if (prev) { prev.value = ''; prev.focus(); }
-          var dot = document.getElementById(prefix + 'dot-' + (idx - 1));
-          if (dot) dot.style.background = 'rgba(255,255,255,.1)';
-        }
-      });
-    })(i);
+  // Avec le nouveau champ unique, on focus juste le champ
+  var field = document.getElementById(prefix + '-field') ||
+              document.getElementById(prefix.replace(/-$/, '') + '-field');
+  if (field) {
+    setTimeout(function() { field.focus(); }, 120);
   }
 }
 
+// Indicateur de force du code secret
+function afPinStrength(inp) {
+  var val = inp.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  inp.value = val; // forcer alphanumérique majuscule
+
+  var len = val.length;
+  var hasLetter = /[A-Z]/.test(val);
+  var hasDigit  = /[0-9]/.test(val);
+
+  var strength = 0;
+  if (len >= 4) strength = 1;
+  if (len >= 5 && (hasLetter || hasDigit)) strength = 2;
+  if (len >= 6 && hasLetter && hasDigit) strength = 3;
+
+  var colors  = ['#ef4444', '#f97316', '#22c55e'];
+  var hints   = [
+    '⚠️ Trop court — 4 caractères minimum',
+    '👍 Bien ! Ajoute encore un chiffre ou une lettre',
+    '✅ Code secret solide !'
+  ];
+
+  [1, 2, 3].forEach(function(n) {
+    var bar = document.getElementById('af-ps-' + n);
+    if (bar) bar.style.background = n <= strength ? colors[strength - 1] : 'rgba(255,255,255,.1)';
+  });
+
+  var hint = document.getElementById('af-pin-hint');
+  if (hint) hint.textContent = len > 0 ? (hints[strength - 1] || hints[0]) : '';
+}
+
 function _getPin(prefix) {
+  // Nouveau : champ unique alphanumérique
+  var field = document.getElementById(prefix + '-field') ||
+              document.getElementById(prefix.replace(/-$/, '') + '-field');
+  if (field) return field.value.toUpperCase().trim();
+  // Fallback legacy (6 cases séparées)
   return [0, 1, 2, 3, 4, 5].map(function (i) {
     var el = document.getElementById(prefix + '-' + i);
     return el ? el.value : '';
@@ -784,8 +808,8 @@ async function afSubmitCreateChild(isFirstChild) {
     if (errEl) { errEl.textContent = '⚠️ Donne un nom à ton aventurier !'; errEl.style.display = 'block'; }
     return;
   }
-  if (pin.length !== 6) {
-    if (errEl) { errEl.textContent = '⚠️ Le code PIN doit contenir 6 chiffres.'; errEl.style.display = 'block'; }
+  if (pin.length < 4) {
+    if (errEl) { errEl.textContent = '⚠️ Le code secret doit contenir au moins 4 caractères (lettres et/ou chiffres).'; errEl.style.display = 'block'; }
     return;
   }
   if (errEl) errEl.style.display = 'none';
@@ -877,17 +901,7 @@ function afShowPinEntry(child, onSuccess) {
   screen.style.cssText = AF_FULLSCREEN_STYLE;
   screen.style.display = 'flex';
 
-  var pinInputs = [0, 1, 2, 3, 4, 5].map(function (i) {
-    return `<input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-      id="af-entry-pin-${i}" data-index="${i}" autocomplete="off"
-      style="
-        width:clamp(38px,10vw,50px);height:clamp(48px,12vw,60px);
-        text-align:center;font-family:'Bangers',cursive;font-size:1.6rem;
-        background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.15);
-        border-radius:10px;color:#fff;outline:none;caret-color:#ffd700;
-        transition:border-color .2s;
-      ">`;
-  }).join('');
+  var pinInputs = '<input type="text" id="af-entry-pin-field" maxlength="8" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" placeholder="••••••" style="padding:14px 16px;text-align:center;font-family:Bangers,cursive;font-size:2rem;letter-spacing:6px;text-transform:uppercase;background:rgba(255,255,255,.07);border:2px solid rgba(255,215,0,.3);border-radius:12px;color:#ffd700;outline:none;width:100%;caret-color:#ffd700;transition:border-color .2s" oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,\'\');">';
 
   screen.innerHTML = `
     <div style="
@@ -902,10 +916,10 @@ function afShowPinEntry(child, onSuccess) {
            letter-spacing:3px">CODE SECRET</div>
       <div style="font-family:'Nunito',sans-serif;font-size:.82rem;
            color:rgba(255,255,255,.5)">
-        Entre ton code à 6 chiffres, <strong style="color:#ffd700">${child.username}</strong>
+        Entre ton code secret, <strong style="color:#ffd700">${child.username}</strong>
       </div>
 
-      <div style="display:flex;gap:6px;justify-content:center">${pinInputs}</div>
+      <div style="width:100%">${pinInputs}</div>
 
       <div id="af-pin-error" style="
         display:none;height:20px;font-family:'Nunito',sans-serif;
@@ -935,7 +949,7 @@ function afShowPinEntry(child, onSuccess) {
 }
 
 async function afCheckPin(childId) {
-  var entered = _getPin('af-entry-pin');
+  var entered = (_getPin('af-entry-pin') || '').toUpperCase().trim();
   var child   = window._afPinChild;
 
   if (!child) return;
