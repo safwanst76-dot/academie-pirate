@@ -565,3 +565,129 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 *Ce document doit être mis à jour à chaque phase complétée.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
 *Version 2.3 — 3 Avril 2026*
+
+---
+
+## RÈGLES PRODUIT — Vision long terme
+
+### Règle URL-01 — Une page = une URL ⚠️ OBLIGATOIRE
+**Chaque écran de l'application doit avoir sa propre URL unique.**
+Ceci est non-négociable pour le SEO, le GEO-targeting et la future conversion en app native.
+
+Format de référence :
+```
+/#                          → Accueil / Globe
+/#grand-bleu                → Monde Français (One Piece)
+/#grand-bleu/cm2            → Grille îles CM2 Français
+/#grand-bleu/cm2/1          → Île 1 CM2 (leçon + quiz)
+/#english                   → Monde Anglais (AOT)
+/#english/cm2               → Grille îles CM2 Anglais
+/#english/cm2/1             → Île 1 CM2 Anglais
+/#profile                   → Profil enfant
+/#parent                    → Dashboard parent
+/#select                    → Sélection avatar/enfant
+```
+
+Règles d'implémentation :
+- `js/router.js` gère TOUS les hash-routes via `window.onhashchange`
+- Le sitemap.xml reflète toutes les routes statiques
+- Les routes dynamiques (île N) sont générées depuis la DB
+- Avant chaque nouvelle page, définir son URL dans router.js
+
+### Règle RD-01 — Responsive Design Mobile-First OBLIGATOIRE
+**Tout le front-end est conçu mobile-first, du plus petit écran au plus grand.**
+
+Breakpoints de référence :
+```
+320px  → iPhone SE (plus petit support)
+375px  → iPhone standard
+390px  → iPhone 14/15
+428px  → iPhone Pro Max
+768px  → Tablette portrait
+1024px → Tablette paysage / petit desktop
+1280px → Desktop standard
+1920px → Desktop large
+```
+
+Règles d'implémentation :
+- CSS : commencer par le mobile, `min-width` pour les breakpoints
+- Touch targets minimum : 44×44px (norme Apple/Google)
+- Pas de `hover`-only — tout fonctionne au doigt
+- Fonts : `clamp()` pour le sizing fluide
+- Tests obligatoires sur Chrome DevTools mobile avant chaque push
+
+### Règle APP-01 — Architecture App-Ready
+**Tout le code front-end doit être pensé pour une future conversion iOS/Android.**
+
+Stack cible futur :
+```
+Web actuel  → HTML/CSS/JS vanilla + Supabase (GitHub Pages)
+App v1      → Capacitor.js (wrapper natif iOS/Android sans réécriture)
+App v2      → React Native ou Flutter (si réécriture native nécessaire)
+Backend     → Supabase (Auth + DB + Storage + Edge Functions) — déjà en place
+```
+
+Règles d'implémentation :
+- Pas de dépendances directes à `window.location` — passer par le router
+- Pas de stockage sensible en localStorage — utiliser Supabase Auth
+- Assets dans Supabase Storage (pas en local) → fonctionnel en app native
+- Edge Functions Supabase = API universelle (web + app)
+
+### Règle UX-01 — Standard Design Top 1% Mondial
+**Chaque écran doit atteindre le niveau des meilleures apps éducatives mondiales.**
+
+Références : Duolingo · Khan Academy · Mimo · Elevate · Headspace
+
+Critères non-négociables :
+```
+✅ Animations fluides 60fps
+✅ Feedback immédiat sur chaque interaction (< 100ms)
+✅ États vides soignés
+✅ Micro-interactions sur tous les boutons
+✅ Hiérarchie visuelle claire — l'enfant sait toujours quoi faire
+✅ Cohérence totale — style, espacements, couleurs uniformes
+✅ Accessibilité — contraste minimum 4.5:1
+✅ Performance — FCP < 2s, TTI < 3s
+```
+
+Meilleures pratiques intégrées :
+- Duolingo : progression visible, célébration des victoires, streak
+- Khan Academy : étapes claires, pas de surcharge cognitive
+- Mimo : une seule action par écran, feedback coloré immédiat
+- Headspace : animations douces, personnage guide
+- Propriétaire : univers manga unique, héros, immersion narrative
+
+### Règle AV-01 — Avatar universel
+**L'avatar choisi par l'enfant le suit dans TOUS les mondes et TOUTES les leçons.**
+
+Pool d'avatars : minimum 40 personnages, tous univers confondus.
+```
+One Piece      → Luffy, Zoro, Nami, Usopp, Sanji, Chopper, Robin, Brook,
+                 Ace, Shanks, Law, Hancock, Franky, Vivi, Whitebeard...
+Attack on Titan → Eren, Mikasa, Armin, Levi, Hange, Historia, Jean, Sasha...
+Naruto          → Naruto, Sasuke, Sakura, Kakashi, Gaara, Minato, Jiraiya...
+Demon Slayer    → Tanjiro, Zenitsu, Inosuke, Rengoku, Tengen, Kanao...
+Dragon Ball Z   → Goku, Vegeta, Gohan, Piccolo, Bulma, Cell, Freezer...
+```
+
+Rôle de l'avatar dans les leçons :
+- Pose les questions du warmup et de l'entraînement
+- Parle en bulles de dialogue manga
+- Réagit visuellement aux bonnes/mauvaises réponses
+- Utilise le prénom de l'enfant dans ses dialogues
+
+### Règle SEO-01 — SEO et GEO-targeting
+**L'application doit être optimisée pour le référencement naturel dès la Phase 4.**
+
+Éléments obligatoires par route :
+```
+- <title> unique et descriptif
+- <meta description> unique (150-160 caractères)
+- Structured data Schema.org EducationalApplication
+- sitemap.xml généré depuis les routes
+- robots.txt à jour
+- Open Graph tags pour le partage social
+- hreflang="fr" (audience française principale)
+- Mots-clés : "quiz anglais CM2", "révision brevet", etc.
+```
+
