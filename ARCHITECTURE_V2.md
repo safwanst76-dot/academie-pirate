@@ -1,6 +1,78 @@
 # ACADÉMIE PIRATE — ARCHITECTURE V2
 *Document de référence — À lire en priorité avant tout développement*
-*Version : 2.3 | Mise à jour : 3 Avril 2026*
+*Version : 2.6 | Mise à jour : 5 Avril 2026*
+
+---
+
+## 🏗️ RÈGLE FONDAMENTALE — ARCHITECTURE MODULAIRE (ARCHI-01)
+**PRIORITÉ ABSOLUE — S'applique avant toute autre décision technique.**
+
+Académie Pirate vise le **top 1% des plateformes éducatives mondiales**.
+Cela exige une architecture modulaire, évolutive et production-grade dès maintenant.
+
+### Principe core : Tout nouveau code respecte l'architecture cible
+
+```
+INTERDIT dans tout nouveau code :
+❌ Variables globales non encapsulées (window.maVariable = ...)
+❌ Styles inline ou couleurs hardcodées hors tokens.css
+❌ Requêtes Supabase directes hors js/core/api.js
+❌ Composants qui s'appellent directement (couplage fort)
+❌ CSS sans préfixe isolant (collision de noms)
+❌ État applicatif éparpillé dans des variables locales multiples
+
+OBLIGATOIRE dans tout nouveau code :
+✅ IIFE ou module exposant une API propre sur window
+✅ Toutes les couleurs/espacements depuis css/tokens.css
+✅ Toutes les requêtes DB via js/core/api.js
+✅ Communication inter-composants via js/core/events.js
+✅ État centralisé dans js/core/state.js
+✅ Préfixe CSS isolant par composant (.fc-*, .av-*, .ld-*...)
+```
+
+### Architecture cible (migration progressive)
+
+```
+js/
+├── core/                    ← FONDATIONS — créer en priorité
+│   ├── state.js             → source de vérité unique (enfant, avatar, XP...)
+│   ├── events.js            → bus pub/sub (composants découplés)
+│   └── api.js               → toutes les requêtes Supabase centralisées
+│
+├── components/              ← COMPOSANTS RÉUTILISABLES
+│   ├── avatar-picker.js     → sélection avatar (tout univers)
+│   ├── lesson-dialog.js     → bulle dialogue avatar dans les leçons
+│   ├── progress-bar.js      → barre XP/progression
+│   └── world-card.js        → carte monde sur le globe
+│
+├── engine/                  ✅ bien structuré — maintenir
+├── worlds/                  ✅ bien structuré — maintenir
+└── admin/                   ✅ bien structuré — maintenir
+
+css/
+├── tokens.css               ← CRÉER EN PRIORITÉ — tout part de là
+│   (couleurs, espacements, typographie, breakpoints, animations)
+├── components/              ← 1 fichier par composant
+└── worlds/                  ← styles spécifiques par monde
+```
+
+### Règle de migration progressive (zéro régression)
+
+```
+✅ Tout NOUVEAU fichier → architecture cible obligatoire
+✅ Tout fichier MODIFIÉ → refactorisé selon l'architecture cible
+✅ Mondes V1 existants → touchés UNIQUEMENT lors d'une migration Phase 4
+❌ Refactorisation globale interdite en dehors d'une phase dédiée
+```
+
+### Stack technique cible (sans réécriture)
+
+```
+Aujourd'hui    → HTML/CSS/JS vanilla + Supabase + GitHub Pages
+Court terme    → + tokens.css + core/ + components/ (ce document)
+Moyen terme    → Capacitor.js pour iOS/Android (zéro réécriture)
+Long terme     → React Native ou Flutter si migration native complète
+```
 
 ---
 
@@ -453,6 +525,11 @@ Ne jamais utiliser une notion d'une leçon future dans le warmup.
 Exemple corrigé : leçon 3_1 (verbes réguliers) → warmup avec "walk" (régulier),
 pas "go" (irrégulier, leçon 3_2).
 
+### Règle ARCHI-01 — Architecture Modulaire PRIORITÉ ABSOLUE ⚠️
+Voir la section "RÈGLE FONDAMENTALE ARCHITECTURE" en tête de document.
+**Résumé** : tout nouveau code = IIFE + tokens.css + api.js + events.js + state.js.
+Migration progressive : nouveau code = architecture cible. Existant = touché seulement si modifié.
+
 ### Règle ADM-01 — Contenu sans code
 Tout nouveau contenu créable depuis l'admin sans modifier le JS.
 
@@ -532,6 +609,10 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 ✅ Corrections colorées + explications + GIF résultat
 ✅ Retour à la carte avec progression
 ✅ 4 niveaux 100% fonctionnels avec personnages uniques
+✅ Flashcards mini-jeux — 32 leçons English (8 cartes × 4 niveaux)
+✅ URL routing — #/english/cm2, #/english/6eme, #/grand-bleu (URL-01)
+✅ Domaine custom — aca-pirate.ch (DNS Infomaniak + GitHub Pages + Supabase)
+✅ SEO — title, meta, canonical, hreflang="fr", sitemap, robots.txt
 ```
 
 ### Bugs connus (non bloquants)
@@ -546,148 +627,30 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 ## PROCHAINES ACTIONS IMMÉDIATES
 
 ```
-1. Phase 2 — Admin onglet Contenu
-   → Interface CRUD questions + prévisualisation temps réel
-   → Sélecteur Monde / Niveau / Chapitre
-   → Formulaire ajout/modification/suppression
-   → Drag & drop pour réordonner les questions
+0. FONDATIONS ARCHITECTURE (IMMÉDIAT — règle ARCHI-01)
+   → css/tokens.css         — design system : couleurs, spacing, typo, breakpoints
+   → js/core/state.js       — état centralisé : enfant connecté, avatar, XP, monde
+   → js/core/events.js      — bus pub/sub : composants découplés
+   → js/core/api.js         — couche données Supabase unifiée
 
-2. Phase 3 — Mini-jeux dans les leçons
-   → flashcards, tri-mots, association, texte-trous, vrai-faux
+1. Phase 3 — Leçon interactive + Avatar universel (EN COURS)
+   → Pool 40+ avatars tous univers (One Piece, AOT, Naruto, DBZ, Demon Slayer)
+   → Écran sélection avatar mobile-first avec filtres univers
+   → Avatar de l'enfant dans les leçons (bulles dialogue manga)
+   → Refonte flashcards avec avatar qui parle
 
-3. Futurs mondes V2 (ordre suggéré)
-   → Maths (Pays du Feu) — programme 6ème/5ème/4ème
-   → Français (Grand Bleu) — programme 6ème/5ème/4ème
+2. Phase 4 — Contenu complet toutes matières
+   → Maths (Pays du Feu) N2/N3/N4
+   → Français (Grand Bleu) N2/N4
+   → Histoire, Sciences, Géo N2/N4
+
+3. Phase 5 — Nouveaux mondes
+   → Konoha (SVT), Aqua (Géo), Éclair (Physique-Chimie)
 ```
 
 ---
 
 *Ce document doit être mis à jour à chaque phase complétée.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
-*Version 2.3 — 3 Avril 2026*
-
----
-
-## RÈGLES PRODUIT — Vision long terme
-
-### Règle URL-01 — Une page = une URL ⚠️ OBLIGATOIRE
-**Chaque écran de l'application doit avoir sa propre URL unique.**
-Ceci est non-négociable pour le SEO, le GEO-targeting et la future conversion en app native.
-
-Format de référence :
-```
-/#                          → Accueil / Globe
-/#grand-bleu                → Monde Français (One Piece)
-/#grand-bleu/cm2            → Grille îles CM2 Français
-/#grand-bleu/cm2/1          → Île 1 CM2 (leçon + quiz)
-/#english                   → Monde Anglais (AOT)
-/#english/cm2               → Grille îles CM2 Anglais
-/#english/cm2/1             → Île 1 CM2 Anglais
-/#profile                   → Profil enfant
-/#parent                    → Dashboard parent
-/#select                    → Sélection avatar/enfant
-```
-
-Règles d'implémentation :
-- `js/router.js` gère TOUS les hash-routes via `window.onhashchange`
-- Le sitemap.xml reflète toutes les routes statiques
-- Les routes dynamiques (île N) sont générées depuis la DB
-- Avant chaque nouvelle page, définir son URL dans router.js
-
-### Règle RD-01 — Responsive Design Mobile-First OBLIGATOIRE
-**Tout le front-end est conçu mobile-first, du plus petit écran au plus grand.**
-
-Breakpoints de référence :
-```
-320px  → iPhone SE (plus petit support)
-375px  → iPhone standard
-390px  → iPhone 14/15
-428px  → iPhone Pro Max
-768px  → Tablette portrait
-1024px → Tablette paysage / petit desktop
-1280px → Desktop standard
-1920px → Desktop large
-```
-
-Règles d'implémentation :
-- CSS : commencer par le mobile, `min-width` pour les breakpoints
-- Touch targets minimum : 44×44px (norme Apple/Google)
-- Pas de `hover`-only — tout fonctionne au doigt
-- Fonts : `clamp()` pour le sizing fluide
-- Tests obligatoires sur Chrome DevTools mobile avant chaque push
-
-### Règle APP-01 — Architecture App-Ready
-**Tout le code front-end doit être pensé pour une future conversion iOS/Android.**
-
-Stack cible futur :
-```
-Web actuel  → HTML/CSS/JS vanilla + Supabase (GitHub Pages)
-App v1      → Capacitor.js (wrapper natif iOS/Android sans réécriture)
-App v2      → React Native ou Flutter (si réécriture native nécessaire)
-Backend     → Supabase (Auth + DB + Storage + Edge Functions) — déjà en place
-```
-
-Règles d'implémentation :
-- Pas de dépendances directes à `window.location` — passer par le router
-- Pas de stockage sensible en localStorage — utiliser Supabase Auth
-- Assets dans Supabase Storage (pas en local) → fonctionnel en app native
-- Edge Functions Supabase = API universelle (web + app)
-
-### Règle UX-01 — Standard Design Top 1% Mondial
-**Chaque écran doit atteindre le niveau des meilleures apps éducatives mondiales.**
-
-Références : Duolingo · Khan Academy · Mimo · Elevate · Headspace
-
-Critères non-négociables :
-```
-✅ Animations fluides 60fps
-✅ Feedback immédiat sur chaque interaction (< 100ms)
-✅ États vides soignés
-✅ Micro-interactions sur tous les boutons
-✅ Hiérarchie visuelle claire — l'enfant sait toujours quoi faire
-✅ Cohérence totale — style, espacements, couleurs uniformes
-✅ Accessibilité — contraste minimum 4.5:1
-✅ Performance — FCP < 2s, TTI < 3s
-```
-
-Meilleures pratiques intégrées :
-- Duolingo : progression visible, célébration des victoires, streak
-- Khan Academy : étapes claires, pas de surcharge cognitive
-- Mimo : une seule action par écran, feedback coloré immédiat
-- Headspace : animations douces, personnage guide
-- Propriétaire : univers manga unique, héros, immersion narrative
-
-### Règle AV-01 — Avatar universel
-**L'avatar choisi par l'enfant le suit dans TOUS les mondes et TOUTES les leçons.**
-
-Pool d'avatars : minimum 40 personnages, tous univers confondus.
-```
-One Piece      → Luffy, Zoro, Nami, Usopp, Sanji, Chopper, Robin, Brook,
-                 Ace, Shanks, Law, Hancock, Franky, Vivi, Whitebeard...
-Attack on Titan → Eren, Mikasa, Armin, Levi, Hange, Historia, Jean, Sasha...
-Naruto          → Naruto, Sasuke, Sakura, Kakashi, Gaara, Minato, Jiraiya...
-Demon Slayer    → Tanjiro, Zenitsu, Inosuke, Rengoku, Tengen, Kanao...
-Dragon Ball Z   → Goku, Vegeta, Gohan, Piccolo, Bulma, Cell, Freezer...
-```
-
-Rôle de l'avatar dans les leçons :
-- Pose les questions du warmup et de l'entraînement
-- Parle en bulles de dialogue manga
-- Réagit visuellement aux bonnes/mauvaises réponses
-- Utilise le prénom de l'enfant dans ses dialogues
-
-### Règle SEO-01 — SEO et GEO-targeting
-**L'application doit être optimisée pour le référencement naturel dès la Phase 4.**
-
-Éléments obligatoires par route :
-```
-- <title> unique et descriptif
-- <meta description> unique (150-160 caractères)
-- Structured data Schema.org EducationalApplication
-- sitemap.xml généré depuis les routes
-- robots.txt à jour
-- Open Graph tags pour le partage social
-- hreflang="fr" (audience française principale)
-- Mots-clés : "quiz anglais CM2", "révision brevet", etc.
-```
-
+*Règle ARCHI-01 : tout nouveau code respecte l'architecture modulaire cible.*
+*Version 2.6 — 5 Avril 2026*
