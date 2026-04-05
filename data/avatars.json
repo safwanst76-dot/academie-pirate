@@ -1,17 +1,496 @@
 {
-  "version": "3.0",
+  "version": "4.0",
+  "universes": [
+    {
+      "id": "one-piece",
+      "name": "One Piece",
+      "emoji": "🏴‍☠️",
+      "color": "#e63946"
+    },
+    {
+      "id": "aot",
+      "name": "Attack on Titan",
+      "emoji": "⚔️",
+      "color": "#4a5c3f"
+    },
+    {
+      "id": "naruto",
+      "name": "Naruto",
+      "emoji": "🔥",
+      "color": "#f97316"
+    },
+    {
+      "id": "demon-slayer",
+      "name": "Demon Slayer",
+      "emoji": "🗡️",
+      "color": "#C0392B"
+    },
+    {
+      "id": "dbz",
+      "name": "Dragon Ball Z",
+      "emoji": "🐉",
+      "color": "#8b5cf6"
+    }
+  ],
   "avatars": [
-    {"id":"luffy",   "name":"Luffy",   "color":"#e63946", "quote":"Je serai Roi des Pirates !",   "img":"assets/images/avatars/luffy.png"},
-    {"id":"zoro",    "name":"Zoro",    "color":"#22c55e", "quote":"Je ne me perdrai jamais !",     "img":"assets/images/avatars/zoro.png"},
-    {"id":"nami",    "name":"Nami",    "color":"#f59e0b", "quote":"L'argent ET la grammaire !",    "img":"assets/images/avatars/nami.png"},
-    {"id":"usopp",   "name":"Usopp",   "color":"#92400e", "quote":"J'ai 8000 hommes !",            "img":"assets/images/avatars/usopp.png"},
-    {"id":"sanji",   "name":"Sanji",   "color":"#3b82f6", "quote":"Pour mes Nakamas !",            "img":"assets/images/avatars/sanji.png"},
-    {"id":"chopper", "name":"Chopper", "color":"#ec4899", "quote":"Je ne suis pas content !",      "img":"assets/images/avatars/chopper.png"},
-    {"id":"robin",   "name":"Robin",   "color":"#8b5cf6", "quote":"La connaissance est une arme.", "img":"assets/images/avatars/robin.png"},
-    {"id":"brook",   "name":"Brook",   "color":"#6366f1", "quote":"Yohohoho !",                    "img":"assets/images/avatars/brook.png"},
-    {"id":"ace",     "name":"Ace",     "color":"#f97316", "quote":"Je ne regrette rien !",         "img":"assets/images/avatars/ace.png"},
-    {"id":"shanks",  "name":"Shanks",  "color":"#dc2626", "quote":"Je mise sur toi !",             "img":"assets/images/avatars/shanks.png"},
-    {"id":"law",     "name":"Law",     "color":"#0ea5e9", "quote":"Room. Shambles !",              "img":"assets/images/avatars/law.png"},
-    {"id":"hancock", "name":"Hancock", "color":"#f43f5e", "quote":"L'amour est invincible !",      "img":"assets/images/avatars/hancock.png"}
+    {
+      "id": "luffy",
+      "name": "Luffy",
+      "universe": "one-piece",
+      "color": "#e63946",
+      "quote": "Je serai Roi des Pirates !",
+      "quote_lesson": "Écoute bien, on va apprendre ensemble !",
+      "img": "assets/images/avatars/luffy.png"
+    },
+    {
+      "id": "zoro",
+      "name": "Zoro",
+      "universe": "one-piece",
+      "color": "#22c55e",
+      "quote": "Je ne me perdrai jamais !",
+      "quote_lesson": "Concentre-toi. Un bon sabreur ne rate pas deux fois.",
+      "img": "assets/images/avatars/zoro.png"
+    },
+    {
+      "id": "nami",
+      "name": "Nami",
+      "universe": "one-piece",
+      "color": "#f59e0b",
+      "quote": "L'argent ET la grammaire !",
+      "quote_lesson": "Je t'explique tout, suis bien mes indications !",
+      "img": "assets/images/avatars/nami.png"
+    },
+    {
+      "id": "usopp",
+      "name": "Usopp",
+      "universe": "one-piece",
+      "color": "#92400e",
+      "quote": "J'ai 8000 hommes !",
+      "quote_lesson": "Moi, le grand Usopp, je vais t'apprendre ça !",
+      "img": "assets/images/avatars/usopp.png"
+    },
+    {
+      "id": "sanji",
+      "name": "Sanji",
+      "universe": "one-piece",
+      "color": "#3b82f6",
+      "quote": "Pour mes Nakamas !",
+      "quote_lesson": "La connaissance, c'est comme la cuisine — ça se travaille.",
+      "img": "assets/images/avatars/sanji.png"
+    },
+    {
+      "id": "chopper",
+      "name": "Chopper",
+      "universe": "one-piece",
+      "color": "#ec4899",
+      "quote": "Je ne suis pas content !",
+      "quote_lesson": "Un médecin doit tout savoir ! Apprends avec moi !",
+      "img": "assets/images/avatars/chopper.png"
+    },
+    {
+      "id": "robin",
+      "name": "Robin",
+      "universe": "one-piece",
+      "color": "#8b5cf6",
+      "quote": "La connaissance est une arme.",
+      "quote_lesson": "Chaque leçon est un trésor. Découvrons-le ensemble.",
+      "img": "assets/images/avatars/robin.png"
+    },
+    {
+      "id": "brook",
+      "name": "Brook",
+      "universe": "one-piece",
+      "color": "#6366f1",
+      "quote": "Yohohoho !",
+      "quote_lesson": "Skull joke ! Allons-y, j'ai la tête bien vide pour apprendre !",
+      "img": "assets/images/avatars/brook.png"
+    },
+    {
+      "id": "ace",
+      "name": "Ace",
+      "universe": "one-piece",
+      "color": "#f97316",
+      "quote": "Je ne regrette rien !",
+      "quote_lesson": "Vas-y sans hésiter. L'échec, ça forge le caractère !",
+      "img": "assets/images/avatars/ace.png"
+    },
+    {
+      "id": "shanks",
+      "name": "Shanks",
+      "universe": "one-piece",
+      "color": "#dc2626",
+      "quote": "Je mise sur toi !",
+      "quote_lesson": "Je crois en toi. Montre-moi ce que tu vaux.",
+      "img": "assets/images/avatars/shanks.png"
+    },
+    {
+      "id": "law",
+      "name": "Law",
+      "universe": "one-piece",
+      "color": "#0ea5e9",
+      "quote": "Room. Shambles !",
+      "quote_lesson": "Analysons ça méthodiquement. Room.",
+      "img": "assets/images/avatars/law.png"
+    },
+    {
+      "id": "hancock",
+      "name": "Hancock",
+      "universe": "one-piece",
+      "color": "#f43f5e",
+      "quote": "L'amour est invincible !",
+      "quote_lesson": "Je t'enseigne parce que tu le mérites. Sois attentif.",
+      "img": "assets/images/avatars/hancock.png"
+    },
+    {
+      "id": "franky",
+      "name": "Franky",
+      "universe": "one-piece",
+      "color": "#06b6d4",
+      "quote": "SUPER !",
+      "quote_lesson": "SUPER ! On va construire quelque chose de grand !",
+      "img": "assets/images/avatars/franky.png"
+    },
+    {
+      "id": "vivi",
+      "name": "Vivi",
+      "universe": "one-piece",
+      "color": "#38bdf8",
+      "quote": "Je n'abandonnerai jamais !",
+      "quote_lesson": "Courage ! Chaque effort compte, j'en suis sûre.",
+      "img": "assets/images/avatars/vivi.png"
+    },
+    {
+      "id": "whitebeard",
+      "name": "Barbe Blanche",
+      "universe": "one-piece",
+      "color": "#7c3aed",
+      "quote": "Vous êtes tous mes fils !",
+      "quote_lesson": "Écoute bien, gamin. Je ne le répèterai pas deux fois.",
+      "img": "assets/images/avatars/whitebeard.png"
+    },
+    {
+      "id": "eren",
+      "name": "Eren",
+      "universe": "aot",
+      "color": "#4a5c3f",
+      "quote": "Je vais les exterminer !",
+      "quote_lesson": "La liberté, ça se mérite. Apprends d'abord !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/eren.jpeg"
+    },
+    {
+      "id": "mikasa",
+      "name": "Mikasa",
+      "universe": "aot",
+      "color": "#dc2626",
+      "quote": "Ce monde est cruel.",
+      "quote_lesson": "Reste concentré. Je suis là pour t'aider.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/mikasa.gif"
+    },
+    {
+      "id": "armin",
+      "name": "Armin",
+      "universe": "aot",
+      "color": "#fbbf24",
+      "quote": "Quelqu'un doit le faire !",
+      "quote_lesson": "Utilisons notre cerveau ! Je t'explique étape par étape.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/armin.jpg"
+    },
+    {
+      "id": "levi",
+      "name": "Levi",
+      "universe": "aot",
+      "color": "#6b7280",
+      "quote": "C'est le choix que tu as fait.",
+      "quote_lesson": "Arrête de te plaindre et apprends. C'est un ordre.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/levi.jpg"
+    },
+    {
+      "id": "hange",
+      "name": "Hange",
+      "universe": "aot",
+      "color": "#10b981",
+      "quote": "Fascinant !",
+      "quote_lesson": "Oh c'est fascinant ! Tu vas ADORER cette leçon !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/hange.jpeg"
+    },
+    {
+      "id": "erwin",
+      "name": "Erwin",
+      "universe": "aot",
+      "color": "#1d4ed8",
+      "quote": "Avancez !",
+      "quote_lesson": "La stratégie, c'est la clé. Écoute bien mes explications.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/erwin.jpg"
+    },
+    {
+      "id": "historia",
+      "name": "Historia",
+      "universe": "aot",
+      "color": "#f9a8d4",
+      "quote": "Je suis la vraie moi !",
+      "quote_lesson": "Sois toi-même et apprends à ton rythme. Je suis là !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/historia.png"
+    },
+    {
+      "id": "jean",
+      "name": "Jean",
+      "universe": "aot",
+      "color": "#d97706",
+      "quote": "Je veux survivre.",
+      "quote_lesson": "Soyons réalistes : si tu apprends ça, tu t'en sors.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/jean.jpg"
+    },
+    {
+      "id": "sasha",
+      "name": "Sasha",
+      "universe": "aot",
+      "color": "#a16207",
+      "quote": "J'ai faim !",
+      "quote_lesson": "Apprendre c'est comme manger : plus tu en prends, mieux c'est !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/sasha.jpeg"
+    },
+    {
+      "id": "reiner",
+      "name": "Reiner",
+      "universe": "aot",
+      "color": "#b45309",
+      "quote": "Je ferai mon devoir.",
+      "quote_lesson": "Le devoir avant tout. Concentre-toi sur cette leçon.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/reiner.jpg"
+    },
+    {
+      "id": "annie",
+      "name": "Annie",
+      "universe": "aot",
+      "color": "#94a3b8",
+      "quote": "Seuls les forts survivent.",
+      "quote_lesson": "Pas de sentiments. Juste de l'efficacité. Apprends.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/annie.jpeg"
+    },
+    {
+      "id": "connie",
+      "name": "Connie",
+      "universe": "aot",
+      "color": "#84cc16",
+      "quote": "Compris !",
+      "quote_lesson": "Compris ? Moi aussi j'apprends en même temps que toi !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/connie.jpg"
+    },
+    {
+      "id": "zeke",
+      "name": "Zeke",
+      "universe": "aot",
+      "color": "#6b21a8",
+      "quote": "C'est mon plan.",
+      "quote_lesson": "Tout est dans le plan. Suis mes explications précisément.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/zeke.jpg"
+    },
+    {
+      "id": "naruto",
+      "name": "Naruto",
+      "universe": "naruto",
+      "color": "#f97316",
+      "quote": "Crois en tes rêves, dattebayo !",
+      "quote_lesson": "Jamais je n'abandonne ! Toi non plus, crois-moi !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/gifs/naruto%20GIF6.gif"
+    },
+    {
+      "id": "sasuke",
+      "name": "Sasuke",
+      "universe": "naruto",
+      "color": "#1e3a5f",
+      "quote": "Je suis seul.",
+      "quote_lesson": "Inutile de parler trop. Observe et retiens.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/sasuke.png"
+    },
+    {
+      "id": "sakura",
+      "name": "Sakura",
+      "universe": "naruto",
+      "color": "#f43f5e",
+      "quote": "Je suis forte maintenant !",
+      "quote_lesson": "J'ai travaillé dur pour apprendre. Fais pareil !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/sakura.jpg"
+    },
+    {
+      "id": "kakashi",
+      "name": "Kakashi",
+      "universe": "naruto",
+      "color": "#64748b",
+      "quote": "Ceux qui abandonnent leurs règles sont des ordures.",
+      "quote_lesson": "Je t'enseignerai tout ce que je sais. Prêt ?",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/hatake%20kakashi.jpeg"
+    },
+    {
+      "id": "gaara",
+      "name": "Gaara",
+      "universe": "naruto",
+      "color": "#16a34a",
+      "quote": "J'existe pour moi-même.",
+      "quote_lesson": "La sable protège ceux qui apprennent. Travaille bien.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/gaara%20.jpg"
+    },
+    {
+      "id": "minato",
+      "name": "Minato",
+      "universe": "naruto",
+      "color": "#facc15",
+      "quote": "Je suis fier de vous.",
+      "quote_lesson": "Je serai là en un éclair si tu as besoin d'aide !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/minato%20.jpg"
+    },
+    {
+      "id": "jiraiya",
+      "name": "Jiraiya",
+      "universe": "naruto",
+      "color": "#7c3aed",
+      "quote": "Un homme doit toujours croire !",
+      "quote_lesson": "Le grand Jiraiya va t'enseigner les secrets de la sagesse !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/jiraiya.webp"
+    },
+    {
+      "id": "tanjiro",
+      "name": "Tanjiro",
+      "universe": "demon-slayer",
+      "color": "#16a34a",
+      "quote": "Je protégerai tout le monde !",
+      "quote_lesson": "Respirons et apprenons ensemble, pas à pas !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tanjiro.jpeg"
+    },
+    {
+      "id": "zenitsu",
+      "name": "Zenitsu",
+      "universe": "demon-slayer",
+      "color": "#eab308",
+      "quote": "Je vais mourir !",
+      "quote_lesson": "J'ai peur aussi... mais on y va quand même !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/zenitsu.jpeg"
+    },
+    {
+      "id": "inosuke",
+      "name": "Inosuke",
+      "universe": "demon-slayer",
+      "color": "#22c55e",
+      "quote": "Je suis le meilleur !",
+      "quote_lesson": "GRAAAH ! On apprend et on se bat contre l'ignorance !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/inosuke.jpeg"
+    },
+    {
+      "id": "rengoku",
+      "name": "Rengoku",
+      "universe": "demon-slayer",
+      "color": "#f97316",
+      "quote": "Mets tout ton cœur dans chaque coup !",
+      "quote_lesson": "Flamme du cœur ! Apprends avec toute ton énergie !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/rengoku.jpg"
+    },
+    {
+      "id": "tengen",
+      "name": "Tengen",
+      "universe": "demon-slayer",
+      "color": "#a21caf",
+      "quote": "Flamboyant !",
+      "quote_lesson": "La méthode flamboyante ! On apprend avec style !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tengen.jpeg"
+    },
+    {
+      "id": "kanao",
+      "name": "Kanao",
+      "universe": "demon-slayer",
+      "color": "#ec4899",
+      "quote": "Je ferai mon possible.",
+      "quote_lesson": "Observe attentivement. La précision est tout.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/kanao.jpeg"
+    },
+    {
+      "id": "mitsuri",
+      "name": "Mitsuri",
+      "universe": "demon-slayer",
+      "color": "#f43f5e",
+      "quote": "L'amour donne de la force !",
+      "quote_lesson": "Apprendre c'est beau ! Je t'encourage de tout mon cœur !",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/mitsuri.jpeg"
+    },
+    {
+      "id": "obanai",
+      "name": "Obanai",
+      "universe": "demon-slayer",
+      "color": "#7c3aed",
+      "quote": "La rigueur avant tout.",
+      "quote_lesson": "Concentre-toi. La moindre erreur compte.",
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/obanai.jpeg"
+    },
+    {
+      "id": "goku",
+      "name": "Goku",
+      "universe": "dbz",
+      "color": "#f97316",
+      "quote": "Je vais vous dépasser !",
+      "quote_lesson": "L'entraînement c'est ma vie ! Apprends avec moi !",
+      "img": "assets/images/dbz/1.png"
+    },
+    {
+      "id": "vegeta",
+      "name": "Vegeta",
+      "universe": "dbz",
+      "color": "#1d4ed8",
+      "quote": "Je suis le Prince des Saiyans !",
+      "quote_lesson": "Un prince ne fait pas d'erreurs. Apprends correctement.",
+      "img": "assets/images/dbz/2.png"
+    },
+    {
+      "id": "piccolo",
+      "name": "Piccolo",
+      "universe": "dbz",
+      "color": "#16a34a",
+      "quote": "L'entraînement ne ment pas.",
+      "quote_lesson": "Je serai ton mentor. Suis mes instructions à la lettre.",
+      "img": "assets/images/dbz/3.png"
+    },
+    {
+      "id": "gohan",
+      "name": "Gohan",
+      "universe": "dbz",
+      "color": "#fbbf24",
+      "quote": "Je ferai de mon mieux !",
+      "quote_lesson": "Les études ET le combat ! On peut tout faire !",
+      "img": "assets/images/dbz/4.png"
+    },
+    {
+      "id": "trunks",
+      "name": "Trunks",
+      "universe": "dbz",
+      "color": "#7c3aed",
+      "quote": "Je viens du futur.",
+      "quote_lesson": "Dans le futur, ceux qui savent s'en sortent. Apprends !",
+      "img": "assets/images/dbz/5.png"
+    },
+    {
+      "id": "krilin",
+      "name": "Krilin",
+      "universe": "dbz",
+      "color": "#f97316",
+      "quote": "Je fais de mon mieux !",
+      "quote_lesson": "Je ne suis pas le plus fort, mais je ne lâche pas !",
+      "img": "assets/images/dbz/6.png"
+    },
+    {
+      "id": "android18",
+      "name": "Android 18",
+      "universe": "dbz",
+      "color": "#6366f1",
+      "quote": "Efficacité maximale.",
+      "quote_lesson": "Calculé et précis. C'est comme ça qu'on réussit.",
+      "img": "assets/images/dbz/7.png"
+    },
+    {
+      "id": "bulma",
+      "name": "Bulma",
+      "universe": "dbz",
+      "color": "#06b6d4",
+      "quote": "Mon génie n'a pas de limites !",
+      "quote_lesson": "La science et l'intelligence, c'est le vrai pouvoir !",
+      "img": "assets/images/dbz/8.png"
+    }
   ]
 }
