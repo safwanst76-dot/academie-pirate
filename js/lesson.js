@@ -75,6 +75,11 @@ function _buildLessonOverlay(lesson, worldCfg, avatarUrl, color, n) {
   requestAnimationFrame(function(){ ov.style.opacity = '1'; });
   window.scrollTo(0,0);
 
+  // ── Mini-jeux Phase 3 — initialisation après rendu DOM ──────
+  if (lesson.minigames && lesson.minigames.length > 0) {
+    _initMinigames(lesson.minigames);
+  }
+
   // Auto-skip après 90s (sécurité)
   clearTimeout(_lesson_timer);
   _lesson_timer = setTimeout(function(){ lesson_start(); }, 90000);
@@ -145,6 +150,13 @@ function _buildLessonHTML(lesson, accent, bg, textAccent, avatarUrl, n, worldCfg
       '</div>' +
       // Sections
       sectionsHTML +
+      // ── Mini-jeux Phase 3 — rétro-compatible (absent = rien) ──
+      (lesson.minigames && lesson.minigames.length > 0
+        ? '<div class="mg-section">' +
+            '<div class="mg-section-title" style="--lesson-accent:' + accent + '">🃏 Entraînement interactif</div>' +
+            '<div id="lesson-minigame-zone"></div>' +
+          '</div>'
+        : '') +
       // Astuce du héros
       '<div class="lesson-hero-tip" style="background:'+accent+'15;border-color:'+accent+'44">' +
         '<div class="lesson-tip-icon">💡</div>' +
@@ -427,4 +439,45 @@ function _hexDarken(hex, amount) {
   return '#' + r.toString(16).padStart(2,'0') + g.toString(16).padStart(2,'0') + b.toString(16).padStart(2,'0');
 }
 
-console.info('📖 lesson.js chargé — 4 mondes × 8 îles × 2 questions échauffement');
+// ══════════════════════════════════════════════════════════════
+// 12. MINI-JEUX — Phase 3
+// Orchestrateur : lance le bon moteur selon le type
+// Rétro-compatible : si le moteur n'est pas chargé → passe silencieusement
+// ══════════════════════════════════════════════════════════════
+function _initMinigames(minigames) {
+  // Attendre que le DOM du content-panel soit visible (après skipHero)
+  // On injecte le mini-jeu dès que la zone est disponible
+  var maxTries = 40; // 4 secondes max
+  var tries = 0;
+
+  function tryInit() {
+    var zone = document.getElementById('lesson-minigame-zone');
+    if (!zone) {
+      if (tries++ < maxTries) setTimeout(tryInit, 100);
+      return;
+    }
+
+    var mg = minigames[0]; // Phase 3 : 1 mini-jeu par leçon
+    if (!mg || !mg.type) return;
+
+    try {
+      if (mg.type === 'flashcards' && window.MiniFlashcards) {
+        MiniFlashcards.init(zone, mg, function () {
+          // Après le mini-jeu : scroll smooth vers le warmup
+          var warmup = document.querySelector('.lesson-warmup');
+          if (warmup) warmup.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+      // Autres types ajoutés ici en Phase 3 suite :
+      // else if (mg.type === 'tri_mots' && window.MiniTriMots) { ... }
+      // else if (mg.type === 'association' && window.MiniAssociation) { ... }
+    } catch (err) {
+      console.error('[lesson.js] Erreur init minigame:', err);
+      // Fail silently — la leçon continue normalement sans le mini-jeu
+    }
+  }
+
+  tryInit();
+}
+
+console.info('📖 lesson.js chargé — 4 mondes × 8 îles × 2 questions échauffement + mini-jeux Phase 3');
