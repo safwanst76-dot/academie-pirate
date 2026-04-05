@@ -1,6 +1,6 @@
 # ACADÉMIE PIRATE — ARCHITECTURE V2
 *Document de référence — À lire en priorité avant tout développement*
-*Version : 2.6 | Mise à jour : 5 Avril 2026*
+*Version : 2.7 | Mise à jour : 5 Avril 2026*
 
 ---
 
@@ -609,6 +609,13 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 ✅ Corrections colorées + explications + GIF résultat
 ✅ Retour à la carte avec progression
 ✅ 4 niveaux 100% fonctionnels avec personnages uniques
+✅ URL routing — #/english/cm2, #/english/6eme, #/grand-bleu, #/select (URL-01)
+✅ Domaine custom — aca-pirate.ch (Infomaniak + GitHub Pages + Supabase)
+✅ SEO — title/meta/canonical/hreflang/sitemap/robots.txt par route
+✅ ARCHI-01 Fondations — tokens.css + AP.events + AP.state + AP.api
+✅ Phase 3a — AvatarPicker 51 personnages · 5 univers · filtres · mobile-first
+✅ Code secret alphanumérique 4-8 chars (lettres + chiffres) + indicateur force
+✅ Fond login — 5 colonnes tous univers (AOT, Naruto, DS, DBZ, One Piece)
 ✅ Flashcards mini-jeux — 32 leçons English (8 cartes × 4 niveaux)
 ✅ URL routing — #/english/cm2, #/english/6eme, #/grand-bleu (URL-01)
 ✅ Domaine custom — aca-pirate.ch (DNS Infomaniak + GitHub Pages + Supabase)
@@ -627,25 +634,28 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 ## PROCHAINES ACTIONS IMMÉDIATES
 
 ```
-0. FONDATIONS ARCHITECTURE (IMMÉDIAT — règle ARCHI-01)
-   → css/tokens.css         — design system : couleurs, spacing, typo, breakpoints
-   → js/core/state.js       — état centralisé : enfant connecté, avatar, XP, monde
-   → js/core/events.js      — bus pub/sub : composants découplés
-   → js/core/api.js         — couche données Supabase unifiée
+✅ ARCHI-01 Fondations — TERMINÉ
+   ✅ css/tokens.css · js/core/events.js · state.js · api.js
 
-1. Phase 3 — Leçon interactive + Avatar universel (EN COURS)
-   → Pool 40+ avatars tous univers (One Piece, AOT, Naruto, DBZ, Demon Slayer)
-   → Écran sélection avatar mobile-first avec filtres univers
-   → Avatar de l'enfant dans les leçons (bulles dialogue manga)
-   → Refonte flashcards avec avatar qui parle
+✅ Phase 3a — Avatar universel — TERMINÉ
+   ✅ 51 avatars · 5 univers · AvatarPicker component
+   ✅ Code secret alphanumérique · Fond login multi-univers
 
-2. Phase 4 — Contenu complet toutes matières
-   → Maths (Pays du Feu) N2/N3/N4
-   → Français (Grand Bleu) N2/N4
-   → Histoire, Sciences, Géo N2/N4
+🔜 Phase 3b — Leçon dialoguée (PROCHAINE)
+   → js/components/lesson-dialog.js — bulle dialogue manga
+   → Avatar enfant parle pendant la leçon (quote_lesson)
+   → Réactions animate sur warmup (celebrate / confused)
+   → Prénom de l'enfant dans les dialogues (AP.state)
 
-3. Phase 5 — Nouveaux mondes
-   → Konoha (SVT), Aqua (Géo), Éclair (Physique-Chimie)
+🔜 Phase 3c — Flashcards gamifiées
+   → Avatar présente chaque carte en bulle dialogue
+   → Réactions visuelles selon résultat
+
+🔜 Phase 4 — Contenu complet toutes matières
+   → Maths · Français · Histoire · Sciences · Géo N2/N3/N4
+
+🔜 Phase 5 — Nouveaux mondes
+   → Konoha (SVT) · Aqua (Géo) · Éclair (Physique-Chimie)
 ```
 
 ---
@@ -653,4 +663,4 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 *Ce document doit être mis à jour à chaque phase complétée.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
 *Règle ARCHI-01 : tout nouveau code respecte l'architecture modulaire cible.*
-*Version 2.6 — 5 Avril 2026*
+*Version 2.7 — 5 Avril 2026*
