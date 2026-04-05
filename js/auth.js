@@ -168,40 +168,101 @@ function afShowLogin() {
 }
 
 function _buildHeroBg() {
-  // ✅ FIX : utiliser un div dédié (#login-hero-bg) au lieu de #manga-bg
-  // #manga-bg est utilisé par les autres pages — le polluer cause le fond
-  // persistant sur la carte et les îles.
   var existing = document.getElementById('login-hero-bg');
   if (existing) { existing.style.display = 'flex'; return; }
 
   var bg = document.createElement('div');
   bg.id = 'login-hero-bg';
-  bg.style.cssText = [
-    'position:fixed;inset:0;z-index:0;',
-    'display:flex;overflow:hidden;pointer-events:none;'
-  ].join('');
+  bg.style.cssText = 'position:fixed;inset:0;z-index:0;display:flex;overflow:hidden;pointer-events:none;';
   document.body.appendChild(bg);
 
-  var avatars = [
-    'luffy','zoro','nami','usopp','sanji','chopper','robin','brook',
-    'ace','shanks','law','hancock'
+  // Mélange de tous les univers — 5 colonnes (règle AV-01)
+  var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public';
+  var AOT   = SUPABASE + '/island-aot/characters/';
+  var DS    = SUPABASE + '/island-demon-slayer/characters/';
+  var PDF   = SUPABASE + '/island-pays-du-feu/characters/';
+  var LOCAL = 'assets/images/avatars/';
+  var DBZ   = 'assets/images/dbz/';
+
+  // 5 colonnes thématiques
+  var columns = [
+    // Col 1 — One Piece
+    [
+      { src: LOCAL + 'luffy.png' },
+      { src: LOCAL + 'zoro.png' },
+      { src: LOCAL + 'nami.png' },
+      { src: LOCAL + 'sanji.png' },
+      { src: LOCAL + 'robin.png' },
+      { src: LOCAL + 'ace.png' },
+      { src: LOCAL + 'shanks.png' },
+      { src: LOCAL + 'law.png' },
+    ],
+    // Col 2 — Attack on Titan
+    [
+      { src: AOT + 'eren.jpeg' },
+      { src: AOT + 'mikasa.gif' },
+      { src: AOT + 'levi.jpg' },
+      { src: AOT + 'armin.jpg' },
+      { src: AOT + 'hange.jpeg' },
+      { src: AOT + 'erwin.jpg' },
+      { src: AOT + 'historia.png' },
+      { src: AOT + 'annie.jpeg' },
+    ],
+    // Col 3 — Naruto + Demon Slayer
+    [
+      { src: PDF + 'sasuke.png' },
+      { src: DS  + 'tanjiro.jpg' },
+      { src: PDF + 'sakura.jpg' },
+      { src: DS  + 'rengoku.jpg' },
+      { src: PDF + 'hatake%20kakashi.jpeg' },
+      { src: DS  + 'zenitsu.jpg' },
+      { src: PDF + 'gaara%20.jpg' },
+      { src: DS  + 'inosuke.jpg' },
+    ],
+    // Col 4 — Dragon Ball Z
+    [
+      { src: DBZ + '1.png' },
+      { src: DBZ + '2.png' },
+      { src: DBZ + '3.png' },
+      { src: DBZ + '4.png' },
+      { src: DBZ + '5.png' },
+      { src: DBZ + '6.png' },
+      { src: DBZ + '7.png' },
+      { src: DBZ + '8.png' },
+    ],
+    // Col 5 — Mix tous univers
+    [
+      { src: LOCAL + 'chopper.png' },
+      { src: AOT   + 'jean.jpg' },
+      { src: LOCAL + 'hancock.png' },
+      { src: DS    + 'shinobu.png' },
+      { src: LOCAL + 'franky.png' },
+      { src: AOT   + 'reiner.jpg' },
+      { src: LOCAL + 'brook.png' },
+      { src: DS    + 'tengen.jpg' },
+    ],
   ];
 
-  for (var s = 0; s < 5; s++) {
+  var durations = ['28s', '36s', '24s', '40s', '32s'];
+
+  columns.forEach(function(imgs, colIdx) {
     var strip = document.createElement('div');
-    strip.className = 'bg-strip';
-    var imgs = [];
-    for (var k = 0; k < 6; k++) imgs.push(avatars[(s * 3 + k) % avatars.length]);
-    var all = imgs.concat(imgs);
-    all.forEach(function(id) {
+    strip.className = 'bg-strip login-bg-strip';
+    strip.style.animationDuration = durations[colIdx];
+    if (colIdx % 2 === 1) strip.style.animationDirection = 'reverse';
+
+    // Doubler pour le scroll infini
+    var allImgs = imgs.concat(imgs);
+    allImgs.forEach(function(item) {
       var img = document.createElement('img');
-      img.src = 'assets/images/avatars/' + id + '.png';
-      img.alt = id;
+      img.src = item.src;
+      img.alt = '';
       img.loading = 'lazy';
+      img.onerror = function() { this.style.display = 'none'; };
       strip.appendChild(img);
     });
     bg.appendChild(strip);
-  }
+  });
 }
 
 function _hideHeroBg() {

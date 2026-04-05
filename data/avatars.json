@@ -355,7 +355,7 @@
       "color": "#16a34a",
       "quote": "Je protégerai tout le monde !",
       "quote_lesson": "Respirons et apprenons ensemble, pas à pas !",
-      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tanjiro.jpeg"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tanjiro.jpg"
     },
     {
       "id": "zenitsu",
@@ -364,7 +364,7 @@
       "color": "#eab308",
       "quote": "Je vais mourir !",
       "quote_lesson": "J'ai peur aussi... mais on y va quand même !",
-      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/zenitsu.jpeg"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/zenitsu.jpg"
     },
     {
       "id": "inosuke",
@@ -373,7 +373,7 @@
       "color": "#22c55e",
       "quote": "Je suis le meilleur !",
       "quote_lesson": "GRAAAH ! On apprend et on se bat contre l'ignorance !",
-      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/inosuke.jpeg"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/inosuke.jpg"
     },
     {
       "id": "rengoku",
@@ -391,7 +391,7 @@
       "color": "#a21caf",
       "quote": "Flamboyant !",
       "quote_lesson": "La méthode flamboyante ! On apprend avec style !",
-      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tengen.jpeg"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/tengen.jpg"
     },
     {
       "id": "kanao",
@@ -400,7 +400,7 @@
       "color": "#ec4899",
       "quote": "Je ferai mon possible.",
       "quote_lesson": "Observe attentivement. La précision est tout.",
-      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/kanao.jpeg"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/shinobu.png"
     },
     {
       "id": "mitsuri",
@@ -409,7 +409,7 @@
       "color": "#f43f5e",
       "quote": "L'amour donne de la force !",
       "quote_lesson": "Apprendre c'est beau ! Je t'encourage de tout mon cœur !",
-      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/mitsuri.jpeg"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/muichiro.jpg"
     },
     {
       "id": "obanai",
@@ -418,7 +418,7 @@
       "color": "#7c3aed",
       "quote": "La rigueur avant tout.",
       "quote_lesson": "Concentre-toi. La moindre erreur compte.",
-      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/obanai.jpeg"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/kokushibo.png"
     },
     {
       "id": "goku",
