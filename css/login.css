@@ -11,6 +11,17 @@ body.login-active #voice-sub {
 }
 
 /* ── Écran login plein page ── */
+/* ── Overlay sombre sur le fond hero login ── */
+#login-hero-bg::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 16, 0.72);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Écran login plein page ── */
 #login-screen {
   position: fixed;
   inset: 0;
@@ -77,6 +88,8 @@ body.login-active #voice-sub {
   align-items: center;
   gap: 16px;
   width: min(440px, 92vw);
+  position: relative;
+  z-index: 10;
 }
 
 /* ── GIF ── */
@@ -304,4 +317,9 @@ body.login-active #voice-sub {
   border-color: transparent !important;
   box-shadow: none !important;
   background: transparent !important;
+}
+/* ── Supprimer "Jouer sans compte" (règle professionnelle) ── */
+.login-sep,
+.login-skip {
+  display: none !important;
 }

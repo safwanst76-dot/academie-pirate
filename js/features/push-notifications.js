@@ -28,7 +28,7 @@
   // ── Enregistrer le Service Worker ──
   async function registerSW() {
     try {
-      var reg = await navigator.serviceWorker.register('/academie-pirate/sw.js', { scope: '/academie-pirate/' });
+      var reg = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
       return reg;
     } catch(e) {
       console.warn('[Push] SW registration failed:', e.message);
