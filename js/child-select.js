@@ -22,7 +22,7 @@ async function showChildSelect() {
         ${children.map(child => `
           <div class="cs-profile" onclick="selectChild('${child.id}', ${JSON.stringify(child).replace(/"/g, '&quot;')})">
             <div class="cs-avatar">
-              <img src="assets/images/avatars/${child.avatar_id}.png"
+              <img src="${_resolveAvatarImg(child.avatar_id)}"
                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
                    alt="${child.username}">
               <div class="cs-avatar-fallback" style="display:none">🏴‍☠️</div>
@@ -53,18 +53,15 @@ async function showChildSelect() {
     </div>
   `;
 
-  // Remplir les avatars disponibles
+  // ── Avatar Picker — nouveau composant multi-univers (ARCHI-01) ──
   const pickEl = overlay.querySelector('#cs-avatar-pick');
-  if (pickEl && typeof AVATARS !== 'undefined') {
-    let selectedAvatarId = AVATARS[0].id;
-    pickEl.innerHTML = AVATARS.map(av => `
-      <div class="cs-av-opt ${av.id === selectedAvatarId ? 'selected' : ''}"
-           data-id="${av.id}"
-           onclick="selectAvatarOpt('${av.id}')">
-        <img src="${av.img}" onerror="this.style.display='none'" alt="${av.name}">
-        <span>${av.name}</span>
-      </div>
-    `).join('');
+  if (pickEl && typeof AvatarPicker !== 'undefined') {
+    AvatarPicker.render(pickEl, {
+      selected: _selectedAvatar || 'luffy',
+      onSelect: function(avatar) {
+        _selectedAvatar = avatar.id;
+      }
+    });
   }
 
   overlay.classList.add('visible');
@@ -79,6 +76,14 @@ function hideChildSelect() {
 async function selectChild(childId, childObj) {
   const child = typeof childObj === 'string' ? JSON.parse(childObj) : childObj;
   dbSetActiveChild(child);
+  // Sync AP.state (ARCHI-01)
+  if (window.AP && window.AP.state) {
+    window.AP.state.initFromChild(child);
+  }
+  // Émettre événement (ARCHI-01)
+  if (window.AP && window.AP.events) {
+    window.AP.events.emit('child:selected', child);
+  }
   hideChildSelect();
 
   // Migrer localStorage si première fois
@@ -105,12 +110,23 @@ function hideAddChild() {
   document.getElementById('cs-profiles').style.display = 'grid';
 }
 
-let _selectedAvatar = 'luffy';
+var _selectedAvatar = 'luffy';
+// selectAvatarOpt conservé pour rétro-compat (appelé par onclick inline si besoin)
 function selectAvatarOpt(id) {
   _selectedAvatar = id;
-  document.querySelectorAll('.cs-av-opt').forEach(el => {
-    el.classList.toggle('selected', el.dataset.id === id);
-  });
+  var pickEl = document.getElementById('cs-avatar-pick');
+  if (pickEl && typeof AvatarPicker !== 'undefined') {
+    AvatarPicker.setSelected(pickEl, id);
+  }
+}
+
+// Résoudre l'URL d'un avatar par son ID (supporte tous les univers)
+function _resolveAvatarImg(avatarId) {
+  if (typeof AVATARS !== 'undefined' && Array.isArray(AVATARS)) {
+    var found = AVATARS.find(function(av) { return av.id === avatarId; });
+    if (found) return found.img;
+  }
+  return 'assets/images/avatars/' + (avatarId || 'luffy') + '.png';
 }
 
 async function createChildProfile() {
@@ -126,6 +142,12 @@ async function createChildProfile() {
   btn.textContent = '⏳ Création...';
   btn.disabled = true;
 
+  // Récupérer l'avatar du picker si disponible
+  var pickEl = document.getElementById('cs-avatar-pick');
+  if (pickEl && typeof AvatarPicker !== 'undefined') {
+    var pickedAv = AvatarPicker.getSelected(pickEl);
+    if (pickedAv) _selectedAvatar = pickedAv.id;
+  }
   const result = await dbCreateChild(name, _selectedAvatar);
 
   if (result.ok) {
