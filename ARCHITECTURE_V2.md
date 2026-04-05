@@ -1,6 +1,6 @@
 # ACADÉMIE PIRATE — ARCHITECTURE V2
 *Document de référence — À lire en priorité avant tout développement*
-*Version : 2.7 | Mise à jour : 5 Avril 2026*
+*Version : 2.8 | Mise à jour : 5 Avril 2026*
 
 ---
 
@@ -530,6 +530,26 @@ Voir la section "RÈGLE FONDAMENTALE ARCHITECTURE" en tête de document.
 **Résumé** : tout nouveau code = IIFE + tokens.css + api.js + events.js + state.js.
 Migration progressive : nouveau code = architecture cible. Existant = touché seulement si modifié.
 
+### Règle DEV-01 — Source de vérité GitHub ⚠️ OBLIGATOIRE
+**TOUJOURS lire les fichiers depuis GitHub — jamais depuis la mémoire de session.**
+
+```bash
+# Protocole OBLIGATOIRE en début de chaque session de dev :
+cd /home/claude/real-repo
+git fetch origin
+git reset --hard origin/main
+# → Seulement après : lire les fichiers et coder
+```
+
+Règles :
+- ✅ Code source → git fetch + reset --hard origin/main AVANT toute lecture ou modification
+- ✅ ARCHITECTURE_V2.md → seul fichier lu depuis le projet (mis à jour en permanence, fait foi)
+- ❌ INTERDIT de coder à partir d'une version mémorisée ou d'une session précédente
+- ❌ INTERDIT de supposer qu'un fichier n'a pas changé depuis la dernière session
+
+Raison : les fichiers évoluent entre les sessions. Coder sur une version mémorisée
+crée des régressions silencieuses, des conflits et des bugs difficiles à tracer.
+
 ### Règle ADM-01 — Contenu sans code
 Tout nouveau contenu créable depuis l'admin sans modifier le JS.
 
@@ -663,4 +683,4 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 *Ce document doit être mis à jour à chaque phase complétée.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
 *Règle ARCHI-01 : tout nouveau code respecte l'architecture modulaire cible.*
-*Version 2.7 — 5 Avril 2026*
+*Version 2.8 — 5 Avril 2026*
