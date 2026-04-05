@@ -67,7 +67,11 @@
   // ENTRÉE — appelé par router.js showEnglish()
   // ══════════════════════════════════════════════════════════════
 
-  function showEnglish() {
+  function showEnglish(silent) {
+    // URL-01 : mettre à jour l'URL
+    if (!silent && window.history && window.history.pushState) {
+      history.pushState(null, '', '#/english');
+    }
     // Masquer TOUT (globe, autres mondes) — règle NR-01
     if (typeof hideAll === 'function') hideAll();
 
@@ -192,9 +196,13 @@
   // GRILLE DES ÎLES
   // ══════════════════════════════════════════════════════════════
 
-  async function showLevel(niveauCode) {
+  async function showLevel(niveauCode, silent) {
     _currentNiveau = niveauCode;
-    var niveau     = NIVEAUX.find(function(n){ return n.code === niveauCode; });
+    // URL-01 : mettre à jour l'URL avec le niveau sélectionné
+    if (!silent && window.history && window.history.pushState) {
+      history.pushState(null, '', '#/english/' + niveauCode);
+    }
+    var niveau = NIVEAUX.find(function(n){ return n.code === niveauCode; });
     if (!niveau) return;
 
     // Masquer globe + autres sections
@@ -439,6 +447,7 @@
 
   window.showEnglish     = showEnglish;   // ← appelé par router.js
   window.aot_showEnglish = showEnglish;
+  window.aot_showLevel   = showLevel;     // ← URL-01 : navigation directe par niveau
   window.aot_showLevel   = showLevel;
   window.aot_startIsland = startIsland;
   window.buildAotLevels  = showEnglish;
