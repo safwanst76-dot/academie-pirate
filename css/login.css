@@ -10,17 +10,26 @@ body.login-active #voice-sub {
   display: none !important;
 }
 
-/* ── Écran login plein page ── */
-/* ── Overlay sombre sur le fond hero login ── */
+/* ── Overlay sombre sur fond hero login (comme les mondes) ── */
+#login-hero-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 #login-hero-bg::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(5, 8, 16, 0.72);
+  background: rgba(5, 8, 16, 0.68);
   pointer-events: none;
   z-index: 1;
 }
 
+/* Login card au-dessus de l'overlay */
 /* ── Écran login plein page ── */
 #login-screen {
   position: fixed;
@@ -88,8 +97,6 @@ body.login-active #voice-sub {
   align-items: center;
   gap: 16px;
   width: min(440px, 92vw);
-  position: relative;
-  z-index: 10;
 }
 
 /* ── GIF ── */
@@ -318,8 +325,23 @@ body.login-active #voice-sub {
   box-shadow: none !important;
   background: transparent !important;
 }
-/* ── Supprimer "Jouer sans compte" (règle professionnelle) ── */
+/* ── Fond login — style net comme les mondes ── */
+#login-hero-bg .bg-strip {
+  opacity: 1;
+}
+#login-hero-bg .bg-strip img {
+  filter: saturate(1.2) brightness(0.6);
+  opacity: 0.75;
+}
+
+/* ── Masquer "Jouer sans compte" ── */
 .login-sep,
 .login-skip {
   display: none !important;
+}
+
+/* ── Login card z-index au-dessus overlay ── */
+.login-card {
+  position: relative;
+  z-index: 10;
 }

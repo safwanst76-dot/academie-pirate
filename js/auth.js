@@ -538,6 +538,7 @@ async function afShowCreateChild(isFirstChild) {
   screen.style.display = 'flex';
 
   _bindPinInputs('af-pin');
+  setTimeout(_initAvatarPickerInForm, 50);
 
   var form = screen.querySelector('#af-child-form');
   if (form) {
@@ -551,28 +552,9 @@ async function afShowCreateChild(isFirstChild) {
 function _tplCreateChild(isFirstChild) {
   var avatarOpts = [
     { id: 'luffy',   emoji: '🍖', name: 'Luffy'   },
-    { id: 'nami',    emoji: '🗺️', name: 'Nami'    },
-    { id: 'zoro',    emoji: '⚔️', name: 'Zoro'    },
-    { id: 'robin',   emoji: '📚', name: 'Robin'   },
-    { id: 'usopp',   emoji: '🎯', name: 'Usopp'   },
-    { id: 'sanji',   emoji: '🍳', name: 'Sanji'   },
-    { id: 'chopper', emoji: '🦌', name: 'Chopper' },
-    { id: 'brook',   emoji: '💀', name: 'Brook'   }
   ];
-
-  var avHtml = avatarOpts.map(function (av, i) {
-    var selected = i === 0;
-    return `<div class="af-av-opt${selected ? ' selected' : ''}" data-id="${av.id}"
-      onclick="afSelectChildAvatar(this)">
-      <img src="assets/images/avatars/${av.id}.png"
-        onerror="this.style.opacity='.3'"
-        alt="${av.name}"
-        style="width:44px;height:44px;border-radius:50%;object-fit:cover;
-               border:2px solid ${selected ? '#ffd700' : 'rgba(255,255,255,.2)'};
-               transition:border-color .2s;">
-      <span>${av.name}</span>
-    </div>`;
-  }).join('');
+  // Avatar picker géré par AvatarPicker component (Phase 3a — ARCHI-01)
+  var avHtml = '<div id="af-avatar-picker-wrap" style="width:100%"></div>';
 
   var pinInputs = [0, 1, 2, 3, 4, 5].map(function (i) {
     return `<input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
@@ -626,9 +608,7 @@ function _tplCreateChild(isFirstChild) {
 
       <div style="display:flex;flex-direction:column;gap:8px">
         <label style="${AF_LABEL_STYLE}">🎭 Choisir un avatar</label>
-        <div style="
-          display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
-        " id="af-avatar-grid">
+        <div id="af-avatar-grid">
           ${avHtml}
         </div>
       </div>
@@ -669,6 +649,31 @@ function afSelectChildAvatar(el) {
   el.classList.add('selected');
   var inp = document.getElementById('af-child-avatar');
   if (inp) inp.value = el.dataset.id;
+}
+
+// ── Initialiser le AvatarPicker dans le formulaire enfant (ARCHI-01) ──
+function _initAvatarPickerInForm() {
+  var wrap = document.getElementById('af-avatar-picker-wrap');
+  if (!wrap) return;
+  if (typeof AvatarPicker !== 'undefined') {
+    AvatarPicker.render(wrap, {
+      selected: 'luffy',
+      onSelect: function (avatar) {
+        var inp = document.getElementById('af-child-avatar');
+        if (inp) inp.value = avatar.id;
+      }
+    });
+  } else {
+    // Fallback : mini-grid One Piece si le composant n'est pas chargé
+    var fallbacks = ['luffy','nami','zoro','robin','usopp','sanji','chopper','brook'];
+    wrap.innerHTML = '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">' +
+      fallbacks.map(function(id, i) {
+        return '<div class="af-av-opt' + (i===0?' selected':'') + '" data-id="' + id + '" onclick="afSelectChildAvatar(this)" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px;border-radius:10px;border:2px solid ' + (i===0?'#ffd700':'rgba(255,255,255,.2)') + ';cursor:pointer;background:rgba(255,255,255,.04)">' +
+          '<img src="assets/images/avatars/' + id + '.png" style="width:44px;height:44px;border-radius:50%;object-fit:cover" onerror="this.style.opacity=0.3">' +
+          '<span style="font-family:Nunito,sans-serif;font-size:.6rem;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase">' + id + '</span>' +
+        '</div>';
+      }).join('') + '</div>';
+  }
 }
 
 function _bindPinInputs(prefix) {
