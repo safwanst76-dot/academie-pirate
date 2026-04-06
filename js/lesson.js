@@ -103,8 +103,13 @@ function _buildLessonHTML(lesson, accent, bg, textAccent, avatarUrl, n, worldCfg
     '</div>';
   }).join('');
 
-  // Questions d'échauffement
+  // Questions d'échauffement — avatar pose les questions (Phase 3b)
   var warmupHTML = lesson.warmup.map(function(w, i) {
+    // LessonDialog.buildWarmupCard disponible → avatar questioner
+    if (typeof LessonDialog !== 'undefined' && LessonDialog.buildWarmupCard) {
+      return LessonDialog.buildWarmupCard(w, i, accent);
+    }
+    // Fallback rétro-compat
     var optsHTML = w.o.map(function(opt, j) {
       return '<button class="lesson-warmup-opt" id="lwu_'+i+'_'+j+'" onclick="lessonWarmupSelect('+i+','+j+','+JSON.stringify(w.a).replace(/</g,'&lt;')+')" data-val="'+opt.replace(/"/g,'&quot;')+'">'+opt+'</button>';
     }).join('');
@@ -136,12 +141,12 @@ function _buildLessonHTML(lesson, accent, bg, textAccent, avatarUrl, n, worldCfg
           '<div class="lesson-bubble-tail" style="border-top-color:rgba(255,255,255,.95)"></div>' +
         '</div>' +
       '</div>' +
+      '<div id="lesson-companion-hero"></div>' +
     '</div>' +
     '<div class="lesson-hero-bar">' +
       '<div class="lesson-hero-bar-fill" id="lesson-hero-bar-fill" style="background:linear-gradient(90deg,'+accent+','+textAccent+')"></div>' +
     '</div>' +
     '<button class="lesson-skip-hero-btn" onclick="lesson_skipHero()" style="border-color:'+accent+'44;color:'+accent+'">⏭ Passer</button>' +
-    '<div id="lesson-companion-hero"></div>' +
   '</div>' +
   // ─ CONTENU LEÇON ──────────────────────────────────────────
   '<div class="lesson-content-panel" id="lesson-content-panel" style="display:none">' +
@@ -169,7 +174,6 @@ function _buildLessonHTML(lesson, accent, bg, textAccent, avatarUrl, n, worldCfg
       // Échauffement
       '<div class="lesson-warmup">' +
         '<div class="lesson-warmup-title" style="color:'+accent+'">⚡ Échauffement rapide</div>' +
-        '<div id="lesson-warmup-intro"></div>' +
         warmupHTML +
       '</div>' +
       // Bouton lancer
@@ -493,22 +497,17 @@ function _initMinigames(minigames) {
 // 13. LEÇON DIALOGUÉE — Phase 3b (ARCHI-01)
 // ══════════════════════════════════════════════════════════════
 function _initLessonDialog(lesson, accent) {
-  if (typeof LessonDialog === 'undefined') return; // rétro-compat
+  if (typeof LessonDialog === 'undefined') return;
   setTimeout(function () {
     try {
-      // Compagnon panneau héros
       var heroSlot = document.getElementById('lesson-companion-hero');
       if (heroSlot) {
         LessonDialog.renderCompanion(heroSlot, { heroName: lesson.heroName || 'le héros' });
       }
-      // Intro warmup
-      var warmupSlot = document.getElementById('lesson-warmup-intro');
-      if (warmupSlot) {
-        LessonDialog.showWarmupIntro(warmupSlot);
-      }
-      // Émettre événement ARCHI-01
       if (window.AP && window.AP.events) {
-        window.AP.events.emit('lesson:start', { heroName: lesson.heroName, world: _lesson_world, island: _lesson_island });
+        window.AP.events.emit('lesson:start', {
+          heroName: lesson.heroName, world: _lesson_world, island: _lesson_island
+        });
       }
     } catch (err) {
       console.warn('[lesson] LessonDialog:', err);

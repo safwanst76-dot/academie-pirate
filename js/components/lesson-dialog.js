@@ -1,369 +1,386 @@
 /**
- * ACADÉMIE PIRATE — Lesson Dialog Component
+ * ACADÉMIE PIRATE — Lesson Dialog v2
  * js/components/lesson-dialog.js
  * Règles : ARCHI-01 · RD-01 · UX-01 · AV-01
- * Préfixe CSS : .ld-*
  *
- * Affiche l'avatar de l'enfant comme compagnon dans la leçon :
- * - Panneau héros : l'avatar demande au héros d'enseigner
- * - Contenu : l'avatar introduit le warmup
- * - Warmup : réaction animée après chaque réponse
- *
- * Usage :
- *   LessonDialog.renderCompanion(containerEl, options)
- *   LessonDialog.reactWarmup(questionIdx, isCorrect)
- *   LessonDialog.showIntro(containerEl, options)
+ * Refonte complète : avatar enfant comme personnage central
+ * - Scène héros : avatar enfant face au héros, dialogue manga
+ * - Warmup      : avatar pose la question visuellement
+ * - Réaction    : feedback grande taille, émotionnel
  */
 
 (function (global) {
   'use strict';
 
-  /* ─── Résoudre l'avatar et l'enfant depuis AP.state ─────────── */
-  function _getChild() {
-    if (global.AP && global.AP.state) {
-      return global.AP.state.get('child') || {};
-    }
-    return {};
+  /* ─── Données avatar depuis AP.state ─────────────────────── */
+  function _av() {
+    if (global.AP && global.AP.state) return global.AP.state.get('avatar') || {};
+    if (typeof global.playerData !== 'undefined') return {
+      id: global.playerData.avatarId || 'luffy',
+      img: global.playerData.avatarImg || 'assets/images/avatars/luffy.png',
+      color: global.playerData.avatarColor || '#e63946',
+      name: global.playerData.charName || 'Luffy',
+      quote_lesson: global.playerData.avatarQuote || ''
+    };
+    return { id:'luffy', img:'assets/images/avatars/luffy.png', color:'#e63946', name:'Luffy', quote_lesson:'' };
   }
 
-  function _getAvatar() {
-    if (global.AP && global.AP.state) {
-      return global.AP.state.get('avatar') || {};
-    }
-    // Fallback : playerData (rétro-compat)
-    if (typeof global.playerData !== 'undefined') {
-      return {
-        id:    global.playerData.avatarId || 'luffy',
-        img:   global.playerData.avatarImg || 'assets/images/avatars/luffy.png',
-        color: global.playerData.avatarColor || '#e63946',
-        name:  global.playerData.charName || 'Luffy',
-        quote_lesson: global.playerData.avatarQuote || ''
-      };
-    }
-    return { id: 'luffy', img: 'assets/images/avatars/luffy.png', color: '#e63946', name: 'Luffy' };
+  function _childName() {
+    var c = global.AP && global.AP.state ? global.AP.state.get('child') : null;
+    return (c && (c.username || c.name)) || 'Toi';
   }
 
-  function _getChildName() {
-    var child = _getChild();
-    return child.username || child.name || 'Toi';
-  }
+  /* ─── CSS injecté une seule fois ─────────────────────────── */
+  function _css() {
+    if (document.getElementById('ld-v2-css')) return;
+    var s = document.createElement('style');
+    s.id = 'ld-v2-css';
+    s.textContent = `
 
-  function _getQuoteLesson(avatar, heroName) {
-    var quotes = avatar.quote_lesson
-      ? [avatar.quote_lesson]
-      : [
-          'Allez ' + heroName + ' ! Montre-moi ce que tu sais !',
-          'On y va, ' + heroName + ' ! J\'suis prêt !',
-          'Explique-moi bien, ' + heroName + ' !',
-        ];
-    return quotes[0];
-  }
-
-  /* ─── Injecter les styles ────────────────────────────────────── */
-  function _injectStyles() {
-    if (document.getElementById('ld-styles')) return;
-    var style = document.createElement('style');
-    style.id = 'ld-styles';
-    style.textContent = `
-/* ═══ Lesson Dialog — .ld-* ═══ */
-.ld-companion {
+/* ══ SCÈNE HÉROS — avatar enfant face au héros ══ */
+.ld-scene {
   display: flex;
   align-items: flex-end;
-  gap: 10px;
-  padding: 12px 16px 0;
-  animation: ld-slide-in 0.5s cubic-bezier(0.175,0.885,0.32,1.275) both;
-}
-@keyframes ld-slide-in {
-  from { opacity:0; transform:translateY(14px); }
-  to   { opacity:1; transform:translateY(0); }
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  max-width: 420px;
+  margin: 12px auto 0;
+  position: relative;
 }
 
-/* Avatar rond */
-.ld-avatar-wrap {
-  flex-shrink: 0;
-  position: relative;
-  width: 52px;
-  height: 52px;
+/* VS badge */
+.ld-vs {
+  font-family: 'Bangers', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: #ffd700;
+  text-shadow: 2px 2px 0 #000;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 28px;
+  z-index: 5;
+  background: rgba(0,0,0,.6);
+  border: 1.5px solid rgba(255,215,0,.4);
+  border-radius: 20px;
+  padding: 2px 10px;
 }
-.ld-avatar-img {
+
+/* Avatar côté enfant */
+.ld-child-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  animation: ld-enter-right .6s cubic-bezier(.34,1.56,.64,1) .3s both;
+}
+@keyframes ld-enter-right {
+  from { opacity:0; transform:translateX(30px) scale(.8); }
+  to   { opacity:1; transform:translateX(0) scale(1); }
+}
+
+.ld-child-avatar {
+  width: clamp(72px,18vw,100px);
+  height: clamp(72px,18vw,100px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 3px solid var(--ld-color, #e63946);
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,.5),
+    0 0 20px color-mix(in srgb, var(--ld-color,#e63946) 50%, transparent);
+  flex-shrink: 0;
+}
+
+.ld-child-name {
+  font-family: 'Bangers', cursive;
+  font-size: .9rem;
+  letter-spacing: 2px;
+  color: var(--ld-color, #e63946);
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* Bulle de l'enfant (pointe à gauche = vient de droite) */
+.ld-child-bubble {
+  background: rgba(255,255,255,.96);
+  border: 2.5px solid #000;
+  border-radius: 12px 12px 4px 12px;
+  padding: 10px 13px;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.72rem,2vw,.85rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1.4;
+  position: relative;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.4);
+  max-width: 160px;
+  text-align: center;
+  animation: ld-bubble-pop .5s cubic-bezier(.34,1.56,.64,1) .7s both;
+}
+@keyframes ld-bubble-pop {
+  from { opacity:0; transform:scale(.6); }
+  to   { opacity:1; transform:scale(1); }
+}
+.ld-child-bubble::after {
+  content:'';
+  position:absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #000;
+}
+.ld-child-bubble::before {
+  content:'';
+  position:absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: rgba(255,255,255,.96);
+  z-index: 1;
+}
+
+/* ══ WARMUP — avatar pose la question ══ */
+.ld-warmup-asker {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ld-asker-avatar {
   width: 52px;
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
   border: 2.5px solid var(--ld-color, #e63946);
-  box-shadow: 0 0 12px color-mix(in srgb, var(--ld-color, #e63946) 35%, transparent);
-  transition: transform 0.3s var(--ap-ease-spring, cubic-bezier(0.175,0.885,0.32,1.275));
-}
-.ld-avatar-wrap.ld-celebrate .ld-avatar-img {
-  animation: ld-bounce 0.6s cubic-bezier(0.175,0.885,0.32,1.275) 2;
-}
-.ld-avatar-wrap.ld-confused .ld-avatar-img {
-  animation: ld-shake 0.4s ease 1;
-}
-@keyframes ld-bounce {
-  0%,100% { transform:scale(1) translateY(0); }
-  40%      { transform:scale(1.18) translateY(-6px); }
-  70%      { transform:scale(0.95) translateY(2px); }
-}
-@keyframes ld-shake {
-  0%,100% { transform:rotate(0deg); }
-  25%      { transform:rotate(-8deg); }
-  75%      { transform:rotate(8deg); }
+  flex-shrink: 0;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--ld-color,#e63946) 35%, transparent);
 }
 
-/* Étoiles celebrate */
-.ld-stars {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  font-size: 1rem;
-  opacity: 0;
-  pointer-events: none;
-}
-.ld-avatar-wrap.ld-celebrate .ld-stars {
-  animation: ld-stars-pop 0.5s ease 0.1s both;
-}
-@keyframes ld-stars-pop {
-  0%   { opacity:0; transform:scale(0) rotate(-20deg); }
-  60%  { opacity:1; transform:scale(1.2) rotate(10deg); }
-  100% { opacity:1; transform:scale(1) rotate(0deg); }
-}
-
-/* Bulle dialogue manga */
-.ld-bubble {
-  background: rgba(255,255,255,0.97);
-  color: #1a1a2e;
-  border-radius: 14px 14px 14px 4px;
+.ld-asker-bubble {
+  background: rgba(255,255,255,.96);
+  border: 2px solid #000;
+  border-radius: 4px 14px 14px 14px;
   padding: 10px 14px;
   font-family: 'Nunito', sans-serif;
-  font-size: clamp(0.78rem, 2.2vw, 0.88rem);
   font-weight: 800;
+  color: #1a1a2e;
   line-height: 1.45;
-  max-width: 260px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-  position: relative;
   flex: 1;
+  box-shadow: 2px 2px 0 rgba(0,0,0,.3);
+  position: relative;
 }
-.ld-bubble::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  bottom: 10px;
-  border: 8px solid transparent;
-  border-right-color: rgba(255,255,255,0.97);
-  border-left: 0;
-}
-.ld-bubble-name {
-  font-size: 0.65rem;
-  font-weight: 900;
+.ld-asker-label {
+  font-size: .62rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--ld-color, #e63946);
-  margin-bottom: 3px;
+  font-weight: 900;
+  margin-bottom: 4px;
 }
-.ld-bubble-text {
+.ld-asker-q {
+  font-size: clamp(.82rem,2.2vw,.95rem);
   color: #1a1a2e;
 }
 
-/* Bulle de réaction inline (warmup) */
-.ld-reaction {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  margin-top: 10px;
-  animation: ld-slide-in 0.35s ease both;
-}
-.ld-reaction .ld-avatar-img {
-  width: 40px;
-  height: 40px;
-}
-.ld-reaction .ld-bubble {
-  font-size: 0.8rem;
-  padding: 8px 12px;
-  max-width: 200px;
-}
-
-/* Intro warmup */
-.ld-warmup-intro {
+/* ══ RÉACTION — feedback grande taille ══ */
+.ld-react-panel {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  background: color-mix(in srgb, var(--ld-color, #ffd700) 8%, transparent);
-  border: 1.5px solid color-mix(in srgb, var(--ld-color, #ffd700) 25%, transparent);
-  border-radius: 12px;
-  margin-bottom: 16px;
-  animation: ld-slide-in 0.4s ease both;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  margin-top: 10px;
+  animation: ld-react-in .4s cubic-bezier(.34,1.56,.64,1) both;
 }
-.ld-warmup-intro .ld-avatar-img {
-  width: 44px;
-  height: 44px;
+@keyframes ld-react-in {
+  from { opacity:0; transform:scale(.85) translateY(8px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+
+.ld-react-panel.ld-ok {
+  background: rgba(6,214,160,.12);
+  border: 2px solid #06d6a0;
+}
+.ld-react-panel.ld-ko {
+  background: rgba(239,68,68,.1);
+  border: 2px solid #ef4444;
+}
+
+.ld-react-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
   flex-shrink: 0;
+  border: 3px solid var(--ld-color, #e63946);
 }
-.ld-warmup-intro-text {
+.ld-react-panel.ld-ok .ld-react-avatar {
+  animation: ld-jump 0.5s cubic-bezier(.34,1.56,.64,1) both;
+}
+.ld-react-panel.ld-ko .ld-react-avatar {
+  animation: ld-wobble 0.5s ease both;
+}
+@keyframes ld-jump {
+  0%   { transform:translateY(0) scale(1); }
+  40%  { transform:translateY(-12px) scale(1.15); }
+  70%  { transform:translateY(4px) scale(.95); }
+  100% { transform:translateY(0) scale(1); }
+}
+@keyframes ld-wobble {
+  0%,100% { transform:rotate(0); }
+  20%      { transform:rotate(-10deg); }
+  60%      { transform:rotate(10deg); }
+}
+
+.ld-react-text {
+  flex: 1;
+}
+.ld-react-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.ld-react-msg {
   font-family: 'Nunito', sans-serif;
-  font-size: 0.85rem;
+  font-size: clamp(.82rem,2vw,.92rem);
   font-weight: 800;
-  color: var(--ap-text, #e8eaf6);
+  color: #e8eaf6;
   line-height: 1.4;
 }
-.ld-warmup-intro-text strong {
-  color: var(--ld-color, #ffd700);
-}
 
-/* Mobile */
+/* Mobile compact */
 @media (max-width: 380px) {
-  .ld-bubble { max-width: 200px; font-size: 0.75rem; }
-  .ld-avatar-img { width: 44px; height: 44px; }
+  .ld-child-avatar { width: 60px; height: 60px; }
+  .ld-child-bubble { font-size: .7rem; max-width: 130px; }
+  .ld-react-avatar { width: 52px; height: 52px; }
 }
 `;
-    document.head.appendChild(style);
+    document.head.appendChild(s);
   }
 
-  /* ─── Rendu compagnon (panneau héros) ───────────────────────── */
+  /* ─── 1. Scène héros — avatar face au héros ─────────────── */
   function renderCompanion(container, options) {
-    _injectStyles();
+    _css();
     if (!container) return;
+    var av      = _av();
+    var child   = _childName();
+    var hero    = options && options.heroName ? options.heroName : 'le héros';
+    var accent  = av.color || '#e63946';
 
-    options = options || {};
-    var avatar   = _getAvatar();
-    var child    = _getChildName();
-    var heroName = options.heroName || 'le héros';
-    var accent   = avatar.color || '#e63946';
-    var quote    = options.quote || _getQuoteLesson(avatar, heroName);
+    var quotes = [
+      'Eh ' + hero + ' ! On y va ?',
+      'Montre-moi ce que tu sais, ' + hero + ' !',
+      'C\'est parti ' + hero + ' !',
+      'Allez ' + hero + ', apprends-moi ça !',
+    ];
+    var quote = (av.quote_lesson || quotes[Math.floor(Math.random() * quotes.length)])
+      .replace('{name}', child).replace('[name]', child);
 
-    // Personnaliser avec le prénom si présent
-    quote = quote.replace('{name}', child).replace('[name]', child);
-
-    var el = document.createElement('div');
-    el.className = 'ld-companion';
-    el.style.setProperty('--ld-color', accent);
-    el.innerHTML =
-      '<div class="ld-avatar-wrap" id="ld-companion-avatar">' +
-        '<img class="ld-avatar-img" src="' + _esc(avatar.img) + '"' +
-          ' alt="' + _esc(avatar.name) + '"' +
-          ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
-        '<span class="ld-stars">⭐</span>' +
-      '</div>' +
-      '<div class="ld-bubble">' +
-        '<div class="ld-bubble-name" style="color:' + accent + '">' + _esc(child) + '</div>' +
-        '<div class="ld-bubble-text">' + _esc(quote) + '</div>' +
+    container.innerHTML =
+      '<div class="ld-scene" style="--ld-color:' + accent + '">' +
+        '<div class="ld-vs">VS</div>' +
+        '<div class="ld-child-side">' +
+          '<div class="ld-child-bubble">' + _esc(quote) + '</div>' +
+          '<img class="ld-child-avatar"' +
+            ' src="' + _esc(av.img) + '"' +
+            ' alt="' + _esc(child) + '"' +
+            ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
+          '<div class="ld-child-name">' + _esc(child) + '</div>' +
+        '</div>' +
       '</div>';
-
-    container.appendChild(el);
   }
 
-  /* ─── Intro section warmup ───────────────────────────────────── */
-  function showWarmupIntro(container, options) {
-    _injectStyles();
-    if (!container) return;
+  /* ─── 2. Warmup — avatar pose la question ───────────────── */
+  function buildWarmupCard(w, i, accent) {
+    _css();
+    var av     = _av();
+    var child  = _childName();
+    var optsHTML = w.o.map(function(opt, j) {
+      return '<button class="lesson-warmup-opt" id="lwu_' + i + '_' + j + '"' +
+        ' onclick="lessonWarmupSelect(' + i + ',' + j + ',' + JSON.stringify(w.a).replace(/</g,'&lt;') + ')"' +
+        ' data-val="' + opt.replace(/"/g,'&quot;') + '">' + opt + '</button>';
+    }).join('');
 
-    options = options || {};
-    var avatar = _getAvatar();
-    var child  = _getChildName();
-    var accent = avatar.color || '#e63946';
-    var text   = options.text ||
-      '<strong>' + _esc(child) + '</strong> — à toi de jouer ! 2 questions éclair avant le quiz 🔥';
-
-    var el = document.createElement('div');
-    el.className = 'ld-warmup-intro';
-    el.style.setProperty('--ld-color', accent);
-    el.innerHTML =
-      '<img class="ld-avatar-img" src="' + _esc(avatar.img) + '"' +
-        ' alt="' + _esc(avatar.name) + '"' +
-        ' onerror="this.src=\'assets/images/avatars/luffy.png\'" style="border:2.5px solid ' + accent + ';border-radius:50%;object-fit:cover;object-position:top">' +
-      '<div class="ld-warmup-intro-text">' + text + '</div>';
-
-    container.insertBefore(el, container.firstChild);
+    return '<div class="lesson-warmup-card" id="lwucard_' + i + '">' +
+      '<div class="ld-warmup-asker" style="--ld-color:' + accent + '">' +
+        '<img class="ld-asker-avatar"' +
+          ' src="' + _esc(av.img) + '"' +
+          ' alt="' + _esc(child) + '"' +
+          ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
+        '<div class="ld-asker-bubble">' +
+          '<div class="ld-asker-label" style="color:' + accent + '">' + _esc(child) + ' demande :</div>' +
+          '<div class="ld-asker-q">' + w.q + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="lesson-warmup-opts">' + optsHTML + '</div>' +
+      '<div class="lesson-warmup-fb" id="lwufb_' + i + '"></div>' +
+    '</div>';
   }
 
-  /* ─── Réaction au warmup ─────────────────────────────────────── */
-  function reactWarmup(questionIdx, isCorrect) {
-    _injectStyles();
+  /* ─── 3. Réaction après réponse ─────────────────────────── */
+  function reactWarmup(qi, isCorrect) {
+    _css();
+    var av    = _av();
+    var child = _childName();
+    var card  = document.getElementById('lwucard_' + qi);
+    if (!card) return;
 
-    var avatar = _getAvatar();
-    var child  = _getChildName();
-    var accent = avatar.color || '#e63946';
-
-    var cardEl = document.getElementById('lwucard_' + questionIdx);
-    if (!cardEl) return;
-
-    // Retirer une réaction précédente si elle existe
-    var prev = cardEl.querySelector('.ld-reaction');
+    var prev = card.querySelector('.ld-react-panel');
     if (prev) prev.remove();
 
-    // Messages selon le résultat
-    var messages = isCorrect
-      ? [
-          'Yes ! Trop fort ' + child + ' ! 🎉',
-          'C\'est ça ! Bien joué ' + child + ' ! ⚡',
-          'Parfait ! Tu maîtrises ça ! 💪',
-          'BOOM ! En plein dans le mille ! ✨',
-        ]
-      : [
-          'Hmm... c\'est pas grave ' + child + ' ! On retient ! 💡',
-          'Presque ! La prochaine fois tu vas y arriver ! 🔥',
-          'Pas de panique ' + child + ' — ça reste en mémoire ! 💪',
-          'Continue ! L\'erreur c\'est la meilleure leçon ! ⚡',
-        ];
+    var okMsgs = [
+      { e:'🎉', m: 'Excellent ' + child + ' ! Tu maîtrises ça !' },
+      { e:'⚡', m: 'BOOM ! En plein dans le mille ' + child + ' !' },
+      { e:'🔥', m: 'Parfait ! C\'est exactement ça !' },
+      { e:'💪', m: 'Trop fort ' + child + ' ! Continue !' },
+    ];
+    var koMsgs = [
+      { e:'💡', m: 'Pas grave ' + child + ' — maintenant tu sais !' },
+      { e:'🔄', m: 'L\'erreur, c\'est la meilleure leçon !' },
+      { e:'💪', m: 'Presque ! Tu vas y arriver ' + child + ' !' },
+      { e:'🎯', m: 'Retiens bien — tu auras une chance au quiz !' },
+    ];
+    var msgs = isCorrect ? okMsgs : koMsgs;
+    var m    = msgs[Math.floor(Math.random() * msgs.length)];
+    var accent = av.color || '#e63946';
 
-    var msg = messages[Math.floor(Math.random() * messages.length)];
-
-    // Créer la bulle de réaction
     var el = document.createElement('div');
-    el.className = 'ld-reaction';
+    el.className = 'ld-react-panel ' + (isCorrect ? 'ld-ok' : 'ld-ko');
     el.style.setProperty('--ld-color', accent);
     el.innerHTML =
-      '<div class="ld-avatar-wrap" id="ld-warmup-avatar-' + questionIdx + '">' +
-        '<img class="ld-avatar-img" src="' + _esc(avatar.img) + '"' +
-          ' alt="' + _esc(avatar.name) + '"' +
-          ' onerror="this.src=\'assets/images/avatars/luffy.png\'"' +
-          ' style="border:2px solid ' + accent + ';border-radius:50%;object-fit:cover;object-position:top">' +
-        '<span class="ld-stars">⭐</span>' +
-      '</div>' +
-      '<div class="ld-bubble">' +
-        '<div class="ld-bubble-name" style="color:' + accent + '">' + _esc(child) + '</div>' +
-        '<div class="ld-bubble-text">' + _esc(msg) + '</div>' +
+      '<img class="ld-react-avatar"' +
+        ' src="' + _esc(av.img) + '"' +
+        ' alt="' + _esc(child) + '"' +
+        ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
+      '<div class="ld-react-text">' +
+        '<div class="ld-react-emoji">' + m.e + '</div>' +
+        '<div class="ld-react-msg">' + _esc(m.m) + '</div>' +
       '</div>';
 
-    cardEl.appendChild(el);
-
-    // Animation sur l'avatar
+    card.appendChild(el);
     setTimeout(function () {
-      var wrap = document.getElementById('ld-warmup-avatar-' + questionIdx);
-      if (!wrap) return;
-      wrap.classList.remove('ld-celebrate', 'ld-confused');
-      void wrap.offsetWidth; // reflow
-      wrap.classList.add(isCorrect ? 'ld-celebrate' : 'ld-confused');
-    }, 50);
-
-    // Scroll smooth vers la réaction
-    setTimeout(function () {
-      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 200);
+      el.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }, 150);
   }
 
-  /* ─── Utils ──────────────────────────────────────────────────── */
-  function _esc(str) {
-    return String(str || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+  /* ─── Utils ─────────────────────────────────────────────── */
+  function _esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  /* ─── Exposition ARCHI-01 ────────────────────────────────────── */
+  /* ─── Exposition ARCHI-01 ───────────────────────────────── */
   global.AP = global.AP || {};
   global.AP.components = global.AP.components || {};
-  global.AP.components.LessonDialog = {
-    renderCompanion:  renderCompanion,
-    showWarmupIntro:  showWarmupIntro,
-    reactWarmup:      reactWarmup
-  };
-
+  global.AP.components.LessonDialog = { renderCompanion, buildWarmupCard, reactWarmup };
   global.LessonDialog = global.AP.components.LessonDialog;
 
-  console.info('💬 LessonDialog chargé — avatar compagnon dans les leçons');
+  console.info('💬 LessonDialog v2 — scène manga · avatar questioner · réactions émotionnelles');
 
 })(window);
