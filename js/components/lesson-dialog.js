@@ -49,6 +49,109 @@
   position: relative;
 }
 
+/* ══ COMPAGNON — grand personnage côté droit du héros ══ */
+.ld-companion-wrap {
+  position: relative;
+  width: clamp(110px, 28vw, 160px);
+  height: clamp(150px, 38vw, 220px);
+  flex-shrink: 0;
+  animation: ld-enter-right .7s cubic-bezier(.34,1.56,.64,1) .3s both;
+}
+@keyframes ld-enter-right {
+  from { opacity:0; transform:translateX(30px) scale(.7); }
+  to   { opacity:1; transform:translateX(0) scale(1); }
+}
+.ld-companion-aura {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  z-index: 0;
+  animation: ld-aura-pulse 2s ease-in-out infinite;
+}
+@keyframes ld-aura-pulse { 0%,100%{transform:scale(1);opacity:.7;} 50%{transform:scale(1.12);opacity:1;} }
+
+.ld-companion-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 2.5px solid;
+  z-index: 0;
+  animation: ld-ring-spin 4s linear infinite;
+}
+.ld-ring-2 { inset: -20px; border-width: 2px; border-style: dashed; animation-duration: 6s; animation-direction: reverse; }
+@keyframes ld-ring-spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+.ld-companion-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 14px;
+  filter: drop-shadow(0 0 14px var(--ld-color, #e63946)) saturate(1.3);
+  animation: ld-hero-appear .8s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes ld-hero-appear {
+  from { transform:scale(.5) translateY(30px); opacity:0; }
+  to   { transform:scale(1) translateY(0); opacity:1; }
+}
+
+.ld-companion-name {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.75rem, 2.5vw, .95rem);
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0 #000;
+  text-align: center;
+  margin-top: 4px;
+  position: relative;
+  z-index: 2;
+  animation: ld-name-appear .5s ease .3s both;
+}
+@keyframes ld-name-appear { from{opacity:0;transform:translateY(6px);} to{opacity:1;transform:translateY(0);} }
+
+.ld-companion-bubble {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: max-content;
+  max-width: clamp(130px, 35vw, 190px);
+  animation: ld-bubble-pop .5s cubic-bezier(.34,1.56,.64,1) .6s both;
+}
+@keyframes ld-bubble-pop { from{opacity:0;transform:translateX(-50%) scale(.6);} to{opacity:1;transform:translateX(-50%) scale(1);} }
+
+.ld-companion-bubble-inner {
+  background: rgba(255,255,255,.96);
+  border: 2.5px solid #000;
+  border-radius: 14px 14px 14px 4px;
+  padding: 10px 13px;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.7rem, 2vw, .82rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1.4;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.35);
+  text-align: center;
+}
+.ld-companion-tail {
+  width: 0; height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid #000;
+  margin: 0 auto;
+  position: relative;
+}
+.ld-companion-tail::after {
+  content:'';
+  position:absolute;
+  top:-11px; left:-6px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid rgba(255,255,255,.96);
+}
+
 /* VS badge */
 .ld-vs {
   font-family: 'Bangers', cursive;
@@ -149,6 +252,19 @@
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+.ld-warmup-asker * { pointer-events: none; }
+.lesson-warmup-opts {
+  position: relative;
+  z-index: 2;
+}
+.lesson-warmup-opt {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto !important;
 }
 
 .ld-asker-avatar {
@@ -269,10 +385,10 @@
   function renderCompanion(container, options) {
     _css();
     if (!container) return;
-    var av      = _av();
-    var child   = _childName();
-    var hero    = options && options.heroName ? options.heroName : 'le héros';
-    var accent  = av.color || '#e63946';
+    var av     = _av();
+    var child  = _childName();
+    var hero   = options && options.heroName ? options.heroName : 'le héros';
+    var accent = av.color || '#e63946';
 
     var quotes = [
       'Eh ' + hero + ' ! On y va ?',
@@ -283,16 +399,24 @@
     var quote = (av.quote_lesson || quotes[Math.floor(Math.random() * quotes.length)])
       .replace('{name}', child).replace('[name]', child);
 
+    // Grand perso style héros — même taille que l'image AOT
     container.innerHTML =
-      '<div class="ld-scene" style="--ld-color:' + accent + '">' +
-        '<div class="ld-vs">VS</div>' +
-        '<div class="ld-child-side">' +
-          '<div class="ld-child-bubble">' + _esc(quote) + '</div>' +
-          '<img class="ld-child-avatar"' +
-            ' src="' + _esc(av.img) + '"' +
-            ' alt="' + _esc(child) + '"' +
-            ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
-          '<div class="ld-child-name">' + _esc(child) + '</div>' +
+      '<div class="ld-companion-wrap" style="--ld-color:' + accent + '">' +
+        // Aura colorée derrière
+        '<div class="ld-companion-aura" style="background:radial-gradient(ellipse,' + accent + '44 0%,transparent 70%)"></div>' +
+        // Anneaux rotatifs comme le héros
+        '<div class="ld-companion-ring" style="border-color:' + accent + '"></div>' +
+        '<div class="ld-companion-ring ld-ring-2" style="border-color:' + accent + '66"></div>' +
+        // Grande image du personnage
+        '<img class="ld-companion-img"' +
+          ' src="' + _esc(av.img) + '"' +
+          ' alt="' + _esc(child) + '"' +
+          ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
+        // Nom + bulle
+        '<div class="ld-companion-name" style="color:' + accent + '">' + _esc(child) + '</div>' +
+        '<div class="ld-companion-bubble">' +
+          '<div class="ld-companion-bubble-inner">' + _esc(quote) + '</div>' +
+          '<div class="ld-companion-tail"></div>' +
         '</div>' +
       '</div>';
   }
