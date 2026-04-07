@@ -53,6 +53,15 @@
     'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/reiner.jpg',
     'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/annie.jpeg',
     'Titan Bestial':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/zeke.jpg',
+    // Boss AOT par niveau English
+    'Titan Colossal':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/armin.jpg',
+    'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/reiner.jpg',
+    'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/annie.jpeg',
+    'Titan Bestial (CM2)':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/zeke.jpg',
+    'Annie Leonhart':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/annie.jpeg',
+    'Reiner Braun':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/reiner.jpg',
+    'Bertholdt':            'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/connie.jpg',
+    'Ymir':                 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/historia.png',
     // Namek — JJK (bucket island-namek)
     'Mahito':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/mahito.jpg',
     'Jogo':                 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/jogo.png',
@@ -93,6 +102,17 @@
       attack:  [GIPHY + 'XDVNmIREHVTfsBowCT/giphy.gif'],
       defend:  [GIPHY + 'cYQuMAQSVph5MNXdGs/giphy.gif'],
       victory: [GIPHY + 'XDVNmIREHVTfsBowCT/giphy.gif'],
+    },
+    english: {
+      attack:  [GIPHY + 'ToMjGpjpXjFtxedCzpm/giphy.gif',
+                GIPHY + 'xT0GqHAlFRpP0dEJny/giphy.gif'],
+      defend:  [GIPHY + 'cYQuMAQSVph5MNXdGs/giphy.gif'],
+      victory: [GIPHY + 'wOlKGNAdO84JuW5JQP/giphy.gif'],
+    },
+    namek: {
+      attack:  [GIPHY + '5yASwIq0gYlXpUsUkP/giphy.gif'],
+      defend:  [GIPHY + 'Auz1uziECLjoqzWuPE/giphy.gif'],
+      victory: [GIPHY + 'efCdWBE19bR26ScE02/giphy.gif'],
     },
   };
 

@@ -150,8 +150,8 @@
 
       var bossBanner = isBoss
         ? '<div class="aot-boss-banner">' +
-            '<div class="aot-boss-label">⚔️ COMBAT FINAL</div>' +
-            '<div class="aot-boss-name">' + (ch.boss_name || 'BOSS') + '</div>' +
+            '<div class="aot-boss-label">⚔️ COMBAT FINAL — TITAN</div>' +
+            '<div class="aot-boss-name">' + (ch.boss_name || 'TITAN COLOSSAL') + '</div>' +
           '</div>'
         : '';
 
@@ -199,6 +199,13 @@
 
     // innerHTML = html (pattern exact V1 — PAS +=)
     document.getElementById('aot-qContainer').innerHTML = html;
+
+    // ── Boss battle English (pattern identique aux autres mondes) ──
+    var bossQ = qs.find(function(q) { return q.is_boss || q.type === 'boss'; });
+    if (bossQ && window.AP && window.AP.boss) {
+      var bossName = ch.boss_name || bossQ.boss_name || 'Titan Colossal';
+      window.AP.boss.init('english', bossName, '', 1);
+    }
   }
 
   // ══════════════════════════════════════════════════════════════
@@ -272,6 +279,15 @@
         expl.classList.add('aot-show');
       }
     });
+
+    // ── Boss battle hit (English — pattern identique aux autres mondes) ──
+    if (window.AP && window.AP.boss && window.AP.boss.isActive()) {
+      var hasBossQ = qs.some(function(q) { return q.is_boss || q.type === 'boss'; });
+      if (hasBossQ) {
+        var isCorrect = score >= Math.ceil(qs.length * 0.6); // 60%+ = victoire
+        window.AP.boss.hit(isCorrect, true);
+      }
+    }
 
     // XP
     _xp += score * 2;
