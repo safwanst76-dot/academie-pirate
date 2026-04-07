@@ -143,7 +143,8 @@
       var opts = [];
       try { opts = typeof q.options === 'string' ? JSON.parse(q.options) : q.options; } catch(e) {}
 
-      var isBoss   = q.is_boss || q.type === 'boss';
+      var isBoss   = q.is_boss || q.type === 'boss'
+                  || ((ch.numero === 8 || ch.numero === '8') && i === qs.length - 1);
       var msg      = msgs[i % msgs.length];
       var avatar   = ch.hero_image || '';
       var heroName = ch.hero_name  || '';
@@ -202,8 +203,20 @@
 
     // ── Boss battle English (pattern identique aux autres mondes) ──
     var bossQ = qs.find(function(q) { return q.is_boss || q.type === 'boss'; });
-    if (bossQ && window.AP && window.AP.boss) {
-      var bossName = ch.boss_name || bossQ.boss_name || 'Titan Colossal';
+    // Fallback : île 8 = boss final (si is_boss non défini en DB)
+    var isIsle8 = ch.numero === 8 || ch.numero === '8';
+    if ((bossQ || isIsle8) && window.AP && window.AP.boss) {
+      // Boss par niveau AOT English
+      var englishBossNames = {
+        'cm2':  'Titan Colossal',
+        '6eme': 'Titan Cuirassé',
+        '5eme': 'Titan Féminin',
+        '4eme': 'Titan Bestial'
+      };
+      var bossName = ch.boss_name
+        || (bossQ && bossQ.boss_name)
+        || englishBossNames[_currentNiveau]
+        || 'Titan Colossal';
       window.AP.boss.init('english', bossName, '', 1);
     }
   }
@@ -282,7 +295,8 @@
 
     // ── Boss battle hit (English — pattern identique aux autres mondes) ──
     if (window.AP && window.AP.boss && window.AP.boss.isActive()) {
-      var hasBossQ = qs.some(function(q) { return q.is_boss || q.type === 'boss'; });
+      var hasBossQ = qs.some(function(q) { return q.is_boss || q.type === 'boss'; })
+                  || ch.numero === 8 || ch.numero === '8';
       if (hasBossQ) {
         var isCorrect = score >= Math.ceil(qs.length * 0.6); // 60%+ = victoire
         window.AP.boss.hit(isCorrect, true);
