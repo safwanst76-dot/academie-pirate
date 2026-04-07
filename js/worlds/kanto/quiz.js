@@ -537,7 +537,7 @@ function kanto_launchIsland(n) {
   if (_kb && _kb.qs && _kb.qs.some(function(q){ return q.isBoss; })) {
     var _bq = _kb.qs.find(function(q){ return q.isBoss; });
     if (window.AP && window.AP.boss) {
-      window.AP.boss.init('kanto', _bq.bossName || 'BOSS', _bq.bossImg || '', 1);
+      window.AP.boss.init('kanto', _bq.bossName || 'BOSS', '', 1); // img résolue par boss-battle.js BOSS_IMGS
     }
   }
 

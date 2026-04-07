@@ -10,6 +10,65 @@
 
   var GIPHY = 'https://media.giphy.com/media/';
 
+  // ── Map centralisée des images boss (fallback si non passé par le quiz) ──
+  var BOSS_IMGS = {
+    // Grand Bleu — One Piece
+    'Arlong':       'assets/images/avatars' + '/clown.png',
+    'Don Krieg':    'assets/images/avatars' + '/whitebeard.png',
+    'Mihawk':       'assets/images/avatars' + '/shanks.png',
+    'Crocodile':    'assets/images/avatars' + '/crocodile.png',
+    'Perona':       'assets/images/avatars' + '/hancock.png',
+    'Absalom':      'assets/images/avatars' + '/smoker.png',
+    'Hogback':      'assets/images/avatars' + '/hawkins.png',
+    'Ryuma':        'assets/images/avatars' + '/brook.png',
+    // Magnolia — 'assets/images/dbz' (HIST_BOSS_AVATARS)
+    'Freezer':      'assets/images/dbz' + '/freezer.png',
+    'Cell':         'assets/images/dbz' + '/cell.png',
+    'Broly':        'assets/images/dbz' + '/broly.png',
+    'Majin Buu':    'assets/images/dbz' + '/boubou.png',
+    'Beerus':       'assets/images/dbz' + '/babidi.png',
+    'Babidi':       'assets/images/dbz' + '/babidi.png',
+    'Black Goku':   'assets/images/dbz' + '/1.png',
+    'Zamasu':       'assets/images/dbz' + '/2.png',
+    // Kanto — Demon Slayer (KANTO_BOSS_AVATARS)
+    'Muzan':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/nakime.jpeg',
+    'Akaza':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/gyutaro.jpg',
+    'Kokushibo':    'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/kokushibo.png',
+    'Daki':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/kanao.jpg',
+    'Rui':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/nezuko.jpeg',
+    'Gyomei':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/giyu.png',
+    'Sanemi':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/inosuke.jpg',
+    'Obanai':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer' + '/characters/obanai.jpeg',
+    // Pays du Feu — Naruto
+    'Kakashi':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/characters/hatake%20kakashi.jpeg',
+    'Orochimaru':           'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/characters/sasuke.png',
+    'Tsunade':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/characters/sakura.jpg',
+    'Zabuza':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/characters/jiraiya.webp',
+    'Gaara Kazekage':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/characters/gaara%20.jpg',
+    'Itachi Uchiha':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/gifs/itachi%20uchiha%20naruto%20GIF.gif',
+    'Madara Uchiha':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/characters/minato%20.jpg',
+    'Pain — Le Dieu':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/gifs/naruto%20GIF6.gif',
+    // English — 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot'
+    'Titan Colossal':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/armin.jpg',
+    'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/reiner.jpg',
+    'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/annie.jpeg',
+    'Titan Bestial':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/zeke.jpg',
+    // Namek — JJK (bucket island-namek)
+    'Mahito':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/mahito.jpg',
+    'Jogo':                 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/jogo.png',
+    'Hanami':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/hanami.png',
+    'Ryomen Sukuna':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/sukuna.jpg',
+    'Dagon':                'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/dagon.png',
+    'Choso':                'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/choso.png',
+    'Geto Suguru':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/geto.png',
+    'Kenjaku':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/kenjaku.png',
+  };
+
+  function _resolveBossImg(bossName, bossImgProvided) {
+    if (bossImgProvided) return bossImgProvided;
+    return BOSS_IMGS[bossName] || '';
+  }
+
   // ── GIFs par univers (URLs directes Giphy) ───────────────────────
   var BATTLE_GIFS = {
     grandbleu: {
@@ -43,6 +102,8 @@
     magnolia:  { color: '#8b5cf6', bg: '#080418', name: 'Magnolia'    },
     kanto:     { color: '#C0392B', bg: '#0a0408', name: 'Kanto'       },
     paysdufeu: { color: '#F97316', bg: '#0d0500', name: 'Pays du Feu' },
+    namek:     { color: '#7c3aed', bg: '#0a0418', name: 'Namek'       },
+    english:   { color: '#4a5c3f', bg: '#080c06', name: 'English'     },
   };
 
   // ── État ─────────────────────────────────────────────────────────
@@ -57,7 +118,7 @@
     _s.active    = true;
     _s.worldKey  = worldKey || 'grandbleu';
     _s.bossName  = bossName || 'BOSS';
-    _s.bossImg   = bossImg  || '';
+    _s.bossImg   = _resolveBossImg(bossName, bossImg);
     _s.totalHits = totalBossQs || 3;
     _s.hpPerHit  = Math.floor(100 / _s.totalHits);
     _s.hp        = 100;

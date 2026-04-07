@@ -171,7 +171,7 @@ function _launchIsland(n) {
   if (_gbIsle && _gbIsle.qs && _gbIsle.qs.some(function(q){ return q.isBoss; })) {
     var _gbBq = _gbIsle.qs.find(function(q){ return q.isBoss; });
     if (window.AP && window.AP.boss) {
-      window.AP.boss.init('grandbleu', _gbBq.bossName || 'BOSS', _gbBq.bossImg || '', 1);
+      window.AP.boss.init('grandbleu', _gbBq.bossName || 'BOSS', '', 1); // img résolue par boss-battle.js BOSS_IMGS
     }
   }
   const isle = ISLANDS[n];

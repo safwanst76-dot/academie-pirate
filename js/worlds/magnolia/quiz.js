@@ -50,14 +50,14 @@ var HIST_AVATARS = {
 
 // ✅ BOSS AVATARS — images séparées pour les cinématiques de boss
 var HIST_BOSS_AVATARS = {
-  'Freezer':    'assets/images/dbz/freezer.png',
-  'Cell':       'assets/images/dbz/cell.png',      // nouveau fichier
-  'Broly':      'assets/images/dbz/broly.png',     // nouveau fichier
-  'Majin Buu':  'assets/images/dbz/majinbuu.png',
-  'Beerus':     'assets/images/dbz/beerus.png',
-  'Babidi':     'assets/images/dbz/babidi.png',    // nouveau fichier
-  'Black Goku': 'assets/images/dbz/blackgoku.png',
-  'Zamasu':     'assets/images/dbz/zamasu.png'
+  'Freezer':    'assets/images/dbz/freezer.png',  // ✓ existe
+  'Cell':       'assets/images/dbz/cell.png',      // ✓ existe
+  'Broly':      'assets/images/dbz/broly.png',     // ✓ existe
+  'Majin Buu':  'assets/images/dbz/boubou.png',   // ✓ boubou = Majin Buu
+  'Beerus':     'assets/images/dbz/babidi.png',   // fallback Babidi
+  'Babidi':     'assets/images/dbz/babidi.png',   // ✓ existe
+  'Black Goku': 'assets/images/dbz/1.png',         // Goku fallback
+  'Zamasu':     'assets/images/dbz/2.png'          // Vegeta fallback
 };
 
 var HIST_FALLBACK = {
