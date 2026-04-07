@@ -141,7 +141,8 @@ function _buildLessonHTML(lesson, accent, bg, textAccent, avatarUrl, n, worldCfg
           '<div class="lesson-bubble-tail" style="border-top-color:rgba(255,255,255,.95)"></div>' +
         '</div>' +
       '</div>' +
-      '<div id="lesson-companion-hero"></div>' +
+      // Compagnon enfant — même niveau que le héros (AV-01)
+      '<div id="lesson-companion-hero" style="align-self:flex-end"></div>' +
     '</div>' +
     '<div class="lesson-hero-bar">' +
       '<div class="lesson-hero-bar-fill" id="lesson-hero-bar-fill" style="background:linear-gradient(90deg,'+accent+','+textAccent+')"></div>' +

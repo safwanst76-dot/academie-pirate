@@ -52,8 +52,8 @@
 /* ══ COMPAGNON — grand personnage côté droit du héros ══ */
 .ld-companion-wrap {
   position: relative;
-  width: clamp(110px, 28vw, 160px);
-  height: clamp(150px, 38vw, 220px);
+  width: clamp(120px, 30vw, 180px);
+  height: clamp(160px, 40vw, 240px);
   flex-shrink: 0;
   animation: ld-enter-right .7s cubic-bezier(.34,1.56,.64,1) .3s both;
 }
@@ -193,7 +193,7 @@
   border: 3px solid var(--ld-color, #e63946);
   box-shadow:
     0 0 0 4px rgba(0,0,0,.5),
-    0 0 20px color-mix(in srgb, var(--ld-color,#e63946) 50%, transparent);
+    0 0 20px rgba(230,57,70,.45);
   flex-shrink: 0;
 }
 
@@ -275,7 +275,7 @@
   object-position: top;
   border: 2.5px solid var(--ld-color, #e63946);
   flex-shrink: 0;
-  box-shadow: 0 0 12px color-mix(in srgb, var(--ld-color,#e63946) 35%, transparent);
+  box-shadow: 0 0 12px rgba(230,57,70,.3);
 }
 
 .ld-asker-bubble {
@@ -372,10 +372,14 @@
 }
 
 /* Mobile compact */
+@media (min-width: 600px) {
+  .ld-companion-wrap { width: 200px; height: 270px; }
+}
 @media (max-width: 380px) {
   .ld-child-avatar { width: 60px; height: 60px; }
   .ld-child-bubble { font-size: .7rem; max-width: 130px; }
   .ld-react-avatar { width: 52px; height: 52px; }
+  .ld-companion-wrap { width: 90px; height: 130px; }
 }
 `;
     document.head.appendChild(s);
