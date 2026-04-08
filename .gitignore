@@ -2,3 +2,8 @@
 .DS_Store
 node_modules/
 admin.html
+scripts/sources/**/*.jpg
+scripts/sources/**/*.jpeg
+scripts/sources/**/*.png
+scripts/sources/**/*.webp
+audit-report.html
