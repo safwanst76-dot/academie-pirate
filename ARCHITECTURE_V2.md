@@ -1,6 +1,6 @@
 # ACADÉMIE PIRATE — ARCHITECTURE V2
 *Document de référence — À lire en priorité avant tout développement*
-*Version : 2.9 | Mise à jour : 8 Avril 2026*
+*Version : 3.0 | Mise à jour : 8 Avril 2026*
 
 ---
 
@@ -556,8 +556,36 @@ Tout nouveau contenu créable depuis l'admin sans modifier le JS.
 **Tout nouvel asset image suit ce protocole avant d'être référencé dans le code.**
 
 ```
-Script d'upload : scripts/upload-boss-images.js
-Usage : SUPABASE_SERVICE_KEY=xxx node scripts/upload-boss-images.js
+SYSTÈME D'UPLOAD UNIFIÉ (ARCHI-01) :
+  Point d'entrée unique : scripts/upload.js
+  Moteur                : scripts/lib/engine.js
+  Rapport               : scripts/lib/reporter.js
+  Données par monde     : scripts/assets/{monde}.json
+
+Usage :
+  node scripts/upload.js --dry-run                    # voir le plan
+  SUPABASE_SERVICE_KEY=xxx node scripts/upload.js --world=aot
+  SUPABASE_SERVICE_KEY=xxx node scripts/upload.js --world=all --type=boss
+  SUPABASE_SERVICE_KEY=xxx node scripts/upload.js --world=jjk --id=mahito,hanami
+  SUPABASE_SERVICE_KEY=xxx node scripts/upload.js --world=all --force
+
+Options :
+  --world=aot|ds|naruto|jjk|one-piece|dbz|all
+  --type=hero|villain|boss|all
+  --id=id1,id2,...   (personnages spécifiques)
+  --force            (re-uploader même si présent)
+  --dry-run          (plan sans upload)
+  --rate-limit=700   (ms entre requêtes Jikan)
+
+Pour ajouter un nouveau personnage :
+  1. Ouvrir scripts/assets/{monde}.json
+  2. Ajouter l'entrée avec id, name, type, path/localFile, jikanId
+  3. node scripts/upload.js --world={monde} --id=nouvel-id
+  4. Vérifier l'URL publique
+  5. git add . && git commit -m "feat: nouveau personnage {name}"
+
+JAMAIS modifier engine.js ni upload.js pour ajouter un personnage.
+TOUJOURS passer par les fichiers JSON dans scripts/assets/.
 
 Organisation des buckets Supabase :
   island-aot/
@@ -588,7 +616,7 @@ Règles :
 
 ```
 Checklist lors d'un ajout d'asset :
-□ Upload via scripts/upload-boss-images.js (ou script dédié)
+□ Upload via scripts/upload.js (système unifié)
 □ Vérifier l'URL publique
 □ Mettre à jour BOSS_IMGS dans boss-battle.js
 □ Mettre à jour avatars.json si nouvel avatar
@@ -740,4 +768,4 @@ assets/images/avatars/    → 23 images locales One Piece
 *Ce document doit être mis à jour à chaque phase complétée.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
 *Règle ARCHI-01 : tout nouveau code respecte l'architecture modulaire cible.*
-*Version 2.9 — 8 Avril 2026*
+*Version 3.0 — 8 Avril 2026*

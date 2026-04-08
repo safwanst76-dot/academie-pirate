@@ -1,0 +1,198 @@
+{
+  "name": "Attack on Titan",
+  "emoji": "⚔️",
+  "storage": "supabase",
+  "bucket": "island-aot",
+  "color": "#4a5c3f",
+  "characters": [
+    {
+      "id": "eren",
+      "name": "Eren Yeager",
+      "type": "hero",
+      "path": "characters/eren.jpeg",
+      "jikanId": 40881
+    },
+    {
+      "id": "mikasa",
+      "name": "Mikasa Ackerman",
+      "type": "hero",
+      "path": "characters/mikasa.gif",
+      "jikanId": 40882
+    },
+    {
+      "id": "armin",
+      "name": "Armin Arlert",
+      "type": "hero",
+      "path": "characters/armin.jpg",
+      "jikanId": 40883
+    },
+    {
+      "id": "levi",
+      "name": "Levi Ackerman",
+      "type": "hero",
+      "path": "characters/levi.jpg",
+      "jikanId": 34219
+    },
+    {
+      "id": "hange",
+      "name": "Hange Zoë",
+      "type": "hero",
+      "path": "characters/hange.jpeg",
+      "jikanId": 36829
+    },
+    {
+      "id": "erwin",
+      "name": "Erwin Smith",
+      "type": "hero",
+      "path": "characters/erwin.jpg",
+      "jikanId": 36827
+    },
+    {
+      "id": "historia",
+      "name": "Historia Reiss",
+      "type": "hero",
+      "path": "characters/historia.png",
+      "jikanId": 67266
+    },
+    {
+      "id": "jean",
+      "name": "Jean Kirstein",
+      "type": "hero",
+      "path": "characters/jean.jpg",
+      "jikanId": 67264
+    },
+    {
+      "id": "sasha",
+      "name": "Sasha Blouse",
+      "type": "hero",
+      "path": "characters/sasha.jpeg",
+      "jikanId": 67263
+    },
+    {
+      "id": "connie",
+      "name": "Connie Springer",
+      "type": "hero",
+      "path": "characters/connie.jpg",
+      "jikanId": 67265
+    },
+    {
+      "id": "ymir",
+      "name": "Ymir",
+      "type": "hero",
+      "path": "characters/ymir.jpg",
+      "jikanId": 67267
+    },
+    {
+      "id": "petra",
+      "name": "Petra Ral",
+      "type": "hero",
+      "path": "characters/petra.jpg",
+      "jikanId": 80804
+    },
+    {
+      "id": "mike",
+      "name": "Mike Zacharias",
+      "type": "hero",
+      "path": "characters/mike.jpg",
+      "jikanId": 80810
+    },
+    {
+      "id": "falco",
+      "name": "Falco Grice",
+      "type": "hero",
+      "path": "characters/falco.jpg",
+      "jikanId": 181036
+    },
+    {
+      "id": "yelena",
+      "name": "Yelena",
+      "type": "hero",
+      "path": "characters/yelena.jpg",
+      "jikanId": 181033
+    },
+    {
+      "id": "reiner",
+      "name": "Reiner Braun",
+      "type": "villain",
+      "path": "characters/reiner.jpg",
+      "jikanId": 36830
+    },
+    {
+      "id": "annie",
+      "name": "Annie Leonhart",
+      "type": "villain",
+      "path": "characters/annie.jpeg",
+      "jikanId": 36832
+    },
+    {
+      "id": "bertholdt",
+      "name": "Bertholdt Hoover",
+      "type": "villain",
+      "path": "characters/bertholdt.jpg",
+      "jikanId": 36831
+    },
+    {
+      "id": "zeke",
+      "name": "Zeke Yeager",
+      "type": "villain",
+      "path": "characters/zeke.jpg",
+      "jikanId": 118229
+    },
+    {
+      "id": "pieck",
+      "name": "Pieck Finger",
+      "type": "villain",
+      "path": "characters/pieck.jpg",
+      "jikanId": 118231
+    },
+    {
+      "id": "porco",
+      "name": "Porco Galliard",
+      "type": "villain",
+      "path": "characters/porco.jpg",
+      "jikanId": 118230
+    },
+    {
+      "id": "floch",
+      "name": "Floch Forster",
+      "type": "villain",
+      "path": "characters/floch.jpg",
+      "jikanId": 181034
+    },
+    {
+      "id": "gabi",
+      "name": "Gabi Braun",
+      "type": "villain",
+      "path": "characters/gabi.jpg",
+      "jikanId": 181035
+    },
+    {
+      "id": "titan-colossal",
+      "name": "Titan Colossal",
+      "type": "boss",
+      "path": "bosses/titan-colossal.jpg",
+      "jikanId": 36831
+    },
+    {
+      "id": "titan-cuirasse",
+      "name": "Titan Cuirassé",
+      "type": "boss",
+      "path": "bosses/titan-cuirasse.jpg",
+      "jikanId": 36830
+    },
+    {
+      "id": "titan-feminin",
+      "name": "Titan Féminin",
+      "type": "boss",
+      "path": "bosses/titan-feminin.jpg",
+      "jikanId": 36832
+    },
+    {
+      "id": "titan-bestial",
+      "name": "Titan Bestial",
+      "type": "boss",
+      "path": "bosses/titan-bestial.jpg",
+      "jikanId": 118229
+    }
+  ]
+}

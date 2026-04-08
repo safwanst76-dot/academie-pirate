@@ -1,0 +1,156 @@
+{
+  "name": "Jujutsu Kaisen",
+  "emoji": "🔮",
+  "storage": "supabase",
+  "bucket": "island-namek",
+  "color": "#7c3aed",
+  "characters": [
+    {
+      "id": "yuji",
+      "name": "Yuji Itadori",
+      "type": "hero",
+      "path": "characters/yuji.png",
+      "jikanId": 186249
+    },
+    {
+      "id": "megumi",
+      "name": "Megumi Fushiguro",
+      "type": "hero",
+      "path": "characters/megumi.jpg",
+      "jikanId": 186250
+    },
+    {
+      "id": "nobara",
+      "name": "Nobara Kugisaki",
+      "type": "hero",
+      "path": "characters/nobara.png",
+      "jikanId": 186251
+    },
+    {
+      "id": "gojo",
+      "name": "Satoru Gojo",
+      "type": "hero",
+      "path": "characters/gojo.jpg",
+      "jikanId": 186248
+    },
+    {
+      "id": "nanami",
+      "name": "Kento Nanami",
+      "type": "hero",
+      "path": "characters/nanami.jpg",
+      "jikanId": 186252
+    },
+    {
+      "id": "maki",
+      "name": "Maki Zenin",
+      "type": "hero",
+      "path": "characters/maki.jpg",
+      "jikanId": 186253
+    },
+    {
+      "id": "inumaki",
+      "name": "Toge Inumaki",
+      "type": "hero",
+      "path": "characters/inumaki.png",
+      "jikanId": 186254
+    },
+    {
+      "id": "panda",
+      "name": "Panda",
+      "type": "hero",
+      "path": "characters/panda.jpg",
+      "jikanId": 186255
+    },
+    {
+      "id": "todo",
+      "name": "Aoi Todo",
+      "type": "hero",
+      "path": "characters/todo.jpg",
+      "jikanId": 186256
+    },
+    {
+      "id": "yuta",
+      "name": "Yuta Okkotsu",
+      "type": "hero",
+      "path": "characters/yuta.jpg",
+      "jikanId": 186257
+    },
+    {
+      "id": "mei-mei",
+      "name": "Mei Mei",
+      "type": "hero",
+      "path": "characters/mei-mei.jpg",
+      "jikanId": 186258
+    },
+    {
+      "id": "sukuna",
+      "name": "Ryomen Sukuna",
+      "type": "villain",
+      "path": "characters/sukuna.jpg",
+      "jikanId": 195659
+    },
+    {
+      "id": "mahito",
+      "name": "Mahito",
+      "type": "villain",
+      "path": "characters/mahito.jpg",
+      "jikanId": 195656
+    },
+    {
+      "id": "jogo",
+      "name": "Jogo",
+      "type": "villain",
+      "path": "characters/jogo.png",
+      "jikanId": 195657
+    },
+    {
+      "id": "hanami",
+      "name": "Hanami",
+      "type": "villain",
+      "path": "characters/hanami.png",
+      "jikanId": 195658
+    },
+    {
+      "id": "dagon",
+      "name": "Dagon",
+      "type": "villain",
+      "path": "characters/dagon.png",
+      "jikanId": 195660
+    },
+    {
+      "id": "choso",
+      "name": "Choso",
+      "type": "villain",
+      "path": "characters/choso.png",
+      "jikanId": 195661
+    },
+    {
+      "id": "geto",
+      "name": "Geto Suguru",
+      "type": "villain",
+      "path": "characters/geto.png",
+      "jikanId": 152591
+    },
+    {
+      "id": "kenjaku",
+      "name": "Kenjaku",
+      "type": "villain",
+      "path": "characters/kenjaku.png",
+      "jikanId": 195662
+    },
+    {
+      "id": "naoya",
+      "name": "Naoya Zenin",
+      "type": "villain",
+      "path": "characters/naoya.jpg",
+      "jikanId": 195663
+    },
+    {
+      "id": "toji",
+      "name": "Toji Fushiguro",
+      "type": "villain",
+      "path": "characters/toji.jpg",
+      "jikanId": 195664
+    }
+  ]
+}

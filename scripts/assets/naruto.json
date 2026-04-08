@@ -1,0 +1,177 @@
+{
+  "name": "Naruto",
+  "emoji": "🔥",
+  "storage": "supabase",
+  "bucket": "island-pays-du-feu",
+  "color": "#f97316",
+  "characters": [
+    {
+      "id": "naruto",
+      "name": "Naruto Uzumaki",
+      "type": "hero",
+      "path": "characters/naruto.jpg",
+      "jikanId": 17
+    },
+    {
+      "id": "sasuke",
+      "name": "Sasuke Uchiha",
+      "type": "hero",
+      "path": "characters/sasuke.png",
+      "jikanId": 13
+    },
+    {
+      "id": "sakura",
+      "name": "Sakura Haruno",
+      "type": "hero",
+      "path": "characters/sakura.jpg",
+      "jikanId": 14
+    },
+    {
+      "id": "kakashi",
+      "name": "Kakashi Hatake",
+      "type": "hero",
+      "path": "characters/kakashi.jpg",
+      "jikanId": 85
+    },
+    {
+      "id": "gaara",
+      "name": "Gaara",
+      "type": "hero",
+      "path": "characters/gaara.jpg",
+      "jikanId": 109
+    },
+    {
+      "id": "minato",
+      "name": "Minato Namikaze",
+      "type": "hero",
+      "path": "characters/minato.jpg",
+      "jikanId": 1103
+    },
+    {
+      "id": "jiraiya",
+      "name": "Jiraiya",
+      "type": "hero",
+      "path": "characters/jiraiya.jpg",
+      "jikanId": 60
+    },
+    {
+      "id": "tsunade",
+      "name": "Tsunade",
+      "type": "hero",
+      "path": "characters/tsunade.jpg",
+      "jikanId": 61
+    },
+    {
+      "id": "rock-lee",
+      "name": "Rock Lee",
+      "type": "hero",
+      "path": "characters/rock-lee.jpg",
+      "jikanId": 67
+    },
+    {
+      "id": "neji",
+      "name": "Neji Hyuga",
+      "type": "hero",
+      "path": "characters/neji.jpg",
+      "jikanId": 68
+    },
+    {
+      "id": "hinata",
+      "name": "Hinata Hyuga",
+      "type": "hero",
+      "path": "characters/hinata.jpg",
+      "jikanId": 64
+    },
+    {
+      "id": "shikamaru",
+      "name": "Shikamaru Nara",
+      "type": "hero",
+      "path": "characters/shikamaru.jpg",
+      "jikanId": 65
+    },
+    {
+      "id": "tenten",
+      "name": "Tenten",
+      "type": "hero",
+      "path": "characters/tenten.jpg",
+      "jikanId": 69
+    },
+    {
+      "id": "killer-bee",
+      "name": "Killer Bee",
+      "type": "hero",
+      "path": "characters/killer-bee.jpg",
+      "jikanId": 1104
+    },
+    {
+      "id": "orochimaru",
+      "name": "Orochimaru",
+      "type": "villain",
+      "path": "characters/orochimaru.jpg",
+      "jikanId": 62
+    },
+    {
+      "id": "itachi",
+      "name": "Itachi Uchiha",
+      "type": "villain",
+      "path": "characters/itachi.jpg",
+      "jikanId": 103
+    },
+    {
+      "id": "kisame",
+      "name": "Kisame Hoshigaki",
+      "type": "villain",
+      "path": "characters/kisame.jpg",
+      "jikanId": 104
+    },
+    {
+      "id": "zabuza",
+      "name": "Zabuza Momochi",
+      "type": "villain",
+      "path": "characters/zabuza.jpg",
+      "jikanId": 63
+    },
+    {
+      "id": "pain",
+      "name": "Pain (Nagato)",
+      "type": "villain",
+      "path": "characters/pain.jpg",
+      "jikanId": 1106
+    },
+    {
+      "id": "madara",
+      "name": "Madara Uchiha",
+      "type": "villain",
+      "path": "characters/madara.jpg",
+      "jikanId": 1107
+    },
+    {
+      "id": "obito",
+      "name": "Obito Uchiha",
+      "type": "villain",
+      "path": "characters/obito.jpg",
+      "jikanId": 1108
+    },
+    {
+      "id": "kabuto",
+      "name": "Kabuto Yakushi",
+      "type": "villain",
+      "path": "characters/kabuto.jpg",
+      "jikanId": 106
+    },
+    {
+      "id": "hidan",
+      "name": "Hidan",
+      "type": "villain",
+      "path": "characters/hidan.jpg",
+      "jikanId": 1109
+    },
+    {
+      "id": "deidara",
+      "name": "Deidara",
+      "type": "villain",
+      "path": "characters/deidara.jpg",
+      "jikanId": 1110
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "name": "Demon Slayer",
+  "emoji": "🗡️",
+  "storage": "supabase",
+  "bucket": "island-demon-slayer",
+  "color": "#C0392B",
+  "characters": [
+    {
+      "id": "tanjiro",
+      "name": "Tanjiro Kamado",
+      "type": "hero",
+      "path": "characters/tanjiro.jpg",
+      "jikanId": 163268
+    },
+    {
+      "id": "nezuko",
+      "name": "Nezuko Kamado",
+      "type": "hero",
+      "path": "characters/nezuko.jpeg",
+      "jikanId": 163269
+    },
+    {
+      "id": "zenitsu",
+      "name": "Zenitsu Agatsuma",
+      "type": "hero",
+      "path": "characters/zenitsu.jpg",
+      "jikanId": 163270
+    },
+    {
+      "id": "inosuke",
+      "name": "Inosuke Hashibira",
+      "type": "hero",
+      "path": "characters/inosuke.jpg",
+      "jikanId": 163271
+    },
+    {
+      "id": "giyu",
+      "name": "Giyu Tomioka",
+      "type": "hero",
+      "path": "characters/giyu.png",
+      "jikanId": 163272
+    },
+    {
+      "id": "shinobu",
+      "name": "Shinobu Kocho",
+      "type": "hero",
+      "path": "characters/shinobu.png",
+      "jikanId": 163273
+    },
+    {
+      "id": "rengoku",
+      "name": "Kyojuro Rengoku",
+      "type": "hero",
+      "path": "characters/rengoku.jpg",
+      "jikanId": 163274
+    },
+    {
+      "id": "tengen",
+      "name": "Tengen Uzui",
+      "type": "hero",
+      "path": "characters/tengen.jpg",
+      "jikanId": 163275
+    },
+    {
+      "id": "muichiro",
+      "name": "Muichiro Tokito",
+      "type": "hero",
+      "path": "characters/muichiro.jpg",
+      "jikanId": 163276
+    },
+    {
+      "id": "obanai",
+      "name": "Obanai Iguro",
+      "type": "hero",
+      "path": "characters/obanai.jpeg",
+      "jikanId": 163277
+    },
+    {
+      "id": "kanao",
+      "name": "Kanao Tsuyuri",
+      "type": "hero",
+      "path": "characters/kanao.jpg",
+      "jikanId": 163278
+    },
+    {
+      "id": "mitsuri",
+      "name": "Mitsuri Kanroji",
+      "type": "hero",
+      "path": "characters/mitsuri.jpeg",
+      "jikanId": 163279
+    },
+    {
+      "id": "sanemi",
+      "name": "Sanemi Shinazugawa",
+      "type": "hero",
+      "path": "characters/sanemi.jpg",
+      "jikanId": 163280
+    },
+    {
+      "id": "gyomei",
+      "name": "Gyomei Himejima",
+      "type": "hero",
+      "path": "characters/gyomei.jpg",
+      "jikanId": 163281
+    },
+    {
+      "id": "genya",
+      "name": "Genya Shinazugawa",
+      "type": "hero",
+      "path": "characters/genya.jpg",
+      "jikanId": 163282
+    },
+    {
+      "id": "muzan",
+      "name": "Muzan Kibutsuji",
+      "type": "villain",
+      "path": "characters/muzan.jpg",
+      "jikanId": 163285
+    },
+    {
+      "id": "akaza",
+      "name": "Akaza",
+      "type": "villain",
+      "path": "characters/akaza.jpg",
+      "jikanId": 163286
+    },
+    {
+      "id": "doma",
+      "name": "Doma",
+      "type": "villain",
+      "path": "characters/doma.jpg",
+      "jikanId": 163287
+    },
+    {
+      "id": "kokushibo",
+      "name": "Kokushibo",
+      "type": "villain",
+      "path": "characters/kokushibo.png",
+      "jikanId": 163288
+    },
+    {
+      "id": "gyutaro",
+      "name": "Gyutaro",
+      "type": "villain",
+      "path": "characters/gyutaro.jpg",
+      "jikanId": 163289
+    },
+    {
+      "id": "nakime",
+      "name": "Nakime",
+      "type": "villain",
+      "path": "characters/nakime.jpeg",
+      "jikanId": 163290
+    },
+    {
+      "id": "hantengu",
+      "name": "Hantengu",
+      "type": "villain",
+      "path": "characters/hantengu.jpg",
+      "jikanId": 163292
+    },
+    {
+      "id": "gyokko",
+      "name": "Gyokko",
+      "type": "villain",
+      "path": "characters/gyokko.jpg",
+      "jikanId": 163293
+    },
+    {
+      "id": "rui",
+      "name": "Rui",
+      "type": "villain",
+      "path": "characters/rui.jpg",
+      "jikanId": 163294
+    },
+    {
+      "id": "kaigaku",
+      "name": "Kaigaku",
+      "type": "villain",
+      "path": "characters/kaigaku.jpg",
+      "jikanId": 163291
+    }
+  ]
+}

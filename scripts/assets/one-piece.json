@@ -1,0 +1,192 @@
+{
+  "name": "One Piece",
+  "emoji": "🏴‍☠️",
+  "storage": "local",
+  "bucket": null,
+  "localDir": "assets/images/avatars",
+  "color": "#e63946",
+  "characters": [
+    {
+      "id": "luffy",
+      "name": "Monkey D. Luffy",
+      "type": "hero",
+      "localFile": "luffy.png",
+      "jikanId": 14830
+    },
+    {
+      "id": "zoro",
+      "name": "Roronoa Zoro",
+      "type": "hero",
+      "localFile": "zoro.png",
+      "jikanId": 14831
+    },
+    {
+      "id": "nami",
+      "name": "Nami",
+      "type": "hero",
+      "localFile": "nami.png",
+      "jikanId": 14832
+    },
+    {
+      "id": "usopp",
+      "name": "Usopp",
+      "type": "hero",
+      "localFile": "usopp.png",
+      "jikanId": 14833
+    },
+    {
+      "id": "sanji",
+      "name": "Sanji",
+      "type": "hero",
+      "localFile": "sanji.png",
+      "jikanId": 14834
+    },
+    {
+      "id": "chopper",
+      "name": "Tony Chopper",
+      "type": "hero",
+      "localFile": "chopper.png",
+      "jikanId": 14835
+    },
+    {
+      "id": "robin",
+      "name": "Nico Robin",
+      "type": "hero",
+      "localFile": "robin.png",
+      "jikanId": 14836
+    },
+    {
+      "id": "franky",
+      "name": "Franky",
+      "type": "hero",
+      "localFile": "franky.png",
+      "jikanId": 14837
+    },
+    {
+      "id": "brook",
+      "name": "Brook",
+      "type": "hero",
+      "localFile": "brook.png",
+      "jikanId": 14838
+    },
+    {
+      "id": "jinbe",
+      "name": "Jinbe",
+      "type": "hero",
+      "localFile": "jinbe.png",
+      "jikanId": 14839
+    },
+    {
+      "id": "ace",
+      "name": "Portgas D. Ace",
+      "type": "hero",
+      "localFile": "ace.png",
+      "jikanId": 14840
+    },
+    {
+      "id": "sabo",
+      "name": "Sabo",
+      "type": "hero",
+      "localFile": "sabo.png",
+      "jikanId": 14841
+    },
+    {
+      "id": "shanks",
+      "name": "Shanks",
+      "type": "hero",
+      "localFile": "shanks.png",
+      "jikanId": 14842
+    },
+    {
+      "id": "hancock",
+      "name": "Boa Hancock",
+      "type": "hero",
+      "localFile": "hancock.png",
+      "jikanId": 14843
+    },
+    {
+      "id": "law",
+      "name": "Trafalgar Law",
+      "type": "hero",
+      "localFile": "law.png",
+      "jikanId": 14844
+    },
+    {
+      "id": "vivi",
+      "name": "Nefertari Vivi",
+      "type": "hero",
+      "localFile": "vivi.png",
+      "jikanId": 14845
+    },
+    {
+      "id": "crocodile",
+      "name": "Crocodile",
+      "type": "villain",
+      "localFile": "crocodile.png",
+      "jikanId": 14850
+    },
+    {
+      "id": "doflamingo",
+      "name": "Doflamingo",
+      "type": "villain",
+      "localFile": "doflamingo.png",
+      "jikanId": 14851
+    },
+    {
+      "id": "kaido",
+      "name": "Kaido",
+      "type": "villain",
+      "localFile": "kaido.png",
+      "jikanId": 14852
+    },
+    {
+      "id": "bigmom",
+      "name": "Big Mom",
+      "type": "villain",
+      "localFile": "bigmom.png",
+      "jikanId": 14853
+    },
+    {
+      "id": "blackbeard",
+      "name": "Barbe Noire",
+      "type": "villain",
+      "localFile": "blackbeard.png",
+      "jikanId": 14854
+    },
+    {
+      "id": "enel",
+      "name": "Enel",
+      "type": "villain",
+      "localFile": "enel.png",
+      "jikanId": 14855
+    },
+    {
+      "id": "rob-lucci",
+      "name": "Rob Lucci",
+      "type": "villain",
+      "localFile": "rob-lucci.png",
+      "jikanId": 14856
+    },
+    {
+      "id": "whitebeard",
+      "name": "Barbe Blanche",
+      "type": "villain",
+      "localFile": "whitebeard.png",
+      "jikanId": 14857
+    },
+    {
+      "id": "mihawk",
+      "name": "Mihawk",
+      "type": "villain",
+      "localFile": "mihawk.png",
+      "jikanId": 14858
+    },
+    {
+      "id": "clown",
+      "name": "Buggy le Clown",
+      "type": "villain",
+      "localFile": "clown.png",
+      "jikanId": 14859
+    }
+  ]
+}
