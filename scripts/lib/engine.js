@@ -76,23 +76,74 @@ function _download(url, destPath, opts) {
 
 // ─── Jikan API ─────────────────────────────────────────────────────
 
-async function _getJikanImage(jikanId, rateLimitMs, charName) {
-  const delay = rateLimitMs || 700;
-  await _sleep(delay);
+// Taille minimum pour une vraie image (1801B = placeholder MAL cassé)
+var MIN_VALID_SIZE = 5 * 1024; // 5 KB
 
-  // Essai 1 : galerie pictures
+async function _fetchAndValidateUrl(url) {
+  // Vérifier qu'une URL Jikan retourne une vraie image (> 5KB)
+  // 1801B = image "not found" placeholder de MyAnimeList → invalide
+  try {
+    const r = await _get(url + '?t=' + Date.now()); // éviter cache
+    if (r.status !== 200) return null;
+    const ct = r.headers && r.headers['content-type'] || '';
+    if (!ct.startsWith('image/')) return null;
+    const cl = parseInt((r.headers && r.headers['content-length']) || '0', 10);
+    if (cl > 0 && cl < MIN_VALID_SIZE) return null; // placeholder cassé
+    return url;
+  } catch(_) { return null; }
+}
+
+async function _getJikanImage(jikanId, rateLimitMs, charName) {
+  const delay = rateLimitMs || 800;
+
+  // ── Stratégie 1 : recherche par nom (plus fiable que l'ID) ──────
+  // On commence par la recherche pour éviter les faux IDs
+  if (charName) {
+    await _sleep(delay);
+    try {
+      const query = encodeURIComponent(charName);
+      const r = await _get(`${JIKAN_BASE}/characters?q=${query}&limit=8`);
+      if (r.status === 200) {
+        const d = JSON.parse(r.body);
+        if (d.data && d.data.length > 0) {
+          // Meilleur match : nom exact d'abord, puis partiel
+          const nameLow = charName.toLowerCase();
+          const match = d.data.find(c => c.name.toLowerCase() === nameLow)
+                     || d.data.find(c => c.name.toLowerCase().includes(nameLow.split(' ')[0]))
+                     || d.data.find(c => nameLow.includes(c.name.toLowerCase().split(' ')[0]))
+                     || d.data[0];
+          const img = match.images?.jpg?.large_image_url || match.images?.jpg?.image_url;
+          if (img) {
+            // Vérifier que ce n'est pas un placeholder
+            const valid = await _fetchAndValidateUrl(img);
+            if (valid) return valid;
+          }
+        }
+      }
+    } catch (_) {}
+  }
+
+  // ── Stratégie 2 : galerie pictures par ID ──────────────────────
+  await _sleep(delay);
   try {
     const r = await _get(`${JIKAN_BASE}/characters/${jikanId}/pictures`);
     if (r.status === 200) {
       const d = JSON.parse(r.body);
       if (d.data && d.data.length > 0) {
-        return d.data[0].jpg.large_image_url || d.data[0].jpg.image_url;
+        // Prendre la plus grande image disponible
+        for (const pic of d.data) {
+          const url = pic.jpg.large_image_url || pic.jpg.image_url;
+          if (url) {
+            const valid = await _fetchAndValidateUrl(url);
+            if (valid) return valid;
+          }
+        }
       }
     }
     if (r.status === 429) return null; // rate-limited
   } catch (_) {}
 
-  // Essai 2 : profil du personnage
+  // ── Stratégie 3 : profil par ID ────────────────────────────────
   await _sleep(delay);
   try {
     const r = await _get(`${JIKAN_BASE}/characters/${jikanId}`);
@@ -100,31 +151,12 @@ async function _getJikanImage(jikanId, rateLimitMs, charName) {
       const d = JSON.parse(r.body);
       const img = d.data?.images?.jpg?.large_image_url
                 || d.data?.images?.jpg?.image_url;
-      if (img) return img;
+      if (img) {
+        const valid = await _fetchAndValidateUrl(img);
+        if (valid) return valid;
+      }
     }
   } catch (_) {}
-
-  // Essai 3 : recherche par nom (fallback si ID faux)
-  if (charName) {
-    await _sleep(delay);
-    try {
-      const query = encodeURIComponent(charName.split(' ')[0]); // prénom seulement
-      const r = await _get(`${JIKAN_BASE}/characters?q=${query}&limit=5`);
-      if (r.status === 200) {
-        const d = JSON.parse(r.body);
-        if (d.data && d.data.length > 0) {
-          // Trouver le meilleur match par nom
-          const match = d.data.find(c =>
-            c.name.toLowerCase().includes(charName.toLowerCase().split(' ')[0]) ||
-            charName.toLowerCase().includes(c.name.toLowerCase().split(' ')[0])
-          ) || d.data[0];
-          return match.images?.jpg?.large_image_url
-              || match.images?.jpg?.image_url
-              || null;
-        }
-      }
-    } catch (_) {}
-  }
 
   return null;
 }
