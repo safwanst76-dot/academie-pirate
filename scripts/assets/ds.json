@@ -17,7 +17,7 @@
       "name": "Nezuko Kamado",
       "type": "hero",
       "path": "characters/nezuko.jpeg",
-      "jikanId": 163269
+      "jikanId": 157084
     },
     {
       "id": "zenitsu",
@@ -38,21 +38,21 @@
       "name": "Giyu Tomioka",
       "type": "hero",
       "path": "characters/giyu.png",
-      "jikanId": 163272
+      "jikanId": 157085
     },
     {
       "id": "shinobu",
       "name": "Shinobu Kocho",
       "type": "hero",
       "path": "characters/shinobu.png",
-      "jikanId": 163273
+      "jikanId": 157088
     },
     {
       "id": "rengoku",
       "name": "Kyojuro Rengoku",
       "type": "hero",
       "path": "characters/rengoku.jpg",
-      "jikanId": 163274
+      "jikanId": 157091
     },
     {
       "id": "tengen",
@@ -66,14 +66,14 @@
       "name": "Muichiro Tokito",
       "type": "hero",
       "path": "characters/muichiro.jpg",
-      "jikanId": 163276
+      "jikanId": 157097
     },
     {
       "id": "obanai",
       "name": "Obanai Iguro",
       "type": "hero",
       "path": "characters/obanai.jpeg",
-      "jikanId": 163277
+      "jikanId": 157101
     },
     {
       "id": "kanao",

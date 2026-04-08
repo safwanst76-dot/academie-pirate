@@ -52,14 +52,14 @@
       "name": "Historia Reiss",
       "type": "hero",
       "path": "characters/historia.png",
-      "jikanId": 67266
+      "jikanId": 40517
     },
     {
       "id": "jean",
       "name": "Jean Kirstein",
       "type": "hero",
       "path": "characters/jean.jpg",
-      "jikanId": 67264
+      "jikanId": 40516
     },
     {
       "id": "sasha",
@@ -87,14 +87,14 @@
       "name": "Petra Ral",
       "type": "hero",
       "path": "characters/petra.jpg",
-      "jikanId": 80804
+      "jikanId": 40523
     },
     {
       "id": "mike",
       "name": "Mike Zacharias",
       "type": "hero",
       "path": "characters/mike.jpg",
-      "jikanId": 80810
+      "jikanId": 40520
     },
     {
       "id": "falco",
@@ -108,7 +108,7 @@
       "name": "Yelena",
       "type": "hero",
       "path": "characters/yelena.jpg",
-      "jikanId": 181033
+      "jikanId": 138488
     },
     {
       "id": "reiner",
@@ -157,14 +157,14 @@
       "name": "Floch Forster",
       "type": "villain",
       "path": "characters/floch.jpg",
-      "jikanId": 181034
+      "jikanId": 138489
     },
     {
       "id": "gabi",
       "name": "Gabi Braun",
       "type": "villain",
       "path": "characters/gabi.jpg",
-      "jikanId": 181035
+      "jikanId": 138490
     },
     {
       "id": "titan-colossal",

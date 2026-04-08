@@ -76,8 +76,9 @@ function _download(url, destPath, opts) {
 
 // ─── Jikan API ─────────────────────────────────────────────────────
 
-async function _getJikanImage(jikanId, rateLimitMs) {
-  await _sleep(rateLimitMs || 700);
+async function _getJikanImage(jikanId, rateLimitMs, charName) {
+  const delay = rateLimitMs || 700;
+  await _sleep(delay);
 
   // Essai 1 : galerie pictures
   try {
@@ -92,16 +93,38 @@ async function _getJikanImage(jikanId, rateLimitMs) {
   } catch (_) {}
 
   // Essai 2 : profil du personnage
-  await _sleep(rateLimitMs || 700);
+  await _sleep(delay);
   try {
     const r = await _get(`${JIKAN_BASE}/characters/${jikanId}`);
     if (r.status === 200) {
       const d = JSON.parse(r.body);
-      return d.data?.images?.jpg?.large_image_url
-          || d.data?.images?.jpg?.image_url
-          || null;
+      const img = d.data?.images?.jpg?.large_image_url
+                || d.data?.images?.jpg?.image_url;
+      if (img) return img;
     }
   } catch (_) {}
+
+  // Essai 3 : recherche par nom (fallback si ID faux)
+  if (charName) {
+    await _sleep(delay);
+    try {
+      const query = encodeURIComponent(charName.split(' ')[0]); // prénom seulement
+      const r = await _get(`${JIKAN_BASE}/characters?q=${query}&limit=5`);
+      if (r.status === 200) {
+        const d = JSON.parse(r.body);
+        if (d.data && d.data.length > 0) {
+          // Trouver le meilleur match par nom
+          const match = d.data.find(c =>
+            c.name.toLowerCase().includes(charName.toLowerCase().split(' ')[0]) ||
+            charName.toLowerCase().includes(c.name.toLowerCase().split(' ')[0])
+          ) || d.data[0];
+          return match.images?.jpg?.large_image_url
+              || match.images?.jpg?.image_url
+              || null;
+        }
+      }
+    } catch (_) {}
+  }
 
   return null;
 }
@@ -172,7 +195,7 @@ async function processCharacter(character, config, reporter) {
 
   // ── Récupérer URL image via Jikan ──
   reporter.progress(name, 'fetching', '');
-  const imgUrl = await _getJikanImage(jikanId, rateLimitMs);
+  const imgUrl = await _getJikanImage(jikanId, config.rateLimitMs, name);
   if (!imgUrl) {
     reporter.progress(name, 'failed', 'image introuvable sur Jikan');
     return 'failed';

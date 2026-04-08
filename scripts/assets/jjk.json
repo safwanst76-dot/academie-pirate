@@ -17,7 +17,7 @@
       "name": "Megumi Fushiguro",
       "type": "hero",
       "path": "characters/megumi.jpg",
-      "jikanId": 186250
+      "jikanId": 166249
     },
     {
       "id": "nobara",
@@ -31,28 +31,28 @@
       "name": "Satoru Gojo",
       "type": "hero",
       "path": "characters/gojo.jpg",
-      "jikanId": 186248
+      "jikanId": 166248
     },
     {
       "id": "nanami",
       "name": "Kento Nanami",
       "type": "hero",
       "path": "characters/nanami.jpg",
-      "jikanId": 186252
+      "jikanId": 166252
     },
     {
       "id": "maki",
       "name": "Maki Zenin",
       "type": "hero",
       "path": "characters/maki.jpg",
-      "jikanId": 186253
+      "jikanId": 166253
     },
     {
       "id": "inumaki",
       "name": "Toge Inumaki",
       "type": "hero",
       "path": "characters/inumaki.png",
-      "jikanId": 186254
+      "jikanId": 166254
     },
     {
       "id": "panda",
@@ -94,7 +94,7 @@
       "name": "Mahito",
       "type": "villain",
       "path": "characters/mahito.jpg",
-      "jikanId": 195656
+      "jikanId": 172955
     },
     {
       "id": "jogo",
@@ -108,7 +108,7 @@
       "name": "Hanami",
       "type": "villain",
       "path": "characters/hanami.png",
-      "jikanId": 195658
+      "jikanId": 172958
     },
     {
       "id": "dagon",
