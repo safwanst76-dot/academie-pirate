@@ -1,6 +1,6 @@
 # ACADÉMIE PIRATE — ARCHITECTURE V2
 *Document de référence — À lire en priorité avant tout développement*
-*Version : 2.8 | Mise à jour : 5 Avril 2026*
+*Version : 2.9 | Mise à jour : 8 Avril 2026*
 
 ---
 
@@ -552,6 +552,51 @@ crée des régressions silencieuses, des conflits et des bugs difficiles à trac
 
 ### Règle ADM-01 — Contenu sans code
 Tout nouveau contenu créable depuis l'admin sans modifier le JS.
+### Règle ASSET-01 — Gestion des assets images ⚠️
+**Tout nouvel asset image suit ce protocole avant d'être référencé dans le code.**
+
+```
+Script d'upload : scripts/upload-boss-images.js
+Usage : SUPABASE_SERVICE_KEY=xxx node scripts/upload-boss-images.js
+
+Organisation des buckets Supabase :
+  island-aot/
+    ├── characters/   → personnages humains (Eren, Levi, Mikasa...)
+    ├── bosses/       → formes titanesques (titan-colossal.jpg...)
+    └── gifs/         → animations (aot-win-*.gif)
+  island-demon-slayer/
+    ├── characters/   → personnages (Tanjiro, Rengoku...)
+    └── bosses/       → boss (Muzan, Akaza...)  ← à créer
+  island-namek/
+    ├── characters/   → personnages JJK (Yuji, Megumi...)
+    └── bosses/       → boss JJK (Mahito, Sukuna...)  ← à créer
+  island-pays-du-feu/
+    ├── characters/   → personnages Naruto
+    └── gifs/         → animations
+
+Règles :
+✅ Uploader via script (automatique) avant de référencer dans le code
+✅ Tester l'URL publique dans le navigateur avant de merger
+✅ Préfixe de nom cohérent : kebab-case (titan-colossal.jpg, pas TitanColossal.jpg)
+✅ Format recommandé : .jpg pour photos, .png pour transparence, .gif pour animations
+❌ Ne jamais hardcoder une URL Supabase sans avoir vérifié que l'image existe
+❌ Ne jamais uploader via l'interface Supabase manuellement si un script existe
+```
+
+### Règle ASSET-02 — Évolution du code lors des ajouts d'assets
+**Tout ajout d'asset entraîne une mise à jour du code ET du MD.**
+
+```
+Checklist lors d'un ajout d'asset :
+□ Upload via scripts/upload-boss-images.js (ou script dédié)
+□ Vérifier l'URL publique
+□ Mettre à jour BOSS_IMGS dans boss-battle.js
+□ Mettre à jour avatars.json si nouvel avatar
+□ Mettre à jour ARCHITECTURE_V2.md (section ASSETS)
+□ Commit avec message descriptif
+```
+
+
 
 ---
 
@@ -616,6 +661,18 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 | DB — questions | Supabase | — | ✅ 352 questions (4 niveaux) |
 | DB — personnages | Supabase | — | ✅ hero_image 21 perso |
 | Assets bucket | Supabase Storage | — | ✅ 21 perso + 6 MP3 + 11 GIFs |
+
+### Assets uploadés ✅
+```
+island-aot/characters/    → 13 personnages (eren, mikasa, levi...)
+island-aot/bosses/        → 4 Titans à uploader (script: upload-boss-images.js)
+island-aot/gifs/          → animations de victoire/parfait
+island-demon-slayer/      → 8 boss + personnages
+island-namek/             → 8 boss JJK à uploader (script: upload-boss-images.js)
+island-pays-du-feu/       → personnages + gifs Naruto
+assets/images/dbz/        → 16+ images locales DBZ
+assets/images/avatars/    → 23 images locales One Piece
+```
 
 ### Fonctionnalités en production ✅
 ```
@@ -683,4 +740,4 @@ CM2  : { 1:eren.jpeg,    2:mikasa.gif,    3:armin.jpg,   4:levi.jpg,
 *Ce document doit être mis à jour à chaque phase complétée.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
 *Règle ARCHI-01 : tout nouveau code respecte l'architecture modulaire cible.*
-*Version 2.8 — 5 Avril 2026*
+*Version 2.9 — 8 Avril 2026*

@@ -48,21 +48,19 @@
     'Itachi Uchiha':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/gifs/itachi%20uchiha%20naruto%20GIF.gif',
     'Madara Uchiha':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/characters/minato%20.jpg',
     'Pain — Le Dieu':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu' + '/gifs/naruto%20GIF6.gif',
-    // English — 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot'
-    'Titan Colossal':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/armin.jpg',
-    'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/reiner.jpg',
-    'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot' + '/characters/annie.jpeg',
-    'Titan Bestial':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/zeke.jpg',
-    // Boss AOT par niveau English
-    'Titan Colossal':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/armin.jpg',
-    'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/reiner.jpg',
-    'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/annie.jpeg',
-    'Titan Bestial (CM2)':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/zeke.jpg',
+    // English — AOT Titans (vraies formes — upload via scripts/upload-boss-images.js)
+    // Avant upload : fallback sur les personnages existants
+    // Après upload dans island-aot/bosses/ : changer en bosses/titan-*.jpg
+    'Titan Colossal':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-colossal.jpg',
+    'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-cuirasse.jpg',
+    'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-feminin.jpg',
+    'Titan Bestial':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bestial.jpg',
+    'Titan Bestial (CM2)':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bestial.jpg',
     'Annie Leonhart':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/annie.jpeg',
     'Reiner Braun':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/reiner.jpg',
-    'Bertholdt':            'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/connie.jpg',
+    'Bertholdt':            'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/armin.jpg',
     'Ymir':                 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/historia.png',
-    // Namek — JJK (bucket island-namek)
+    // Namek — JJK (bucket island-namek/characters/ — uploadés via script)
     'Mahito':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/mahito.jpg',
     'Jogo':                 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/jogo.png',
     'Hanami':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/hanami.png',
@@ -71,6 +69,9 @@
     'Choso':                'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/choso.png',
     'Geto Suguru':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/geto.png',
     'Kenjaku':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/kenjaku.png',
+    // Boss DS supplémentaires
+    'Nakime':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/nakime.jpeg',
+    'Gyutaro':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/gyutaro.jpg',
   };
 
   function _resolveBossImg(bossName, bossImgProvided) {
