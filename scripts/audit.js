@@ -17,8 +17,10 @@
  * USAGE :
  *   node scripts/audit.js                        ← audit lecture seule
  *   node scripts/audit.js --world=aot            ← seulement AOT
- *   SUPABASE_SERVICE_KEY=xxx node scripts/audit.js --fix       ← réparer tout
- *   SUPABASE_SERVICE_KEY=xxx node scripts/audit.js --fix --world=ds
+ *   SUPABASE_SERVICE_KEY=xxx node scripts/audit.js --fix               ← réparer cassées
+ *   SUPABASE_SERVICE_KEY=xxx node scripts/audit.js --fix --sources-only ← uploader TOUTES les images manuelles
+ *   SUPABASE_SERVICE_KEY=xxx node scripts/audit.js --fix --force-all    ← tout réuploader (Jikan si pas de source)
+ *   SUPABASE_SERVICE_KEY=xxx node scripts/audit.js --fix --world=ds     ← seulement DS
  *   node scripts/audit.js --min-size=10          ← seuil 10 KB
  */
 
@@ -44,9 +46,11 @@ const REPORT_PATH  = path.join(REPO_ROOT, 'audit-report.html');
 const argv     = process.argv.slice(2);
 const arg      = k => (argv.find(a => a.startsWith(`--${k}=`)) || '').split('=').slice(1).join('=');
 const flag     = k => argv.includes(`--${k}`);
-const WORLD    = arg('world') || 'all';
-const FIX      = flag('fix');
-const MIN_SIZE = parseInt(arg('min-size') || '5', 10) * 1024; // bytes
+const WORLD        = arg('world') || 'all';
+const FIX          = flag('fix');
+const SOURCES_ONLY = flag('sources-only'); // uploader UNIQUEMENT depuis scripts/sources/
+const FORCE_ALL    = flag('force-all');    // uploader TOUT, même les images OK
+const MIN_SIZE     = parseInt(arg('min-size') || '5', 10) * 1024;
 
 // ─── HELPERS ───────────────────────────────────────────────────────
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -457,15 +461,38 @@ async function main() {
     const a   = assets[i];
     const num = `[${String(i+1).padStart(3)}/${assets.length}]`;
     process.stdout.write(`${num} ${a.name.padEnd(24)} `);
-    const r = await checkAsset(a);
+    let r;
+
+    if (SOURCES_ONLY || FORCE_ALL) {
+      // Vérifier si une source manuelle existe pour cet asset
+      const worldSrcDir = path.join(SOURCES_DIR, a.worldId);
+      const exts = ['.jpg','.jpeg','.png','.webp','.gif'];
+      const hasManualSrc = fs.existsSync(worldSrcDir) && exts.some(ext =>
+        fs.existsSync(path.join(worldSrcDir, a.id + ext))
+      );
+      if (hasManualSrc) {
+        // Forcer le statut "broken" pour déclencher la réparation
+        r = { ...a, status: 'broken', size: 0 };
+        console.log(`🥇 source manuelle détectée → à uploader`);
+      } else if (FORCE_ALL) {
+        r = { ...a, status: 'broken', size: 0 };
+        console.log(`🔄 forcer réparation`);
+      } else {
+        // Pas de source manuelle → skip
+        r = { ...a, status: 'ok', size: 0 };
+        process.stdout.write('⏭  pas de source locale\n');
+      }
+    } else {
+      r = await checkAsset(a);
+      if (r.status === 'ok')
+        console.log(`✅ ${Math.round(r.size/1024)||'?'} KB`);
+      else if (r.status === 'broken')
+        console.log(`⚠️  ${Math.round(r.size/1024)} KB — TROP PETITE`);
+      else
+        console.log(`❌ ${r.status.toUpperCase()}`);
+    }
     results.push(r);
-    if (r.status === 'ok')
-      console.log(`✅ ${Math.round(r.size/1024)||'?'} KB`);
-    else if (r.status === 'broken')
-      console.log(`⚠️  ${Math.round(r.size/1024)} KB — TROP PETITE`);
-    else
-      console.log(`❌ ${r.status.toUpperCase()}`);
-    if ((i+1) % 15 === 0) await sleep(150); // pause HEAD
+    if ((i+1) % 15 === 0) await sleep(150);
   }
 
   // ── Résumé ───────────────────────────────────────────────────────
