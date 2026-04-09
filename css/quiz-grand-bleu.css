@@ -1,0 +1,271 @@
+/* ═══════════════════════════════════════════════════════════════
+   CSS QUIZ-GRAND-BLEU.CSS — 🏴‍☠️ Grand Bleu V2
+   Préfixe isolant : .gb-*  (ARCHI-01 / AU-02)
+   Mobile-first : 320px → 1920px (RD-01)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Fond animé One Piece ─────────────────────────────────────── */
+#gb-bg {
+  position: fixed; inset: 0; z-index: 0;
+  display: flex; gap: 0; overflow: hidden;
+  opacity: 0; transition: opacity .5s;
+  pointer-events: none;
+}
+#gb-bg.visible { opacity: 1; }
+.gb-bg-strip {
+  display: flex; flex-direction: column; gap: 2px;
+  flex: 1; overflow: hidden;
+  animation: gbStripScroll 30s linear infinite;
+}
+.gb-bg-strip:nth-child(even) { animation-direction: reverse; animation-duration: 24s; }
+.gb-bg-strip img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
+  border-radius: 4px; filter: saturate(1.1) brightness(.35);
+}
+@keyframes gbStripScroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* ── Sections ────────────────────────────────────────────────── */
+#gb-levels-sec, #gb-iles-sec, #gb-quiz-sec {
+  position: relative; z-index: 5;
+  min-height: 100vh;
+  padding: 70px 12px 80px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ── Header commun ───────────────────────────────────────────── */
+.gb-map-header {
+  text-align: center;
+  margin-bottom: 28px;
+  padding: 0 8px;
+}
+.gb-map-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 3px;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255,215,0,.4);
+  margin-bottom: 6px;
+}
+.gb-map-sub {
+  font-size: .8rem;
+  color: rgba(255,255,255,.4);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.gb-back-btn {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800; font-size: .8rem;
+  color: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px; padding: 5px 14px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.gb-back-btn:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+/* ── Grille niveaux ──────────────────────────────────────────── */
+.gb-levels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .gb-levels-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+}
+@media (min-width: 900px) {
+  .gb-levels-grid { grid-template-columns: repeat(4, 1fr); max-width: 900px; }
+}
+.gb-level-card {
+  background: linear-gradient(145deg, rgba(10,5,20,.95), rgba(20,10,35,.9));
+  border: 2px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 20px 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  position: relative; overflow: hidden;
+}
+.gb-level-card::before {
+  content: '';
+  position: absolute; inset: 0; border-radius: 14px;
+  background: var(--level-color, #e63946);
+  opacity: 0; transition: opacity .2s;
+}
+.gb-level-card:hover::before, .gb-level-card:active::before { opacity: .08; }
+.gb-level-card:hover { transform: translateY(-3px); border-color: var(--level-color, #e63946); box-shadow: 0 8px 24px rgba(0,0,0,.4); }
+.gb-level-emoji { font-size: 1.8rem; margin-bottom: 8px; }
+.gb-level-nom { font-family: 'Bangers', cursive; font-size: 1.4rem; letter-spacing: 2px; color: #fff; margin-bottom: 4px; }
+.gb-level-desc { font-size: .72rem; color: rgba(255,255,255,.4); font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+.gb-level-btn {
+  display: inline-block;
+  font-family: 'Bangers', cursive; font-size: .85rem; letter-spacing: 1px;
+  color: var(--level-color, #e63946);
+  border: 1.5px solid var(--level-color, #e63946);
+  border-radius: 20px; padding: 4px 12px;
+  transition: background .15s;
+}
+.gb-level-card:hover .gb-level-btn { background: var(--level-color, #e63946); color: #fff; }
+
+/* ── Grille îles ─────────────────────────────────────────────── */
+.gb-islands-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) { .gb-islands-grid { gap: 18px; } }
+@media (min-width: 900px) { .gb-islands-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.gb-isle-card {
+  background: linear-gradient(145deg, rgba(10,5,20,.95), rgba(20,10,35,.9));
+  border: 2px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  position: relative;
+}
+.gb-isle-card:hover { transform: translateY(-4px); border-color: var(--isle-color, #e63946); box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+.gb-isle-card.done { border-color: rgba(6,214,160,.3); }
+
+.gb-isle-img-wrap {
+  position: relative; aspect-ratio: 3/4; overflow: hidden;
+  background: rgba(255,255,255,.04);
+}
+.gb-isle-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gb-isle-img-fallback {
+  position: absolute; inset: 0;
+  display: none; align-items: center; justify-content: center;
+  font-size: 2.5rem; border-radius: 0;
+}
+.gb-isle-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,5,20,.8), transparent);
+}
+
+.gb-isle-body {
+  padding: 10px 10px 12px;
+  position: relative;
+}
+.gb-isle-num {
+  font-size: .65rem; font-weight: 900; letter-spacing: 2px;
+  color: rgba(255,255,255,.3); text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.gb-isle-name {
+  font-family: 'Bangers', cursive; font-size: 1rem; letter-spacing: 1px;
+  color: var(--isle-color, #e63946); margin-bottom: 3px;
+  line-height: 1.1;
+}
+.gb-isle-topic {
+  font-size: .68rem; color: rgba(255,255,255,.45); font-weight: 700;
+  line-height: 1.3; margin-bottom: 5px;
+}
+.gb-isle-level {
+  display: inline-block; font-size: .6rem; font-weight: 800;
+  border: 1px solid; border-radius: 10px;
+  padding: 1px 7px; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.gb-isle-stars { font-size: .7rem; color: rgba(255,255,255,.5); }
+
+/* ── Section Quiz ────────────────────────────────────────────── */
+#gb-quiz-sec {
+  padding: 60px 0 80px;
+}
+.gb-quiz-header {
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(10,5,20,.95);
+  position: sticky; top: 60px; z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.gb-quiz-title {
+  font-family: 'Bangers', cursive; font-size: 1rem;
+  letter-spacing: 2px; color: #ffd700; flex: 1;
+}
+.gb-prog-bar { flex: 2; height: 6px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; }
+.gb-prog-fill { height: 100%; background: linear-gradient(90deg, #e63946, #ffd700); border-radius: 3px; transition: width .4s; }
+.gb-prog-lbl { font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.5); white-space: nowrap; }
+#gb-qContainer { padding: 0; }
+
+/* ── Cinématique ─────────────────────────────────────────────── */
+.gb-cine-inner {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; min-height: 100vh;
+  padding: 24px 16px; position: relative;
+}
+.gb-cine-char-wrap {
+  width: min(200px, 45vw); aspect-ratio: 2/3;
+  margin-bottom: 20px; position: relative;
+}
+.gb-cine-char {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: 16px; filter: drop-shadow(0 0 20px rgba(255,215,0,.3));
+}
+.gb-cine-char-emoji {
+  position: absolute; inset: 0;
+  display: none; align-items: center; justify-content: center;
+  font-size: 4rem;
+}
+.gb-cine-kanji {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  letter-spacing: 4px; text-align: center;
+  margin-bottom: 12px;
+  text-shadow: 0 0 30px currentColor;
+  animation: gbKanjiPop .5s ease-out;
+}
+@keyframes gbKanjiPop { from { transform: scale(.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.gb-cine-lines { text-align: center; margin-bottom: 16px; }
+.gb-cine-line {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  letter-spacing: 3px; color: #fff;
+  animation: gbLineSlide .4s ease-out both;
+  margin-bottom: 4px;
+}
+.gb-cine-line:nth-child(2) { animation-delay: .15s; }
+.gb-cine-line:nth-child(3) { animation-delay: .3s; }
+@keyframes gbLineSlide { from { transform: translateX(-30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+.gb-cine-bubble {
+  background: rgba(0,0,0,.7);
+  border: 2px solid rgba(255,215,0,.3);
+  border-radius: 16px; padding: 14px 16px;
+  max-width: min(480px, 90vw);
+  text-align: center;
+  animation: gbBubbleFade .4s .4s ease-out both;
+}
+@keyframes gbBubbleFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.gb-cine-char-name {
+  display: block; font-family: 'Bangers', cursive;
+  font-size: .9rem; letter-spacing: 2px;
+  margin-bottom: 6px; text-transform: uppercase;
+}
+.gb-cine-bubble-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.8rem, 2.5vw, .95rem);
+  color: rgba(255,255,255,.9); line-height: 1.5;
+  font-weight: 700;
+}
+.gb-skip-btn {
+  position: fixed; top: 14px; right: 14px;
+  font-family: 'Bangers', cursive; font-size: .85rem; letter-spacing: 1px;
+  color: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 20px; padding: 5px 14px;
+  cursor: pointer; z-index: 9999;
+  transition: all .15s; min-height: 44px;
+}
+.gb-skip-btn:hover { background: rgba(255,255,255,.15); color: #fff; }

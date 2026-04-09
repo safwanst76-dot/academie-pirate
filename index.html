@@ -32,6 +32,7 @@
 <link rel="stylesheet" href="css/quiz-kanto.css">
 <link rel="stylesheet" href="css/quiz-namek.css">
 <link rel="stylesheet" href="css/quiz-english.css">
+<link rel="stylesheet" href="css/quiz-grand-bleu.css">
 <link rel="stylesheet" href="css/lesson.css">
 <link rel="stylesheet" href="css/features/daily.css">
 <link rel="stylesheet" href="css/features/child-profile.css">
@@ -463,6 +464,19 @@
   <div id="jjk-qContainer"></div>
 </section>
 
+<!-- ═══ GRAND BLEU V2 (Français × One Piece) ═══ -->
+<div id="gb-bg"></div>
+<section id="gb-levels-sec" style="display:none"></section>
+<section id="gb-iles-sec"   style="display:none"></section>
+<section id="gb-quiz-sec"   style="display:none">
+  <div class="gb-quiz-header">
+    <div class="gb-quiz-title" id="gb-qTitle">QUIZ</div>
+    <div class="gb-prog-bar"><div class="gb-prog-fill" id="gb-qProgFill" style="width:0%"></div></div>
+    <div class="gb-prog-lbl" id="gb-qProgLbl">0 / 0</div>
+  </div>
+  <div id="gb-qContainer"></div>
+</section>
+
 <!-- ═══ ENGLISH (Anglais × Attack on Titan) ═══ -->
 <div id="aot-bg"></div>
 <section id="aot-levels-sec" style="display:none"></section>
@@ -557,6 +571,7 @@
 <script src="js/worlds/english/audio.js"></script>
 <script src="js/engine/quiz-engine.js"></script>
 <script src="js/worlds/english/quiz-router.js"></script>
+<script src="js/worlds/grand-bleu/quiz-router.js"></script>
 
 <!-- ═══ LESSON DATA — données pédagogiques par monde (règle A3) ═══ -->
 <script src="js/worlds/grand-bleu/lesson-data.js"></script>

@@ -86,6 +86,16 @@ function hideAll() {
   const jjkBg = document.getElementById('jjk-bg');
   if (jjkBg) jjkBg.classList.remove('visible');
 
+  // Grand Bleu V2 sections
+  var gbLevels = document.getElementById('gb-levels-sec');
+  var gbIles   = document.getElementById('gb-iles-sec');
+  var gbQuiz   = document.getElementById('gb-quiz-sec');
+  if (gbLevels) gbLevels.style.display = 'none';
+  if (gbIles)   gbIles.style.display   = 'none';
+  if (gbQuiz)   gbQuiz.style.display   = 'none';
+  var gbBg = document.getElementById('gb-bg');
+  if (gbBg) gbBg.classList.remove('visible');
+  
   const aotLevels = document.getElementById('aot-levels-sec');
   const aotIles   = document.getElementById('aot-iles-sec');
   const aotQuiz   = document.getElementById('aot-quiz-sec');
@@ -160,9 +170,16 @@ function showCarte() {
 }
 
 function showIles() {
-  hideAll();
   if (window.AP) window.AP.trackWorldEnter('grandbleu');
   if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('grandbleu');
+  // V2 DB-driven si disponible (grand-bleu/quiz-router.js chargé)
+  if (typeof showGrandBleuV2 === 'function') {
+    showGrandBleuV2();
+    document.title = 'Académie Pirate — Grand Bleu · Français';
+    return;
+  }
+  // Fallback V1 (zéro régression NR-01)
+  hideAll();
   const map = getSection('map-sec');
   if (map) map.style.display = 'block';
   if (typeof stopBGM === 'function') stopBGM();
@@ -325,6 +342,10 @@ var SEO_ROUTES = {
   'pays-du-feu': { title: "Académie Pirate — Pays du Feu (Maths · Naruto)",      desc: "8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs." },
   'parent':      { title: 'Académie Pirate — Dashboard Parent',                    desc: 'Suivez la progression de votre enfant : XP, îles complétées, résultats détaillés.' },
   'grand-bleu':  { title: 'Académie Pirate — Grand Bleu · Français One Piece',    desc: '8 îles de grammaire et conjugaison avec les pirates de One Piece. Programme CM2-4ème.' },
+  'grand-bleu/cm2':  { title: 'Quiz Français CM2 — Grammaire · Académie Pirate',   desc: '8 îles Français CM2 : infinitif/PP, accords, nature des mots, GN, conjugaison, homophones.' },
+  'grand-bleu/6eme': { title: 'Quiz Français 6ème — Fonctions · Académie Pirate',  desc: '8 îles Français 6ème : COD/COI, subordonnées, passé simple, figures de style.' },
+  'grand-bleu/5eme': { title: 'Quiz Français 5ème — Expression · Académie Pirate', desc: '8 îles Français 5ème : subjonctif, conditionnel, discours indirect, voix passive.' },
+  'grand-bleu/4eme': { title: 'Quiz Français 4ème — Brevet · Académie Pirate',     desc: '8 îles Français 4ème : maîtrise littéraire, modes verbaux, brevet.' },
   'english':     { title: 'Académie Pirate — Anglais · Attack on Titan',           desc: "Révise l'anglais CM2 à 4ème avec les héros d'Attack on Titan. Programme officiel." },
   'english/cm2': { title: 'Quiz Anglais CM2 — Vocabulaire A1 · Académie Pirate',  desc: '8 îles anglais CM2 : alphabet, chiffres, couleurs, animaux, famille. Niveau A1.' },
   'english/6eme':{ title: 'Quiz Anglais 6ème — Grammaire A1+ · Académie Pirate',  desc: '8 îles anglais 6ème : Present Simple, BE/HAVE, articles, pluriels. Niveau A1+.' },
@@ -430,6 +451,19 @@ function handleRoute() {
   }
 
   if (handler) {
+    // Sous-routes Grand Bleu V2 : #/grand-bleu/cm2, #/grand-bleu/6eme...
+    if (route === 'grand-bleu' && sub) {
+      var gbLevels = ['cm2', '6eme', '5eme', '4eme'];
+      if (gbLevels.indexOf(sub) !== -1) {
+        handler(true);
+        setTimeout(function() {
+          if (typeof window.gb_showLevel === 'function') {
+            window.gb_showLevel(sub, true);
+          }
+        }, 80);
+        return;
+      }
+    }
     // Sous-routes English : #/english/cm2 → showEnglish puis showLevel(sub)
     if (route === 'english' && sub) {
       var validLevels = ['cm2', '6eme', '5eme', '4eme'];
