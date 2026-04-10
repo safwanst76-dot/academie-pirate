@@ -329,12 +329,26 @@ function _spawnParticles(container, type, accent) {
 //               → île #6 : gifs/itachi%20uchiha%20naruto%20GIF.gif
 // ══════════════════════════════════════════════════════════════
 
-// ── GRAND BLEU — Français / One Piece ──────────────────────────
-// Les characters ne sont PAS dans Supabase grand-bleu.
-// On utilise charImages[n] (alimenté par islands.js via Jikan API)
-// avec fallback sur les assets locaux du repo.
-function lesson_grand_bleu(n, thenCallback) {
-  var LOCAL = {
+// ── GRAND BLEU — Français / One Piece ─────────────────────────
+// V2 : accepte (niveauCode, n, callback) appelé par quiz-router V2
+// V1 rétro-compat : accepte (n, callback) depuis quiz.js
+function lesson_grand_bleu(niveauCodeOrN, nOrCallback, thenCallback) {
+  // Détection signature (V1 = 2 args, V2 = 3 args)
+  var niveauCode, n, callback;
+  if (typeof nOrCallback === 'function') {
+    // Ancienne signature V1 : lesson_grand_bleu(n, callback)
+    n          = parseInt(niveauCodeOrN) || 1;
+    callback   = nOrCallback;
+    niveauCode = 'cm2';
+  } else {
+    // Nouvelle signature V2 : lesson_grand_bleu(niveauCode, n, callback)
+    niveauCode = niveauCodeOrN || 'cm2';
+    n          = parseInt(nOrCallback) || 1;
+    callback   = thenCallback;
+  }
+ 
+  // ── Images locales — assets/images/avatars/ (toujours disponibles) ──
+  var CM2_MAP = {
     1: 'assets/images/avatars/luffy.png',
     2: 'assets/images/avatars/nami.png',
     3: 'assets/images/avatars/zoro.png',
@@ -344,11 +358,63 @@ function lesson_grand_bleu(n, thenCallback) {
     7: 'assets/images/avatars/chopper.png',
     8: 'assets/images/avatars/brook.png'
   };
-  // Priorité : Jikan (charImages chargé par islands.js) > local fallback
-  var avatar = (typeof charImages !== 'undefined' && charImages[n] && charImages[n] !== LOCAL[n])
-    ? charImages[n]
-    : (LOCAL[n] || 'assets/images/avatars/luffy.png');
-  showLesson('grandbleu', n, avatar, '#e63946', thenCallback);
+ 
+  var NIVEAU_MAP = {
+    '6eme': {
+      1: 'assets/images/avatars/shanks.png',
+      2: 'assets/images/avatars/ace.png',
+      3: 'assets/images/avatars/law.png',
+      4: 'assets/images/avatars/hancock.png',
+      5: 'assets/images/avatars/vivi.png',
+      6: 'assets/images/avatars/sabo.png',
+      7: 'assets/images/avatars/franky.png',
+      8: 'assets/images/avatars/jinbe.png'
+    },
+    '5eme': {
+      1: 'assets/images/avatars/mihawk.png',
+      2: 'assets/images/avatars/mihawk.png',
+      3: 'assets/images/avatars/shanks.png',
+      4: 'assets/images/avatars/whitebeard.png',
+      5: 'assets/images/avatars/shanks.png',
+      6: 'assets/images/avatars/smoker.png',
+      7: 'assets/images/avatars/luffy.png',
+      8: 'assets/images/avatars/usopp.png'
+    },
+    '4eme': {
+      1: 'assets/images/avatars/robin.png',
+      2: 'assets/images/avatars/robin.png',
+      3: 'assets/images/avatars/law.png',
+      4: 'assets/images/avatars/nami.png',
+      5: 'assets/images/avatars/zoro.png',
+      6: 'assets/images/avatars/sanji.png',
+      7: 'assets/images/avatars/luffy.png',
+      8: 'assets/images/avatars/brook.png'
+    },
+    '3eme': {
+      1: 'assets/images/avatars/luffy.png',
+      2: 'assets/images/avatars/zoro.png',
+      3: 'assets/images/avatars/robin.png',
+      4: 'assets/images/avatars/nami.png',
+      5: 'assets/images/avatars/chopper.png',
+      6: 'assets/images/avatars/sanji.png',
+      7: 'assets/images/avatars/usopp.png',
+      8: 'assets/images/avatars/brook.png'
+    }
+  };
+ 
+  var niveauAvatars = NIVEAU_MAP[niveauCode] || CM2_MAP;
+  var avatar = niveauAvatars[n] || CM2_MAP[n] || 'assets/images/avatars/luffy.png';
+ 
+  var COULEURS = {
+    'cm2':  '#e63946',
+    '6eme': '#f97316',
+    '5eme': '#8b5cf6',
+    '4eme': '#22c55e',
+    '3eme': '#3b82f6'
+  };
+  var color = COULEURS[niveauCode] || '#e63946';
+ 
+  showLesson('grandbleu', n, avatar, color, callback);
 }
 
 // ── MAGNOLIA — Histoire / Dragon Ball Z ────────────────────────
