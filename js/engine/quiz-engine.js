@@ -1,5 +1,6 @@
 // ═══════════════════════════════════════════════════════════════
-// QUIZ-ENGINE.JS V4 — Académie Pirate
+// QUIZ-ENGINE.JS V5 — Académie Pirate
+// IDs configurables via opts → multi-monde (English, Français…)
 // Pattern PIXEL-PERFECT du pays-du-feu :
 //   1. Toutes les questions d'un coup (innerHTML = html)
 //   2. Bouton "Corriger" TOUJOURS visible en bas
@@ -21,9 +22,17 @@
   var _xp              = 0;
   var _onBack          = null;
 
+  // ── IDs configurables (défaut = English / aot-*) ─────────────
+  var _quizSecId  = 'aot-quiz-sec';
+  var _ilesSecId  = 'aot-iles-sec';
+  var _containerId= 'aot-qContainer';
+  var _titleId    = 'aot-qTitle';
+  var _progFillId = 'aot-qProgFill';
+  var _progLblId  = 'aot-qProgLbl';
+  var _bgmBack    = 'aot-map';
+
   var STORAGE_AOT = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot';
 
-  // GIFs résultats — bucket island-aot/gifs/
   var AOT_GIFS_PERFECT = [
     STORAGE_AOT + '/gifs/aot-perfect-1.gif',
     STORAGE_AOT + '/gifs/aot-perfect-2.gif',
@@ -54,14 +63,21 @@
     _answers         = {};
     _xp              = 0;
 
+    // ── IDs configurables — chaque monde passe les siens ──────
+    _quizSecId   = opts.quizSecId   || 'aot-quiz-sec';
+    _ilesSecId   = opts.ilesSecId   || 'aot-iles-sec';
+    _containerId = opts.containerId || 'aot-qContainer';
+    _titleId     = opts.titleId     || 'aot-qTitle';
+    _progFillId  = opts.progFillId  || 'aot-qProgFill';
+    _progLblId   = opts.progLblId   || 'aot-qProgLbl';
+    _bgmBack     = opts.bgmBack     || 'aot-map';
+
     try {
-      // Charger chapitre
       var db = _getDb();
       var resC = await db.from('chapitres').select('*').eq('id', chapitreId).single();
       if (resC.error) throw new Error(resC.error.message);
       _currentChapitre = resC.data;
 
-      // Charger questions
       var resQ = await db.from('questions')
         .select('*')
         .eq('chapitre_id', chapitreId)
@@ -75,13 +91,9 @@
         return;
       }
 
-      // Afficher section quiz
       _showSection();
-
-      // Lancer le rendu (identique à pdf_launchIsland)
       _launchIsland();
 
-      // Musique (après leçon — règle AU-04)
       if (typeof stopBGM === 'function') stopBGM();
       if (_currentChapitre.bgm && typeof playBGM === 'function') {
         setTimeout(function(){ playBGM(_currentChapitre.bgm); }, 300);
@@ -93,15 +105,13 @@
   }
 
   // ══════════════════════════════════════════════════════════════
-  // 2. AFFICHER SECTION QUIZ + MASQUER TOUT
+  // 2. AFFICHER SECTION QUIZ
   // ══════════════════════════════════════════════════════════════
 
   function _showSection() {
-    var levelsEl = document.getElementById('aot-levels-sec');
-    var ilesEl   = document.getElementById('aot-iles-sec');
-    var quizEl   = document.getElementById('aot-quiz-sec');
-    if (levelsEl) levelsEl.style.display = 'none';
-    if (ilesEl)   ilesEl.style.display   = 'none';
+    // Cacher les sections du monde courant (pas les autres)
+    var quizEl = document.getElementById(_quizSecId);
+    // On ne touche pas _ilesSecId ici — le router l'a déjà géré
     if (quizEl) {
       quizEl.style.display = 'block';
       quizEl.style.zIndex  = '5';
@@ -110,7 +120,7 @@
   }
 
   // ══════════════════════════════════════════════════════════════
-  // 3. RENDU DES QUESTIONS — identique à pdf_launchIsland
+  // 3. RENDU DES QUESTIONS
   // ══════════════════════════════════════════════════════════════
 
   function _launchIsland() {
@@ -121,20 +131,23 @@
     var total = qs.length;
     var keys  = ['A','B','C','D'];
 
-    // Header
-    document.getElementById('aot-qTitle').textContent    = ch.nom + ' — ' + ch.topic;
-    document.getElementById('aot-qProgFill').style.width = '0%';
-    document.getElementById('aot-qProgLbl').textContent  = '0 / ' + total;
+    var titleEl    = document.getElementById(_titleId);
+    var progFillEl = document.getElementById(_progFillId);
+    var progLblEl  = document.getElementById(_progLblId);
+
+    if (titleEl)    titleEl.textContent    = ch.nom + ' — ' + ch.topic;
+    if (progFillEl) progFillEl.style.width = '0%';
+    if (progLblEl)  progLblEl.textContent  = '0 / ' + total;
 
     var msgs = [
       'Montre-moi ce que tu sais !',
       'Réfléchis bien avant de répondre.',
       'Chaque bonne réponse te rapproche de la victoire !',
-      'Tu peux le faire, soldat !',
+      'Tu peux le faire !',
       'Concentre-toi !',
-      'L\'Armée d\'Exploration compte sur toi !',
       'Ne lâche pas !',
       'Presque fini, tiens bon !',
+      'Tu es sur la bonne voie !',
     ];
 
     var html = '';
@@ -151,12 +164,11 @@
 
       var bossBanner = isBoss
         ? '<div class="aot-boss-banner">' +
-            '<div class="aot-boss-label">⚔️ COMBAT FINAL — TITAN</div>' +
-            '<div class="aot-boss-name">' + (ch.boss_name || 'TITAN COLOSSAL') + '</div>' +
+            '<div class="aot-boss-label">⚔️ COMBAT FINAL</div>' +
+            '<div class="aot-boss-name">' + (ch.boss_name || 'BOSS') + '</div>' +
           '</div>'
         : '';
 
-      // Labels cliquables — identique à pdf-lbl pattern
       var optsHtml = opts.map(function(opt, j) {
         var safe = String(opt).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
         return '<label class="aot-opt" ' +
@@ -191,47 +203,34 @@
         '</div>';
     });
 
-    // Bouton corriger TOUJOURS visible en bas (pattern exact V1)
     html +=
       '<div class="aot-submit-wrap">' +
         '<button class="aot-btn aot-btn-main" ' +
           'onclick="window.AP_QuizEngine._corriger()">⚔️ CORRIGER MES RÉPONSES</button>' +
       '</div>';
 
-    // innerHTML = html (pattern exact V1 — PAS +=)
-    document.getElementById('aot-qContainer').innerHTML = html;
+    var container = document.getElementById(_containerId);
+    if (container) container.innerHTML = html;
 
-    // ── Boss battle English (pattern identique aux autres mondes) ──
-    var bossQ = qs.find(function(q) { return q.is_boss || q.type === 'boss'; });
-    // Fallback : île 8 = boss final (si is_boss non défini en DB)
+    // Boss battle
+    var bossQ   = qs.find(function(q) { return q.is_boss || q.type === 'boss'; });
     var isIsle8 = ch.numero === 8 || ch.numero === '8';
     if ((bossQ || isIsle8) && window.AP && window.AP.boss) {
-      // Boss par niveau AOT English
-      var englishBossNames = {
-        'cm2':  'Titan Colossal',
-        '6eme': 'Titan Cuirassé',
-        '5eme': 'Titan Féminin',
-        '4eme': 'Titan Bestial'
-      };
-      var bossName = ch.boss_name
-        || (bossQ && bossQ.boss_name)
-        || englishBossNames[_currentNiveau]
-        || 'Titan Colossal';
-      window.AP.boss.init('english', bossName, '', 1);
+      var bossName = ch.boss_name || (bossQ && bossQ.boss_name) || 'BOSS';
+      window.AP.boss.init(_currentMatiere, bossName, '', 1);
     }
   }
 
   // ══════════════════════════════════════════════════════════════
-  // 4. SÉLECTION — identique à pdf_selectOpt
+  // 4. SÉLECTION
   // ══════════════════════════════════════════════════════════════
 
   function _selectOpt(qi, oi, val) {
     qi = parseInt(qi); oi = parseInt(oi);
-    var total = _questions[qi] ? (typeof _questions[qi].options === 'string'
-      ? JSON.parse(_questions[qi].options) : _questions[qi].options).length : 4;
+    var opts = _questions[qi] ? (typeof _questions[qi].options === 'string'
+      ? JSON.parse(_questions[qi].options) : _questions[qi].options) : [];
 
-    // Déselectionner les autres labels de cette question
-    for (var j = 0; j < total; j++) {
+    for (var j = 0; j < opts.length; j++) {
       var lbl = document.getElementById('aot-lbl' + qi + '_' + j);
       if (lbl) lbl.classList.remove('aot-selected');
     }
@@ -240,17 +239,16 @@
 
     _answers[qi] = val;
 
-    // Barre de progression
     var filled = Object.keys(_answers).length;
     var ttl    = _questions.length;
-    var fillEl = document.getElementById('aot-qProgFill');
-    var lblEl  = document.getElementById('aot-qProgLbl');
+    var fillEl = document.getElementById(_progFillId);
+    var lblEl  = document.getElementById(_progLblId);
     if (fillEl) fillEl.style.width = Math.round(filled / ttl * 100) + '%';
     if (lblEl)  lblEl.textContent  = filled + ' / ' + ttl;
   }
 
   // ══════════════════════════════════════════════════════════════
-  // 5. CORRECTION — identique à pdf_corriger
+  // 5. CORRECTION
   // ══════════════════════════════════════════════════════════════
 
   function _corriger() {
@@ -264,7 +262,6 @@
       var ans  = _answers[i];
       var opts = document.querySelectorAll('[id^="aot-lbl' + i + '_"]');
 
-      // Colorer les labels
       opts.forEach(function(lbl) {
         lbl.style.pointerEvents = 'none';
         if (lbl.dataset.v === q.reponse) lbl.classList.add('aot-correct');
@@ -286,43 +283,32 @@
         if (typeof sfxKO === 'function') sfxKO();
       }
 
-      // Explication
       if (expl) {
         expl.innerHTML = '💡 ' + (q.explication || '');
         expl.classList.add('aot-show');
       }
     });
 
-    // ── Boss battle hit (English — pattern identique aux autres mondes) ──
+    // Boss
     if (window.AP && window.AP.boss && window.AP.boss.isActive()) {
-      var hasBossQ = qs.some(function(q) { return q.is_boss || q.type === 'boss'; })
-                  || ch.numero === 8 || ch.numero === '8';
-      if (hasBossQ) {
-        var isCorrect = score >= Math.ceil(qs.length * 0.6); // 60%+ = victoire
-        window.AP.boss.hit(isCorrect, true);
-      }
+      var hasBoss = qs.some(function(q) { return q.is_boss || q.type === 'boss'; })
+                 || ch.numero === 8 || ch.numero === '8';
+      if (hasBoss) window.AP.boss.hit(score >= Math.ceil(qs.length * 0.6), true);
     }
 
-    // XP
     _xp += score * 2;
 
-    // Barre à 100%
-    var fillEl = document.getElementById('aot-qProgFill');
-    var lblEl  = document.getElementById('aot-qProgLbl');
+    var fillEl = document.getElementById(_progFillId);
+    var lblEl  = document.getElementById(_progLblId);
     if (fillEl) fillEl.style.width = '100%';
     if (lblEl)  lblEl.textContent  = qs.length + ' / ' + qs.length;
 
-    // Sauvegarder
     _saveProgression(score, qs.length, score * 2);
-
-    // Afficher résultats (PAS de scrollTo ici — identique V1)
     _showResults(score);
   }
 
   // ══════════════════════════════════════════════════════════════
-  // 6. RÉSULTATS — identique à pdf_showResults
-  //    innerHTML += html  →  append à la FIN
-  //    setTimeout 400ms  →  scrollIntoView block:'center'
+  // 6. RÉSULTATS
   // ══════════════════════════════════════════════════════════════
 
   function _showResults(score) {
@@ -330,16 +316,15 @@
     var total = _questions.length;
 
     var txts = [
-      { min: 11, t: 'LÉGENDE DE PARADIS ! 11/11 !!!' },
+      { min: 11, t: 'LÉGENDAIRE ! 11/11 !!!' },
       { min: 9,  t: 'EXCELLENT ! Niveau Capitaine !' },
-      { min: 7,  t: 'Bien joué, Soldat confirmé !' },
+      { min: 7,  t: 'Bien joué, combattant confirmé !' },
       { min: 5,  t: 'Continue l\'entraînement !' },
       { min: 0,  t: 'Ne lâche pas ! Réessaie !' }
     ];
     var res    = txts.find(function(r){ return score >= r.min; }) || txts[txts.length-1];
     var gained = score * 2;
 
-    // GIF selon score — identique V1
     var gif = score === total
       ? AOT_GIFS_PERFECT[Math.floor(Math.random() * AOT_GIFS_PERFECT.length)]
       : score >= Math.ceil(total * 0.6)
@@ -359,53 +344,59 @@
           '</div>' +
         '</div>' +
         '<div class="aot-result-body">' +
-          '<div class="aot-result-topic">⚔️ ' + (ch.topic || '') + '</div>' +
+          '<div class="aot-result-topic">🏴‍☠️ ' + (ch.topic || '') + '</div>' +
           '<div class="aot-result-stars">' + stars + '</div>' +
           (gif ? '<img src="' + gif + '" class="aot-result-gif" onerror="this.style.display=\'none\'">' : '') +
-          '<div class="aot-result-xp">+' + gained + ' XP Anglais ⚔️ — Total : ' + _xp + ' XP</div>' +
+          '<div class="aot-result-xp">+' + gained + ' XP — Total : ' + _xp + ' XP</div>' +
           '<button class="aot-btn aot-btn-main" onclick="window.AP_QuizEngine._goBack()">🗺️ RETOUR À LA CARTE</button>' +
           '<button class="aot-btn aot-btn-outline" style="margin-top:10px" onclick="window.AP_QuizEngine._retry()">🔁 REJOUER</button>' +
         '</div>' +
       '</div>';
 
-    // ⚠️ PATTERN EXACT V1 : c.innerHTML += html  (append à la FIN, PAS de remplacement)
-    var c = document.getElementById('aot-qContainer');
+    var c = document.getElementById(_containerId);
     if (c) c.innerHTML += html;
 
-    // ⚠️ PATTERN EXACT V1 : PAS de scrollTo(0,0) — scroll vers la result-card après 400ms
     setTimeout(function(){
       var rc = document.getElementById('aot-resCard');
       if (rc) rc.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 400);
 
-    // SFX + musique — identique V1
     if (score === total && typeof sfxPerfect === 'function') sfxPerfect();
-    else if (score >= Math.ceil(total * 0.6) && typeof sfxFanfare === 'function') sfxFanfare();
   }
 
   // ══════════════════════════════════════════════════════════════
-  // 7. NAVIGATION — identique à pdf_goBack / pdf_retry
+  // 7. NAVIGATION
   // ══════════════════════════════════════════════════════════════
 
   function _goBack() {
-    if (typeof playBGM === 'function') playBGM('aot-map');
-    var quizEl = document.getElementById('aot-quiz-sec');
-    var ilesEl = document.getElementById('aot-iles-sec');
+    // Cacher la section quiz
+    var quizEl = document.getElementById(_quizSecId);
     if (quizEl) quizEl.style.display = 'none';
-    if (ilesEl) ilesEl.style.display = 'block';
+
+    // BGM retour
+    if (typeof playBGM === 'function') playBGM(_bgmBack);
+
     _answers = {};
     window.scrollTo(0, 0);
+
+    // Le router remet à jour sa grille
     if (typeof _onBack === 'function') _onBack();
   }
 
   function _retry() {
     _answers = {};
-    if (typeof lesson_english === 'function') {
-      lesson_english(_currentNiveau, _currentChapitre.numero, function() {
+    var container = document.getElementById(_containerId);
+    if (container) container.innerHTML = '';
+
+    // Rejouer avec leçon si disponible
+    var ch = _currentChapitre;
+    if (_currentMatiere === 'francais' && typeof lesson_grand_bleu === 'function') {
+      lesson_grand_bleu(_currentNiveau, ch.numero, function() {
         _launchIsland();
-        if (_currentChapitre.bgm && typeof playBGM === 'function') {
-          setTimeout(function(){ playBGM(_currentChapitre.bgm); }, 300);
-        }
+      });
+    } else if (_currentMatiere === 'english' && typeof lesson_english === 'function') {
+      lesson_english(_currentNiveau, ch.numero, function() {
+        _launchIsland();
       });
     } else {
       _launchIsland();
@@ -422,7 +413,6 @@
     if (!ch) return;
     var islandId = _currentMatiere + '_' + _currentNiveau + '_' + ch.numero;
 
-    // Local
     try {
       var key   = 'ap_' + _currentMatiere + '_progress';
       var local = JSON.parse(localStorage.getItem(key) || '{}');
@@ -430,7 +420,6 @@
       localStorage.setItem(key, JSON.stringify(local));
     } catch(e) {}
 
-    // Supabase
     try {
       var db = _getDb();
       if (db) {
@@ -439,13 +428,10 @@
           score:      score,
           total:      total,
           xp:         xp,
-          created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
         }, { onConflict: 'island_id' });
       }
-    } catch(e) {
-      console.warn('[QuizEngine] save:', e.message);
-    }
+    } catch(e) { console.warn('[QuizEngine] save:', e.message); }
 
     try { if (typeof updateHUD === 'function') updateHUD(); } catch(e) {}
   }
@@ -496,13 +482,12 @@
     launch:           launch,
     getChapitres:     getChapitres,
     getLocalProgress: getLocalProgress,
-    // Exposés pour onclick inline
     _selectOpt:  _selectOpt,
     _corriger:   _corriger,
     _goBack:     _goBack,
     _retry:      _retry,
   };
 
-  console.info('⚙️ quiz-engine.js v4 — pattern pixel-perfect V1 (pays-du-feu)');
+  console.info('⚙️ quiz-engine.js v5 — IDs configurables · multi-monde');
 
 })();
