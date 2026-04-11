@@ -403,7 +403,7 @@ function lesson_grand_bleu(niveauCodeOrN, nOrCallback, thenCallback) {
   };
  
   var niveauAvatars = NIVEAU_MAP[niveauCode] || CM2_MAP;
-  var avatar = niveauAvatars[n] || CM2_MAP[n] || 'assets/images/avatars/luffy.png';
+  var avatar = niveauAvatars[n] || CM2_MAP[n] || 'assets/images/avatars/luffy.jpg';
  
   var COULEURS = {
     'cm2':  '#e63946',
