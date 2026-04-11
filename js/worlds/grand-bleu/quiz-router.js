@@ -77,12 +77,12 @@
 
     // Fallback local — toujours disponible
     var localUrls = [
-      'assets/images/avatars/luffy.png',  'assets/images/avatars/zoro.png',
-      'assets/images/avatars/nami.png',   'assets/images/avatars/usopp.png',
-      'assets/images/avatars/sanji.png',  'assets/images/avatars/chopper.png',
-      'assets/images/avatars/robin.png',  'assets/images/avatars/franky.png',
-      'assets/images/avatars/brook.png',  'assets/images/avatars/ace.png',
-      'assets/images/avatars/shanks.png', 'assets/images/avatars/law.png',
+      'assets/images/avatars/luffy.jpg',   'assets/images/avatars/zoro.jpg',
+      'assets/images/avatars/nami.jpg',    'assets/images/avatars/usopp.jpg',
+      'assets/images/avatars/sanji.jpg',   'assets/images/avatars/chopper.jpg',
+      'assets/images/avatars/robin.jpg',   'assets/images/avatars/franky.jpg',
+      'assets/images/avatars/brook.jpg',   'assets/images/avatars/ace.jpg',
+      'assets/images/avatars/shanks.jpg',  'assets/images/avatars/law.jpg',
     ];
 
     var urls = localUrls;

@@ -349,56 +349,56 @@ function lesson_grand_bleu(niveauCodeOrN, nOrCallback, thenCallback) {
  
   // ── Images locales — assets/images/avatars/ (toujours disponibles) ──
   var CM2_MAP = {
-    1: 'assets/images/avatars/luffy.png',
-    2: 'assets/images/avatars/nami.png',
-    3: 'assets/images/avatars/zoro.png',
-    4: 'assets/images/avatars/robin.png',
-    5: 'assets/images/avatars/usopp.png',
-    6: 'assets/images/avatars/sanji.png',
-    7: 'assets/images/avatars/chopper.png',
-    8: 'assets/images/avatars/brook.png'
+    1: 'assets/images/avatars/luffy.jpg',
+    2: 'assets/images/avatars/nami.jpg',
+    3: 'assets/images/avatars/zoro.jpg',
+    4: 'assets/images/avatars/robin.jpg',
+    5: 'assets/images/avatars/usopp.jpg',
+    6: 'assets/images/avatars/sanji.jpg',
+    7: 'assets/images/avatars/chopper.jpg',
+    8: 'assets/images/avatars/brook.jpg'
   };
  
   var NIVEAU_MAP = {
     '6eme': {
-      1: 'assets/images/avatars/shanks.png',
-      2: 'assets/images/avatars/ace.png',
-      3: 'assets/images/avatars/law.png',
-      4: 'assets/images/avatars/hancock.png',
-      5: 'assets/images/avatars/vivi.png',
-      6: 'assets/images/avatars/sabo.png',
-      7: 'assets/images/avatars/franky.png',
-      8: 'assets/images/avatars/jinbe.png'
+      1: 'assets/images/avatars/shanks.jpg',
+      2: 'assets/images/avatars/ace.jpg',
+      3: 'assets/images/avatars/law.jpg',
+      4: 'assets/images/avatars/hancock.jpg',
+      5: 'assets/images/avatars/vivi.jpg',
+      6: 'assets/images/avatars/sabo.jpg',
+      7: 'assets/images/avatars/franky.jpg',
+      8: 'assets/images/avatars/jinbe.jpg'
     },
     '5eme': {
-      1: 'assets/images/avatars/mihawk.png',
-      2: 'assets/images/avatars/mihawk.png',
-      3: 'assets/images/avatars/shanks.png',
-      4: 'assets/images/avatars/whitebeard.png',
-      5: 'assets/images/avatars/shanks.png',
-      6: 'assets/images/avatars/smoker.png',
-      7: 'assets/images/avatars/luffy.png',
-      8: 'assets/images/avatars/usopp.png'
+      1: 'assets/images/avatars/mihawk.jpg',
+      2: 'assets/images/avatars/mihawk.jpg',
+      3: 'assets/images/avatars/shanks.jpg',
+      4: 'assets/images/avatars/whitebeard.png',  // ← reste .png
+      5: 'assets/images/avatars/shanks.jpg',
+      6: 'assets/images/avatars/smoker.jpg',
+      7: 'assets/images/avatars/luffy.jpg',
+      8: 'assets/images/avatars/usopp.jpg'
     },
     '4eme': {
-      1: 'assets/images/avatars/robin.png',
-      2: 'assets/images/avatars/robin.png',
-      3: 'assets/images/avatars/law.png',
-      4: 'assets/images/avatars/nami.png',
-      5: 'assets/images/avatars/zoro.png',
-      6: 'assets/images/avatars/sanji.png',
-      7: 'assets/images/avatars/luffy.png',
-      8: 'assets/images/avatars/brook.png'
+      1: 'assets/images/avatars/robin.jpg',
+      2: 'assets/images/avatars/robin.jpg',
+      3: 'assets/images/avatars/law.jpg',
+      4: 'assets/images/avatars/nami.jpg',
+      5: 'assets/images/avatars/zoro.jpg',
+      6: 'assets/images/avatars/sanji.jpg',
+      7: 'assets/images/avatars/luffy.jpg',
+      8: 'assets/images/avatars/brook.jpg'
     },
     '3eme': {
-      1: 'assets/images/avatars/luffy.png',
-      2: 'assets/images/avatars/zoro.png',
-      3: 'assets/images/avatars/robin.png',
-      4: 'assets/images/avatars/nami.png',
-      5: 'assets/images/avatars/chopper.png',
-      6: 'assets/images/avatars/sanji.png',
-      7: 'assets/images/avatars/usopp.png',
-      8: 'assets/images/avatars/brook.png'
+      1: 'assets/images/avatars/luffy.jpg',
+      2: 'assets/images/avatars/zoro.jpg',
+      3: 'assets/images/avatars/robin.jpg',
+      4: 'assets/images/avatars/nami.jpg',
+      5: 'assets/images/avatars/chopper.jpg',
+      6: 'assets/images/avatars/sanji.jpg',
+      7: 'assets/images/avatars/usopp.jpg',
+      8: 'assets/images/avatars/brook.jpg'
     }
   };
  
