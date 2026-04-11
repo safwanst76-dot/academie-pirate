@@ -1,6 +1,9 @@
 /* ═══════════════════════════════════════════════════════════════
-   CSS QUIZ-GRAND-BLEU.CSS V2 — 🏴‍☠️ Grand Bleu
-   Pattern identique à quiz-english.css (WORLD_EVOLUTION_PATTERN)
+   CSS QUIZ-GRAND-BLEU.CSS V3 — 🏴‍☠️ Grand Bleu
+   ✅ FIX cinématique : pattern IDENTIQUE Magnolia/Kanto
+      → char position:absolute right, content gauche
+   ✅ FIX fond : brightness .5 (pas .3) + overlay opacity .55
+   ✅ FIX images grille : object-fit contain + mix-blend-mode
    Préfixe isolant : .gb-* (ARCHI-01 / AU-02)
    ═══════════════════════════════════════════════════════════════ */
 
@@ -8,50 +11,55 @@
 #gb-bg {
   position: fixed; inset: 0; z-index: 0;
   display: flex; gap: 0; overflow: hidden;
-  opacity: 0; transition: opacity .5s;
+  opacity: 0; transition: opacity 1s ease;
   pointer-events: none;
 }
 #gb-bg.visible { opacity: 1; }
 
 .gb-bg-strip {
-  display: flex; flex-direction: column; gap: 2px;
-  flex: 1; overflow: hidden;
+  flex: 1; display: flex; flex-direction: column; gap: 4px;
   animation: gbStripScroll 30s linear infinite;
+  will-change: transform;
 }
-.gb-bg-strip:nth-child(even)  { animation-direction: reverse; animation-duration: 24s; }
-.gb-bg-strip:nth-child(3)     { animation-duration: 36s; }
-.gb-bg-strip:nth-child(5)     { animation-duration: 20s; }
+.gb-bg-strip:nth-child(even) { animation-direction: reverse; animation-duration: 38s; }
+.gb-bg-strip:nth-child(3)    { animation-duration: 25s; }
+.gb-bg-strip:nth-child(5)    { animation-duration: 42s; }
+
 .gb-bg-strip img {
-  width: 100%; aspect-ratio: 3/4; object-fit: cover;
-  border-radius: 4px;
-  filter: saturate(1.2) brightness(.3);
+  width: 100%; aspect-ratio: 9/13; object-fit: cover;
+  display: block; border-radius: 4px;
+  /* ▼ FIX : .5 comme Kanto, pas .3 */
+  opacity: .6;
+  filter: saturate(1.3) brightness(.5);
 }
 @keyframes gbStripScroll {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
 }
 
-/* ── Sections — même pattern qu'English ─────────────────────── */
+/* ── Overlay sombre sur le fond — moins opaque ───────────────── */
+#gb-levels-sec::before,
+#gb-iles-sec::before,
+#gb-quiz-sec::before {
+  content: ''; position: fixed; inset: 0; z-index: 1;
+  /* ▼ FIX : .55/.45 comme Magnolia, pas .75 */
+  background: linear-gradient(
+    160deg,
+    rgba(5,0,15,.55) 0%,
+    rgba(10,5,20,.45) 50%,
+    rgba(5,0,15,.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Sections ────────────────────────────────────────────────── */
 #gb-levels-sec,
 #gb-iles-sec,
 #gb-quiz-sec {
   display: none; position: relative; z-index: 2;
   width: 100%; min-height: 100vh;
-  padding-bottom: 80px;
-  pointer-events: auto;
+  padding-bottom: 80px; pointer-events: auto;
   font-family: 'Nunito', sans-serif;
-}
-
-/* Overlay sombre sur fond (identique à aot-*::before) */
-#gb-levels-sec::before,
-#gb-iles-sec::before,
-#gb-quiz-sec::before {
-  content: ''; position: fixed; inset: 0; z-index: 1;
-  background: linear-gradient(160deg,
-    rgba(5,0,15,.75) 0%,
-    rgba(10,5,20,.65) 50%,
-    rgba(5,0,15,.75) 100%);
-  pointer-events: none;
 }
 
 /* Z-index : contenu au-dessus de l'overlay */
@@ -61,33 +69,24 @@
 }
 
 /* ── Header commun ───────────────────────────────────────────── */
-.gb-map-header {
-  text-align: center;
-  padding: 24px 16px 16px;
-}
+.gb-map-header { text-align: center; padding: 24px 16px 16px; }
 .gb-map-title {
   font-family: 'Bangers', cursive;
   font-size: clamp(1.8rem, 7vw, 2.8rem);
-  letter-spacing: 4px;
-  color: #ffd700;
+  color: #ffd700; letter-spacing: 4px;
   text-shadow: 3px 3px 0 #000, 0 0 30px rgba(255,215,0,.4);
   margin-bottom: 6px;
 }
 .gb-map-sub {
-  font-size: .85rem;
-  font-weight: 800;
-  color: rgba(255,255,255,.5);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 4px;
+  font-size: .85rem; font-weight: 800;
+  color: rgba(255,255,255,.75); letter-spacing: 2px;
+  text-transform: uppercase; margin-top: 4px;
 }
 .gb-back-btn {
-  display: inline-block;
-  margin-bottom: 12px;
+  display: inline-block; margin-bottom: 12px;
   font-family: 'Bangers', cursive; font-size: .9rem; letter-spacing: 1px;
-  color: rgba(255,215,0,.7);
-  background: rgba(255,215,0,.1);
-  border: 1.5px solid rgba(255,215,0,.3);
+  color: rgba(255,215,0,.8); background: rgba(255,215,0,.1);
+  border: 1.5px solid rgba(255,215,0,.35);
   border-radius: 20px; padding: 6px 16px;
   cursor: pointer; transition: all .2s;
 }
@@ -95,23 +94,19 @@
 
 /* ── Grille niveaux ──────────────────────────────────────────── */
 .gb-levels-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  padding: 12px 16px 40px;
-  max-width: 800px;
-  margin: 0 auto;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 14px; padding: 12px 16px 40px;
+  max-width: 800px; margin: 0 auto;
 }
 @media (min-width: 640px) {
   .gb-levels-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
 }
 .gb-level-card {
-  background: rgba(5,0,15,.95);
+  background: rgba(5,0,15,.92);
   border: 2px solid var(--level-color, #e63946);
   border-radius: 18px; padding: 20px 14px;
   cursor: pointer; text-align: center;
-  box-shadow: 0 4px 24px rgba(0,0,0,.7),
-              0 0 16px rgba(230,57,70,.15);
+  box-shadow: 0 4px 24px rgba(0,0,0,.7);
   transition: transform .2s, box-shadow .2s;
   -webkit-tap-highlight-color: transparent;
 }
@@ -126,27 +121,23 @@
   font-family: 'Bangers', cursive;
   font-size: clamp(1.4rem,4vw,1.8rem);
   color: var(--level-color, #e63946);
-  letter-spacing: 3px; text-shadow: 2px 2px 0 #000;
-  margin-bottom: 6px;
+  letter-spacing: 3px; text-shadow: 2px 2px 0 #000; margin-bottom: 6px;
 }
 .gb-level-desc {
   font-size: .72rem; font-weight: 800;
-  color: rgba(255,255,255,.5);
-  text-transform: uppercase; letter-spacing: 1px;
-  margin-bottom: 12px; line-height: 1.4;
+  color: rgba(255,255,255,.6); text-transform: uppercase;
+  letter-spacing: 1px; margin-bottom: 12px; line-height: 1.4;
 }
 .gb-level-btn {
   display: inline-block;
   background: var(--level-color, #e63946);
-  color: #fff; border-radius: 20px;
-  padding: 6px 14px;
+  color: #fff; border-radius: 20px; padding: 6px 14px;
   font-family: 'Bangers', cursive; font-size: .9rem; letter-spacing: 2px;
 }
 
 /* ── Grille îles ─────────────────────────────────────────────── */
 .gb-islands-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: grid; grid-template-columns: repeat(2, 1fr);
   gap: 12px; padding: 12px 14px 32px;
   max-width: 960px; margin: 0 auto;
 }
@@ -155,9 +146,8 @@
 
 .gb-isle-card {
   position: relative; border-radius: 16px; overflow: hidden;
-  cursor: pointer;
-  background: rgba(5,0,15,.95);
-  border: 2px solid rgba(255,255,255,.06);
+  cursor: pointer; background: rgba(5,0,15,.92);
+  border: 2px solid rgba(255,255,255,.15);
   box-shadow: 0 4px 24px rgba(0,0,0,.7);
   transition: transform .2s, box-shadow .2s, border-color .2s;
   -webkit-tap-highlight-color: transparent;
@@ -174,20 +164,18 @@
   box-shadow: 0 0 20px var(--isle-color, rgba(230,57,70,.3));
 }
 
-/* ▼ FIX images : contain + blend-mode comme English */
+/* ▼ FIX images : contain + blend-mode comme Magnolia/Kanto */
 .gb-isle-img-wrap {
   position: relative; width: 100%; aspect-ratio: 3/4;
-  background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.5) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.45) 100%);
   overflow: hidden;
 }
 .gb-isle-img {
   width: 100%; height: 100%;
-  object-fit: contain;          /* ← contain (pas cover) pour les PNG */
-  object-position: center bottom;
+  object-fit: contain; object-position: center bottom;
   padding: 8px 6px 0; box-sizing: border-box;
-  display: block;
-  transition: transform .4s ease;
-  mix-blend-mode: lighten;      /* ← élimine les fonds blancs/transparents */
+  display: block; transition: transform .4s ease;
+  mix-blend-mode: lighten;
 }
 .gb-isle-card:hover .gb-isle-img { transform: scale(1.06); }
 
@@ -197,22 +185,21 @@
   align-items: center; justify-content: center;
   font-size: clamp(3rem,10vw,5rem);
 }
-/* Affiché par JS via nextElementSibling.style.display='flex' */
+/* Activé par JS : onerror → nextElementSibling.style.display='flex' */
+.gb-isle-img-fallback[style*="flex"] { display: flex !important; }
+
 .gb-isle-overlay {
   position: absolute; bottom: 0; left: 0; right: 0;
-  height: 40%; pointer-events: none;
-  /* ▼ FIX opacité : gradient plus léger (66 = 40%) */
+  height: 45%; pointer-events: none;
 }
-
 .gb-isle-body {
   padding: 10px 12px 14px;
   background: rgba(5,0,15,.95);
-  border-top: 1px solid rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 .gb-isle-num {
-  font-size: .7rem; font-weight: 900; letter-spacing: 2px;
-  color: rgba(255,255,255,.4); text-transform: uppercase;
-  margin-bottom: 2px;
+  font-family: 'Nunito', sans-serif; font-size: .7rem; font-weight: 900;
+  color: rgba(255,255,255,.7); letter-spacing: 2px; text-transform: uppercase;
 }
 .gb-isle-name {
   font-family: 'Bangers', cursive;
@@ -221,7 +208,7 @@
   line-height: 1.1; text-shadow: 1px 1px 0 #000;
 }
 .gb-isle-topic {
-  font-size: .72rem; color: rgba(255,255,255,.6); font-weight: 800;
+  font-size: .72rem; color: rgba(255,255,255,.8); font-weight: 800;
   line-height: 1.3; margin-bottom: 5px; text-transform: uppercase;
 }
 .gb-isle-level {
@@ -234,182 +221,201 @@
 
 /* ── Section Quiz ────────────────────────────────────────────── */
 #gb-quiz-sec { padding-top: 0; }
-
 .gb-quiz-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(5,0,15,.96);
+  background: rgba(5,0,15,.95);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-bottom: 2px solid rgba(230,57,70,.4);
-  padding: 10px 16px 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,.6);
+  padding: 10px 16px 8px; box-shadow: 0 4px 20px rgba(0,0,0,.6);
 }
 .gb-quiz-title {
-  font-family: 'Bangers', cursive;
-  font-size: clamp(1rem,4vw,1.5rem);
-  color: #ffd700; letter-spacing: 2px;
-  text-shadow: 2px 2px 0 #000;
+  font-family: 'Bangers', cursive; font-size: clamp(1rem,4vw,1.5rem);
+  color: #ffd700; letter-spacing: 2px; text-shadow: 2px 2px 0 #000;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .gb-prog-bar {
-  width: 100%; height: 7px;
-  background: rgba(255,255,255,.12); border-radius: 8px;
-  margin-top: 6px; overflow: hidden;
+  width: 100%; height: 7px; background: rgba(255,255,255,.15);
+  border-radius: 8px; margin-top: 6px; overflow: hidden;
 }
 .gb-prog-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #e63946, #ffd700);
+  height: 100%; background: linear-gradient(90deg, #e63946, #ffd700);
   border-radius: 8px; transition: width .4s ease;
   box-shadow: 0 0 8px rgba(230,57,70,.5);
 }
 .gb-prog-lbl {
   font-size: .72rem; font-weight: 800;
-  color: rgba(255,255,255,.6); margin-top: 3px; text-align: right;
+  color: rgba(255,255,255,.7); margin-top: 3px; text-align: right;
 }
 #gb-qContainer {
   position: relative; z-index: 3;
-  padding: 0; max-width: 680px; margin: 0 auto;
+  padding: 0; max-width: 740px; margin: 0 auto;
 }
 
-/* ── Surcharge des cartes de questions dans gb-quiz-sec ──────── */
-/* Les .aot-* sont générées par quiz-engine — on les surcharge    */
-/* pour les couleurs One Piece tout en gardant la mise en page    */
-#gb-quiz-sec .aot-q-card {
-  border-color: rgba(230,57,70,.3);
-}
-#gb-quiz-sec .aot-boss-card {
-  border-color: #ffd700;
-  box-shadow: 0 0 30px rgba(255,215,0,.3);
-}
-#gb-quiz-sec .aot-boss-banner {
-  background: linear-gradient(135deg, #1a0a02, #b8860b);
-}
-#gb-quiz-sec .aot-char-name {
-  color: #ffd700;
-}
-#gb-quiz-sec .aot-q-txt {
-  border-left-color: #e63946;
-}
-#gb-quiz-sec .aot-opt:hover {
-  border-color: #e63946;
-}
-#gb-quiz-sec .aot-opt.aot-selected {
-  border-color: #e63946; background: rgba(230,57,70,.15);
-}
+/* ── Surcharge couleurs One Piece dans gb-quiz-sec ───────────── */
+#gb-quiz-sec .aot-q-card      { border-color: rgba(230,57,70,.3); }
+#gb-quiz-sec .aot-boss-card   { border-color: #ffd700; box-shadow: 0 0 30px rgba(255,215,0,.3); }
+#gb-quiz-sec .aot-boss-banner { background: linear-gradient(135deg, #1a0a02, #b8860b); }
+#gb-quiz-sec .aot-char-name   { color: #ffd700; }
+#gb-quiz-sec .aot-q-txt       { border-left-color: #e63946; }
+#gb-quiz-sec .aot-opt:hover   { border-color: #e63946; }
+#gb-quiz-sec .aot-opt.aot-selected { border-color: #e63946; background: rgba(230,57,70,.15); }
 #gb-quiz-sec .aot-btn-main {
   background: linear-gradient(135deg, #e63946, #b8860b);
   box-shadow: 0 4px 20px rgba(230,57,70,.4);
 }
-#gb-quiz-sec .aot-btn-outline {
-  border-color: rgba(230,57,70,.5);
-  color: #e63946;
-}
-#gb-quiz-sec .aot-result-score {
-  color: #ffd700;
-}
-#gb-quiz-sec .aot-prog-fill {
-  background: linear-gradient(90deg, #e63946, #ffd700);
-}
-#gb-quiz-sec .aot-quiz-title {
-  color: #ffd700;
+#gb-quiz-sec .aot-btn-outline  { border-color: rgba(230,57,70,.5); color: #e63946; }
+#gb-quiz-sec .aot-result-score { color: #ffd700; }
+#gb-quiz-sec .aot-result-card  { border-color: #e63946; }
+
+/* ── POINTER-EVENTS (anti-blocage) ──────────────────────────── */
+#gb-quiz-sec, #gb-quiz-sec * { pointer-events: auto; }
+#gb-bg, #gb-bg *             { pointer-events: none !important; }
+
+/* ══════════════════════════════════════════════════════════════
+   ✅ CINÉMATIQUE — Pattern IDENTIQUE Magnolia/Kanto
+   ══════════════════════════════════════════════════════════════ */
+
+/* Overlay créé dynamiquement par JS — même pattern que kanto */
+#gb-cine-overlay {
+  position: fixed; inset: 0; z-index: 9500;
+  display: none;
+  align-items: stretch; justify-content: stretch;
+  pointer-events: auto;
 }
 
-/* ── Cinématique ─────────────────────────────────────────────── */
 .gb-cine-inner {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center;
-  min-height: 100vh; height: 100%; width: 100%;
-  padding: 24px 16px; position: relative;
+  width: 100%; height: 100vh; min-height: 100vh;
+  display: flex; align-items: stretch; justify-content: center;
+  position: relative; overflow: hidden;
 }
+
+/* Lignes de vitesse en fond */
+.gb-cine-inner::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    105deg,
+    transparent 0, transparent 40px,
+    rgba(255,255,255,.025) 40px, rgba(255,255,255,.025) 41px
+  );
+  pointer-events: none; z-index: 0;
+}
+
+/* ▼ FIX : character ABSOLU à droite — identique .hist-cine-char-wrap */
 .gb-cine-char-wrap {
-  width: min(200px, 45vw); aspect-ratio: 2/3;
-  margin-bottom: 20px; position: relative;
+  position: absolute; right: 0; top: 0; bottom: 0; height: 100%;
+  display: flex; align-items: flex-end; justify-content: flex-end;
+  z-index: 1; pointer-events: none;
 }
+
+/* ▼ FIX : character grand plein écran — identique .hist-cine-char */
 .gb-cine-char {
-  width: 100%; height: 100%; object-fit: contain;
-  border-radius: 16px;
-  filter: drop-shadow(0 0 20px rgba(255,215,0,.4));
+  height: 95%; max-height: 95vh; max-width: 55vw; width: auto;
+  object-fit: contain; object-position: bottom center;
+  filter: drop-shadow(-8px 0 30px rgba(0,0,0,.9)) saturate(1.5) brightness(1.05);
   mix-blend-mode: lighten;
+  animation: gbCharEnter .6s cubic-bezier(.17,.67,.3,1.1) .2s both;
+  transform-origin: bottom right;
 }
+@keyframes gbCharEnter {
+  from { transform: translateX(80px) scale(.85); opacity: 0; }
+  to   { transform: translateX(0)    scale(1);   opacity: 1; }
+}
+
 .gb-cine-char-emoji {
-  position: absolute; inset: 0;
-  display: none; align-items: center; justify-content: center;
-  font-size: 4rem;
+  display: flex;
+  font-size: clamp(6rem, 20vw, 12rem);
+  align-items: flex-end; padding-bottom: 20px; padding-right: 20px;
+  filter: drop-shadow(-4px 0 20px rgba(0,0,0,.8));
+  animation: gbCharEnter .5s ease .2s both;
 }
+
+/* ▼ FIX : contenu à GAUCHE — identique .hist-cine-content */
+.gb-cine-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: flex-start;
+  padding: clamp(20px, 5vw, 60px); max-width: 55vw;
+  gap: clamp(12px, 2.5vh, 24px);
+}
+
 .gb-cine-kanji {
   font-family: 'Bangers', cursive;
-  font-size: clamp(2rem, 8vw, 3.5rem);
-  letter-spacing: 4px; text-align: center;
-  margin-bottom: 12px;
-  text-shadow: 4px 4px 0 #000, 0 0 30px currentColor;
+  font-size: clamp(3rem, 14vw, 8rem); font-weight: 900;
+  text-shadow: 4px 4px 0 #000, 0 0 50px currentColor;
   animation: gbKanjiPop .5s cubic-bezier(.17,.67,.3,1.3) both;
+  line-height: 1;
 }
 @keyframes gbKanjiPop {
-  from { transform: scale(0) rotate(-10deg); opacity: 0; }
-  to   { transform: scale(1) rotate(0); opacity: 1; }
+  from { transform: scale(0) rotate(-20deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg);   opacity: 1; }
 }
-.gb-cine-lines { text-align: center; margin-bottom: 16px; }
+
+.gb-cine-lines { display: flex; flex-direction: column; gap: clamp(6px, 1.5vh, 12px); }
 .gb-cine-line {
   font-family: 'Bangers', cursive;
-  font-size: clamp(1.2rem, 4vw, 2rem);
-  letter-spacing: 3px; color: #fff;
-  text-shadow: 3px 3px 0 #000;
-  animation: gbLineSlide .4s ease both;
-  margin-bottom: 4px;
+  font-size: clamp(1.3rem, 5vw, 2.4rem);
+  color: #ffffff; letter-spacing: 4px;
+  text-shadow: 3px 3px 0 #000, 0 0 20px rgba(255,255,255,.3);
+  animation: gbLineIn .4s ease both; white-space: nowrap;
 }
-.gb-cine-line:nth-child(2) { animation-delay: .15s; }
-.gb-cine-line:nth-child(3) { animation-delay: .30s; }
-@keyframes gbLineSlide {
-  from { transform: translateX(-30px); opacity: 0; }
+.gb-cine-line:nth-child(2) { animation-delay: .25s; }
+.gb-cine-line:nth-child(3) {
+  animation-delay: .5s;
+  font-size: clamp(1rem, 3.5vw, 1.8rem); color: rgba(255,255,255,.85);
+}
+@keyframes gbLineIn {
+  from { transform: translateX(-50px); opacity: 0; }
   to   { transform: translateX(0);     opacity: 1; }
 }
+
 .gb-cine-bubble {
-  background: rgba(255,255,255,.95); color: #1a0a05;
-  border: 3px solid #000;
-  border-radius: 14px; padding: 10px 14px;
-  max-width: min(480px, 90vw);
-  text-align: center;
-  animation: gbBubbleFade .4s .4s ease both;
+  background: rgba(10,5,20,.8); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,215,0,.4);
+  border-radius: 14px; padding: 14px 18px; max-width: min(360px, 85vw);
+  animation: gbBubbleIn .5s ease .75s both;
+  display: flex; flex-direction: column; gap: 6px;
 }
-@keyframes gbBubbleFade {
-  from { opacity: 0; transform: translateY(10px); }
+@keyframes gbBubbleIn {
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .gb-cine-char-name {
-  display: block; font-family: 'Bangers', cursive;
-  font-size: 1rem; letter-spacing: 2px;
-  margin-bottom: 4px; text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.9rem, 2.5vw, 1.1rem);
+  letter-spacing: 3px; text-transform: uppercase; text-shadow: 1px 1px 0 #000;
 }
 .gb-cine-bubble-text {
   font-family: 'Nunito', sans-serif;
-  font-size: clamp(.8rem, 2.5vw, .95rem);
-  color: rgba(0,0,0,.9); line-height: 1.5; font-weight: 700;
+  font-size: clamp(.85rem, 2.5vw, 1rem);
+  font-weight: 800; color: rgba(255,255,255,.98); line-height: 1.5;
 }
+
 .gb-skip-btn {
-  position: fixed; bottom: 16px; right: 16px; z-index: 9999;
-  font-family: 'Bangers', cursive; font-size: .85rem; letter-spacing: 1px;
-  color: rgba(255,255,255,.6);
-  background: rgba(0,0,0,.5);
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 20px; padding: 6px 16px;
-  cursor: pointer; min-height: 44px;
-  transition: all .15s;
+  position: absolute; bottom: clamp(16px,4vh,28px); right: clamp(16px,4vw,28px);
+  z-index: 10; background: rgba(0,0,0,.6); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.4); color: rgba(255,255,255,.9);
+  font-family: 'Bangers', cursive; font-size: clamp(.85rem,2vw,1rem);
+  letter-spacing: 2px; padding: 9px 18px; border-radius: 24px;
+  cursor: pointer; transition: all .2s; pointer-events: auto;
 }
-.gb-skip-btn:hover { background: rgba(0,0,0,.7); color: #fff; }
+.gb-skip-btn:hover { background: rgba(0,0,0,.8); color: #fff; }
 
 /* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 380px) {
-  .gb-map-title   { font-size: 1.5rem; letter-spacing: 2px; }
-  .gb-levels-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
-  .gb-islands-grid{ grid-template-columns: repeat(2,1fr); gap: 8px; }
-  .gb-isle-body   { padding: 6px 8px 10px; }
-  .gb-isle-name   { font-size: .9rem; }
+@media (max-width: 479px) {
+  .gb-islands-grid { gap: 10px; padding: 10px; }
+  .gb-isle-body    { padding: 6px 8px 10px; }
+  .gb-isle-name    { font-size: .9rem; }
+  .gb-cine-content { max-width: 58vw; }
+  .gb-cine-char    { max-width: 48vw; }
 }
 @media (min-width: 600px) {
   .gb-levels-grid { grid-template-columns: repeat(4,1fr); gap: 16px; }
 }
+@media (min-width: 768px) {
+  #gb-qContainer { max-width: 740px; margin: 14px auto; }
+}
 @media (min-width: 1024px) {
-  #gb-quiz-sec { max-width: 100%; }
-  #gb-qContainer { max-width: 680px; margin: 0 auto; }
+  .gb-cine-char { height: min(95vh, 900px); }
 }
 @media (hover: none) and (pointer: coarse) {
   .gb-isle-card:hover, .gb-level-card:hover { transform: none !important; }

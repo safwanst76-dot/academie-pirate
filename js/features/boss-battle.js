@@ -12,15 +12,37 @@
 
   // ── Map centralisée des images boss (fallback si non passé par le quiz) ──
   var BOSS_IMGS = {
-    // Grand Bleu — One Piece
-    'Arlong':       'assets/images/avatars' + '/clown.png',
-    'Don Krieg':    'assets/images/avatars' + '/whitebeard.png',
-    'Mihawk':       'assets/images/avatars' + '/shanks.png',
-    'Crocodile':    'assets/images/avatars' + '/crocodile.png',
-    'Perona':       'assets/images/avatars' + '/hancock.png',
-    'Absalom':      'assets/images/avatars' + '/smoker.png',
-    'Hogback':      'assets/images/avatars' + '/hawkins.png',
-    'Ryuma':        'assets/images/avatars' + '/brook.png',
+   // Grand Bleu — One Piece (images locales assets/images/avatars/)
+    // ── CM2 (boss V1 originaux) ──
+    'Arlong':           'assets/images/avatars/clown.png',
+    'Don Krieg':        'assets/images/avatars/whitebeard.png',
+    'Mihawk':           'assets/images/avatars/mihawk.png',
+    'Crocodile':        'assets/images/avatars/crocodile.png',
+    'Perona':           'assets/images/avatars/hancock.png',
+    'Absalom':          'assets/images/avatars/smoker.png',
+    'Hogback':          'assets/images/avatars/hawkins.png',
+    'Ryuma':            'assets/images/avatars/brook.png',
+    // ── Français 6ème ──
+    'Big Mom':          'assets/images/avatars/bigmom.png',
+    'Barbe Noire':      'assets/images/avatars/blackbeard.png',
+    'Doflamingo':       'assets/images/avatars/doflamingo.png',
+    'Kaido':            'assets/images/avatars/kaido.png',
+    'Burgess':          'assets/images/avatars/blackbeard.png',
+    'Spandam':          'assets/images/avatars/rob-lucci.png',
+    'Hody Jones':       'assets/images/avatars/clown.png',
+    // ── Français 5ème ──
+    'Kizaru':           'assets/images/avatars/smoker.png',
+    'Akainu':           'assets/images/avatars/smoker.png',
+    'Marine':           'assets/images/avatars/smoker.png',
+    'CP9':              'assets/images/avatars/rob-lucci.png',
+    'CP0':              'assets/images/avatars/kalifa.png',
+    'Smoker':           'assets/images/avatars/smoker.png',
+    // ── Français 4ème ──
+    'Im':               'assets/images/avatars/crocodile.png',
+    'Gorosei':          'assets/images/avatars/whitebeard.png',
+    'Oz':               'assets/images/avatars/kaido.png',
+    'Loki':             'assets/images/avatars/kaido.png',
+    'Tous les Boss':    'assets/images/avatars/blackbeard.png',
     // Magnolia — 'assets/images/dbz' (HIST_BOSS_AVATARS)
     'Freezer':      'assets/images/dbz' + '/freezer.png',
     'Cell':         'assets/images/dbz' + '/cell.png',
