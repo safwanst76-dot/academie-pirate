@@ -6,14 +6,14 @@
 const JIKAN = 'https://api.jikan.moe/v4';
 const CHAR_IDS = { 1:40, 2:723, 3:53, 4:194, 5:60, 6:45, 7:318, 8:425 };
 const FALLBACK = {
-  1:'assets/images/avatars/luffy.png',
-  2:'assets/images/avatars/nami.png',
-  3:'assets/images/avatars/zoro.png',
-  4:'assets/images/avatars/robin.png',
-  5:'assets/images/avatars/usopp.png',
-  6:'assets/images/avatars/sanji.png',
-  7:'assets/images/avatars/chopper.png',
-  8:'assets/images/avatars/brook.png'
+  1:'assets/images/avatars/luffy.jpg',
+  2:'assets/images/avatars/nami.jpg',
+  3:'assets/images/avatars/zoro.jpg',
+  4:'assets/images/avatars/robin.jpg',
+  5:'assets/images/avatars/usopp.jpg',
+  6:'assets/images/avatars/sanji.jpg',
+  7:'assets/images/avatars/chopper.jpg',
+  8:'assets/images/avatars/brook.jpg'
 };
 const charImages = {...FALLBACK};
 const wait = ms => new Promise(r => setTimeout(r, ms));
