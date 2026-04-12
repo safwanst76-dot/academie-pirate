@@ -13,7 +13,7 @@ window.LESSON_REGISTRY['grandbleu'] = {
     particles: 'water', worldName: 'Grand Bleu',
     avatar: function(n){
       var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu';
-      var map = {1:'nami',2:'luffy',3:'robin',4:'zoro',5:'nami',6:'luffy',7:'robin',8:'zoro'};
+      var map = {1:'nami',2:'luffy',3:'robin',4:'zoro',5:'ace',6:'shanks',7:'law',8:'brook'};
       return SUPABASE + '/characters/' + (map[n]||'luffy') + '.jpg';
     },
     lessons: {
