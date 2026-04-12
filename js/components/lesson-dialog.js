@@ -14,7 +14,24 @@
 
   /* ─── Données avatar depuis AP.state ─────────────────────── */
   function _av() {
-    if (global.AP && global.AP.state) return global.AP.state.get('avatar') || {};
+    // Priorité 1 : AP.state (mis à jour par AvatarPicker)
+    if (global.AP && global.AP.state) {
+      var stateAv = global.AP.state.get('avatar');
+      if (stateAv && stateAv.img) return stateAv;
+    }
+    // Priorité 2 : _activeChild (enfant connecté par PIN)
+    if (typeof global._activeChild !== 'undefined' && global._activeChild) {
+      var child = global._activeChild;
+      var avatarId = child.avatar_id || 'luffy';
+      // Résoudre l'URL depuis AVATARS (data/avatars.json)
+      var img = 'assets/images/avatars/' + avatarId + '.jpg';
+      if (typeof global.AVATARS !== 'undefined' && Array.isArray(global.AVATARS)) {
+        var found = global.AVATARS.find(function(av) { return av.id === avatarId; });
+        if (found && found.img) img = found.img;
+      }
+      return { id: avatarId, img: img, color: '#e63946', name: avatarId, quote_lesson: '' };
+    }
+    // Priorité 3 : playerData legacy
     if (typeof global.playerData !== 'undefined') return {
       id: global.playerData.avatarId || 'luffy',
       img: global.playerData.avatarImg || 'assets/images/avatars/luffy.jpg',
