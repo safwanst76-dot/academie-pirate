@@ -1005,6 +1005,11 @@ async function afLaunchChild(child) {
   _activeChild = child;
   if (typeof dbSetActiveChild === 'function') dbSetActiveChild(child);
 
+  // ── Sync AP.state avec l'avatar de l'enfant (ARCHI-01) ──
+  if (window.AP && window.AP.state && typeof window.AP.state.initFromChild === 'function') {
+    window.AP.state.initFromChild(child);
+  }
+
   // ── Restaurer la session parent liée à cet enfant ──
   // Priorité 1 : tokens stockés dans localStorage (connexion PIN depuis page login)
   // Priorité 2 : session déjà active (connexion depuis le dashboard parent)

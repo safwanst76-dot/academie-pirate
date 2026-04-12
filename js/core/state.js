@@ -163,7 +163,7 @@
     // Fallback
     return {
       id:    id,
-      img:   'assets/images/avatars/' + id + '.png',
+      img:   'assets/images/avatars/' + id + '.jpg',
       color: '#e63946',
       name:  id,
       quote: ''
