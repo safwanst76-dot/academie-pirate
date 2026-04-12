@@ -3,12 +3,12 @@
  * scripts/lib/engine.js
  * Règle ARCHI-01 : module pur, sans dépendances externes
  * Règle ASSET-01 : source de vérité pour tous les uploads
+ * Règle ASSET-02 : PRIORITÉ sources locales (scripts/sources/) avant Jikan
  *
  * Responsabilités :
- *  - Récupérer les images via Jikan API (MyAnimeList)
- *  - Télécharger les images
+ *  1. Chercher d'abord dans scripts/sources/{worldId}/ (images manuelles)
+ *  2. Fallback Jikan API si aucune source locale trouvée ET --sources-only absent
  *  - Uploader vers Supabase Storage (bucket configuré)
- *  - Copier en local (assets/images/) pour OP et DBZ
  */
 
 'use strict';
@@ -32,7 +32,6 @@ function _get(url, opts) {
       headers: { 'User-Agent': 'AcademiePirate-AssetEngine/3.0', ...(opts.headers || {}) },
       timeout: opts.timeout || 12000,
     }, res => {
-      // Suivre les redirections (max 3)
       if ([301,302,303,307,308].includes(res.statusCode) && res.headers.location && (opts.redirects || 0) < 3) {
         return _get(res.headers.location, { ...opts, redirects: (opts.redirects || 0) + 1 })
           .then(resolve).catch(reject);
@@ -74,21 +73,40 @@ function _download(url, destPath, opts) {
   });
 }
 
+// ─── Sources locales (ASSET-02 — priorité absolue) ────────────────
+
+/**
+ * Cherche l'image d'un personnage dans scripts/sources/{worldId}/
+ * Extensions testées dans l'ordre de priorité : jpg, jpeg, png, gif, webp
+ * @returns {string|null} chemin absolu vers le fichier trouvé, ou null
+ */
+function _findLocalSource(repoRoot, worldId, charId) {
+  const sourcesDir = path.join(repoRoot, 'scripts', 'sources', worldId);
+  if (!fs.existsSync(sourcesDir)) return null;
+
+  const extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+  for (const ext of extensions) {
+    const candidate = path.join(sourcesDir, charId + '.' + ext);
+    if (fs.existsSync(candidate)) {
+      const stat = fs.statSync(candidate);
+      if (stat.size > 1024) return candidate; // > 1KB = fichier valide
+    }
+  }
+  return null;
+}
+
 // ─── Jikan API ─────────────────────────────────────────────────────
 
-// Taille minimum pour une vraie image (1801B = placeholder MAL cassé)
 var MIN_VALID_SIZE = 5 * 1024; // 5 KB
 
 async function _fetchAndValidateUrl(url) {
-  // Vérifier qu'une URL Jikan retourne une vraie image (> 5KB)
-  // 1801B = image "not found" placeholder de MyAnimeList → invalide
   try {
-    const r = await _get(url + '?t=' + Date.now()); // éviter cache
+    const r = await _get(url + '?t=' + Date.now());
     if (r.status !== 200) return null;
     const ct = r.headers && r.headers['content-type'] || '';
     if (!ct.startsWith('image/')) return null;
     const cl = parseInt((r.headers && r.headers['content-length']) || '0', 10);
-    if (cl > 0 && cl < MIN_VALID_SIZE) return null; // placeholder cassé
+    if (cl > 0 && cl < MIN_VALID_SIZE) return null;
     return url;
   } catch(_) { return null; }
 }
@@ -96,8 +114,7 @@ async function _fetchAndValidateUrl(url) {
 async function _getJikanImage(jikanId, rateLimitMs, charName) {
   const delay = rateLimitMs || 800;
 
-  // ── Stratégie 1 : recherche par nom (plus fiable que l'ID) ──────
-  // On commence par la recherche pour éviter les faux IDs
+  // Stratégie 1 : recherche par nom
   if (charName) {
     await _sleep(delay);
     try {
@@ -106,7 +123,6 @@ async function _getJikanImage(jikanId, rateLimitMs, charName) {
       if (r.status === 200) {
         const d = JSON.parse(r.body);
         if (d.data && d.data.length > 0) {
-          // Meilleur match : nom exact d'abord, puis partiel
           const nameLow = charName.toLowerCase();
           const match = d.data.find(c => c.name.toLowerCase() === nameLow)
                      || d.data.find(c => c.name.toLowerCase().includes(nameLow.split(' ')[0]))
@@ -114,7 +130,6 @@ async function _getJikanImage(jikanId, rateLimitMs, charName) {
                      || d.data[0];
           const img = match.images?.jpg?.large_image_url || match.images?.jpg?.image_url;
           if (img) {
-            // Vérifier que ce n'est pas un placeholder
             const valid = await _fetchAndValidateUrl(img);
             if (valid) return valid;
           }
@@ -123,14 +138,13 @@ async function _getJikanImage(jikanId, rateLimitMs, charName) {
     } catch (_) {}
   }
 
-  // ── Stratégie 2 : galerie pictures par ID ──────────────────────
+  // Stratégie 2 : galerie pictures par ID
   await _sleep(delay);
   try {
     const r = await _get(`${JIKAN_BASE}/characters/${jikanId}/pictures`);
     if (r.status === 200) {
       const d = JSON.parse(r.body);
       if (d.data && d.data.length > 0) {
-        // Prendre la plus grande image disponible
         for (const pic of d.data) {
           const url = pic.jpg.large_image_url || pic.jpg.image_url;
           if (url) {
@@ -140,10 +154,10 @@ async function _getJikanImage(jikanId, rateLimitMs, charName) {
         }
       }
     }
-    if (r.status === 429) return null; // rate-limited
+    if (r.status === 429) return null;
   } catch (_) {}
 
-  // ── Stratégie 3 : profil par ID ────────────────────────────────
+  // Stratégie 3 : profil par ID
   await _sleep(delay);
   try {
     const r = await _get(`${JIKAN_BASE}/characters/${jikanId}`);
@@ -207,16 +221,41 @@ function _ensureDir(dirPath) {
 
 /**
  * Traiter un personnage
- * @param {object} character - { name, jikanId, storage, bucket, path, localPath }
- * @param {object} config    - { supabaseUrl, serviceKey, repoRoot, rateLimitMs, skipExisting }
- * @param {object} reporter  - { progress(char, status, msg), log(msg) }
- * @returns {string}         - 'ok' | 'skipped' | 'failed'
+ * @param {object} character  - { id, name, jikanId, storage, bucket, path, localPath, worldId }
+ * @param {object} config     - { supabaseUrl, serviceKey, repoRoot, rateLimitMs, skipExisting, sourcesOnly }
+ * @param {object} reporter   - { progress(char, status, msg) }
+ * @returns {string}          - 'ok' | 'skipped' | 'failed'
  */
 async function processCharacter(character, config, reporter) {
-  const { name, jikanId, storage, bucket, path: remotePath, localPath } = character;
-  const { supabaseUrl, serviceKey, repoRoot, rateLimitMs, skipExisting } = config;
+  const { id, name, jikanId, storage, bucket, localPath } = character;
+  const remotePath = character.path;
+  const { supabaseUrl, serviceKey, repoRoot, rateLimitMs, skipExisting, sourcesOnly, worldId } = config;
 
-  // ── Vérifier si déjà présent (mode local) ──
+  // ── PRIORITÉ 1 : Source locale scripts/sources/{worldId}/ (ASSET-02) ──
+  const localSource = _findLocalSource(repoRoot, worldId, id);
+
+  if (localSource) {
+    reporter.progress(name, 'fetching', 'source locale → ' + path.basename(localSource));
+    try {
+      const kb = Math.round(fs.statSync(localSource).size / 1024);
+      if (storage === 'supabase') {
+        if (!serviceKey) throw new Error('SUPABASE_SERVICE_KEY manquant');
+        await _uploadSupabase(localSource, supabaseUrl, serviceKey, bucket, remotePath);
+        reporter.progress(name, 'ok', `Supabase ${kb}KB (source locale)`);
+      } else {
+        const dest = path.join(repoRoot, localPath);
+        _ensureDir(path.dirname(dest));
+        fs.copyFileSync(localSource, dest);
+        reporter.progress(name, 'ok', `local ${kb}KB (source locale)`);
+      }
+      return 'ok';
+    } catch(e) {
+      reporter.progress(name, 'failed', 'upload source locale: ' + e.message);
+      return 'failed';
+    }
+  }
+
+  // ── PRIORITÉ 2 : Vérifier si déjà présent en local ──
   if (storage === 'local' && localPath && skipExisting !== false) {
     const fullLocal = path.join(repoRoot, localPath);
     if (fs.existsSync(fullLocal)) {
@@ -225,15 +264,20 @@ async function processCharacter(character, config, reporter) {
     }
   }
 
-  // ── Récupérer URL image via Jikan ──
-  reporter.progress(name, 'fetching', '');
-  const imgUrl = await _getJikanImage(jikanId, config.rateLimitMs, name);
+  // ── PRIORITÉ 3 : Jikan API (bloqué si --sources-only) ──
+  if (sourcesOnly) {
+    reporter.progress(name, 'failed', 'aucune source locale — Jikan désactivé (--sources-only)');
+    return 'failed';
+  }
+
+  reporter.progress(name, 'fetching', 'Jikan API...');
+  const imgUrl = await _getJikanImage(jikanId, rateLimitMs, name);
   if (!imgUrl) {
     reporter.progress(name, 'failed', 'image introuvable sur Jikan');
     return 'failed';
   }
 
-  // ── Télécharger ──
+  // ── Télécharger depuis Jikan ──
   _ensureDir(TMP_DIR);
   const ext     = (imgUrl.split('?')[0].split('.').pop() || 'jpg').slice(0, 4);
   const tmpFile = path.join(TMP_DIR, `char_${Date.now()}.${ext}`);
@@ -245,21 +289,18 @@ async function processCharacter(character, config, reporter) {
     return 'failed';
   }
 
-  // ── Upload / Copie ──
   try {
     const kb = Math.round(fs.statSync(tmpFile).size / 1024);
-
     if (storage === 'supabase') {
       if (!serviceKey) throw new Error('SUPABASE_SERVICE_KEY manquant');
       await _uploadSupabase(tmpFile, supabaseUrl, serviceKey, bucket, remotePath);
-      reporter.progress(name, 'ok', `Supabase ${kb}KB`);
+      reporter.progress(name, 'ok', `Supabase ${kb}KB (Jikan)`);
     } else {
       const dest = path.join(repoRoot, localPath);
       _ensureDir(path.dirname(dest));
       fs.copyFileSync(tmpFile, dest);
-      reporter.progress(name, 'ok', `local ${kb}KB`);
+      reporter.progress(name, 'ok', `local ${kb}KB (Jikan)`);
     }
-
     return 'ok';
   } catch(e) {
     reporter.progress(name, 'failed', 'upload: ' + e.message);
