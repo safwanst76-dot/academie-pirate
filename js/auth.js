@@ -188,14 +188,14 @@ function _buildHeroBg() {
   var columns = [
     // Col 1 — One Piece
     [
-      { src: LOCAL + 'luffy.png' },
-      { src: LOCAL + 'zoro.png' },
-      { src: LOCAL + 'nami.png' },
-      { src: LOCAL + 'sanji.png' },
-      { src: LOCAL + 'robin.png' },
-      { src: LOCAL + 'ace.png' },
-      { src: LOCAL + 'shanks.png' },
-      { src: LOCAL + 'law.png' },
+      { src: LOCAL + 'luffy.jpg' },
+      { src: LOCAL + 'zoro.jpg' },
+      { src: LOCAL + 'nami.jpg' },
+      { src: LOCAL + 'sanji.jpg' },
+      { src: LOCAL + 'robin.jpg' },
+      { src: LOCAL + 'ace.jpg' },
+      { src: LOCAL + 'shanks.jpg' },
+      { src: LOCAL + 'law.jpg' },
     ],
     // Col 2 — Attack on Titan
     [
@@ -232,13 +232,13 @@ function _buildHeroBg() {
     ],
     // Col 5 — Mix tous univers
     [
-      { src: LOCAL + 'chopper.png' },
+      { src: LOCAL + 'chopper.jpg' },
       { src: AOT   + 'jean.jpg' },
-      { src: LOCAL + 'hancock.png' },
+      { src: LOCAL + 'hancock.jpg' },
       { src: DS    + 'shinobu.png' },
-      { src: LOCAL + 'franky.png' },
+      { src: LOCAL + 'franky.jpg' },
       { src: AOT   + 'reiner.jpg' },
-      { src: LOCAL + 'brook.png' },
+      { src: LOCAL + 'brook.jpg' },
       { src: DS    + 'tengen.jpg' },
     ],
   ];
@@ -523,7 +523,7 @@ function _tplParentDashboard(children) {
       return `
       <div class="pd-child-card" data-child-id="${child.id}">
         <div class="pd-child-avatar">
-          <img src="assets/images/avatars/${child.avatar_id || 'luffy'}.png"
+          <img src="assets/images/avatars/${child.avatar_id || 'luffy'}.jpg"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
             alt="${child.username}">
           <div class="pd-child-avatar-fallback">🏴‍☠️</div>
@@ -737,7 +737,7 @@ function _initAvatarPickerInForm() {
     wrap.innerHTML = '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">' +
       fallbacks.map(function(id, i) {
         return '<div class="af-av-opt' + (i===0?' selected':'') + '" data-id="' + id + '" onclick="afSelectChildAvatar(this)" style="display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px;border-radius:10px;border:2px solid ' + (i===0?'#ffd700':'rgba(255,255,255,.2)') + ';cursor:pointer;background:rgba(255,255,255,.04)">' +
-          '<img src="assets/images/avatars/' + id + '.png" style="width:44px;height:44px;border-radius:50%;object-fit:cover" onerror="this.style.opacity=0.3">' +
+          '<img src="assets/images/avatars/' + id + '.jpg" style="width:44px;height:44px;border-radius:50%;object-fit:cover" onerror="this.style.opacity=0.3">' +
           '<span style="font-family:Nunito,sans-serif;font-size:.6rem;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase">' + id + '</span>' +
         '</div>';
       }).join('') + '</div>';
@@ -868,8 +868,8 @@ function afShowChildPicker(children) {
   var cards = children.map(function (child) {
     return `<div class="cs-profile" data-child-id="${child.id}">
       <div class="cs-avatar">
-        <img src="assets/images/avatars/${child.avatar_id || 'luffy'}.png"
-          onerror="this.src='assets/images/avatars/luffy.png'" alt="${child.username}">
+        <img src="assets/images/avatars/${child.avatar_id || 'luffy'}.jpg"
+          onerror="this.src='assets/images/avatars/luffy.jpg'" alt="${child.username}">
       </div>
       <div style="font-family:'Bangers',cursive;font-size:1rem;letter-spacing:2px;
            color:#ffd700;text-align:center">${child.username}</div>
@@ -1046,7 +1046,7 @@ async function afLaunchChild(child) {
   var img  = document.getElementById('headerAvatarImg');
   var name = document.getElementById('headerAvatarName');
   if (img) {
-    img.src = 'assets/images/avatars/' + (child.avatar_id || 'luffy') + '.png';
+    img.src = 'assets/images/avatars/' + (child.avatar_id || 'luffy') + '.jpg';
     img.style.display = 'block';
   }
   if (name) name.textContent = child.username;
@@ -1269,16 +1269,13 @@ function afLoginChildByPin() {
 }
 
 async function afSubmitChildPinLogin() {
-  var pin = '';
-  for (var i = 0; i < 6; i++) {
-    var inp = document.getElementById('login-child-pin-' + i);
-    pin += inp ? (inp.value || '') : '';
-  }
+  var field = document.getElementById('login-child-pin-field');
+  var pin   = field ? field.value.toUpperCase().trim() : '';
   var errEl = document.getElementById('login-child-pin-error');
   var btn   = document.getElementById('login-child-pin-btn');
 
-  if (pin.length !== 6) {
-    if (errEl) { errEl.textContent = '⚠️ Entre les 6 chiffres de ton code !'; errEl.style.display = 'block'; }
+  if (pin.length < 4) {
+    if (errEl) { errEl.textContent = '⚠️ Entre ton code secret (4 à 8 caractères) !'; errEl.style.display = 'block'; }
     return;
   }
   if (btn) { btn.textContent = '⏳ Vérification…'; btn.disabled = true; }
@@ -1344,10 +1341,6 @@ async function _fetchChildByPinDirect(pin) {
 function _shakeLoginPinInputs() {
   var wrap = document.getElementById('login-child-pin-wrap');
   if (wrap) { wrap.style.animation = 'none'; void wrap.offsetWidth; wrap.style.animation = 'pinShake .4s ease'; }
-  for (var j = 0; j < 6; j++) {
-    var ip = document.getElementById('login-child-pin-' + j);
-    if (ip) ip.value = '';
-  }
-  var first = document.getElementById('login-child-pin-0');
-  if (first) first.focus();
+  var field = document.getElementById('login-child-pin-field');
+  if (field) { field.value = ''; field.focus(); }
 }

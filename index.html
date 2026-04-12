@@ -112,28 +112,27 @@
         </div>
         <div style="font-family:'Nunito',sans-serif;font-size:.75rem;
              color:rgba(255,255,255,.35);margin-bottom:12px">
-          Ton parent t'a donné un code à 6 chiffres
+          Ton parent t'a donné un code de 4 à 8 caractères
         </div>
       </div>
-      <div id="login-child-pin-wrap" style="display:flex;gap:8px;justify-content:center">
-        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-          id="login-child-pin-0" autocomplete="off" class="login-pin-input"
-          onkeydown="loginPinKey(event,0)" oninput="loginPinInput(event,0)">
-        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-          id="login-child-pin-1" autocomplete="off" class="login-pin-input"
-          onkeydown="loginPinKey(event,1)" oninput="loginPinInput(event,1)">
-        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-          id="login-child-pin-2" autocomplete="off" class="login-pin-input"
-          onkeydown="loginPinKey(event,2)" oninput="loginPinInput(event,2)">
-        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-          id="login-child-pin-3" autocomplete="off" class="login-pin-input"
-          onkeydown="loginPinKey(event,3)" oninput="loginPinInput(event,3)">
-        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-          id="login-child-pin-4" autocomplete="off" class="login-pin-input"
-          onkeydown="loginPinKey(event,4)" oninput="loginPinInput(event,4)">
-        <input type="tel" maxlength="1" inputmode="numeric" pattern="[0-9]"
-          id="login-child-pin-5" autocomplete="off" class="login-pin-input"
-          onkeydown="loginPinKey(event,5)" oninput="loginPinInput(event,5)">
+      <div id="login-child-pin-wrap">
+        <input type="text" id="login-child-pin-field"
+          minlength="4" maxlength="8"
+          autocomplete="off" autocorrect="off"
+          autocapitalize="characters" spellcheck="false"
+          placeholder="ex: Luffy7"
+          style="
+            width:100%;padding:14px 16px;text-align:center;
+            font-family:'Bangers',cursive;font-size:2rem;
+            letter-spacing:6px;text-transform:uppercase;
+            background:rgba(255,255,255,.07);
+            border:2px solid rgba(255,215,0,.3);
+            border-radius:12px;color:#ffd700;outline:none;
+            caret-color:#ffd700;box-sizing:border-box;
+            transition:border-color .2s;
+          "
+          oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')"
+          onkeydown="if(event.key==='Enter') afSubmitChildPinLogin()">
       </div>
       <div id="login-child-pin-error" style="display:none;font-family:'Nunito',sans-serif;
            font-size:.8rem;font-weight:800;color:#f87171;text-align:center;padding:4px 0;"></div>
