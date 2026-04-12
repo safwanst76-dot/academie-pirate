@@ -126,7 +126,7 @@ function _resolveAvatarImg(avatarId) {
     var found = AVATARS.find(function(av) { return av.id === avatarId; });
     if (found) return found.img;
   }
-  return 'assets/images/avatars/' + (avatarId || 'luffy') + '.png';
+  return 'assets/images/avatars/' + (avatarId || 'luffy') + '.jpg';
 }
 
 async function createChildProfile() {

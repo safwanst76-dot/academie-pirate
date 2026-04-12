@@ -40,7 +40,7 @@
       "color": "#e63946",
       "quote": "Je serai Roi des Pirates !",
       "quote_lesson": "Écoute bien, on va apprendre ensemble !",
-      "img": "assets/images/avatars/luffy.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg"
     },
     {
       "id": "zoro",
@@ -49,7 +49,7 @@
       "color": "#22c55e",
       "quote": "Je ne me perdrai jamais !",
       "quote_lesson": "Concentre-toi. Un bon sabreur ne rate pas deux fois.",
-      "img": "assets/images/avatars/zoro.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/zoro.jpg"
     },
     {
       "id": "nami",
@@ -58,7 +58,7 @@
       "color": "#f59e0b",
       "quote": "L'argent ET la grammaire !",
       "quote_lesson": "Je t'explique tout, suis bien mes indications !",
-      "img": "assets/images/avatars/nami.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/nami.jpg"
     },
     {
       "id": "usopp",
@@ -67,7 +67,7 @@
       "color": "#92400e",
       "quote": "J'ai 8000 hommes !",
       "quote_lesson": "Moi, le grand Usopp, je vais t'apprendre ça !",
-      "img": "assets/images/avatars/usopp.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/usopp.jpg"
     },
     {
       "id": "sanji",
@@ -76,7 +76,7 @@
       "color": "#3b82f6",
       "quote": "Pour mes Nakamas !",
       "quote_lesson": "La connaissance, c'est comme la cuisine — ça se travaille.",
-      "img": "assets/images/avatars/sanji.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/sanji.jpg"
     },
     {
       "id": "chopper",
@@ -85,7 +85,7 @@
       "color": "#ec4899",
       "quote": "Je ne suis pas content !",
       "quote_lesson": "Un médecin doit tout savoir ! Apprends avec moi !",
-      "img": "assets/images/avatars/chopper.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/chopper.jpg"
     },
     {
       "id": "robin",
@@ -94,7 +94,7 @@
       "color": "#8b5cf6",
       "quote": "La connaissance est une arme.",
       "quote_lesson": "Chaque leçon est un trésor. Découvrons-le ensemble.",
-      "img": "assets/images/avatars/robin.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/robin.jpg"
     },
     {
       "id": "brook",
@@ -103,7 +103,7 @@
       "color": "#6366f1",
       "quote": "Yohohoho !",
       "quote_lesson": "Skull joke ! Allons-y, j'ai la tête bien vide pour apprendre !",
-      "img": "assets/images/avatars/brook.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/brook.jpg"
     },
     {
       "id": "ace",
@@ -112,7 +112,7 @@
       "color": "#f97316",
       "quote": "Je ne regrette rien !",
       "quote_lesson": "Vas-y sans hésiter. L'échec, ça forge le caractère !",
-      "img": "assets/images/avatars/ace.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/ace.jpg"
     },
     {
       "id": "shanks",
@@ -121,7 +121,7 @@
       "color": "#dc2626",
       "quote": "Je mise sur toi !",
       "quote_lesson": "Je crois en toi. Montre-moi ce que tu vaux.",
-      "img": "assets/images/avatars/shanks.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/shanks.jpg"
     },
     {
       "id": "law",
@@ -130,7 +130,7 @@
       "color": "#0ea5e9",
       "quote": "Room. Shambles !",
       "quote_lesson": "Analysons ça méthodiquement. Room.",
-      "img": "assets/images/avatars/law.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/law.jpg"
     },
     {
       "id": "hancock",
@@ -139,7 +139,7 @@
       "color": "#f43f5e",
       "quote": "L'amour est invincible !",
       "quote_lesson": "Je t'enseigne parce que tu le mérites. Sois attentif.",
-      "img": "assets/images/avatars/hancock.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/hancock.jpg"
     },
     {
       "id": "franky",
@@ -148,7 +148,7 @@
       "color": "#06b6d4",
       "quote": "SUPER !",
       "quote_lesson": "SUPER ! On va construire quelque chose de grand !",
-      "img": "assets/images/avatars/franky.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/franky.jpg"
     },
     {
       "id": "vivi",
@@ -157,7 +157,7 @@
       "color": "#38bdf8",
       "quote": "Je n'abandonnerai jamais !",
       "quote_lesson": "Courage ! Chaque effort compte, j'en suis sûre.",
-      "img": "assets/images/avatars/vivi.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/vivi.jpg"
     },
     {
       "id": "whitebeard",
@@ -166,7 +166,7 @@
       "color": "#7c3aed",
       "quote": "Vous êtes tous mes fils !",
       "quote_lesson": "Écoute bien, gamin. Je ne le répèterai pas deux fois.",
-      "img": "assets/images/avatars/whitebeard.png"
+      "img": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/whitebeard.png"
     },
     {
       "id": "eren",
