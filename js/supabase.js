@@ -103,8 +103,8 @@ function updateLoginAvatarBadge() {
     badge = document.createElement('div');
     badge.id = 'login-avatar-badge';
     badge.innerHTML = `
-      <img src="assets/images/avatars/luffy.png" alt="avatar" id="labImg"
-           onerror="this.src='assets/images/avatars/luffy.png'">
+      <img src="assets/images/avatars/luffy.jpg" alt="avatar" id="labImg"
+           onerror="this.onerror=null;this.src='assets/images/avatars/luffy.jpg'">
       <div class="lab-info">
         <div class="lab-name" id="labName">Pirate</div>
         <div class="lab-sub">Moussaillon</div>
@@ -119,7 +119,7 @@ function updateLoginAvatarBadge() {
   const nameEl = document.getElementById('labName');
 
   if (player && player.name && player.name !== 'Pirate') {
-    if (img)    img.src = player.avatarImg || 'assets/images/avatars/luffy.png';
+    if (img)    img.src = player.avatarImg || 'assets/images/avatars/luffy.jpg';
     if (nameEl) nameEl.textContent = player.name;
     badge.classList.remove('hidden');
   } else {

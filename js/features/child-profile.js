@@ -171,7 +171,7 @@
         // Header
         '<div class="cp-header">' +
           '<img class="cp-avatar" src="assets/images/avatars/' + (child.avatar_id || 'luffy') + '.png" ' +
-            'onerror="this.src=\'assets/images/avatars/luffy.png\'" alt="' + child.username + '">' +
+            'onerror="this.onerror=null;this.src=\'assets/images/avatars/luffy.jpg\'" alt="' + child.username + '">' +
           '<div class="cp-header-info">' +
             '<div class="cp-username">' + child.username + '</div>' +
             '<div class="cp-level-badge">' + level.icon + ' ' + level.name + '</div>' +

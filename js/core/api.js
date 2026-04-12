@@ -285,7 +285,7 @@
     resolve: async function (id) {
       var all = await avatars.getAll();
       var found = all.find(function (av) { return av.id === id; });
-      return found || { id: id, img: 'assets/images/avatars/luffy.png', color: '#e63946', name: id };
+      return found || { id: id, img: 'assets/images/avatars/luffy.jpg', color: '#e63946', name: id };
     }
   };
 

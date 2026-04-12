@@ -17,12 +17,12 @@
     if (global.AP && global.AP.state) return global.AP.state.get('avatar') || {};
     if (typeof global.playerData !== 'undefined') return {
       id: global.playerData.avatarId || 'luffy',
-      img: global.playerData.avatarImg || 'assets/images/avatars/luffy.png',
+      img: global.playerData.avatarImg || 'assets/images/avatars/luffy.jpg',
       color: global.playerData.avatarColor || '#e63946',
       name: global.playerData.charName || 'Luffy',
       quote_lesson: global.playerData.avatarQuote || ''
     };
-    return { id:'luffy', img:'assets/images/avatars/luffy.png', color:'#e63946', name:'Luffy', quote_lesson:'' };
+    return { id:'luffy', img:'assets/images/avatars/luffy.jpg', color:'#e63946', name:'Luffy', quote_lesson:'' };
   }
 
   function _childName() {
@@ -415,7 +415,7 @@
         '<img class="ld-companion-img"' +
           ' src="' + _esc(av.img) + '"' +
           ' alt="' + _esc(child) + '"' +
-          ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
+          ' onerror="this.onerror=null;this.src=\'assets/images/avatars/luffy.jpg\'">' +
         // Nom + bulle
         '<div class="ld-companion-name" style="color:' + accent + '">' + _esc(child) + '</div>' +
         '<div class="ld-companion-bubble">' +
@@ -441,7 +441,7 @@
         '<img class="ld-asker-avatar"' +
           ' src="' + _esc(av.img) + '"' +
           ' alt="' + _esc(child) + '"' +
-          ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
+          ' onerror="this.onerror=null;this.src=\'assets/images/avatars/luffy.jpg\'">' +
         '<div class="ld-asker-bubble">' +
           '<div class="ld-asker-label" style="color:' + accent + '">' + _esc(child) + ' demande :</div>' +
           '<div class="ld-asker-q">' + w.q + '</div>' +
@@ -486,7 +486,7 @@
       '<img class="ld-react-avatar"' +
         ' src="' + _esc(av.img) + '"' +
         ' alt="' + _esc(child) + '"' +
-        ' onerror="this.src=\'assets/images/avatars/luffy.png\'">' +
+        ' onerror="this.onerror=null;this.src=\'assets/images/avatars/luffy.jpg\'">' +
       '<div class="ld-react-text">' +
         '<div class="ld-react-emoji">' + m.e + '</div>' +
         '<div class="ld-react-msg">' + _esc(m.m) + '</div>' +

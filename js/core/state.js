@@ -31,7 +31,7 @@
     // Avatar de l'enfant
     avatar: {
       id:    'luffy',
-      img:   'assets/images/avatars/luffy.png',
+      img:   'assets/images/avatars/luffy.jpg',
       color: '#e63946',
       name:  'Luffy',
       quote: 'Je serai Roi des Pirates !'
