@@ -1,4 +1,90 @@
-User-agent: *
+# ═══════════════════════════════════════════════════════
+# ROBOTS.TXT — Académie Pirate
+# https://aca-pirate.ch/
+# Mise à jour : 14 Avril 2026
+# ═══════════════════════════════════════════════════════
+
+# ── Moteurs de recherche principaux ──────────────────────
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# ── Moteurs francophones ──────────────────────────────────
+User-agent: Qwantify
 Allow: /
 
+User-agent: DuckDuckBot
+Allow: /
+
+# ── IA & LLM crawlers — laisser indexer pour GEO ─────────
+# (Apparaître dans ChatGPT, Perplexity, Claude, Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+ 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ── Réseaux sociaux (partage og:image) ───────────────────
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# ── Interdire les scrapers malveillants ───────────────────
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# ── Règle générale ────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /*.json$
+Crawl-delay: 3
+
+# ── Sitemap ───────────────────────────────────────────────
 Sitemap: https://aca-pirate.ch/sitemap.xml

@@ -1,0 +1,54 @@
+{
+  "name": "Académie Pirate — Quiz manga pour enfants",
+  "short_name": "Académie Pirate",
+  "description": "Quiz éducatifs gratuits pour enfants CM2→4ème. Français, Maths, Anglais, Histoire avec One Piece, Naruto, Dragon Ball Z et Demon Slayer.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070a14",
+  "theme_color": "#ffd700",
+  "lang": "fr",
+  "dir": "ltr",
+  "orientation": "any",
+  "categories": ["education", "games", "kids"],
+  "screenshots": [
+    {
+      "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg",
+      "type": "image/jpeg",
+      "sizes": "630x1200",
+      "form_factor": "narrow"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Quiz Anglais",
+      "short_name": "Anglais",
+      "description": "Quiz anglais CM2→4ème avec Attack on Titan",
+      "url": "/#/english",
+      "icons": [{ "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/eren.jpeg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Quiz Français",
+      "short_name": "Français",
+      "description": "Quiz français CM2→4ème avec One Piece",
+      "url": "/#/grand-bleu",
+      "icons": [{ "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
