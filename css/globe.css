@@ -1,51 +1,59 @@
-/* ═══════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════════════════
    GLOBE.CSS — Académie Pirate
    Carte du monde SVG · Panneau continent
-   Mobile-first
-   ═══════════════════════════════════════════════ */
+   Mobile-first · PWA safe areas
+   ⚠️ Utilise var(--ap-*) — plus de --fs-sm / --tap-min inexistants
+   Version : 2.0 — 12 Avril 2026
+   ═══════════════════════════════════════════════════════════════════ */
 
-/* ── Section globe ── */
+/* ── Section globe ─────────────────────────────────────────────── */
 #globe-sec {
   display: none;
   flex-direction: column;
   align-items: center;
-  padding: 12px 12px 80px;
-  gap: 14px;
+  padding: var(--ap-space-3) var(--ap-space-3) 100px;
+  gap: var(--ap-space-4);
   position: relative;
   z-index: 1;
   width: 100%;
+  /* PWA safe area bottom */
+  padding-bottom: max(100px, calc(80px + var(--ap-safe-bottom)));
 }
 
-/* ── Titre section ── */
+/* ── Titres ────────────────────────────────────────────────────── */
 .globe-title {
-  font-family: 'Bangers', cursive;
-  font-size: clamp(1.4rem, 5vw, 2rem);
-  color: var(--gold2);
+  font-family: var(--ap-font-display);
+  font-size: var(--ap-display-sm);
+  color: var(--ap-gold);
   letter-spacing: 3px;
   text-shadow: 2px 2px 0 #000;
   text-align: center;
 }
+
 .globe-subtitle {
-  font-size: var(--fs-sm);
-  color: rgba(255,255,255,.45);
+  font-size: var(--ap-text-sm);
+  color: rgba(255, 255, 255, 0.45);
   text-align: center;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-top: -8px;
+  margin-top: calc(-1 * var(--ap-space-2));
 }
 
-/* ── Conteneur carte ── */
+/* ── Conteneur carte ───────────────────────────────────────────── */
 #globe-container,
 #treasure-map {
   width: 100%;
   max-width: min(900px, 96vw);
-  border-radius: 16px;
+  border-radius: var(--ap-r-lg);
   overflow: hidden;
-  border: 2px solid rgba(245,166,35,.2);
-  box-shadow: 0 8px 40px rgba(0,0,0,.5);
-  background: #0a0d1a;
+  border: 2px solid rgba(245, 166, 35, 0.2);
+  box-shadow: var(--ap-shadow-lg);
+  background: var(--ap-dark-2);
   cursor: pointer;
+  /* Performance */
+  contain: layout style;
 }
+
 #globe-container svg,
 #treasure-map svg {
   width: 100%;
@@ -54,150 +62,170 @@
   touch-action: manipulation;
 }
 
-/* ── Légende matières ── */
+/* ── Légende matières ──────────────────────────────────────────── */
 .globe-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--ap-space-2);
   justify-content: center;
   width: 100%;
   max-width: 520px;
 }
+
 .legend-badge {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--ap-space-1);
   padding: 4px 10px;
-  border-radius: 20px;
+  border-radius: var(--ap-r-full);
   border: 1px solid;
-  font-size: var(--fs-xs);
+  font-size: var(--ap-text-xs);
   font-weight: 800;
-  font-family: 'Nunito', sans-serif;
+  font-family: var(--ap-font-body);
+  min-height: var(--ap-touch-min);
 }
 
-/* ── Panneau continent ── */
+/* ── Panneau continent ─────────────────────────────────────────── */
 #globe-panel {
   width: fit-content;
   min-width: min(320px, 92vw);
   max-width: min(520px, 92vw);
   align-self: center;
-  border-radius: 16px;
-  border: 2px solid rgba(255,215,0,.25);
-  background: linear-gradient(160deg, #0a0d1a 0%, #120820 100%);
-  padding: 16px;
-  box-shadow: 0 8px 40px rgba(0,0,0,.7);
+  border-radius: var(--ap-r-lg);
+  border: 2px solid rgba(255, 215, 0, 0.25);
+  background: linear-gradient(160deg, var(--ap-dark-1) 0%, #120820 100%);
+  padding: var(--ap-space-4);
+  box-shadow: var(--ap-shadow-xl);
   display: none;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--ap-space-3);
   box-sizing: border-box;
 }
 
+/* ── Contenu panneau ───────────────────────────────────────────── */
 .gp-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--ap-space-3);
 }
+
 .gp-emoji {
-  font-size: clamp(2rem, 6vw, 2.5rem);
+  font-size: var(--ap-display-sm);
   flex-shrink: 0;
+  line-height: 1;
 }
+
 .gp-name {
-  font-family: 'Bangers', cursive;
-  font-size: clamp(1.2rem, 4vw, 1.6rem);
-  color: var(--gold2);
+  font-family: var(--ap-font-display);
+  font-size: var(--ap-display-sm);
+  color: var(--ap-gold);
   letter-spacing: 2px;
   line-height: 1;
 }
+
 .gp-universe {
-  font-family: 'Bangers', cursive;
-  font-size: clamp(.8rem, 2.5vw, 1rem);
+  font-family: var(--ap-font-display);
+  font-size: var(--ap-text-base);
   letter-spacing: 1px;
-  opacity: .8;
+  opacity: 0.8;
   margin-top: 2px;
 }
+
 .gp-subject {
-  font-family: 'Bangers', cursive;
-  font-size: clamp(.9rem, 3vw, 1.1rem);
-  color: var(--white);
+  font-family: var(--ap-font-display);
+  font-size: var(--ap-text-xl);
+  color: var(--ap-text);
   letter-spacing: 1px;
 }
+
 .gp-desc {
-  font-family: 'Nunito', sans-serif;
-  font-size: var(--fs-sm);
-  color: rgba(255,255,255,.6);
+  font-family: var(--ap-font-body);
+  font-size: var(--ap-text-sm);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.5;
   font-weight: 700;
 }
+
 .gp-chars {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--ap-space-2);
 }
+
 .gp-char-badge {
   padding: 3px 10px;
-  border-radius: 20px;
+  border-radius: var(--ap-r-full);
   border: 1px solid;
-  font-size: var(--fs-xs);
+  font-size: var(--ap-text-xs);
   font-weight: 800;
 }
+
 .gp-locked-msg {
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 10px;
-  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--ap-r-md);
+  padding: var(--ap-space-3);
   text-align: center;
-  font-family: 'Bangers', cursive;
-  font-size: clamp(.9rem, 3vw, 1.1rem);
-  color: rgba(255,255,255,.4);
+  font-family: var(--ap-font-display);
+  font-size: var(--ap-text-lg);
+  color: rgba(255, 255, 255, 0.4);
   letter-spacing: 1.5px;
 }
+
 .gp-play-btn {
   width: 100%;
-  padding: 14px;
+  padding: var(--ap-space-4);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--ap-r-md);
   color: #fff;
-  font-family: 'Bangers', cursive;
-  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  font-family: var(--ap-font-display);
+  font-size: var(--ap-text-xl);
   letter-spacing: 2px;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0,0,0,.3);
-  transition: transform .15s, box-shadow .15s;
-  min-height: var(--tap-min);
+  box-shadow: var(--ap-shadow-md);
+  transition:
+    transform var(--ap-duration-fast) var(--ap-ease),
+    box-shadow var(--ap-duration-fast) var(--ap-ease);
+  min-height: var(--ap-touch-safe);
   -webkit-tap-highlight-color: transparent;
 }
-.gp-play-btn:hover  { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,0,0,.4); }
-.gp-play-btn:active { transform: scale(.97); }
 
-/* ── Globe overlay (fond semi-transparent mobile) ── */
+.gp-play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ap-shadow-lg);
+}
+.gp-play-btn:active { transform: scale(0.97); }
+
+/* ── Overlay fond mobile ───────────────────────────────────────── */
 #globe-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 200;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
 #globe-overlay.visible { display: block; }
 
-/* ─────────────── RESPONSIVE ─────────────── */
-
+/* ── Responsive ────────────────────────────────────────────────── */
 @media (min-width: 480px) {
-  #globe-sec { padding: 16px 16px 80px; }
-  #globe-panel { padding: 20px; }
+  #globe-sec   { padding: var(--ap-space-4) var(--ap-space-4) 100px; }
+  #globe-panel { padding: var(--ap-space-5); }
 }
 
 @media (min-width: 768px) {
   #globe-container,
-  #treasure-map { max-width: min(1050px, 92vw); }
+  #treasure-map  { max-width: min(1050px, 92vw); }
   #globe-panel   { max-width: min(520px, 88vw); }
-  .gp-play-btn   { font-size: 1.2rem; }
+  .gp-play-btn   { font-size: var(--ap-text-2xl); }
 }
 
 @media (min-width: 1024px) {
-  #globe-sec { padding: 24px 24px 80px; }
+  #globe-sec {
+    padding: var(--ap-space-6) var(--ap-space-6) 100px;
+  }
   #globe-container,
-  #treasure-map { max-width: min(1080px, 88vw); }
-  #globe-panel   { max-width: 520px; padding: 24px; }
+  #treasure-map  { max-width: min(1080px, 88vw); }
+  #globe-panel   { max-width: 520px; padding: var(--ap-space-6); }
 }
