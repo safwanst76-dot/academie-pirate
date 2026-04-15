@@ -43,7 +43,7 @@ self.addEventListener('notificationclick', function(event) {
 
   var url = (event.notification.data && event.notification.data.url)
     ? event.notification.data.url
-    : 'https://safwanst76-dot.github.io/academie-pirate/';
+    : 'https://aca-pirate.ch/';
 
   event.waitUntil(
     clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function(list) {

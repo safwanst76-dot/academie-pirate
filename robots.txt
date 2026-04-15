@@ -83,7 +83,6 @@ Disallow: /
 User-agent: *
 Allow: /
 Disallow: /admin
-Disallow: /*.json$
 Crawl-delay: 3
 
 # ── Sitemap ───────────────────────────────────────────────
