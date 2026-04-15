@@ -1,151 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ══════════════════════════════════════
-       ACADÉMIE PIRATE — Sitemap v2
-       Mise à jour : 14 Avril 2026
-       ══════════════════════════════════════ -->
+  <!-- ACADÉMIE PIRATE — Sitemap v3
+       SPA : une seule URL réelle, les autres sont des hash routes (#/...)
+       Mise à jour : 15 Avril 2026 -->
 
-  <!-- ── Accueil ── -->
   <url>
     <loc>https://aca-pirate.ch/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr"    href="https://aca-pirate.ch/"/>
     <xhtml:link rel="alternate" hreflang="fr-FR" href="https://aca-pirate.ch/"/>
     <xhtml:link rel="alternate" hreflang="fr-CH" href="https://aca-pirate.ch/"/>
     <xhtml:link rel="alternate" hreflang="fr-BE" href="https://aca-pirate.ch/"/>
-    <xhtml:link rel="alternate" hreflang="fr"    href="https://aca-pirate.ch/"/>
-  </url>
-
-  <!-- ── Monde Anglais (Attack on Titan) ── -->
-  <url>
-    <loc>https://aca-pirate.ch/anglais/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/cm2/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/6eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/5eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ── Monde Français (One Piece) ── -->
-  <url>
-    <loc>https://aca-pirate.ch/francais/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/6eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ── Monde Maths (Naruto) ── -->
-  <url>
-    <loc>https://aca-pirate.ch/maths/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── Monde Histoire (Dragon Ball Z) ── -->
-  <url>
-    <loc>https://aca-pirate.ch/histoire/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── Monde Sciences (Demon Slayer) ── -->
-  <url>
-    <loc>https://aca-pirate.ch/sciences/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/6eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/5eme/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── Monde Géographie (Jujutsu Kaisen) ── -->
-  <url>
-    <loc>https://aca-pirate.ch/geographie/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
 </urlset>

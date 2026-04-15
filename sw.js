@@ -19,7 +19,7 @@ self.addEventListener('push', function(event) {
     icon:    data.icon    || '/academie-pirate/assets/images/ui/icon-192.png',
     badge:   data.badge   || '/academie-pirate/assets/images/ui/icon-72.png',
     image:   data.image   || null,
-    data:    { url: data.url || 'https://safwanst76-dot.github.io/academie-pirate/' },
+    data:    { url: data.url || 'https://aca-pirate.ch/' },
     actions: [
       { action: 'open',    title: '⚔️ Jouer maintenant' },
       { action: 'dismiss', title: '✕ Plus tard'         }
