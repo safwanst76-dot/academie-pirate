@@ -47,6 +47,7 @@
 /* ══════════════════════════════════
    SECTIONS
    ══════════════════════════════════ */
+#pdf-levels-sec,
 #pdf-iles-sec,
 #pdf-quiz-sec {
   display: none; position: relative; z-index: 2;
@@ -54,17 +55,101 @@
   pointer-events: auto;
 }
 
-/* Overlay sombre — règle CS-03 : z-index enfants > 1 */
+/* Overlay sombre */
+#pdf-levels-sec::before,
 #pdf-iles-sec::before,
 #pdf-quiz-sec::before {
   content: ''; position: fixed; inset: 0; z-index: 1;
   background: linear-gradient(160deg,rgba(13,8,4,.65) 0%,rgba(20,8,4,.55) 50%,rgba(13,8,4,.65) 100%);
   pointer-events: none;
 }
-.pdf-map-header, .pdf-islands-grid,
+.pdf-map-header, .pdf-levels-grid, .pdf-islands-grid,
 .pdf-quiz-header, #pdf-qContainer {
   position: relative; z-index: 3;
 }
+
+/* ══════════════════════════════════
+   GRILLE DE NIVEAUX — Pattern Grand Bleu
+   ══════════════════════════════════ */
+.pdf-levels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 12px 16px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+@media (min-width: 540px) { .pdf-levels-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 800px) { .pdf-levels-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.pdf-level-card {
+  position: relative; border-radius: 18px; overflow: hidden;
+  cursor: pointer;
+  background: rgba(20, 8, 4, .92);
+  border: 2px solid var(--level-color, var(--naruto-orange));
+  box-shadow: 0 4px 24px rgba(0,0,0,.7), 0 0 15px rgba(249,115,22,.15);
+  padding: 22px 14px 18px;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px; text-align: center;
+  transition: transform .2s, box-shadow .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.pdf-level-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 36px rgba(0,0,0,.8), 0 0 28px var(--level-color, var(--naruto-glow));
+}
+.pdf-level-card:active { transform: scale(.97); }
+
+.pdf-level-emoji {
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  line-height: 1;
+  filter: drop-shadow(0 0 8px var(--level-color, var(--naruto-orange)));
+}
+.pdf-level-nom {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.4rem, 5vw, 1.9rem);
+  color: var(--level-color, var(--naruto-orange));
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #000;
+}
+.pdf-level-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(.68rem, 2vw, .78rem);
+  font-weight: 800;
+  color: rgba(255,255,255,.75);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+.pdf-level-btn {
+  margin-top: 6px;
+  padding: 8px 18px;
+  border-radius: 24px;
+  background: var(--level-color, var(--naruto-orange));
+  color: #000;
+  font-family: 'Bangers', cursive;
+  font-size: .95rem;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.5);
+  transition: filter .15s;
+}
+.pdf-level-card:hover .pdf-level-btn { filter: brightness(1.15); }
+
+/* ══════════════════════════════════
+   BOUTON RETOUR NIVEAUX
+   ══════════════════════════════════ */
+.pdf-back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(249,115,22,.15);
+  border: 1px solid rgba(249,115,22,.4);
+  color: var(--naruto-orange);
+  font-family: 'Nunito', sans-serif; font-size: .82rem; font-weight: 900;
+  padding: 7px 14px; border-radius: 20px;
+  cursor: pointer; margin-bottom: 8px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s;
+}
+.pdf-back-btn:hover { background: rgba(249,115,22,.25); }
 
 /* ══════════════════════════════════
    HEADER GRILLE
