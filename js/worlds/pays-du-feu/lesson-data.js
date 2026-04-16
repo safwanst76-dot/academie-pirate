@@ -328,9 +328,9 @@ window.LESSON_REGISTRY['paysdufeu'] = {
   } // fin lessons CM2
 };
 
-// ── Point d'entrée global (appelé par lesson.js) ──────────────
-// Règle LG-01 : lesson_paysdufeu(numero, callback)
-window.lesson_paysdufeu = function (numero, callback) {
+// ── Point d'entrée global — pattern exact lesson_grand_bleu ───
+// Signature : lesson_paysdufeu(niveauCode, numero, callback)
+window.lesson_paysdufeu = function (niveauCode, numero, callback) {
   var registry = window.LESSON_REGISTRY && window.LESSON_REGISTRY['paysdufeu'];
   if (!registry) { if (callback) callback(); return; }
 
