@@ -464,27 +464,27 @@ function lesson_kanto(n, thenCallback) {
   showLesson('kanto', n, avatar, '#C0392B', thenCallback);
 }
 
-// ── PAYS DU FEU — Maths / Naruto ───────────────────────────────
-// Characters + GIFs dans Supabase island-pays-du-feu/
-// Attention : certains noms ont des espaces → encodés en %20
-// PDF_AVATARS de quiz-pays-du-feu.js est la référence.
-function lesson_paysdufeu(n, thenCallback) {
-  var SUPABASE_PDF = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu';
-  var PDF_MAP = {
-    1: SUPABASE_PDF + '/gifs/naruto%20GIF6.gif',           // GIF animé île Naruto
-    2: SUPABASE_PDF + '/characters/sasuke.png',
-    3: SUPABASE_PDF + '/characters/sakura.jpg',
-    4: SUPABASE_PDF + '/characters/hatake%20kakashi.jpeg',  // espace encodé
-    5: SUPABASE_PDF + '/characters/gaara%20.jpg',           // espace encodé
-    6: SUPABASE_PDF + '/gifs/itachi%20uchiha%20naruto%20GIF.gif',
-    7: SUPABASE_PDF + '/characters/minato%20.jpg',          // espace encodé
-    8: SUPABASE_PDF + '/characters/jiraiya.webp'
+// ── PAYS DU FEU V3 — Maths / Naruto ────────────────────────────
+// Signature identique à lesson_english : (niveauCode, numeroIle, thenCallback)
+// Bucket corrigé : island-pays-du-feu (sans espaces)
+function lesson_paysdufeu(niveauCode, numeroIle, thenCallback) {
+  var SUPABASE_PDF = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/';
+  var AVATARS = {
+    'cm2':  { 1:'naruto.jpg',    2:'sakura.jpg',     3:'sasuke.png',   4:'kakashi.jpeg',
+              5:'rock-lee.jpg',  6:'hinata.jpeg',    7:'gaara.jpg',    8:'hokage.jpg' },
+    '6eme': { 1:'naruto.jpg',    2:'hinata.jpeg',    3:'shikamaru.jpg',4:'ino.jpg',
+              5:'choji.gif',     6:'tenten.jpg',     7:'neji.jpg',     8:'zabuza.png' },
+    '5eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'rock-lee.jpg',
+              5:'gaara.jpg',     6:'temari.jpg',     7:'kankuro.jpg',  8:'orochimaru.jpg' },
+    '4eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'kakashi.jpeg',
+              5:'shikamaru.jpg', 6:'hinata.jpeg',    7:'rock-lee.jpg', 8:'pain.jpg' },
+    '3eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'kakashi.jpeg',
+              5:'minato.jpg',    6:'jiraiya.jpg',    7:'tsunade.jpg',  8:'madara.jpg' },
   };
-  // Priorité : PDF_AVATARS (quiz-pays-du-feu.js) > PDF_MAP
-  var avatar = (typeof PDF_AVATARS !== 'undefined' && PDF_AVATARS[n])
-    ? PDF_AVATARS[n]
-    : (PDF_MAP[n] || PDF_MAP[2]);
-  showLesson('paysdufeu', n, avatar, '#F97316', thenCallback);
+  var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
+  var avatar    = SUPABASE_PDF + (avatarMap[numeroIle] || 'naruto.jpg');
+  var lessonKey = niveauCode + '_' + numeroIle;
+  showLesson('paysdufeu', lessonKey, avatar, '#F97316', thenCallback);
 }
 
 // ══════════════════════════════════════════════════════════════
