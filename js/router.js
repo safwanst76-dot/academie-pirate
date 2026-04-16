@@ -243,7 +243,8 @@ function showKanto() {
   document.title = 'Académie Pirate — Kanto';
 }
 
-function showPaysduFeu() {
+function showPaysduFeu(silent) {
+  if (!silent) history.pushState(null, '', '#/pays-du-feu');
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('paysdufeu');
   if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('paysdufeu');
@@ -253,6 +254,8 @@ function showPaysduFeu() {
 
   const pdfBg = document.getElementById('pdf-bg');
   if (pdfBg) pdfBg.classList.add('visible');
+
+  if (typeof showPaysduFeuV2 === 'function') showPaysduFeuV2();
 
   // quiz-pays-du-feu.js expose showPaysduFeu — mais c'est ce router qui l'appelle
   // On appelle directement buildPdfGrid + loadPdfProgress depuis quiz-pays-du-feu.js
@@ -287,8 +290,9 @@ function showNamek() {
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') setTimeout(function(){ playBGM('jjk-map'); }, 300);
   document.title = 'Académie Pirate — Namek';
+}
 
-  function showEnglish() {
+function showEnglish() {
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('english');
   if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('english');
@@ -308,7 +312,6 @@ function showNamek() {
   if (typeof stopBGM === 'function') stopBGM();
   if (typeof playBGM === 'function') setTimeout(function(){ playBGM('aot-map'); }, 300);
   document.title = 'Académie Pirate — English';
-}
 }
 // ══════════════════════════════
 // NAVIGATION
@@ -339,7 +342,12 @@ var SEO_ROUTES = {
   'quiz':        { title: "Académie Pirate — Quiz Français",                       desc: "Quiz interactif de grammaire française. Niveau CM2-6ème." },
   'histoire':    { title: "Académie Pirate — Magnolia (Histoire · Dragon Ball Z)", desc: "8 îles d'histoire : Antiquité, Moyen Âge, Islam, Renaissance." },
   'kanto':       { title: "Académie Pirate — Kanto (Sciences · Demon Slayer)",    desc: "8 îles de sciences physiques : signaux, lumière, électricité, Internet." },
-  'pays-du-feu': { title: "Académie Pirate — Pays du Feu (Maths · Naruto)",      desc: "8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs." },
+  'pays-du-feu':      { title: "Académie Pirate — Pays du Feu (Maths · Naruto)",  desc: "8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs." },
+  'pays-du-feu/cm2':  { title: 'Académie Pirate — Maths CM2',  desc: 'Maths Naruto CM2' },
+  'pays-du-feu/6eme': { title: 'Académie Pirate — Maths 6ème', desc: 'Maths Naruto 6ème' },
+  'pays-du-feu/5eme': { title: 'Académie Pirate — Maths 5ème', desc: 'Maths Naruto 5ème' },
+  'pays-du-feu/4eme': { title: 'Académie Pirate — Maths 4ème', desc: 'Maths Naruto 4ème' },
+  'pays-du-feu/3eme': { title: 'Académie Pirate — Maths 3ème', desc: 'Maths Naruto 3ème' },
   'parent':      { title: 'Académie Pirate — Dashboard Parent',                    desc: 'Suivez la progression de votre enfant : XP, îles complétées, résultats détaillés.' },
   'grand-bleu':  { title: 'Académie Pirate — Grand Bleu · Français One Piece',    desc: '8 îles de grammaire et conjugaison avec les pirates de One Piece. Programme CM2-4ème.' },
   'grand-bleu/cm2':  { title: 'Quiz Français CM2 — Grammaire · Académie Pirate',   desc: '8 îles Français CM2 : infinitif/PP, accords, nature des mots, GN, conjugaison, homophones.' },
