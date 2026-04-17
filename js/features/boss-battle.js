@@ -94,8 +94,8 @@
     'Temari':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/temari.jpg',
     'Orochimaru':      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/orochimaru.jpg',
     'Kakashi':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kakashi.jpg',
-    'Zabuza':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/zabuza.png',
-    'Zabuza Momochi':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/zabuza.png',
+    'Zabuza':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/zabuza.jpg',
+    'Zabuza Momochi':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/zabuza.jpg',
     'Itachi Uchiha':   'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/itachi.jpg',
     'Madara Uchiha':   'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/madara.jpg',
     'Madara':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/madara.jpg',
@@ -112,6 +112,17 @@
     'Deidara':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/deidara.jpg',
     'Kisame':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kisame.jpg',
     'Kabuto':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kabuto.jpg',
+    // Boss 5ème/4ème/3ème — fallbacks sur images proches disponibles
+    'Chiyo':           'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/sakura.jpg',
+    'Asuma':           'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kakashi.jpg',
+    'Asuma Sarutobi':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kakashi.jpg',
+    'Neji Hyuga':      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/neji.jpg',
+    'Rock Lee':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/rock-lee.jpg',
+    'Kiba Inuzuka':    'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kiba.jpg',
+    'Hinata Hyuga':    'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/hinata.jpg',
+    'Shikamaru Nara':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/shikamaru.jpg',
+    'Minato Namikaze': 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/minato.jpg',
+    'Obito Uchiha':    'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/obito.jpg',
     // English — AOT Titans (vraies formes — upload via scripts/upload-boss-images.js)
     // Avant upload : fallback sur les personnages existants
     // Après upload dans island-aot/bosses/ : changer en bosses/titan-*.jpg
