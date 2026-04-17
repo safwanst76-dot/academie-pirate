@@ -470,15 +470,15 @@ function lesson_kanto(n, thenCallback) {
 function lesson_paysdufeu(niveauCode, numeroIle, thenCallback) {
   var SUPABASE_PDF = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/';
   var AVATARS = {
-    'cm2':  { 1:'naruto.jpg',    2:'sakura.jpg',     3:'sasuke.png',   4:'kakashi.jpeg',
-              5:'rock-lee.jpg',  6:'hinata.jpeg',    7:'gaara.jpg',    8:'hokage.jpg' },
-    '6eme': { 1:'naruto.jpg',    2:'hinata.jpeg',    3:'shikamaru.jpg',4:'ino.jpg',
-              5:'choji.gif',     6:'tenten.jpg',     7:'neji.jpg',     8:'zabuza.png' },
+    'cm2':  { 1:'naruto.jpg',    2:'sakura.jpg',     3:'sasuke.png',   4:'kakashi.jpg',
+              5:'rock-lee.jpg',  6:'hinata.jpg',     7:'gaara.jpg',    8:'hokage.jpg' },
+    '6eme': { 1:'naruto.jpg',    2:'hinata.jpg',     3:'shikamaru.jpg',4:'ino.jpg',
+              5:'choji.gif',     6:'tenten.jpg',     7:'neji.jpg',     8:'zabuza.jpg' },
     '5eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'rock-lee.jpg',
               5:'gaara.jpg',     6:'temari.jpg',     7:'kankuro.jpg',  8:'orochimaru.jpg' },
-    '4eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'kakashi.jpeg',
-              5:'shikamaru.jpg', 6:'hinata.jpeg',    7:'rock-lee.jpg', 8:'pain.jpg' },
-    '3eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'kakashi.jpeg',
+    '4eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'kakashi.jpg',
+              5:'shikamaru.jpg', 6:'hinata.jpg',     7:'rock-lee.jpg', 8:'pain.jpg' },
+    '3eme': { 1:'naruto.jpg',    2:'sasuke.png',     3:'sakura.jpg',   4:'kakashi.jpg',
               5:'minato.jpg',    6:'jiraiya.jpg',    7:'tsunade.jpg',  8:'madara.jpg' },
   };
   var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
