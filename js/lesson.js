@@ -483,6 +483,7 @@ function lesson_paysdufeu(niveauCode, numeroIle, thenCallback) {
   };
   var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
   var avatar    = SUPABASE_PDF + (avatarMap[numeroIle] || 'naruto.jpg');
+  // Clé niveau_ile : 'cm2_1', '6eme_3', etc.
   var lessonKey = niveauCode + '_' + numeroIle;
   showLesson('paysdufeu', lessonKey, avatar, '#F97316', thenCallback);
 }
