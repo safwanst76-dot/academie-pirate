@@ -57,6 +57,10 @@ var HIST_BOSS_AVATARS = {
   'Majin Buu':  DBZ_STORAGE + 'majinbuu.png',
   'Beerus':     DBZ_STORAGE + 'beerus.jpg',
   'Babidi':     DBZ_STORAGE + 'babidi.jpg',
+  'Raditz':     DBZ_STORAGE + 'raditz.jpg',
+  'Nappa':      DBZ_STORAGE + 'nappa.png',
+  'Zarbon':     DBZ_STORAGE + 'raditz.jpg',
+  'Ginyu':      DBZ_STORAGE + 'nappa.png',
   'Black Goku': DBZ_STORAGE + 'goku.jpg',
   'Zamasu':     DBZ_STORAGE + 'vegeta.jpg'
 };

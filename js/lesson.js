@@ -418,48 +418,9 @@ function lesson_grand_bleu(niveauCodeOrN, nOrCallback, thenCallback) {
 }
 
 // ── MAGNOLIA — Histoire / Dragon Ball Z ────────────────────────
-// V2 : accepte (niveauCode, n, callback) depuis quiz-router V2
-// V1 rétro-compat : accepte (n, callback) depuis quiz.js V1
-function lesson_magnolia(niveauCodeOrN, nOrCallback, thenCallback) {
-  // Détection signature — même pattern que lesson_grand_bleu
-  var niveauCode, n, callback;
-  if (typeof nOrCallback === 'function') {
-    // V1 : lesson_magnolia(n, callback)
-    n          = parseInt(niveauCodeOrN) || 1;
-    callback   = nOrCallback;
-    niveauCode = 'cm2';
-  } else {
-    // V2 : lesson_magnolia(niveauCode, n, callback)
-    niveauCode = niveauCodeOrN || 'cm2';
-    n          = parseInt(nOrCallback) || 1;
-    callback   = thenCallback;
-  }
-
-  var DBZ_STORAGE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
-  var DBZ_MAP = {
-    1: DBZ_STORAGE + 'goku.jpg',
-    2: DBZ_STORAGE + 'vegeta.jpg',
-    3: DBZ_STORAGE + 'piccolo.png',
-    4: DBZ_STORAGE + 'gohan.jpg',
-    5: DBZ_STORAGE + 'trunks.jpg',
-    6: DBZ_STORAGE + 'krilin.jpg',
-    7: DBZ_STORAGE + 'android18.jpg',
-    8: DBZ_STORAGE + 'bulma.jpg'
-  };
-
-  // Priorité : HIST_AVATARS (quiz.js, URLs Supabase) > DBZ_MAP
-  var avatar = (typeof HIST_AVATARS !== 'undefined' && HIST_AVATARS[n])
-    ? HIST_AVATARS[n]
-    : (DBZ_MAP[n] || DBZ_STORAGE + 'goku.jpg');
-
-  var COULEURS = {
-    'cm2':'#f97316', '6eme':'#22c55e', '5eme':'#8b5cf6',
-    '4eme':'#ef4444', '3eme':'#3b82f6'
-  };
-  var color = COULEURS[niveauCode] || '#8b5cf6';
-
-  showLesson('magnolia', n, avatar, color, callback);
-}
+// lesson_magnolia est défini dans js/worlds/magnolia/lesson-data.js (V2)
+// lesson.js ne le redéfinit PAS pour ne pas écraser la version V2
+// (même principe que les autres mondes qui ont leur propre lesson-data.js)
 
 // ── KANTO — Sciences / Demon Slayer ────────────────────────────
 // Tous les characters sont dans Supabase island-demon-slayer/characters/
