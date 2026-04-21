@@ -17,6 +17,7 @@ var ROUTES = {
   'grand-bleu' : showIles,        // URL-01 : alias canonique du Grand Bleu
   'quiz'       : showQuiz,
   'histoire'   : showHistoire,
+  'magnolia'   : function(s){ if(typeof showMagnoliaV2==='function') showMagnoliaV2(s); else showHistoire(s); },
   'kanto'      : showKanto,
   'pays-du-feu': showPaysduFeu,
   'namek'      : showNamek,
@@ -61,6 +62,13 @@ function hideAll() {
   if (histBg) histBg.classList.remove('visible');
   const histOv = document.getElementById('hist-overlay');
   if (histOv) histOv.classList.remove('visible');
+
+  // Magnolia V2 sections
+  ['hist-levels-sec','hist-iles-sec','hist-quiz-sec'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.style.display='none';
+  });
+  var histBg2 = document.getElementById('hist-bg');
+  if (histBg2) histBg2.classList.remove('visible');
 
   const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'none';
@@ -195,21 +203,17 @@ function showQuiz() {
 }
 
 function showHistoire() {
+  // Redirection V2
+  if (typeof showMagnoliaV2 === 'function') { showMagnoliaV2(); return; }
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('magnolia');
-  if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('magnolia');
-  if (typeof stopBGM === 'function') stopBGM();
-  setTimeout(function () {
-    if (typeof playBGM === 'function') playBGM('dbz-map'); // carte → music map
-  }, 300);
-  const sec = document.getElementById('histoire-iles-sec');
-  if (sec) {
-    sec.style.display = 'block';
-    if (typeof buildHistoireGrid === 'function') buildHistoireGrid();
-  }
-  const histBg = document.getElementById('hist-bg');
+  if (typeof playBGM === 'function') setTimeout(function(){ playBGM('dbz-map'); }, 300);
+  var sec = document.getElementById('hist-levels-sec');
+  if (sec) sec.style.display = 'block';
+  var histBg = document.getElementById('hist-bg');
   if (histBg) histBg.classList.add('visible');
-  if (typeof loadHistBgStrips === 'function') loadHistBgStrips();
+  document.title = 'Académie Pirate — Histoire';
+}
   const histOv = document.getElementById('hist-overlay');
   if (histOv) histOv.classList.add('visible');
   document.title = 'Académie Pirate — Histoire';
