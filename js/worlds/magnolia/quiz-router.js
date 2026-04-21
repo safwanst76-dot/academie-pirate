@@ -156,10 +156,17 @@
     if (!silent && window.history && window.history.pushState)
       history.pushState(null,'','#/magnolia/'+niveauCode);
 
-    var levels = document.getElementById('hist-levels-sec');
-    var iles   = document.getElementById('hist-iles-sec');
-    if (levels) levels.style.display = 'none';
-    if (iles)   iles.style.display   = 'block';
+    // Pattern Grand Bleu : hideAll() + masquer map-sec + manga-bg
+    if (typeof hideAll === 'function') hideAll();
+    var mangaBg = document.getElementById('manga-bg');
+    if (mangaBg) mangaBg.style.display = 'none';
+    var mapSec = document.getElementById('map-sec');
+    if (mapSec) mapSec.style.display = 'none';
+    var bg = document.getElementById('hist-bg');
+    if (bg) { bg.classList.add('visible'); loadHistBgStrips(); }
+
+    _show('hist-iles-sec'); _hide('hist-levels-sec'); _hide('hist-quiz-sec');
+    window.scrollTo(0, 0);
 
     _chapitres = [];
     if (window.AP_QuizEngine) {
