@@ -418,28 +418,47 @@ function lesson_grand_bleu(niveauCodeOrN, nOrCallback, thenCallback) {
 }
 
 // ── MAGNOLIA — Histoire / Dragon Ball Z ────────────────────────
-// Assets DBZ = Supabase Storage island-magnolia/characters/
-// HIST_AVATARS (quiz.js) est la référence V2 — déjà en URLs Supabase
-function lesson_magnolia(n, thenCallback) {
-  // Utiliser HIST_AVATARS si disponible (défini dans quiz-histoire.js)
-  var avatar;
-  if (typeof HIST_AVATARS !== 'undefined' && HIST_AVATARS[n]) {
-    avatar = HIST_AVATARS[n];
+// V2 : accepte (niveauCode, n, callback) depuis quiz-router V2
+// V1 rétro-compat : accepte (n, callback) depuis quiz.js V1
+function lesson_magnolia(niveauCodeOrN, nOrCallback, thenCallback) {
+  // Détection signature — même pattern que lesson_grand_bleu
+  var niveauCode, n, callback;
+  if (typeof nOrCallback === 'function') {
+    // V1 : lesson_magnolia(n, callback)
+    n          = parseInt(niveauCodeOrN) || 1;
+    callback   = nOrCallback;
+    niveauCode = 'cm2';
   } else {
-    var DBZ_STORAGE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
-    var LOCAL_DBZ = {
-      1: DBZ_STORAGE + 'goku.jpg',
-      2: DBZ_STORAGE + 'vegeta.jpg',
-      3: DBZ_STORAGE + 'piccolo.png',
-      4: DBZ_STORAGE + 'gohan.jpg',
-      5: DBZ_STORAGE + 'trunks.jpg',
-      6: DBZ_STORAGE + 'krilin.jpg',
-      7: DBZ_STORAGE + 'android18.jpg',
-      8: DBZ_STORAGE + 'bulma.jpg'
-    };
-    avatar = LOCAL_DBZ[n] || DBZ_STORAGE + 'goku.jpg';
+    // V2 : lesson_magnolia(niveauCode, n, callback)
+    niveauCode = niveauCodeOrN || 'cm2';
+    n          = parseInt(nOrCallback) || 1;
+    callback   = thenCallback;
   }
-  showLesson('magnolia', n, avatar, '#8b5cf6', thenCallback);
+
+  var DBZ_STORAGE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
+  var DBZ_MAP = {
+    1: DBZ_STORAGE + 'goku.jpg',
+    2: DBZ_STORAGE + 'vegeta.jpg',
+    3: DBZ_STORAGE + 'piccolo.png',
+    4: DBZ_STORAGE + 'gohan.jpg',
+    5: DBZ_STORAGE + 'trunks.jpg',
+    6: DBZ_STORAGE + 'krilin.jpg',
+    7: DBZ_STORAGE + 'android18.jpg',
+    8: DBZ_STORAGE + 'bulma.jpg'
+  };
+
+  // Priorité : HIST_AVATARS (quiz.js, URLs Supabase) > DBZ_MAP
+  var avatar = (typeof HIST_AVATARS !== 'undefined' && HIST_AVATARS[n])
+    ? HIST_AVATARS[n]
+    : (DBZ_MAP[n] || DBZ_STORAGE + 'goku.jpg');
+
+  var COULEURS = {
+    'cm2':'#f97316', '6eme':'#22c55e', '5eme':'#8b5cf6',
+    '4eme':'#ef4444', '3eme':'#3b82f6'
+  };
+  var color = COULEURS[niveauCode] || '#8b5cf6';
+
+  showLesson('magnolia', n, avatar, color, callback);
 }
 
 // ── KANTO — Sciences / Demon Slayer ────────────────────────────

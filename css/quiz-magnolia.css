@@ -29,7 +29,13 @@
 #hist-levels-sec, #hist-iles-sec, #hist-quiz-sec {
   display:none; position:relative; z-index:2;
   width:100%; min-height:100vh;
-  background:rgba(0,0,0,.55); backdrop-filter:blur(1px);
+  background:rgba(0,0,0,.6);
+  padding-bottom:80px; pointer-events:auto;
+}
+/* Contenu au-dessus du fond */
+.hist-world-header, .hist-levels-grid, .hist-map-header,
+.hist-islands-grid, .hist-quiz-header {
+  position:relative; z-index:3;
 }
 
 /* ── Header monde ────────────────────────────────────────── */
