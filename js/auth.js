@@ -182,7 +182,7 @@ function _buildHeroBg() {
   var DS    = SUPABASE + '/island-demon-slayer/characters/';
   var PDF   = SUPABASE + '/island-pays-du-feu/characters/';
   var LOCAL = 'assets/images/avatars/';
-  var DBZ   = 'assets/images/dbz/';
+  var DBZ   = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
 
   // 5 colonnes thématiques
   var columns = [
@@ -221,14 +221,14 @@ function _buildHeroBg() {
     ],
     // Col 4 — Dragon Ball Z
     [
-      { src: DBZ + '1.png' },
-      { src: DBZ + '2.png' },
-      { src: DBZ + '3.png' },
-      { src: DBZ + '4.png' },
-      { src: DBZ + '5.png' },
-      { src: DBZ + '6.png' },
-      { src: DBZ + '7.png' },
-      { src: DBZ + '8.png' },
+      { src: DBZ + 'goku.jpg' },
+      { src: DBZ + 'vegeta.jpg' },
+      { src: DBZ + 'gohan.jpg' },
+      { src: DBZ + 'trunks.jpg' },
+      { src: DBZ + 'piccolo.png' },
+      { src: DBZ + 'krilin.jpg' },
+      { src: DBZ + 'android18.jpg' },
+      { src: DBZ + 'broly.jpg' },
     ],
     // Col 5 — Mix tous univers
     [

@@ -49,16 +49,16 @@ var HIST_AVATARS = {
   8: DBZ_STORAGE + 'bulma.jpg'
 };
 
-// ✅ BOSS AVATARS — images séparées pour les cinématiques de boss
+// ✅ BOSS AVATARS — Supabase Storage island-magnolia/characters/
 var HIST_BOSS_AVATARS = {
-  'Freezer':    'assets/images/dbz/freezer.png',  // ✓ existe
-  'Cell':       'assets/images/dbz/cell.png',      // ✓ existe
-  'Broly':      'assets/images/dbz/broly.png',     // ✓ existe
-  'Majin Buu':  'assets/images/dbz/boubou.png',   // ✓ boubou = Majin Buu
-  'Beerus':     'assets/images/dbz/babidi.png',   // fallback Babidi
-  'Babidi':     'assets/images/dbz/babidi.png',   // ✓ existe
-  'Black Goku': 'assets/images/dbz/1.png',         // Goku fallback
-  'Zamasu':     'assets/images/dbz/2.png'          // Vegeta fallback
+  'Freezer':    DBZ_STORAGE + 'freezer.png',
+  'Cell':       DBZ_STORAGE + 'cell.jpg',
+  'Broly':      DBZ_STORAGE + 'broly.jpg',
+  'Majin Buu':  DBZ_STORAGE + 'majinbuu.png',
+  'Beerus':     DBZ_STORAGE + 'beerus.jpg',
+  'Babidi':     DBZ_STORAGE + 'babidi.jpg',
+  'Black Goku': DBZ_STORAGE + 'goku.jpg',
+  'Zamasu':     DBZ_STORAGE + 'vegeta.jpg'
 };
 
 var HIST_FALLBACK = {
