@@ -104,7 +104,13 @@
     if (window.AP) window.AP.trackWorldEnter('magnolia');
     if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('magnolia');
 
+    // Règle NR-01 : appel hideAll() global (comme Grand Bleu) pour masquer globe/carte
+    if (typeof hideAll === 'function') hideAll();
     _hideAll();
+
+    // Masquer manga-bg (pattern Grand Bleu)
+    var mangaBg = document.getElementById('manga-bg');
+    if (mangaBg) mangaBg.style.display = 'none';
 
     var bg = document.getElementById('hist-bg');
     if (bg) { bg.classList.add('visible'); loadHistBgStrips(); }
@@ -112,8 +118,9 @@
     var sec = document.getElementById('hist-levels-sec');
     if (sec) { sec.style.display = 'block'; _buildLevels(); }
 
+    // Règle AU-04 : BGM après affichage, délai 500ms
     if (typeof playBGM === 'function')
-      setTimeout(function(){ playBGM('dbz-map'); }, 300);
+      setTimeout(function(){ playBGM('dbz-map'); }, 500);
     document.title = 'Académie Pirate — Magnolia Histoire';
   }
 
