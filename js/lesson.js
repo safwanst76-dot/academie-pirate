@@ -418,9 +418,37 @@ function lesson_grand_bleu(niveauCodeOrN, nOrCallback, thenCallback) {
 }
 
 // ── MAGNOLIA — Histoire / Dragon Ball Z ────────────────────────
-// lesson_magnolia est défini dans js/worlds/magnolia/lesson-data.js (V2)
-// lesson.js ne le redéfinit PAS pour ne pas écraser la version V2
-// (même principe que les autres mondes qui ont leur propre lesson-data.js)
+// Pattern exact lesson_grand_bleu : showLesson('magnolia_'+niveauCode, n, avatar, color, callback)
+// LESSON_REGISTRY['magnolia_cm2'...'magnolia_3eme'] défini dans lesson-data.js
+function lesson_magnolia(niveauCodeOrN, nOrCallback, thenCallback) {
+  // Détection signature V1/V2 (comme lesson_grand_bleu)
+  var niveauCode, n, callback;
+  if (typeof nOrCallback === 'function') {
+    n          = parseInt(niveauCodeOrN) || 1;
+    callback   = nOrCallback;
+    niveauCode = 'cm2';
+  } else {
+    niveauCode = niveauCodeOrN || 'cm2';
+    n          = parseInt(nOrCallback) || 1;
+    callback   = thenCallback;
+  }
+
+  var DBZ = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
+  var AVATARS = {
+    'cm2':  {1:'goku.jpg',  2:'bulma.jpg',     3:'krilin.jpg',   4:'gohan.jpg', 5:'piccolo.png', 6:'trunks.jpg',    7:'android18.jpg', 8:'vegeta.jpg'},
+    '6eme': {1:'goku.jpg',  2:'gohan.jpg',      3:'krilin.jpg',   4:'trunks.jpg',5:'piccolo.png', 6:'bulma.jpg',     7:'android17.jpg', 8:'vegeta.jpg'},
+    '5eme': {1:'goku.jpg',  2:'vegeta.jpg',     3:'trunks.jpg',   4:'gohan.jpg', 5:'piccolo.png', 6:'android18.jpg', 7:'krilin.jpg',    8:'goten.jpg'},
+    '4eme': {1:'goku.jpg',  2:'bulma.jpg',      3:'gohan.jpg',    4:'vegeta.jpg',5:'trunks.jpg',  6:'piccolo.png',   7:'android17.jpg', 8:'krilin.jpg'},
+    '3eme': {1:'goku.jpg',  2:'vegeta.jpg',     3:'gohan.jpg',    4:'piccolo.png',5:'trunks.jpg', 6:'android18.jpg', 7:'bulma.jpg',     8:'goten.jpg'}
+  };
+  var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
+  var avatar = DBZ + (avatarMap[n] || 'goku.jpg');
+
+  var COULEURS = {'cm2':'#f97316','6eme':'#22c55e','5eme':'#8b5cf6','4eme':'#ef4444','3eme':'#3b82f6'};
+  var color = COULEURS[niveauCode] || '#f97316';
+
+  showLesson('magnolia_' + niveauCode, n, avatar, color, callback);
+}
 
 // ── KANTO — Sciences / Demon Slayer ────────────────────────────
 // Tous les characters sont dans Supabase island-demon-slayer/characters/
