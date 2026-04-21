@@ -212,8 +212,6 @@ function showHistoire() {
   if (sec) sec.style.display = 'block';
   var histBg = document.getElementById('hist-bg');
   if (histBg) histBg.classList.add('visible');
-  document.title = 'Académie Pirate — Histoire';
-}
   const histOv = document.getElementById('hist-overlay');
   if (histOv) histOv.classList.add('visible');
   document.title = 'Académie Pirate — Histoire';

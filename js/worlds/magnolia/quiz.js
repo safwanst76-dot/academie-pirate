@@ -38,14 +38,14 @@ var HIST_GIFS_LOSE = [
 // Placer les fichiers dans assets/images/dbz/
 // ══════════════════════════════════════════════════════
 var HIST_AVATARS = {
-  1: 'assets/images/dbz/1.png',   // Goku
-  2: 'assets/images/dbz/2.png',   // Vegeta
-  3: 'assets/images/dbz/3.png',   // Piccolo  ← nouveau fichier
-  4: 'assets/images/dbz/4.png',   // Gohan    ← nouveau fichier
-  5: 'assets/images/dbz/5.png',   // Trunks   ← nouveau fichier
-  6: 'assets/images/dbz/6.png',   // Krilin
-  7: 'assets/images/dbz/7.png',   // Android 18 ← nouveau fichier (remplace Bulma)
-  8: 'assets/images/dbz/8.png'    // Babidi   ← nouveau fichier (remplace Yamcha)
+  1: 'assets/images/dbz/goku.jpg',
+  2: 'assets/images/dbz/vegeta.jpg',
+  3: 'assets/images/dbz/piccolo.png',
+  4: 'assets/images/dbz/gohan.jpg',
+  5: 'assets/images/dbz/trunks.jpg',
+  6: 'assets/images/dbz/krilin.jpg',
+  7: 'assets/images/dbz/android18.jpg',
+  8: 'assets/images/dbz/bulma.jpg'
 };
 
 // ✅ BOSS AVATARS — images séparées pour les cinématiques de boss
