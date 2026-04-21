@@ -1,170 +1,28 @@
 {
   "name": "Dragon Ball Z",
   "emoji": "🐉",
-  "storage": "local",
-  "bucket": null,
-  "localDir": "assets/images/dbz",
+  "storage": "supabase",
+  "bucket": "island-magnolia",
+  "localDir": null,
   "color": "#8b5cf6",
   "characters": [
-    {
-      "id": "goku",
-      "name": "Goku",
-      "type": "hero",
-      "localFile": "goku.png",
-      "jikanId": 246,
-      "path": "assets/images/dbz/goku.png"
-    },
-    {
-      "id": "vegeta",
-      "name": "Vegeta",
-      "type": "hero",
-      "localFile": "vegeta.png",
-      "jikanId": 913,
-      "path": "assets/images/dbz/vegeta.png"
-    },
-    {
-      "id": "gohan",
-      "name": "Gohan",
-      "type": "hero",
-      "localFile": "gohan.png",
-      "jikanId": 247,
-      "path": "assets/images/dbz/gohan.png"
-    },
-    {
-      "id": "piccolo",
-      "name": "Piccolo",
-      "type": "hero",
-      "localFile": "piccolo.png",
-      "jikanId": 249,
-      "path": "assets/images/dbz/piccolo.png"
-    },
-    {
-      "id": "trunks",
-      "name": "Trunks",
-      "type": "hero",
-      "localFile": "trunks.png",
-      "jikanId": 251,
-      "path": "assets/images/dbz/trunks.png"
-    },
-    {
-      "id": "krilin",
-      "name": "Krilin",
-      "type": "hero",
-      "localFile": "krilin.png",
-      "jikanId": 250,
-      "path": "assets/images/dbz/krilin.png"
-    },
-    {
-      "id": "bulma",
-      "name": "Bulma",
-      "type": "hero",
-      "localFile": "bulma.png",
-      "jikanId": 252,
-      "path": "assets/images/dbz/bulma.png"
-    },
-    {
-      "id": "android18",
-      "name": "Android 18",
-      "type": "hero",
-      "localFile": "android18.png",
-      "jikanId": 914,
-      "path": "assets/images/dbz/android18.png"
-    },
-    {
-      "id": "goten",
-      "name": "Goten",
-      "type": "hero",
-      "localFile": "goten.png",
-      "jikanId": 915,
-      "path": "assets/images/dbz/goten.png"
-    },
-    {
-      "id": "android17",
-      "name": "Android 17",
-      "type": "hero",
-      "localFile": "android17.png",
-      "jikanId": 916,
-      "path": "assets/images/dbz/android17.png"
-    },
-    {
-      "id": "freezer",
-      "name": "Freezer",
-      "type": "villain",
-      "localFile": "freezer.png",
-      "jikanId": 920,
-      "path": "assets/images/dbz/freezer.png"
-    },
-    {
-      "id": "cell",
-      "name": "Cell",
-      "type": "villain",
-      "localFile": "cell.png",
-      "jikanId": 921,
-      "path": "assets/images/dbz/cell.png"
-    },
-    {
-      "id": "broly",
-      "name": "Broly",
-      "type": "villain",
-      "localFile": "broly.png",
-      "jikanId": 922,
-      "path": "assets/images/dbz/broly.png"
-    },
-    {
-      "id": "majinbuu",
-      "name": "Majin Buu",
-      "type": "villain",
-      "localFile": "boubou.png",
-      "jikanId": 923,
-      "path": "assets/images/dbz/majinbuu.png"
-    },
-    {
-      "id": "beerus",
-      "name": "Beerus",
-      "type": "villain",
-      "localFile": "beerus.png",
-      "jikanId": 924,
-      "path": "assets/images/dbz/beerus.png"
-    },
-    {
-      "id": "babidi",
-      "name": "Babidi",
-      "type": "villain",
-      "localFile": "babidi.png",
-      "jikanId": 925,
-      "path": "assets/images/dbz/babidi.png"
-    },
-    {
-      "id": "raditz",
-      "name": "Raditz",
-      "type": "villain",
-      "localFile": "raditz.png",
-      "jikanId": 926,
-      "path": "assets/images/dbz/raditz.png"
-    },
-    {
-      "id": "nappa",
-      "name": "Nappa",
-      "type": "villain",
-      "localFile": "nappa.png",
-      "jikanId": 927,
-      "path": "assets/images/dbz/nappa.png"
-    },
-    {
-      "id": "ginyu",
-      "name": "Ginyu",
-      "type": "villain",
-      "localFile": "ginyu.png",
-      "jikanId": 929,
-      "path": "assets/images/dbz/ginyu.png"
-    },
-    {
-      "id": "zarbon",
-      "name": "Zarbon",
-      "type": "villain",
-      "localFile": "zarbon.png",
-      "jikanId": 928,
-      "path": "assets/images/dbz/zarbon.png"
-    }
+    { "id": "goku",      "name": "Goku",       "type": "hero",    "path": "characters/goku.jpg",      "jikanId": 246 },
+    { "id": "vegeta",    "name": "Vegeta",     "type": "hero",    "path": "characters/vegeta.jpg",    "jikanId": 913 },
+    { "id": "gohan",     "name": "Gohan",      "type": "hero",    "path": "characters/gohan.jpg",     "jikanId": 247 },
+    { "id": "piccolo",   "name": "Piccolo",    "type": "hero",    "path": "characters/piccolo.png",   "jikanId": 249 },
+    { "id": "trunks",    "name": "Trunks",     "type": "hero",    "path": "characters/trunks.jpg",    "jikanId": 251 },
+    { "id": "krilin",    "name": "Krilin",     "type": "hero",    "path": "characters/krilin.jpg",    "jikanId": 250 },
+    { "id": "bulma",     "name": "Bulma",      "type": "hero",    "path": "characters/bulma.jpg",     "jikanId": 252 },
+    { "id": "android18", "name": "Android 18", "type": "hero",    "path": "characters/android18.jpg", "jikanId": 914 },
+    { "id": "goten",     "name": "Goten",      "type": "hero",    "path": "characters/goten.jpg",     "jikanId": 915 },
+    { "id": "android17", "name": "Android 17", "type": "hero",    "path": "characters/android17.jpg", "jikanId": 916 },
+    { "id": "freezer",   "name": "Freezer",    "type": "villain", "path": "characters/freezer.png",   "jikanId": 920 },
+    { "id": "cell",      "name": "Cell",       "type": "villain", "path": "characters/cell.jpg",      "jikanId": 921 },
+    { "id": "broly",     "name": "Broly",      "type": "villain", "path": "characters/broly.jpg",     "jikanId": 922 },
+    { "id": "majinbuu",  "name": "Majin Buu",  "type": "villain", "path": "characters/majinbuu.png",  "jikanId": 923 },
+    { "id": "beerus",    "name": "Beerus",     "type": "villain", "path": "characters/beerus.jpg",    "jikanId": 924 },
+    { "id": "babidi",    "name": "Babidi",     "type": "villain", "path": "characters/babidi.jpg",    "jikanId": 925 },
+    { "id": "raditz",    "name": "Raditz",     "type": "villain", "path": "characters/raditz.jpg",    "jikanId": 926 },
+    { "id": "nappa",     "name": "Nappa",      "type": "villain", "path": "characters/nappa.png",     "jikanId": 927 }
   ]
 }

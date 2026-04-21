@@ -37,15 +37,16 @@ var HIST_GIFS_LOSE = [
 // 5=Trunks(NEW), 6=Krilin, 7=Android18(NEW), 8=Babidi(NEW)
 // Placer les fichiers dans assets/images/dbz/
 // ══════════════════════════════════════════════════════
+var DBZ_STORAGE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
 var HIST_AVATARS = {
-  1: 'assets/images/dbz/goku.jpg',
-  2: 'assets/images/dbz/vegeta.jpg',
-  3: 'assets/images/dbz/piccolo.png',
-  4: 'assets/images/dbz/gohan.jpg',
-  5: 'assets/images/dbz/trunks.jpg',
-  6: 'assets/images/dbz/krilin.jpg',
-  7: 'assets/images/dbz/android18.jpg',
-  8: 'assets/images/dbz/bulma.jpg'
+  1: DBZ_STORAGE + 'goku.jpg',
+  2: DBZ_STORAGE + 'vegeta.jpg',
+  3: DBZ_STORAGE + 'piccolo.png',
+  4: DBZ_STORAGE + 'gohan.jpg',
+  5: DBZ_STORAGE + 'trunks.jpg',
+  6: DBZ_STORAGE + 'krilin.jpg',
+  7: DBZ_STORAGE + 'android18.jpg',
+  8: DBZ_STORAGE + 'bulma.jpg'
 };
 
 // ✅ BOSS AVATARS — images séparées pour les cinématiques de boss

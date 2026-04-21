@@ -7,7 +7,7 @@
 // ═══════════════════════════════════════════════════════════════════
 (function () {
   'use strict';
-  var DBZ = 'assets/images/dbz/';
+  var DBZ = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
 
   // ── Données des leçons ──────────────────────────────────────────
   var LESSONS = {

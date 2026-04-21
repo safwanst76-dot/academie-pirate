@@ -418,25 +418,26 @@ function lesson_grand_bleu(niveauCodeOrN, nOrCallback, thenCallback) {
 }
 
 // ── MAGNOLIA — Histoire / Dragon Ball Z ────────────────────────
-// Assets DBZ = LOCAUX dans le repo (assets/images/dbz/).
-// Pas dans Supabase. HIST_AVATARS de quiz-histoire.js est la référence.
+// Assets DBZ = Supabase Storage island-magnolia/characters/
+// HIST_AVATARS (quiz.js) est la référence V2 — déjà en URLs Supabase
 function lesson_magnolia(n, thenCallback) {
   // Utiliser HIST_AVATARS si disponible (défini dans quiz-histoire.js)
   var avatar;
   if (typeof HIST_AVATARS !== 'undefined' && HIST_AVATARS[n]) {
     avatar = HIST_AVATARS[n];
   } else {
+    var DBZ_STORAGE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/characters/';
     var LOCAL_DBZ = {
-      1: 'assets/images/dbz/1.png',
-      2: 'assets/images/dbz/2.png',
-      3: 'assets/images/dbz/3.png',
-      4: 'assets/images/dbz/4.png',
-      5: 'assets/images/dbz/5.png',
-      6: 'assets/images/dbz/6.png',
-      7: 'assets/images/dbz/7.png',
-      8: 'assets/images/dbz/8.png'
+      1: DBZ_STORAGE + 'goku.jpg',
+      2: DBZ_STORAGE + 'vegeta.jpg',
+      3: DBZ_STORAGE + 'piccolo.png',
+      4: DBZ_STORAGE + 'gohan.jpg',
+      5: DBZ_STORAGE + 'trunks.jpg',
+      6: DBZ_STORAGE + 'krilin.jpg',
+      7: DBZ_STORAGE + 'android18.jpg',
+      8: DBZ_STORAGE + 'bulma.jpg'
     };
-    avatar = LOCAL_DBZ[n] || 'assets/images/dbz/1.png';
+    avatar = LOCAL_DBZ[n] || DBZ_STORAGE + 'goku.jpg';
   }
   showLesson('magnolia', n, avatar, '#8b5cf6', thenCallback);
 }

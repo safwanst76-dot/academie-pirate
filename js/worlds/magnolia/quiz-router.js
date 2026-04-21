@@ -10,7 +10,7 @@
   var _chapitres     = [];
   var _histBgLoaded  = false;
   var MATIERE_CODE   = 'histoire';
-  var DBZ_LOCAL      = 'assets/images/dbz/';
+  var DBZ_STORAGE    = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-magnolia/';
 
   // ── Cinématiques : clé 'niveau_numero' ──────────────────────────
   var HIST_ISLE_INTRO = {
@@ -80,7 +80,7 @@
       'goku.jpg','vegeta.jpg','gohan.jpg','trunks.jpg',
       'piccolo.png','krilin.jpg','android18.jpg','bulma.jpg',
       'broly.jpg','freezer.png','majinbuu.png','cell.jpg',
-    ].map(function(f){ return DBZ_LOCAL + f; });
+    ].map(function(f){ return DBZ_STORAGE + 'characters/' + f; });
     var doubled = imgs.concat(imgs);
     for (var s = 0; s < 5; s++) {
       var strip = document.createElement('div');
