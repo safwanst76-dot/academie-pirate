@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🏴‍☠️ Admin — Releases & Notifications Email</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a; color: #e8eaf6; min-height: 100vh;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+h1 { font-size: 28px; margin: 0 0 24px; color: #fbbf24; }
+h2 { font-size: 20px; margin: 32px 0 16px; color: #fbbf24; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 8px; }
+.card {
+  background: rgba(30,41,59,.6); border-radius: 12px; padding: 20px;
+  margin-bottom: 16px; border: 1px solid rgba(255,255,255,.1);
+}
+.badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; }
+.b-auto    { background:#3b82f6; color:#fff; }
+.b-manual  { background:#a855f7; color:#fff; }
+.b-pending { background:#eab308; color:#000; }
+.b-ready   { background:#22c55e; color:#000; }
+.b-sent    { background:#6b7280; color:#fff; }
+.b-cancelled { background:#ef4444; color:#fff; }
+.row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:8px; }
+.muted { color:#94a3b8; font-size:13px; }
+button, .btn {
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  color: #fff; border: none; padding: 10px 20px;
+  border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 14px;
+}
+button:hover { opacity: .9; }
+button.ghost { background: transparent; border: 1px solid rgba(255,255,255,.2); }
+button.danger { background: #ef4444; }
+input, select, textarea {
+  background: rgba(0,0,0,.3); color: #e8eaf6; border: 1px solid rgba(255,255,255,.2);
+  border-radius: 6px; padding: 10px 12px; font-size: 14px; width: 100%; font-family: inherit;
+}
+label { display:block; margin-bottom:6px; font-weight:600; font-size:13px; color:#cbd5e1; }
+.form-row { margin-bottom: 14px; }
+.auth-wall { max-width: 400px; margin: 100px auto; text-align: center; }
+.hidden { display: none; }
+table { width:100%; border-collapse: collapse; }
+th, td { text-align:left; padding:10px; border-bottom:1px solid rgba(255,255,255,.08); font-size:13px; }
+th { color:#94a3b8; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.5px; }
+.stat { display:inline-block; margin-right:16px; }
+.stat-value { font-size:24px; font-weight:900; color:#fbbf24; }
+.stat-label { font-size:11px; color:#94a3b8; text-transform:uppercase; }
+</style>
+</head>
+<body>
+
+<div id="auth-wall" class="auth-wall">
+  <h1>🔒 Admin Access</h1>
+  <p class="muted">Entre ton email admin pour continuer</p>
+  <div class="form-row"><input type="email" id="admin-email" placeholder="email@admin.ch"></div>
+  <div class="form-row"><input type="password" id="admin-password" placeholder="Mot de passe"></div>
+  <button onclick="adminLogin()">Se connecter</button>
+  <div id="auth-error" class="muted" style="color:#ef4444; margin-top:12px"></div>
+</div>
+
+<div id="admin-ui" class="container hidden">
+  <h1>🏴‍☠️ Releases & Notifications Email</h1>
+
+  <div class="card">
+    <div class="row">
+      <div class="stat"><div class="stat-value" id="stat-parents">—</div><div class="stat-label">Parents opt-in</div></div>
+      <div class="stat"><div class="stat-value" id="stat-pending">—</div><div class="stat-label">En attente (pending)</div></div>
+      <div class="stat"><div class="stat-value" id="stat-ready">—</div><div class="stat-label">Prêt (ready)</div></div>
+      <div class="stat"><div class="stat-value" id="stat-sent">—</div><div class="stat-label">Envoyés (total)</div></div>
+    </div>
+  </div>
+
+  <h2>✋ Créer une release manuelle</h2>
+  <div class="card">
+    <div class="form-row">
+      <label>Type</label>
+      <select id="f-type">
+        <option value="feature_update">🚀 Nouvelle feature / fonctionnalité</option>
+        <option value="system_update">🔧 Mise à jour système / CSS</option>
+        <option value="newsletter">📣 Newsletter / communication</option>
+      </select>
+    </div>
+    <div class="form-row"><label>Titre</label><input id="f-title" placeholder="🚀 Nouvelle fonctionnalité : Badges XP !"></div>
+    <div class="form-row"><label>Description</label><textarea id="f-desc" rows="3" placeholder="Votre enfant peut maintenant débloquer des badges..."></textarea></div>
+    <div class="form-row"><label>Texte du bouton CTA</label><input id="f-cta" value="Découvrir"></div>
+    <div class="form-row"><label>Lien CTA</label><input id="f-url" placeholder="https://aca-pirate.ch"></div>
+    <div class="row">
+      <button onclick="createManualRelease('ready')">Créer & marquer "prêt à envoyer"</button>
+      <button class="ghost" onclick="createManualRelease('pending')">Brouillon (pending 10min)</button>
+    </div>
+  </div>
+
+  <h2>📋 Releases récentes</h2>
+  <div id="releases-list"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = 'https://bwxzrqsvccqmzvonsswi.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ3eHpycXN2Y2NxbXp2b25zc3dpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM2OTYwMDAsImV4cCI6MjA1OTI3MjAwMH0.0';
+let supabase;
+
+// Les creds Supabase anon sont publics (OK — RLS protège)
+// Le supabase est initialisé après login pour récupérer le token utilisateur
+async function adminLogin() {
+  const email = document.getElementById('admin-email').value.trim();
+  const pwd   = document.getElementById('admin-password').value;
+  const errEl = document.getElementById('auth-error');
+  errEl.textContent = '';
+  if (!email || !pwd) { errEl.textContent = 'Email et mot de passe requis'; return; }
+
+  supabase = window.supabase.createClient(SUPABASE_URL, window.SUPABASE_ANON_KEY || SUPABASE_ANON);
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password: pwd });
+  if (error) { errEl.textContent = error.message; return; }
+
+  // Vérifie que user est admin (email autorisé)
+  const ADMINS = ['safwan76@protonmail.ch','safwanst.76@gmail.com','info@aca-pirate.ch'];
+  if (!ADMINS.includes(data.user.email)) {
+    errEl.textContent = 'Accès refusé. Email non admin.';
+    await supabase.auth.signOut(); return;
+  }
+
+  document.getElementById('auth-wall').classList.add('hidden');
+  document.getElementById('admin-ui').classList.remove('hidden');
+  await refresh();
+}
+
+async function refresh() {
+  // Stats
+  const { count: parents } = await supabase.from('profiles_parents').select('*', { count:'exact', head:true })
+    .eq('email_new_features', true).not('email','is',null).not('consent_date','is',null);
+  document.getElementById('stat-parents').textContent = parents ?? 0;
+
+  const { data: releases } = await supabase.from('content_releases')
+    .select('*').order('created_at', { ascending:false }).limit(30);
+
+  document.getElementById('stat-pending').textContent = releases.filter(r=>r.status==='pending').length;
+  document.getElementById('stat-ready').textContent   = releases.filter(r=>r.status==='ready').length;
+  document.getElementById('stat-sent').textContent    = releases.filter(r=>r.status==='sent').length;
+
+  renderReleases(releases);
+}
+
+function renderReleases(releases) {
+  const el = document.getElementById('releases-list');
+  if (!releases.length) { el.innerHTML = '<div class="muted">Aucune release pour le moment.</div>'; return; }
+  el.innerHTML = releases.map(r => {
+    const origin = r.auto_created ? '<span class="badge b-auto">🤖 AUTO</span>' : '<span class="badge b-manual">✋ MANUEL</span>';
+    const statusBadge = `<span class="badge b-${r.status}">${r.status}</span>`;
+    const date = new Date(r.created_at).toLocaleString('fr-FR');
+    const actions = r.status === 'pending' || r.status === 'ready'
+      ? `<button onclick="sendRelease('${r.id}')">Envoyer maintenant</button>
+         <button class="ghost" onclick="previewRelease('${r.id}')">Prévisualiser</button>
+         <button class="danger" onclick="cancelRelease('${r.id}')">Annuler</button>`
+      : '';
+    return `<div class="card">
+      <div class="row">${origin} ${statusBadge}<span class="muted">${date}</span></div>
+      <div style="font-size:18px;font-weight:700;color:#fbbf24">${r.title}</div>
+      <div class="muted" style="margin:6px 0">${r.description}</div>
+      ${r.world_code ? `<div class="muted">Monde: <b>${r.world_code}</b> • Niveau: <b>${r.niveau_code||'-'}</b> • Îles: ${(r.chapter_numbers||[]).join(', ')||'-'}</div>`:''}
+      <div class="row" style="margin-top:10px">${actions}</div>
+    </div>`;
+  }).join('');
+}
+
+async function createManualRelease(initialStatus) {
+  const payload = {
+    type: document.getElementById('f-type').value,
+    title: document.getElementById('f-title').value.trim(),
+    description: document.getElementById('f-desc').value.trim(),
+    cta_text: document.getElementById('f-cta').value.trim(),
+    cta_url: document.getElementById('f-url').value.trim(),
+    auto_created: false,
+    status: initialStatus,
+    ready_at: initialStatus === 'ready' ? new Date().toISOString() : null,
+  };
+  if (!payload.title || !payload.description) { alert('Titre et description requis'); return; }
+  const { error } = await supabase.from('content_releases').insert(payload);
+  if (error) { alert('Erreur: ' + error.message); return; }
+  ['f-title','f-desc','f-url'].forEach(id => document.getElementById(id).value = '');
+  await refresh();
+}
+
+async function sendRelease(id) {
+  if (!confirm('Envoyer cette release maintenant à tous les parents opt-in ?')) return;
+  // Passe en ready d'abord si encore pending
+  await supabase.from('content_releases').update({ status:'ready', ready_at: new Date().toISOString() }).eq('id', id);
+  // Appelle Edge Function
+  const { data: { session } } = await supabase.auth.getSession();
+  const res = await fetch(SUPABASE_URL + '/functions/v1/send-content-email', {
+    method:'POST',
+    headers: { 'Content-Type':'application/json', 'Authorization':'Bearer '+session.access_token },
+    body: JSON.stringify({ release_id: id })
+  });
+  const out = await res.json();
+  alert(out.ok ? 'Envoyé ! ' + JSON.stringify(out.summary) : 'Erreur: ' + out.error);
+  await refresh();
+}
+
+async function previewRelease(id) {
+  const { data: { session } } = await supabase.auth.getSession();
+  const res = await fetch(SUPABASE_URL + '/functions/v1/send-content-email', {
+    method:'POST',
+    headers: { 'Content-Type':'application/json', 'Authorization':'Bearer '+session.access_token },
+    body: JSON.stringify({ release_id: id, dry_run: true })
+  });
+  const out = await res.json();
+  alert('DRY RUN (aucun envoi): ' + JSON.stringify(out.summary ?? out));
+}
+
+async function cancelRelease(id) {
+  if (!confirm('Annuler cette release ? (ne sera jamais envoyée)')) return;
+  await supabase.from('content_releases').update({ status:'cancelled' }).eq('id', id);
+  await refresh();
+}
+</script>
+
+</body>
+</html>
