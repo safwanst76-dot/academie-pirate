@@ -218,6 +218,8 @@ function showHistoire() {
 }
 
 function showKanto() {
+  // Redirection V2 — pattern showHistoire/showMagnoliaV2
+  if (typeof showKantoV2 === 'function') { showKantoV2(); return; }
   hideAll();
   if (window.AP) window.AP.trackWorldEnter('kanto');
   if (window.AP && window.AP.setLastWorld) window.AP.setLastWorld('kanto');
@@ -343,7 +345,8 @@ var SEO_ROUTES = {
   'iles':        { title: "Académie Pirate — Grand Bleu (Français · One Piece)",  desc: "8 îles de grammaire et conjugaison avec l'équipage Chapeau de Paille." },
   'quiz':        { title: "Académie Pirate — Quiz Français",                       desc: "Quiz interactif de grammaire française. Niveau CM2-6ème." },
   'histoire':    { title: "Académie Pirate — Magnolia (Histoire · Dragon Ball Z)", desc: "8 îles d'histoire : Antiquité, Moyen Âge, Islam, Renaissance." },
-  'kanto':       { title: "Académie Pirate — Kanto (Sciences · Demon Slayer)",    desc: "8 îles de sciences physiques : signaux, lumière, électricité, Internet." },
+  'kanto':       { title: "Académie Pirate — Kanto (Sciences · Demon Slayer)",    desc: "8 îles de sciences : matière, énergie, électricité, vivant, alimentation, reproduction, espace, environnement." },
+  'kanto/cm2':   { title: 'Quiz Sciences CM2 — Demon Slayer · Académie Pirate',   desc: '8 îles Sciences CM2 : matière, énergie, électricité, vivant, alimentation, reproduction, système solaire, phénomènes naturels.' },
   'pays-du-feu':      { title: "Académie Pirate — Pays du Feu (Maths · Naruto)",  desc: "8 îles de mathématiques : calcul, fractions, géométrie, nombres relatifs." },
   'pays-du-feu/cm2':  { title: 'Académie Pirate — Maths CM2',  desc: 'Maths Naruto CM2' },
   'pays-du-feu/6eme': { title: 'Académie Pirate — Maths 6ème', desc: 'Maths Naruto 6ème' },
@@ -482,6 +485,19 @@ function handleRoute() {
         setTimeout(function() {
           if (typeof window.aot_showLevel === 'function') {
             window.aot_showLevel(sub, true);
+          }
+        }, 80);
+        return;
+      }
+    }
+    // Sous-routes Kanto V2 : #/kanto/cm2, #/kanto/6eme...
+    if (route === 'kanto' && sub) {
+      var kantoLevels = ['cm2', '6eme', '5eme', '4eme', '3eme'];
+      if (kantoLevels.indexOf(sub) !== -1) {
+        handler(true);
+        setTimeout(function() {
+          if (typeof window.kanto_showLevel === 'function') {
+            window.kanto_showLevel(sub, true);
           }
         }, 80);
         return;

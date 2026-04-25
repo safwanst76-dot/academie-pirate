@@ -1,159 +1,190 @@
 // ═══════════════════════════════════════════════════════════════════
-// LESSON-DATA.JS — ⚔️ Kanto — Sciences / Demon Slayer
-// Données pédagogiques : règles, exemples, questions échauffement
-// Moteur : js/lesson.js (ne pas modifier ici)
-// Règle A3 : les données sont séparées du moteur
+// LESSON-DATA-KANTO.JS — Académie Pirate V2
+// ⚔️ Kanto · Sciences · Demon Slayer
+// Pattern exact Grand Bleu / Magnolia : LESSON_REGISTRY par niveau
+// 5 niveaux × 8 îles = 40 entrées prévues (CM2 d'abord)
 // ═══════════════════════════════════════════════════════════════════
 
-// Enregistrement dans le registry global
 window.LESSON_REGISTRY = window.LESSON_REGISTRY || {};
 
-window.LESSON_REGISTRY['kanto'] = {
-    color: '#C0392B', bg: '#0a0408', textAccent: '#D4AF37',
-    particles: 'sword', worldName: 'Kanto',
-    avatar: function(n){
-      var SUPABASE = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer';
-      var map = {1:'tanjiro',2:'zenitsu',3:'inosuke',4:'shinobu',5:'kanao',6:'tengen',7:'rengoku',8:'mitsuri'};
-      return SUPABASE + '/characters/' + (map[n]||'tanjiro') + '.jpeg';
-    },
-    lessons: {
-      1: {
-        heroName:'Tanjiro', heroQuote:'Les signaux, c\'est comme sentir un démon — il faut savoir les reconnaître et les décoder !',
-        rule:'Un signal transporte une information. Il peut être lumineux, sonore ou électrique. Tout signal a un émetteur et un récepteur.',
-        sections:[
-          {icon:'💡',title:'Qu\'est-ce qu\'un signal ?', color:'#C0392B',
-           content:'Un <strong>signal</strong> est un phénomène physique (lumière, son, électricité) qui transporte une <strong>information</strong> d\'un point à un autre.',
-           examples:['Signal lumineux : feu rouge, flash, laser','Signal sonore : voix, sirène, sonnerie de portable','Signal électrique : courant dans un câble, onde radio']},
-          {icon:'📡',title:'Émetteur et Récepteur', color:'#D4AF37',
-           content:'<strong>Émetteur</strong> = celui qui envoie le signal · <strong>Récepteur</strong> = celui qui reçoit et interprète le signal.',
-           examples:['Téléphone → émetteur ET récepteur (bidirectionnel)','Télévision : antenne = récepteur · chaîne TV = émetteur','Soleil = émetteur de lumière · Tes yeux = récepteur']}
-        ],
-        heroTip:'Tanjiro dit : "Pour tout signal, pose-toi 3 questions : QUOI ? (nature) D\'OÙ ? (émetteur) VERS OÙ ? (récepteur)"',
-        warmup:[
-          {q:'Un signal lumineux est :',a:'Un phénomène lumineux transportant une information',o:['Un phénomène lumineux transportant une information','Un courant électrique','Un signal sonore très fort']},
-          {q:'Dans une conversation téléphonique, ton téléphone est :',a:'À la fois émetteur et récepteur',o:['Seulement émetteur','Seulement récepteur','À la fois émetteur et récepteur']}
-        ]
-      },
-      2: {
-        heroName:'Zenitsu', heroQuote:'Le tonnerre transmet mon énergie — et les signaux transmettent l\'information !',
-        rule:'Un signal transporte une information codée. Le code morse encode les lettres en signaux courts (.) et longs (-). Binaire = 0 et 1.',
-        sections:[
-          {icon:'⚡',title:'Coder une information', color:'#D4AF37',
-           content:'Coder = transformer une information en un signal compréhensible. <strong>Code morse</strong> : . = court · - = long. <strong>Binaire</strong> : 0 = éteint, 1 = allumé.',
-           examples:['A en morse : .-  ·  S en morse : ...  ·  O en morse : ---','SOS = ... --- ... (3 courts, 3 longs, 3 courts)','Binaire : la lettre A = 01000001']},
-          {icon:'📟',title:'Ondes radio et Wi-Fi', color:'#C0392B',
-           content:'Les <strong>ondes radio</strong> sont des ondes électromagnétiques invisibles qui transportent des informations sans fil à la vitesse de la lumière.',
-           examples:['Radio FM : ondes entre 87,5 et 108 MHz','Wi-Fi : ondes à 2,4 GHz ou 5 GHz','Bluetooth : courte portée (~10m), ondes à 2,4 GHz']}
-        ],
-        heroTip:'Zenitsu dit : "SOS = ...---... en morse — retiens ça, c\'est toujours au bac !"',
-        warmup:[
-          {q:'Que signifie SOS en code morse ?',a:'... --- ...',o:['... --- ...','--- ... ---','.. -- ..']},
-          {q:'La lettre S en code morse c\'est :',a:'...',o:['...','-.-','---']}
-        ]
-      },
-      3: {
-        heroName:'Inosuke', heroQuote:'RARGH ! La fibre optique c\'est comme moi — ça passe PARTOUT à toute vitesse !',
-        rule:'La fibre optique transporte la lumière (information) à travers un câble de verre. Elle est plus rapide que les câbles électriques.',
-        sections:[
-          {icon:'🔦',title:'Comment fonctionne la fibre optique ?', color:'#C0392B',
-           content:'La <strong>fibre optique</strong> est un câble de verre (ou plastique) qui transmet des signaux lumineux par <strong>réflexion totale interne</strong>.',
-           examples:['La lumière rebondit à l\'intérieur de la fibre (angle d\'incidence > angle critique)','Débit : jusqu\'à 10 Gbps (vs 100 Mbps pour ADSL)','Utilisée pour Internet, télécommunications, chirurgie médicale']},
-          {icon:'💎',title:'Avantages vs câble électrique', color:'#D4AF37',
-           content:'La fibre optique est <strong>plus rapide</strong> (lumière > électricité), <strong>insensible aux interférences électriques</strong> et permet des débits bien supérieurs.',
-           examples:['Pas de pertes d\'énergie sur de longues distances','Insensible aux champs magnétiques (pas de coupures)','Peut transporter plusieurs signaux en même temps (multiplexage)']}
-        ],
-        heroTip:'Inosuke dit : "Fibre = lumière dans du verre = plus vite que l\'électricité dans du cuivre !"',
-        warmup:[
-          {q:'Quel type de signal transporte la fibre optique ?',a:'Un signal lumineux',o:['Un signal électrique','Un signal lumineux','Un signal sonore']},
-          {q:'Quel est l\'avantage principal de la fibre optique ?',a:'Elle est plus rapide et insensible aux interférences',o:['Elle est moins chère','Elle est plus lourde','Elle est plus rapide et insensible aux interférences']}
-        ]
-      },
-      4: {
-        heroName:'Shinobu', heroQuote:'Le téléphone transforme ta voix en signal électrique — aussi précisément que mon poison !',
-        rule:'Le téléphone convertit le son (voix) en signal électrique (émission) puis reconvertit le signal électrique en son (réception)',
-        sections:[
-          {icon:'📱',title:'Comment fonctionne un téléphone ?', color:'#8b5cf6',
-           content:'Le téléphone réalise deux conversions : <strong>son → signal électrique</strong> (microphone) et <strong>signal électrique → son</strong> (haut-parleur).',
-           examples:['Microphone : membrane vibrante → courant électrique variable','Haut-parleur : courant électrique → membrane vibrante → son','Réseau téléphonique = ensemble de câbles, antennes et commutateurs']},
-          {icon:'📶',title:'Téléphonie mobile (4G, 5G)', color:'#C0392B',
-           content:'Le téléphone mobile transmet sans fil grâce aux <strong>antennes relais</strong>. Le signal numérique code la voix en 0 et 1.',
-           examples:['4G : débit ~100 Mbps → streaming vidéo','5G : débit ~1 Gbps → voitures autonomes, chirurgie à distance','Antenne relais = relayeur de signal entre téléphones']}
-        ],
-        heroTip:'Shinobu dit : "Son → électricité (micro) → Son (HP). Retiens cette chaîne de conversion !"',
-        warmup:[
-          {q:'Que fait un microphone ?',a:'Convertit le son en signal électrique',o:['Convertit le son en signal électrique','Convertit le signal électrique en son','Amplifie le son']},
-          {q:'Qu\'est-ce qu\'une antenne relais ?',a:'Un relayeur de signal entre téléphones mobiles',o:['Un relayeur de signal entre téléphones mobiles','Un satellite','Un câble sous-marin']}
-        ]
-      },
-      5: {
-        heroName:'Kanao', heroQuote:'Mes yeux voient tout sans effort — la lumière transporte toujours l\'information à 300 000 km/s !',
-        rule:'La lumière se propage en ligne droite dans un milieu homogène à 300 000 km/s. Elle peut être réfléchie (miroir) ou réfractée (prisme)',
-        sections:[
-          {icon:'💡',title:'Propagation de la lumière', color:'#0891B2',
-           content:'La lumière se propage en ligne droite ("<strong>rayons lumineux</strong>"). Dans le vide : 300 000 km/s = 3×10⁸ m/s. Dans l\'eau ou le verre : elle ralentit.',
-           examples:['Ombre = preuve que la lumière se propage en ligne droite','Éclipse = alignement Terre-Lune-Soleil (ou Terre-Soleil-Lune)','La lumière du Soleil met 8 minutes pour atteindre la Terre']},
-          {icon:'🌈',title:'Réflexion et réfraction', color:'#D4AF37',
-           content:'<strong>Réflexion</strong> = la lumière rebondit (miroir). <strong>Réfraction</strong> = la lumière change de direction en changeant de milieu.',
-           examples:['Réflexion : miroir, surface de l\'eau calme','Réfraction : la paille semble cassée dans un verre d\'eau','Arc-en-ciel : réfraction de la lumière dans les gouttes de pluie']}
-        ],
-        heroTip:'Kanao dit : "300 000 km/s dans le vide · Réflexion = rebondit · Réfraction = change de direction !"',
-        warmup:[
-          {q:'À quelle vitesse se propage la lumière dans le vide ?',a:'300 000 km/s',o:['300 km/s','300 000 km/s','3 000 000 km/s']},
-          {q:'Qu\'est-ce que la réfraction de la lumière ?',a:'La lumière change de direction en changeant de milieu',o:['La lumière rebondit sur un miroir','La lumière change de direction en changeant de milieu','La lumière s\'arrête dans l\'eau']}
-        ]
-      },
-      6: {
-        heroName:'Tengen', heroQuote:'Le STYLE c\'est aussi transmettre une information — exactement comme les ondes !',
-        rule:'Une onde est une perturbation qui se propage dans un milieu. Onde sonore = vibration mécanique · Onde radio = onde électromagnétique',
-        sections:[
-          {icon:'〰️',title:'Les ondes sonores', color:'#C0392B',
-           content:'Le son est une <strong>onde mécanique</strong> qui nécessite un milieu pour se propager (air, eau, solide). Dans le vide : pas de son !',
-           examples:['Vitesse du son dans l\'air : ~340 m/s (mach 1)','Vitesse du son dans l\'eau : ~1500 m/s (4x plus vite que dans l\'air)','Fréquence : nombre de vibrations par seconde (Hz) → grave ou aigu']},
-          {icon:'📡',title:'Les ondes électromagnétiques', color:'#D4AF37',
-           content:'Se propagent dans le vide à la vitesse de la lumière. Classées selon leur fréquence : radio, micro-ondes, infrarouge, visible, UV, rayons X, gamma.',
-           examples:['Radio FM : fréquence 87-108 MHz','Lumière visible : fréquence 400-800 THz (couleurs de l\'arc-en-ciel)','Rayons X : pénètrent les tissus mous, bloqués par les os']}
-        ],
-        heroTip:'Tengen dit : "Son = onde MÉCANIQUE (besoin d\'un milieu). Lumière = onde ÉLECTROMAGNÉTIQUE (pas besoin) !"',
-        warmup:[
-          {q:'Peut-on entendre un son dans le vide (espace) ?',a:'Non, le son ne se propage pas dans le vide',o:['Oui, le son se propage partout','Non, le son ne se propage pas dans le vide','Ça dépend de la fréquence']},
-          {q:'Quelle est la vitesse du son dans l\'air ?',a:'340 m/s',o:['340 m/s','300 000 km/s','1 500 m/s']}
-        ]
-      },
-      7: {
-        heroName:'Rengoku', heroQuote:'UGOKU ! Mon énergie n\'a pas de limite — comme les ondes qui parcourent le monde connecté !',
-        rule:'Internet = réseau mondial d\'ordinateurs connectés. Un paquet = unité de données envoyée sur Internet. Adresse IP = identifiant unique de chaque machine.',
-        sections:[
-          {icon:'🌐',title:'Comment fonctionne Internet ?', color:'#e63946',
-           content:'Internet est un réseau de <strong>réseaux</strong>. Les données voyagent en <strong>paquets</strong> qui prennent le chemin le plus rapide jusqu\'à destination.',
-           examples:['Protocole TCP/IP = règles de communication sur Internet','Routeur = appareil qui dirige les paquets sur le bon chemin','Adresse IP : ex. 192.168.1.1 — identifie chaque machine']},
-          {icon:'🔒',title:'Sécurité et chiffrement', color:'#D4AF37',
-           content:'<strong>HTTPS</strong> = connexion chiffrée (cadenas dans le navigateur). Les données sont codées pour que seul le destinataire puisse les lire.',
-           examples:['Cadenas 🔒 dans le navigateur = connexion HTTPS sécurisée','Chiffrement = données rendues illisibles sans clé','Phishing = faux site imitant un vrai pour voler tes données']}
-        ],
-        heroTip:'Rengoku dit : "Adresse IP = identité · Paquet = enveloppe de données · Routeur = facteur d\'Internet !"',
-        warmup:[
-          {q:'À quoi sert une adresse IP ?',a:'À identifier un appareil sur un réseau',o:['À identifier un appareil sur un réseau','À chiffrer les données','À envoyer des courriels']},
-          {q:'Que signifie HTTPS ?',a:'Une connexion sécurisée et chiffrée',o:['Une connexion sécurisée et chiffrée','Un protocole très rapide','Une adresse de site web']}
-        ]
-      },
-      8: {
-        heroName:'Mitsuri', heroQuote:'L\'énergie circule dans mon corps comme le courant dans un circuit — laisse-moi t\'expliquer !',
-        rule:'Un circuit électrique = générateur + conducteurs + récepteurs. Courant = mouvement des électrons. Tension (V) = pression · Intensité (A) = débit',
-        sections:[
-          {icon:'⚡',title:'Le circuit électrique simple', color:'#C0392B',
-           content:'Un circuit doit être <strong>fermé</strong> pour que le courant circule. Il comprend un <strong>générateur</strong> (pile), des <strong>conducteurs</strong> (fils) et un <strong>récepteur</strong> (ampoule).',
-           examples:['Pile 9V → fils → ampoule → fils → pile = circuit fermé','Si on coupe un fil = circuit ouvert → plus de courant → ampoule éteinte','Interrupteur = ouvre/ferme le circuit']},
-          {icon:'🔋',title:'Tension et intensité', color:'#D4AF37',
-           content:'<strong>Tension (U)</strong> = différence de potentiel, mesurée en Volts (V) avec un voltmètre. <strong>Intensité (I)</strong> = débit de courant, mesurée en Ampères (A) avec un ampèremètre.',
-           examples:['Pile AAA = 1,5 V · Secteur = 230 V · Batterie voiture = 12 V','Loi d\'Ohm : U = R × I (tension = résistance × intensité)','Fusible = protection qui coupe le circuit si intensité trop forte']}
-        ],
-        heroTip:'Mitsuri dit : "Tension en VOLTS (V) avec voltmètre. Intensité en AMPÈRES (A) avec ampèremètre !"',
-        warmup:[
-          {q:'Quelle est l\'unité de la tension électrique ?',a:'Le Volt (V)',o:['Le Volt (V)','L\'Ampère (A)','Le Watt (W)']},
-          {q:'Pour qu\'un courant circule, le circuit doit être :',a:'Fermé',o:['Ouvert','Fermé','Court-circuité']}
-        ]
-      }
-    }
-  };
+var _DS = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/';
 
-console.info('⚔️ lesson-data kanto chargé — 8 îles');
+// ══════════════════════════════════════════════════════════════════
+// CM2 — Sciences & technologie cycle 3 (BO 2020 + 2023)
+// ══════════════════════════════════════════════════════════════════
+window.LESSON_REGISTRY['kanto_cm2'] = {
+  color:'#f97316', bg:'#0a0500', textAccent:'#fbbf24',
+  particles:'sword', worldName:'Kanto',
+  lessons:{
+    1:{
+      heroName:'Tanjiro',
+      heroQuote:'Solide, liquide, gaz — la matière prend trois visages, comme mes techniques de respiration !',
+      rule:'La matière existe sous trois états : solide (forme fixe), liquide (épouse le récipient), gaz (occupe tout l\'espace). Les changements d\'état sont des transformations physiques.',
+      sections:[
+        {icon:'❄️',title:'Les trois états',color:'#3b82f6',
+         content:'Solide = matière dure avec une forme propre (glace). Liquide = matière qui coule et prend la forme du récipient (eau). Gaz = matière invisible qui remplit tout l\'espace (vapeur).',
+         examples:['Glaçon → solide','Eau qui coule → liquide','Vapeur de la bouilloire → gaz']},
+        {icon:'🔄',title:'Les changements d\'état',color:'#f97316',
+         content:'Fusion = solide → liquide (glace qui fond). Solidification = liquide → solide (eau qui gèle). Vaporisation = liquide → gaz (eau qui bout). Condensation = gaz → liquide (buée).',
+         examples:['Glaçon dans un verre → fusion','Eau au congélateur → solidification','Casserole qui bout → vaporisation']},
+        {icon:'🧪',title:'Les mélanges',color:'#22c55e',
+         content:'Mélange homogène = on ne distingue plus les parties (eau + sel). Mélange hétérogène = on voit les parties (eau + sable). On sépare avec filtre, décantation ou évaporation.',
+         examples:['Eau salée → homogène (le sel a disparu)','Eau + sable → hétérogène (sable visible)','Filtre à café → sépare le marc']}
+      ],
+      heroTip:'Tanjiro dit : "Pour retenir : F-S-V-C. Fusion (vers liquide), Solidification (vers solide), Vaporisation (vers gaz), Condensation (vers liquide). 4 transformations, 1 cycle !"',
+      warmup:[
+        {q:'Quand la glace fond, elle passe de l\'état :',a:'Solide à liquide',o:['Solide à liquide','Liquide à gaz','Gaz à solide']},
+        {q:'L\'eau qui bout dans une casserole devient :',a:'Un gaz (vapeur)',o:['Un gaz (vapeur)','Un solide','Un mélange']}
+      ]
+    },
+    2:{
+      heroName:'Nezuko',
+      heroQuote:'Soleil, vent, eau — la nature donne l\'énergie. Et moi, je transforme la mienne en force pure !',
+      rule:'L\'énergie vient de plusieurs sources. Renouvelables = elles se reconstituent vite (soleil, vent, eau). Non renouvelables = elles s\'épuisent (charbon, pétrole, uranium).',
+      sections:[
+        {icon:'☀️',title:'Énergies renouvelables',color:'#fbbf24',
+         content:'Soleil → panneaux solaires (électricité). Vent → éoliennes. Eau → barrages hydrauliques. Biomasse → bois. Ces sources ne s\'épuisent pas à l\'échelle humaine.',
+         examples:['Panneau solaire sur un toit','Éolienne dans un champ','Barrage qui produit de l\'électricité']},
+        {icon:'🛢️',title:'Énergies non renouvelables',color:'#6b7280',
+         content:'Charbon, pétrole, gaz naturel : combustibles fossiles formés en millions d\'années. Uranium : combustible nucléaire. Une fois épuisés, on ne peut pas les recréer rapidement.',
+         examples:['Pétrole pour les voitures','Charbon pour le chauffage','Uranium pour le nucléaire']},
+        {icon:'⚡',title:'Transformations d\'énergie',color:'#a855f7',
+         content:'L\'énergie se transforme : pile (chimique → électrique), ampoule (électrique → lumière + chaleur), corps humain (chimique → mouvement).',
+         examples:['Pile → électrique → ampoule → lumière','Aliments → corps qui bouge','Soleil → panneau → électricité']}
+      ],
+      heroTip:'Nezuko dit : "Renouvelables = R comme Reproduit vite (Soleil, Vent, Eau). Non renouvelables = N comme N\'reviennent pas (pétrole, charbon, uranium). Simple !"',
+      warmup:[
+        {q:'Lequel est une énergie renouvelable ?',a:'Le vent',o:['Le vent','Le pétrole','Le charbon']},
+        {q:'Une éolienne transforme l\'énergie de :',a:'Le vent en électricité',o:['Le vent en électricité','Le soleil en chaleur','L\'eau en gaz']}
+      ]
+    },
+    3:{
+      heroName:'Zenitsu',
+      heroQuote:'AAAAH ! L\'électricité est dangereuse mais utile — comme ma technique du dieu du tonnerre !',
+      rule:'Un circuit électrique simple a 3 éléments : un générateur (pile), un récepteur (ampoule), des fils. Le circuit doit être fermé pour que le courant circule.',
+      sections:[
+        {icon:'🔋',title:'Le circuit fermé',color:'#eab308',
+         content:'Pile = source de courant (2 bornes : ⊕ et ⊖). Fils = chemin du courant. Ampoule = récepteur qui s\'allume. Interrupteur = ouvre/ferme le circuit.',
+         examples:['Pile + fils + ampoule + interrupteur fermé → ampoule allumée','Interrupteur ouvert → pas de courant','2 piles → ampoule plus brillante']},
+        {icon:'🔌',title:'Conducteurs et isolants',color:'#3b82f6',
+         content:'Conducteurs = laissent passer le courant (métaux : cuivre, fer, or). Isolants = bloquent le courant (plastique, bois, verre, caoutchouc).',
+         examples:['Fil en cuivre → conduit','Gaine en plastique → isole','Eau salée → conduit (danger !)']},
+        {icon:'⚠️',title:'Sécurité électrique',color:'#ef4444',
+         content:'Ne jamais toucher une prise avec des mains mouillées. Ne jamais introduire d\'objet dans une prise. Disjoncteur = coupe l\'électricité en cas de problème.',
+         examples:['Mains sèches avant la prise','Cache-prises pour les enfants','Couper le disjoncteur avant de réparer']}
+      ],
+      heroTip:'Zenitsu dit : "Pour qu\'un circuit MARCHE, il faut qu\'il soit FERMÉ. Pour SE PROTÉGER, il faut être ISOLÉ (gants, chaussures sèches). Marche fermé, protection isolée !"',
+      warmup:[
+        {q:'Pour qu\'une ampoule s\'allume, le circuit doit être :',a:'Fermé',o:['Fermé','Ouvert','Cassé']},
+        {q:'Lequel est un bon conducteur d\'électricité ?',a:'Le cuivre',o:['Le cuivre','Le bois','Le plastique']}
+      ]
+    },
+    4:{
+      heroName:'Inosuke',
+      heroQuote:'GRAOOOH ! Animaux, plantes, champignons — il faut tous les classer pour les comprendre !',
+      rule:'Les êtres vivants sont classés selon les caractères qu\'ils PARTAGENT. Les grands règnes : animaux, végétaux, champignons, bactéries. Les animaux se subdivisent en mammifères, oiseaux, reptiles, poissons, insectes, etc.',
+      sections:[
+        {icon:'🐺',title:'Les mammifères',color:'#a855f7',
+         content:'Caractères : poils, allaitement des petits, respiration par poumons, sang chaud. Vivipares (naissent vivants) sauf rares exceptions.',
+         examples:['Chien, chat, vache','Baleine, dauphin (mammifères marins)','Humain']},
+        {icon:'🦅',title:'Oiseaux, reptiles, poissons',color:'#3b82f6',
+         content:'Oiseaux : plumes, bec, œufs, 2 pattes, ailes. Reptiles : écailles, sang froid (serpent, lézard). Poissons : écailles, branchies, vivent dans l\'eau.',
+         examples:['Aigle, poule → oiseaux','Serpent, tortue → reptiles','Truite, requin → poissons']},
+        {icon:'🐛',title:'Insectes et autres',color:'#22c55e',
+         content:'Insectes : 6 pattes, 3 parties (tête, thorax, abdomen), souvent ailes. Plantes : font la photosynthèse. Champignons : règne à part (ni plante ni animal).',
+         examples:['Abeille, fourmi, papillon → insectes','Arbre, fleur, herbe → plantes','Cèpe, champignon de Paris → champignons']}
+      ],
+      heroTip:'Inosuke dit : "Pour reconnaître un MAMMIFÈRE : 3 P → Poils + Petits allaités + Poumons. Pour un OISEAU : 3 P → Plumes + Pondre + Picorer (bec). Trois P = Trois groupes !"',
+      warmup:[
+        {q:'Quel est le caractère propre aux mammifères ?',a:'Ils ont des poils et allaitent leurs petits',o:['Ils ont des poils et allaitent leurs petits','Ils ont des plumes','Ils pondent des œufs toujours']},
+        {q:'Combien de pattes a un insecte ?',a:'6 pattes',o:['6 pattes','4 pattes','8 pattes']}
+      ]
+    },
+    5:{
+      heroName:'Giyu',
+      heroQuote:'L\'alimentation équilibrée est la base de la force — comme la respiration de l\'eau pour mes techniques.',
+      rule:'L\'alimentation apporte l\'énergie et les nutriments pour grandir. Les groupes : glucides (énergie), protéines (construction), lipides (réserve), vitamines/minéraux (santé). Une alimentation équilibrée = variée.',
+      sections:[
+        {icon:'🍞',title:'Les groupes d\'aliments',color:'#fbbf24',
+         content:'Glucides = pain, pâtes, riz (énergie rapide). Protéines = viande, poisson, œufs, légumineuses (construction). Lipides = huile, beurre (réserve d\'énergie).',
+         examples:['Pain → glucides','Poulet → protéines','Huile d\'olive → lipides']},
+        {icon:'🥗',title:'Vitamines et minéraux',color:'#22c55e',
+         content:'Fruits et légumes apportent vitamines (C, A, B...), minéraux (calcium, fer) et fibres. Le calcium (lait) renforce les os. Le fer (épinards) combat la fatigue.',
+         examples:['Orange → vitamine C','Lait → calcium','Épinards → fer']},
+        {icon:'❄️',title:'Conservation des aliments',color:'#3b82f6',
+         content:'Le froid (réfrigérateur, congélateur) ralentit les microbes. Cuisson, séchage, salage, stérilisation conservent aussi. La date limite (DLC) protège la santé.',
+         examples:['Yaourt au frigo (4°C)','Viande au congélateur (-18°C)','Conserve stérilisée → 1 an']}
+      ],
+      heroTip:'Giyu dit : "Repas équilibré = 1 plat de chaque groupe. Pain (glucides) + Poisson (protéines) + Légumes (vitamines) + Yaourt (calcium). 4 groupes, 1 repas, équilibre parfait !"',
+      warmup:[
+        {q:'Lequel est riche en protéines ?',a:'La viande',o:['La viande','Le pain','L\'huile']},
+        {q:'Pourquoi mettre les yaourts au réfrigérateur ?',a:'Pour ralentir les microbes',o:['Pour ralentir les microbes','Pour les rendre durs','Pour leur donner du goût']}
+      ]
+    },
+    6:{
+      heroName:'Shinobu',
+      heroQuote:'De la graine à la fleur, du papillon à l\'œuf — la vie suit toujours un cycle. Élégant, n\'est-ce pas ?',
+      rule:'Tous les êtres vivants se reproduisent et grandissent. Reproduction sexuée = fusion de cellules de 2 parents. Croissance = augmentation de taille au cours du temps.',
+      sections:[
+        {icon:'🌸',title:'Reproduction des plantes',color:'#ec4899',
+         content:'Fleurs → pollinisation (insectes ou vent transportent le pollen) → fruits avec graines. Les graines germent (eau + chaleur + oxygène) et donnent une nouvelle plante.',
+         examples:['Abeille pollinise une fleur','Pomme = fruit avec pépins','Graine de haricot germe en pousse']},
+        {icon:'🐦',title:'Reproduction animale',color:'#3b82f6',
+         content:'Ovipares = pondent des œufs (oiseaux, reptiles, poissons, insectes). Vivipares = petits naissent vivants (mammifères). Tous : besoin d\'un mâle et d\'une femelle.',
+         examples:['Poule pond des œufs (ovipare)','Chatte met bas des chatons (vivipare)','Œuf de papillon → chenille → chrysalide → papillon']},
+        {icon:'📈',title:'Croissance et développement',color:'#22c55e',
+         content:'Bébé → enfant → ado → adulte. La croissance dure ~18 ans chez l\'humain, avec une poussée à l\'adolescence. Besoins : nourriture, eau, sommeil, affection.',
+         examples:['Bébé : marche à 1 an','Ado : pousse de 5-10 cm/an','Plante : pousse vers la lumière']}
+      ],
+      heroTip:'Shinobu dit : "Cycle du papillon = ŒCCP : Œuf, Chenille, Chrysalide, Papillon. Chaque étape transforme la précédente. La métamorphose, c\'est la magie de la vie !"',
+      warmup:[
+        {q:'Comment se reproduit la plupart des oiseaux ?',a:'En pondant des œufs',o:['En pondant des œufs','En donnant naissance directement','En se divisant']},
+        {q:'À quoi servent les fleurs ?',a:'À la reproduction des plantes',o:['À la reproduction des plantes','À nourrir l\'arbre','À décorer seulement']}
+      ]
+    },
+    7:{
+      heroName:'Kanao',
+      heroQuote:'... La Terre danse autour du Soleil. Le rythme du cosmos est immuable.',
+      rule:'La Terre est la 3ème planète du système solaire. Elle tourne sur elle-même en 24h (jour/nuit) et autour du Soleil en 365 jours (année). L\'inclinaison de son axe crée les saisons.',
+      sections:[
+        {icon:'🌞',title:'Le système solaire',color:'#fbbf24',
+         content:'Le Soleil = étoile au centre. 8 planètes tournent autour : Mercure, Vénus, Terre, Mars (rocheuses), Jupiter, Saturne, Uranus, Neptune (gazeuses). Pluton = planète naine.',
+         examples:['Mercure : la plus proche du Soleil','Jupiter : la plus grosse','Terre : la nôtre, 3ème position']},
+        {icon:'🌗',title:'Jour, nuit et année',color:'#6366f1',
+         content:'Rotation = la Terre tourne sur elle-même → 24 heures = 1 jour. Révolution = la Terre tourne autour du Soleil → 365,25 jours = 1 an.',
+         examples:['Le Soleil "se lève" car la Terre tourne','La Lune nous éclaire la nuit','365 jours = 1 année (1 tour autour du Soleil)']},
+        {icon:'🌳',title:'Les saisons',color:'#22c55e',
+         content:'L\'axe de la Terre est incliné de 23,5°. Quand l\'hémisphère nord est tourné vers le Soleil → été. Sinon → hiver. Au milieu : printemps et automne.',
+         examples:['Été : jours longs, soleil haut','Hiver : jours courts, soleil bas','Équinoxes : jour = nuit (printemps/automne)']}
+      ],
+      heroTip:'Kanao dit : "Rotation = jour/nuit (24h). Révolution = saisons (1 an). L\'inclinaison de l\'axe = pourquoi il y a 4 saisons. Sans inclinaison, on aurait toujours la même météo !"',
+      warmup:[
+        {q:'Pourquoi y a-t-il le jour et la nuit ?',a:'La Terre tourne sur elle-même',o:['La Terre tourne sur elle-même','Le Soleil s\'éteint la nuit','La Lune cache le Soleil']},
+        {q:'Combien de temps la Terre met-elle à tourner autour du Soleil ?',a:'1 an (365 jours)',o:['1 an (365 jours)','1 jour','1 mois']}
+      ]
+    },
+    8:{
+      heroName:'Rengoku',
+      heroQuote:'ENFLAMME TON CŒUR ! La Terre est puissante — volcans et séismes, nous devons les comprendre pour nous protéger !',
+      rule:'La Terre est dynamique : volcans et séismes viennent de son activité interne (chaleur + plaques tectoniques). Tempêtes et inondations viennent de l\'atmosphère. Connaître les risques permet de se protéger.',
+      sections:[
+        {icon:'🌋',title:'Volcans et séismes',color:'#ef4444',
+         content:'Volcan = roche en fusion (lave) qui sort par une fissure. Séisme = tremblement causé par le mouvement des plaques tectoniques. Tsunami = vague géante après séisme sous-marin.',
+         examples:['Vésuve, Etna : volcans actifs','Séisme du Japon 2011','Tsunami de l\'océan Indien 2004']},
+        {icon:'🌪️',title:'Phénomènes atmosphériques',color:'#3b82f6',
+         content:'Tempête = vents très violents. Cyclone/ouragan = tempête tropicale. Inondation = eau qui déborde et envahit un lieu. Causés par météo extrême.',
+         examples:['Tempête de neige en montagne','Ouragan tropical aux Antilles','Crue de la Seine à Paris']},
+        {icon:'🛡️',title:'Se protéger des risques',color:'#22c55e',
+         content:'Connaître les zones à risques. Avoir un kit d\'urgence (eau, lampe, radio). Suivre les consignes officielles. Construire avec normes anti-sismiques.',
+         examples:['Plan d\'évacuation à l\'école','Kit d\'urgence : 3L d\'eau/personne/jour','Maison anti-sismique : structure souple']}
+      ],
+      heroTip:'Rengoku dit : "Volcans + Séismes = Terre INTERNE (cœur chaud). Tempêtes + Inondations = Terre EXTERNE (atmosphère). Deux origines différentes, deux protections différentes !"',
+      warmup:[
+        {q:'Un volcan crache de la :',a:'Lave (roche en fusion)',o:['Lave (roche en fusion)','Eau froide','Glace']},
+        {q:'Que faut-il faire en cas de séisme ?',a:'Se protéger sous une table solide',o:['Se protéger sous une table solide','Courir dehors immédiatement','Sauter par la fenêtre']}
+      ]
+    }
+  }
+};
+
+console.info('⚔️ lesson-data-kanto.js — 8 leçons CM2 Sciences × Demon Slayer chargées (LESSON_REGISTRY V2)');

@@ -450,27 +450,39 @@ function lesson_magnolia(niveauCodeOrN, nOrCallback, thenCallback) {
   showLesson('magnolia_' + niveauCode, n, avatar, color, callback);
 }
 
-// ── KANTO — Sciences / Demon Slayer ────────────────────────────
-// Tous les characters sont dans Supabase island-demon-slayer/characters/
-// Confirmés uploadés. Utiliser KANTO_AVATARS si disponible (quiz-kanto.js).
-function lesson_kanto(n, thenCallback) {
-  var SUPABASE_DS = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer';
-  // Map exact des fichiers uploadés (noms vérifiés)
-  var KANTO_MAP = {
-    1: SUPABASE_DS + '/characters/tanjiro.jpeg',
-    2: SUPABASE_DS + '/characters/zenitsu.jpeg',
-    3: SUPABASE_DS + '/characters/inosuke.jpeg',
-    4: SUPABASE_DS + '/characters/obanai.jpeg',   // île 4 = obanai (fix appliqué)
-    5: SUPABASE_DS + '/characters/kanao.jpeg',
-    6: SUPABASE_DS + '/characters/tengen.jpeg',
-    7: SUPABASE_DS + '/characters/rengoku.jpg',
-    8: SUPABASE_DS + '/characters/mitsuri.jpeg'
+// ── KANTO V2 — Sciences / Demon Slayer ────────────────────────
+// Signature V2 : (niveauCode, numeroIle, callback) — pattern Grand Bleu
+// V1 rétro-compat : (n, callback)
+// LESSON_REGISTRY['kanto_cm2'...'kanto_3eme'] dans lesson-data.js
+function lesson_kanto(niveauCodeOrN, nOrCallback, thenCallback) {
+  // Détection signature
+  var niveauCode, n, callback;
+  if (typeof nOrCallback === 'function') {
+    n          = parseInt(niveauCodeOrN) || 1;
+    callback   = nOrCallback;
+    niveauCode = 'cm2';
+  } else {
+    niveauCode = niveauCodeOrN || 'cm2';
+    n          = parseInt(nOrCallback) || 1;
+    callback   = thenCallback;
+  }
+
+  var DS = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/';
+  // 8 héros uniques par niveau (règle Grand Bleu PATTERN)
+  var AVATARS = {
+    'cm2':  {1:'tanjiro.jpg',  2:'nezuko.jpeg', 3:'zenitsu.jpg',  4:'inosuke.jpg', 5:'giyu.png', 6:'shinobu.png', 7:'kanao.jpg',     8:'rengoku.jpg'},
+    '6eme': {1:'tengen.jpg',   2:'mitsuri.jpeg',3:'obanai.jpeg',  4:'sanemi.jpg',  5:'muichiro.jpg',6:'gyomei.jpg',7:'genya.jpg',    8:'tanjiro.jpg'},
+    '5eme': {1:'tanjiro.jpg',  2:'zenitsu.jpg', 3:'inosuke.jpg',  4:'rengoku.jpg', 5:'shinobu.png',6:'mitsuri.jpeg',7:'muichiro.jpg',8:'sanemi.jpg'},
+    '4eme': {1:'giyu.png',     2:'tengen.jpg',  3:'obanai.jpeg',  4:'gyomei.jpg',  5:'kanao.jpg',  6:'genya.jpg',  7:'nezuko.jpeg',  8:'tanjiro.jpg'},
+    '3eme': {1:'tanjiro.jpg',  2:'rengoku.jpg', 3:'mitsuri.jpeg', 4:'sanemi.jpg',  5:'muichiro.jpg',6:'gyomei.jpg', 7:'shinobu.png',  8:'giyu.png'}
   };
-  // Priorité : KANTO_AVATARS (quiz-kanto.js) > KANTO_MAP Supabase
-  var avatar = (typeof KANTO_AVATARS !== 'undefined' && KANTO_AVATARS[n])
-    ? KANTO_AVATARS[n]
-    : (KANTO_MAP[n] || KANTO_MAP[1]);
-  showLesson('kanto', n, avatar, '#C0392B', thenCallback);
+  var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
+  var avatar = DS + (avatarMap[n] || 'tanjiro.jpg');
+
+  var COULEURS = {'cm2':'#f97316','6eme':'#22c55e','5eme':'#8b5cf6','4eme':'#ef4444','3eme':'#3b82f6'};
+  var color = COULEURS[niveauCode] || '#C0392B';
+
+  showLesson('kanto_' + niveauCode, n, avatar, color, callback);
 }
 
 // ── PAYS DU FEU V3 — Maths / Naruto ────────────────────────────
