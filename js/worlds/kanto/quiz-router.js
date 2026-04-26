@@ -22,13 +22,52 @@
     'cm2_5': { bg:'#1a0510', kanji:'食物 !!', kanjiColor:'#3b82f6', lines:['ALIMENTATION…','… NUTRITION !','ÉQUILIBRE !'], bubble:'"Chaque repas est un trésor — varie pour grandir fort !"' },
     'cm2_6': { bg:'#100510', kanji:'生命 !!', kanjiColor:'#ec4899', lines:['REPRODUCTION…','… CROISSANCE !','LE CYCLE DE LA VIE !'], bubble:'"De la graine à la fleur, du bébé à l\'adulte — tout vit, tout grandit !"' },
     'cm2_7': { bg:'#050510', kanji:'宇宙 !!', kanjiColor:'#8b5cf6', lines:['TERRE…','… SYSTÈME SOLAIRE !','PLANÈTES !'], bubble:'"Notre Terre danse autour du Soleil avec 7 sœurs planètes !"' },
-    'cm2_8': { bg:'#0a0000', kanji:'災害 !!', kanjiColor:'#ef4444', lines:['VOLCANS…','… SÉISMES !','PRÉPARE-TOI !'], bubble:'"La Terre est vivante : volcans et séismes nous le rappellent. Sois prêt !"' }
+    'cm2_8': { bg:'#0a0000', kanji:'災害 !!', kanjiColor:'#ef4444', lines:['VOLCANS…','… SÉISMES !','PRÉPARE-TOI !'], bubble:'"La Terre est vivante : volcans et séismes nous le rappellent. Sois prêt !"' },
+    // ═ 6ÈME ═
+    '6eme_1': { bg:'#001a05', kanji:'細胞 !!', kanjiColor:'#22c55e', lines:['CELLULE…','… UNITÉ !','DU VIVANT !'], bubble:'"Tous les êtres vivants sont faits de cellules — c\'est la preuve de leur parenté !"' },
+    '6eme_2': { bg:'#1a0a05', kanji:'分類 !!', kanjiColor:'#ec4899', lines:['CARACTÈRES…','… PARTAGÉS !','CLASSIFICATION !'], bubble:'"Plus on partage, plus on est apparentés. La parenté est une histoire d\'amour !"' },
+    '6eme_3': { bg:'#050a1a', kanji:'多様性 !!', kanjiColor:'#06b6d4', lines:['DIVERSITÉ…','… DU VIVANT !','PROTECTION !'], bubble:'"Du microbe à la baleine, la biodiversité est notre trésor !"' },
+    '6eme_4': { bg:'#0a1500', kanji:'生態系 !!', kanjiColor:'#22c55e', lines:['ÉCOSYSTÈME…','… ÉQUILIBRE !','CHAÎNE TROPHIQUE !'], bubble:'"Producteurs, consommateurs, décomposeurs : tout est lié !"' },
+    '6eme_5': { bg:'#000510', kanji:'季節 !!', kanjiColor:'#8b5cf6', lines:['SAISONS…','… ADAPTATION !','SURVIE !'], bubble:'"… Je suis comme la brume… les êtres vivants s\'adaptent à chaque saison."' },
+    '6eme_6': { bg:'#1a0500', kanji:'栄養 !!', kanjiColor:'#fbbf24', lines:['NUTRITION…','… ÉQUILIBRE !','VARIÉTÉ !'], bubble:'"L\'alimentation équilibrée est la base de la force du corps."' },
+    '6eme_7': { bg:'#150510', kanji:'生殖 !!', kanjiColor:'#a855f7', lines:['REPRODUCTION…','… SEXUÉE !','PUBERTÉ !'], bubble:'"De la fleur au fruit, de l\'enfance à l\'adulte — la vie continue !"' },
+    '6eme_8': { bg:'#0a0000', kanji:'進化 !!', kanjiColor:'#ef4444', lines:['ÉVOLUTION…','… BIODIVERSITÉ !','PROTECTION !'], bubble:'"Préservons la biodiversité comme on combat les démons !"' },
+    // ═ 5ÈME ═
+    '5eme_1': { bg:'#000a1a', kanji:'水 !!', kanjiColor:'#3b82f6', lines:['EAU…','… 3 ÉTATS !','MASSE CONSERVÉE !'], bubble:'"L\'eau prend trois visages — comme mes danses du dieu du feu !"' },
+    '5eme_2': { bg:'#1a0a05', kanji:'純物 !!', kanjiColor:'#a855f7', lines:['MÉLANGES…','… CORPS PURS !','SÉPARATION !'], bubble:'"AAH ! Heureusement il y a des techniques pour tout séparer !"' },
+    '5eme_3': { bg:'#0a1a05', kanji:'速度 !!', kanjiColor:'#fbbf24', lines:['VITESSE…','… v = d/t !','PLUS VITE !'], bubble:'"GRAOOOH ! Plus vite, toujours plus vite ! C\'est ma formule de combat !"' },
+    '5eme_4': { bg:'#1a0500', kanji:'力 !!', kanjiColor:'#ef4444', lines:['ÉNERGIE…','… SE TRANSFORME !','ENFLAMME-TOI !'], bubble:'"ENFLAMME TON CŒUR ! L\'énergie ne se perd pas, elle se TRANSFORME !"' },
+    '5eme_5': { bg:'#0a0510', kanji:'回路 !!', kanjiColor:'#22c55e', lines:['SÉRIE…','… OU PARALLÈLE !','BRANCHEMENTS !'], bubble:'"Série ou parallèle… deux beautés différentes. Élégant !"' },
+    '5eme_6': { bg:'#150510', kanji:'光 !!', kanjiColor:'#fbbf24', lines:['LUMIÈRE…','… SOURCE !','PROPAGATION !'], bubble:'"L\'amour de la lumière éclaire le monde !"' },
+    '5eme_7': { bg:'#001515', kanji:'呼吸 !!', kanjiColor:'#06b6d4', lines:['RESPIRATION…','… CIRCULATION !','LE CYCLE !'], bubble:'"… inspirer, expirer. Le souffle nourrit le sang…"' },
+    '5eme_8': { bg:'#0a0000', kanji:'消化 !!', kanjiColor:'#ef4444', lines:['DIGESTION…','… NUTRIMENTS !','LA FORCE !'], bubble:'"La force du Pilier vient de ce qu\'il MANGE !"' },
+    // ═ 4ÈME ═
+    '4eme_1': { bg:'#000510', kanji:'原子 !!', kanjiColor:'#3b82f6', lines:['ATOMES…','… MOLÉCULES !','LAVOISIER !'], bubble:'"Atomes et molécules — la matière n\'est rien d\'autre qu\'un assemblage."' },
+    '4eme_2': { bg:'#1a1500', kanji:'電圧 !!', kanjiColor:'#fbbf24', lines:['TENSION…','… INTENSITÉ !','OHM !'], bubble:'"FLAMBOYANCE ! Voltmètre PARALLÈLE, ampèremètre SÉRIE !"' },
+    '4eme_3': { bg:'#050a05', kanji:'音 !!', kanjiColor:'#a855f7', lines:['SON…','… PROPAGE !','HERTZ !'], bubble:'"Le son… une vibration silencieuse, comme ma haine."' },
+    '4eme_4': { bg:'#1a0a00', kanji:'光色 !!', kanjiColor:'#fbbf24', lines:['LUMIÈRES…','… COULEURS !','RVB !'], bubble:'"Bénie soit la lumière. Toutes les couleurs cachées dans le blanc."' },
+    '4eme_5': { bg:'#150510', kanji:'生殖 !!', kanjiColor:'#ec4899', lines:['REPRODUCTION…','… HUMAINE !','PUBERTÉ !'], bubble:'"… Un mystère du vivant que je peux comprendre maintenant."' },
+    '4eme_6': { bg:'#0a0510', kanji:'遺伝 !!', kanjiColor:'#a855f7', lines:['ADN…','… CHROMOSOMES !','HÉRÉDITÉ !'], bubble:'"L\'ADN… c\'est ce qui nous fait tous différents !"' },
+    '4eme_7': { bg:'#100500', kanji:'地震 !!', kanjiColor:'#ef4444', lines:['SÉISMES…','… VOLCANS !','PLAQUES !'], bubble:'"Mmh ! La Terre tremble ! Les plaques se déplacent !"' },
+    '4eme_8': { bg:'#0a0000', kanji:'気候 !!', kanjiColor:'#ef4444', lines:['CLIMAT…','… RÉCHAUFFEMENT !','AGISSONS !'], bubble:'"La planète SOUFFRE. Nous devons agir comme contre les démons !"' },
+    // ═ 3ÈME ═
+    '3eme_1': { bg:'#000510', kanji:'力学 !!', kanjiColor:'#3b82f6', lines:['FORCES…','… NEWTON !','P = m × g !'], bubble:'"Forces et mouvement — la mécanique de Newton ! Comprends-les !"' },
+    '3eme_2': { bg:'#1a0500', kanji:'電力 !!', kanjiColor:'#fbbf24', lines:['PUISSANCE…','… P = U × I !','ÉNERGIE !'], bubble:'"PUISSANCE et ÉNERGIE ! ENFLAMME ton calcul !"' },
+    '3eme_3': { bg:'#0a0a05', kanji:'反応 !!', kanjiColor:'#a855f7', lines:['RÉACTIONS…','… CHIMIQUES !','LAVOISIER !'], bubble:'"Les atomes se réarrangent par AMOUR ! Lavoisier, mon héros !"' },
+    '3eme_4': { bg:'#0a0510', kanji:'酸塩 !!', kanjiColor:'#ec4899', lines:['ACIDES…','… BASES !','pH 0-14 !'], bubble:'"pH 0 à 14, et MALHEUR à qui se trompe d\'échelle !"' },
+    '3eme_5': { bg:'#000510', kanji:'進化 !!', kanjiColor:'#22c55e', lines:['ÉVOLUTION…','… DARWIN !','SÉLECTION !'], bubble:'"… Les espèces changent, comme la brume."' },
+    '3eme_6': { bg:'#100510', kanji:'神経 !!', kanjiColor:'#3b82f6', lines:['NERVEUX…','… IMMUNITAIRE !','VACCINS !'], bubble:'"Bénis soient les neurones et les anticorps !"' },
+    '3eme_7': { bg:'#150515', kanji:'遺伝 !!', kanjiColor:'#a855f7', lines:['GÉNOTYPE…','… PHÉNOTYPE !','MICROBIOTE !'], bubble:'"Génotype, phénotype, microbiote… élégant, n\'est-ce pas ?"' },
+    '3eme_8': { bg:'#0a0000', kanji:'地球 !!', kanjiColor:'#ef4444', lines:['DÉFIS…','… PLANÉTAIRES !','LE BREVET !'], bubble:'"Atténuer, adapter, transitionner — pour préserver la VIE !"' }
   };
 
   // ── Niveaux disponibles ──────────────────────────────────────
   var NIVEAUX = [
     { code:'cm2',  nom:'CM2',  emoji:'⭐',         color:'#f97316', desc:'Sciences & technologie cycle 3' },
-    // Niveaux à venir : '6eme', '5eme', '4eme', '3eme'
+    { code:'6eme', nom:'6ème', emoji:'⭐⭐',       color:'#22c55e', desc:'SVT cycle 3 — vivant, écosystèmes, reproduction' },
+    { code:'5eme', nom:'5ème', emoji:'⭐⭐⭐',     color:'#8b5cf6', desc:'Physique-Chimie + SVT — eau, énergie, lumière, corps humain' },
+    { code:'4eme', nom:'4ème', emoji:'⭐⭐⭐⭐',   color:'#ef4444', desc:'PC + SVT — atomes, électricité, sons, génétique, séismes, climat' },
+    { code:'3eme', nom:'3ème', emoji:'⭐⭐⭐⭐⭐', color:'#3b82f6', desc:'Brevet Sciences — mécanique, énergies, chimie, évolution, défis planétaires' }
   ];
 
   var COULEURS_NIVEAU = {
