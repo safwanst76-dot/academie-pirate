@@ -73,6 +73,8 @@ function hideAll() {
   const quiz = getSection('quiz-sec');
   if (quiz) quiz.style.display = 'none';
 
+  const kantoLevels = document.getElementById('kanto-levels-sec');
+  if (kantoLevels) kantoLevels.style.display = 'none';
   const kantoIles = document.getElementById('kanto-iles-sec');
   if (kantoIles) kantoIles.style.display = 'none';
   const kantoQuiz = document.getElementById('kanto-quiz-sec');

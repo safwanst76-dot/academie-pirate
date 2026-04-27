@@ -173,16 +173,20 @@
     if (!silent && window.history && window.history.pushState)
       history.pushState(null,'','#/kanto/'+niveauCode);
 
-    // Pattern Grand Bleu : hideAll() + masquer map-sec + manga-bg
+    // Pattern Grand Bleu : hideAll() global d'ABORD, PUIS afficher kanto-iles-sec
     if (typeof hideAll === 'function') hideAll();
     var mangaBg = document.getElementById('manga-bg');
     if (mangaBg) mangaBg.style.display = 'none';
     var mapSec = document.getElementById('map-sec');
     if (mapSec) mapSec.style.display = 'none';
+
+    // Afficher APRÈS hideAll pour éviter race condition
     var bg = document.getElementById('kanto-bg');
     if (bg) { bg.classList.add('visible'); loadKantoBgStrips(); }
 
-    _show('kanto-iles-sec'); _hide('kanto-levels-sec'); _hide('kanto-quiz-sec');
+    _hide('kanto-levels-sec');
+    _hide('kanto-quiz-sec');
+    _show('kanto-iles-sec');
     window.scrollTo(0, 0);
 
     // Charger les chapitres pour ce niveau via AP_QuizEngine
@@ -192,6 +196,9 @@
       _chapitres = [];
     }
     _buildGrid(niveau);
+
+    // S'assurer que kanto-iles-sec est BIEN visible après async
+    _show('kanto-iles-sec');
   }
 
   function _buildGrid(niveau) {
@@ -208,7 +215,8 @@
 
     _chapitres.forEach(function(ch) {
       var img = ch.hero_image || (DS_STORAGE + 'characters/tanjiro.jpg');
-      html += '<div class="kanto-isle-card" style="--isle-color:'+color+'" onclick="kanto_startIsland('+ch.numero+')">'
+      // Pattern Magnolia : passer ch.id (UUID) à startIsland
+      html += '<div class="kanto-isle-card" style="--isle-color:'+color+'" onclick="kanto_startIsland(\''+ch.id+'\')">'
             + '  <div class="kanto-isle-img-wrap">'
             + '    <img class="kanto-isle-img" src="'+img+'" loading="lazy" alt="'+ch.nom+'" onerror="this.onerror=null;this.src=\''+DS_STORAGE+'characters/tanjiro.jpg\'">'
             + '  </div>'
@@ -225,22 +233,25 @@
   }
 
   // ── Démarrer une île : leçon → cinématique → quiz ────────────
-  function startIsland(numero) {
-    var ch = _chapitres.find(function(c){ return c.numero===numero; });
-    if (!ch) { console.warn('[kanto] chapitre',numero,'introuvable'); return; }
+  // Pattern Magnolia : startIsland reçoit un UUID (chapitreId)
+  function startIsland(chapitreId) {
+    if (!chapitreId) return;
+    var ch = _chapitres.find(function(c){ return c.id===chapitreId; });
+    if (!ch) { console.warn('[kanto] chapitre id',chapitreId,'introuvable'); return; }
 
     // 1. Leçon (LessonDialog) — pattern Grand Bleu
     if (typeof window.lesson_kanto === 'function') {
-      window.lesson_kanto(_currentNiveau, numero, function() {
+      window.lesson_kanto(_currentNiveau, ch.numero, function() {
         // 2. Après leçon : cinématique puis quiz
         if (typeof playBGM === 'function') playBGM(ch.bgm || 'kanto-battle');
         _playCinematic(ch, function() {
-          _launchQuiz(ch);
+          _launchQuiz(chapitreId, ch);
         });
       });
     } else {
       // Fallback : direct cinématique
-      _playCinematic(ch, function(){ _launchQuiz(ch); });
+      if (typeof playBGM === 'function') playBGM(ch.bgm || 'kanto-battle');
+      _playCinematic(ch, function(){ _launchQuiz(chapitreId, ch); });
     }
   }
 
@@ -295,29 +306,31 @@
   }
 
   // ── Lancement quiz (AP_QuizEngine) ───────────────────────────
-  function _launchQuiz(ch) {
+  // Pattern Magnolia : launch(chapitreId, opts) avec chapitreId = UUID
+  function _launchQuiz(chapitreId, ch) {
+    if (!window.AP_QuizEngine) { console.error('[kanto] AP_QuizEngine manquant'); return; }
     _hide('kanto-iles-sec'); _hide('kanto-levels-sec');
     _show('kanto-quiz-sec');
     window.scrollTo(0, 0);
 
-    if (window.AP_QuizEngine && window.AP_QuizEngine.launch) {
-      window.AP_QuizEngine.launch({
-        chapitre:    ch,
-        containerId: 'kanto-qContainer',
-        titleId:     'kanto-qTitle',
-        progressFillId: 'kanto-qProgFill',
-        progressLblId:  'kanto-qProgLbl',
-        worldCode:   'kanto',
-        themeColor:  COULEURS_NIVEAU[_currentNiveau] || '#C0392B',
-        onBack: function() {
-          _hide('kanto-quiz-sec');
-          _show('kanto-iles-sec');
-          if (typeof playBGM === 'function') playBGM('kanto-map');
-        }
-      });
-    } else {
-      console.warn('[kanto] AP_QuizEngine non disponible');
-    }
+    window.AP_QuizEngine.launch(chapitreId, {
+      matiere:    MATIERE_CODE,
+      niveau:     _currentNiveau,
+      quizSecId:  'kanto-quiz-sec',
+      ilesSecId:  'kanto-iles-sec',
+      containerId:'kanto-qContainer',
+      titleId:    'kanto-qTitle',
+      progFillId: 'kanto-qProgFill',
+      progLblId:  'kanto-qProgLbl',
+      bgmBack:    'kanto-map',
+      onBack: function() {
+        _hide('kanto-quiz-sec');
+        _show('kanto-iles-sec');
+        var niveau = NIVEAUX.find(function(n){ return n.code===_currentNiveau; });
+        if (niveau) _buildGrid(niveau);
+        if (typeof playBGM === 'function') setTimeout(function(){ playBGM('kanto-map'); }, 300);
+      }
+    });
   }
 
   // ── Exports globaux ──────────────────────────────────────────
