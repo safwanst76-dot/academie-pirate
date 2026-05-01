@@ -20,7 +20,7 @@ var ROUTES = {
   'magnolia'   : function(s){ if(typeof showMagnoliaV2==='function') showMagnoliaV2(s); else showHistoire(s); },
   'kanto'      : showKanto,
   'pays-du-feu': showPaysduFeu,
-  'namek'      : showNamek,
+  'namek'      : function(s){ if(typeof showNamekV2==='function') showNamekV2(s); else showNamek(s); },
   'english'    : function(silent) { if (typeof showEnglish === 'function') showEnglish(silent); },
   'select'     : function() { if (typeof showChildSelect === 'function') showChildSelect(); }
 };
@@ -89,6 +89,17 @@ function hideAll() {
   const pdfBg = document.getElementById('pdf-bg');
   if (pdfBg) pdfBg.classList.remove('visible');
 
+  // Namek V2 sections
+  const namekLevels = document.getElementById('namek-levels-sec');
+  if (namekLevels) namekLevels.style.display = 'none';
+  const namekIles = document.getElementById('namek-iles-sec');
+  if (namekIles) namekIles.style.display = 'none';
+  const namekQuiz = document.getElementById('namek-quiz-sec');
+  if (namekQuiz) namekQuiz.style.display = 'none';
+  const namekBg = document.getElementById('namek-bg');
+  if (namekBg) namekBg.classList.remove('visible');
+
+  // Legacy Namek V1 sections (jjk-*) - rétro-compat masquage
   const jjkIles = document.getElementById('jjk-iles-sec');
   const jjkQuiz = document.getElementById('jjk-quiz-sec');
   if (jjkIles) jjkIles.style.display = 'none';
@@ -370,7 +381,8 @@ var SEO_ROUTES = {
   'english/6eme':{ title: 'Quiz Anglais 6ème — Grammaire A1+ · Académie Pirate',  desc: '8 îles anglais 6ème : Present Simple, BE/HAVE, articles, pluriels. Niveau A1+.' },
   'english/5eme':{ title: 'Quiz Anglais 5ème — Grammaire A2 · Académie Pirate',   desc: '8 îles anglais 5ème : Past Simple, modaux, comparatifs. Niveau A2.' },
   'english/4eme':{ title: 'Quiz Anglais 4ème — Grammaire B1 · Académie Pirate',   desc: '8 îles anglais 4ème : Present Perfect, futur, voix passive. Niveau B1.' },
-  'namek':       { title: 'Académie Pirate — Namek · Géographie JJK',             desc: '8 îles de géographie avec Jujutsu Kaisen. Programme officiel 6ème.' },
+  'namek':       { title: 'Académie Pirate — Namek (Géographie · Jujutsu Kaisen)', desc: '8 îles de géographie avec les sorciers de Jujutsu Kaisen. Habiter, se déplacer, communiquer.' },
+  'namek/cm2':   { title: 'Quiz Géographie CM2 — Jujutsu Kaisen · Académie Pirate', desc: '8 îles Géographie CM2 : ville, campagne, littoral, montagne, transports, communication, écoquartier, métropoles.' },
   'select':      { title: 'Académie Pirate — Choisir ton aventurier',              desc: 'Sélectionne ton personnage manga pour commencer ton aventure pédagogique.' },
 };
 
@@ -504,6 +516,19 @@ function handleRoute() {
         setTimeout(function() {
           if (typeof window.kanto_showLevel === 'function') {
             window.kanto_showLevel(sub, true);
+          }
+        }, 80);
+        return;
+      }
+    }
+    // Sous-routes Namek V2 : #/namek/cm2, #/namek/6eme...
+    if (route === 'namek' && sub) {
+      var namekLevels = ['cm2', '6eme', '5eme', '4eme', '3eme'];
+      if (namekLevels.indexOf(sub) !== -1) {
+        handler(true);
+        setTimeout(function() {
+          if (typeof window.namek_showLevel === 'function') {
+            window.namek_showLevel(sub, true);
           }
         }, 80);
         return;

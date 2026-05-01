@@ -485,6 +485,38 @@ function lesson_kanto(niveauCodeOrN, nOrCallback, thenCallback) {
   showLesson('kanto_' + niveauCode, n, avatar, color, callback);
 }
 
+// ── NAMEK V2 — Géographie / Jujutsu Kaisen ─────────────────────
+// Signature V2 : (niveauCode, numeroIle, callback) — pattern Grand Bleu
+// V1 rétro-compat : (n, callback)
+// LESSON_REGISTRY['namek_cm2'...'namek_3eme'] dans lesson-data.js
+function lesson_namek(niveauCodeOrN, nOrCallback, thenCallback) {
+  var niveauCode, n, callback;
+  if (typeof nOrCallback === 'function') {
+    n          = parseInt(niveauCodeOrN) || 1;
+    callback   = nOrCallback;
+    niveauCode = 'cm2';
+  } else {
+    niveauCode = niveauCodeOrN || 'cm2';
+    n          = parseInt(nOrCallback) || 1;
+    callback   = thenCallback;
+  }
+
+  var JJK = 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/';
+  // 8 héros uniques par niveau (règle Grand Bleu PATTERN)
+  // Pour CM2 : Yuji, Megumi, Nobara, Gojo, Inumaki, Yuta, Todo, Nanami
+  var AVATARS = {
+    'cm2':  {1:'yuji.png',   2:'megumi.jpg', 3:'nobara.png', 4:'gojo.jpg',   5:'inumaki.png',6:'yuta.jpg',  7:'todo.jpg',  8:'nanami.jpg'}
+    // 6eme, 5eme, 4eme, 3eme à venir
+  };
+  var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
+  var avatar = JJK + (avatarMap[n] || 'yuji.png');
+
+  var COULEURS = {'cm2':'#f97316','6eme':'#22c55e','5eme':'#8b5cf6','4eme':'#ef4444','3eme':'#3b82f6'};
+  var color = COULEURS[niveauCode] || '#7c3aed';
+
+  showLesson('namek_' + niveauCode, n, avatar, color, callback);
+}
+
 // ── PAYS DU FEU V3 — Maths / Naruto ────────────────────────────
 // Signature identique à lesson_english : (niveauCode, numeroIle, thenCallback)
 // Bucket corrigé : island-pays-du-feu (sans espaces)
