@@ -22,13 +22,52 @@
     'cm2_5': { bg:'#2e0a1a', kanji:'移動 !!', kanjiColor:'#fbbf24', lines:['TGV…','… AVION !','VÉLO !'], bubble:'"Saumon ! (Se déplacer rapidement, c\'est important !)"' },
     'cm2_6': { bg:'#0a2e2e', kanji:'通信 !!', kanjiColor:'#3b82f6', lines:['INTERNET…','… SATELLITES !','RÉSEAUX !'], bubble:'"Communiquer m\'a sauvé — autrefois isolé, maintenant en lien !"' },
     'cm2_7': { bg:'#1a3e0a', kanji:'環境 !!', kanjiColor:'#22c55e', lines:['ÉCOQUARTIER…','… RECYCLAGE !','PLANÈTE !'], bubble:'"BROTHER ! Mieux habiter, c\'est respecter la nature !"' },
-    'cm2_8': { bg:'#2e0a2e', kanji:'巨都 !!', kanjiColor:'#dc2626', lines:['MÉTROPOLE…','… MÉGAPOLE !','FINAL !'], bubble:'"7h - 19h. Les métropoles sont des fourmilières humaines."' }
+    'cm2_8': { bg:'#2e0a2e', kanji:'巨都 !!', kanjiColor:'#dc2626', lines:['MÉTROPOLE…','… MÉGAPOLE !','FINAL !'], bubble:'"7h - 19h. Les métropoles sont des fourmilières humaines."' },
+    // ═ 6ÈME ═ (Habiter le monde)
+    '6eme_1': { bg:'#0a2e1a', kanji:'巨都 !!', kanjiColor:'#22c55e', lines:['TOKYO…','… MUMBAI !','MÉTROPOLES !'], bubble:'"Les métropoles mondiales sont des fourmilières géantes !"' },
+    '6eme_2': { bg:'#3e2e0a', kanji:'限界 !!', kanjiColor:'#fbbf24', lines:['SAHARA…','… ARCTIQUE !','EXTRÊMES !'], bubble:'"BROTHER ! Vivre dans les climats extrêmes demande de la force !"' },
+    '6eme_3': { bg:'#0a1a3e', kanji:'海 !!', kanjiColor:'#06b6d4', lines:['LITTORAUX…','… SHANGHAI !','MIAMI !'], bubble:'"7h - 19h. Les littoraux mondiaux concentrent activités."' },
+    '6eme_4': { bg:'#1a3e0a', kanji:'農 !!', kanjiColor:'#22c55e', lines:['SAHEL…','… RIZIÈRES !','PLAINES !'], bubble:'"Les espaces ruraux du monde nourrissent l\'humanité !"' },
+    '6eme_5': { bg:'#1a1a2e', kanji:'野 !!', kanjiColor:'#a855f7', lines:['SIBÉRIE…','… OUTBACK !','NOMADES !'], bubble:'"Faible densité = vastes espaces presque vides !"' },
+    '6eme_6': { bg:'#0a3e2e', kanji:'可持続 !!', kanjiColor:'#22c55e', lines:['SMART CITY…','… ÉCO !','PLANÈTE !'], bubble:'"Mieux habiter la planète = développement durable !"' },
+    '6eme_7': { bg:'#0a2e3e', kanji:'大陸 !!', kanjiColor:'#3b82f6', lines:['CONTINENTS…','… OCÉANS !','TERRE !'], bubble:'"6 continents, 5 océans — voici notre planète !"' },
+    '6eme_8': { bg:'#2e0a1a', kanji:'地球 !!', kanjiColor:'#dc2626', lines:['ÉQUATEUR…','… PÔLES !','FINAL !'], bubble:'"Les repères de la Terre — boss SUKUNA m\'attend !"' },
+    // ═ 5ÈME ═ (Démographie, ressources, DD)
+    '5eme_1': { bg:'#2e0a3e', kanji:'人口 !!', kanjiColor:'#8b5cf6', lines:['8 MILLIARDS…','… INDE !','DÉMOGRAPHIE !'], bubble:'"8 milliards d\'humains — une immense humanité !"' },
+    '5eme_2': { bg:'#0a2e3e', kanji:'水 !!', kanjiColor:'#06b6d4', lines:['EAU…','… PÉNURIE !','VITAL !'], bubble:'"L\'eau, ressource vitale et inégale dans le monde !"' },
+    '5eme_3': { bg:'#3e2e0a', kanji:'エネ !!', kanjiColor:'#fbbf24', lines:['PÉTROLE…','… SOLAIRE !','TRANSITION !'], bubble:'"L\'énergie défie l\'humanité — transition urgente !"' },
+    '5eme_4': { bg:'#3e1a0a', kanji:'食 !!', kanjiColor:'#ef4444', lines:['FAIM…','… GASPILLAGE !','PARADOXE !'], bubble:'"7h - 19h. Le paradoxe alimentaire mondial est insensé."' },
+    '5eme_5': { bg:'#2e1a0a', kanji:'險 !!', kanjiColor:'#dc2626', lines:['TEMPÊTES…','… SÉCHERESSES !','RISQUES !'], bubble:'"Les risques climatiques amplifiés — vulnérabilité maximale !"' },
+    '5eme_6': { bg:'#1a2e1a', kanji:'不平等 !!', kanjiColor:'#22c55e', lines:['NORD…','… SUD !','INÉGAL !'], bubble:'"BROTHER ! Les inégalités mondiales sont un combat !"' },
+    '5eme_7': { bg:'#0a3e1a', kanji:'持続 !!', kanjiColor:'#22c55e', lines:['DD…','… 3 PILIERS !','AVENIR !'], bubble:'"Le développement durable, seule voie pour l\'avenir !"' },
+    '5eme_8': { bg:'#3e0a0a', kanji:'気候 !!', kanjiColor:'#dc2626', lines:['CLIMAT…','… +1.5°C !','URGENCE !'], bubble:'"Le changement climatique — défi #1, boss SUKUNA !"' },
+    // ═ 4ÈME ═ (Urbanisation, mondialisation)
+    '4eme_1': { bg:'#2e0a0a', kanji:'都市 !!', kanjiColor:'#ef4444', lines:['MÉGAPOLES…','… BIDONVILLES !','URBAIN !'], bubble:'"L\'urbanisation mondiale s\'accélère sans fin !"' },
+    '4eme_2': { bg:'#0a1a2e', kanji:'移動 !!', kanjiColor:'#3b82f6', lines:['MIGRANTS…','… RÉFUGIÉS !','MOBILITÉS !'], bubble:'"Saumon ! (Les humains se déplacent comme des poissons !)"' },
+    '4eme_3': { bg:'#3e0a3e', kanji:'世界 !!', kanjiColor:'#a855f7', lines:['FMN…','… CHAÎNES !','MONDIAL !'], bubble:'"La mondialisation = réseaux invisibles partout !"' },
+    '4eme_4': { bg:'#0a2e2e', kanji:'海 !!', kanjiColor:'#06b6d4', lines:['ROUTES…','… DÉTROITS !','MARITIMES !'], bubble:'"80% du commerce mondial passe par les océans !"' },
+    '4eme_5': { bg:'#3e2e0a', kanji:'北米 !!', kanjiColor:'#fbbf24', lines:['USA…','… MEXIQUE !','USMCA !'], bubble:'"L\'Amérique du Nord, puissance et complexité !"' },
+    '4eme_6': { bg:'#2e1a0a', kanji:'アフリカ !!', kanjiColor:'#fbbf24', lines:['55 PAYS…','… RESSOURCES !','JEUNESSE !'], bubble:'"L\'Afrique — continent d\'avenir avec ses défis !"' },
+    '4eme_7': { bg:'#3e0a1a', kanji:'東アジア !!', kanjiColor:'#ef4444', lines:['CHINE…','… JAPON !','POUVOIR !'], bubble:'"L\'Asie de l\'Est, nouveau centre du monde !"' },
+    '4eme_8': { bg:'#0a0a2e', kanji:'差 !!', kanjiColor:'#dc2626', lines:['GAGNANTS…','… PERDANTS !','FINAL !'], bubble:'"Bilan mondialisation — SUKUNA, boss final 4ème !"' },
+    // ═ 3ÈME ═ (France, Europe, mondialisation - Brevet)
+    '3eme_1': { bg:'#0a1a3e', kanji:'都市 !!', kanjiColor:'#3b82f6', lines:['PARIS…','… LYON !','MÉTROPOLES !'], bubble:'"Les aires urbaines françaises sont nos foyers de vie !"' },
+    '3eme_2': { bg:'#3e0a0a', kanji:'生産 !!', kanjiColor:'#ef4444', lines:['AIRBUS…','… LUXE !','PRODUIRE !'], bubble:'"La France produit, exporte, innove — puissance économique !"' },
+    '3eme_3': { bg:'#1a3e1a', kanji:'野 !!', kanjiColor:'#22c55e', lines:['LOZÈRE…','… MASSIF !','DIAGONALE !'], bubble:'"La diagonale du vide — espaces à ressusciter !"' },
+    '3eme_4': { bg:'#0a3e2e', kanji:'欧 !!', kanjiColor:'#3b82f6', lines:['UE…','… EURO !','BRUXELLES !'], bubble:'"La France au cœur de l\'Union Européenne, 27 pays unis !"' },
+    '3eme_5': { bg:'#2e0a3e', kanji:'世界 !!', kanjiColor:'#a855f7', lines:['LVMH…','… LANGUE !','SOFT POWER !'], bubble:'"7h - 19h. La France rayonne dans la mondialisation."' },
+    '3eme_6': { bg:'#1a1a3e', kanji:'計画 !!', kanjiColor:'#3b82f6', lines:['ANRU…','… RENOVATION !','AMÉNAGER !'], bubble:'"Aménager les territoires — réduire les inégalités !"' },
+    '3eme_7': { bg:'#3e1a3e', kanji:'防衛 !!', kanjiColor:'#a855f7', lines:['ARMÉE…','… DÉMOCRATIE !','VALEURS !'], bubble:'"Défendre la République et ses valeurs — mission sacrée !"' },
+    '3eme_8': { bg:'#3e0a0a', kanji:'世代 !!', kanjiColor:'#dc2626', lines:['UKRAINE…','… GAZA !','BREVET !'], bubble:'"BROTHER ! Géopolitique mondiale — boss SUKUNA, BREVET final !"' }
   };
 
   // ── Niveaux disponibles ──────────────────────────────────────
   var NIVEAUX = [
-    { code:'cm2',  nom:'CM2',  emoji:'⭐',         color:'#f97316', desc:'Géographie cycle 3 — habiter, se déplacer, communiquer' }
-    // Niveaux à venir : '6eme', '5eme', '4eme', '3eme'
+    { code:'cm2',  nom:'CM2',  emoji:'⭐',         color:'#f97316', desc:'Géographie cycle 3 — habiter, se déplacer, communiquer' },
+    { code:'6eme', nom:'6ème', emoji:'⭐⭐',       color:'#22c55e', desc:'Habiter le monde — métropoles, climats, continents' },
+    { code:'5eme', nom:'5ème', emoji:'⭐⭐⭐',     color:'#8b5cf6', desc:'Démographie, ressources, développement durable' },
+    { code:'4eme', nom:'4ème', emoji:'⭐⭐⭐⭐',   color:'#ef4444', desc:'Urbanisation et mondialisation' },
+    { code:'3eme', nom:'3ème', emoji:'⭐⭐⭐⭐⭐', color:'#3b82f6', desc:'France, Europe, mondialisation — Brevet' }
   ];
 
   var COULEURS_NIVEAU = {

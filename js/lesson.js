@@ -505,8 +505,11 @@ function lesson_namek(niveauCodeOrN, nOrCallback, thenCallback) {
   // 8 héros uniques par niveau (règle Grand Bleu PATTERN)
   // Pour CM2 : Yuji, Megumi, Nobara, Gojo, Inumaki, Yuta, Todo, Nanami
   var AVATARS = {
-    'cm2':  {1:'yuji.png',   2:'megumi.jpg', 3:'nobara.png', 4:'gojo.jpg',   5:'inumaki.png',6:'yuta.jpg',  7:'todo.jpg',  8:'nanami.jpg'}
-    // 6eme, 5eme, 4eme, 3eme à venir
+    'cm2':  {1:'yuji.png',   2:'megumi.jpg', 3:'nobara.png', 4:'gojo.jpg',   5:'inumaki.png',6:'yuta.jpg',  7:'todo.jpg',  8:'nanami.jpg'},
+    '6eme': {1:'choso.png',  2:'todo.jpg',   3:'nanami.jpg', 4:'panda.jpg',  5:'maki.jpg',   6:'naoya.jpg', 7:'geto.png',  8:'yuji.png'},
+    '5eme': {1:'yuji.png',   2:'megumi.jpg', 3:'gojo.jpg',   4:'nanami.jpg', 5:'maki.jpg',   6:'todo.jpg',  7:'yuta.jpg',  8:'nobara.png'},
+    '4eme': {1:'panda.jpg',  2:'inumaki.png',3:'choso.png',  4:'naoya.jpg',  5:'mei-mei.jpg',6:'ijichi.jpg',7:'geto.png',  8:'yuji.png'},
+    '3eme': {1:'gojo.jpg',   2:'yuji.png',   3:'megumi.jpg', 4:'nobara.png', 5:'nanami.jpg', 6:'maki.jpg',  7:'yuta.jpg',  8:'todo.jpg'}
   };
   var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];
   var avatar = JJK + (avatarMap[n] || 'yuji.png');

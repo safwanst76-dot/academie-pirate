@@ -383,6 +383,10 @@ var SEO_ROUTES = {
   'english/4eme':{ title: 'Quiz Anglais 4ème — Grammaire B1 · Académie Pirate',   desc: '8 îles anglais 4ème : Present Perfect, futur, voix passive. Niveau B1.' },
   'namek':       { title: 'Académie Pirate — Namek (Géographie · Jujutsu Kaisen)', desc: '8 îles de géographie avec les sorciers de Jujutsu Kaisen. Habiter, se déplacer, communiquer.' },
   'namek/cm2':   { title: 'Quiz Géographie CM2 — Jujutsu Kaisen · Académie Pirate', desc: '8 îles Géographie CM2 : ville, campagne, littoral, montagne, transports, communication, écoquartier, métropoles.' },
+  'namek/6eme':  { title: 'Quiz Géographie 6ème — Habiter le monde · Académie Pirate', desc: '8 îles 6ème : métropoles, contraintes, littoraux mondiaux, ruralité, faible densité, DD, continents, repères Terre.' },
+  'namek/5eme':  { title: 'Quiz Géographie 5ème — Démographie & DD · Académie Pirate', desc: '8 îles 5ème : démographie, eau, énergie, alimentation, risques, inégalités, développement durable, climat.' },
+  'namek/4eme':  { title: 'Quiz Géographie 4ème — Mondialisation · Académie Pirate', desc: '8 îles 4ème : urbanisation, mobilités, mondialisation, océans, Amérique du N, Afrique, Asie, inégalités.' },
+  'namek/3eme':  { title: 'Quiz Géographie 3ème — Brevet · Académie Pirate', desc: '8 îles 3ème Brevet : aires urbaines FR, espaces productifs, faible densité, France+UE, mondialisation, aménagement, défense, géopolitique.' },
   'select':      { title: 'Académie Pirate — Choisir ton aventurier',              desc: 'Sélectionne ton personnage manga pour commencer ton aventure pédagogique.' },
 };
 
