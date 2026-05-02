@@ -236,8 +236,14 @@
     window.playBGM = function (track, loop) {
       var url = _GRAND_BLEU_BGM[track];
 
-      // Pas une île Grand Bleu → laisser les patches Kanto/DBZ gérer normalement
+      // Pas une île Grand Bleu → laisser les patches Kanto/DBZ/JJK/AOT gérer normalement
+      // ⚠️ BUGFIX : stopper d'abord _isleAudio (Grand Bleu) sinon il continue
+      // à jouer en parallèle des autres mondes (Namek, Kanto, etc.)
       if (!url) {
+        if (window._isleAudio) {
+          try { window._isleAudio.pause(); window._isleAudio.currentTime = 0; } catch(e) {}
+          window._isleAudio = null;
+        }
         if (typeof _origPlayBGM === 'function') _origPlayBGM(track, loop);
         return;
       }
