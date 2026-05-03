@@ -128,11 +128,21 @@
     // English — AOT Titans (vraies formes — upload via scripts/upload-boss-images.js)
     // Avant upload : fallback sur les personnages existants
     // Après upload dans island-aot/bosses/ : changer en bosses/titan-*.jpg
-    'Titan Colossal':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-colossal.jpg',
-    'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-cuirasse.jpg',
-    'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-feminin.jpg',
-    'Titan Bestial':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bestial.jpg',
-    'Titan Bestial (CM2)':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bestial.jpg',
+    // English — AOT Titans (vraies formes — uploadées dans island-aot/bosses/ via scripts/upload-aot-titans.js)
+    // Tous les Titans pointent vers les vraies images des Titans (pas les porteurs humains)
+    'Titan Colossal':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-colossal.jpg?v=1',
+    'Titan Cuirassé':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-cuirasse.jpg?v=1',
+    'Titan Féminin':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-feminin.jpg?v=1',
+    'Titan Bestial':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bestial.jpg?v=1',
+    'Titan Bestial (CM2)':  'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bestial.jpg?v=1',
+    // Titans 3ème Brevet (uploadés 2026-05-03)
+    'Titan Blindé':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-blinde.jpg?v=1',     // Reiner Braun
+    'Titan Mâchoire':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-machoire.jpg?v=1',   // Porco Galliard
+    'Titan Chariot':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-chariot.jpg?v=1',    // Pieck Finger
+    'Titan Géant':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-geant.jpg?v=1',     // Titan pur
+    'Titan Dansant':        'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-dansant.jpg?v=1',    // Ymir Fritz
+    'Titan Bête':           'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bete.jpg?v=1',      // Zeke Yeager
+    'Titan Originel':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-originel.jpg?v=1',  // Eren Yeager (boss final 3ème)
     'Annie Leonhart':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/annie.jpeg',
     'Reiner Braun':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/reiner.jpg',
     'Bertholdt':            'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/armin.jpg',
