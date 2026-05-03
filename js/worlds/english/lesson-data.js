@@ -31,7 +31,10 @@ window.LESSON_REGISTRY['english'] = {
     // 4ème : personnages avancés (zeke, pieck, floch)
     var N4 = { 1:'historia.png', 2:'levi.jpg',      3:'hange.jpeg', 4:'zeke.jpg',
                5:'eren.jpeg',    6:'pieck.jpg',     7:'floch.jpg',  8:'armin.jpg' };
-    var maps = { 1: N1, 2: N2, 3: N3, 4: N4 };
+    // 3ème Brevet : 8 héros uniques pour les 8 îles (correspond aux chapitres BDD)
+    var N5 = { 1:'eren.jpeg',    2:'mikasa.gif',    3:'armin.jpg',  4:'hange.jpeg',
+               5:'annie.jpeg',   6:'erwin.jpg',     7:'levi.jpg',   8:'reiner.jpg' };
+    var maps = { 1: N1, 2: N2, 3: N3, 4: N4, 5: N5 };
     var map  = maps[niveau] || N1;
     return SUPABASE + (map[n] || 'eren.jpeg');
   },
@@ -1695,9 +1698,486 @@ window.LESSON_REGISTRY['english'] = {
         { q: "Quel futur ? La météo annonce de la pluie, tu vois des nuages noirs : 'It ___ rain.'", a: "is going to", o: ["will", "is going to", "has", "does"] },
         { q: "Question tag : He has been there, ___ he?", a: "hasn't", o: ["has", "hasn't", "didn't", "wasn't"] }
       ]
+    },
+
+    // ══════════════════════════════════════════════════
+    // NIVEAU 5 — 3ème : Préparation BREVET (B1)
+    // ══════════════════════════════════════════════════
+
+    '5_1': {
+      heroName: 'Eren Jäger',
+      heroQuote: "Past Simple raconte le passé terminé, Past Continuous décrit ce qui était en cours. Use both !",
+      rule: "Past Simple = action terminée (V-ed ou V2 irrégulier). Past Continuous = action en cours dans le passé (was/were + V-ing). Combinés : action en cours interrompue par une action soudaine (while/when).",
+      sections: [
+        {
+          icon: '⏮️', title: 'Past Simple : action terminée', color: '#4a5c3f',
+          content: "Action <strong>terminée</strong> à un moment précis du passé. Réguliers : V+ed. Irréguliers : V2 (go→went, eat→ate, see→saw).",
+          examples: [
+            "I went to school yesterday. / She ate breakfast.",
+            "We saw a Titan two days ago. / They fought hard.",
+            "Négation : I didn't go. / She didn't eat. (V-base après didn't !)",
+            "Question : Did you see it? — Yes, I did. / No, I didn't."
+          ]
+        },
+        {
+          icon: '▶️', title: 'Past Continuous : action en cours', color: '#8b6914',
+          content: "Action <strong>EN COURS</strong> dans le passé. Forme : <strong>was/were + V-ing</strong>. Souvent en arrière-plan d'une autre action.",
+          examples: [
+            "At 8pm yesterday, I was watching TV.",
+            "They were running when it started to rain.",
+            "It was raining all night.",
+            "While I was sleeping, the alarm rang."
+          ]
+        },
+        {
+          icon: '🔀', title: 'Combinaison while / when', color: '#c0a030',
+          content: "<strong>Past Continuous</strong> (action en cours) + <strong>WHILE/WHEN</strong> + <strong>Past Simple</strong> (action soudaine qui interrompt). Pattern essentiel Brevet.",
+          examples: [
+            "While I was walking home, it started to rain.",
+            "When she arrived, I was studying.",
+            "Eren was training when the Titan attacked.",
+            "Mikasa was reading while Armin was cooking."
+          ]
+        }
+      ],
+      heroTip: "Eren dit : \"Past Simple = FINI ! Past Continuous = EN COURS ! Combinés : WHILE + was V-ing + WHEN + Past Simple. Pattern Brevet incontournable !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Past Simple vs Past Continuous',
+          cards: [
+            { front: 'went / saw / ate', back: 'V2 irréguliers — Past Simple', example: 'I went, I saw, I ate.' },
+            { front: 'walked / played', back: 'V+ed — Past Simple réguliers', example: 'I walked / She played.' },
+            { front: 'was watching', back: 'Past Continuous — I/He/She/It', example: 'I was watching TV.' },
+            { front: 'were running', back: 'Past Continuous — You/We/They', example: 'They were running.' },
+            { front: 'while + was V-ing', back: 'action en cours en arrière-plan', example: 'While I was eating...' },
+            { front: 'when + Past Simple', back: 'action soudaine qui interrompt', example: '...when she arrived.' },
+            { front: "didn't + V-base", back: 'négation Past Simple (pas V2 !)', example: "I didn't go (NOT didn't went)." },
+            { front: 'Did + sujet + V-base?', back: 'question Past Simple', example: 'Did you see it?' }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "Past form of 'eat' :", a: "ate", o: ["ate", "eated", "eaten", "eating"] },
+        { q: "While I ___ TV, the phone rang.", a: "was watching", o: ["was watching", "watched", "watch", "have watched"] }
+      ]
+    },
+
+    '5_2': {
+      heroName: 'Mikasa Ackerman',
+      heroQuote: "Present Perfect relie le passé au présent. I have known Eren since we were children.",
+      rule: "Present Perfect : have/has + V3 (past participle). Pour les expériences sans date précise, les actions récentes, ou une durée jusqu'au présent (since/for, ever/never, just/yet/already).",
+      sections: [
+        {
+          icon: '🔗', title: 'Forme : have/has + V3', color: '#4a5c3f',
+          content: "Forme : <strong>SUBJECT + HAVE/HAS + past participle (V3)</strong>. He/She/It → has. I/You/We/They → have.",
+          examples: [
+            "I have eaten sushi. / She has gone to London.",
+            "They have arrived. / He has lost his sword.",
+            "V3 irréguliers : been, gone, seen, eaten, written, spoken, taken",
+            "V3 réguliers : V+ed (worked, lived, played, finished)"
+          ]
+        },
+        {
+          icon: '📅', title: 'Since vs For (durée jusqu\'au présent)', color: '#8b6914',
+          content: "<strong>SINCE</strong> = depuis un point précis (2020, Monday, childhood). <strong>FOR</strong> = pour une durée (5 years, 2 hours, a long time).",
+          examples: [
+            "I have lived here SINCE 2020. (point de départ)",
+            "I have lived here FOR 5 years. (durée)",
+            "Mikasa has known Eren since they were children.",
+            "They have been friends for 10 years."
+          ]
+        },
+        {
+          icon: '✨', title: 'Ever / Never / Just / Yet / Already', color: '#c0a030',
+          content: "<strong>EVER</strong> (question = déjà ?). <strong>NEVER</strong> (jamais). <strong>JUST</strong> (juste). <strong>YET</strong> (encore, en négation/question). <strong>ALREADY</strong> (déjà affirmatif).",
+          examples: [
+            "Have you EVER seen a Titan? — Yes, I have.",
+            "I have NEVER been to Japan.",
+            "He has JUST arrived. (il vient d'arriver)",
+            "She hasn't finished YET. / Have you done it yet?",
+            "They have ALREADY left."
+          ]
+        }
+      ],
+      heroTip: "Mikasa dit : \"have/has + V3 + since/for = lien passé-présent. Ever/never pour expériences. Yet pour une attente. Just pour une action toute récente.\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Present Perfect',
+          cards: [
+            { front: 'have/has + V3', back: 'forme Present Perfect', example: 'I have eaten / She has gone.' },
+            { front: 'been / gone / seen', back: 'V3 irréguliers fréquents', example: "I've been to Paris." },
+            { front: 'since 2020', back: 'point de départ — SINCE', example: 'I have lived here since 2020.' },
+            { front: 'for 5 years', back: 'durée — FOR', example: 'I have lived here for 5 years.' },
+            { front: 'ever (question)', back: 'déjà dans ta vie ?', example: 'Have you ever tried sushi?' },
+            { front: 'never (négation)', back: 'jamais', example: "I've never been there." },
+            { front: 'just', back: 'venir de (action toute récente)', example: "He's just arrived." },
+            { front: 'yet (négatif/question)', back: 'encore pas / déjà ?', example: "I haven't done it yet." }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "I have ___ to London twice.", a: "been", o: ["been", "went", "go", "was"] },
+        { q: "She has known him ___ they were children.", a: "since", o: ["since", "for", "ago", "when"] }
+      ]
+    },
+
+    '5_3': {
+      heroName: 'Armin Arlert',
+      heroQuote: "If-clauses : zero (toujours vrai), first (probable), second (hypothèse), third (regret passé). Strategy !",
+      rule: "Conditionals : 4 types selon la réalité de la condition. Zero = vérité générale. First = futur réel. Second = hypothèse irréelle présent. Third = regret passé. JAMAIS de WILL après IF !",
+      sections: [
+        {
+          icon: '0️⃣', title: 'Zero & First Conditional', color: '#4a5c3f',
+          content: "<strong>ZERO</strong> : if + present → present (vérité générale, scientifique). <strong>FIRST</strong> : if + present → will + base (futur réel, condition probable).",
+          examples: [
+            "ZERO : If you heat ice, it melts.",
+            "ZERO : If you mix red and blue, you get purple.",
+            "FIRST : If it rains tomorrow, I will stay home.",
+            "FIRST : If you study hard, you will pass the Brevet."
+          ]
+        },
+        {
+          icon: '2️⃣', title: 'Second Conditional : hypothèse irréelle', color: '#8b6914',
+          content: "<strong>Hypothèse irréelle</strong> au présent. IF + past simple → would + base. <strong>WERE</strong> pour toutes les personnes (style formel).",
+          examples: [
+            "If I were rich, I would travel the world.",
+            "If she had a Titan, she would fight better.",
+            "What would you do if you saw a Titan?",
+            "If I were you, I would run away."
+          ]
+        },
+        {
+          icon: '3️⃣', title: 'Third Conditional : regret du passé', color: '#c0a030',
+          content: "<strong>Regret du passé</strong> (impossible à changer). IF + had + V3 (past perfect) → <strong>would have + V3</strong>. Niveau B1 avancé.",
+          examples: [
+            "If I had known the truth, I would have helped Eren.",
+            "If we had run faster, we would have escaped.",
+            "If she had studied, she would have passed.",
+            "If they had listened, they would have survived."
+          ]
+        }
+      ],
+      heroTip: "Armin dit : \"0 = toujours vrai (lois). 1 = futur probable (will). 2 = hypothèse (would). 3 = regret passé (would have). PAS de WILL après IF !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Conditionals',
+          cards: [
+            { front: '0 : If + pres → pres', back: 'vérité générale', example: 'If you heat ice, it melts.' },
+            { front: '1 : If + pres → will', back: 'futur réel / probable', example: 'If it rains, I will stay.' },
+            { front: '2 : If + past → would', back: 'hypothèse présente irréelle', example: 'If I were rich, I would travel.' },
+            { front: '3 : If + had V3 → would have V3', back: 'regret passé', example: 'If I had known, I would have helped.' },
+            { front: 'were (toutes pers.)', back: 'second conditional formel', example: 'If I were you...' },
+            { front: 'unless = if not', back: 'sauf si / à moins que', example: "Unless you train, you won't win." },
+            { front: '❌ if + will', back: 'JAMAIS de will dans la clause IF !', example: 'If it rains (NOT if it will rain).' },
+            { front: '✅ main clause = will/would', back: 'WILL/WOULD dans la clause principale', example: 'I will go / I would go.' }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "If it rains tomorrow, I ___ home.", a: "will stay", o: ["will stay", "would stay", "stayed", "stay"] },
+        { q: "If I ___ rich, I would travel.", a: "were", o: ["were", "am", "will be", "have been"] }
+      ]
+    },
+
+    '5_4': {
+      heroName: 'Hange Zoë',
+      heroQuote: "Modals: must (obligation!), should (advice), can (ability), might (maybe). Use them wisely !",
+      rule: "Modal verbs : verbes invariables suivis de la BASE verbale (sans TO). Expriment obligation (must/have to), conseil (should), capacité/permission (can/may), possibilité (might/may), regret (should have).",
+      sections: [
+        {
+          icon: '⚠️', title: 'Obligation et interdiction', color: '#4a5c3f',
+          content: "<strong>MUST</strong> = obligation forte (interne, règle absolue). <strong>HAVE TO</strong> = obligation externe (loi). <strong>MUSTN'T</strong> = interdiction. <strong>DON'T HAVE TO</strong> = pas obligé.",
+          examples: [
+            "You must wear a uniform. (obligation interne)",
+            "Soldiers have to follow orders. (obligation externe)",
+            "You mustn't smoke here. (interdiction stricte)",
+            "You don't have to come. (pas obligé = facultatif)"
+          ]
+        },
+        {
+          icon: '💡', title: 'Conseil, capacité, permission', color: '#8b6914',
+          content: "<strong>SHOULD</strong> = conseil. <strong>CAN</strong> = capacité ou permission informelle. <strong>COULD</strong> = passé de can OU politesse. <strong>MAY</strong> = permission formelle.",
+          examples: [
+            "You should study. (conseil)",
+            "I can speak English. (capacité)",
+            "Could you help me? (politesse)",
+            "May I come in? (permission formelle)"
+          ]
+        },
+        {
+          icon: '🎲', title: 'Possibilité et regret passé', color: '#c0a030',
+          content: "<strong>MIGHT/MAY</strong> = possibilité incertaine (peut-être). <strong>SHOULD HAVE + V3</strong> = regret passé (j'aurais dû). Pattern Brevet B1.",
+          examples: [
+            "It might rain tomorrow. (possibilité ~30%)",
+            "She may be tired. (possibilité ~50%)",
+            "You should have studied! (regret — mais trop tard)",
+            "He shouldn't have lied. (regret négatif)"
+          ]
+        }
+      ],
+      heroTip: "Hange dit : \"Modaux + base verbale (SANS TO) ! Must = obligation. Should = conseil. Might = peut-être. Should have + V3 = regret du passé !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Modal verbs',
+          cards: [
+            { front: 'must', back: 'obligation forte (interne)', example: 'You must train.' },
+            { front: 'have to', back: 'obligation externe (loi/règle)', example: 'Soldiers have to obey.' },
+            { front: "mustn't", back: 'interdiction stricte', example: "You mustn't lie." },
+            { front: "don't have to", back: 'pas obligé (facultatif)', example: "You don't have to come." },
+            { front: 'should', back: 'conseil', example: 'You should rest.' },
+            { front: 'might / may', back: 'possibilité incertaine', example: 'It might rain.' },
+            { front: 'should have V3', back: 'regret passé (j\'aurais dû)', example: 'You should have called.' },
+            { front: '❌ modal + to / -s / -ing', back: 'TOUJOURS V-base après un modal !', example: 'He can swim (NOT swims/to swim).' }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "You ___ wear a uniform. (obligation forte)", a: "must", o: ["must", "might", "could", "should"] },
+        { q: "You ___ smoke here. It's forbidden!", a: "mustn't", o: ["mustn't", "shouldn't", "don't have to", "can"] }
+      ]
+    },
+
+    '5_5': {
+      heroName: 'Annie Leonhart',
+      heroQuote: "Reported speech and passive voice — transformations grammaticales. Stay focused !",
+      rule: "Reported speech : on recule d'un cran (present→past, will→would, etc). Passive voice : BE + V3, l'objet devient sujet. Pattern essentiel pour le Brevet niveau B1.",
+      sections: [
+        {
+          icon: '💬', title: 'Reported speech : recul des temps', color: '#4a5c3f',
+          content: "<strong>Discours rapporté</strong> : on recule d'un cran le temps. Present → Past. Will → Would. Past Simple → Past Perfect. Les marqueurs temporels changent aussi.",
+          examples: [
+            "Direct : \"I am tired.\" → Reported : She said she was tired.",
+            "Direct : \"I will help.\" → Reported : He said he would help.",
+            "Tomorrow → the next day. Yesterday → the day before.",
+            "Now → then. Today → that day."
+          ]
+        },
+        {
+          icon: '❓', title: 'Reported questions', color: '#8b6914',
+          content: "<strong>Reported question</strong> : ASK + mot interrogatif + sujet + verbe (ordre AFFIRMATIF !). DO/DOES disparaissent.",
+          examples: [
+            "Direct : \"Where do you live?\" → She asked where I lived.",
+            "Direct : \"What is your name?\" → He asked what my name was.",
+            "Yes/no questions : utiliser IF ou WHETHER.",
+            "Direct : \"Are you ready?\" → She asked IF I was ready."
+          ]
+        },
+        {
+          icon: '🔄', title: 'Passive voice : BE + V3', color: '#c0a030',
+          content: "<strong>Voix passive</strong> : objet devient sujet + BE (au temps du verbe actif) + V3 + BY + ancien sujet (optionnel).",
+          examples: [
+            "Active : Annie killed Marco. → Passive : Marco was killed by Annie.",
+            "Active : People speak English. → Passive : English is spoken by people.",
+            "Present : is/are + V3 / Past : was/were + V3 / Perfect : has/have been + V3.",
+            "Future : will be + V3 (The wall will be destroyed)."
+          ]
+        }
+      ],
+      heroTip: "Annie dit : \"Reported = recul d'un cran (present→past). Reported question = ordre affirmatif (pas do/does). Passif = BE + V3 + by.\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Reported & Passive',
+          cards: [
+            { front: 'said + past', back: 'Reported affirmatif', example: 'She said she was tired.' },
+            { front: 'asked if/whether', back: 'Reported yes/no question', example: 'He asked if I was ready.' },
+            { front: 'asked WH + S + V', back: 'Reported WH question (ordre affirmatif)', example: 'She asked where I lived.' },
+            { front: 'tomorrow → the next day', back: 'changement marqueur temporel', example: 'tomorrow → the next day.' },
+            { front: 'BE + V3', back: 'voix passive', example: 'is spoken / was eaten.' },
+            { front: 'by + agent', back: 'optionnel : qui fait l\'action', example: 'killed by Annie.' },
+            { front: 'has been + V3', back: 'Present Perfect Passive', example: 'The cake has been eaten.' },
+            { front: 'will be + V3', back: 'Future Passive', example: 'The wall will be rebuilt.' }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "Direct : 'I am tired.' → She said ___", a: "she was tired", o: ["she was tired", "she is tired", "she will be tired", "she tired"] },
+        { q: "Active : Annie killed Marco. → Passive : ___", a: "Marco was killed by Annie", o: ["Marco was killed by Annie", "Marco killed Annie", "Annie was killed", "Marco kills Annie"] }
+      ]
+    },
+
+    '5_6': {
+      heroName: 'Erwin Smith',
+      heroQuote: "School life, jobs, future plans. A commander must speak about goals and dreams !",
+      rule: "Vocabulaire essentiel Brevet : vie scolaire (school subjects, homework), métiers (jobs, professions), projets d'avenir (I want to be / When I grow up / In ten years). Pattern WHEN + present (pas de will).",
+      sections: [
+        {
+          icon: '🏫', title: 'School life', color: '#4a5c3f',
+          content: "Vocabulaire de la <strong>vie scolaire</strong> : subjects, exams, classroom, school staff. Indispensable pour parler de soi au Brevet.",
+          examples: [
+            "Subjects : Mathematics, English, History, Science, PE, Art.",
+            "School : classroom, library, playground, canteen, gym.",
+            "Staff : teacher, headmaster (UK) / principal (US), student.",
+            "Pass an exam = réussir / Fail an exam = échouer."
+          ]
+        },
+        {
+          icon: '💼', title: 'Jobs and professions', color: '#8b6914',
+          content: "Vocabulaire des <strong>métiers</strong>. Pattern : <em>I want to be a/an + job</em>. Article ARTICLE obligatoire devant le métier !",
+          examples: [
+            "I want to be a doctor / a teacher / an engineer.",
+            "She is a journalist / a lawyer / an architect.",
+            "To apply for a job = postuler. To get a job = obtenir un emploi.",
+            "Career = carrière. Salary = salaire. Office = bureau."
+          ]
+        },
+        {
+          icon: '🔮', title: 'Future plans', color: '#c0a030',
+          content: "Parler de l'<strong>avenir</strong> : WILL + base, GOING TO + base, WHEN + present (pas de will !).",
+          examples: [
+            "In ten years, I will be a famous scientist.",
+            "I'm going to study medicine. (plan décidé)",
+            "When I grow up, I want to become a soldier. (PAS 'when I will')",
+            "After the Brevet, I will go to high school."
+          ]
+        }
+      ],
+      heroTip: "Erwin dit : \"Pattern Brevet : I want to be a + job (article obligatoire). When + present (pas WILL après WHEN). I'm going to = plan / I will = décision spontanée.\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 School & Jobs vocabulary',
+          cards: [
+            { front: 'subject', back: 'matière scolaire', example: 'My favourite subject is English.' },
+            { front: 'homework', back: 'devoirs (indénombrable !)', example: 'I do my homework.' },
+            { front: 'to pass / to fail', back: 'réussir / échouer un examen', example: 'I want to pass the Brevet.' },
+            { front: 'I want to be a +job', back: 'projet d\'avenir (article obligatoire)', example: 'I want to be a doctor.' },
+            { front: 'to apply for', back: 'postuler', example: 'I will apply for a job.' },
+            { front: 'When I grow up', back: 'quand je serai grand (+ present)', example: 'When I grow up, I want to...' },
+            { front: 'will + base', back: 'futur — décision spontanée', example: 'I will help you.' },
+            { front: 'going to + base', back: 'futur — plan / preuve', example: "I'm going to study." }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "Pattern : I want to ___ a doctor.", a: "be", o: ["be", "to be", "being", "been"] },
+        { q: "In ten years, I ___ a famous scientist.", a: "will be", o: ["will be", "am", "was", "have been"] }
+      ]
+    },
+
+    '5_7': {
+      heroName: 'Levi Ackerman',
+      heroQuote: "English-speaking world : UK, USA, Australia, Canada. Cultural facts — essential for the Brevet.",
+      rule: "Faits culturels du monde anglophone : capitales, langues, monnaies, fêtes, systèmes politiques. Brevet B1 : comprendre des documents authentiques sur le Royaume-Uni, les USA, le Canada, l'Australie.",
+      sections: [
+        {
+          icon: '🇬🇧', title: 'United Kingdom', color: '#4a5c3f',
+          content: "Le <strong>Royaume-Uni</strong> : Angleterre, Écosse, Pays de Galles, Irlande du Nord. Capitale : <strong>London</strong>. Monnaie : <strong>Pound (£)</strong>. Monarchie constitutionnelle.",
+          examples: [
+            "Capital : London (~9 millions habitants).",
+            "Currency : Pound Sterling (£) — jamais l'euro.",
+            "Monuments : Big Ben, Tower Bridge, Buckingham Palace.",
+            "Royal family : King Charles III (depuis 2022)."
+          ]
+        },
+        {
+          icon: '🇺🇸', title: 'United States of America', color: '#8b6914',
+          content: "Les <strong>USA</strong> : 50 états. Capitale : <strong>Washington D.C.</strong> (PAS New York !). Monnaie : <strong>Dollar ($)</strong>. Fêtes : Thanksgiving, 4th of July.",
+          examples: [
+            "Capital : Washington D.C. (PAS New York).",
+            "50 states (50 stars on the flag). Alaska + Hawaii since 1959.",
+            "Major cities : New York, Los Angeles, Chicago, Houston.",
+            "Holidays : Thanksgiving (4th Thursday Nov), 4th of July."
+          ]
+        },
+        {
+          icon: '🌍', title: 'Other English-speaking countries', color: '#c0a030',
+          content: "<strong>Australia</strong> : capital Canberra (PAS Sydney !). <strong>Canada</strong> : 2 langues officielles (English + French). <strong>New Zealand</strong>, <strong>Ireland</strong>, <strong>South Africa</strong>.",
+          examples: [
+            "Australia : capital Canberra (built in 1908).",
+            "Canada : bilingual country (English + French officially).",
+            "Halloween : Celtic origin, popular in USA then worldwide.",
+            "~1.5 billion English speakers worldwide."
+          ]
+        }
+      ],
+      heroTip: "Levi dit : \"Tch. Pièges Brevet : capitale USA = Washington D.C. (pas NY). Capitale Australie = Canberra (pas Sydney). Canada = bilingue. Apprends-les.\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 English-speaking world',
+          cards: [
+            { front: 'London', back: 'capital of the UK', example: 'Big Ben is in London.' },
+            { front: 'Washington D.C.', back: 'capital of the USA (pas NY !)', example: 'The White House is in Washington.' },
+            { front: 'Canberra', back: 'capital of Australia (pas Sydney !)', example: 'Canberra was built in 1908.' },
+            { front: 'Pound Sterling (£)', back: 'UK currency', example: 'UK uses the pound, not euro.' },
+            { front: '50 states', back: 'USA = 50 states (50 stars)', example: 'Alaska and Hawaii are the 2 newest.' },
+            { front: 'Thanksgiving', back: 'USA & Canada holiday', example: '4th Thursday of November (USA).' },
+            { front: 'Bilingual Canada', back: 'English + French officially', example: 'Quebec speaks French.' },
+            { front: 'Brexit (2020)', back: 'UK left European Union', example: 'UK is no longer in the EU.' }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "Capital of the USA :", a: "Washington D.C.", o: ["Washington D.C.", "New York", "Los Angeles", "Chicago"] },
+        { q: "Capital of Australia :", a: "Canberra", o: ["Canberra", "Sydney", "Melbourne", "Perth"] }
+      ]
+    },
+
+    '5_8': {
+      heroName: 'Reiner Braun',
+      heroQuote: "Final Brevet challenge : mixed grammar, third conditional, question tags. The ultimate test !",
+      rule: "Synthèse BREVET : comparatifs/superlatifs, pluriels irréguliers, third conditional, question tags, voix passive. Toutes les notions clés. Pattern ULTIMATE : If I had known + would have V3.",
+      sections: [
+        {
+          icon: '🏆', title: 'Comparatifs et superlatifs', color: '#4a5c3f',
+          content: "<strong>Comparatifs</strong> : adj court +ER + than / more + adj long + than. <strong>Superlatifs</strong> : THE + adj+EST / THE most + adj. Irrégulier : good→better→the best, bad→worse→the worst.",
+          examples: [
+            "Reiner is taller than Bertholdt. (court : +er)",
+            "This is more dangerous than that. (long : more)",
+            "He is the best soldier. (irrégulier : good→best)",
+            "She is the most intelligent. (long : the most)"
+          ]
+        },
+        {
+          icon: '🔑', title: 'Question tags & pluriels irréguliers', color: '#8b6914',
+          content: "<strong>Question tags</strong> : phrase affirmative → tag négatif (et inversement). <strong>Pluriels irréguliers</strong> : child→children, man→men, foot→feet, mouse→mice.",
+          examples: [
+            "You speak English, don't you?",
+            "She isn't tired, is she?",
+            "They have arrived, haven't they?",
+            "Pluriels : children, men, women, feet, teeth, mice."
+          ]
+        },
+        {
+          icon: '💡', title: 'Third conditional : ULTIMATE pattern', color: '#c0a030',
+          content: "<strong>Third conditional</strong> = regret passé. <strong>If + had + V3 (past perfect) → would have + V3</strong>. Pattern Brevet maximal.",
+          examples: [
+            "If I had known the truth, I would have helped Eren.",
+            "If we had run faster, we would have escaped.",
+            "If she had studied, she would have passed.",
+            "If they had listened, they would have survived."
+          ]
+        }
+      ],
+      heroTip: "Reiner dit : \"BREVET ULTIMATE : Third conditional = If + had + V3 → would have + V3. Pluriels irréguliers à mémoriser. Question tags = inversion. GOOD LUCK !\"",
+      minigames: [
+        {
+          type: 'flashcards',
+          title: '🃏 Brevet Final — ULTIMATE',
+          cards: [
+            { front: 'taller than', back: 'comparatif court (+er)', example: 'Reiner is taller than Bertholdt.' },
+            { front: 'more dangerous than', back: 'comparatif long (more)', example: 'Titans are more dangerous than humans.' },
+            { front: 'the best', back: 'superlatif irrégulier (good)', example: 'He is the best soldier.' },
+            { front: "don't you? / isn't it?", back: 'question tags — inversion', example: "You speak English, don't you?" },
+            { front: 'children / men / women', back: 'pluriels irréguliers', example: 'The children are safe.' },
+            { front: 'feet / teeth / mice', back: 'pluriels irréguliers (suite)', example: 'My feet hurt.' },
+            { front: 'If + had V3 → would have V3', back: 'THIRD CONDITIONAL — regret passé', example: 'If I had known, I would have helped.' },
+            { front: 'BE + V3 (passive)', back: 'voix passive (rappel)', example: 'The wall was destroyed.' }
+          ]
+        }
+      ],
+      warmup: [
+        { q: "Comparative : 'Reiner is ___ than Bertholdt.'", a: "taller", o: ["taller", "more tall", "more taller", "tallest"] },
+        { q: "Third conditional : 'If I ___ the truth, I would have helped.'", a: "had known", o: ["had known", "knew", "would know", "would have known"] }
+      ]
     }
 
   }
 };
 
-console.info('⚔️ lesson-data-english.js v1.2 chargé — 32 leçons · 21 personnages AOT · mapping sans répétitions');
+console.info('⚔️ lesson-data-english.js v1.3 chargé — 40 leçons · 5 niveaux (CM2-3ème) · 21 personnages AOT');

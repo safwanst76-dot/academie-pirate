@@ -555,8 +555,9 @@ function lesson_english(niveauCode, numeroIle, thenCallback) {
     '6eme': { 1:'armin.jpg', 2:'levi.jpg', 3:'historia.png', 4:'jean.jpg', 5:'hange.jpeg', 6:'erwin.jpg', 7:'connie.jpg', 8:'sasha.jpeg' },
     '5eme': { 1:'eren.jpeg', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'connie.jpg', 6:'sasha.jpeg', 7:'armin.jpg', 8:'historia.png' },
     '4eme': { 1:'historia.png', 2:'levi.jpg', 3:'hange.jpeg', 4:'erwin.jpg', 5:'eren.jpeg', 6:'historia.png', 7:'jean.jpg', 8:'connie.jpg' },
+    '3eme': { 1:'eren.jpeg', 2:'mikasa.gif', 3:'armin.jpg', 4:'hange.jpeg', 5:'annie.jpeg', 6:'erwin.jpg', 7:'levi.jpg', 8:'reiner.jpg' },
   };
-  var niveauIdx = { 'cm2': 1, '6eme': 2, '5eme': 3, '4eme': 4 };
+  var niveauIdx = { 'cm2': 1, '6eme': 2, '5eme': 3, '4eme': 4, '3eme': 5 };
   var n         = parseInt(niveauIdx[niveauCode] || 1);
   var lessonKey = n + '_' + numeroIle;  // ex: '1_1', '2_3'
   var avatarMap = AVATARS[niveauCode] || AVATARS['cm2'];

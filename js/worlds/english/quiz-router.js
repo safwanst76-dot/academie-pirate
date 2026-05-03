@@ -54,6 +54,15 @@
     '4eme_6': { bg:'#001020', lines:["QUESTION TAGS…","… LA CONFIRMATION !!","isn't she? don't you?"], kanji:'付加疑問 !!', kanjiColor:'#c0a030', bubble:"Les question tags, c'est chercher une confirmation — You understand me, don't you ?" },
     '4eme_7': { bg:'#200000', lines:["LA VOIX PASSIVE…","… LA TRANSFORMATION !!","Was destroyed !"], kanji:'受動態 !!', kanjiColor:'#8b6914', bubble:"La voix passive ! Le mur a été attaqué — on ne sait pas qui, mais le résultat est là !" },
     '4eme_8': { bg:'#002010', lines:["RÉVISIONS…","… 4ÈME !!","PP, will, going to, passif !"],       kanji:'総復習 !!', kanjiColor:'#4a5c3f', bubble:"Grande révision de 4ème ! Present Perfect, will, going to, superlatifs, passif — tout réuni !" },
+    // ── 3ème Brevet B1 ─────────────────────────────────────────────
+    '3eme_1': { bg:'#001530', lines:["PAST SIMPLE…","… PAST CONTINUOUS !!","While I was watching…"], kanji:'過去 !!', kanjiColor:'#3b82f6', bubble:"Past Simple raconte le passé terminé, Past Continuous décrit ce qui était en cours. Use both !" },
+    '3eme_2': { bg:'#003015', lines:["PRESENT PERFECT…","… SINCE & FOR !!","I have known since…"],   kanji:'現在完了 !!', kanjiColor:'#3b82f6', bubble:"Present Perfect relie le passé au présent. I have known Eren since we were children." },
+    '3eme_3': { bg:'#150030', lines:["CONDITIONALS…","… IF-CLAUSES !!","If I were… if I had…"],     kanji:'仮定 !!', kanjiColor:'#3b82f6', bubble:"If-clauses : zero (toujours vrai), first (probable), second (hypothèse), third (regret passé). Strategy !" },
+    '3eme_4': { bg:'#301500', lines:["MODAL VERBS…","… OBLIGATION & ADVICE !!","Must, should, might !"], kanji:'助動詞 !!', kanjiColor:'#3b82f6', bubble:"Modals: must (obligation!), should (advice), can (ability), might (maybe). Use them wisely !" },
+    '3eme_5': { bg:'#000530', lines:["REPORTED SPEECH…","… PASSIVE VOICE !!","She said… was killed by…"], kanji:'変換 !!', kanjiColor:'#3b82f6', bubble:"Reported speech and passive voice — transformations grammaticales. Stay focused !" },
+    '3eme_6': { bg:'#102505', lines:["SCHOOL & JOBS…","… FUTURE PLANS !!","I want to be a…"],          kanji:'未来 !!', kanjiColor:'#3b82f6', bubble:"School life, jobs, future plans. A commander must speak about goals and dreams !" },
+    '3eme_7': { bg:'#250010', lines:["ENGLISH WORLD…","… UK, USA, AUSTRALIA !!","Cultural facts !"],   kanji:'世界 !!', kanjiColor:'#3b82f6', bubble:"English-speaking world : UK, USA, Australia, Canada. Cultural facts — essential for the Brevet !" },
+    '3eme_8': { bg:'#0a0a3e', lines:["BREVET FINAL…","… ULTIMATE TEST !!","Third conditional !"],       kanji:'卒業試験 !!', kanjiColor:'#dc2626', bubble:"Final Brevet challenge : mixed grammar, third conditional, question tags. The ultimate test !" },
   };
 
   var NIVEAUX = [
@@ -61,6 +70,7 @@
     { code: '6eme', nom: '6ème', emoji: '⭐⭐',     color: '#4a5c3f', desc: 'Grammaire fondamentale' },
     { code: '5eme', nom: '5ème', emoji: '⭐⭐⭐',   color: '#c0a030', desc: 'Grammaire intermédiaire' },
     { code: '4eme', nom: '4ème', emoji: '⭐⭐⭐⭐', color: '#8b4513', desc: 'Grammaire avancée' },
+    { code: '3eme', nom: '3ème', emoji: '⭐⭐⭐⭐⭐', color: '#3b82f6', desc: 'Préparation Brevet B1' },
   ];
 
   // ══════════════════════════════════════════════════════════════

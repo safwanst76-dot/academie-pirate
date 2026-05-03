@@ -381,6 +381,7 @@ var SEO_ROUTES = {
   'english/6eme':{ title: 'Quiz Anglais 6ème — Grammaire A1+ · Académie Pirate',  desc: '8 îles anglais 6ème : Present Simple, BE/HAVE, articles, pluriels. Niveau A1+.' },
   'english/5eme':{ title: 'Quiz Anglais 5ème — Grammaire A2 · Académie Pirate',   desc: '8 îles anglais 5ème : Past Simple, modaux, comparatifs. Niveau A2.' },
   'english/4eme':{ title: 'Quiz Anglais 4ème — Grammaire B1 · Académie Pirate',   desc: '8 îles anglais 4ème : Present Perfect, futur, voix passive. Niveau B1.' },
+  'english/3eme':{ title: 'Quiz Anglais 3ème — Brevet B1 · Académie Pirate',     desc: '8 îles anglais 3ème : Past Simple/Continuous, Present Perfect, conditionals, modaux, reported/passive, vocab, cultural, mixed grammar Brevet.' },
   'namek':       { title: 'Académie Pirate — Namek (Géographie · Jujutsu Kaisen)', desc: '8 îles de géographie avec les sorciers de Jujutsu Kaisen. Habiter, se déplacer, communiquer.' },
   'namek/cm2':   { title: 'Quiz Géographie CM2 — Jujutsu Kaisen · Académie Pirate', desc: '8 îles Géographie CM2 : ville, campagne, littoral, montagne, transports, communication, écoquartier, métropoles.' },
   'namek/6eme':  { title: 'Quiz Géographie 6ème — Habiter le monde · Académie Pirate', desc: '8 îles 6ème : métropoles, contraintes, littoraux mondiaux, ruralité, faible densité, DD, continents, repères Terre.' },
@@ -501,7 +502,7 @@ function handleRoute() {
     }
     // Sous-routes English : #/english/cm2 → showEnglish puis showLevel(sub)
     if (route === 'english' && sub) {
-      var validLevels = ['cm2', '6eme', '5eme', '4eme'];
+      var validLevels = ['cm2', '6eme', '5eme', '4eme', '3eme'];
       if (validLevels.indexOf(sub) !== -1) {
         handler(true); // silent = ne re-push pas l'URL
         setTimeout(function() {
