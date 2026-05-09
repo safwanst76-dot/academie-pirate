@@ -11,7 +11,7 @@ window.AP_CONFIG = {
   APP_NAME:    'Académie Pirate',
   VERSION:     '2.0.0',
   ENV:         'production',   // 'dev' | 'staging' | 'production'
-  BASE_URL:    'https://safwanst76-dot.github.io/academie-pirate',
+  BASE_URL:    'https://aca-pirate.ch',
 
   // ── Supabase ─────────────────────────────────────────────────────
   // Clé ANON publique uniquement — jamais la service_role ici
@@ -150,10 +150,10 @@ window.AP_CONFIG = {
   // ── SEO ──────────────────────────────────────────────────────────
   SITE_NAME:    'Académie Pirate',
   SITE_DESC:    'Plateforme d\'apprentissage gamifiée manga pour enfants 8-13 ans. Français, Maths, Histoire, Sciences.',
-  OG_IMAGE:     'https://safwanst76-dot.github.io/academie-pirate/assets/images/ui/og-preview.png',
+  OG_IMAGE:     'https://aca-pirate.ch/assets/images/ui/og-preview.png',
 
   // ── Notifications email ───────────────────────────────────────────
-  EMAIL_FROM:         'noreply@academie-pirate.fr',
+  EMAIL_FROM:         'noreply@aca-pirate.ch',
   EMAIL_TEMPLATES: {
     WELCOME:          'welcome-parent',
     WEEKLY_PROGRESS:  'weekly-progress',
