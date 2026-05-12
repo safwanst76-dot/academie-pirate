@@ -150,7 +150,7 @@ window.AP_CONFIG = {
   // ── SEO ──────────────────────────────────────────────────────────
   SITE_NAME:    'Académie Pirate',
   SITE_DESC:    'Plateforme d\'apprentissage gamifiée manga pour enfants 8-13 ans. Français, Maths, Histoire, Sciences.',
-  OG_IMAGE:     'https://aca-pirate.ch/assets/images/ui/og-preview.png',
+  OG_IMAGE:     'https://aca-pirate.ch/assets/images/og-preview.png',
 
   // ── Notifications email ───────────────────────────────────────────
   EMAIL_FROM:         'noreply@aca-pirate.ch',
