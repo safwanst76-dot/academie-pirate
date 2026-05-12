@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════════════
 # ROBOTS.TXT — Académie Pirate
 # https://aca-pirate.ch/
-# Mise à jour : 14 Avril 2026
+# Mise à jour : 12 May 2026
 # ═══════════════════════════════════════════════════════
 
 # ── Moteurs de recherche principaux ──────────────────────
@@ -24,33 +24,57 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# ── IA & LLM crawlers — laisser indexer pour GEO ─────────
-# (Apparaître dans ChatGPT, Perplexity, Claude, Gemini)
+# ── IA & LLM crawlers — laisser indexer pour GEO/AEO ─────
+# Apparaître dans : ChatGPT, Perplexity, Claude, Gemini, Copilot
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: Claude-Web
 Allow: /
- 
+
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Gemini
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Gemini
 Allow: /
 
 User-agent: CCBot
 Allow: /
 
 User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
 Allow: /
 
 # ── Réseaux sociaux (partage og:image) ───────────────────
@@ -66,7 +90,13 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-# ── Interdire les scrapers malveillants ───────────────────
+User-agent: Discordbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# ── Interdire les scrapers SEO commerciaux ───────────────
 User-agent: AhrefsBot
 Disallow: /
 
@@ -79,11 +109,23 @@ Disallow: /
 User-agent: SemrushBot
 Disallow: /
 
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
 # ── Règle générale ────────────────────────────────────────
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /api/
+Disallow: /*.json$
 Crawl-delay: 3
 
-# ── Sitemap ───────────────────────────────────────────────
+# ── Sitemap & métadonnées IA ──────────────────────────────
 Sitemap: https://aca-pirate.ch/sitemap.xml
+
+# Métadonnées pour LLM (llms.txt standard)
+# https://llmstxt.org/
+# llms.txt: https://aca-pirate.ch/llms.txt

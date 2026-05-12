@@ -1,7 +1,7 @@
 {
-  "name": "Académie Pirate — Quiz manga pour enfants",
+  "name": "Académie Pirate — Quiz manga gratuit pour CM2 à 3ème",
   "short_name": "Académie Pirate",
-  "description": "Quiz éducatifs gratuits pour enfants CM2→4ème. Français, Maths, Anglais, Histoire avec One Piece, Naruto, Dragon Ball Z et Demon Slayer.",
+  "description": "Quiz éducatifs gratuits pour enfants 8-13 ans avec leurs personnages manga préférés : Naruto, Luffy, Goku. Français, maths, histoire, anglais.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -10,43 +10,76 @@
   "lang": "fr",
   "dir": "ltr",
   "orientation": "any",
-  "categories": ["education", "games", "kids"],
+  "categories": [
+    "education",
+    "games",
+    "kids"
+  ],
   "screenshots": [
     {
-      "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg",
-      "type": "image/jpeg",
-      "sizes": "630x1200",
-      "form_factor": "narrow"
+      "src": "/assets/images/og-preview.png",
+      "type": "image/png",
+      "sizes": "1200x630",
+      "form_factor": "wide",
+      "label": "Académie Pirate — accueil"
     }
   ],
   "icons": [
     {
-      "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg",
+      "src": "/assets/images/og-preview.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg",
+      "src": "/assets/images/og-preview.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/og-preview.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "shortcuts": [
     {
-      "name": "Quiz Anglais",
-      "short_name": "Anglais",
-      "description": "Quiz anglais CM2→4ème avec Attack on Titan",
-      "url": "/#/english",
-      "icons": [{ "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/characters/eren.jpeg", "sizes": "96x96" }]
+      "name": "Quiz Français — One Piece",
+      "short_name": "Français",
+      "description": "Quiz de français CM2 à 3ème avec l'univers One Piece",
+      "url": "/#/grand-bleu"
     },
     {
-      "name": "Quiz Français",
-      "short_name": "Français",
-      "description": "Quiz français CM2→4ème avec One Piece",
-      "url": "/#/grand-bleu",
-      "icons": [{ "src": "https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/luffy.jpg", "sizes": "96x96" }]
+      "name": "Quiz Maths — Naruto",
+      "short_name": "Maths",
+      "description": "Quiz de mathématiques CM2 à 3ème avec l'univers Naruto",
+      "url": "/#/pays-du-feu"
+    },
+    {
+      "name": "Quiz Histoire — Dragon Ball Z",
+      "short_name": "Histoire",
+      "description": "Quiz d'histoire CM2 à 3ème avec l'univers Dragon Ball Z",
+      "url": "/#/histoire"
+    },
+    {
+      "name": "Quiz Sciences — Demon Slayer",
+      "short_name": "Sciences",
+      "description": "Quiz de sciences physiques CM2 à 3ème avec Demon Slayer",
+      "url": "/#/kanto"
+    },
+    {
+      "name": "Quiz Anglais — Attack on Titan",
+      "short_name": "Anglais",
+      "description": "Quiz d'anglais CM2 à 3ème avec Attack on Titan",
+      "url": "/#/english"
+    },
+    {
+      "name": "Quiz Géographie — Namek",
+      "short_name": "Géo",
+      "description": "Quiz de géographie CM2 à 3ème avec Namek",
+      "url": "/#/namek"
     }
   ],
   "related_applications": [],

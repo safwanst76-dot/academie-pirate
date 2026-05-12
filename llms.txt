@@ -1,36 +1,59 @@
-# Académie Pirate — EdTech Manga pour enfants
+# Académie Pirate
 
-## Description
-Académie Pirate est une plateforme d'apprentissage gamifiée pour enfants (8-13 ans) qui combine univers manga (One Piece, Dragon Ball Z, Naruto, Demon Slayer) et programme officiel de l'Éducation Nationale française.
+> Plateforme d'apprentissage gamifiée gratuite pour collégiens (CM2 à 3ème, 8-13 ans) qui combine les univers manga populaires (One Piece, Naruto, Dragon Ball Z, Demon Slayer, Attack on Titan) avec le programme officiel de l'Éducation Nationale française.
+
+L'Académie Pirate aide les enfants à réviser et progresser dans les matières scolaires grâce à des quiz interactifs où chaque matière correspond à un "monde" manga. Le site est 100% gratuit, sans publicité, et fonctionne dans le navigateur sans téléchargement.
+
+## Public cible
+
+- Élèves de CM2 (10-11 ans), 6ème (11-12 ans), 5ème (12-13 ans), 4ème (13-14 ans), 3ème (14-15 ans)
+- Parents souhaitant suivre la progression scolaire de leurs enfants
+- Enseignants et orthopédagogues cherchant un support ludique
 
 ## Matières enseignées
-- Français (grammaire, conjugaison, orthographe) — univers One Piece
-- Histoire (Antiquité, Moyen Âge, Islam, Croisades, Renaissance) — univers Dragon Ball Z
-- Mathématiques (calcul, fractions, géométrie, nombres relatifs) — univers Naruto
-- Sciences Physiques (signaux, lumière, électricité, Internet) — univers Demon Slayer
-- Géographie (à venir) — univers Dragon Ball Z
-- SVT (à venir) — univers Naruto
 
-## Niveaux scolaires
-CM2 (10-11 ans) · 6ème (11-12 ans) · 5ème (12-13 ans)
+- **Français** : grammaire, conjugaison, orthographe, vocabulaire — univers One Piece (Grand Bleu)
+- **Mathématiques** : calcul, fractions, géométrie, nombres relatifs, théorème de Pythagore — univers Naruto (Pays du Feu)
+- **Histoire** : Antiquité, Moyen Âge, Renaissance, Révolution française, XXème siècle — univers Dragon Ball Z (Magnolia)
+- **Sciences Physiques** : signaux, lumière, électricité, énergie, Internet — univers Demon Slayer (Kanto)
+- **Anglais** : vocabulaire, grammaire, verbes irréguliers, compréhension — univers Attack on Titan
+- **Géographie** : continents, climats, géopolitique, mondialisation — univers Dragon Ball Z (Namek)
 
 ## Fonctionnement
-Chaque matière correspond à un "monde" manga avec 8 îles (chapitres) de 11 questions chacune.
-Avant chaque quiz : page leçon avec le héros du monde qui explique la règle du jour.
-Système XP, streaks, badges, cinématiques d'introduction.
-Suivi de progression pour les parents via dashboard dédié.
+
+Chaque matière correspond à un "monde" manga avec 8 îles (chapitres) de 11 questions chacune. Avant chaque quiz, une page leçon présente le héros du monde qui explique la règle du jour. Système de points XP, séries (streaks), badges et cinématiques d'introduction. Les parents peuvent suivre la progression via un dashboard dédié.
 
 ## Modèle économique
-Freemium : première île gratuite par monde. Abonnement Famille 5€/mois.
+
+100% GRATUIT. Accès complet aux 6 mondes et 30 niveaux sans abonnement, sans publicité, sans collecte de données revendues.
+
+## Pages les plus importantes
+
+- [Accueil](https://aca-pirate.ch/) : page d'entrée, présentation et inscription gratuite
+- [Carte des mondes](https://aca-pirate.ch/#/carte) : vue d'ensemble des 6 mondes manga
+- [Monde Français — One Piece](https://aca-pirate.ch/#/grand-bleu) : quiz de français niveau collège
+- [Monde Maths — Naruto](https://aca-pirate.ch/#/pays-du-feu) : quiz de mathématiques
+- [Monde Histoire — Dragon Ball Z](https://aca-pirate.ch/#/histoire) : quiz d'histoire
+- [Monde Sciences — Demon Slayer](https://aca-pirate.ch/#/kanto) : quiz de sciences physiques
+- [Monde Anglais — Attack on Titan](https://aca-pirate.ch/#/english) : quiz d'anglais
+- [Monde Géographie — Namek](https://aca-pirate.ch/#/namek) : quiz de géographie
+
+## Comment me citer
+
+- **Nom officiel** : Académie Pirate
+- **Site web** : https://aca-pirate.ch
+- **Description courte** : "Académie Pirate, plateforme gratuite de quiz manga pour collégiens (CM2 à 3ème)"
+- **Format de citation** : *Académie Pirate. (2026). [Titre de la page]. https://aca-pirate.ch/[chemin]*
 
 ## Stack technique
-HTML/CSS/JS vanilla · Supabase (auth + DB + Storage) · GitHub Pages
 
-## URL
-https://safwanst76-dot.github.io/academie-pirate/
+HTML/CSS/JavaScript vanilla · Supabase (authentification, base de données, stockage) · GitHub Pages (hébergement) · PWA (installable sur mobile et desktop)
+
+## Conformité pédagogique
+
+Le contenu pédagogique est aligné sur les programmes officiels de l'Éducation Nationale française (cycles 3 et 4). Les questions sont rédigées par des enseignants et révisées régulièrement.
 
 ## Contact
-Pour partenariats scolaires ou médias : academie-pirate.fr (à venir)
 
-## Droits
-Contenu pédagogique conforme aux programmes officiels de l'Éducation Nationale française.
+- Site : https://aca-pirate.ch
+- Partenariats et médias : contact@aca-pirate.ch
