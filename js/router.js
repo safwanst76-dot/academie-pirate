@@ -402,7 +402,7 @@ function _updateSEO(route) {
   // OG tags
   _setMeta('og:title',       seo.title);
   _setMeta('og:description', seo.desc);
-  _setMeta('og:url',         window.location.href);
+  _setMeta('og:url',         ((window.AP_CONFIG && window.AP_CONFIG.BASE_URL) || 'https://aca-pirate.ch') + '/' + (window.location.hash || ''));
   _setMeta('og:type',        'website');
   _setMeta('og:image',       'https://aca-pirate.ch/assets/images/og-preview.png');
   // Twitter Card
@@ -412,7 +412,7 @@ function _updateSEO(route) {
   // Canonical
   var canonical = document.querySelector('link[rel="canonical"]');
   if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-  canonical.href = window.location.origin + window.location.pathname;
+  canonical.href = ((window.AP_CONFIG && window.AP_CONFIG.BASE_URL) || 'https://aca-pirate.ch') + '/' + (window.location.hash || '');
 }
 
 function _setMeta(property, content) {
@@ -438,25 +438,25 @@ function _injectJSONLD(route, opts) {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       'name': 'Académie Pirate',
-      'url': 'https://safwanst76-dot.github.io/academie-pirate/',
+      'url': (window.AP_CONFIG && window.AP_CONFIG.BASE_URL) || 'https://aca-pirate.ch',
       'applicationCategory': 'EducationalApplication',
       'operatingSystem': 'Web',
       'description': 'Plateforme d\'apprentissage gamifiée manga pour enfants 8-13 ans.',
-      'educationalLevel': 'CM2, 6ème, 5ème',
-      'teaches': ['Français', 'Mathématiques', 'Histoire', 'Sciences Physiques'],
+      'educationalLevel': 'CM2, 6ème, 5ème, 4ème, 3ème',
+      'teaches': ['Français', 'Mathématiques', 'Histoire', 'Sciences Physiques', 'Anglais', 'Géographie'],
       'inLanguage': 'fr',
       'audience': { '@type': 'EducationalAudience', 'educationalRole': 'student', 'audienceType': 'children 8-13' },
-      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR', 'description': 'Freemium — 1 île gratuite par monde' }
+      'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR', 'description': '100% gratuit — accès complet aux 6 mondes et 30 niveaux' }
     };
-  } else if (route === 'iles' || route === 'histoire' || route === 'kanto' || route === 'pays-du-feu') {
-    var worldNames = { 'iles': 'Grand Bleu — Français', 'histoire': 'Magnolia — Histoire', 'kanto': 'Kanto — Sciences Physiques', 'pays-du-feu': 'Pays du Feu — Mathématiques' };
+  } else if (route === 'iles' || route === 'grand-bleu' || route === 'histoire' || route === 'kanto' || route === 'pays-du-feu' || route === 'english' || route === 'namek') {
+    var worldNames = { 'iles': 'Grand Bleu — Français', 'grand-bleu': 'Grand Bleu — Français', 'histoire': 'Magnolia — Histoire', 'kanto': 'Kanto — Sciences Physiques', 'pays-du-feu': 'Pays du Feu — Mathématiques', 'english': 'Anglais — Attack on Titan', 'namek': 'Namek — Géographie' };
     ld = {
       '@context': 'https://schema.org',
       '@type': 'Course',
       'name': 'Académie Pirate · ' + (worldNames[route] || route),
       'description': SEO_ROUTES[route] ? SEO_ROUTES[route].desc : '',
       'provider': { '@type': 'Organization', 'name': 'Académie Pirate' },
-      'educationalLevel': 'CM2-5ème',
+      'educationalLevel': 'CM2-3ème',
       'inLanguage': 'fr',
       'isAccessibleForFree': true,
       'courseMode': 'online'
@@ -478,7 +478,7 @@ function handleRoute() {
   var handler = ROUTES[route];
 
   // SEO dynamique — sous-route incluse si présente
-  var seoKey = (sub && route === 'english') ? route + '/' + sub : route;
+  var seoKey = sub ? route + '/' + sub : route;
   _updateSEO(seoKey);
   _injectJSONLD(route);
 
