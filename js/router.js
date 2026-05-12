@@ -404,7 +404,7 @@ function _updateSEO(route) {
   _setMeta('og:description', seo.desc);
   _setMeta('og:url',         ((window.AP_CONFIG && window.AP_CONFIG.BASE_URL) || 'https://aca-pirate.ch') + '/' + (window.location.hash || ''));
   _setMeta('og:type',        'website');
-  _setMeta('og:image',       'https://aca-pirate.ch/assets/images/og-preview.png');
+  _setMeta('og:image',       'https://aca-pirate.ch/assets/images/academie-pirate-apprendre-manga.png');
   // Twitter Card
   _setMeta('twitter:card',        'summary_large_image');
   _setMeta('twitter:title',       seo.title);
