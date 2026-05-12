@@ -1778,3 +1778,111 @@ node --check config.js
 *Ce document doit être consulté EN PREMIER avant tout dev qui touche du HTML/contenu/route.*
 *Règle PR-00 SEO/GEO/AEO : tout livrable est validé selon Phase 7 avant commit.*
 *Pattern v1.0 — Académie Pirate — 8 mai 2026 — Basé sur audit code source réel*
+---
+
+## RÈGLE AEO-04 — TOUTE NOUVELLE PAGE DOIT ÊTRE SEO/GEO/AEO-COMPLIANT
+
+### Principe absolu
+
+Chaque nouvelle page créée dans le projet (route SPA, page statique, sous-route niveau,
+nouveau monde, page institutionnelle) **DOIT respecter intégralement** les standards
+SEO, GEO et AEO définis dans ce document, sans exception et sans dérogation.
+
+Aucune page ne peut être déployée en production sans avoir validé l'intégralité du
+checklist ci-dessous. Cette règle s'applique à toute évolution future du projet.
+
+### Checklist obligatoire — 13 critères
+
+| # | Critère | Cible | Contrôle |
+|---|---|---|---|
+| 1 | `<title>` unique par page | 40-60 chars | Doit contenir : matière + niveau + keyword secondaire |
+| 2 | `<meta name="description">` unique | 130-155 chars | Doit contenir au moins 1 entité nommée (personnage manga ou matière) |
+| 3 | Un seul `<h1>` par page | présent | Différent du `<title>` mais sémantiquement lié |
+| 4 | `<h2>` / `<h3>` structurés | hiérarchie respectée | Pas de saut de niveau (H1 → H3 sans H2 interdit) |
+| 5 | `<link rel="canonical">` | présent | URL absolue avec domaine `aca-pirate.ch` |
+| 6 | `og:title`, `og:description`, `og:image`, `og:url`, `og:type` | tous présents | `og:image` = 1200×630 PNG |
+| 7 | `twitter:card`, `twitter:title`, `twitter:description` | présents | `summary_large_image` |
+| 8 | JSON-LD `Course` ou `LearningResource` | présent | `provider`, `educationalLevel`, `inLanguage: 'fr'`, `isAccessibleForFree: true` |
+| 9 | JSON-LD `BreadcrumbList` | présent si profondeur ≥ 2 | Reflète la hiérarchie URL |
+| 10 | hreflang `fr` + `x-default` | présents | Pointent vers la même URL |
+| 11 | Contenu textuel SEO-friendly | ≥ 300 mots | Description de la leçon, programme officiel, exemples |
+| 12 | Entités nommées dans le contenu | ≥ 3 occurrences | Naruto, Luffy, Goku, etc. — pour AEO LLM citations |
+| 13 | Lien interne et lien sortant pédagogique | ≥ 1 chacun | Vers une autre page Académie Pirate + vers ressource officielle |
+
+### Template obligatoire pour description de leçon (pages statiques)
+
+Chaque page statique (`/francais/cm2/`, `/maths/6eme/`, etc.) doit inclure une section
+"Description de la leçon" suivant ce template :
+
+```markdown
+## Programme officiel — [Matière] [Niveau]
+
+L'Éducation Nationale française fixe pour la [niveau] les objectifs suivants en
+[matière] : [liste des 4-6 notions clés du programme officiel].
+
+### Les 8 îles du monde [Nom du monde manga]
+
+À l'Académie Pirate, ces notions sont réparties en 8 îles thématiques :
+
+1. **[Nom île 1]** — [Notion + héros associé + description 1 phrase]
+2. **[Nom île 2]** — ...
+...
+
+### Pourquoi apprendre avec [Manga associé] ?
+
+[100-150 mots expliquant le lien pédagogique entre l'univers manga et la matière.
+Doit citer 3 personnages clés et au moins 2 concepts pédagogiques.]
+
+### Exemples de questions
+
+> **Question 1** — [Énoncé représentatif de l'île 1]
+>
+> ✅ Réponse : ...
+
+[2 autres exemples du même format.]
+```
+
+### Validation automatique avant déploiement
+
+Avant tout `git push` créant une nouvelle page, exécuter le script de validation :
+
+```bash
+python3 scripts/validate-seo-page.py path/to/new-page.html
+```
+
+Ce script (à créer dans le Lot E) vérifie automatiquement les 13 critères ci-dessus
+et refuse le déploiement si l'un d'eux échoue.
+
+### Évolutions futures
+
+Toute nouvelle matière, nouveau niveau, nouveau monde manga, ou nouvelle page
+institutionnelle (À propos, FAQ, Contact, Méthode) doit suivre cette règle.
+Aucune exception n'est tolérée, y compris pour les pages "techniques" ou
+"administratives" (à l'exception des pages volontairement noindex comme `/admin`).
+
+### Cas particuliers
+
+- **Pages SPA (hash routes)** : critères 1-10 obligatoires via `_updateSEO()` et `_injectJSONLD()` dans `router.js`. Critères 11-13 obligatoires dans le HTML pré-rendu correspondant (cf. Lot E).
+- **Pages 404 / erreur** : `noindex, follow` autorisé. Critères 1-3, 5, 10 seulement.
+- **Pages dashboard parent** : `noindex, nofollow` car contenu privé. Pas de critère SEO/GEO/AEO requis.
+
+---
+
+## RÈGLE AEO-05 — COHÉRENCE INTER-FICHIERS
+
+Toute modification d'un élément SEO/GEO/AEO doit être propagée à tous les fichiers
+concernés simultanément. Aucune incohérence n'est tolérée entre :
+
+- `index.html` (statique) ↔ `js/router.js` `SEO_ROUTES` (dynamique)
+- `config.js` `OG_IMAGE` ↔ `index.html` `og:image` ↔ `router.js` `og:image`
+- `llms.txt` ↔ `manifest.json` `description` ↔ `<meta name="description">`
+- `sitemap.xml` ↔ liste des routes effectivement déployées
+- Nom du fichier image OG ↔ référence dans tous les fichiers ci-dessus
+
+**Avant tout commit**, vérifier la cohérence avec :
+
+```bash
+python3 scripts/check-seo-coherence.py
+```
+
+(Script à créer dans le Lot F.)
