@@ -87,6 +87,25 @@ function _hashPin(pin) {
 // ══════════════════════════════════════════
 
 async function afInit() {
+  // ── Capture du paramètre ?next= (provenance SEO landing pages) ──
+  // Persiste l'intent de navigation à travers le magic link (qui réinitialise l'URL)
+  try {
+    var _params = new URLSearchParams(window.location.search);
+    var _next   = _params.get('next');   // ex: 'grand-bleu/cm2'
+    var _world  = _params.get('world');  // ex: 'grand-bleu'
+    var _level  = _params.get('level');  // ex: 'cm2'
+    if (_next || _world) {
+      localStorage.setItem('ap_seo_intent', JSON.stringify({
+        next:  _next  || null,
+        world: _world || null,
+        level: _level || null,
+        from:  document.referrer || 'direct',
+        ts:    Date.now()
+      }));
+      console.info('[auth] SEO intent capturé :', _next || _world);
+    }
+  } catch (_) {}
+
   // Récupérer la session active en premier (cas magic link)
   var sessionRes = await sb.auth.getSession();
   var session    = sessionRes.data && sessionRes.data.session;
@@ -1065,9 +1084,25 @@ async function afLaunchChild(child) {
     try { await loadProgress(); } catch (_) {}
   }
 
-  // Naviguer vers la carte du monde
-  if (typeof navigateTo === 'function') navigateTo('carte');
-  else {
+  // ── Consommer l'intent SEO si présent (parcours SEO landing → app) ──
+  var _seoIntent = null;
+  try {
+    var _raw = localStorage.getItem('ap_seo_intent');
+    if (_raw) {
+      _seoIntent = JSON.parse(_raw);
+      // Expiration : 24h max (au-delà, on ignore)
+      if (Date.now() - (_seoIntent.ts || 0) > 86400000) _seoIntent = null;
+      localStorage.removeItem('ap_seo_intent');  // consommer une seule fois
+    }
+  } catch (_) {}
+
+  // Naviguer : SEO intent prioritaire, sinon carte par défaut
+  if (_seoIntent && _seoIntent.next) {
+    console.info('[auth] Navigation SEO intent :', _seoIntent.next);
+    window.location.hash = '#/' + _seoIntent.next;
+  } else if (typeof navigateTo === 'function') {
+    navigateTo('carte');
+  } else {
     var globeSec = document.getElementById('globe-sec');
     if (globeSec) globeSec.style.display = 'flex';
   }
@@ -1226,7 +1261,18 @@ window.afCheckPin            = afCheckPin;
 window.afHidePinEntry        = afHidePinEntry;
 window.afSignOut             = afSignOut;
 
-console.info('🏴‍☠️ auth-flow.js v2 chargé — Parent onboarding + PIN enfant');
+// Helper exposé pour les templates UI (login, banner d'accueil)
+window.afGetSeoIntent = function() {
+  try {
+    var raw = localStorage.getItem('ap_seo_intent');
+    if (!raw) return null;
+    var intent = JSON.parse(raw);
+    if (Date.now() - (intent.ts || 0) > 86400000) return null;  // expiré 24h
+    return intent;
+  } catch (_) { return null; }
+};
+
+console.info('🏴‍☠️ auth-flow.js v2 chargé — Parent onboarding + PIN enfant + SEO intent');
 
 // ══════════════════════════════════════════
 // LOGIN ENFANT PAR PIN — onglet "Enfant" de la page login
