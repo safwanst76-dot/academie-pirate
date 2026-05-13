@@ -1274,6 +1274,13 @@ window.afGetSeoIntent = function() {
 
 console.info('🏴‍☠️ auth-flow.js v2 chargé — Parent onboarding + PIN enfant + SEO intent');
 
+// ── Lancer le guide d'onboarding pour nouveaux utilisateurs ──
+setTimeout(function() {
+  if (window.AP_Onboarding && typeof window.AP_Onboarding.init === 'function') {
+    window.AP_Onboarding.init();
+  }
+}, 800);
+
 // ══════════════════════════════════════════
 // LOGIN ENFANT PAR PIN — onglet "Enfant" de la page login
 // ══════════════════════════════════════════

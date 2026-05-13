@@ -73,7 +73,7 @@
       var result = await sb.auth.signInWithOtp({
         email: email,
         options: {
-          emailRedirectTo: 'https://safwanst76-dot.github.io/academie-pirate',
+          emailRedirectTo: (window.AP_CONFIG && window.AP_CONFIG.BASE_URL) || 'https://aca-pirate.ch',
           shouldCreateUser: true
         }
       });
