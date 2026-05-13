@@ -1886,3 +1886,99 @@ python3 scripts/check-seo-coherence.py
 ```
 
 (Script à créer dans le Lot F.)
+---
+
+## RÈGLE AEO-06 — SYNCHRONISATION AUTOMATIQUE LEÇONS ↔ SEO
+
+### Principe absolu
+
+Toute leçon créée, modifiée ou supprimée dans `js/worlds/{monde}/lesson-data.js`
+**DOIT déclencher automatiquement** la régénération de la page SEO correspondante.
+Aucune leçon en production sans sa page SEO associée. Aucune exception.
+
+### Le pipeline obligatoire
+Création/modif d'une leçon dans lesson-data.js
+Exécution AUTOMATIQUE de scripts/build-seo-pages.js
+Mise à jour AUTOMATIQUE du sitemap.xml
+Validation AEO-04 sur la nouvelle page
+Commit unique combiné (leçon + page SEO + sitemap)
+### Implémentation
+
+#### A. Git pre-commit hook obligatoire
+
+Le repo contient `.githooks/pre-commit` qui vérifie qu'aucun commit ne touche
+`lesson-data.js` sans toucher aussi `francais/cm2/...` (etc.) correspondant.
+
+#### B. Script de build idempotent
+
+`scripts/build-seo-pages.js` :
+- Lit `js/worlds/*/lesson-data.js`
+- Génère/régénère `{matiere}/{niveau}/{hero}-{slug}/index.html`
+- Met à jour `sitemap.xml` avec les 270+ URLs
+- Idempotent : safe à relancer N fois
+- Diff-friendly : ne touche que les pages dont la leçon a changé
+
+#### C. Commande standard à exécuter avant chaque commit
+
+```bash
+node scripts/build-seo-pages.js && \
+node scripts/generate-sitemap.js && \
+python3 scripts/validate-seo-pages.py
+```
+
+### URL Schema (référence canonique)
+
+| Type | URL | Compteur cible |
+|------|-----|----------------|
+| Home | `/` | 1 |
+| Matière | `/francais/`, `/maths/`, `/histoire/`, `/sciences/`, `/anglais/`, `/geographie/` | 6 |
+| Matière/Niveau | `/francais/cm2/`, `/francais/6eme/`, ... | 30 (6×5) |
+| Île | `/francais/cm2/luffy-accords-du-verbe/`, ... | 240 (6×5×8) |
+| **Total** | | **277 pages indexables** |
+
+### Mapping permanent monde ↔ matière
+
+| Monde (technique) | Matière (URL) | Manga | Bucket Supabase |
+|---|---|---|---|
+| `grand-bleu` | `/francais/` | One Piece | `grand-bleu` |
+| `pays-du-feu` | `/maths/` | Naruto | `island-pays-du-feu` |
+| `magnolia` | `/histoire/` | Dragon Ball Z | `island-magnolia` |
+| `kanto` | `/sciences/` | Demon Slayer | `island-demon-slayer` |
+| `english` | `/anglais/` | Attack on Titan | `island-aot` |
+| `namek` | `/geographie/` | Jujutsu Kaisen | `island-jjk` |
+
+### Génération du slug d'île
+
+Format : `{hero-en-minuscules}-{notion-en-slug}`
+
+Exemples :
+- "Luffy" + "Accord du verbe" → `luffy-accords-du-verbe`
+- "Tanjiro" + "Lumière et signaux" → `tanjiro-lumiere-et-signaux`
+- "Goku" + "Seconde Guerre mondiale" → `goku-seconde-guerre-mondiale`
+
+Règles slug :
+- Tout en minuscules
+- Accents supprimés (è → e, ç → c, etc.)
+- Espaces → tirets
+- Caractères spéciaux supprimés (apostrophes, parenthèses, virgules)
+- Max 80 caractères
+- Unicité GARANTIE par le couple (hero, ile_numero)
+
+### Cross-linking obligatoire (par page)
+
+Chaque page île doit contenir :
+- 1 lien parent (vers matière/niveau)
+- 7 liens horizontaux (vers les 7 autres îles du même niveau)
+- 1 lien transverse (même île dans niveau supérieur)
+- 1 lien officiel sortant (eduscol.education.fr)
+
+Total : ~3500 liens internes générés pour les 270 pages.
+
+### Validation AEO-04 obligatoire
+
+Avant tout commit, exécuter :
+```bash
+python3 scripts/validate-seo-pages.py
+```
+
+Le script refuse le commit si une seule page ne respecte pas les 13 critères AEO-04.

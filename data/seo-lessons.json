@@ -1,0 +1,260 @@
+{
+  "grand-bleu": {
+    "meta": {
+      "matiere": "Français",
+      "matiere_url": "francais",
+      "manga": "One Piece",
+      "bucket": "grand-bleu"
+    },
+    "lessons": {
+      "cm2": [
+        {
+          "ile": 1,
+          "hero": "Nami",
+          "rule": "L\\",
+          "slug": "nami-lecon"
+        },
+        {
+          "ile": 2,
+          "hero": "Luffy",
+          "rule": "Le verbe s\\",
+          "slug": "luffy-verbe"
+        },
+        {
+          "ile": 3,
+          "hero": "Robin",
+          "rule": "Les homophones se prononcent pareil mais s\\",
+          "slug": "robin-homophones-prononcent-pareil"
+        },
+        {
+          "ile": 4,
+          "hero": "Zoro",
+          "rule": "Les verbes se classent en 3 groupes selon leur infinitif. Chaque groupe a ses propres terminaisons",
+          "slug": "zoro-verbes-classent-groupes-selon"
+        },
+        {
+          "ile": 5,
+          "hero": "Nami",
+          "rule": "Le COD répond à ",
+          "slug": "nami-cod-repond"
+        },
+        {
+          "ile": 6,
+          "hero": "Luffy",
+          "rule": "Le temps du verbe indique QUAND se passe l\\",
+          "slug": "luffy-temps-verbe-indique-quand"
+        },
+        {
+          "ile": 7,
+          "hero": "Robin",
+          "rule": "La nature d\\",
+          "slug": "robin-nature"
+        },
+        {
+          "ile": 8,
+          "hero": "Zoro",
+          "rule": "Accord du participe passé : avec ÊTRE → accord avec le sujet · avec AVOIR → accord avec le COD si placé AVANT",
+          "slug": "zoro-accord-participe-passe-etre"
+        }
+      ]
+    }
+  },
+  "pays-du-feu": {
+    "meta": {
+      "matiere": "Mathématiques",
+      "matiere_url": "maths",
+      "manga": "Naruto",
+      "bucket": "island-pays-du-feu"
+    },
+    "lessons": {}
+  },
+  "magnolia": {
+    "meta": {
+      "matiere": "Histoire",
+      "matiere_url": "histoire",
+      "manga": "Dragon Ball Z",
+      "bucket": "island-magnolia"
+    },
+    "lessons": {
+      "cm2": [
+        {
+          "ile": 1,
+          "hero": "Goku",
+          "rule": "La Préhistoire va de l\\",
+          "slug": "goku-prehistoire"
+        },
+        {
+          "ile": 2,
+          "hero": "Bulma",
+          "rule": "Les Sumériens inventent l\\",
+          "slug": "bulma-sumeriens-inventent"
+        },
+        {
+          "ile": 3,
+          "hero": "Krilin",
+          "rule": "L\\",
+          "slug": "krilin-lecon"
+        },
+        {
+          "ile": 4,
+          "hero": "Gohan",
+          "rule": "La démocratie athénienne naît au Vème siècle av. J.-C. Démocratie = demos (peuple) + kratos (pouvoir). Seuls les citoyens hommes libres votent.",
+          "slug": "gohan-democratie-athenienne-nait-veme"
+        },
+        {
+          "ile": 5,
+          "hero": "Piccolo",
+          "rule": "Rome est fondée en 753 av. J.-C. La République romaine (509 av. J.-C.) : deux consuls élus + le Sénat. SPQR = Senatus PopulusQue Romanus.",
+          "slug": "piccolo-rome-fondee-753-republique"
+        },
+        {
+          "ile": 6,
+          "hero": "Trunks",
+          "rule": "Auguste fonde l\\",
+          "slug": "trunks-auguste-fonde"
+        },
+        {
+          "ile": 7,
+          "hero": "Android 18",
+          "rule": "Jésus naît vers -4 en Palestine. Ses apôtres diffusent son message. En 313, l\\",
+          "slug": "android-18-jesus-nait-vers-palestine"
+        },
+        {
+          "ile": 8,
+          "hero": "Vegeta",
+          "rule": "Les invasions germaniques (Wisigoths, Vandales, Huns) affaiblissent Rome. En 476, Odoacre renverse le dernier Empereur. Le Moyen Âge commence.",
+          "slug": "vegeta-invasions-germaniques-wisigoths-vandales"
+        }
+      ]
+    }
+  },
+  "kanto": {
+    "meta": {
+      "matiere": "Sciences Physiques",
+      "matiere_url": "sciences",
+      "manga": "Demon Slayer",
+      "bucket": "island-demon-slayer"
+    },
+    "lessons": {
+      "cm2": [
+        {
+          "ile": 1,
+          "hero": "Tanjiro",
+          "rule": "La matière existe sous trois états : solide (forme fixe), liquide (épouse le récipient), gaz (occupe tout l\\",
+          "slug": "tanjiro-matiere-existe-sous-trois"
+        },
+        {
+          "ile": 2,
+          "hero": "Nezuko",
+          "rule": "L\\",
+          "slug": "nezuko-lecon"
+        },
+        {
+          "ile": 3,
+          "hero": "Zenitsu",
+          "rule": "Un circuit électrique simple a 3 éléments : un générateur (pile), un récepteur (ampoule), des fils. Le circuit doit être fermé pour que le courant circule.",
+          "slug": "zenitsu-circuit-electrique-simple-elements"
+        },
+        {
+          "ile": 4,
+          "hero": "Inosuke",
+          "rule": "Les êtres vivants sont classés selon les caractères qu\\",
+          "slug": "inosuke-etres-vivants-classes-selon"
+        },
+        {
+          "ile": 5,
+          "hero": "Giyu",
+          "rule": "L\\",
+          "slug": "giyu-lecon"
+        },
+        {
+          "ile": 6,
+          "hero": "Shinobu",
+          "rule": "Tous les êtres vivants se reproduisent et grandissent. Reproduction sexuée = fusion de cellules de 2 parents. Croissance = augmentation de taille au cours du temps.",
+          "slug": "shinobu-tous-etres-vivants-reproduisent"
+        },
+        {
+          "ile": 7,
+          "hero": "Kanao",
+          "rule": "La Terre est la 3ème planète du système solaire. Elle tourne sur elle-même en 24h (jour/nuit) et autour du Soleil en 365 jours (année). L\\",
+          "slug": "kanao-terre-3eme-planete-systeme"
+        },
+        {
+          "ile": 8,
+          "hero": "Rengoku",
+          "rule": "La Terre est dynamique : volcans et séismes viennent de son activité interne (chaleur + plaques tectoniques). Tempêtes et inondations viennent de l\\",
+          "slug": "rengoku-terre-dynamique-volcans-seismes"
+        }
+      ]
+    }
+  },
+  "english": {
+    "meta": {
+      "matiere": "Anglais",
+      "matiere_url": "anglais",
+      "manga": "Attack on Titan",
+      "bucket": "island-aot"
+    },
+    "lessons": {}
+  },
+  "namek": {
+    "meta": {
+      "matiere": "Géographie",
+      "matiere_url": "geographie",
+      "manga": "Jujutsu Kaisen",
+      "bucket": "island-jjk"
+    },
+    "lessons": {
+      "cm2": [
+        {
+          "ile": 1,
+          "hero": "Yuji",
+          "rule": "Une ville est un espace très peuplé concentrant beaucoup de constructions, de services et de transports. On y trouve des quartiers, des banlieues, des transports en commun (métro, bus, tram).",
+          "slug": "yuji-ville-espace-tres-peuple"
+        },
+        {
+          "ile": 2,
+          "hero": "Megumi",
+          "rule": "La campagne (espace rural) a une faible densité de population, des paysages agricoles (champs, prés, forêts), et l\\",
+          "slug": "megumi-campagne-espace-rural-faible"
+        },
+        {
+          "ile": 3,
+          "hero": "Nobara",
+          "rule": "Le littoral est la zone où la mer rencontre la terre. Il a 3 fonctions principales : la pêche, le tourisme balnéaire, et le commerce maritime via les ports. C\\",
+          "slug": "nobara-littoral-zone-mer-rencontre"
+        },
+        {
+          "ile": 4,
+          "hero": "Gojo",
+          "rule": "La montagne est un relief élevé (>600m) avec des contraintes : froid, pente, isolement, neige. Les principales chaînes françaises sont les Alpes, Pyrénées, Massif Central, Jura, Vosges.",
+          "slug": "gojo-montagne-relief-eleve-600m"
+        },
+        {
+          "ile": 5,
+          "hero": "Inumaki",
+          "rule": "En France, on se déplace en TGV (très rapide), avion, voiture, train, bus, vélo, ou à pied. Les transports doux (vélo, marche) ne polluent pas. Les transports en commun réduisent les bouchons et la po",
+          "slug": "inumaki-france-deplace-tgv-tres"
+        },
+        {
+          "ile": 6,
+          "hero": "Yuta",
+          "rule": "Internet relie des millions d\\",
+          "slug": "yuta-internet-relie-millions"
+        },
+        {
+          "ile": 7,
+          "hero": "Todo",
+          "rule": "Mieux habiter = réduire l\\",
+          "slug": "todo-mieux-habiter-reduire"
+        },
+        {
+          "ile": 8,
+          "hero": "Nanami",
+          "rule": "Une métropole est une très grande ville influente concentrant population, services et pouvoirs économiques/politiques. Tokyo (37M) est la plus grande mégapole du monde. Paris est la métropole français",
+          "slug": "nanami-metropole-tres-grande-ville"
+        }
+      ]
+    }
+  }
+}

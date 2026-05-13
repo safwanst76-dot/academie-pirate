@@ -1,0 +1,180 @@
+{
+  "grand-bleu": {
+    "cm2": [
+      {
+        "ile": 1,
+        "hero": "Nami",
+        "rule": "L\\"
+      },
+      {
+        "ile": 2,
+        "hero": "Luffy",
+        "rule": "Le verbe s\\"
+      },
+      {
+        "ile": 3,
+        "hero": "Robin",
+        "rule": "Les homophones se prononcent pareil mais s\\"
+      },
+      {
+        "ile": 4,
+        "hero": "Zoro",
+        "rule": "Les verbes se classent en 3 groupes selon leur infinitif. Chaque groupe a ses propres terminaisons"
+      },
+      {
+        "ile": 5,
+        "hero": "Nami",
+        "rule": "Le COD répond à"
+      },
+      {
+        "ile": 6,
+        "hero": "Luffy",
+        "rule": "Le temps du verbe indique QUAND se passe l\\"
+      },
+      {
+        "ile": 7,
+        "hero": "Robin",
+        "rule": "La nature d\\"
+      },
+      {
+        "ile": 8,
+        "hero": "Zoro",
+        "rule": "Accord du participe passé : avec ÊTRE → accord avec le sujet · avec AVOIR → accord avec le COD si placé AVANT"
+      }
+    ]
+  },
+  "pays-du-feu": {},
+  "magnolia": {
+    "cm2": [
+      {
+        "ile": 1,
+        "hero": "Goku",
+        "rule": "La Préhistoire va de l\\"
+      },
+      {
+        "ile": 2,
+        "hero": "Bulma",
+        "rule": "Les Sumériens inventent l\\"
+      },
+      {
+        "ile": 3,
+        "hero": "Krilin",
+        "rule": "L\\"
+      },
+      {
+        "ile": 4,
+        "hero": "Gohan",
+        "rule": "La démocratie athénienne naît au Vème siècle av. J.-C. Démocratie = demos (peuple) + kratos (pouvoir). Seuls les citoyen"
+      },
+      {
+        "ile": 5,
+        "hero": "Piccolo",
+        "rule": "Rome est fondée en 753 av. J.-C. La République romaine (509 av. J.-C.) : deux consuls élus + le Sénat. SPQR = Senatus Po"
+      },
+      {
+        "ile": 6,
+        "hero": "Trunks",
+        "rule": "Auguste fonde l\\"
+      },
+      {
+        "ile": 7,
+        "hero": "Android 18",
+        "rule": "Jésus naît vers -4 en Palestine. Ses apôtres diffusent son message. En 313, l\\"
+      },
+      {
+        "ile": 8,
+        "hero": "Vegeta",
+        "rule": "Les invasions germaniques (Wisigoths, Vandales, Huns) affaiblissent Rome. En 476, Odoacre renverse le dernier Empereur. "
+      }
+    ]
+  },
+  "kanto": {
+    "cm2": [
+      {
+        "ile": 1,
+        "hero": "Tanjiro",
+        "rule": "La matière existe sous trois états : solide (forme fixe), liquide (épouse le récipient), gaz (occupe tout l\\"
+      },
+      {
+        "ile": 2,
+        "hero": "Nezuko",
+        "rule": "L\\"
+      },
+      {
+        "ile": 3,
+        "hero": "Zenitsu",
+        "rule": "Un circuit électrique simple a 3 éléments : un générateur (pile), un récepteur (ampoule), des fils. Le circuit doit être"
+      },
+      {
+        "ile": 4,
+        "hero": "Inosuke",
+        "rule": "Les êtres vivants sont classés selon les caractères qu\\"
+      },
+      {
+        "ile": 5,
+        "hero": "Giyu",
+        "rule": "L\\"
+      },
+      {
+        "ile": 6,
+        "hero": "Shinobu",
+        "rule": "Tous les êtres vivants se reproduisent et grandissent. Reproduction sexuée = fusion de cellules de 2 parents. Croissance"
+      },
+      {
+        "ile": 7,
+        "hero": "Kanao",
+        "rule": "La Terre est la 3ème planète du système solaire. Elle tourne sur elle-même en 24h (jour/nuit) et autour du Soleil en 365"
+      },
+      {
+        "ile": 8,
+        "hero": "Rengoku",
+        "rule": "La Terre est dynamique : volcans et séismes viennent de son activité interne (chaleur + plaques tectoniques). Tempêtes e"
+      }
+    ]
+  },
+  "english": {},
+  "namek": {
+    "cm2": [
+      {
+        "ile": 1,
+        "hero": "Yuji",
+        "rule": "Une ville est un espace très peuplé concentrant beaucoup de constructions, de services et de transports. On y trouve des"
+      },
+      {
+        "ile": 2,
+        "hero": "Megumi",
+        "rule": "La campagne (espace rural) a une faible densité de population, des paysages agricoles (champs, prés, forêts), et l\\"
+      },
+      {
+        "ile": 3,
+        "hero": "Nobara",
+        "rule": "Le littoral est la zone où la mer rencontre la terre. Il a 3 fonctions principales : la pêche, le tourisme balnéaire, et"
+      },
+      {
+        "ile": 4,
+        "hero": "Gojo",
+        "rule": "La montagne est un relief élevé (>600m) avec des contraintes : froid, pente, isolement, neige. Les principales chaînes f"
+      },
+      {
+        "ile": 5,
+        "hero": "Inumaki",
+        "rule": "En France, on se déplace en TGV (très rapide), avion, voiture, train, bus, vélo, ou à pied. Les transports doux (vélo, m"
+      },
+      {
+        "ile": 6,
+        "hero": "Yuta",
+        "rule": "Internet relie des millions d\\"
+      },
+      {
+        "ile": 7,
+        "hero": "Todo",
+        "rule": "Mieux habiter = réduire l\\"
+      },
+      {
+        "ile": 8,
+        "hero": "Nanami",
+        "rule": "Une métropole est une très grande ville influente concentrant population, services et pouvoirs économiques/politiques. T"
+      }
+    ]
+  }
+}
