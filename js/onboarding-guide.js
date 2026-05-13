@@ -193,14 +193,20 @@
     cleanup();
   }
 
+  // Détection robuste de visibilité (fonctionne même avec position:fixed)
+  function isElementVisible(el) {
+    if (!el) return false;
+    var cs = getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden') return false;
+    if (parseFloat(cs.opacity || '1') === 0) return false;
+    var rect = el.getBoundingClientRect();
+    return rect.width > 0 && rect.height > 0;
+  }
+
   function getVisibleScreen() {
     var ids = ['login-screen','af-parent-onboard','af-create-child','af-pin-entry'];
     for (var i = 0; i < ids.length; i++) {
-      var el = document.getElementById(ids[i]);
-      if (el && el.offsetParent !== null) {
-        var cs = getComputedStyle(el);
-        if (cs.display !== 'none' && cs.visibility !== 'hidden') return ids[i];
-      }
+      if (isElementVisible(document.getElementById(ids[i]))) return ids[i];
     }
     return null;
   }
@@ -296,7 +302,62 @@
       cleanup();
       location.reload();
     },
-    state: STATE
+    state: STATE,
+
+    // Debug helpers — pour tester depuis la console
+    debug: function() {
+      var info = {
+        step:             STATE.step,
+        done:             STATE.done,
+        skipped:          STATE.skipped,
+        visibleScreen:    getVisibleScreen(),
+        bannerExists:     !!document.getElementById('ap-onb-banner'),
+        fullscreenExists: !!document.getElementById('ap-onb-fullscreen'),
+        elements: {}
+      };
+      ['login-screen','af-parent-onboard','af-create-child','af-pin-entry'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+          var cs = getComputedStyle(el);
+          var r  = el.getBoundingClientRect();
+          info.elements[id] = {
+            display:    cs.display,
+            visibility: cs.visibility,
+            opacity:    cs.opacity,
+            position:   cs.position,
+            width:      Math.round(r.width),
+            height:     Math.round(r.height),
+            visible:    isElementVisible(el)
+          };
+        } else {
+          info.elements[id] = 'NOT IN DOM';
+        }
+      });
+      console.table(info.elements);
+      return info;
+    },
+
+    // Force display du banner step 2 (test rapide)
+    testBanner: function() {
+      cleanup();
+      showBanner(STEPS[1]);  // step 2 (index 1)
+      console.info('[onb] testBanner — banner step 2 forcé');
+    },
+
+    // Force fullscreen step 3 (test "email envoyé")
+    testEmailSent: function() {
+      cleanup();
+      showFullscreen(STEPS[2]);  // step 3 (index 2)
+      console.info('[onb] testEmailSent — fullscreen step 3 forcé');
+    },
+
+    // Avancer manuellement à n'importe quelle step
+    goto: function(n) {
+      cleanup();
+      setStep(n);
+      render();
+      console.info('[onb] goto step', n);
+    }
   };
 
   console.info('🏴\u200d☠️ onboarding-guide.js chargé — appel : AP_Onboarding.init()');
