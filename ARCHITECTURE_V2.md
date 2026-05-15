@@ -769,3 +769,34 @@ assets/images/avatars/    → 23 images locales One Piece
 *Règle PR-00 : tout livrable est production ready avant commit.*
 *Règle ARCHI-01 : tout nouveau code respecte l'architecture modulaire cible.*
 *Version 3.0 — 8 Avril 2026*
+
+
+### Règle BIZ-01 — Modèle économique : 100% gratuit ⚠️
+
+Académie Pirate est **100% gratuit, sans publicité, sans inscription forcée**. La promesse est : *apprendre en s'amusant*, sans paywall, sans freemium, sans monétisation cachée.
+
+**Wording officiel** (à utiliser dans toute communication — pages SEO, FAQ, llms.txt, README, posts, app) :
+
+> « 100% gratuit, sans publicité — apprendre en s'amusant. »
+
+**Wording INTERDIT** (a causé des incohérences le 15 mai 2026, à ne JAMAIS réintroduire sans validation explicite du propriétaire) :
+- ❌ "Freemium"
+- ❌ "Abonnement Famille X€/mois"
+- ❌ "Première île gratuite, le reste payant"
+- ❌ "Version premium", "version pro", "débloquer"
+
+**Wording AUTORISÉ** :
+- ✅ "100% gratuit"
+- ✅ "Sans publicité"
+- ✅ "Apprendre en s'amusant"
+- ✅ "Tout le contenu librement accessible"
+- ✅ "Sans paywall"
+
+**Procédure de modification :**
+1. Avant tout patch SEO touchant au modèle économique (FAQ, meta description, JSON-LD `isAccessibleForFree`, llms.txt, README), **relire cette règle**.
+2. En cas de doute sur le modèle (futur changement, nouveau format), **demander au propriétaire du projet**. Ne JAMAIS inventer un modèle économique ni un tarif.
+3. Toute modification de cette règle elle-même nécessite la validation explicite du propriétaire du projet.
+
+*Règle ajoutée le 15 mai 2026 suite à un patch SEO erroné mentionnant un abonnement inexistant.*
+
+---
