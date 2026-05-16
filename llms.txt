@@ -1,7 +1,7 @@
 # Académie Pirate — EdTech Manga pour enfants 8-15 ans
 
 ## Description
-Académie Pirate est une plateforme d'apprentissage gamifiée qui combine univers manga (Naruto, Attack on Titan, One Piece, Dragon Ball Z, Demon Slayer, Jujutsu Kaisen) et programme officiel de l'Éducation Nationale française. Quiz interactifs, leçons illustrées, progression XP, 100% gratuit sur les premières îles de chaque monde.
+Académie Pirate est une plateforme d'apprentissage gamifiée qui combine univers manga (Naruto, Attack on Titan, One Piece, Dragon Ball Z, Demon Slayer, Jujutsu Kaisen) et programme officiel de l'Éducation Nationale française. Quiz interactifs, leçons illustrées, progression XP, 100% gratuit, sans publicité.
 
 ## URL canonique
 https://aca-pirate.ch/
