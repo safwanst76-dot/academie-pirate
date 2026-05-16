@@ -36,7 +36,7 @@ window.AP_CONFIG = {
     ANALYTICS:        true,   // tracking interne Supabase
     DAILY_REWARD:     false,  // récompense quotidienne (à dev)
     BADGES:           false,  // système de badges (à dev)
-    STRIPE:           false,  // paiement Stripe (à dev)
+    STRIPE:           false,  // BIZ-01 : feature désactivée définitivement
     NOTIFICATIONS:    false,  // push web (à dev)
     BOSS_MECHANIC:    false,  // HP bar boss battle (à dev)
     LEADERBOARD:      false,  // classement familial (à dev)
@@ -117,14 +117,14 @@ window.AP_CONFIG = {
       subject:     'SVT',
       universe:    'Naruto',
       color:       '#16a34a',
-      stripeTier:  'premium',
+      stripeTier:  'free'    // BIZ-01,
       jsFiles:     [],
     },
   },
 
   // ── Freemium ─────────────────────────────────────────────────────
-  FREE_ISLANDS_PER_WORLD: 8,    // 8 pour l'instant (tout gratuit)
-  // Passer à 2 quand Stripe est activé
+  FREE_ISLANDS_PER_WORLD: 8,    // BIZ-01 : tout gratuit, valeur conservée pour compatibilité ascendante
+
 
   // ── Niveaux et XP ────────────────────────────────────────────────
   XP_PER_CORRECT:   2,
