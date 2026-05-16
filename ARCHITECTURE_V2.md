@@ -781,19 +781,25 @@ Konoha SVT · Aqua Géo OP · Éclair Physique-Chimie MHA
 *Version 2.9 — 16 mai 2026*
 
 
-### Règle BIZ-01 — Modèle économique : 100% gratuit ⚠️
+### Règle BIZ-01 — Modèle économique ⚠️
 
-Académie Pirate est **100% gratuit, sans publicité, sans inscription forcée**. La promesse est : *apprendre en s'amusant*, sans paywall, sans freemium, sans monétisation cachée.
+Cette règle a **deux faces** : ce que les utilisateurs voient (immuable), et la stratégie business interne (ouverte). **Ne jamais confondre les deux.**
 
-**Wording officiel** (à utiliser dans toute communication — pages SEO, FAQ, llms.txt, README, posts, app) :
+---
 
-> « 100% gratuit, sans publicité — apprendre en s'amusant. »
+#### 🌍 Face PUBLIQUE — wording user-facing immuable
 
-**Wording INTERDIT** (a causé des incohérences le 15 mai 2026, à ne JAMAIS réintroduire sans validation explicite du propriétaire) :
+**Académie Pirate est 100% gratuit, sans publicité — apprendre en s'amusant.**
+
+C'est le seul wording autorisé dans toute communication user-facing : pages SEO, FAQ, llms.txt, README user-visible, footer, posts marketing, app, communication externe.
+
+**Wording INTERDIT publiquement** (a déjà causé des incohérences le 15 mai 2026) :
 - ❌ "Freemium"
 - ❌ "Abonnement Famille X€/mois"
 - ❌ "Première île gratuite, le reste payant"
-- ❌ "Version premium", "version pro", "débloquer"
+- ❌ "Version premium" (sauf négation explicite — voir exception ci-dessous)
+- ❌ "Bientôt payant", "Soon premium", "Coming soon paid"
+- ❌ Toute allusion à une monétisation future
 
 **Wording AUTORISÉ** :
 - ✅ "100% gratuit"
@@ -802,11 +808,81 @@ Académie Pirate est **100% gratuit, sans publicité, sans inscription forcée**
 - ✅ "Tout le contenu librement accessible"
 - ✅ "Sans paywall"
 
-**Procédure de modification :**
-1. Avant tout patch SEO touchant au modèle économique (FAQ, meta description, JSON-LD `isAccessibleForFree`, llms.txt, README), **relire cette règle**.
-2. En cas de doute sur le modèle (futur changement, nouveau format), **demander au propriétaire du projet**. Ne JAMAIS inventer un modèle économique ni un tarif.
-3. Toute modification de cette règle elle-même nécessite la validation explicite du propriétaire du projet.
+---
 
-*Règle ajoutée le 15 mai 2026 suite à un patch SEO erroné mentionnant un abonnement inexistant.*
+#### 🔐 Face INTERNE — stratégie business future (ne JAMAIS communiquer aux users)
+
+Académie Pirate vise à devenir **financièrement durable**. Plusieurs options business sont ouvertes pour le futur :
+
+**Option 1 — Donations libres** (envisageable à court/moyen terme)
+- Plateformes : Liberapay, Buy Me a Coffee, Tipeee, etc.
+- Bouton "Soutenir le projet" éventuellement intégré (à valider)
+- Aucune obligation, accès gratuit total préservé
+- Communication user-facing si activée : "Si tu veux soutenir Académie Pirate" — pas "le site devient payant"
+
+**Option 2 — Abonnement à long terme** (envisageable, sans engagement)
+- Format Premium éventuel (badges exclusifs, contenu bonus, sans-pub si pub introduite, etc.)
+- Le contenu pédagogique de base reste 100% gratuit
+- Pas de paywall sur le contenu déjà publié
+
+**Option 3 — Autres** (à valider explicitement par le propriétaire)
+- B2B, partenariats institutionnels, licences pédagogiques, etc.
 
 ---
+
+#### 🛡️ Règles cardinales
+
+1. **Ne JAMAIS communiquer publiquement** sur les plans business futurs. Les users n'ont pas besoin de connaître la stratégie interne. Une communication prématurée crée méfiance et frustration.
+
+2. **Le wording user-facing "100% gratuit, sans publicité"** est immuable tant qu'aucune monétisation user-facing n'est activée.
+
+3. **Si une monétisation est introduite un jour**, l'accès gratuit déjà existant à un contenu déjà publié ne sera **JAMAIS dégradé**. C'est une garantie ferme.
+
+4. **Avant toute modification d'un wording lié au modèle économique** (FAQ, meta description, JSON-LD `isAccessibleForFree`, llms.txt, README, page d'accueil, posts) : relire cette règle. En cas de doute, demander au propriétaire — ne JAMAIS inventer un modèle économique ni un tarif.
+
+5. **Toute modification de cette règle elle-même** nécessite la validation explicite du propriétaire du projet.
+
+---
+
+#### 📌 Exception autorisée : négation explicite dans llms.txt
+
+Le fichier `llms.txt` contient volontairement la phrase :
+> *"Pas de publicité, pas de paywall, pas de 'version premium' cachée."*
+
+C'est une **négation explicite** qui renforce BIZ-01 plutôt que de la violer : la phrase affirme qu'il N'Y A PAS de version premium. Cette mention est conservée pour aider les IA crawlers (Claude, GPT, Perplexity, Gemini) à lever toute ambiguïté quand un parent leur demande si le site est gratuit.
+
+Conséquence pour l'audit : le pattern `"version premium"` dans `llms.txt` est un faux positif accepté. Décision prise le 15 mai 2026 par le propriétaire du projet.
+
+---
+
+#### 📚 Leçon apprise — patterns d'audit (16 mai 2026)
+
+Lors d'un patch BIZ-01, un audit avec pattern global `"(à dev)"` a déclenché des faux positifs sur des features non monétaires légitimes (`BADGES`, `NOTIFICATIONS`, `BOSS_MECHANIC`, etc.).
+
+**Règle de méthode** : les patterns d'audit BIZ-01 doivent être **contextuels**, jamais globaux.
+
+**Patterns d'audit corrects pour BIZ-01** :
+- `Freemium` (sans condition)
+- `Abonnement Famille`
+- `Stripe EU`, `stripeTier.*premium`
+- `5€/mois`, `9€/mois`, `X €/mois`
+- `Passer à .* quand Stripe`
+- `Première île gratuite, le reste payant`
+- `Version premium` (sauf négation explicite, voir exception)
+- `débloquer toutes les`
+- `Bientôt payant`, `Coming soon premium`
+
+**Patterns INTERDITS** (trop larges, génèrent des faux positifs) :
+- `"à dev"` tout court → matche aussi BADGES, NOTIFICATIONS, etc.
+- `"premium"` tout court → matche les contextes neutres ou négations
+
+---
+
+#### 🗓️ Historique
+
+- **15 mai 2026** : Création de BIZ-01 suite à un patch SEO erroné mentionnant un abonnement inexistant. Wording user "100% gratuit, sans publicité".
+- **16 mai 2026** : Ajout exception "négation explicite llms.txt" + leçon apprise audit.
+- **16 mai 2026** : Évolution vers deux faces (publique immuable + interne ouverte). La face publique reste inchangée. La face interne documente les options business futures (dons, abonnement) sans engagement de communication ni de calendrier.
+
+*Toute modification de BIZ-01 nécessite la validation explicite du propriétaire du projet.*
+

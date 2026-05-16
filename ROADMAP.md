@@ -1,15 +1,38 @@
 # 🏴‍☠️ ROADMAP — Académie Pirate
 
-## ⚡ Plan d'action prioritaire — voir PLAN_ACTION.md
+## 🚨 PRIORITÉ #1 — SEO : Audit pages vides + noindex (cette semaine)
 
-Suite à l'audit "Avocat du Diable" du 16 mai 2026, un plan d'action chiffré et priorisé existe dans `PLAN_ACTION.md`. **Top 3 actions cette semaine** :
+**Risque concret** : ~200 pages SEO sur 277 pointent actuellement vers du contenu inexistant (quiz pas encore développés en V2 DB pour 6ème/5ème/4ème/3ème). Bounce rate élevé attendu → algorithme Google Helpful Content Update peut **déclasser le site entier sous 60-120 jours**.
 
-1. **P0.1** — Audit pages SEO vides + noindex (évite déclassement Google)
+**Si on ne fait rien** : tout le travail SEO/maillage/IndexNow des dernières sessions risque de devenir contre-productif.
+
+### Actions immédiates
+
+- [ ] Audit page par page : vérifier pour chaque `/matiere/niveau/perso-notion/` que le quiz existe vraiment en prod
+- [ ] Pour les pages sans quiz : ajouter `<meta name="robots" content="noindex,nofollow">` dans le head
+- [ ] CTA honnête sur ces pages : "Quiz en développement — reviens en septembre 2026"
+- [ ] Mettre à jour `sitemap.xml` : ne lister que les pages avec contenu prod réel
+- [ ] Resoumettre sitemap dans GSC + IndexNow après nettoyage
+
+### Critère de validation
+
+- 0 page SEO indexable qui pointe vers un quiz inexistant
+- Sitemap.xml ne contient que les pages avec contenu prod
+- Test : inspecter 10 URLs random dans GSC → 100% trouvent un quiz fonctionnel
+
+**Temps estimé** : 4-6h
+**Détail complet** : voir `PLAN_ACTION.md` section P0.1
+
+---
+
+## ⚡ Priorités P0 suivantes (cette semaine)
+
 2. **P0.2** — RGPD enfants + mentions légales (évite sanction CNIL)
 3. **P0.3** — Disclaimer IP manga (réduit risque DMCA)
 
-Le plan complet (P0/P1/P2/P3) avec délais, risques et critères de validation est dans `PLAN_ACTION.md`.
+Les détails (risques, actions, critères) sont dans `PLAN_ACTION.md`.
 
+---
 
 ## ✅ Fait
 - Avatars locaux multi-univers
