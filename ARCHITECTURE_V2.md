@@ -717,6 +717,13 @@ assets/images/avatars/    → 23 images locales One Piece
 ✅ URL routing — #/english/cm2, #/english/6eme, #/grand-bleu, #/select (URL-01)
 ✅ Domaine custom — aca-pirate.ch (Infomaniak + GitHub Pages + Supabase)
 ✅ SEO — title/meta/canonical/hreflang/sitemap/robots.txt par route
+✅ SEO complet — 277 pages indexables (6 mondes × 5 niveaux × 8 îles + hubs)
+✅ Schema.org   — Course + Quiz + BreadcrumbList + FAQPage sur 277 pages
+✅ AEO-04       — 277/277 pages avec 8 FAQ structurées
+✅ Maillage interne — 870 liens contextuels (3 cross-links/île + 5/niveau)
+✅ IndexNow     — Yandex 277 URLs OK · Bing vérification en cours
+✅ llms.txt     — 5 niveaux × 6 mondes complets · BIZ-01 conforme
+✅ BIZ-01       — Modèle économique documenté (100% gratuit, sans publicité)
 ✅ ARCHI-01 Fondations — tokens.css + AP.events + AP.state + AP.api
 ✅ Phase 3a — AvatarPicker 51 personnages · 5 univers · filtres · mobile-first
 ✅ Code secret alphanumérique 4-8 chars (lettres + chiffres) + indicateur force
@@ -737,38 +744,41 @@ assets/images/avatars/    → 23 images locales One Piece
 ---
 
 ## PROCHAINES ACTIONS IMMÉDIATES
-
-```
 ✅ ARCHI-01 Fondations — TERMINÉ
-   ✅ css/tokens.css · js/core/events.js · state.js · api.js
+✅ Phase 3a Avatar universel — TERMINÉ (51 avatars · 5 univers)
+✅ Phase SEO/GEO/AEO — TERMINÉE (mai 2026)
 
-✅ Phase 3a — Avatar universel — TERMINÉ
-   ✅ 51 avatars · 5 univers · AvatarPicker component
-   ✅ Code secret alphanumérique · Fond login multi-univers
+277 pages indexables · 870 liens internes · IndexNow Yandex
+Sitemap · robots.txt · llms.txt · 18 crawlers IA autorisés
 
-🔜 Phase 3b — Leçon dialoguée (PROCHAINE)
-   → js/components/lesson-dialog.js — bulle dialogue manga
-   → Avatar enfant parle pendant la leçon (quote_lesson)
-   → Réactions animate sur warmup (celebrate / confused)
-   → Prénom de l'enfant dans les dialogues (AP.state)
+✅ BIZ-01 — Modèle économique documenté (15-16 mai 2026)
 
-🔜 Phase 3c — Flashcards gamifiées
-   → Avatar présente chaque carte en bulle dialogue
-   → Réactions visuelles selon résultat
+Règle écrite dans ARCHITECTURE_V2.md
+4 fichiers nettoyés (ROADMAP, router, config, llms)
+Wording « 100% gratuit, sans publicité » aligné sur 277 pages
 
-🔜 Phase 4 — Contenu complet toutes matières
-   → Maths · Français · Histoire · Sciences · Géo N2/N3/N4
-
-🔜 Phase 5 — Nouveaux mondes
-   → Konoha (SVT) · Aqua (Géo) · Éclair (Physique-Chimie)
-```
+🔜 CHANTIERS À ARBITRER (selon priorités produit)
+🔜 Phase 3b — Leçon dialoguée (UX)
+bulle dialogue manga + prénom enfant + réactions warmup
+🔜 Phase 4 — Contenu V2 toutes matières (gros morceau)
+Maths · Français · Histoire · Sciences · Géo niveaux 6ème/5ème/4ème
+Migration V1 hardcodé → V2 DB
+Pattern : WORLD_EVOLUTION_PATTERN.md
+🔜 Phase 2 — Admin onglet Contenu (règle ADM-01)
+CRUD questions depuis admin sans toucher au code
+🔜 Sauvegarde progression en DB
+Remplacer localStorage par tables Supabase
+🔜 Dashboard parent
+Suivi progression par matière/niveau
+🔜 Phase 5 — Nouveaux mondes (long terme)
+Konoha SVT · Aqua Géo OP · Éclair Physique-Chimie MHA
 
 ---
 
 *Ce document doit être mis à jour à chaque phase complétée.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
 *Règle ARCHI-01 : tout nouveau code respecte l'architecture modulaire cible.*
-*Version 3.0 — 8 Avril 2026*
+*Version 2.9 — 16 mai 2026*
 
 
 ### Règle BIZ-01 — Modèle économique : 100% gratuit ⚠️
