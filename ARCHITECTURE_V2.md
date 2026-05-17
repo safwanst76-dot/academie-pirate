@@ -886,3 +886,27 @@ Lors d'un patch BIZ-01, un audit avec pattern global `"(à dev)"` a déclenché 
 
 *Toute modification de BIZ-01 nécessite la validation explicite du propriétaire du projet.*
 
+### Règle IP-01 — Propriété intellectuelle manga ⚠️
+
+Académie Pirate utilise des noms et concepts de personnages manga (Naruto, One Piece, Attack on Titan, Dragon Ball Z, Demon Slayer, Jujutsu Kaisen) à des fins éducatives. Ces propriétés appartiennent à leurs éditeurs respectifs (Shueisha, Toei Animation, Wit Studio, Mappa, etc.).
+
+**Règles à respecter pour minimiser le risque DMCA** :
+
+1. **Disclaimer obligatoire** sur toutes les pages user-facing :
+   > "Académie Pirate est un projet pédagogique indépendant non affilié à [éditeurs] ni à aucun éditeur de manga."
+
+2. **Aucune image officielle manga dans Supabase Storage** :
+   - ❌ Pas de captures d'écran issues des animes/mangas officiels
+   - ❌ Pas de reproductions d'œuvres complètes
+   - ✅ Illustrations originales générées spécifiquement pour Académie Pirate
+   - ✅ Fan-arts sous licence Creative Commons avec crédit visible
+   - ✅ Portraits stylisés "style Académie Pirate"
+
+3. **Plan B si pression légale** : pivot vers personnages 100% originaux (cf. Yo-Kai Watch sans Pikachu). Ce plan B doit être préparé mentalement et techniquement.
+
+4. **Cadre légal invoqué** : fair use pédagogique (US) / exception éducative française. Ces exceptions ne couvrent PAS la reproduction d'œuvres complètes ou d'images officielles, uniquement les noms et concepts à but pédagogique.
+
+5. **Procédure si un éditeur conteste** : retirer immédiatement les contenus visés sans débattre. La non-affiliation déclarée + l'utilisation éducative + le retrait immédiat = base solide de bonne foi.
+
+*Règle ajoutée le 16 mai 2026 dans le cadre de P0.3 PLAN_ACTION.md.*
+

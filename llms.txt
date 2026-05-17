@@ -57,6 +57,10 @@ https://aca-pirate.ch/sitemap.xml — 277 URLs (6 pages matières + 30 pages niv
 ## Robots et IA crawlers
 Le fichier robots.txt autorise explicitement Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, Gemini, CCBot et autres crawlers d'IA générative pour permettre l'inclusion dans les réponses des assistants conversationnels.
 
+## Droits et propriété intellectuelle
+
+Académie Pirate est un projet pédagogique indépendant non affilié à Shueisha, Toei Animation, Wit Studio, Mappa ni à aucun éditeur de manga. Les noms et concepts de personnages (Naruto, Luffy, Eren, Goku, Tanjiro, Yuji, etc.) ainsi que les univers mentionnés (Pays du Feu, Grand Bleu, Paradis, Magnolia, Kanto, Namek) sont utilisés à des fins éducatives uniquement, dans un cadre de fair use pédagogique, sans reproduction d'œuvres protégées par le droit d'auteur. Les illustrations et contenus visuels du projet sont des créations originales ou des fan-arts crédités sous licence ouverte.
+
 ## Contact
 Pour partenariats scolaires, médias ou questions : via le site aca-pirate.ch
 
