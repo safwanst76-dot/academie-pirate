@@ -149,6 +149,19 @@ a été annulée le 16 mai 2026 sur décision propriétaire :
 "on ne touche pas au pattern, seulement l'indexation SEO/GEO/AEO". 
 La problématique URL est reportée en P0.5.
 
+**P0.5 Phase 2 ✅ DONE (17 mai 2026)** — POC English 32 pages générées (commit 3ad47ad)
+- 32 nouvelles pages /english/anglais/{cm2,6eme,5eme,4eme}/{notion}/
+- Sitemap 119 URLs (87 anciennes + 32 nouvelles)  
+- Canonicals 32/32 OK (anciennes → nouvelles)
+- Prod HTTP 200 vérifié sur 5 URLs échantillon
+- 0 ancienne page supprimée (zéro risque utilisateurs)
+
+Reste P0.5 :
+- Phase 3 : Cloudflare 301 (attente config DNS)
+- Phase 4 : généraliser aux 54 autres pages
+- Phase 5 : resoumission moteurs (IndexNow + GSC)
+
+
 
 ## 🔧 P1 — STRATÉGIQUE (à régler sous 1 mois)
 

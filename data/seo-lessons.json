@@ -1,6 +1,7 @@
 {
   "grand-bleu": {
     "meta": {
+      "reg_key": "grand-bleu",
       "matiere": "Français",
       "matiere_url": "francais",
       "manga": "One Piece",
@@ -9,67 +10,712 @@
     "lessons": {
       "cm2": [
         {
+          "hero": "Nami",
+          "quote": "Je navigue avec les étoiles — toi tu navigues avec les règles de grammaire !",
+          "rule": "L'infinitif répond à ",
+          "tip": "Nami dit : ",
+          "sections_titles": [
+            "L'infinitif",
+            "Le participe passé",
+            "L'astuce de Nami"
+          ],
+          "warmup_count": 2,
           "ile": 1,
-          "hero": "Nami",
-          "rule": "L\\",
-          "slug": "nami-lecon"
+          "notion": "L'infinitif",
+          "slug": "nami-linfinitif"
         },
         {
+          "hero": "Luffy",
+          "quote": "Mon équipage s'accorde TOUJOURS ensemble — comme le sujet et son verbe !",
+          "rule": "Le verbe s'accorde TOUJOURS avec son sujet en personne et en nombre",
+          "tip": "Luffy dit : ",
+          "sections_titles": [
+            "Trouver le sujet",
+            "L'accord du verbe",
+            "Attention aux pièges !"
+          ],
+          "warmup_count": 2,
           "ile": 2,
-          "hero": "Luffy",
-          "rule": "Le verbe s\\",
-          "slug": "luffy-verbe"
+          "notion": "Trouver le sujet",
+          "slug": "luffy-trouver-le-sujet"
         },
         {
+          "hero": "Robin",
+          "quote": "Les homophones sont comme des îles qui se ressemblent — mais elles ne sont pas pareilles !",
+          "rule": "Les homophones se prononcent pareil mais s'écrivent différemment selon leur nature grammaticale",
+          "tip": "Robin dit : ",
+          "sections_titles": [
+            "a / à",
+            "est / et",
+            "son / sont · on / ont · ou / où"
+          ],
+          "warmup_count": 2,
           "ile": 3,
-          "hero": "Robin",
-          "rule": "Les homophones se prononcent pareil mais s\\",
-          "slug": "robin-homophones-prononcent-pareil"
+          "notion": "son / sont · on / ont · ou / où",
+          "slug": "robin-son-sont-on-ont-ou-ou"
         },
         {
-          "ile": 4,
           "hero": "Zoro",
+          "quote": "Je m'entraîne avec trois épées — toi tu t'entraînes avec les trois groupes de verbes !",
           "rule": "Les verbes se classent en 3 groupes selon leur infinitif. Chaque groupe a ses propres terminaisons",
-          "slug": "zoro-verbes-classent-groupes-selon"
+          "tip": "Zoro dit : ",
+          "sections_titles": [
+            "Groupe 1 — verbes en -ER",
+            "Groupe 2 — verbes en -IR réguliers",
+            "Groupe 3 — verbes irréguliers"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Groupe 1 — verbes en -ER",
+          "slug": "zoro-groupe-1-verbes-en-er"
         },
         {
-          "ile": 5,
           "hero": "Nami",
+          "quote": "Complément direct ou indirect ? Je localise tout avec précision, comme sur une carte !",
           "rule": "Le COD répond à ",
-          "slug": "nami-cod-repond"
+          "tip": "Nami dit : ",
+          "sections_titles": [
+            "Le COD — Complément d'Objet Direct",
+            "Le COI — Complément d'Objet Indirect"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Le COD — Complément d'Objet Direct",
+          "slug": "nami-le-cod-complement-dobjet-direct"
         },
         {
-          "ile": 6,
           "hero": "Luffy",
-          "rule": "Le temps du verbe indique QUAND se passe l\\",
-          "slug": "luffy-temps-verbe-indique-quand"
+          "quote": "Présent, passé, futur — comme mon voyage qui continue toujours !",
+          "rule": "Le temps du verbe indique QUAND se passe l'action : présent / passé composé / imparfait / futur",
+          "tip": "Luffy dit : ",
+          "sections_titles": [
+            "Présent et Futur",
+            "Passé composé vs Imparfait"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Présent et Futur",
+          "slug": "luffy-present-et-futur"
         },
         {
-          "ile": 7,
           "hero": "Robin",
-          "rule": "La nature d\\",
-          "slug": "robin-nature"
+          "quote": "Chaque mot a une nature — comme chaque île a son trésor unique !",
+          "rule": "La nature d'un mot = ce qu'il est (nom, verbe, adjectif...) · La fonction = son rôle dans la phrase",
+          "tip": "Robin dit : ",
+          "sections_titles": [
+            "Les classes de mots",
+            "Identifier la nature d'un mot"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Les classes de mots",
+          "slug": "robin-les-classes-de-mots"
         },
         {
-          "ile": 8,
           "hero": "Zoro",
+          "quote": "Les accords complexes ? Trois épées, trois règles — maîtrise-les toutes !",
           "rule": "Accord du participe passé : avec ÊTRE → accord avec le sujet · avec AVOIR → accord avec le COD si placé AVANT",
-          "slug": "zoro-accord-participe-passe-etre"
+          "tip": "Zoro dit : ",
+          "sections_titles": [
+            "Accord avec ÊTRE",
+            "Accord avec AVOIR"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Accord avec ÊTRE",
+          "slug": "zoro-accord-avec-etre"
         }
-      ]
+      ],
+      "6eme": [],
+      "5eme": [],
+      "4eme": [],
+      "3eme": []
     }
   },
   "pays-du-feu": {
     "meta": {
+      "reg_key": "paysdufeu",
       "matiere": "Mathématiques",
       "matiere_url": "maths",
       "manga": "Naruto",
       "bucket": "island-pays-du-feu"
     },
-    "lessons": {}
+    "lessons": {
+      "cm2": [
+        {
+          "hero": "Naruto Uzumaki",
+          "quote": "Je deviendrai Hokage — et je maîtriserai les milliards !",
+          "rule": "Un nombre entier se lit par classes de 3 chiffres : milliards | millions | mille | unités",
+          "tip": "Naruto : ",
+          "sections_titles": [
+            "Les classes de nombres",
+            "Comparer et arrondir"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Les classes de nombres",
+          "slug": "naruto-uzumaki-les-classes-de-nombres"
+        },
+        {
+          "hero": "Sakura Haruno",
+          "quote": "Une fraction = une potion à moitié préparée !",
+          "rule": "Fraction a/b : a = parties prises, b = parts égales. Fraction décimale = dénominateur en 10, 100...",
+          "tip": "Sakura : ",
+          "sections_titles": [
+            "Lire une fraction",
+            "Fractions et décimaux"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Lire une fraction",
+          "slug": "sakura-haruno-lire-une-fraction"
+        },
+        {
+          "hero": "Sasuke Uchiha",
+          "quote": "La multiplication, c'est mon Sharingan — je vois tout !",
+          "rule": "Multiplication et division : priorité sur + et −. Tables à connaître parfaitement.",
+          "tip": "Sasuke : ",
+          "sections_titles": [
+            "Multiplication posée",
+            "Division posée"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Multiplication posée",
+          "slug": "sasuke-uchiha-multiplication-posee"
+        },
+        {
+          "hero": "Kakashi Hatake",
+          "quote": "Désolé d'être en retard — j'alignais mes décimaux.",
+          "rule": "Nombres décimaux : partie entière + virgule + partie décimale. Dixièmes, centièmes, millièmes.",
+          "tip": "Kakashi : ",
+          "sections_titles": [
+            "Lire les décimaux",
+            "Comparer et arrondir"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Lire les décimaux",
+          "slug": "kakashi-hatake-lire-les-decimaux"
+        },
+        {
+          "hero": "Rock Lee",
+          "quote": "Les conversions ? 1000 répétitions et je les maîtrise !",
+          "rule": "Convertir les mesures : multiplier ou diviser par 10, 100, 1000 selon l'unité.",
+          "tip": "Rock Lee : ",
+          "sections_titles": [
+            "Longueurs et masses",
+            "Durées et aires"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Longueurs et masses",
+          "slug": "rock-lee-longueurs-et-masses"
+        },
+        {
+          "hero": "Hinata Hyuga",
+          "quote": "P-périmètre et aire... je peux le faire !",
+          "rule": "Périmètre = somme des côtés. Aire = surface occupée. Unités : cm pour P, cm² pour A.",
+          "tip": "Hinata : ",
+          "sections_titles": [
+            "Périmètres",
+            "Aires"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Périmètres",
+          "slug": "hinata-hyuga-perimetres"
+        },
+        {
+          "hero": "Gaara",
+          "quote": "La géométrie, c'est mon sable — précis et maîtrisé.",
+          "rule": "Figures géométriques : reconnaître, nommer, construire. Angles et droites.",
+          "tip": "Gaara : ",
+          "sections_titles": [
+            "Polygones et angles",
+            "Droites et symétrie"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Polygones et angles",
+          "slug": "gaara-polygones-et-angles"
+        },
+        {
+          "hero": "Hokage",
+          "quote": "La proportionnalité est la loi fondamentale du village !",
+          "rule": "Tableau de proportionnalité : rapport constant entre deux grandeurs. k = y/x.",
+          "tip": "Hokage : ",
+          "sections_titles": [
+            "Reconnaître la proportionnalité",
+            "Pourcentages"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Reconnaître la proportionnalité",
+          "slug": "hokage-reconnaitre-la-proportionnalite"
+        }
+      ],
+      "6eme": [
+        {
+          "hero": "Naruto Uzumaki",
+          "quote": "6ème ? Aucun problème pour un futur Hokage !",
+          "rule": "Numération décimale : lire, écrire, comparer, arrondir les décimaux.",
+          "tip": "Naruto : ",
+          "sections_titles": [
+            "Décimaux niveau 6ème",
+            "Arrondir et encadrer"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Décimaux niveau 6ème",
+          "slug": "naruto-uzumaki-decimaux-niveau-6eme"
+        },
+        {
+          "hero": "Hinata Hyuga",
+          "quote": "Les fractions, c'est comme partager un onigiri équitablement !",
+          "rule": "Fractions : simplifier (diviser par PGCD), comparer (même dénominateur), additionner.",
+          "tip": "Hinata : ",
+          "sections_titles": [
+            "Fractions équivalentes",
+            "Additionner des fractions"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Fractions équivalentes",
+          "slug": "hinata-hyuga-fractions-equivalentes"
+        },
+        {
+          "hero": "Shikamaru Nara",
+          "quote": "La proportionnalité... troublant mais résolu.",
+          "rule": "Tableau proportionnel : rapport k constant. Pourcentages = proportionnalité sur 100.",
+          "tip": "Shikamaru : ",
+          "sections_titles": [
+            "Tableau de proportionnalité",
+            "Pourcentages"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Tableau de proportionnalité",
+          "slug": "shikamaru-nara-tableau-de-proportionnalite"
+        },
+        {
+          "hero": "Ino Yamanaka",
+          "quote": "Un angle précis — jamais approximatif !",
+          "rule": "Types d'angles : aigu (<90°), droit (=90°), obtus (90°<x<180°), plat (=180°). Somme triangle = 180°.",
+          "tip": "Ino : ",
+          "sections_titles": [
+            "Angles et droites",
+            "Angles dans un triangle"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Angles et droites",
+          "slug": "ino-yamanaka-angles-et-droites"
+        },
+        {
+          "hero": "Choji Akimichi",
+          "quote": "L'aire d'une pizza ? Je calcule avant de commander !",
+          "rule": "Triangle : A=(b×h)/2. Disque : A=π×r². Périmètre cercle : P=2×π×r. π≈3,14.",
+          "tip": "Choji : ",
+          "sections_titles": [
+            "Aire du triangle",
+            "Disque et cercle"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Aire du triangle",
+          "slug": "choji-akimichi-aire-du-triangle"
+        },
+        {
+          "hero": "Tenten",
+          "quote": "Mes armes sont circulaires — je maîtrise le cercle !",
+          "rule": "Cercle = ligne courbe. Disque = surface. Vocabulaire : centre, rayon r, diamètre d=2r, corde, arc.",
+          "tip": "Tenten : ",
+          "sections_titles": [
+            "Cercle vs Disque",
+            "Formules"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Cercle vs Disque",
+          "slug": "tenten-cercle-vs-disque"
+        },
+        {
+          "hero": "Neji Hyuga",
+          "quote": "Les statistiques ne mentent pas. Le destin est dans les données.",
+          "rule": "Moyenne = somme ÷ effectif. Mode = valeur la plus fréquente. Étendue = max − min.",
+          "tip": "Neji : ",
+          "sections_titles": [
+            "Indicateurs statistiques",
+            "Représentations graphiques"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Indicateurs statistiques",
+          "slug": "neji-hyuga-indicateurs-statistiques"
+        },
+        {
+          "hero": "Zabuza Momochi",
+          "quote": "Prouve que tu mérites de passer en 5ème !",
+          "rule": "Bilan 6ème : fractions, proportionnalité, angles, aires, statistiques.",
+          "tip": "Zabuza : ",
+          "sections_titles": [
+            "Récapitulatif 6ème",
+            "Points clés à retenir"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Récapitulatif 6ème",
+          "slug": "zabuza-momochi-recapitulatif-6eme"
+        }
+      ],
+      "5eme": [
+        {
+          "hero": "Naruto Uzumaki",
+          "quote": "x = ma puissance ! Je vais trouver sa valeur !",
+          "rule": "Calcul littéral : expressions avec lettres. Substituer, réduire, développer.",
+          "tip": "Naruto : ",
+          "sections_titles": [
+            "Expressions littérales",
+            "Résoudre une équation simple"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Expressions littérales",
+          "slug": "naruto-uzumaki-expressions-litterales"
+        },
+        {
+          "hero": "Sasuke Uchiha",
+          "quote": "L'ordre des opérations est vital — comme en combat.",
+          "rule": "Priorités : 1)Parenthèses 2)Puissances 3)×÷ (gauche→droite) 4)+− (gauche→droite).",
+          "tip": "Sasuke : ",
+          "sections_titles": [
+            "Priorités opératoires",
+            "Fractions avancées"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Priorités opératoires",
+          "slug": "sasuke-uchiha-priorites-operatoires"
+        },
+        {
+          "hero": "Sakura Haruno",
+          "quote": "Pythagore ! Le triangle rectangle n'a aucun secret.",
+          "rule": "a²+b²=c² (c=hypoténuse, côté opposé à l'angle droit). Réciproque : si a²+b²=c² → rectangle.",
+          "tip": "Sakura : ",
+          "sections_titles": [
+            "Théorème de Pythagore",
+            "Réciproque"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Théorème de Pythagore",
+          "slug": "sakura-haruno-theoreme-de-pythagore"
+        },
+        {
+          "hero": "Rock Lee",
+          "quote": "Aires avancées ? 1000 répétitions et je les maîtrise !",
+          "rule": "Parallélogramme : A=b×h. Trapèze : A=(b1+b2)×h÷2. Losange : A=(d1×d2)÷2.",
+          "tip": "Rock Lee : ",
+          "sections_titles": [
+            "Parallélogramme et Trapèze",
+            "Losange"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Parallélogramme et Trapèze",
+          "slug": "rock-lee-parallelogramme-et-trapeze"
+        },
+        {
+          "hero": "Gaara",
+          "quote": "Médiatrice : équidistante des deux extrémités.",
+          "rule": "Médiatrice de [AB] = perpendiculaire à [AB] passant par son milieu. M sur médiatrice ↔ MA=MB.",
+          "tip": "Gaara : ",
+          "sections_titles": [
+            "Définition et propriété",
+            "Les 3 médiatrices d'un triangle"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Définition et propriété",
+          "slug": "gaara-definition-et-propriete"
+        },
+        {
+          "hero": "Temari",
+          "quote": "Symétrie centrale : comme un boomerang, ça revient toujours !",
+          "rule": "Symétrie centrale de centre O : O est le MILIEU de [AA']. A' = (2Ox−Ax ; 2Oy−Ay).",
+          "tip": "Temari : ",
+          "sections_titles": [
+            "Définition",
+            "Figures avec centre de symétrie"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Définition",
+          "slug": "temari-definition"
+        },
+        {
+          "hero": "Kankuro",
+          "quote": "Chaque mouvement de ma marionnette est une transformation précise.",
+          "rule": "Translation (vecteur) : A' = A + vecteur. Rotation 90° direct : (x;y)→(−y;x).",
+          "tip": "Kankuro : ",
+          "sections_titles": [
+            "Translation",
+            "Rotation"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Translation",
+          "slug": "kankuro-translation"
+        },
+        {
+          "hero": "Orochimaru",
+          "quote": "Bilan 5ème. Tu as survécu jusqu'ici ?",
+          "rule": "Pythagore, calcul littéral, transformations, proportionnalité avancée.",
+          "tip": "Orochimaru : ",
+          "sections_titles": [
+            "Bilan 5ème",
+            "Astuces brevet"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Bilan 5ème",
+          "slug": "orochimaru-bilan-5eme"
+        }
+      ],
+      "4eme": [
+        {
+          "hero": "Naruto Uzumaki",
+          "quote": "x puissance n = la puissance d'un ninja au carré !",
+          "rule": "Puissances : aⁿ = a×a×...×a (n fois). aᵐ×aⁿ=a^(m+n). aᵐ÷aⁿ=a^(m-n). (aᵐ)ⁿ=a^(mn). a⁰=1.",
+          "tip": "Naruto : ",
+          "sections_titles": [
+            "Règles de calcul",
+            "Notation scientifique"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Règles de calcul",
+          "slug": "naruto-uzumaki-regles-de-calcul"
+        },
+        {
+          "hero": "Sasuke Uchiha",
+          "quote": "Développer = attaquer. Factoriser = mettre en commun.",
+          "rule": "(a+b)²=a²+2ab+b². (a-b)²=a²-2ab+b². (a+b)(a-b)=a²-b². Factoriser = mettre en facteur commun.",
+          "tip": "Sasuke : ",
+          "sections_titles": [
+            "Les 3 identités remarquables",
+            "Factoriser"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Les 3 identités remarquables",
+          "slug": "sasuke-uchiha-les-3-identites-remarquables"
+        },
+        {
+          "hero": "Sakura Haruno",
+          "quote": "Une équation = trouver la vérité cachée derrière x.",
+          "rule": "Équation du 1er degré : isoler x. Même opération des deux côtés. Toujours vérifier.",
+          "tip": "Sakura : ",
+          "sections_titles": [
+            "Méthode de résolution",
+            "Équations avec fractions"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Méthode de résolution",
+          "slug": "sakura-haruno-methode-de-resolution"
+        },
+        {
+          "hero": "Kakashi Hatake",
+          "quote": "La réciproque de Pythagore : si les carrés s'additionnent...",
+          "rule": "Si a²+b²=c² alors triangle rectangle. Distance AB = √[(xB−xA)²+(yB−yA)²].",
+          "tip": "Kakashi : ",
+          "sections_titles": [
+            "Réciproque de Pythagore",
+            "Distance entre deux points"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Réciproque de Pythagore",
+          "slug": "kakashi-hatake-reciproque-de-pythagore"
+        },
+        {
+          "hero": "Shikamaru Nara",
+          "quote": "Médiane vs Moyenne. Troublant mais fascinant.",
+          "rule": "Médiane = valeur centrale (50% en dessous). Q1 = 1er quartile. Q3 = 3ème quartile.",
+          "tip": "Shikamaru : ",
+          "sections_titles": [
+            "Médiane et quartiles",
+            "Boîte à moustaches"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Médiane et quartiles",
+          "slug": "shikamaru-nara-mediane-et-quartiles"
+        },
+        {
+          "hero": "Hinata Hyuga",
+          "quote": "Le hasard... même pour un Hyuga, tout n'est pas certain.",
+          "rule": "Probabilité = favorable/total. Entre 0 et 1. P(non A) = 1−P(A).",
+          "tip": "Hinata : ",
+          "sections_titles": [
+            "Probabilité",
+            "Probabilité du contraire"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Probabilité",
+          "slug": "hinata-hyuga-probabilite"
+        },
+        {
+          "hero": "Rock Lee",
+          "quote": "SOH CAH TOA : le secret de toutes mes techniques !",
+          "rule": "cos(α) = Adjacent/Hypoténuse. sin(α) = Opposé/Hypoténuse. tan(α) = Opposé/Adjacent.",
+          "tip": "Rock Lee : ",
+          "sections_titles": [
+            "SOH CAH TOA",
+            "Valeurs remarquables"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "SOH CAH TOA",
+          "slug": "rock-lee-soh-cah-toa"
+        },
+        {
+          "hero": "Pain (Nagato)",
+          "quote": "La douleur des maths difficiles mène à la maîtrise.",
+          "rule": "Bilan 4ème : puissances, identités remarquables, équations, Pythagore avancé, stats, proba, cosinus.",
+          "tip": "Pain : ",
+          "sections_titles": [
+            "Bilan 4ème",
+            "Ce qui tombe au brevet"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Bilan 4ème",
+          "slug": "pain-nagato-bilan-4eme"
+        }
+      ],
+      "3eme": [
+        {
+          "hero": "Naruto Uzumaki",
+          "quote": "f(x) = ma puissance au temps x. En avant !",
+          "rule": "Fonction f(x) = ax+b (droite) ou f(x) = ax² (parabole). f(x) = valeur image de x.",
+          "tip": "Naruto : ",
+          "sections_titles": [
+            "Fonctions affines et linéaires",
+            "Graphique et tableau de valeurs"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Fonctions affines et linéaires",
+          "slug": "naruto-uzumaki-fonctions-affines-et-lineaires"
+        },
+        {
+          "hero": "Sasuke Uchiha",
+          "quote": "(a+b)², (a−b)², (a+b)(a−b) : trois armes absolues.",
+          "rule": "Maîtrise complète des identités. Factorisation avancée. Calcul mental avec identités.",
+          "tip": "Sasuke : ",
+          "sections_titles": [
+            "Rappel des 3 identités",
+            "Factorisation avancée"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Rappel des 3 identités",
+          "slug": "sasuke-uchiha-rappel-des-3-identites"
+        },
+        {
+          "hero": "Sakura Haruno",
+          "quote": "Deux inconnues, deux équations — tout se résout !",
+          "rule": "Systèmes d'équations : substitution (isoler une variable) ou combinaison (additionner pour éliminer).",
+          "tip": "Sakura : ",
+          "sections_titles": [
+            "Méthode de substitution",
+            "Méthode de combinaison"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Méthode de substitution",
+          "slug": "sakura-haruno-methode-de-substitution"
+        },
+        {
+          "hero": "Kakashi Hatake",
+          "quote": "Thalès : les proportions sont toujours respectées.",
+          "rule": "MN//BC dans ABC : AM/AB = AN/AC = MN/BC. Réciproque : égalité des ratios → MN//BC.",
+          "tip": "Kakashi : ",
+          "sections_titles": [
+            "Théorème de Thalès",
+            "Réciproque"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Théorème de Thalès",
+          "slug": "kakashi-hatake-theoreme-de-thales"
+        },
+        {
+          "hero": "Minato Namikaze",
+          "quote": "SOH CAH TOA — la formule du Yondaime Hokage !",
+          "rule": "sin=Opp/Hyp. cos=Adj/Hyp. tan=Opp/Adj. sin²+cos²=1.",
+          "tip": "Minato : ",
+          "sections_titles": [
+            "Trigonométrie complète",
+            "Trouver un angle ou un côté"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Trigonométrie complète",
+          "slug": "minato-namikaze-trigonometrie-complete"
+        },
+        {
+          "hero": "Jiraiya",
+          "quote": "Le grand Jiraiya a tout expérimenté — même les proba composées.",
+          "rule": "P(A et B) indépendants = P(A)×P(B). P(A ou B) incompatibles = P(A)+P(B). Loi des grands nombres.",
+          "tip": "Jiraiya : ",
+          "sections_titles": [
+            "Probabilités composées",
+            "Loi des grands nombres"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Probabilités composées",
+          "slug": "jiraiya-probabilites-composees"
+        },
+        {
+          "hero": "Tsunade",
+          "quote": "Je calcule les volumes de mes potions avec une précision absolue.",
+          "rule": "Cylindre : V=π×r²×h. Cône : V=(1/3)×π×r²×h. Sphère : V=(4/3)×π×r³. Pyramide : V=(1/3)×A×h.",
+          "tip": "Tsunade : ",
+          "sections_titles": [
+            "Volumes des solides",
+            "Astuce"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Volumes des solides",
+          "slug": "tsunade-volumes-des-solides"
+        },
+        {
+          "hero": "Madara Uchiha",
+          "quote": "Prouve que tu maîtrises les maths de CM2 à la 3ème.",
+          "rule": "Brevet blanc : fonctions, identités, systèmes, Thalès, trigonométrie, volumes, probabilités.",
+          "tip": "Madara : ",
+          "sections_titles": [
+            "Synthèse brevet",
+            "Check-list brevet"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Synthèse brevet",
+          "slug": "madara-uchiha-synthese-brevet"
+        }
+      ]
+    }
   },
   "magnolia": {
     "meta": {
+      "reg_key": "magnolia",
       "matiere": "Histoire",
       "matiere_url": "histoire",
       "manga": "Dragon Ball Z",
@@ -78,58 +724,127 @@
     "lessons": {
       "cm2": [
         {
-          "ile": 1,
           "hero": "Goku",
-          "rule": "La Préhistoire va de l\\",
-          "slug": "goku-prehistoire"
+          "quote": "Kaméhaméha ! L'Homo sapiens arrive d'Afrique il y a 300 000 ans. L'outil change tout !",
+          "rule": "La Préhistoire va de l'apparition des hominidés (-3 M ans) à l'invention de l'écriture (-3300). Le Paléolithique = nomade. Le Néolithique = agriculture.",
+          "tip": "Goku dit : ",
+          "sections_titles": [
+            "Les premiers humains",
+            "La révolution néolithique"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Les premiers humains",
+          "slug": "goku-les-premiers-humains"
         },
         {
-          "ile": 2,
           "hero": "Bulma",
-          "rule": "Les Sumériens inventent l\\",
-          "slug": "bulma-sumeriens-inventent"
+          "quote": "Mon Radar Dragon ? Rien comparé à l'écriture cunéiforme des Sumériens pour compter leurs troupeaux !",
+          "rule": "Les Sumériens inventent l'écriture cunéiforme vers 3300 av. J.-C. en Mésopotamie (entre le Tigre et l'Euphrate). Le Code de Hammurabi est le premier code de lois.",
+          "tip": "Bulma dit : ",
+          "sections_titles": [
+            "L'écriture cunéiforme",
+            "Les premières villes"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "L'écriture cunéiforme",
+          "slug": "bulma-lecriture-cuneiforme"
         },
         {
-          "ile": 3,
           "hero": "Krilin",
-          "rule": "L\\",
-          "slug": "krilin-lecon"
+          "quote": "Mon Destructo-Disque est aussi parfait qu'une pyramide de Gizeh !",
+          "rule": "L'Égypte ancienne dure 3000 ans (3150 à 30 av. J.-C.). Le pharaon est roi et dieu. Les hiéroglyphes sont l'écriture sacrée.",
+          "tip": "Krilin dit : ",
+          "sections_titles": [
+            "Le pharaon, roi-dieu",
+            "Le don du Nil"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Le pharaon, roi-dieu",
+          "slug": "krilin-le-pharaon-roi-dieu"
         },
         {
-          "ile": 4,
           "hero": "Gohan",
+          "quote": "La connaissance est ma vraie force ! Comme Périclès qui gouvernait par la parole !",
           "rule": "La démocratie athénienne naît au Vème siècle av. J.-C. Démocratie = demos (peuple) + kratos (pouvoir). Seuls les citoyens hommes libres votent.",
-          "slug": "gohan-democratie-athenienne-nait-veme"
+          "tip": "Gohan dit : ",
+          "sections_titles": [
+            "La démocratie athénienne",
+            "Philosophie & culture grecque"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "La démocratie athénienne",
+          "slug": "gohan-la-democratie-athenienne"
         },
         {
-          "ile": 5,
           "hero": "Piccolo",
+          "quote": "Je surpasserai Kami — comme Rome a surpassé toutes les cités !",
           "rule": "Rome est fondée en 753 av. J.-C. La République romaine (509 av. J.-C.) : deux consuls élus + le Sénat. SPQR = Senatus PopulusQue Romanus.",
-          "slug": "piccolo-rome-fondee-753-republique"
+          "tip": "Piccolo dit : ",
+          "sections_titles": [
+            "La République romaine",
+            "Les conquêtes romaines"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "La République romaine",
+          "slug": "piccolo-la-republique-romaine"
         },
         {
-          "ile": 6,
           "hero": "Trunks",
-          "rule": "Auguste fonde l\\",
-          "slug": "trunks-auguste-fonde"
+          "quote": "Je viens du futur — et j'ai lu toute l'histoire de l'Empire romain !",
+          "rule": "Auguste fonde l'Empire romain en 27 av. J.-C. La Pax Romana = 200 ans de paix. L'Empire chute en 476 ap. J.-C. avec les invasions barbares.",
+          "tip": "Trunks dit : ",
+          "sections_titles": [
+            "Auguste et la Pax Romana",
+            "La chute de l'Empire"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Auguste et la Pax Romana",
+          "slug": "trunks-auguste-et-la-pax-romana"
         },
         {
-          "ile": 7,
           "hero": "Android 18",
-          "rule": "Jésus naît vers -4 en Palestine. Ses apôtres diffusent son message. En 313, l\\",
-          "slug": "android-18-jesus-nait-vers-palestine"
+          "quote": "Une religion qui change l'Empire entier — fascinant à analyser !",
+          "rule": "Jésus naît vers -4 en Palestine. Ses apôtres diffusent son message. En 313, l'Édit de Milan légalise le christianisme. En 380, il devient religion d'État.",
+          "tip": "Android 18 dit : ",
+          "sections_titles": [
+            "Naissance du christianisme",
+            "Le christianisme religion d'État"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Naissance du christianisme",
+          "slug": "android-18-naissance-du-christianisme"
         },
         {
-          "ile": 8,
           "hero": "Vegeta",
+          "quote": "Je suis le Prince des Saiyans — Rome aussi avait ses conquérants qui ont tout renversé !",
           "rule": "Les invasions germaniques (Wisigoths, Vandales, Huns) affaiblissent Rome. En 476, Odoacre renverse le dernier Empereur. Le Moyen Âge commence.",
-          "slug": "vegeta-invasions-germaniques-wisigoths-vandales"
+          "tip": "Vegeta dit : ",
+          "sections_titles": [
+            "Les grandes invasions",
+            "Vers le Moyen Âge"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Les grandes invasions",
+          "slug": "vegeta-les-grandes-invasions"
         }
-      ]
+      ],
+      "6eme": [],
+      "5eme": [],
+      "4eme": [],
+      "3eme": []
     }
   },
   "kanto": {
     "meta": {
+      "reg_key": "kanto",
       "matiere": "Sciences Physiques",
       "matiere_url": "sciences",
       "manga": "Demon Slayer",
@@ -138,67 +853,766 @@
     "lessons": {
       "cm2": [
         {
-          "ile": 1,
           "hero": "Tanjiro",
-          "rule": "La matière existe sous trois états : solide (forme fixe), liquide (épouse le récipient), gaz (occupe tout l\\",
-          "slug": "tanjiro-matiere-existe-sous-trois"
+          "quote": "Solide, liquide, gaz — la matière prend trois visages, comme mes techniques de respiration !",
+          "rule": "La matière existe sous trois états : solide (forme fixe), liquide (épouse le récipient), gaz (occupe tout l'espace). Les changements d'état sont des transformations physiques.",
+          "tip": "Tanjiro dit : ",
+          "sections_titles": [
+            "Les trois états",
+            "Les changements d'état",
+            "Les mélanges"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Les trois états",
+          "slug": "tanjiro-les-trois-etats"
         },
         {
-          "ile": 2,
           "hero": "Nezuko",
-          "rule": "L\\",
-          "slug": "nezuko-lecon"
+          "quote": "Soleil, vent, eau — la nature donne l'énergie. Et moi, je transforme la mienne en force pure !",
+          "rule": "L'énergie vient de plusieurs sources. Renouvelables = elles se reconstituent vite (soleil, vent, eau). Non renouvelables = elles s'épuisent (charbon, pétrole, uranium).",
+          "tip": "Nezuko dit : ",
+          "sections_titles": [
+            "Énergies renouvelables",
+            "Énergies non renouvelables",
+            "Transformations d'énergie"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Énergies renouvelables",
+          "slug": "nezuko-energies-renouvelables"
         },
         {
-          "ile": 3,
           "hero": "Zenitsu",
+          "quote": "AAAAH ! L'électricité est dangereuse mais utile — comme ma technique du dieu du tonnerre !",
           "rule": "Un circuit électrique simple a 3 éléments : un générateur (pile), un récepteur (ampoule), des fils. Le circuit doit être fermé pour que le courant circule.",
-          "slug": "zenitsu-circuit-electrique-simple-elements"
+          "tip": "Zenitsu dit : ",
+          "sections_titles": [
+            "Le circuit fermé",
+            "Conducteurs et isolants",
+            "Sécurité électrique"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Le circuit fermé",
+          "slug": "zenitsu-le-circuit-ferme"
         },
         {
-          "ile": 4,
           "hero": "Inosuke",
-          "rule": "Les êtres vivants sont classés selon les caractères qu\\",
-          "slug": "inosuke-etres-vivants-classes-selon"
+          "quote": "GRAOOOH ! Animaux, plantes, champignons — il faut tous les classer pour les comprendre !",
+          "rule": "Les êtres vivants sont classés selon les caractères qu'ils PARTAGENT. Les grands règnes : animaux, végétaux, champignons, bactéries. Les animaux se subdivisent en mammifères, oiseaux, reptiles, poissons, insectes, etc.",
+          "tip": "Inosuke dit : ",
+          "sections_titles": [
+            "Les mammifères",
+            "Oiseaux, reptiles, poissons",
+            "Insectes et autres"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Les mammifères",
+          "slug": "inosuke-les-mammiferes"
         },
         {
-          "ile": 5,
           "hero": "Giyu",
-          "rule": "L\\",
-          "slug": "giyu-lecon"
+          "quote": "L'alimentation équilibrée est la base de la force — comme la respiration de l'eau pour mes techniques.",
+          "rule": "L'alimentation apporte l'énergie et les nutriments pour grandir. Les groupes : glucides (énergie), protéines (construction), lipides (réserve), vitamines/minéraux (santé). Une alimentation équilibrée = variée.",
+          "tip": "Giyu dit : ",
+          "sections_titles": [
+            "Les groupes d'aliments",
+            "Vitamines et minéraux",
+            "Conservation des aliments"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Les groupes d'aliments",
+          "slug": "giyu-les-groupes-daliments"
         },
         {
-          "ile": 6,
           "hero": "Shinobu",
+          "quote": "De la graine à la fleur, du papillon à l'œuf — la vie suit toujours un cycle. Élégant, n'est-ce pas ?",
           "rule": "Tous les êtres vivants se reproduisent et grandissent. Reproduction sexuée = fusion de cellules de 2 parents. Croissance = augmentation de taille au cours du temps.",
-          "slug": "shinobu-tous-etres-vivants-reproduisent"
+          "tip": "Shinobu dit : ",
+          "sections_titles": [
+            "Reproduction des plantes",
+            "Reproduction animale",
+            "Croissance et développement"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Reproduction des plantes",
+          "slug": "shinobu-reproduction-des-plantes"
         },
         {
-          "ile": 7,
           "hero": "Kanao",
-          "rule": "La Terre est la 3ème planète du système solaire. Elle tourne sur elle-même en 24h (jour/nuit) et autour du Soleil en 365 jours (année). L\\",
-          "slug": "kanao-terre-3eme-planete-systeme"
+          "quote": "... La Terre danse autour du Soleil. Le rythme du cosmos est immuable.",
+          "rule": "La Terre est la 3ème planète du système solaire. Elle tourne sur elle-même en 24h (jour/nuit) et autour du Soleil en 365 jours (année). L'inclinaison de son axe crée les saisons.",
+          "tip": "Kanao dit : ",
+          "sections_titles": [
+            "Le système solaire",
+            "Jour, nuit et année",
+            "Les saisons"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Le système solaire",
+          "slug": "kanao-le-systeme-solaire"
         },
         {
-          "ile": 8,
           "hero": "Rengoku",
-          "rule": "La Terre est dynamique : volcans et séismes viennent de son activité interne (chaleur + plaques tectoniques). Tempêtes et inondations viennent de l\\",
-          "slug": "rengoku-terre-dynamique-volcans-seismes"
+          "quote": "ENFLAMME TON CŒUR ! La Terre est puissante — volcans et séismes, nous devons les comprendre pour nous protéger !",
+          "rule": "La Terre est dynamique : volcans et séismes viennent de son activité interne (chaleur + plaques tectoniques). Tempêtes et inondations viennent de l'atmosphère. Connaître les risques permet de se protéger.",
+          "tip": "Rengoku dit : ",
+          "sections_titles": [
+            "Volcans et séismes",
+            "Phénomènes atmosphériques",
+            "Se protéger des risques"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Volcans et séismes",
+          "slug": "rengoku-volcans-et-seismes"
         }
-      ]
+      ],
+      "6eme": [],
+      "5eme": [],
+      "4eme": [],
+      "3eme": []
     }
   },
   "english": {
     "meta": {
+      "reg_key": "english",
       "matiere": "Anglais",
       "matiere_url": "anglais",
       "manga": "Attack on Titan",
       "bucket": "island-aot"
     },
-    "lessons": {}
+    "lessons": {
+      "cm2": [
+        {
+          "hero": "Eren Jäger",
+          "quote": "L",
+          "rule": "L",
+          "tip": "Eren dit : \\\"Mémorise l",
+          "sections_titles": [
+            "L",
+            "Épeler en anglais (Spelling)",
+            "Sons particuliers",
+            "🃏 Les lettres clés"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Épeler en anglais (Spelling)",
+          "slug": "eren-jager-epeler-en-anglais-spelling"
+        },
+        {
+          "hero": "Mikasa Ackerman",
+          "quote": "Les chiffres sont des armes. Compte de 1 à 100 comme un vrai soldat de l",
+          "rule": "Les nombres cardinaux : one, two, three... twenty, thirty... hundred. Les ordinaux : first, second, third, fourth... Les règles de formation : twenty-one, thirty-five...",
+          "tip": "Mikasa dit : \\\"Attention : eight → eighth (pas eightth !) · nine → ninth · twelve → twelfth. Ces irréguliers sont des pièges !\\\"",
+          "sections_titles": [
+            "Nombres 1-20",
+            "Dizaines et grands nombres",
+            "Nombres ordinaux",
+            "🃏 Nombres en anglais"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Nombres 1-20",
+          "slug": "mikasa-ackerman-nombres-1-20"
+        },
+        {
+          "hero": "Armin Arlert",
+          "quote": "Les couleurs du monde sont infinies ! Apprends-les en anglais et peins ta liberté !",
+          "rule": "Les couleurs en anglais : red, blue, green, yellow, white, black, orange, purple, pink, brown, grey. Les adjectifs de couleur se placent AVANT le nom : a red apple.",
+          "tip": "Armin dit : \\\"En anglais on dit ",
+          "sections_titles": [
+            "Les couleurs principales",
+            "Nuances et combinaisons",
+            "🃏 Les couleurs"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Les couleurs principales",
+          "slug": "armin-arlert-les-couleurs-principales"
+        },
+        {
+          "hero": "Levi Ackerman",
+          "quote": "Même les animaux méritent le respect. Connais leurs noms en anglais, c",
+          "rule": "Les animaux : domestiques (cat, dog, rabbit), ferme (cow, pig, horse, sheep), sauvages (lion, tiger, elephant, bear). La possession : It",
+          "tip": "Levi dit : \\\"Attention : sheep ne change pas au pluriel ! one sheep / two sheep. Même chose pour fish (souvent). Retiens ces exceptions !\\\"",
+          "sections_titles": [
+            "Animaux domestiques et de ferme",
+            "Animaux sauvages",
+            "🃏 Les animaux"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Animaux domestiques et de ferme",
+          "slug": "levi-ackerman-animaux-domestiques-et-de-ferme"
+        },
+        {
+          "hero": "Historia Reiss",
+          "quote": "La famille, c",
+          "rule": "La famille : mother/mum, father/dad, sister, brother, grandmother/granny, grandfather/granddad, aunt, uncle, cousin. Les possessifs : my, your, his, her.",
+          "tip": "Historia dit : \\\"his = son/sa (pour un homme) · her = son/sa (pour une femme). Sa sœur : HIS sister (si c",
+          "sections_titles": [
+            "La famille proche",
+            "La famille étendue et possessifs",
+            "🃏 La famille et les possessifs"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "La famille proche",
+          "slug": "historia-reiss-la-famille-proche"
+        },
+        {
+          "hero": "Jean Kirstein",
+          "quote": "Connais ton corps comme tu connais ton équipement d",
+          "rule": "Le corps humain : head, face, eye, nose, mouth, ear, neck, shoulder, arm, hand, leg, foot/feet. Pluriels irréguliers : foot → feet, tooth → teeth.",
+          "tip": "Jean dit : \\\"Pluriels irréguliers à retenir : foot→feet · tooth→teeth · child→children. Pas de -s ici ! Piège d",
+          "sections_titles": [
+            "La tête et le visage",
+            "Le corps : tronc et membres",
+            "🃏 Le corps humain"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "La tête et le visage",
+          "slug": "jean-kirstein-la-tete-et-le-visage"
+        },
+        {
+          "hero": "Hange Zoë",
+          "quote": "À l",
+          "rule": "L",
+          "tip": "Hange dit : \\\"P.E. = Physical Education = EPS. En anglais, les jours et les matières prennent une MAJUSCULE : Monday, English, History !\\\"",
+          "sections_titles": [
+            "Objets scolaires",
+            "Matières et emploi du temps",
+            "🃏 L"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Objets scolaires",
+          "slug": "hange-zoe-objets-scolaires"
+        },
+        {
+          "hero": "Erwin Smith",
+          "quote": "Un bon commandant connaît la météo avant la mission ! Apprenons à décrire le temps qu",
+          "rule": "La météo : sunny, cloudy, rainy, windy, snowy, foggy, hot, cold, warm. Structure : It is sunny. / The weather is cold. / What",
+          "tip": "Erwin dit : \\\"What",
+          "sections_titles": [
+            "Décrire la météo",
+            "Saisons et questions météo",
+            "🃏 La météo et les saisons"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Décrire la météo",
+          "slug": "erwin-smith-decrire-la-meteo"
+        }
+      ],
+      "6eme": [
+        {
+          "hero": "Armin Arlert",
+          "quote": "Le Present Simple, c",
+          "rule": "Present Simple = action habituelle ou vérité générale. Affirmation : I/You/We/They + V-base · He/She/It + V+s. Négation : don",
+          "tip": "Armin dit : \\\"Règle d",
+          "sections_titles": [
+            "Affirmation au Present Simple",
+            "Négation et questions",
+            "🃏 Present Simple"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Affirmation au Present Simple",
+          "slug": "armin-arlert-affirmation-au-present-simple"
+        },
+        {
+          "hero": "Levi Ackerman",
+          "quote": "BE et HAVE sont les deux verbes fondamentaux. Apprends-les, pas d",
+          "rule": "Verbe BE : I am / You are / He-She-It is / We-You-They are. Verbe HAVE : I have / You have / He-She-It has / We-You-They have. Formes contractées : I",
+          "tip": "Levi dit : \\\"Jamais ",
+          "sections_titles": [
+            "Verbe TO BE",
+            "Verbe TO HAVE",
+            "🃏 BE et HAVE"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Verbe TO BE",
+          "slug": "levi-ackerman-verbe-to-be"
+        },
+        {
+          "hero": "Historia Reiss",
+          "quote": "A, an, the... Trois petits mots, une grande différence ! Je vais te les expliquer !",
+          "rule": "Articles indéfinis : a (avant consonne) / an (avant voyelle) = un/une. Article défini : the = le/la/les. Pas d",
+          "tip": "Historia dit : \\\"an HOUR (h muet) → an ! / a UNIVERSITY (son [j]) → a ! La règle c",
+          "sections_titles": [
+            "A et AN — articles indéfinis",
+            "THE — article défini",
+            "🃏 Articles A / AN / THE"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "A et AN — articles indéfinis",
+          "slug": "historia-reiss-a-et-an-articles-indefinis"
+        },
+        {
+          "hero": "Jean Kirstein",
+          "quote": "Un soldat, deux soldats ! Les pluriels en anglais, c",
+          "rule": "Pluriels réguliers : +s (cat/cats). Règles spéciales : +es (box/boxes), y→ies (baby/babies), f→ves (leaf/leaves). Pluriels irréguliers : man/men, woman/women, child/children, mouse/mice.",
+          "tip": "Jean dit : \\\"Les pièges classiques : child→children (pas childs !) · woman→women · mouse→mice. Et sheep reste sheep, jamais sheeps !\\\"",
+          "sections_titles": [
+            "Pluriels réguliers et règles",
+            "Pluriels irréguliers",
+            "🃏 Pluriels réguliers et irréguliers"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Pluriels réguliers et règles",
+          "slug": "jean-kirstein-pluriels-reguliers-et-regles"
+        },
+        {
+          "hero": "Hange Zoë",
+          "quote": "Les adjectifs, ce sont les couleurs du langage ! Plus t",
+          "rule": "Adjectifs qualificatifs : big/small, fast/slow, hot/cold, beautiful/ugly, happy/sad, new/old. Placement : AVANT le nom (a big house) ou après BE (The house is big). Pas de pluriel en anglais.",
+          "tip": "Hange dit : \\\"JAMAIS d",
+          "sections_titles": [
+            "Adjectifs : placement et accord",
+            "Antonymes et vocabulaire",
+            "🃏 Adjectifs qualificatifs"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Adjectifs : placement et accord",
+          "slug": "hange-zoe-adjectifs-placement-et-accord"
+        },
+        {
+          "hero": "Erwin Smith",
+          "quote": "La position de tes soldats sur le terrain, c",
+          "rule": "Prépositions de lieu : in (dans), on (sur), under (sous), between (entre), next to (à côté de), in front of (devant), behind (derrière), opposite (en face de).",
+          "tip": "Erwin dit : \\\"Prépositions de temps : AT (heure : at 3pm) · ON (jour : on Monday) · IN (mois/saison : in July, in summer). C",
+          "sections_titles": [
+            "Prépositions de lieu principales",
+            "Autres prépositions fréquentes",
+            "🃏 Prépositions de lieu et temps"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Prépositions de lieu principales",
+          "slug": "erwin-smith-prepositions-de-lieu-principales"
+        },
+        {
+          "hero": "Connie Springer",
+          "quote": "Do you like manga? Does she play sports? Les questions au Present Simple, c",
+          "rule": "Questions fermées (yes/no) : Do/Does + sujet + V-base ? Questions ouvertes (WH-) : WH-word + do/does + sujet + V ? Réponses courtes : Yes, I do. / No, she doesn",
+          "tip": "Connie dit : \\\"WH- + do/does + sujet + V-base. Exemple : WHERE does she LIVE? (pas ",
+          "sections_titles": [
+            "Questions fermées (Yes/No)",
+            "Questions ouvertes (WH-)",
+            "🃏 Poser des questions"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Questions fermées (Yes/No)",
+          "slug": "connie-springer-questions-fermees-yesno"
+        },
+        {
+          "hero": "Sasha Blouse",
+          "quote": "La nourriture, c",
+          "rule": "Vocabulaire quotidien : food (bread, meat, rice, fruit, vegetables), drinks (water, milk, juice), activities (read, write, play, watch, listen), time expressions (in the morning, at noon, in the evening).",
+          "tip": "Sasha dit : \\\"I always eat breakfast (toujours après le sujet pour always/never/usually/often). But : Sometimes I eat pizza (peut aller en début !) \\\"",
+          "sections_titles": [
+            "Nourriture et boissons",
+            "Routines et expressions de temps",
+            "🃏 Vocabulaire quotidien"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Nourriture et boissons",
+          "slug": "sasha-blouse-nourriture-et-boissons"
+        }
+      ],
+      "5eme": [
+        {
+          "hero": "Eren Jäger",
+          "quote": "Le passé m",
+          "rule": "Past Simple régulier : V + -ed (walked, played, finished). Règles : stop→stopped (double consonne), like→liked (e muet = +d), study→studied (y→ied). Négation : didn",
+          "tip": "Eren dit : \\\"Après didn",
+          "sections_titles": [
+            "Past Simple régulier",
+            "Négation et questions au passé",
+            "🃏 Past Simple régulier"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Past Simple régulier",
+          "slug": "eren-jager-past-simple-regulier"
+        },
+        {
+          "hero": "Levi Ackerman",
+          "quote": "Les irréguliers, c",
+          "rule": "Liste des 30 verbes irréguliers les plus fréquents. Les 3 formes : infinitif / Past Simple / Participe passé. Ex : go/went/gone · see/saw/seen · write/wrote/written.",
+          "tip": "Levi dit : \\\"Méthode : apprends les irréguliers par groupes de sons : ring/rang/rung · sing/sang/sung · swim/swam/swum → même pattern !\\\"",
+          "sections_titles": [
+            "Les 30 irréguliers essentiels (groupe 1)",
+            "Irréguliers groupe 2 + passé composé",
+            "🃏 Verbes irréguliers"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Les 30 irréguliers essentiels (groupe 1)",
+          "slug": "levi-ackerman-les-30-irreguliers-essentiels-groupe-1"
+        },
+        {
+          "hero": "Hange Zoë",
+          "quote": "Le Present Continuous ! On l",
+          "rule": "Present Continuous : BE (am/is/are) + V-ing. Usage : action en cours maintenant ou dans un futur proche planifié. Attention : verbes d",
+          "tip": "Hange dit : \\\"Listen ! I am CURRENTLY speaking → -ing. Markers : now, right now, at the moment, look!, listen! Ces mots déclenchent le Continuous !\\\"",
+          "sections_titles": [
+            "Formation du Present Continuous",
+            "Stative verbs — jamais en -ing !",
+            "🃏 Present Continuous"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Formation du Present Continuous",
+          "slug": "hange-zoe-formation-du-present-continuous"
+        },
+        {
+          "hero": "Erwin Smith",
+          "quote": "Les modaux expriment la possibilité, l",
+          "rule": "Modaux : CAN (capacité/permission), MUST (obligation), SHOULD (conseil), MAY (permission formelle), MIGHT (possibilité). Après un modal : toujours V-base (jamais -s, -ing, -ed).",
+          "tip": "Erwin dit : \\\"Règle d",
+          "sections_titles": [
+            "CAN et MUST",
+            "SHOULD, MAY, MIGHT",
+            "🃏 Verbes modaux"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "CAN et MUST",
+          "slug": "erwin-smith-can-et-must"
+        },
+        {
+          "hero": "Connie Springer",
+          "quote": "Les comparatifs ! Mon cheval est PLUS rapide que le tien ! Plus grand, plus fort, meilleur !",
+          "rule": "Comparatifs d",
+          "tip": "Connie dit : \\\"Court → -er · Long → more. Mais good→better, bad→worse : pas de règle ! Et double la consonne finale : big→bigg-er · hot→hott-er !\\\"",
+          "sections_titles": [
+            "Comparatif de supériorité",
+            "Égalité, infériorité, irréguliers",
+            "🃏 Comparatifs"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Comparatif de supériorité",
+          "slug": "connie-springer-comparatif-de-superiorite"
+        },
+        {
+          "hero": "Sasha Blouse",
+          "quote": "Past ou Present Continuous ? C",
+          "rule": "Past Simple vs Present Continuous. Past : action terminée (yesterday, ago, in 2020). Present Continuous : action en cours (now, right now, at the moment). Was/were + V-ing = Past Continuous.",
+          "tip": "Sasha dit : \\\"While + Past Continuous = action en cours, THEN + Past Simple = interruption. While I was eating, the bell rang !\\\"",
+          "sections_titles": [
+            "Past Simple vs Present Continuous",
+            "Past Continuous : was/were + V-ing",
+            "🃏 Past Continuous"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Past Simple vs Present Continuous",
+          "slug": "sasha-blouse-past-simple-vs-present-continuous"
+        },
+        {
+          "hero": "Armin Arlert",
+          "quote": "Les questions au passé permettent de reconstituer l",
+          "rule": "Questions au Past Simple : Did + sujet + V-base ? WH- + did + sujet + V-base ? Questions avec BE : Was/Were + sujet ? Questions avec Past Continuous : Was/Were + sujet + V-ing ?",
+          "tip": "Armin dit : \\\"Piège : ",
+          "sections_titles": [
+            "Questions au Past Simple",
+            "Questions avancées au passé",
+            "🃏 Questions au passé"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Questions au Past Simple",
+          "slug": "armin-arlert-questions-au-past-simple"
+        },
+        {
+          "hero": "Mikasa Ackerman",
+          "quote": "Révisions de 5ème : Present Simple, Past Simple, Continuous, modaux, comparatifs. Tout en un !",
+          "rule": "Révisions niveau 5ème. Present Simple (habitudes), Past Simple (passé révolu), Present Continuous (action en cours), Past Continuous (action en cours dans le passé), modaux (can/must/should), comparatifs.",
+          "tip": "Mikasa dit : \\\"Récapitulatif clé : PRÉSENT simple → habitude / PRÉSENT continuous → maintenant / PASSÉ simple → terminé / PASSÉ continuous → en cours dans passé.\\\"",
+          "sections_titles": [
+            "Synthèse des temps étudiés",
+            "Points clés à ne pas oublier",
+            "🃏 Révisions 5ème — Pièges classiques"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Synthèse des temps étudiés",
+          "slug": "mikasa-ackerman-synthese-des-temps-etudies"
+        }
+      ],
+      "4eme": [
+        {
+          "hero": "Historia Reiss",
+          "quote": "Le Present Perfect relie le passé et le présent. J",
+          "rule": "Present Perfect : HAVE/HAS + participe passé. Usage : expérience de vie, action passée avec effet présent. Marqueurs : ever, never, already, yet, just. Formation : have/has + pp irréguliers (been, seen, done, gone...).",
+          "tip": "Historia dit : \\\"EVER dans les questions · NEVER dans les négatifs · ALREADY = déjà (avant la date prévue) · YET = encore pas fait · JUST = vient de se passer !\\\"",
+          "sections_titles": [
+            "Formation du Present Perfect",
+            "Marqueurs clés : ever, never, already, yet, just",
+            "🃏 Present Perfect"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Formation du Present Perfect",
+          "slug": "historia-reiss-formation-du-present-perfect"
+        },
+        {
+          "hero": "Levi Ackerman",
+          "quote": "Present Perfect ou Past Simple ? Je n",
+          "rule": "Present Perfect : lien avec le présent, pas de moment précis. Past Simple : action terminée à un moment précis (yesterday, in 2020, last week). SINCE = depuis quand (point). FOR = depuis combien de temps (durée).",
+          "tip": "Levi dit : \\\"Règle ultime : yesterday/last week/in 2020 → Past Simple. Ever/never/already/yet/since/for → Present Perfect. La date précise = PS !\\\"",
+          "sections_titles": [
+            "Present Perfect vs Past Simple",
+            "SINCE vs FOR — la règle essentielle",
+            "🃏 Present Perfect vs Past Simple"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Present Perfect vs Past Simple",
+          "slug": "levi-ackerman-present-perfect-vs-past-simple"
+        },
+        {
+          "hero": "Hange Zoë",
+          "quote": "Le futur avec WILL ! Une prédiction, une décision spontanée, une promesse — will est parfait !",
+          "rule": "WILL + V-base : prédictions, décisions spontanées, promesses, offres. Forme : will (I",
+          "tip": "Hange dit : \\\"WILL = décision au moment où on parle ou prédiction. GOING TO = plan déjà décidé ou évidence physique. The phone is ringing → I",
+          "sections_titles": [
+            "Formation et usages de WILL",
+            "Négation et questions avec WILL",
+            "🃏 Futur avec WILL"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Formation et usages de WILL",
+          "slug": "hange-zoe-formation-et-usages-de-will"
+        },
+        {
+          "hero": "Erwin Smith",
+          "quote": "Going to, c",
+          "rule": "BE + GOING TO + V-base : plan décidé, intention, évidence visible. Diffère de WILL (spontané/prédiction sans preuve). Forme : am/is/are + going to + V.",
+          "tip": "Erwin dit : \\\"Distinguer : WILL = décision maintenant ou prédiction sans preuve / GOING TO = plan déjà fait ou évidence concrète. Look at the sky — it",
+          "sections_titles": [
+            "BE GOING TO — plans et intentions",
+            "Évidence + Will vs Going To",
+            "🃏 BE GOING TO"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "BE GOING TO — plans et intentions",
+          "slug": "erwin-smith-be-going-to-plans-et-intentions"
+        },
+        {
+          "hero": "Eren Jäger",
+          "quote": "Comparatifs ET superlatifs ! Le plus fort, le plus grand, le meilleur — c",
+          "rule": "Superlatifs : THE + adj+est (court) / THE most + adj (long). Irréguliers : good→best, bad→worst, far→farthest. Comparatif + and + comparatif = de plus en plus. The + comparatif, the + comparatif = plus...plus...",
+          "tip": "Eren dit : \\\"Superlatif = THE + -est OU THE most. Piège : adj en -y → happiest (pas happyest !). Good→best, bad→worst : irréguliers obligatoires !\\\"",
+          "sections_titles": [
+            "Superlatifs",
+            "Structures avancées de comparaison",
+            "🃏 Superlatifs"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Superlatifs",
+          "slug": "eren-jager-superlatifs"
+        },
+        {
+          "hero": "Historia Reiss",
+          "quote": "Les question tags, c",
+          "rule": "Question tags : phrase affirmative + tag négatif / phrase négative + tag positif. Règle : auxiliaire de la phrase principale, pronom sujet. Ex : She is French, isn",
+          "tip": "Historia dit : \\\"Règle simple : phrase positive → tag NÉGATIF. Phrase négative → tag POSITIF. Et reprendre l",
+          "sections_titles": [
+            "Formation des question tags",
+            "Règles et cas particuliers",
+            "🃏 Question Tags"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Formation des question tags",
+          "slug": "historia-reiss-formation-des-question-tags"
+        },
+        {
+          "hero": "Jean Kirstein",
+          "quote": "La voix passive ! On ne sait pas qui a attaqué le mur... Le mur a été attaqué. C",
+          "rule": "Voix passive : BE + participe passé. Actif : ",
+          "tip": "Jean dit : \\\"Transforme : Actif = ",
+          "sections_titles": [
+            "Formation de la voix passive",
+            "Usages et transformations",
+            "🃏 Voix Passive"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Formation de la voix passive",
+          "slug": "jean-kirstein-formation-de-la-voix-passive"
+        },
+        {
+          "hero": "Connie Springer",
+          "quote": "Grande révision de 4ème ! Present Perfect, Will, Going To, comparatifs, passif — on récapitule tout !",
+          "rule": "Révision niveau 4ème : Present Perfect (have/has+pp), Will (spontané/promesse), Going to (plan/intention), comparatifs/superlatifs avancés, question tags, voix passive.",
+          "tip": "Connie dit : \\\"Mémo final : PP = have+been/gone/seen... | Will = décision/promesse | Going to = plan/preuve | Superlatif = THE+est/THE most | Passif = be+pp !\\\"",
+          "sections_titles": [
+            "Synthèse niveau 4ème",
+            "Distinctions et pièges finaux",
+            "🃏 Révisions 4ème — Points clés"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Synthèse niveau 4ème",
+          "slug": "connie-springer-synthese-niveau-4eme"
+        }
+      ],
+      "3eme": [
+        {
+          "hero": "Eren Jäger",
+          "quote": "Past Simple raconte le passé terminé, Past Continuous décrit ce qui était en cours. Use both !",
+          "rule": "Past Simple = action terminée (V-ed ou V2 irrégulier). Past Continuous = action en cours dans le passé (was/were + V-ing). Combinés : action en cours interrompue par une action soudaine (while/when).",
+          "tip": "Eren dit : \\\"Past Simple = FINI ! Past Continuous = EN COURS ! Combinés : WHILE + was V-ing + WHEN + Past Simple. Pattern Brevet incontournable !\\\"",
+          "sections_titles": [
+            "Past Simple : action terminée",
+            "Past Continuous : action en cours",
+            "Combinaison while / when",
+            "🃏 Past Simple vs Past Continuous"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Past Simple : action terminée",
+          "slug": "eren-jager-past-simple-action-terminee"
+        },
+        {
+          "hero": "Mikasa Ackerman",
+          "quote": "Present Perfect relie le passé au présent. I have known Eren since we were children.",
+          "rule": "Present Perfect : have/has + V3 (past participle). Pour les expériences sans date précise, les actions récentes, ou une durée jusqu",
+          "tip": "Mikasa dit : \\\"have/has + V3 + since/for = lien passé-présent. Ever/never pour expériences. Yet pour une attente. Just pour une action toute récente.\\\"",
+          "sections_titles": [
+            "Forme : have/has + V3",
+            "Since vs For (durée jusqu'au présent)",
+            "Ever / Never / Just / Yet / Already",
+            "🃏 Present Perfect"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "Forme : have/has + V3",
+          "slug": "mikasa-ackerman-forme-havehas-v3"
+        },
+        {
+          "hero": "Armin Arlert",
+          "quote": "If-clauses : zero (toujours vrai), first (probable), second (hypothèse), third (regret passé). Strategy !",
+          "rule": "Conditionals : 4 types selon la réalité de la condition. Zero = vérité générale. First = futur réel. Second = hypothèse irréelle présent. Third = regret passé. JAMAIS de WILL après IF !",
+          "tip": "Armin dit : \\\"0 = toujours vrai (lois). 1 = futur probable (will). 2 = hypothèse (would). 3 = regret passé (would have). PAS de WILL après IF !\\\"",
+          "sections_titles": [
+            "Zero & First Conditional",
+            "Second Conditional : hypothèse irréelle",
+            "Third Conditional : regret du passé",
+            "🃏 Conditionals"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Zero & First Conditional",
+          "slug": "armin-arlert-zero-first-conditional"
+        },
+        {
+          "hero": "Hange Zoë",
+          "quote": "Modals: must (obligation!), should (advice), can (ability), might (maybe). Use them wisely !",
+          "rule": "Modal verbs : verbes invariables suivis de la BASE verbale (sans TO). Expriment obligation (must/have to), conseil (should), capacité/permission (can/may), possibilité (might/may), regret (should have).",
+          "tip": "Hange dit : \\\"Modaux + base verbale (SANS TO) ! Must = obligation. Should = conseil. Might = peut-être. Should have + V3 = regret du passé !\\\"",
+          "sections_titles": [
+            "Obligation et interdiction",
+            "Conseil, capacité, permission",
+            "Possibilité et regret passé",
+            "🃏 Modal verbs"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Obligation et interdiction",
+          "slug": "hange-zoe-obligation-et-interdiction"
+        },
+        {
+          "hero": "Annie Leonhart",
+          "quote": "Reported speech and passive voice — transformations grammaticales. Stay focused !",
+          "rule": "Reported speech : on recule d",
+          "tip": "Annie dit : \\\"Reported = recul d",
+          "sections_titles": [
+            "Reported speech : recul des temps",
+            "Reported questions",
+            "Passive voice : BE + V3",
+            "🃏 Reported & Passive"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "Reported speech : recul des temps",
+          "slug": "annie-leonhart-reported-speech-recul-des-temps"
+        },
+        {
+          "hero": "Erwin Smith",
+          "quote": "School life, jobs, future plans. A commander must speak about goals and dreams !",
+          "rule": "Vocabulaire essentiel Brevet : vie scolaire (school subjects, homework), métiers (jobs, professions), projets d",
+          "tip": "Erwin dit : \\\"Pattern Brevet : I want to be a + job (article obligatoire). When + present (pas WILL après WHEN). I",
+          "sections_titles": [
+            "School life",
+            "Jobs and professions",
+            "Future plans",
+            "🃏 School & Jobs vocabulary"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "School life",
+          "slug": "erwin-smith-school-life"
+        },
+        {
+          "hero": "Levi Ackerman",
+          "quote": "English-speaking world : UK, USA, Australia, Canada. Cultural facts — essential for the Brevet.",
+          "rule": "Faits culturels du monde anglophone : capitales, langues, monnaies, fêtes, systèmes politiques. Brevet B1 : comprendre des documents authentiques sur le Royaume-Uni, les USA, le Canada, l",
+          "tip": "Levi dit : \\\"Tch. Pièges Brevet : capitale USA = Washington D.C. (pas NY). Capitale Australie = Canberra (pas Sydney). Canada = bilingue. Apprends-les.\\\"",
+          "sections_titles": [
+            "United Kingdom",
+            "United States of America",
+            "Other English-speaking countries",
+            "🃏 English-speaking world"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "United Kingdom",
+          "slug": "levi-ackerman-united-kingdom"
+        },
+        {
+          "hero": "Reiner Braun",
+          "quote": "Final Brevet challenge : mixed grammar, third conditional, question tags. The ultimate test !",
+          "rule": "Synthèse BREVET : comparatifs/superlatifs, pluriels irréguliers, third conditional, question tags, voix passive. Toutes les notions clés. Pattern ULTIMATE : If I had known + would have V3.",
+          "tip": "Reiner dit : \\\"BREVET ULTIMATE : Third conditional = If + had + V3 → would have + V3. Pluriels irréguliers à mémoriser. Question tags = inversion. GOOD LUCK !\\\"",
+          "sections_titles": [
+            "Comparatifs et superlatifs",
+            "Question tags & pluriels irréguliers",
+            "Third conditional : ULTIMATE pattern",
+            "🃏 Brevet Final — ULTIMATE"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Comparatifs et superlatifs",
+          "slug": "reiner-braun-comparatifs-et-superlatifs"
+        }
+      ]
+    }
   },
   "namek": {
     "meta": {
+      "reg_key": "namek",
       "matiere": "Géographie",
       "matiere_url": "geographie",
       "manga": "Jujutsu Kaisen",
@@ -207,54 +1621,130 @@
     "lessons": {
       "cm2": [
         {
-          "ile": 1,
           "hero": "Yuji",
+          "quote": "Les villes sont vivantes — pleines de gens, de bruits, de mouvement ! Comme moi quand je combats !",
           "rule": "Une ville est un espace très peuplé concentrant beaucoup de constructions, de services et de transports. On y trouve des quartiers, des banlieues, des transports en commun (métro, bus, tram).",
-          "slug": "yuji-ville-espace-tres-peuple"
+          "tip": "Yuji dit : ",
+          "sections_titles": [
+            "Qu'est-ce qu'une ville ?",
+            "Les transports urbains",
+            "Quartiers et banlieue"
+          ],
+          "warmup_count": 2,
+          "ile": 1,
+          "notion": "Qu'est-ce qu'une ville ?",
+          "slug": "yuji-quest-ce-quune-ville"
         },
         {
-          "ile": 2,
           "hero": "Megumi",
-          "rule": "La campagne (espace rural) a une faible densité de population, des paysages agricoles (champs, prés, forêts), et l\\",
-          "slug": "megumi-campagne-espace-rural-faible"
+          "quote": "La campagne... le calme. Peu de gens, beaucoup d'espace. Comme mes invocations dans la nature.",
+          "rule": "La campagne (espace rural) a une faible densité de population, des paysages agricoles (champs, prés, forêts), et l'agriculture y est l'activité principale. Les habitants s'appellent les ruraux.",
+          "tip": "Megumi dit : ",
+          "sections_titles": [
+            "L'agriculture",
+            "Villages et hameaux",
+            "Exode rural et néo-ruraux"
+          ],
+          "warmup_count": 2,
+          "ile": 2,
+          "notion": "L'agriculture",
+          "slug": "megumi-lagriculture"
         },
         {
-          "ile": 3,
           "hero": "Nobara",
-          "rule": "Le littoral est la zone où la mer rencontre la terre. Il a 3 fonctions principales : la pêche, le tourisme balnéaire, et le commerce maritime via les ports. C\\",
-          "slug": "nobara-littoral-zone-mer-rencontre"
+          "quote": "Le littoral, c'est ma zone de confort ! Pêcheurs, surfeurs, touristes — tout bouge !",
+          "rule": "Le littoral est la zone où la mer rencontre la terre. Il a 3 fonctions principales : la pêche, le tourisme balnéaire, et le commerce maritime via les ports. C'est aussi une zone fragile.",
+          "tip": "Nobara dit : ",
+          "sections_titles": [
+            "Plages et stations balnéaires",
+            "Ports et commerce maritime",
+            "Pêche et aquaculture"
+          ],
+          "warmup_count": 2,
+          "ile": 3,
+          "notion": "Plages et stations balnéaires",
+          "slug": "nobara-plages-et-stations-balneaires"
         },
         {
-          "ile": 4,
           "hero": "Gojo",
+          "quote": "En montagne, je vois LOIN — comme avec mes Six Yeux. Sommets, neige, glaciers. Magnifique.",
           "rule": "La montagne est un relief élevé (>600m) avec des contraintes : froid, pente, isolement, neige. Les principales chaînes françaises sont les Alpes, Pyrénées, Massif Central, Jura, Vosges.",
-          "slug": "gojo-montagne-relief-eleve-600m"
+          "tip": "Gojo dit : ",
+          "sections_titles": [
+            "Les chaînes de montagnes",
+            "Stations de ski",
+            "Alpages et transhumance"
+          ],
+          "warmup_count": 2,
+          "ile": 4,
+          "notion": "Les chaînes de montagnes",
+          "slug": "gojo-les-chaines-de-montagnes"
         },
         {
-          "ile": 5,
           "hero": "Inumaki",
-          "rule": "En France, on se déplace en TGV (très rapide), avion, voiture, train, bus, vélo, ou à pied. Les transports doux (vélo, marche) ne polluent pas. Les transports en commun réduisent les bouchons et la po",
-          "slug": "inumaki-france-deplace-tgv-tres"
+          "quote": "Saumon ! (Se déplacer rapidement, c'est important comme mes paroles maudites !)",
+          "rule": "En France, on se déplace en TGV (très rapide), avion, voiture, train, bus, vélo, ou à pied. Les transports doux (vélo, marche) ne polluent pas. Les transports en commun réduisent les bouchons et la pollution.",
+          "tip": "Inumaki dit : ",
+          "sections_titles": [
+            "TGV et train",
+            "Avion et autoroute",
+            "Transports doux"
+          ],
+          "warmup_count": 2,
+          "ile": 5,
+          "notion": "TGV et train",
+          "slug": "inumaki-tgv-et-train"
         },
         {
-          "ile": 6,
           "hero": "Yuta",
-          "rule": "Internet relie des millions d\\",
-          "slug": "yuta-internet-relie-millions"
+          "quote": "Communiquer m'a sauvé — autrefois isolé, maintenant je suis en lien avec le monde entier !",
+          "rule": "Internet relie des millions d'ordinateurs dans le monde. La fibre optique transmet à grande vitesse. 99% du trafic mondial passe par des câbles sous-marins. Mais il reste une fracture numérique : tous n'ont pas accès.",
+          "tip": "Yuta dit : ",
+          "sections_titles": [
+            "Internet et la fibre",
+            "Smartphones et réseaux sociaux",
+            "Satellites de communication"
+          ],
+          "warmup_count": 2,
+          "ile": 6,
+          "notion": "Internet et la fibre",
+          "slug": "yuta-internet-et-la-fibre"
         },
         {
-          "ile": 7,
           "hero": "Todo",
-          "rule": "Mieux habiter = réduire l\\",
-          "slug": "todo-mieux-habiter-reduire"
+          "quote": "BROTHER ! Mieux habiter, c'est respecter la nature ET vivre mieux. Les vrais hommes pensent à demain !",
+          "rule": "Mieux habiter = réduire l'empreinte écologique tout en améliorant la qualité de vie. Écoquartiers, énergies renouvelables, recyclage, transports doux, isolation, espaces verts.",
+          "tip": "Todo dit : ",
+          "sections_titles": [
+            "Écoquartiers",
+            "Tri et recyclage",
+            "Énergies renouvelables"
+          ],
+          "warmup_count": 2,
+          "ile": 7,
+          "notion": "Écoquartiers",
+          "slug": "todo-ecoquartiers"
         },
         {
-          "ile": 8,
           "hero": "Nanami",
-          "rule": "Une métropole est une très grande ville influente concentrant population, services et pouvoirs économiques/politiques. Tokyo (37M) est la plus grande mégapole du monde. Paris est la métropole français",
-          "slug": "nanami-metropole-tres-grande-ville"
+          "quote": "7h - 19h. Les métropoles sont des fourmilières humaines. Pouvoir, économie, culture concentrés.",
+          "rule": "Une métropole est une très grande ville influente concentrant population, services et pouvoirs économiques/politiques. Tokyo (37M) est la plus grande mégapole du monde. Paris est la métropole française dominante.",
+          "tip": "Nanami dit : ",
+          "sections_titles": [
+            "Métropoles françaises",
+            "Mégapoles mondiales",
+            "Quartiers et banlieue"
+          ],
+          "warmup_count": 2,
+          "ile": 8,
+          "notion": "Métropoles françaises",
+          "slug": "nanami-metropoles-francaises"
         }
-      ]
+      ],
+      "6eme": [],
+      "5eme": [],
+      "4eme": [],
+      "3eme": []
     }
   }
 }
