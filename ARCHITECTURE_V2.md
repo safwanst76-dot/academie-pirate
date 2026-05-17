@@ -886,6 +886,52 @@ Lors d'un patch BIZ-01, un audit avec pattern global `"(à dev)"` a déclenché 
 
 *Toute modification de BIZ-01 nécessite la validation explicite du propriétaire du projet.*
 
+
+### Règle PROD-01 — Source de vérité = PROD (anti-supposition) ⚠️ CRITIQUE
+
+**Énoncé** : ne jamais supposer, vérifier toujours la réalité prod avant 
+d'agir ou de proposer.
+
+**Origine** : ajoutée le 16 mai 2026 après plusieurs incidents en session SEO :
+- URL inventée `luffy-le-passe-simple` qui n'existait pas (HTTP 404 en GSC)
+- Mapping `MONDE_PAR_MATIERE` supposé sans vérif sitemap réelle
+- Plusieurs propositions qui auraient cassé la prod si exécutées telles quelles
+
+**Règle obligatoire** :
+
+1. **AVANT toute proposition d'URL** : vérifier dans `sitemap.xml` qu'elle existe
+```bash
+   grep "URL-A-VERIFIER" sitemap.xml
+   curl -s -o /dev/null -w "HTTP %{http_code}" https://aca-pirate.ch/URL/
+```
+
+2. **AVANT tout mapping/structure** : vérifier dans le code app et les 
+   fichiers réels, pas dans la doc ou la mémoire
+```bash
+   grep -r "code-suppose" js/
+   ls -d MATIERE/NIVEAU/*/ 2>/dev/null
+```
+
+3. **AVANT toute liste de fichiers** : `ls`, `find`, ou parcours Python 
+   sur le disque ou le sitemap, jamais de mémoire
+
+4. **AVANT toute affirmation factuelle** sur l'état du projet : vérifier 
+   d'abord via commande, puis affirmer
+
+5. **Quand une donnée est INVENTÉE ou SUPPOSÉE** : le DIRE EXPLICITEMENT 
+   au propriétaire avec un drapeau visible :
+   > ⚠️ HYPOTHÈSE NON VÉRIFIÉE : [contenu hypothèse]
+   > À VALIDER AVANT EXÉCUTION
+
+**Sanction d'une violation** :
+- Toute proposition qui violerait PROD-01 doit être STOPPÉE par le propriétaire
+- Toute commande qui passe en prod sans vérif préalable = bug critique potentiel
+
+**Liens** : voir aussi BIZ-01 (ne pas inventer le wording business), 
+IP-01 (ne pas inventer le respect IP), NR-01 (non régression).
+
+*Règle ajoutée le 16 mai 2026 après audit auto-critique de la session SEO.*
+
 ### Règle IP-01 — Propriété intellectuelle manga ⚠️
 
 Académie Pirate utilise des noms et concepts de personnages manga (Naruto, One Piece, Attack on Titan, Dragon Ball Z, Demon Slayer, Jujutsu Kaisen) à des fins éducatives. Ces propriétés appartiennent à leurs éditeurs respectifs (Shueisha, Toei Animation, Wit Studio, Mappa, etc.).
