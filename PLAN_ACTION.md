@@ -93,7 +93,7 @@
 
 ---
 
-### P0.3 — Légal : Disclaimer IP manga (anti-DMCA)
+### P0.3 — Légal : Disclaimer IP manga (anti-DMCA) ✅ DONE (16 mai 2026)
 
 **Risque** : Usage non-licencié de noms et concepts de personnages appartenant à Shueisha, Toei Animation, Wit Studio, Mappa. Aujourd'hui sous le radar mais DMCA possible dès visibilité accrue.
 
