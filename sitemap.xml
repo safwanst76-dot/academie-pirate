@@ -2,1110 +2,350 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aca-pirate.ch/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/naruto-uzumaki-les-classes-de-nombres/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/sakura-haruno-lire-une-fraction/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/sasuke-uchiha-multiplication-posee/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/kakashi-hatake-lire-les-decimaux/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/rock-lee-longueurs-et-masses/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/hinata-hyuga-perimetres/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/gaara-polygones-et-angles/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/cm2/hokage-reconnaitre-la-proportionnalite/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/naruto-uzumaki-decimaux-niveau-6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/hinata-hyuga-fractions-equivalentes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/shikamaru-nara-tableau-de-proportionnalite/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/ino-yamanaka-angles-et-droites/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/choji-akimichi-aire-du-triangle/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/tenten-cercle-vs-disque/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/neji-hyuga-indicateurs-statistiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/6eme/zabuza-momochi-recapitulatif-6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/naruto-uzumaki-expressions-litterales/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/sasuke-uchiha-priorites-operatoires/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/sakura-haruno-theoreme-de-pythagore/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/rock-lee-parallelogramme-et-trapeze/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/gaara-definition-et-propriete/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/temari-definition/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/kankuro-translation/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/5eme/orochimaru-bilan-5eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/naruto-uzumaki-regles-de-calcul/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/sasuke-uchiha-les-3-identites-remarquables/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/sakura-haruno-methode-de-resolution/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/kakashi-hatake-reciproque-de-pythagore/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/shikamaru-nara-mediane-et-quartiles/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/hinata-hyuga-probabilite/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/rock-lee-soh-cah-toa/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/4eme/pain-nagato-bilan-4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/naruto-uzumaki-fonctions-affines-et-lineaires/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/sasuke-uchiha-rappel-des-3-identites/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/sakura-haruno-methode-de-substitution/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/kakashi-hatake-theoreme-de-thales/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/minato-namikaze-trigonometrie-complete/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/jiraiya-probabilites-composees/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/tsunade-volumes-des-solides/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/maths/3eme/madara-uchiha-synthese-brevet/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/cm2/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/cm2/eren-jager-epeler-en-anglais-spelling/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/cm2/mikasa-ackerman-nombres-1-20/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/cm2/armin-arlert-les-couleurs-principales/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/cm2/levi-ackerman-animaux-domestiques-et-de-ferme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/cm2/historia-reiss-la-famille-proche/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/cm2/jean-kirstein-la-tete-et-le-visage/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/cm2/hange-zoe-objets-scolaires/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/cm2/eren-jager-epeler-en-anglais-spelling/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/cm2/erwin-smith-decrire-la-meteo/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/cm2/hange-zoe-objets-scolaires/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/cm2/historia-reiss-la-famille-proche/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/cm2/jean-kirstein-la-tete-et-le-visage/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/cm2/levi-ackerman-animaux-domestiques-et-de-ferme/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/cm2/mikasa-ackerman-nombres-1-20/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/6eme/armin-arlert-affirmation-au-present-simple/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/6eme/levi-ackerman-verbe-to-be/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/6eme/historia-reiss-a-et-an-articles-indefinis/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/6eme/jean-kirstein-pluriels-reguliers-et-regles/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/6eme/hange-zoe-adjectifs-placement-et-accord/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/6eme/erwin-smith-prepositions-de-lieu-principales/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/6eme/connie-springer-questions-fermees-yesno/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/6eme/erwin-smith-prepositions-de-lieu-principales/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/6eme/hange-zoe-adjectifs-placement-et-accord/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/6eme/historia-reiss-a-et-an-articles-indefinis/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/6eme/jean-kirstein-pluriels-reguliers-et-regles/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/6eme/levi-ackerman-verbe-to-be/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/6eme/sasha-blouse-nourriture-et-boissons/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/5eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/5eme/eren-jager-past-simple-regulier/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/5eme/levi-ackerman-les-30-irreguliers-essentiels-groupe-1/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/5eme/hange-zoe-formation-du-present-continuous/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/5eme/erwin-smith-can-et-must/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/5eme/connie-springer-comparatif-de-superiorite/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/5eme/sasha-blouse-past-simple-vs-present-continuous/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/5eme/armin-arlert-questions-au-past-simple/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/5eme/connie-springer-comparatif-de-superiorite/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/5eme/eren-jager-past-simple-regulier/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/5eme/erwin-smith-can-et-must/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/5eme/hange-zoe-formation-du-present-continuous/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/5eme/levi-ackerman-les-30-irreguliers-essentiels-groupe-1/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/5eme/mikasa-ackerman-synthese-des-temps-etudies/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/anglais/5eme/sasha-blouse-past-simple-vs-present-continuous/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/historia-reiss-formation-du-present-perfect/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/levi-ackerman-present-perfect-vs-past-simple/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/hange-zoe-formation-et-usages-de-will/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/erwin-smith-be-going-to-plans-et-intentions/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/eren-jager-superlatifs/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/historia-reiss-formation-des-question-tags/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/anglais/4eme/jean-kirstein-formation-de-la-voix-passive/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/anglais/4eme/connie-springer-synthese-niveau-4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/4eme/eren-jager-superlatifs/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/eren-jager-past-simple-action-terminee/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/4eme/erwin-smith-be-going-to-plans-et-intentions/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/mikasa-ackerman-forme-havehas-v3/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/4eme/hange-zoe-formation-et-usages-de-will/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/armin-arlert-zero-first-conditional/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/4eme/historia-reiss-formation-des-question-tags/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/hange-zoe-obligation-et-interdiction/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/4eme/historia-reiss-formation-du-present-perfect/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/annie-leonhart-reported-speech-recul-des-temps/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/4eme/jean-kirstein-formation-de-la-voix-passive/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/erwin-smith-school-life/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/anglais/4eme/levi-ackerman-present-perfect-vs-past-simple/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/levi-ackerman-united-kingdom/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/maths/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/anglais/3eme/reiner-braun-comparatifs-et-superlatifs/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/maths/cm2/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/gaara-polygones-et-angles/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/hinata-hyuga-perimetres/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/hokage-reconnaitre-la-proportionnalite/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/kakashi-hatake-lire-les-decimaux/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/naruto-uzumaki-les-classes-de-nombres/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/rock-lee-longueurs-et-masses/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/sakura-haruno-lire-une-fraction/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/maths/cm2/sasuke-uchiha-multiplication-posee/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/francais/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/francais/cm2/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/nami-accord-du-participe-passe-avec-etre/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/monkey-d-luffy-infinitif-en-er-vs-participe-en-e/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/nico-robin-nature-des-mots-classes-grammaticales/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/roronoa-zoro-accord-sujet-verbe/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/portgas-d-ace-imparfait-vs-passe-compose/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/shanks-le-roux-homophones-grammaticaux-a-et-on/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/cm2/trafalgar-d-law-present-de-l-indicatif/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/francais/cm2/brook-types-et-formes-de-phrases/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/francais/6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/francais/cm2/monkey-d-luffy-infinitif-en-er-vs-participe-en-e/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/francais/6eme/sanji-vinsmoke-cod-et-coi/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/francais/cm2/nami-accord-du-participe-passe-avec-etre/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/francais/6eme/tony-tony-chopper-accord-sujet-verbe-cas-complexes/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/francais/cm2/nico-robin-nature-des-mots-classes-grammaticales/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/francais/6eme/usopp-futur-simple/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/francais/cm2/portgas-d-ace-imparfait-vs-passe-compose/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/francais/6eme/franky-classes-grammaticales-consolidation/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/francais/cm2/roronoa-zoro-accord-sujet-verbe/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/francais/6eme/nefertari-vivi-accord-dans-le-groupe-nominal/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/francais/cm2/shanks-le-roux-homophones-grammaticaux-a-et-on/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/francais/6eme/boa-hancock-determinants/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/6eme/jinbe-passe-simple/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/6eme/sabo-phrases-simples-et-complexes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/dracule-mihawk-complements-circonstanciels/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/trafalgar-d-law-conditionnel-present/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/portgas-d-ace-subjonctif-present/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/barbe-blanche-pronoms-relatifs-qui-que-dont-ou/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/brook-propositions-subordonnees/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/franky-accord-participe-passe-avec-avoir/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/nefertari-vivi-discours-direct-et-indirect/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/5eme/usopp-valeurs-des-temps-du-recit/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/nico-robin-voix-active-et-voix-passive/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/roronoa-zoro-plus-que-parfait/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/nami-discours-rapporte-consolidation/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/monkey-d-luffy-conditionnel-passe/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/sanji-vinsmoke-subordonnees-relatives-et-conjonctives/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/franky-figures-de-style-comparaison-metaphore/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/brook-valeurs-des-modes-indicatif-subjonctif-conditionnel/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/4eme/portgas-d-ace-connecteurs-logiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/shanks-le-roux-figures-de-style-personnification-oxymore/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/trafalgar-d-law-expression-cause-consequence/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/tony-tony-chopper-expression-but-condition/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/boa-hancock-argumentation-these-antithese-synthese/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/nefertari-vivi-modalisateurs/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/usopp-concordance-des-temps/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/jinbe-expression-ecrite-brevet/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/francais/3eme/sabo-synthese-brevet-grammaire-orthographe/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/francais/cm2/trafalgar-d-law-present-de-l-indicatif/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/histoire/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/histoire/cm2/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/son-goku-la-prehistoire-paleolithique-et-neolithique/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/vegeta-l-antiquite-egypte-grece-rome/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/piccolo-le-moyen-age-charlemagne-feodalite/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/son-gohan-les-temps-modernes-renaissance-decouvertes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/trunks-la-revolution-francaise-1789/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/krilin-le-xixe-siecle-empire-republique-industrie/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/cm2/c-18-les-guerres-mondiales-introduction/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/histoire/cm2/babidi-la-france-contemporaine-ve-republique/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/histoire/cm2/c-18-les-guerres-mondiales-introduction/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/son-goku-la-mesopotamie-premieres-civilisations/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/histoire/cm2/krilin-le-xixe-siecle-empire-republique-industrie/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/vegeta-l-egypte-ancienne-et-le-nil/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/histoire/cm2/piccolo-le-moyen-age-charlemagne-feodalite/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/son-gohan-la-grece-antique-democratie-d-athenes/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/histoire/cm2/son-gohan-les-temps-modernes-renaissance-decouvertes/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/piccolo-alexandre-le-grand-monde-hellenistique/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/histoire/cm2/son-goku-la-prehistoire-paleolithique-et-neolithique/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/krilin-la-republique-romaine/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/histoire/cm2/trunks-la-revolution-francaise-1789/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/beerus-l-empire-romain-et-son-apogee/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/whis-naissance-du-christianisme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/6eme/trunks-la-fin-de-l-empire-romain-d-occident/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/son-goku-la-naissance-et-l-expansion-de-l-islam/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/vegeta-l-empire-byzantin/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/son-gohan-l-occident-feodal-societe-trois-ordres/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/piccolo-les-croisades-contact-civilisations/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/trunks-la-renaissance-et-les-humanistes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/krilin-les-grandes-decouvertes-et-mondialisation/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/beerus-les-reformes-protestante-et-catholique/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/5eme/whis-la-monarchie-absolue-louis-xiv/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/son-goku-le-siecle-des-lumieres/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/vegeta-la-revolution-francaise-1789-1799/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/trunks-napoleon-ier-et-le-premier-empire/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/son-gohan-la-revolution-industrielle/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/piccolo-les-regimes-politiques-en-france-1815-1870/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/whis-l-europe-et-le-monde-au-xixe-siecle/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/beerus-les-colonisations-europeennes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/4eme/cell-conditions-feminines-au-xixe-siecle/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/son-goku-la-premiere-guerre-mondiale-1914-1918/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/vegeta-l-entre-deux-guerres-et-totalitarismes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/trunks-la-seconde-guerre-mondiale-1939-1945/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/son-gohan-la-guerre-froide-1947-1991/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/krilin-la-decolonisation/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/piccolo-la-france-de-la-ve-republique/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/beerus-la-construction-europeenne/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/histoire/3eme/whis-le-monde-depuis-1991-mondialisation/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/histoire/cm2/vegeta-l-antiquite-egypte-grece-rome/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/tanjiro-kamado-les-etats-de-la-matiere/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/zenitsu-agatsuma-les-changements-d-etat/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/inosuke-hashibira-les-sources-d-energie/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/shinobu-kocho-les-melanges-et-solutions/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/kyojuro-rengoku-la-chaleur-et-la-temperature/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/tengen-uzui-la-masse-et-le-volume/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/muichiro-tokito-l-air-autour-de-nous/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/cm2/giyu-tomioka-le-cycle-de-l-eau/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/6eme/tanjiro-kamado-l-eau-et-ses-etats-dans-la-nature/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/6eme/zenitsu-agatsuma-melanges-miscibilite-solutions/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/6eme/inosuke-hashibira-masse-volume-masse-volumique/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/6eme/shinobu-kocho-les-signaux-lumineux-sonore-electrique/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/6eme/kyojuro-rengoku-la-lumiere-et-la-vision/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/6eme/tengen-uzui-les-sources-d-energie-renouvelables/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/6eme/muichiro-tokito-le-systeme-solaire-et-notre-planete/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/6eme/mitsuri-kanroji-l-environnement-et-le-developpement-durable/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/sciences/6eme/muichiro-tokito-le-systeme-solaire-et-notre-planete/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/sciences/6eme/shinobu-kocho-les-signaux-lumineux-sonore-electrique/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/sciences/6eme/tanjiro-kamado-l-eau-et-ses-etats-dans-la-nature/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/sciences/6eme/tengen-uzui-les-sources-d-energie-renouvelables/</loc>
+    <lastmod>2026-05-17</lastmod>
+  </url>
+  <url>
+    <loc>https://aca-pirate.ch/sciences/6eme/zenitsu-agatsuma-melanges-miscibilite-solutions/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/5eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/5eme/tanjiro-kamado-les-atomes-et-les-molecules/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/5eme/zenitsu-agatsuma-les-transformations-physiques-et-chimiques/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/5eme/inosuke-hashibira-l-electricite-intensite-et-tension/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/5eme/shinobu-kocho-les-circuits-electriques-serie-derivation/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/5eme/kyojuro-rengoku-conducteurs-et-isolants/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/5eme/tengen-uzui-la-securite-electrique/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/5eme/obanai-iguro-les-mouvements-vitesse-trajectoire/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
     <loc>https://aca-pirate.ch/sciences/5eme/sanemi-shinazugawa-forces-et-interactions/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/sciences/5eme/shinobu-kocho-les-circuits-electriques-serie-derivation/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/tanjiro-kamado-la-lumiere-propagation-et-vitesse/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/sciences/5eme/tanjiro-kamado-les-atomes-et-les-molecules/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/zenitsu-agatsuma-la-reflexion-et-la-refraction/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/sciences/5eme/tengen-uzui-la-securite-electrique/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
   <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/inosuke-hashibira-les-lentilles-et-la-formation-d-images/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/shinobu-kocho-l-energie-mecanique/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/kyojuro-rengoku-combustions-et-oxydations/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/tengen-uzui-le-ph-et-les-solutions-acides-basiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/gyomei-himejima-les-ions-et-la-conduction-electrique/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/4eme/mitsuri-kanroji-les-transformations-chimiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/tanjiro-kamado-l-energie-et-la-puissance-electrique/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/zenitsu-agatsuma-les-fonctions-lineaires-loi-d-ohm/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/inosuke-hashibira-les-metaux-et-les-ions/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/shinobu-kocho-acides-bases-tests-d-identification/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/kyojuro-rengoku-les-ondes-mecaniques-le-son/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/tengen-uzui-les-ondes-electromagnetiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/yoriichi-tsugikuni-les-transformations-nucleaires/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/sciences/3eme/kanae-kocho-l-astronomie-et-les-distances-cosmiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/yuji-itadori-se-deplacer-en-france-au-quotidien/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/megumi-fushiguro-se-deplacer-dans-le-monde/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/nobara-kugisaki-communiquer-d-un-bout-a-l-autre-du-monde/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/satoru-gojo-mieux-habiter-energies-renouvelables/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/maki-zenin-mieux-habiter-deplacements-doux/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/toge-inumaki-mieux-habiter-dechets-et-recyclage/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/panda-la-france-et-ses-paysages/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/cm2/yuta-okkotsu-la-france-et-ses-regions/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/yuji-itadori-habiter-une-metropole-tokyo-new-york/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/megumi-fushiguro-habiter-une-ville-de-taille-moyenne/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/nobara-kugisaki-habiter-un-espace-de-faible-densite/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/satoru-gojo-habiter-un-littoral-touristique-industriel/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/maki-zenin-habiter-une-montagne/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/yuta-okkotsu-habiter-un-espace-a-fortes-contraintes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/kento-nanami-la-repartition-de-la-population-mondiale/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/6eme/choso-le-monde-habite-huit-milliards-d-humains/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/yuji-itadori-la-demographie-mondiale/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/megumi-fushiguro-les-ressources-eau-et-alimentation/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/nobara-kugisaki-les-ressources-energetiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/satoru-gojo-les-changements-climatiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/maki-zenin-les-risques-naturels/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/yuta-okkotsu-les-risques-technologiques/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/kento-nanami-les-inegalites-face-aux-ressources/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/5eme/mei-mei-le-developpement-durable/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/yuji-itadori-l-urbanisation-mondiale-et-les-metropoles/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/megumi-fushiguro-les-mobilites-humaines/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/nobara-kugisaki-la-mondialisation-flux-et-acteurs/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/satoru-gojo-les-espaces-productifs-en-france/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/maki-zenin-les-territoires-ultramarins-francais/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/yuta-okkotsu-l-europe-dans-la-mondialisation/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/choso-les-puissances-emergentes/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/4eme/aoi-todo-les-inegalites-face-a-la-mondialisation/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/yuji-itadori-les-aires-urbaines-francaises/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/megumi-fushiguro-les-espaces-ruraux-francais/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/nobara-kugisaki-la-france-et-l-europe-dans-le-monde/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/satoru-gojo-les-territoires-de-l-union-europeenne/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/kento-nanami-la-geostrategie-mondiale/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/maki-zenin-la-defense-et-la-securite/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/yuta-okkotsu-les-objectifs-de-developpement-durable/</loc>
-    <lastmod>2026-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://aca-pirate.ch/geographie/3eme/mei-mei-la-france-dans-la-mondialisation/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://aca-pirate.ch/sciences/5eme/zenitsu-agatsuma-les-transformations-physiques-et-chimiques/</loc>
+    <lastmod>2026-05-17</lastmod>
   </url>
 </urlset>
