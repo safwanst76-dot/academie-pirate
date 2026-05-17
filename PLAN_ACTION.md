@@ -121,6 +121,35 @@
 
 ---
 
+
+---
+
+### P0.4 — SEO contenu : qualité des pages SEO existantes ✅ DONE
+
+**Date** : 16 mai 2026 — terminé le jour même  
+**Périmètre** : améliorer la qualité du contenu des 86 pages SEO indexables, 
+SANS toucher au pattern, à l'app, à l'architecture URL.
+
+#### Réalisé
+- [x] Audit qualité contenu des 86 pages SEO indexables (sitemap.xml)
+- [x] Fix 3 ap-rule tronquées (Eren CM2 spelling, Hange CM2 objets, Connie 5e comparatif)
+      Source : js/worlds/english/lesson-data.js (app live)
+- [x] Replace global 75 placeholders sur 45 pages :
+      - 29× `&amp;#x27;` → `&#x27;`
+      - 46× `\&quot;` → `&quot;`
+- [x] Validation : 0 bug résiduel sur les 86 pages indexables
+- [x] IndexNow signal (Bing HTTP 200, Yandex HTTP 202)
+
+#### Reste à faire (optionnel)
+- [ ] Nettoyer les 190 pages noindex (cosmétique uniquement, hors sitemap)
+      → décision : à voir après P0.5 (URLs vont changer de toute façon)
+
+**Note** : l'ancienne formulation P0.4 (Pre-rendering hybride / Option B) 
+a été annulée le 16 mai 2026 sur décision propriétaire : 
+"on ne touche pas au pattern, seulement l'indexation SEO/GEO/AEO". 
+La problématique URL est reportée en P0.5.
+
+
 ## 🔧 P1 — STRATÉGIQUE (à régler sous 1 mois)
 
 ### P1.1 — Réécrire BIZ-01 (wording user vs stratégie business)
