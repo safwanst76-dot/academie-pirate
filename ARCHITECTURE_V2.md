@@ -932,6 +932,19 @@ IP-01 (ne pas inventer le respect IP), NR-01 (non régression).
 
 *Règle ajoutée le 16 mai 2026 après audit auto-critique de la session SEO.*
 
+### Règle CLOUDFLARE-01 — Ne JAMAIS activer AI Crawl Control ⚠️
+
+Académie Pirate vise l'AEO (Answer Engine Optimization) : être 
+recommandé par ChatGPT, Claude, Perplexity, Gemini aux parents 
+qui cherchent du soutien scolaire ludique.
+
+Activer Cloudflare AI Crawl Control = bloquer ces IA = perte 
+TOTALE de la stratégie AEO + llms.txt + robots.txt configurés 
+pour 18 crawlers IA.
+
+Cette option Cloudflare doit rester DÉSACTIVÉE/IGNORÉE en 
+permanence pour notre cas d'usage edtech.
+
 ### Règle IP-01 — Propriété intellectuelle manga ⚠️
 
 Académie Pirate utilise des noms et concepts de personnages manga (Naruto, One Piece, Attack on Titan, Dragon Ball Z, Demon Slayer, Jujutsu Kaisen) à des fins éducatives. Ces propriétés appartiennent à leurs éditeurs respectifs (Shueisha, Toei Animation, Wit Studio, Mappa, etc.).
