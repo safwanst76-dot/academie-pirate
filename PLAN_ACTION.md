@@ -528,3 +528,62 @@ Les vrais utilisateurs (navigateurs) et crawlers (Googlebot, Bingbot) sont OK.
 - Cloudflare Free plan : 0 €/mois ✅
 - Aucun coût récurrent
 - 32 redirects sur 10,000 disponibles → marge énorme pour Phase 4
+
+---
+
+### P0.5 Phase 3b — 3ème ajoutée au SEO + 8 redirects supplémentaires ✅ DONE (19 mai 2026, 00h10)
+
+**Date** : 19 mai 2026, 00h10 GMT+1
+
+**Contexte** : la 3ème avait été oubliée dans le POC P0.5 Phase 2.
+9 pages 3ème existaient en prod mais étaient en `noindex,nofollow` 
+et absentes du sitemap. Correctif en 1 session.
+
+**Actions réalisées** :
+
+1. ✅ Retiré `noindex,nofollow` des 9 pages 3ème (8 leçons + index niveau)
+2. ✅ Généré 9 nouvelles pages POC English V2 :
+   - /english/anglais/3eme/ (page niveau)
+   - /english/anglais/3eme/reported-speech-recul-des-temps/
+   - /english/anglais/3eme/zero-first-conditional/
+   - /english/anglais/3eme/past-simple-action-terminee/
+   - /english/anglais/3eme/school-life/
+   - /english/anglais/3eme/obligation-et-interdiction/
+   - /english/anglais/3eme/united-kingdom/
+   - /english/anglais/3eme/forme-have-has-v3/
+   - /english/anglais/3eme/comparatifs-et-superlatifs/
+3. ✅ Sitemap.xml : 119 → 128 URLs (+9)
+4. ✅ POC English total : 32 → 41 pages (5 niveaux complets)
+5. ✅ Bulk Redirect Cloudflare : 32 → 40 redirects 301
+
+**Mappings slugs (PROD-01 = extraction h1 HTML)** :
+- Annie Leonhart  → reported-speech-recul-des-temps
+- Armin Arlert    → zero-first-conditional
+- Eren Jäger      → past-simple-action-terminee
+- Erwin Smith     → school-life
+- Hange Zoë       → obligation-et-interdiction
+- Levi Ackerman   → united-kingdom
+- Mikasa Ackerman → forme-have-has-v3
+- Reiner Braun    → comparatifs-et-superlatifs
+
+**Validation prod** :
+- 8/8 anciennes /anglais/3eme/.../ → HTTP 200 + index,follow ✅
+- 8/8 nouvelles /english/anglais/3eme/.../ → HTTP 200 ✅
+- 8/8 redirects 301 actifs depuis Cloudflare ✅
+- Bulk Redirect List : 40/10,000 items utilisés
+- Rule english_redirects : Enabled, Order 1 ✅
+
+**État global après Phase 3b** :
+- POC English complet sur 5 niveaux : CM2, 6e, 5e, 4e, 3e
+- 41 pages /english/anglais/.../ indexables
+- 40 redirects 301 actifs en prod
+- Sitemap 128 URLs
+
+**Respecte** : NR-01, PROD-01, BIZ-01, IP-01, DEV-01, CLOUDFLARE-01
+
+**Reste à faire (planning futur)** :
+- [ ] J+2 : signaler IndexNow Bing + Yandex pour les 40 nouvelles URLs
+- [ ] J+2 : recrawl GSC des 40 URLs (5/jour sur 8 jours)
+- [ ] J+7 : vérifier dans GSC que tous les 301 sont détectés
+- [ ] Phase 4 : généraliser aux 54 pages restantes (Maths/Français/Histoire/Sciences)
+- [ ] Optionnel : mettre à jour description Bulk Redirect List Cloudflare ("40 redirects" au lieu de "32")
