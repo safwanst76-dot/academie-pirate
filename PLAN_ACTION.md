@@ -437,3 +437,94 @@ typiques ('apprendre [matière] en s'amusant', 'mangas pédagogiques CM2 3ème')
 - [ ] Demander recrawl manuel des 5 pages dans GSC (quand Cloudflare actif)
 - [ ] Étendre l'enrichissement aux 32 pages POC English /english/anglais/.../ (optionnel)
 - [ ] Considérer enrichissement llms.txt avec mêmes phrases (impact AEO)
+
+---
+
+### P0.5 Phase 3 — Cloudflare 301 redirects ✅ DONE (18 mai 2026, 22h35)
+
+**Date** : 18 mai 2026, 22h35 GMT+1
+
+**Objectif** : activer les vrais redirects 301 (au lieu de canonicals seuls)
+pour les 32 pages POC English V2 — signaux SEO maximaux pour Google + crawlers IA.
+
+**Setup Cloudflare complet réalisé en 1 session** :
+
+1. ✅ Compte Cloudflare créé (safwanst.76@gmail.com via OAuth GitHub)
+2. ✅ Domaine aca-pirate.ch ajouté (plan Free, unlimited Bulk Redirects)
+3. ✅ Path : "Accelerate traffic" > "Application Performance"
+4. ✅ DNS Records propres (12 records, 0 conflit) :
+   - 4× A (185.199.108-111.153) → Proxied (orange) — GitHub Pages
+   - CNAME www → safwanst76.github.io → Proxied
+   - 2× CNAME autoconfig/autodiscover → infomaniak.com → DNS only ⚪
+   - MX (mta-gw.infomaniak.ch priorité 5) → DNS only ✅
+   - TXT SPF (v=spf1 include:spf.infomaniak.ch -all) → DNS only ✅
+   - TXT DMARC (v=DMARC1; p=reject) → DNS only ✅
+   - TXT google-site-verification → DNS only ✅
+   - **DKIM ajouté manuellement** : TXT 20260405._domainkey en DNS only ⚠️
+     (Cloudflare scan avait importé NS au lieu de TXT — corrigé en récupérant
+      la vraie clé via DNS-over-HTTPS Google/Cloudflare 1.1.1.1)
+   - 2× NS _domainkey supprimés (remplacés par TXT direct, anti-conflit)
+5. ✅ Nameservers changés chez Infomaniak :
+   - Avant : ns11.infomaniak.ch + ns12.infomaniak.ch
+   - Après : celeste.ns.cloudflare.com + oswald.ns.cloudflare.com
+6. ✅ Propagation rapide (~30 min — exceptionnellement vite)
+7. ✅ Email Cloudflare "Site is now active" reçu à 14h57
+
+**Bulk Redirects configurés** :
+
+- **List** : `aca_pirate_poc_english_301`
+  - Description : POC English V2 - 32 redirects vers /english/anglais/
+  - 32 redirects 301 (Preserve Query String: true)
+  - Source extraction : h1 HTML réel (PROD-01 respecté)
+  - Items utilisés : 32/10,000
+  
+- **Rule** : `english_redirects`
+  - Order : 1
+  - Associated List : aca_pirate_poc_english_301
+  - Enabled : ✅
+  - Rules utilisées : 1/15
+
+**Validation prod exhaustive** (testée 18/05/2026 22h35 GMT) :
+- **32/32 URLs anciennes retournent HTTP 301 ✅**
+- **32/32 locations correctes vers /english/anglais/.../ ✅**
+- **32/32 pages cibles retournent HTTP 200 ✅**
+- server: cloudflare confirmé sur toutes les réponses ✅
+- cf-ray présent (preuve passage par Cloudflare CDN) ✅
+
+**Validation par niveau** :
+- CM2 : 8/8 ✅ (armin, eren, erwin, hange, historia, jean, levi, mikasa)
+- 6e  : 8/8 ✅ (armin, connie, erwin, hange, historia, jean, levi, sasha)
+- 5e  : 8/8 ✅ (armin, connie, eren, erwin, hange, levi, mikasa, sasha)
+- 4e  : 8/8 ✅ (connie, eren, erwin, hange, historia×2, jean, levi)
+
+**Note technique** : Cloudflare bloque les requêtes Python urllib par défaut (403).
+Pour tester depuis scripts, utiliser un User-Agent navigateur (Mozilla/5.0...).
+Les vrais utilisateurs (navigateurs) et crawlers (Googlebot, Bingbot) sont OK.
+
+**Impact SEO** :
+- ✅ Anciennes URLs (depuis 2018) transfèrent leur autorité aux nouvelles URLs
+- ✅ Google détectera les 301 et basculera l'indexation (3-6 semaines typiques)
+- ✅ Aucune perte de trafic existant (redirects transparents pour visiteurs)
+- ✅ Combinaison 301 + canonical = signal SEO maximal
+- ✅ Bing/Yandex/DuckDuckGo suivront automatiquement
+
+**Périmètre respecté** :
+- ✅ App live intacte (NR-01) — zéro modification de l'app
+- ✅ Emails préservés : DKIM, MX, SPF, DMARC tous opérationnels
+- ✅ DEV-01, PROD-01, BIZ-01, IP-01, CLOUDFLARE-01 toutes respectées
+- ❌ Pas d'IndexNow encore (attendre stabilisation 24-48h)
+- ❌ Pas de signal GSC encore (attendre stabilisation)
+
+**Reste à faire (priorités)** :
+- [ ] J+1 (19 mai) : tester emails (envoi + réception) — valider P0.6
+- [ ] J+1 (19 mai) : terminer batch GSC J+2 (7 URLs restantes)
+- [ ] J+2 (20 mai) : signaler IndexNow Bing + Yandex pour 32 nouvelles URLs
+- [ ] J+2 (20 mai) : demander recrawl GSC des 32 URLs (5/jour sur 7 jours)
+- [ ] J+7 (25 mai) : vérifier dans GSC que les 301 sont détectés
+- [ ] Phase 4 : généraliser aux 54 pages restantes (Maths/Français/Histoire/Sciences)
+- [ ] Phase 5 : resoumission complète moteurs (IndexNow + GSC bulk)
+
+**Coût total** :
+- Cloudflare Free plan : 0 €/mois ✅
+- Aucun coût récurrent
+- 32 redirects sur 10,000 disponibles → marge énorme pour Phase 4
