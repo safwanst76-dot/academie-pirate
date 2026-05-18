@@ -358,3 +358,44 @@ Tout le reste suit ensuite.
 
 *Plan d'Action généré le 16 mai 2026 — suite à l'audit "Avocat du Diable" sur l'état post-sessions SEO/GEO/AEO + BIZ-01*  
 *À revoir : mi-juin 2026*
+
+---
+
+## 📅 Journal GSC — demandes d'indexation prioritaires
+
+### J+0 (17 mai 2026) — 9 demandes faites avec succès
+- https://aca-pirate.ch/
+- https://aca-pirate.ch/anglais/
+- https://aca-pirate.ch/maths/
+- https://aca-pirate.ch/francais/
+- https://aca-pirate.ch/anglais/cm2/
+- https://aca-pirate.ch/maths/cm2/
+- https://aca-pirate.ch/francais/cm2/
+- https://aca-pirate.ch/anglais/cm2/eren-jager-epeler-en-anglais-spelling/
+- https://aca-pirate.ch/maths/cm2/naruto-uzumaki-les-classes-de-nombres/
+- https://aca-pirate.ch/anglais/cm2/mikasa-ackerman-nombres-1-20/
+
+### J+1 (18 mai 2026) — 3 demandes faites + quota atteint
+- ✅ https://aca-pirate.ch/anglais/6eme/
+- ✅ https://aca-pirate.ch/anglais/5eme/
+- ✅ https://aca-pirate.ch/anglais/4eme/
+- ⏸️ Quota GSC quotidien atteint après 3 demandes
+
+### J+2 (19 mai 2026) — À FAIRE — 7 URLs restantes du batch J+1
+- [ ] https://aca-pirate.ch/histoire/
+- [ ] https://aca-pirate.ch/sciences/
+- [ ] https://aca-pirate.ch/histoire/cm2/
+- [ ] https://aca-pirate.ch/sciences/6eme/
+- [ ] https://aca-pirate.ch/sciences/5eme/
+- [ ] https://aca-pirate.ch/francais/cm2/monkey-d-luffy-infinitif-en-er-vs-participe-en-e/
+- [ ] https://aca-pirate.ch/anglais/5eme/eren-jager-past-simple-regulier/
+
+**Procédure quotidienne** :
+1. https://search.google.com/search-console
+2. Sélectionne aca-pirate.ch
+3. Pour chaque URL : "Inspecter une URL" → coller → "Demander une indexation"
+4. Limite quotidienne : ~10 demandes/jour par propriété
+5. Le quota se reset toutes les 24h
+
+**Note PROD-01** : toutes les URLs vérifiées dans sitemap.xml avant proposition.
+
