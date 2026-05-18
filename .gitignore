@@ -7,3 +7,6 @@ scripts/sources/**/*.jpeg
 scripts/sources/**/*.png
 scripts/sources/**/*.webp
 audit-report.html
+
+# Fichiers temporaires Cloudflare (non versionnés)
+cloudflare_redirects*.csv
