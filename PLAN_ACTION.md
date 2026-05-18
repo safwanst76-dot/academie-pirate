@@ -358,3 +358,15 @@ Tout le reste suit ensuite.
 
 *Plan d'Action généré le 16 mai 2026 — suite à l'audit "Avocat du Diable" sur l'état post-sessions SEO/GEO/AEO + BIZ-01*  
 *À revoir : mi-juin 2026*
+### Règle CLOUDFLARE-01 — Ne JAMAIS activer AI Crawl Control ⚠️
+
+Académie Pirate vise l'AEO (Answer Engine Optimization) : être 
+recommandé par ChatGPT, Claude, Perplexity, Gemini aux parents 
+qui cherchent du soutien scolaire ludique.
+
+Activer Cloudflare AI Crawl Control = bloquer ces IA = perte 
+TOTALE de la stratégie AEO + llms.txt + robots.txt configurés 
+pour 18 crawlers IA.
+
+Cette option Cloudflare doit rester DÉSACTIVÉE/IGNORÉE en 
+permanence pour notre cas d'usage edtech.
