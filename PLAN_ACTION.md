@@ -399,3 +399,41 @@ Tout le reste suit ensuite.
 
 **Note PROD-01** : toutes les URLs vérifiées dans sitemap.xml avant proposition.
 
+---
+
+### P0.7 — SEO : Enrichissement metas descriptions ✅ DONE (18 mai 2026)
+
+**Date** : 18 mai 2026
+
+**Objectif** : améliorer le positionnement Google sur requêtes parents 
+typiques ('apprendre [matière] en s'amusant', 'mangas pédagogiques CM2 3ème').
+
+**Mots-clés stratégiques ajoutés** :
+- 'apprendre' (verbe infinitif, intent search)
+- 's'amusant' (différenciation émotionnelle parents)
+- 'CM2 à la 3ème' (range scolaire clair)
+- noms manga (Attack on Titan, Naruto, One Piece, DBZ, Demon Slayer)
+- 'programme officiel' (legitimacy)
+- '100% gratuit, sans pub' (trust)
+
+**Patches** : 3 metas × 5 pages matière = 15 modifications
+- meta name="description"
+- meta property="og:description"
+- meta name="twitter:description"
+
+**Pages affectées** :
+- /anglais/, /maths/, /francais/, /histoire/, /sciences/
+
+**Fixes annexes** : typo 'Apprends histoire' / 'Apprends sciences' → 'Apprendre l'/les'
+
+**Périmètre respecté** :
+- ✅ Pages matière indexables uniquement
+- ❌ Pas de modif app live (NR-01)
+- ❌ Pas de modif <title> (déjà bons)
+- ❌ Pas de modif contenu pédagogique
+- ❌ Pas d'IndexNow signal (attendre Cloudflare actif)
+
+**Reste à faire** :
+- [ ] Demander recrawl manuel des 5 pages dans GSC (quand Cloudflare actif)
+- [ ] Étendre l'enrichissement aux 32 pages POC English /english/anglais/.../ (optionnel)
+- [ ] Considérer enrichissement llms.txt avec mêmes phrases (impact AEO)
