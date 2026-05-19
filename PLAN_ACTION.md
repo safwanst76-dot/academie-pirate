@@ -587,3 +587,64 @@ et absentes du sitemap. Correctif en 1 session.
 - [ ] J+7 : vérifier dans GSC que tous les 301 sont détectés
 - [ ] Phase 4 : généraliser aux 54 pages restantes (Maths/Français/Histoire/Sciences)
 - [ ] Optionnel : mettre à jour description Bulk Redirect List Cloudflare ("40 redirects" au lieu de "32")
+
+---
+
+### P0.5 Phase 4 — Maths (Naruto / pays-du-feu) ✅ DONE (19 mai 2026, 07h25)
+
+**Date** : 19 mai 2026, 07h25 GMT+1
+
+**Objectif** : généraliser le pattern POC English à la matière Maths
+(univers Naruto / monde pays-du-feu). Première matière de la Phase 4
+(généralisation aux 4 matières restantes après anglais).
+
+**État avant** :
+- 46 pages maths existaient en prod
+- Seulement 10/46 indexables (CM2 uniquement)
+- 36 pages noindex (6e, 5e, 4e, 3e tout en noindex)
+- 0 page POC /pays-du-feu/maths/ existait
+- Sitemap : 10 URLs maths
+
+**Actions réalisées** :
+
+1. ✅ Retiré noindex,nofollow sur 36 pages maths
+2. ✅ Généré 46 nouvelles pages POC /pays-du-feu/maths/.../ :
+   - 1 page matière /pays-du-feu/maths/
+   - 5 pages niveau (cm2, 6eme, 5eme, 4eme, 3eme)
+   - 40 leçons (8 × 5 niveaux)
+3. ✅ Sitemap : 128 → 210 URLs (+82)
+4. ✅ Cloudflare : Bulk Redirect List aca_pirate_poc_english_301
+   passe de 40 → 80 items (+40 redirects maths)
+5. ✅ Rule english_redirects toujours active (1 rule pour 80 redirects)
+
+**Slugs (PROD-01 = extraction h1 réelle)** :
+- CM2  : classes-de-nombres, decimaux, fractions, polygones, perimetres...
+- 6e   : aire-du-triangle, decimaux-6e, fractions-equivalentes, angles...
+- 5e   : pythagore, expressions-litterales, priorites, translation...
+- 4e   : 3-identites-remarquables, soh-cah-toa, mediane-quartiles...
+- 3e   : thales, trigonometrie-complete, fonctions-affines, brevet...
+
+**Validation prod (19/05 07h25 GMT)** :
+- 40/40 redirects 301 maths actifs ✅
+- 80/80 total (anglais + maths) actifs ✅
+- Tous niveaux × 2 matières : CM2 16/16, 6e 16/16, 5e 16/16, 4e 16/16, 3e 16/16 ✅
+- 46 pages /pays-du-feu/maths/ HTTP 200 ✅
+
+**Impact SEO global** :
+- +36 pages /maths/ entrent dans l'index Google (avant : 10, maintenant : 46)
+- +46 nouvelles URLs /pays-du-feu/maths/ avec contenu pédagogique riche (2 ap-rule/leçon)
+- Transfert d'autorité 36 anciennes URLs → 36 nouvelles via 301
+
+**Respecte** : NR-01, PROD-01, BIZ-01, IP-01, DEV-01, CLOUDFLARE-01
+
+**Progression Phase 4** :
+- ✅ 1/5 : Maths (Naruto / pays-du-feu) — terminé
+- ⏸️ 2/5 : Français (One Piece / grand-bleu) — à faire (enrichissement ap-rule nécessaire)
+- ⏸️ 3/5 : Histoire (DBZ / magnolia) — à faire (enrichissement ap-rule nécessaire)
+- ⏸️ 4/5 : Sciences (Demon Slayer / kanto) — à faire (enrichissement ap-rule + noindex)
+- ⏸️ 5/5 : Géographie (Jujutsu / namek) — à faire (enrichissement ap-rule + noindex)
+
+**Reste à faire** :
+- [ ] J+1 : signaler IndexNow + GSC recrawl pour 40 nouvelles URLs maths
+- [ ] Phase 4 français : enrichir 40 leçons avec 80 ap-rule, puis POC + redirects
+- [ ] Continuer Phase 4 sur Histoire, Sciences, Géographie
