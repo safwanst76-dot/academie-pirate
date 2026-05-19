@@ -727,3 +727,93 @@ après Maths.
 **Reste à faire** :
 - [ ] Indexation IndexNow + GSC pour 40 nouvelles URLs français
 - [ ] Phase 4 histoire/sciences/géographie : enrichir ap-rule + POC + redirects
+
+---
+
+### P0.5 Indexation — IndexNow + GSC plan (19 mai 2026, 16h00) ✅ PARTIEL
+
+**Date** : 19 mai 2026, 16h00 GMT+1
+
+**Contexte** : après Phase 4 Anglais + Maths + Français terminée
+(120 redirects 301 actifs + 133 nouvelles pages POC indexables),
+lancement de l'indexation pour pousser Google/Bing/Yandex à crawler
+rapidement les nouvelles URLs.
+
+**Action 1 — IndexNow API (Bing + Yandex)** ✅ DONE
+
+138 URLs signalées en automatique :
+- 3 pages matière (/english/anglais/, /pays-du-feu/maths/, /grand-bleu/francais/)
+- 15 pages niveau (5 niveaux × 3 matières)
+- 120 leçons (8 leçons × 5 niveaux × 3 matières)
+
+Endpoints utilisés :
+- Bing   : POST https://www.bing.com/indexnow → HTTP 200 ✅
+- Yandex : POST https://yandex.com/indexnow → HTTP 202 {"success":true} ✅
+
+Clé IndexNow : a7c3f9e2b4d6a8c1e5f7b9d3a2c4e6f8
+KeyLocation  : https://aca-pirate.ch/a7c3f9e2b4d6a8c1e5f7b9d3a2c4e6f8.txt (HTTP 200)
+
+**Action 2 — GSC manuel (Google)** ⏸️ À FAIRE sur 4 jours
+
+Google ne supporte pas IndexNow. Indexation manuelle via Search Console
+(limite ~10-15 demandes/jour).
+
+Plan d'attaque 4 jours (33 URLs prioritaires) :
+
+JOUR 1 (lundi 20 mai) — 10 URLs racines :
+- https://aca-pirate.ch/english/anglais/
+- https://aca-pirate.ch/pays-du-feu/maths/
+- https://aca-pirate.ch/grand-bleu/francais/
+- https://aca-pirate.ch/english/anglais/cm2/
+- https://aca-pirate.ch/english/anglais/6eme/
+- https://aca-pirate.ch/english/anglais/5eme/
+- https://aca-pirate.ch/english/anglais/4eme/
+- https://aca-pirate.ch/english/anglais/3eme/
+- https://aca-pirate.ch/pays-du-feu/maths/cm2/
+- https://aca-pirate.ch/pays-du-feu/maths/6eme/
+
+JOUR 2 (mardi 21 mai) — 8 URLs racines (suite) :
+- https://aca-pirate.ch/pays-du-feu/maths/5eme/
+- https://aca-pirate.ch/pays-du-feu/maths/4eme/
+- https://aca-pirate.ch/pays-du-feu/maths/3eme/
+- https://aca-pirate.ch/grand-bleu/francais/cm2/
+- https://aca-pirate.ch/grand-bleu/francais/6eme/
+- https://aca-pirate.ch/grand-bleu/francais/5eme/
+- https://aca-pirate.ch/grand-bleu/francais/4eme/
+- https://aca-pirate.ch/grand-bleu/francais/3eme/
+
+JOUR 3 (mercredi 22 mai) — 10 leçons phares anglais/maths :
+- https://aca-pirate.ch/english/anglais/cm2/les-couleurs-principales/
+- https://aca-pirate.ch/english/anglais/6eme/affirmation-au-present-simple/
+- https://aca-pirate.ch/english/anglais/5eme/questions-au-past-simple/
+- https://aca-pirate.ch/english/anglais/4eme/synthese-niveau-4eme/
+- https://aca-pirate.ch/english/anglais/3eme/reported-speech-recul-des-temps/
+- https://aca-pirate.ch/pays-du-feu/maths/cm2/polygones-et-angles/
+- https://aca-pirate.ch/pays-du-feu/maths/6eme/aire-du-triangle/
+- https://aca-pirate.ch/pays-du-feu/maths/5eme/definition-et-propriete/
+- https://aca-pirate.ch/pays-du-feu/maths/4eme/probabilite/
+- https://aca-pirate.ch/pays-du-feu/maths/3eme/probabilites-composees/
+
+JOUR 4 (jeudi 23 mai) — 5 leçons phares français :
+- https://aca-pirate.ch/grand-bleu/francais/cm2/les-types-et-formes-de-phrases/
+- https://aca-pirate.ch/grand-bleu/francais/6eme/les-determinants/
+- https://aca-pirate.ch/grand-bleu/francais/5eme/les-pronoms-relatifs-qui-que-dont-ou/
+- https://aca-pirate.ch/grand-bleu/francais/4eme/les-valeurs-des-modes/
+- https://aca-pirate.ch/grand-bleu/francais/3eme/argumentation-these-antithese-synthese/
+
+**Procédure GSC pour chaque URL** :
+1. search.google.com/search-console
+2. Sélectionner la propriété https://aca-pirate.ch/
+3. En haut, "Inspection de l'URL"
+4. Coller l'URL
+5. Cliquer "Demander une indexation"
+6. Attendre la confirmation
+7. Passer à l'URL suivante
+
+**Reste à faire** :
+- [ ] J+1 : signaler IndexNow pour Histoire (40 URLs) une fois Phase 4 Histoire DONE
+- [ ] J+1 : signaler IndexNow pour Sciences (40 URLs) une fois Phase 4 Sciences DONE
+- [ ] J+1 : signaler IndexNow pour Géo (40 URLs) une fois Phase 4 Géo DONE
+- [ ] Suivi GSC : vérifier J+7 que les URLs ont été crawlées (Couverture)
+
+**Respecte** : NR-01, PROD-01, CLOUDFLARE-01
