@@ -648,3 +648,82 @@ et absentes du sitemap. Correctif en 1 session.
 - [ ] J+1 : signaler IndexNow + GSC recrawl pour 40 nouvelles URLs maths
 - [ ] Phase 4 français : enrichir 40 leçons avec 80 ap-rule, puis POC + redirects
 - [ ] Continuer Phase 4 sur Histoire, Sciences, Géographie
+
+---
+
+### P0.5 Phase 4 — Français (One Piece / grand-bleu) ✅ DONE (19 mai 2026, 15h45)
+
+**Date** : 19 mai 2026, 15h45 GMT+1
+
+**Objectif** : généraliser le pattern POC à la matière Français
+(univers One Piece / monde grand-bleu). Deuxième matière de la Phase 4
+après Maths.
+
+**État avant** :
+- 46 pages français existaient en prod
+- Seulement 10/46 indexables (CM2 uniquement)
+- 36 pages noindex (6e, 5e, 4e, 3e tout en noindex)
+- 0 page POC /grand-bleu/francais/ existait
+- 0 ap-rule sur les 40 leçons (contenu moins riche que maths/anglais)
+- Sitemap : 10 URLs français
+
+**Actions réalisées** :
+
+1. ✅ Enrichi les 40 leçons français avec 80 ap-rule (2 par leçon)
+   - Format identique à maths/anglais : <div class="ap-rule">...</div>
+   - Programme officiel Éducation Nationale respecté
+   - Niveau scolaire adapté (CM2 ≠ 3e)
+   
+2. ✅ Retiré noindex,nofollow sur 36 pages français
+3. ✅ Généré 46 nouvelles pages POC /grand-bleu/francais/.../ :
+   - 1 page matière /grand-bleu/francais/
+   - 5 pages niveau (cm2, 6eme, 5eme, 4eme, 3eme)
+   - 40 leçons (8 × 5 niveaux)
+4. ✅ Sitemap : 210 → 292 URLs (+82)
+5. ✅ Cloudflare : Bulk Redirect List passe de 80 → 120 items (+40 français)
+
+**Slugs (PROD-01 = extraction h1 réelle)** :
+- CM2 : types-et-formes-de-phrases, infinitif-er-vs-participe-e,
+  participe-passe-etre, nature-des-mots, imparfait-vs-passe-compose,
+  accord-sujet-verbe, homophones-grammaticaux, present-de-l-indicatif
+- 6e  : determinants, classes-grammaticales-consolidation, passe-simple,
+  accord-en-genre-et-en-nombre-dans-le-gn, phrases-simples-et-complexes,
+  cod-et-coi, accord-sujet-verbe-cas-complexes, futur-simple
+- 5e  : pronoms-relatifs-qui-que-dont-ou, propositions-subordonnees,
+  complements-circonstanciels, accord-participe-passe-avec-avoir,
+  discours-direct-et-indirect, subjonctif-present, conditionnel-present,
+  valeurs-des-temps-du-recit
+- 4e  : valeurs-des-modes, figures-de-style-comparaison-metaphore,
+  conditionnel-passe, discours-direct-indirect-consolidation,
+  voix-active-et-voix-passive, connecteurs-logiques, plus-que-parfait,
+  subordonnees-relatives-et-conjonctives
+- 3e  : argumentation-these-antithese-synthese, expression-ecrite-synthese-brevet,
+  modalisateurs, synthese-brevet-grammaire-et-orthographe,
+  figures-de-style-personnification-oxymore, expression-du-but-et-de-la-condition,
+  expression-de-la-cause-et-de-la-consequence, concordance-des-temps
+
+**Validation prod (19/05 15h45 GMT)** :
+- 40/40 redirects français 301 actifs ✅
+- 120/120 total (anglais + maths + français) actifs ✅
+- Tous niveaux × 3 matières : CM2 24/24, 6e 24/24, 5e 24/24, 4e 24/24, 3e 24/24 ✅
+- 46 pages /grand-bleu/francais/ HTTP 200 ✅
+
+**Impact SEO global** :
+- +36 pages /francais/ entrent dans l'index Google (avant : 10, maintenant : 46)
+- +46 nouvelles URLs /grand-bleu/francais/ avec contenu pédagogique riche (2 ap-rule/leçon)
+- Transfert d'autorité 36 anciennes URLs → 36 nouvelles via 301
+- 40 leçons français maintenant au niveau qualité de maths/anglais
+
+**Respecte** : NR-01, PROD-01, BIZ-01, IP-01, DEV-01, CLOUDFLARE-01
+
+**Progression Phase 4** :
+- ✅ 1/5 : Anglais (Attack on Titan / english) — terminé
+- ✅ 2/5 : Maths (Naruto / pays-du-feu) — terminé
+- ✅ 3/5 : Français (One Piece / grand-bleu) — terminé
+- ⏸️ 4/5 : Histoire (DBZ / magnolia) — à faire (enrichissement ap-rule nécessaire)
+- ⏸️ 5/5 : Sciences (Demon Slayer / kanto) — à faire (enrichissement ap-rule + noindex)
+- ⏸️ 6/5 : Géographie (Jujutsu / namek) — à faire (enrichissement ap-rule + noindex)
+
+**Reste à faire** :
+- [ ] Indexation IndexNow + GSC pour 40 nouvelles URLs français
+- [ ] Phase 4 histoire/sciences/géographie : enrichir ap-rule + POC + redirects
