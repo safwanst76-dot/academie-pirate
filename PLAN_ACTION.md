@@ -817,3 +817,71 @@ JOUR 4 (jeudi 23 mai) — 5 leçons phares français :
 - [ ] Suivi GSC : vérifier J+7 que les URLs ont été crawlées (Couverture)
 
 **Respecte** : NR-01, PROD-01, CLOUDFLARE-01
+
+---
+
+### P0.5 Phase 4 — Histoire (DBZ / magnolia) ✅ DONE (20 mai 2026, 04h30)
+
+**Date** : 20 mai 2026, 04h30 GMT+1
+
+**Objectif** : généraliser le pattern POC à la matière Histoire
+(univers Dragon Ball Z / monde magnolia). 4e matière de la Phase 4.
+
+**État avant** :
+- 46 pages histoire existaient en prod
+- 10/46 indexables (CM2 uniquement)
+- 36 pages noindex (6e, 5e, 4e, 3e tout en noindex)
+- 0 page POC /magnolia/histoire/ existait
+- 0 ap-rule sur les 40 leçons
+
+**Actions réalisées** :
+
+1. ✅ Enrichi les 40 leçons avec 80 ap-rule (2 par leçon)
+   - Programme officiel Histoire BO Éducation Nationale
+   - Sujets sensibles (WW1/WW2/Shoah/totalitarismes/décolonisation)
+     traités avec rigueur factuelle, sans complaisance ni minimisation
+   
+2. ✅ Retiré noindex sur 36 pages histoire (6e/5e/4e/3e)
+
+3. ✅ Généré 46 pages POC /magnolia/histoire/.../ :
+   - 1 page matière + 5 pages niveau + 40 leçons
+
+4. ✅ Sitemap : 297 → 379 URLs (+82)
+
+5. ✅ Cloudflare : Bulk Redirect List passe de 120 → 160 items (+40 histoire)
+
+6. ✅ IndexNow signalé pour 46 URLs (Bing HTTP 200, Yandex HTTP 202)
+
+**Notions couvertes** :
+- CM2 : Préhistoire → Ve République (frise chronologique générale)
+- 6e  : Antiquité (Mésopotamie, Égypte, Grèce, Rome, christianisme)
+- 5e  : Moyen Âge → Temps modernes (Islam, Byzance, Croisades, Renaissance, Louis XIV)
+- 4e  : XVIIIe-XIXe (Lumières, Révolution, Napoléon, industrie, colonisation, conditions féminines)
+- 3e  : XXe-XXIe (WW1, WW2, Guerre froide, décolonisation, mondialisation, construction européenne)
+
+**Validation prod (20/05 04h30 GMT)** :
+- 40/40 redirects histoire 301 actifs ✅
+- 160/160 total (anglais + maths + français + histoire) ✅
+- Tous niveaux × 4 matières : CM2 32/32, 6e 32/32, 5e 32/32, 4e 32/32, 3e 32/32 ✅
+- 46 pages /magnolia/histoire/ HTTP 200 ✅
+
+**Impact SEO global** :
+- +36 pages /histoire/ entrent dans l'index Google
+- +46 nouvelles URLs /magnolia/histoire/ avec contenu pédagogique riche
+- Transfert d'autorité 36 anciennes URLs → 36 nouvelles via 301
+- 40 leçons histoire maintenant au niveau qualité des 3 autres matières
+
+**Respecte** : NR-01, PROD-01, BIZ-01, IP-01, DEV-01, CLOUDFLARE-01
+
+**Progression Phase 4** :
+- ✅ 1/6 : Anglais (Attack on Titan / english) — terminé
+- ✅ 2/6 : Maths (Naruto / pays-du-feu) — terminé
+- ✅ 3/6 : Français (One Piece / grand-bleu) — terminé
+- ✅ 4/6 : Histoire (DBZ / magnolia) — terminé
+- ⏸️ 5/6 : Sciences (Demon Slayer / kanto) — à faire (ap-rule + noindex)
+- ⏸️ 6/6 : Géographie (Jujutsu / namek) — à faire (ap-rule + noindex)
+
+**Reste à faire** :
+- [ ] GSC manuel pour 5 URLs histoire prioritaires (à intégrer plan GSC J+5)
+- [ ] Phase 4 Sciences (kanto) — matière complexe avec noindex actuel
+- [ ] Phase 4 Géographie (namek) — matière complexe avec noindex actuel
