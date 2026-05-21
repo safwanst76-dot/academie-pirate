@@ -953,12 +953,13 @@ JOUR 4 (jeudi 23 mai) — 5 leçons phares français :
 - [ ] GSC manuel pour 5 URLs sciences prioritaires (à intégrer plan GSC J+6)
 - [ ] Phase 4 Géographie (namek) — DERNIÈRE matière
 
+
 ---
 
-### P0.5 Indexation GSC — Suivi quotidien (mis à jour 21 mai 2026)
+### P0.5 Indexation GSC — Suivi quotidien (mis à jour 21 mai 2026, 15h)
 
 **Plan d'indexation Google Search Console** — 33 URLs prioritaires
-réparties sur plusieurs jours (limite GSC ~10-15 demandes/jour).
+réparties sur plusieurs jours (limite GSC ~10-15/jour, parfois moins).
 
 **Statut actuel** :
 
@@ -966,9 +967,9 @@ réparties sur plusieurs jours (limite GSC ~10-15 demandes/jour).
 |------------|------------|--------|-----------------------------------------------------------------------|
 | Jour 1     | 19/05/2026 | ✅ FAIT | 10 URLs racines (anglais + maths CM2/6e)                              |
 | Jour 2     | 21/05/2026 | ✅ FAIT | 8 URLs racines (maths 5/4/3e + français cm2 à 3e)                     |
-| Jour 3     | À FAIRE   | ⏸️ TODO | 10 leçons phares anglais/maths                                        |
-| Jour 4     | À FAIRE   | ⏸️ TODO | 5 leçons phares français                                              |
-| Jour 5+    | À FAIRE   | ⏸️ TODO | Pages racines histoire + sciences (à intégrer après Phase 4 complète) |
+| Jour 3     | 21/05/2026 | ⚠️ PARTIEL 4/10 | quota Google atteint — 4 leçons phares anglais faites          |
+| Jour 4     | 22/05/2026 | ⏸️ TODO | 6 restantes du Jour 3 + 5 leçons phares français                      |
+| Jour 5+    | À planifier | ⏸️ TODO | Pages racines histoire + sciences + géo                              |
 
 **Détail Jour 1 (19/05) ✅ FAIT** :
 - https://aca-pirate.ch/english/anglais/
@@ -992,37 +993,46 @@ réparties sur plusieurs jours (limite GSC ~10-15 demandes/jour).
 - https://aca-pirate.ch/grand-bleu/francais/4eme/
 - https://aca-pirate.ch/grand-bleu/francais/3eme/
 
-**Détail Jour 3 (à faire) — 10 leçons phares anglais/maths** :
-- https://aca-pirate.ch/english/anglais/cm2/les-couleurs-principales/
-- https://aca-pirate.ch/english/anglais/6eme/affirmation-au-present-simple/
-- https://aca-pirate.ch/english/anglais/5eme/questions-au-past-simple/
-- https://aca-pirate.ch/english/anglais/4eme/synthese-niveau-4eme/
+**Détail Jour 3 (21/05) ⚠️ PARTIEL 4/10** — quota Google atteint à la 4e :
+- ✅ https://aca-pirate.ch/english/anglais/cm2/les-couleurs-principales/
+- ✅ https://aca-pirate.ch/english/anglais/6eme/affirmation-au-present-simple/
+- ✅ https://aca-pirate.ch/english/anglais/5eme/questions-au-past-simple/
+- ✅ https://aca-pirate.ch/english/anglais/4eme/synthese-niveau-4eme/
+- ⏸️ Reporté J4 : https://aca-pirate.ch/english/anglais/3eme/reported-speech-recul-des-temps/
+- ⏸️ Reporté J4 : https://aca-pirate.ch/pays-du-feu/maths/cm2/polygones-et-angles/
+- ⏸️ Reporté J4 : https://aca-pirate.ch/pays-du-feu/maths/6eme/aire-du-triangle/
+- ⏸️ Reporté J4 : https://aca-pirate.ch/pays-du-feu/maths/5eme/definition-et-propriete/
+- ⏸️ Reporté J4 : https://aca-pirate.ch/pays-du-feu/maths/4eme/probabilite/
+- ⏸️ Reporté J4 : https://aca-pirate.ch/pays-du-feu/maths/3eme/probabilites-composees/
+
+**Détail Jour 4 (22/05) — 11 URLs (6 reportées J3 + 5 français phares)** :
 - https://aca-pirate.ch/english/anglais/3eme/reported-speech-recul-des-temps/
 - https://aca-pirate.ch/pays-du-feu/maths/cm2/polygones-et-angles/
 - https://aca-pirate.ch/pays-du-feu/maths/6eme/aire-du-triangle/
 - https://aca-pirate.ch/pays-du-feu/maths/5eme/definition-et-propriete/
 - https://aca-pirate.ch/pays-du-feu/maths/4eme/probabilite/
 - https://aca-pirate.ch/pays-du-feu/maths/3eme/probabilites-composees/
-
-**Détail Jour 4 (à faire) — 5 leçons phares français** :
 - https://aca-pirate.ch/grand-bleu/francais/cm2/les-types-et-formes-de-phrases/
 - https://aca-pirate.ch/grand-bleu/francais/6eme/les-determinants/
 - https://aca-pirate.ch/grand-bleu/francais/5eme/les-pronoms-relatifs-qui-que-dont-ou/
 - https://aca-pirate.ch/grand-bleu/francais/4eme/les-valeurs-des-modes/
 - https://aca-pirate.ch/grand-bleu/francais/3eme/argumentation-these-antithese-synthese/
 
-**Détail Jour 5 (à intégrer plus tard) — racines histoire/sciences/géo** :
+**Détail Jour 5+ (à planifier) — racines histoire/sciences/géo** :
 - https://aca-pirate.ch/magnolia/histoire/
-- https://aca-pirate.ch/magnolia/histoire/cm2/
-- https://aca-pirate.ch/magnolia/histoire/6eme/
-- https://aca-pirate.ch/magnolia/histoire/5eme/
-- https://aca-pirate.ch/magnolia/histoire/4eme/
-- https://aca-pirate.ch/magnolia/histoire/3eme/
+- https://aca-pirate.ch/magnolia/histoire/cm2/ à /3eme/
 - https://aca-pirate.ch/kanto/sciences/
-- https://aca-pirate.ch/kanto/sciences/cm2/
-- (et ajouter géo une fois Phase 4 Géo terminée)
+- https://aca-pirate.ch/kanto/sciences/cm2/ à /3eme/
+- https://aca-pirate.ch/namek/geographie/
+- https://aca-pirate.ch/namek/geographie/cm2/ à /3eme/
+
+**Observations** :
+- Le quota GSC quotidien est variable (parfois ~10, parfois moins)
+- Si quota atteint → on reporte au lendemain dans le même ordre
+- Le délai d'indexation Google réel est de 1 à 7 jours après demande
 
 **Procédure** : voir bloc P0.5 Indexation IndexNow + GSC plan (19/05)
+
 
 ---
 
