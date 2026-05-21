@@ -885,3 +885,70 @@ JOUR 4 (jeudi 23 mai) — 5 leçons phares français :
 - [ ] GSC manuel pour 5 URLs histoire prioritaires (à intégrer plan GSC J+5)
 - [ ] Phase 4 Sciences (kanto) — matière complexe avec noindex actuel
 - [ ] Phase 4 Géographie (namek) — matière complexe avec noindex actuel
+
+---
+
+### P0.5 Phase 4 — Sciences (Demon Slayer / kanto) ✅ DONE (21 mai 2026, 05h30)
+
+**Date** : 21 mai 2026, 05h30 GMT+1
+
+**Objectif** : généraliser le pattern POC à la matière Sciences
+(univers Demon Slayer / monde kanto). 5e matière de la Phase 4.
+
+**État avant** :
+- 46 pages sciences existaient en prod
+- 19/46 indexables (sciences + 6e + 5e)
+- 27 pages noindex (CM2 + 4e + 3e)
+- 0 page POC /kanto/sciences/ existait
+- 0 ap-rule sur les 40 leçons
+
+**Actions réalisées** :
+
+1. ✅ Enrichi les 40 leçons avec 80 ap-rule (2 par leçon)
+   - Programme officiel SVT/Sciences physiques Éducation Nationale
+   - Formules et chiffres factuels vérifiés
+   - Niveau scolaire respecté (CM2 = concret ; 3e = formules avancées)
+
+2. ✅ Retiré noindex sur 27 pages sciences (CM2 + 4e + 3e)
+
+3. ✅ Généré 46 pages POC /kanto/sciences/.../ :
+   - 1 page matière + 5 pages niveau + 40 leçons
+
+4. ✅ Sitemap : 379 → 452 URLs (+73)
+
+5. ✅ Cloudflare : Bulk Redirect List passe de 160 → 200 items (+40 sciences)
+
+6. ✅ IndexNow signalé pour 46 URLs (Bing HTTP 200, Yandex HTTP 202)
+
+**Notions couvertes** :
+- CM2 : matière (états, mélanges, masse/volume), eau, air, énergie, chaleur
+- 6e  : masse volumique, eau dans nature, lumière, énergies, système solaire
+- 5e  : atomes/molécules, électricité (circuits, conducteurs), mouvements, forces
+- 4e  : transformations chimiques, ions, lumière (lentilles, réflexion), pH, énergie mécanique
+- 3e  : métaux/ions, acides/bases, énergie/puissance, ondes (son/EM), astronomie, nucléaire
+
+**Validation prod (21/05 05h30 GMT)** :
+- 40/40 redirects sciences 301 actifs ✅
+- 200/200 total (anglais + maths + français + histoire + sciences) ✅
+- Tous niveaux × 5 matières : CM2 40/40, 6e 40/40, 5e 40/40, 4e 40/40, 3e 40/40 ✅
+- 46 pages /kanto/sciences/ HTTP 200 ✅
+
+**Impact SEO global** :
+- +27 pages /sciences/ entrent dans l'index Google
+- +46 nouvelles URLs /kanto/sciences/ avec contenu pédagogique riche
+- Transfert d'autorité 27 anciennes URLs → 27 nouvelles via 301
+- 40 leçons sciences maintenant au niveau qualité des 4 autres matières
+
+**Respecte** : NR-01, PROD-01, BIZ-01, IP-01, DEV-01, CLOUDFLARE-01
+
+**Progression Phase 4** :
+- ✅ 1/6 : Anglais (Attack on Titan / english) — terminé
+- ✅ 2/6 : Maths (Naruto / pays-du-feu) — terminé
+- ✅ 3/6 : Français (One Piece / grand-bleu) — terminé
+- ✅ 4/6 : Histoire (DBZ / magnolia) — terminé
+- ✅ 5/6 : Sciences (Demon Slayer / kanto) — terminé
+- ⏸️ 6/6 : Géographie (Jujutsu / namek) — à faire (DERNIÈRE matière restante)
+
+**Reste à faire** :
+- [ ] GSC manuel pour 5 URLs sciences prioritaires (à intégrer plan GSC J+6)
+- [ ] Phase 4 Géographie (namek) — DERNIÈRE matière
