@@ -1023,3 +1023,96 @@ réparties sur plusieurs jours (limite GSC ~10-15 demandes/jour).
 - (et ajouter géo une fois Phase 4 Géo terminée)
 
 **Procédure** : voir bloc P0.5 Indexation IndexNow + GSC plan (19/05)
+
+---
+
+### P0.5 Phase 4 — Géographie (Jujutsu Kaisen / namek) ✅ DONE (21 mai 2026, 12h00)
+
+**Date** : 21 mai 2026, 12h00 GMT+1
+
+**Objectif** : généraliser le pattern POC à la matière Géographie
+(univers Jujutsu Kaisen / monde namek). 6e et **DERNIÈRE** matière
+de la Phase 4 — TOUTES MATIÈRES MIGRÉES.
+
+**État avant** :
+- 46 pages géographie existaient en prod
+- 0/46 indexables (TOUTE la matière en noindex)
+- 0 page POC /namek/geographie/ existait
+- 0 ap-rule sur les 40 leçons
+- 0 URL géographie dans sitemap
+
+**Actions réalisées** :
+
+1. ✅ Enrichi les 40 leçons avec 80 ap-rule (2 par leçon)
+   - Programme officiel Géographie BO Éducation Nationale
+   - Chiffres et données factuels vérifiés
+   - Sujets sensibles (géostratégie, conflits, défense) traités factuellement
+     sans positionnement politique
+
+2. ✅ Retiré noindex sur 46 pages géographie (TOUTE la matière)
+
+3. ✅ Généré 46 pages POC /namek/geographie/.../ :
+   - 1 page matière + 5 pages niveau + 40 leçons
+
+4. ✅ Sitemap : 452 → 544 URLs (+92)
+
+5. ✅ Cloudflare : Bulk Redirect List passe de 200 → 240 items (+40 géo)
+
+6. ✅ IndexNow signalé pour 46 URLs (Bing HTTP 200, Yandex HTTP 202)
+
+**Notions couvertes** :
+- CM2 : France (régions, paysages), déplacements, mieux habiter (énergies, déchets)
+- 6e  : Le monde habité (métropoles, montagne, ville, campagne, littoral)
+- 5e  : Ressources (eau, énergie, alimentation), risques, développement durable, climat
+- 4e  : Mondialisation (flux, métropoles, puissances émergentes), Europe, ultra-marin
+- 3e  : France dans la mondialisation, UE, espaces ruraux/urbains, géostratégie, ODD
+
+**Validation prod (21/05 12h00 GMT)** :
+- 40/40 redirects géographie 301 actifs ✅
+- 240/240 total (6 matières) ✅
+- Tous niveaux × 6 matières : CM2 48/48, 6e 48/48, 5e 48/48, 4e 48/48, 3e 48/48 ✅
+- 46 pages /namek/geographie/ HTTP 200 ✅
+
+**Impact SEO global** :
+- +46 pages /geographie/ entrent dans l'index Google (toute la matière)
+- +46 nouvelles URLs /namek/geographie/ avec contenu pédagogique riche
+- Transfert d'autorité 40 anciennes URLs → 40 nouvelles via 301
+- 40 leçons géographie maintenant au niveau qualité des 5 autres matières
+
+**Respecte** : NR-01, PROD-01, BIZ-01, IP-01, DEV-01, CLOUDFLARE-01
+
+---
+
+## 🏆 P0.5 PHASE 4 COMPLÈTE — 6/6 MATIÈRES TERMINÉES
+
+**Date de clôture** : 21 mai 2026, 12h00 GMT+1
+
+### Récapitulatif global
+
+| #  | Matière    | Univers           | Monde URL              | Pages | Redirects | Status |
+|----|------------|-------------------|------------------------|-------|-----------|--------|
+| 1  | Anglais    | Attack on Titan   | /english/anglais/      | 46    | 40        | ✅ DONE |
+| 2  | Maths      | Naruto            | /pays-du-feu/maths/    | 46    | 40        | ✅ DONE |
+| 3  | Français   | One Piece         | /grand-bleu/francais/  | 46    | 40        | ✅ DONE |
+| 4  | Histoire   | Dragon Ball Z     | /magnolia/histoire/    | 46    | 40        | ✅ DONE |
+| 5  | Sciences   | Demon Slayer      | /kanto/sciences/       | 46    | 40        | ✅ DONE |
+| 6  | Géographie | Jujutsu Kaisen    | /namek/geographie/     | 46    | 40        | ✅ DONE |
+|    | **TOTAL**  |                   |                        | **276** | **240** | **6/6** |
+
+### Métriques prod finales
+
+- 🟢 **240/240 redirects 301 actifs** en prod Cloudflare
+- 🟢 **276 nouvelles pages POC indexables** (6 × 46)
+- 🟢 **480 ap-rule pédagogiques rédigés** (6 × 40 × 2)
+- 🟢 **544 URLs dans sitemap.xml**
+- 🟢 **276 URLs signalées via IndexNow** (138 + 46×3 + 46 géo = 276)
+- 🟢 **18/33 URLs demandées via GSC** (Jour 1 + Jour 2 fait)
+
+### Reste à faire (post-Phase 4)
+
+- [ ] GSC Jour 3 — 10 leçons phares anglais/maths (22/05 prévu)
+- [ ] GSC Jour 4 — 5 leçons phares français (23/05 prévu)
+- [ ] GSC Jour 5+ — pages racines histoire/sciences/géo
+- [ ] P0.6 — Tester emails post-Cloudflare (préservés mais à vérifier)
+- [ ] P0.2 — RGPD enfants (juridique)
+- [ ] Phase 5 — Monitoring SEO (suivi indexation, positions)
