@@ -952,3 +952,74 @@ JOUR 4 (jeudi 23 mai) — 5 leçons phares français :
 **Reste à faire** :
 - [ ] GSC manuel pour 5 URLs sciences prioritaires (à intégrer plan GSC J+6)
 - [ ] Phase 4 Géographie (namek) — DERNIÈRE matière
+
+---
+
+### P0.5 Indexation GSC — Suivi quotidien (mis à jour 21 mai 2026)
+
+**Plan d'indexation Google Search Console** — 33 URLs prioritaires
+réparties sur plusieurs jours (limite GSC ~10-15 demandes/jour).
+
+**Statut actuel** :
+
+| Jour       | Date       | Statut | URLs                                                                  |
+|------------|------------|--------|-----------------------------------------------------------------------|
+| Jour 1     | 19/05/2026 | ✅ FAIT | 10 URLs racines (anglais + maths CM2/6e)                              |
+| Jour 2     | 21/05/2026 | ✅ FAIT | 8 URLs racines (maths 5/4/3e + français cm2 à 3e)                     |
+| Jour 3     | À FAIRE   | ⏸️ TODO | 10 leçons phares anglais/maths                                        |
+| Jour 4     | À FAIRE   | ⏸️ TODO | 5 leçons phares français                                              |
+| Jour 5+    | À FAIRE   | ⏸️ TODO | Pages racines histoire + sciences (à intégrer après Phase 4 complète) |
+
+**Détail Jour 1 (19/05) ✅ FAIT** :
+- https://aca-pirate.ch/english/anglais/
+- https://aca-pirate.ch/pays-du-feu/maths/
+- https://aca-pirate.ch/grand-bleu/francais/
+- https://aca-pirate.ch/english/anglais/cm2/
+- https://aca-pirate.ch/english/anglais/6eme/
+- https://aca-pirate.ch/english/anglais/5eme/
+- https://aca-pirate.ch/english/anglais/4eme/
+- https://aca-pirate.ch/english/anglais/3eme/
+- https://aca-pirate.ch/pays-du-feu/maths/cm2/
+- https://aca-pirate.ch/pays-du-feu/maths/6eme/
+
+**Détail Jour 2 (21/05) ✅ FAIT** :
+- https://aca-pirate.ch/pays-du-feu/maths/5eme/
+- https://aca-pirate.ch/pays-du-feu/maths/4eme/
+- https://aca-pirate.ch/pays-du-feu/maths/3eme/
+- https://aca-pirate.ch/grand-bleu/francais/cm2/
+- https://aca-pirate.ch/grand-bleu/francais/6eme/
+- https://aca-pirate.ch/grand-bleu/francais/5eme/
+- https://aca-pirate.ch/grand-bleu/francais/4eme/
+- https://aca-pirate.ch/grand-bleu/francais/3eme/
+
+**Détail Jour 3 (à faire) — 10 leçons phares anglais/maths** :
+- https://aca-pirate.ch/english/anglais/cm2/les-couleurs-principales/
+- https://aca-pirate.ch/english/anglais/6eme/affirmation-au-present-simple/
+- https://aca-pirate.ch/english/anglais/5eme/questions-au-past-simple/
+- https://aca-pirate.ch/english/anglais/4eme/synthese-niveau-4eme/
+- https://aca-pirate.ch/english/anglais/3eme/reported-speech-recul-des-temps/
+- https://aca-pirate.ch/pays-du-feu/maths/cm2/polygones-et-angles/
+- https://aca-pirate.ch/pays-du-feu/maths/6eme/aire-du-triangle/
+- https://aca-pirate.ch/pays-du-feu/maths/5eme/definition-et-propriete/
+- https://aca-pirate.ch/pays-du-feu/maths/4eme/probabilite/
+- https://aca-pirate.ch/pays-du-feu/maths/3eme/probabilites-composees/
+
+**Détail Jour 4 (à faire) — 5 leçons phares français** :
+- https://aca-pirate.ch/grand-bleu/francais/cm2/les-types-et-formes-de-phrases/
+- https://aca-pirate.ch/grand-bleu/francais/6eme/les-determinants/
+- https://aca-pirate.ch/grand-bleu/francais/5eme/les-pronoms-relatifs-qui-que-dont-ou/
+- https://aca-pirate.ch/grand-bleu/francais/4eme/les-valeurs-des-modes/
+- https://aca-pirate.ch/grand-bleu/francais/3eme/argumentation-these-antithese-synthese/
+
+**Détail Jour 5 (à intégrer plus tard) — racines histoire/sciences/géo** :
+- https://aca-pirate.ch/magnolia/histoire/
+- https://aca-pirate.ch/magnolia/histoire/cm2/
+- https://aca-pirate.ch/magnolia/histoire/6eme/
+- https://aca-pirate.ch/magnolia/histoire/5eme/
+- https://aca-pirate.ch/magnolia/histoire/4eme/
+- https://aca-pirate.ch/magnolia/histoire/3eme/
+- https://aca-pirate.ch/kanto/sciences/
+- https://aca-pirate.ch/kanto/sciences/cm2/
+- (et ajouter géo une fois Phase 4 Géo terminée)
+
+**Procédure** : voir bloc P0.5 Indexation IndexNow + GSC plan (19/05)
