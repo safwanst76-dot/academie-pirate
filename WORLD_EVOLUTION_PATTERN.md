@@ -476,16 +476,47 @@ Le quiz-router.js accepte automatiquement les nouveaux niveaux.
 
 ---
 
-## ÉTAT D'AVANCEMENT PAR MONDE
+## ÉTAT D'AVANCEMENT PAR MONDE — 21 Mai 2026
 
-| Monde | Matière | Univers | Phase actuelle | CM2 | 6ème | 5ème | 4ème |
-|---|---|---|---|---|---|---|---|
-| 🏴‍☠️ Grand Bleu | Français | One Piece | Phase 0-1 | V1✅→V2🔜 | 🔜 | 🔜 | 🔜 |
-| 🐉 Magnolia | Histoire | Dragon Ball Z | Phase 0 | V1✅ | 🔜 | 🔜 | 🔜 |
-| ⚔️ Kanto | Sciences | Demon Slayer | Phase 0 | — | V1✅ | V1✅ | 🔜 |
-| 🔥 Pays du Feu | Maths | Naruto | Phase 0 | V1✅ | 🔜 | 🔜 | 🔜 |
-| 🌀 Namek | Géographie | JJK | Phase 0 | — | — | 🔜 | 🔜 |
-| ⚔️ English | Anglais | AOT | Phase 7 | V2✅ | V2✅ | V2✅ | V2✅ |
+🏆 **PHASE 7 ATTEINTE POUR LES 6 MONDES — Évolution V1→V2 TERMINÉE**
+
+| Monde | Matière | Univers | Phase | CM2 | 6ème | 5ème | 4ème | 3ème |
+|---|---|---|---|---|---|---|---|---|
+| 🏴‍☠️ Grand Bleu | Français | One Piece | ✅ Phase 7 | V2✅ | V2✅ | V2✅ | V2✅ | V2✅ |
+| ⚔️ English | Anglais | AOT | ✅ Phase 7 | V2✅ | V2✅ | V2✅ | V2✅ | V2✅ |
+| 🐉 Magnolia | Histoire | Dragon Ball Z | ✅ Phase 7 | V2✅ | V2✅ | V2✅ | V2✅ | V2✅ |
+| ⚔️ Kanto | Sciences | Demon Slayer | ✅ Phase 7 | V2✅ | V2✅ | V2✅ | V2✅ | V2✅ |
+| 🔥 Pays du Feu | Maths | Naruto | ✅ Phase 7 | V2✅ | V2✅ | V2✅ | V2✅ | V2✅ |
+| 🌀 Namek | Géographie | JJK | ✅ Phase 7 | V2✅ | V2✅ | V2✅ | V2✅ | V2✅ |
+
+**Total** : 6 mondes × 5 niveaux × 8 îles = **240 leçons en production**
+
+### Vérification PROD-01 (21 mai 2026)
+- Tous les `js/worlds/{monde}/quiz-router.js` présents en prod
+- Tous les buckets Supabase Storage opérationnels
+- Tous les LESSON_REGISTRY × 5 niveaux pour magnolia/kanto/namek (autres formats pour english/grand-bleu/pays-du-feu)
+- Tests prod sur https://aca-pirate.ch : 6/6 mondes jouables ✅
+
+---
+
+## COMMENT UTILISER CE DOC MAINTENANT
+
+L'évolution V1→V2 des **mondes existants** est terminée. Ce doc reste utile pour :
+
+1. **Créer un nouveau monde** (ex : Forêt Konoha actuellement inactif dans config.js)
+   → Suivre les 7 phases dans l'ordre
+   → Consulter GRAND_BLEU_PATTERN.md AVANT (référence mondiale)
+
+2. **Maintenir/améliorer un monde existant**
+   → Ajouter du contenu (niveaux, îles, questions) via SQL Supabase, pas le code
+   → Mettre à jour images via `scripts/sources/{monde}/` + `node scripts/upload.js`
+
+3. **Référence pédagogique**
+   → Le doc montre l'architecture cible (pattern Grand Bleu V3)
+   → Utile pour onboarding nouvel assistant/développeur
+
+### Mondes futurs (placeholder dans config.js)
+- 🌲 Forêt Konoha — actuellement `active: false`, à activer après définition de la matière
 
 ---
 

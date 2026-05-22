@@ -1,5 +1,5 @@
 # 🏴‍☠️ GRAND BLEU PATTERN — Référence mondiale Académie Pirate
-*Pattern de référence validé en production — 12 Avril 2026*
+*Pattern de référence validé en production — créé 12 Avril 2026, mis à jour 21 Mai 2026*
 *Basé sur le monde Grand Bleu (Français × One Piece) — 100% fonctionnel*
 *Tout nouveau monde DOIT suivre ce pattern exactement*
 
@@ -493,19 +493,37 @@ CM2  : {1:'nami',    2:'luffy',   3:'robin',   4:'zoro',
 
 ---
 
-## ÉTAT DES MONDES — 12 Avril 2026
+## ÉTAT DES MONDES — 21 Mai 2026 (mise à jour)
 
-| Monde | Matière | Univers | Pattern V2 | CM2 | 6ème | 5ème | 4ème |
-|---|---|---|---|---|---|---|---|
-| 🏴‍☠️ Grand Bleu | Français | One Piece | ✅ RÉFÉRENCE | ✅ | ✅ | ✅ | ✅ |
-| ⚔️ English | Anglais | AOT | ✅ V2 | ✅ | ✅ | ✅ | ✅ |
-| 🐉 Magnolia | Histoire | Dragon Ball | 🔜 Phase 4 | V1 | — | — | — |
-| ⚔️ Kanto | Sciences | Demon Slayer | 🔜 Phase 4 | — | V1 | V1 | — |
-| 🔥 Pays du Feu | Maths | Naruto | 🔜 Phase 4 | V1 | — | — | — |
-| 🔮 Namek | Géographie | JJK | 🔜 Phase 4 | — | V1 | — | — |
+| Monde | Matière | Univers | Pattern V2 | CM2 | 6ème | 5ème | 4ème | 3ème |
+|---|---|---|---|---|---|---|---|---|
+| 🏴‍☠️ Grand Bleu | Français | One Piece | ✅ RÉFÉRENCE | ✅ | ✅ | ✅ | ✅ | ✅ |
+| ⚔️ English | Anglais | AOT | ✅ V2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 🐉 Magnolia | Histoire | Dragon Ball Z | ✅ V2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| ⚔️ Kanto | Sciences | Demon Slayer | ✅ V2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 🔥 Pays du Feu | Maths | Naruto | ✅ V2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 🔮 Namek | Géographie | JJK | ✅ V2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+🏆 **TOUS LES 6 MONDES SONT EN V2 — 5 NIVEAUX × 8 ÎLES × 6 MONDES = 240 LEÇONS**
+
+### Vérification (21 mai 2026)
+- `js/worlds/{monde}/quiz-router.js` existe pour tous les 6 mondes ✅
+- `LESSON_REGISTRY['{monde}_{niveau}']` × 5 niveaux pour magnolia/kanto/namek (autres formats internes pour english/grand-bleu/pays-du-feu) ✅
+- Buckets Supabase Storage opérationnels :
+  - `island-aot` (english)
+  - `grand-bleu` (français)
+  - `island-magnolia` (histoire)
+  - `island-demon-slayer` (kanto)
+  - `island-pays-du-feu` (maths)
+  - `island-namek` (géographie)
+- Test prod fonctionnel : tous mondes jouables sur https://aca-pirate.ch ✅
+
+### Mondes futurs (à créer)
+- 🌲 Forêt Konoha (matière à définir) — actuellement dans config.js mais `active: false`
 
 ---
 
 *Ce document doit être consulté EN PREMIER avant tout développement d'un nouveau monde.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
-*Grand Bleu Pattern V1.0 — Académie Pirate — 12 Avril 2026*
+
+*Grand Bleu Pattern V1.1 — Académie Pirate — créé 12 Avril 2026, mis à jour 21 Mai 2026*
