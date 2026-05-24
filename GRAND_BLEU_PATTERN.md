@@ -1,5 +1,5 @@
 # 🏴‍☠️ GRAND BLEU PATTERN — Référence mondiale Académie Pirate
-*Pattern de référence validé en production — créé 12 Avril 2026, mis à jour 21 Mai 2026*
+*Pattern de référence validé en production — créé 12 Avril 2026, mis à jour 22 Mai 2026 (+ pièges #9/#10 sur conventions de nommage et formats)*
 *Basé sur le monde Grand Bleu (Français × One Piece) — 100% fonctionnel*
 *Tout nouveau monde DOIT suivre ce pattern exactement*
 
@@ -451,6 +451,40 @@ if (window.AP && window.AP.state) {
 
 ---
 
+### 🐛 Piège #9 — Inventer le format d'un fichier (JSON/SQL/JS) sans vérifier l'existant
+
+```bash
+# ❌ ERREUR (22/05/2026) — création scripts/assets/sindria.json
+# J'ai inventé un format avec subject/universe/level qui n'existe pas
+{ "name": "...", "subject": "...", "universe": "...", "characters": [...] }
+
+# ✅ CORRECT — TOUJOURS lire un fichier équivalent existant AVANT de créer
+ls scripts/assets/                      # voir ce qui existe
+cat scripts/assets/aot.json | head -30  # voir le VRAI format
+# → puis copier le format exact (name/emoji/storage/bucket/localDir/color/characters[])
+```
+
+**Règle générale** : tout fichier dans une catégorie où il existe déjà des frères
+(scripts/assets/*.json, supabase/migrations/*.sql, js/worlds/*/audio.js, css/quiz-*.css)
+DOIT copier le format de ses frères. ZÉRO invention.
+
+### 🐛 Piège #10 — Confusion {manga} vs {monde} dans les conventions de nommage
+❌ ERREUR (22/05/2026) — j'ai créé sindria.json et scripts/sources/sindria/
+La convention RÉELLE = nom du manga (pas du monde)
+✅ TABLE DE MAPPING OBLIGATOIRE par monde :
+ÉlémentConventionExemple "Sindria"scripts/assets/{X}.jsonNOM DU MANGAmagi.jsonscripts/sources/{X}/NOM DU MANGAmagi/js/worlds/{X}/NOM DU MONDEjs/worlds/sindria/css/quiz-{X}.cssNOM DU MONDEcss/quiz-sindria.cssbucket SupabaseNOM DU BUCKETisland-sindriaURL #/{route}NOM ROUTE#/arabe
+
+**Vérification post-création** :
+```bash
+# AUCUN résultat ne doit apparaître :
+grep -r "public/{NOM_MONDE_SI_DIFFERENT_DU_BUCKET}" js/ css/
+
+# Au moins quelques résultats doivent apparaître :
+grep -r "public/{NOM_DU_BUCKET}" js/ css/
+```
+
+---
+
 ## MAPPING PERSONNAGES — Grand Bleu référence
 
 ```javascript
@@ -526,4 +560,4 @@ CM2  : {1:'nami',    2:'luffy',   3:'robin',   4:'zoro',
 *Ce document doit être consulté EN PREMIER avant tout développement d'un nouveau monde.*
 *Règle PR-00 : tout livrable est production ready avant commit.*
 
-*Grand Bleu Pattern V1.1 — Académie Pirate — créé 12 Avril 2026, mis à jour 21 Mai 2026*
+*Grand Bleu Pattern V1.2 — Académie Pirate — créé 12 Avril 2026, mis à jour 22 Mai 2026 (+ pièges #9/#10 sur conventions de nommage et formats)*
