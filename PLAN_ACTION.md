@@ -970,9 +970,10 @@ réparties sur plusieurs jours.
 | Jour 2  | 21/05/2026 | ✅ FAIT       | 8 URLs racines (maths 5/4/3e + français cm2 à 3e)       |
 | Jour 3  | 21/05/2026 | ⚠️ PARTIEL 4/10 | quota Google atteint — 4 leçons phares anglais        |
 | Jour 4  | 22/05/2026 | ✅ FAIT 11/11 | 6 reportées du J3 + 5 français phares                   |
-| Jour 5+ | À planifier | ⏸️ TODO       | Pages racines histoire + sciences + géo                |
+| Jour 5  | 26/05/2026 | ✅ FAIT 10/10 | Racines histoire + sciences (J6 reste géo + sous-niveaux) |
+| Jour 6+ | À planifier | ⏸️ TODO       | Racines géo + sous-niveaux 5e/4e/3e (8 URLs restantes) |
 
-**Total : 33/33 URLs prioritaires Phase 4 demandées ✅**
+**Total : 43/43 URLs prioritaires Phase 4 + racines demandées ✅ (J1-J5)**
 
 **Détail Jour 4 (22/05) ✅ FAIT 11/11** :
 - ✅ https://aca-pirate.ch/english/anglais/3eme/reported-speech-recul-des-temps/
@@ -987,7 +988,25 @@ réparties sur plusieurs jours.
 - ✅ https://aca-pirate.ch/grand-bleu/francais/4eme/les-valeurs-des-modes/
 - ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/argumentation-these-antithese-synthese/
 
-**Détail Jour 5+ (à planifier) — racines histoire/sciences/géo** :
+
+
+**Détail Jour 5 (26/05) ✅ FAIT 10/10** — Racines histoire + sciences :
+
+Histoire (Magnolia × DBZ) :
+- ✅ https://aca-pirate.ch/magnolia/histoire/
+- ✅ https://aca-pirate.ch/magnolia/histoire/cm2/
+- ✅ https://aca-pirate.ch/magnolia/histoire/6eme/
+- ✅ https://aca-pirate.ch/magnolia/histoire/5eme/
+- ✅ https://aca-pirate.ch/magnolia/histoire/4eme/
+
+Sciences (Kanto × Demon Slayer) :
+- ✅ https://aca-pirate.ch/kanto/sciences/
+- ✅ https://aca-pirate.ch/kanto/sciences/cm2/
+- ✅ https://aca-pirate.ch/kanto/sciences/6eme/
+- ✅ https://aca-pirate.ch/kanto/sciences/5eme/
+- ✅ https://aca-pirate.ch/kanto/sciences/4eme/
+
+**Détail Jour 6+ (à planifier) (à planifier) — racines histoire/sciences/géo** :
 - https://aca-pirate.ch/magnolia/histoire/ + 5 niveaux
 - https://aca-pirate.ch/kanto/sciences/ + 5 niveaux
 - https://aca-pirate.ch/namek/geographie/ + 5 niveaux
