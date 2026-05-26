@@ -131,6 +131,70 @@ grep -r "public/island-sindria" js/ css/   # doit avoir des résultats
 
 ---
 
+---
+
+### 🔴 Erreur #5 — 22/05/2026 — FAILLE RLS CRITIQUE : anon_pin_lookup sur child_profiles
+
+**Contexte** : Audit sécurité Supabase RLS complet.
+
+**Erreur** : La policy `anon_pin_lookup` sur la table `child_profiles` était définie
+avec `USING (true)`, ce qui permettait à n'importe quel anonyme (avec l'anon key
+publique exposée dans `js/supabase.js`) de lire TOUS les profils enfants du monde
+entier : username, PIN, parent_id, avatar_id, xp_total, level.
+
+**Conséquence potentielle** :
+- Fuite RGPD massive (données enfants 8-15 ans = vulnerable personnes)
+- Sanction CNIL jusqu'à 4% du CA mondial
+- Vol d'identités enfant (login comme n'importe quel enfant via son PIN)
+- Confiance utilisateur ruinée si exploit public
+
+**Origine** : Cette policy avait été créée à des fins de "login enfant anonyme par PIN"
+(sans Supabase Auth pour les enfants), mais la solution technique choisie exposait
+toute la table au lieu d'un seul profil correspondant au PIN.
+
+**Correction (commit b57615d... → ce commit)** :
+1. Création table `pin_attempts` (rate limiting)
+2. Création fonction RPC `lookup_child_by_pin(pin_input)` :
+   - SECURITY DEFINER (bypass RLS de manière contrôlée)
+   - Rate limiting : max 5 échecs / 15 min / IP
+   - Validation longueur PIN (4-20 chars)
+   - Retourne UN SEUL profil correspondant + UNIQUEMENT les champs nécessaires
+   - Logge chaque tentative dans pin_attempts (IP + succès booléen, pas le PIN)
+3. Migration JS `auth.js:afSubmitChildPinLogin` → utilise sb.rpc(...)
+4. Suppression de la fonction `_fetchChildByPinDirect` (fallback REST devenu inutile)
+5. DROP POLICY anon_pin_lookup ON child_profiles (verrouillage final)
+
+**Test final post-fix (validé en prod 22/05/2026)** :
+- ✅ Login enfant fonctionne via la RPC
+- ✅ `sb.from('child_profiles').select('*')` en anon → retourne `[]` (vide)
+- ✅ Rate limiting actif
+
+**Prévention** :
+- ⚠️ TOUTE policy avec `USING (true)` sur des données utilisateurs sensibles =
+  RED FLAG → exposer la table entière
+- ✅ Pour les besoins "lookup par champ unique sans auth" (PIN, slug public, etc.),
+  utiliser une fonction RPC SECURITY DEFINER qui retourne UNIQUEMENT le résultat
+  correspondant, pas la table entière
+- ✅ Toujours combiner avec du rate limiting pour empêcher l'énumération
+- ✅ Logger les tentatives mais SANS la donnée sensible (RGPD : pas de PIN dans les logs)
+
+**Documentation** : voir SECURITY_AUDIT.md (à créer)
+
+---
+
+### 🟡 Alertes mineures détectées console (22/05/2026, en passant)
+
+À tracker comme tickets séparés :
+
+1. **config.js:121 — SyntaxError 'jsFiles'** : bug syntaxe à corriger
+2. **funnel_sessions 401** : analytics anonyme ne fonctionne pas
+3. **push-notifications subscription failed** : push web ne marche pas
+4. **meta apple-mobile-web-app-capable** : remplacer par `mobile-web-app-capable`
+5. **og-preview.png 404** : image Open Graph manquante (impact SEO/partage)
+
+Ces 5 points seront traités dans des sessions ultérieures dédiées.
+
+
 ## 🛠️ AMÉLIORATIONS AUTONOMES (auto-décidées par Claude)
 
 À chaque session, Claude peut détecter des opportunités d'amélioration du code
