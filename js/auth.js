@@ -1340,20 +1340,20 @@ async function afSubmitChildPinLogin() {
   if (errEl) errEl.style.display = 'none';
 
   try {
-    // Méthode 1 : client Supabase standard (fonctionne si RLS anon autorisé)
+    // ── Login sécurisé : RPC lookup_child_by_pin (SECURITY DEFINER + rate limiting) ──
+    // Remplace l'ancien sb.from('child_profiles').select('*').eq('pin', pin)
+    // qui exposait toute la table aux anonymes (faille critique corrigée 22/05/2026).
+    // Voir LESSONS_LEARNED.md erreur #5 + SECURITY_AUDIT.md
     var childData = null;
-    var res = await sb.from('child_profiles').select('*').eq('pin', pin).maybeSingle();
+    var res = await sb.rpc('lookup_child_by_pin', { pin_input: pin });
 
-    if (res.data) {
-      childData = res.data;
-    } else if (res.error) {
-      // Méthode 2 : fetch direct avec clé anon — contourne RLS si politique non configurée
-      // (nécessaire quand l'enfant n'est pas authentifié)
-      childData = await _fetchChildByPinDirect(pin);
+    if (!res.error && res.data && res.data.length > 0) {
+      childData = res.data[0];
     }
 
     if (!childData) {
-      if (errEl) { errEl.textContent = '❌ Code incorrect. Demande le bon PIN à ton parent !'; errEl.style.display = 'block'; }
+      // Erreur générique : ne pas révéler si c'est mauvais PIN ou rate limit
+      if (errEl) { errEl.textContent = '❌ Code incorrect ou trop d\'essais. Demande à ton parent !'; errEl.style.display = 'block'; }
       _shakeLoginPinInputs();
       return;
     }
@@ -1365,34 +1365,6 @@ async function afSubmitChildPinLogin() {
     if (errEl) { errEl.textContent = '❌ Erreur de connexion. Réessaie.'; errEl.style.display = 'block'; }
   } finally {
     if (btn) { btn.textContent = '🏴‍☠️ ENTRER !'; btn.disabled = false; }
-  }
-}
-
-// Fetch direct avec clé anon — contourne RLS pour la vérification PIN anonyme
-async function _fetchChildByPinDirect(pin) {
-  try {
-    var url  = window.SUPABASE_URL || '';
-    var akey = window.SUPABASE_ANON_KEY || '';
-    if (!url || !akey) return null;
-
-    var r = await fetch(
-      url + '/rest/v1/child_profiles?pin=eq.' + encodeURIComponent(pin) + '&select=*&limit=1',
-      {
-        method: 'GET',
-        headers: {
-          'Accept':       'application/json',
-          'Content-Type': 'application/json',
-          'apikey':        akey,
-          'Authorization': 'Bearer ' + akey   // clé anon publique
-        }
-      }
-    );
-    if (!r.ok) return null;
-    var rows = await r.json();
-    return (rows && rows.length > 0) ? rows[0] : null;
-  } catch (e) {
-    console.error('[_fetchChildByPinDirect]', e);
-    return null;
   }
 }
 
