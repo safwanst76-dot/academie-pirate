@@ -485,6 +485,20 @@ grep -r "public/{NOM_DU_BUCKET}" js/ css/
 
 ---
 
+### 🐛 Piège #11 — OUTPUT-01 : ne JAMAIS morceler les longs livrables
+
+Quand un livrable fait plus de 50 lignes (doc .md, SQL, patch JS), Claude DOIT créer
+le fichier complet en UN SEUL artefact téléchargeable. JAMAIS de heredoc bash long
+à copier-coller dans le terminal.
+
+**Raison** : les heredocs longs causent des erreurs de coupure, caractères mal
+échappés (quotes, backticks, dollars), et mélanges avec le prompt.
+
+Voir ARCHITECTURE_AUTH_V2.md pour le contexte.
+
+---
+
+
 ## MAPPING PERSONNAGES — Grand Bleu référence
 
 ```javascript
