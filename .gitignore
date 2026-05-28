@@ -10,3 +10,7 @@ audit-report.html
 
 # Fichiers temporaires Cloudflare (non versionnés)
 cloudflare_redirects*.csv
+
+# Python cache
+__pycache__/
+*.pyc
