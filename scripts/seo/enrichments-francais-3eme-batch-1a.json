@@ -1,0 +1,87 @@
+{
+  "argumentation-these-antithese-synthese": {
+    "matiere": "francais",
+    "niveau": "3eme",
+    "hero": "Boa Hancock",
+    "manga": "One Piece",
+    "notion": "Argumentation : thèse, antithèse, synthèse",
+    "explication": "L'argumentation construite selon le plan thèse-antithèse-synthèse est un exercice essentiel du programme de français 3ème. Cette structure dialectique permet de présenter une opinion, d'envisager l'avis opposé, puis de dépasser cette contradiction. Pour rédiger une argumentation efficace, il faut d'abord poser le sujet dans une introduction qui annonce les enjeux du débat. Vient ensuite la thèse, où l'on défend un point de vue avec deux ou trois arguments illustrés d'exemples précis. L'antithèse présente la position adverse avec la même rigueur, sans simple opposition de surface. Enfin, la synthèse ne résume pas les deux parties précédentes : elle dépasse la contradiction en introduisant une perspective nouvelle qui réconcilie ou nuance les positions exposées. Cette compétence est centrale pour réussir le sujet de réflexion du Brevet des collèges.",
+    "methode": [
+      "Lire attentivement le sujet et identifier la question implicite ou explicite à débattre",
+      "Construire une introduction qui présente le sujet et annonce le plan en trois temps",
+      "Rédiger la thèse avec 2-3 arguments solides, chacun illustré par un exemple concret",
+      "Développer l'antithèse avec des contre-arguments aussi rigoureux que ceux de la thèse",
+      "Construire la synthèse en proposant un dépassement, pas une simple addition des deux parties",
+      "Conclure brièvement en montrant que la réflexion a apporté une réponse nuancée"
+    ],
+    "erreurs": [
+      "Confondre antithèse et juxtaposition simpliste : on ne se contredit pas, on apporte une vue complémentaire",
+      "Faire une synthèse inconsistante qui résume sans dépasser la contradiction (erreur la plus courante au Brevet)",
+      "Oublier les connecteurs logiques (en premier lieu, néanmoins, en définitive...) qui structurent la pensée",
+      "Multiplier les arguments faibles au lieu de développer 2 ou 3 idées fortes avec exemples concrets"
+    ]
+  },
+  "l-expression-de-la-cause-et-de-la-consequence": {
+    "matiere": "francais",
+    "niveau": "3eme",
+    "hero": "Trafalgar D. Law",
+    "manga": "One Piece",
+    "notion": "L'expression de la cause et de la conséquence",
+    "explication": "Exprimer la cause et la conséquence est essentiel pour construire un raisonnement clair en français 3ème. La cause répond à la question « pourquoi ? » : elle donne la raison ou l'origine d'un fait. La conséquence répond à la question « avec quel résultat ? » : elle exprime ce qui découle logiquement d'une action ou d'un événement. Ces deux notions sont liées et s'expriment grâce à des connecteurs logiques précis. Pour la cause, on utilise des connecteurs comme « parce que », « car », « puisque », « étant donné que », « comme », « en raison de », « grâce à » ou « à cause de ». La nuance est importante : « grâce à » introduit une cause positive, « à cause de » une cause négative. Pour la conséquence, les connecteurs courants sont « donc », « par conséquent », « c'est pourquoi », « si bien que », « de sorte que », « au point que », « tellement... que ». Maîtriser ces outils permet d'argumenter avec précision, compétence évaluée au Brevet.",
+    "methode": [
+      "Identifier dans la phrase quelle proposition exprime la cause (le pourquoi) et laquelle exprime la conséquence (le résultat)",
+      "Choisir un connecteur logique adapté au registre : « car » à l'écrit soigné, « parce que » plus oral",
+      "Vérifier la nuance affective : « grâce à » pour une cause positive, « à cause de » pour une cause négative",
+      "Pour la conséquence, choisir l'intensité : « donc » est neutre, « si bien que » suggère un effet attendu, « au point que » marque l'intensité",
+      "Varier les connecteurs dans un même paragraphe pour éviter les répétitions et enrichir le style"
+    ],
+    "erreurs": [
+      "Confondre « parce que » (cause directe) et « puisque » (cause supposée connue de l'interlocuteur)",
+      "Utiliser « à cause de » pour une cause positive (faute de registre fréquente)",
+      "Oublier que « tellement... que » et « si... que » introduisent toujours une conséquence avec une nuance d'intensité",
+      "Mettre « car » en début de phrase (« car » est une conjonction de coordination qui ne commence pas une phrase à l'écrit soigné)"
+    ]
+  },
+  "l-expression-du-but-et-de-la-condition": {
+    "matiere": "francais",
+    "niveau": "3eme",
+    "hero": "Tony Tony Chopper",
+    "manga": "One Piece",
+    "notion": "L'expression du but et de la condition",
+    "explication": "Le but et la condition sont deux notions clés pour exprimer ses intentions et envisager des hypothèses en français 3ème. Le but désigne l'objectif visé par une action : il se situe toujours dans le futur, comme une finalité à atteindre. La condition, elle, pose une hypothèse, une situation dont dépend la réalisation d'une autre action. Pour exprimer le but, on utilise « pour », « pour que », « afin de », « afin que », « dans le but de », « dans l'intention de », « de manière à », « de peur que », « de crainte que ». Attention : « pour » est suivi de l'infinitif quand le sujet est le même (« je travaille pour réussir »), mais « pour que » est suivi du subjonctif quand les sujets diffèrent (« je travaille pour que tu réussisses »). Pour la condition, les connecteurs courants sont « si », « à condition que », « pourvu que », « à moins que », « au cas où », « dans l'hypothèse où ». La structure « si » + imparfait + conditionnel exprime une hypothèse irréelle ou peu probable, tandis que « si » + présent + futur exprime une condition réalisable.",
+    "methode": [
+      "Distinguer but (intention future) et conséquence (résultat passé ou présent) : le but est ce qu'on cherche à obtenir",
+      "Choisir la bonne construction : « pour » + infinitif si même sujet, « pour que » + subjonctif si sujets différents",
+      "Pour la condition, identifier si l'hypothèse est probable (présent + futur) ou improbable (imparfait + conditionnel)",
+      "Utiliser « afin que » plutôt que « pour que » dans un registre soutenu, notamment dans les rédactions du Brevet",
+      "Maîtriser les nuances : « de peur que » exprime une crainte, « pourvu que » un espoir conditionné"
+    ],
+    "erreurs": [
+      "Confondre but et cause : « j'apprends pour réussir » (but) versus « j'apprends parce que je veux réussir » (cause)",
+      "Utiliser l'indicatif après « pour que » ou « afin que » qui exigent le subjonctif",
+      "Oublier le « ne » explétif facultatif après « à moins que » et « de peur que » (« à moins que tu ne viennes »)",
+      "Mélanger les structures conditionnelles : ne JAMAIS écrire « si j'aurais » (faute interdite), toujours « si j'avais »"
+    ]
+  },
+  "la-concordance-des-temps": {
+    "matiere": "francais",
+    "niveau": "3eme",
+    "hero": "Usopp",
+    "manga": "One Piece",
+    "notion": "La concordance des temps",
+    "explication": "La concordance des temps est une règle fondamentale du français 3ème qui régit l'accord entre les temps verbaux dans une phrase complexe. Quand on construit une phrase avec une proposition principale et une proposition subordonnée, le temps du verbe de la subordonnée dépend du temps du verbe de la principale ainsi que de la chronologie des actions. Il existe trois rapports temporels possibles : l'antériorité (l'action de la subordonnée se passe AVANT celle de la principale), la simultanéité (les deux actions se passent EN MÊME TEMPS), et la postériorité (l'action de la subordonnée se passe APRÈS celle de la principale). Par exemple, si la principale est au passé (« il a dit »), la subordonnée s'adapte : antériorité avec le plus-que-parfait (« il a dit qu'il avait mangé »), simultanéité avec l'imparfait (« il a dit qu'il mangeait »), postériorité avec le conditionnel (« il a dit qu'il mangerait »). Cette règle s'applique particulièrement au discours indirect, où l'on rapporte les paroles de quelqu'un.",
+    "methode": [
+      "Identifier le temps de la proposition principale : présent, passé ou futur",
+      "Identifier la chronologie : l'action de la subordonnée est-elle antérieure, simultanée ou postérieure à celle de la principale ?",
+      "Si principale au présent : subordonnée au passé composé (antériorité), au présent (simultanéité), ou au futur (postériorité)",
+      "Si principale au passé : subordonnée au plus-que-parfait (antériorité), à l'imparfait (simultanéité), ou au conditionnel présent (postériorité)",
+      "Pour le discours indirect, appliquer systématiquement les transformations : présent → imparfait, futur → conditionnel, passé composé → plus-que-parfait"
+    ],
+    "erreurs": [
+      "Garder le présent dans la subordonnée quand la principale est au passé (faute très courante au Brevet)",
+      "Confondre conditionnel présent (postériorité dans le passé) et imparfait (simultanéité dans le passé)",
+      "Oublier les transformations du discours direct au discours indirect : les marqueurs temporels changent aussi (aujourd'hui → ce jour-là)",
+      "Utiliser le futur dans une subordonnée alors que la principale est au passé : il faut le conditionnel"
+    ]
+  }
+}
