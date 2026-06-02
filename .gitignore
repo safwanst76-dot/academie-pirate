@@ -14,3 +14,16 @@ cloudflare_redirects*.csv
 # Python cache
 __pycache__/
 *.pyc
+
+# Backups
+*.bak
+
+# Scripts de migration locaux (téléchargés depuis Claude)
+phase*_*.sh
+fix_*.sh
+install_*.sh
+gsc_*.sh
+enrich_*.sh
+
+# Supabase CLI temp
+supabase/.temp/
