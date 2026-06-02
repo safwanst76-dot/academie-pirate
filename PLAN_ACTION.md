@@ -1384,6 +1384,40 @@ Premier batch : Français 3ème (4 sur 8 leçons).
 **Commits** :
 - `4e27f25 feat(seo): enrichissement contenu — sous-batch 1A français 3ème (4 leçons)`
 - `d72caf1 chore: ignore __pycache__ Python cache files`
+**Détail Jour 7 (28/05) ✅ FAIT 4/4** — Français 3ème enrichi (batch 1A) :
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/argumentation-these-antithese-synthese/
+      (Boa Hancock — argumentation TAS)
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/l-expression-de-la-cause-et-de-la-consequence/
+      (Trafalgar D. Law — cause/conséquence)
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/l-expression-du-but-et-de-la-condition/
+      (Tony Tony Chopper — but/condition)
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/la-concordance-des-temps/
+      (Usopp — concordance temps)
+
+Note : ces 4 URLs étaient en "Explorées non indexées" dans GSC du 28/05.
+Enrichies à ~1000 mots avec sections "Comprendre en profondeur",
+"Méthode étape par étape", "Erreurs courantes à éviter".
+
+**Détail Jour 8 (02/06) ✅ FAIT 10/10** — Compléter le 3ème (toutes matières) :
+
+Français 3ème (sous-batch 1B — 4 leçons restantes du niveau) :
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/l-expression-ecrite-synthese-brevet/
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/les-figures-de-style-personnification-oxymore/
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/les-modalisateurs/
+- ✅ https://aca-pirate.ch/grand-bleu/francais/3eme/synthese-brevet-grammaire-et-orthographe/
+
+Maths 3ème (3 leçons phares Brevet) :
+- ✅ https://aca-pirate.ch/pays-du-feu/maths/3eme/theoreme-de-thales/
+- ✅ https://aca-pirate.ch/pays-du-feu/maths/3eme/trigonometrie-complete/
+- ✅ https://aca-pirate.ch/pays-du-feu/maths/3eme/fonctions-affines-et-lineaires/
+
+Anglais 3ème (3 leçons phares Brevet) :
+- ✅ https://aca-pirate.ch/english/anglais/3eme/past-simple-action-terminee/
+- ✅ https://aca-pirate.ch/english/anglais/3eme/comparatifs-et-superlatifs/
+- ✅ https://aca-pirate.ch/english/anglais/3eme/zero-first-conditional/
+
+🏆 Cumul J1-J8 : 65/65 URLs prioritaires demandées
+🎯 3ème : tous les sous-niveaux couverts (français complet 8/8 leçons)
 
 **Prochaines étapes SEO** :
 - [ ] Mesurer l'impact dans 2 semaines (les 4 URLs passent-elles de
