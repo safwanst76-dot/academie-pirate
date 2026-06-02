@@ -229,294 +229,134 @@ Audits prévus :
 ---
 
 *LESSONS LEARNED V1.0 — Académie Pirate — 22 Mai 2026*
-*Document VIVANT : à mettre à jour à chaque erreur capitalisée*
+
 ---
 
-## 🏆 PATTERN A — 6 PHASES BACKEND + FRONTEND COMPLÈTES (28/05/2026)
+## ⚠️ ERREURS CRITIQUES — Capitalisées lors de Phase 5 (28/05/2026)
 
-**Contexte initial** :
-Le système d'auth des enfants reposait sur un hack : login via PIN seul, puis
-restauration manuelle des tokens parent depuis localStorage. Conséquences :
-- `auth.uid()` retournait le parent.id dans le contexte enfant (FAUX)
-- RLS impossible à écrire proprement
-- Multi-device cassé (les tokens stockés sur PC ne suivaient pas sur mobile)
-- Sécurité dégradée (tokens parent en localStorage)
+### Erreur #6 — `node --check` FATAL obligatoire avant tout commit JS
 
-**Objectif Pattern A** :
-Chaque enfant a un VRAI compte Supabase Auth avec email/password natifs.
-- email = `{slug(username)}@aca-pirate.ch` (UNIQUE garanti)
-- password = PIN choisi par le parent
-- Login natif via `sb.auth.signInWithPassword({ email, password })`
-- JWT enfant avec `auth.uid() = child.auth_user_id`
-- RLS `child_*` policies fonctionnent naturellement
+**Date détection** : 28/05/2026, 14h22 GMT+1
+**Contexte** : Script `phase5_full_username_pin.sh` qui patche `js/auth.js`
+**Symptôme** : Code JS cassé avec `} catch (e) {` orphelin pushé en prod
+**Impact prod** : 🚨 CRITIQUE — site cassé pendant 4 min avant revert
 
-### Phase 0 — Documentation fondateur (27/05/2026)
+**Détail du bug** :
+Le script Python utilisait un parseur d'accolades maison pour identifier
+la fin de la fonction `afSubmitChildPinLogin`. Le parseur a coupé au mauvais
+endroit, laissant un bloc `} catch (e) {` orphelin sans son `try {`. Erreur
+syntaxe JS catastrophique.
 
-**Livrable** : `ARCHITECTURE_AUTH_V2.md` (244 lignes)
-- Schéma cible avec exemples SQL
-- Flow de création d'enfant via Edge Function
-- Flow de login natif enfant
-- Plan en 7 phases
-- Règle nouvelle : **OUTPUT-01** ajoutée dans `GRAND_BLEU_PATTERN.md` Piège #11
-  (livrables longs = `create_file` + `present_files`, jamais heredocs bash)
+Le script affichait `node --check js/auth.js` comme une **simple vérification
+informationnelle**, sans `exit 1` si fail. Donc même avec la syntaxe cassée,
+le script continuait, faisait `git add`, `git commit`, `git push` → bug en prod.
 
-**Commit** : `c48f564 docs(architecture): Pattern A Supabase Auth enfants + règle OUTPUT-01`
-
-### Phase 1 — DB Schema + Cleanup doublons (27/05/2026)
-
-**Modifications schéma `child_profiles`** :
-- `ALTER TABLE child_profiles ADD COLUMN email_login text UNIQUE`
-- `ALTER TABLE child_profiles ADD COLUMN auth_user_id uuid REFERENCES auth.users(id) ON DELETE CASCADE`
-- `CREATE INDEX idx_child_profiles_auth_user_id`
-
-**Nettoyage des doublons préalable** :
-Avant Pattern A, plusieurs enfants pouvaient avoir le même username.
-6 doublons identifiés et supprimés :
-- `taim ×2` → gardé celui avec 26 progressions (`2fed0402...`)
-- `timo ×3` → tous supprimés (test sans progression)
-- `adam ×1` → gardé celui avec parent `elfeshawey0`
-- `Saf` → supprimé (pin = null, invalide)
-
-→ `UNIQUE(username)` activée
-→ 20 enfants restants éligibles à la migration Pattern A
-
-### Phase 2 — Edge Function `child-signup` (27/05/2026)
-
-**Livrable** : `supabase/functions/child-signup/index.ts` (231 lignes TypeScript Deno)
-
-Endpoint Supabase Edge Function qui :
-1. Valide les inputs (username 2-30 chars, pin 4-20 chars)
-2. Slugifie le username (lowercase, retire accents, [a-z0-9_-])
-3. Vérifie l'unicité `email_login` (collision → HTTP 409)
-4. Crée le compte via `auth.admin.createUser()`
-5. Crée le profil dans `child_profiles` avec `auth_user_id = newAuth.id`
-6. Si UPDATE child échoue → ROLLBACK (supprime le compte Auth créé)
-7. Retourne `{ child_id, email_login, auth_user_id }`
-
-**Sécurité** :
-- `verify_jwt: true` dans `config.toml` → parent doit être authentifié
-- Vérifie `parent_id` correspond au JWT
-- Logs anti-énumération
-
-**Test prod (27/05)** :
-- Création `TestPirate` OK
-- Anti-collision 409 OK
-- Login `signInWithPassword` OK avec `auth.uid() = 72ce2267...`
-
-**Commit** : `77443a9 feat(auth): edge function child-signup (Pattern A Phase 2)`
-
-### Phase 3 — RLS Policies + Trigger CASCADE (27/05/2026)
-
-**8 nouvelles policies `child_*` créées** sur 6 tables :
-
-| Policy                             | Table                | Effet                                    |
-|------------------------------------|----------------------|------------------------------------------|
-| `child_sees_self`                  | `child_profiles`     | Enfant lit son propre profil            |
-| `child_updates_self`               | `child_profiles`     | Enfant met à jour son profil (avatar, xp)|
-| `child_manages_own_progressions`   | `progressions`       | INSERT/UPDATE/SELECT propres seulement   |
-| `child_manages_own_badges`         | `child_badges`       | INSERT/SELECT propres                    |
-| `child_manages_own_sessions`       | `session_recaps`     | INSERT/SELECT propres                    |
-| `child_manages_own_dailies`        | `daily_rewards`      | INSERT/SELECT propres                    |
-| `child_manages_own_push`           | `push_subscriptions` | INSERT/UPDATE/DELETE/SELECT propres      |
-| `child_sees_own_analytics`         | `funnel_sessions`    | SELECT propres seulement                 |
-
-**Trigger CASCADE** :
-- `trg_cascade_delete_auth_user` : BEFORE DELETE on `child_profiles` → DELETE de `auth.users`
-- Function `delete_auth_user_on_child_delete()` SECURITY DEFINER
-
-Note : `ON DELETE CASCADE` natif allait dans le mauvais sens (auth.users → child_profiles).
-Le trigger comble le besoin inverse pour propager le delete enfant → compte Auth.
-
-**Vérifications** : 4/4 OK, 0 orphelin.
-
-### Phase 4 — Migration 20 enfants legacy (27/05/2026)
-
-**Livrable** : `scripts/migrate-children-to-auth.js` (228 lignes Node.js)
-
-Script de migration idempotent qui :
-1. Liste les enfants où `auth_user_id IS NULL`
-2. Pour chacun : slugify username → email_login
-3. Crée compte Auth via `auth.admin.createUser({ email, password: pin })`
-4. UPDATE `child_profiles SET email_login, auth_user_id`
-5. Rollback automatique si l'UPDATE échoue
-
-**Modes du script** :
-- `--dry-run` : aperçu sans modif
-- `--only=USERNAME` : test sur 1 enfant
-- (sans flag) : migre tout le reste
-
-**Exécution prod (27/05)** :
-- 1 test d'abord : `--only=tito` → OK
-- Puis les 19 restants en un coup → 19 OK / 0 skip / 0 erreur
-- **Total migré : 20/20 enfants** (taim, tito, Léa, NAÏM, Tess', Ismo 95, etc.)
-- Slugify validé : Léa→lea, NAÏM→naim, Tess'→tess, Ismo 95→ismo95, digiMOS→digimos
-- Login natif testé : `tito@aca-pirate.ch` + PIN → JWT enfant créé
-
-**Vérifications finales** :
-- 20/20 migrés ✅
-- 20 comptes Auth créés ✅
-- 0 orphelin ✅
-- Tableau récap : tous les enfants groupés par parent
-
-**Commit** : `2160ea0 feat(migration): Phase 4 — script de migration enfants legacy`
-
-### Phase 5 — Frontend Pattern A natif (28/05/2026) — AVEC PÉRIPÉTIES
-
-**Décision UX importante (28/05)** :
-PIN seul insuffisant car certains enfants partagent le même PIN (ex: taim et tito
-ont tous deux `081214`). Solution adoptée : **username + PIN** (standard Duolingo
-Kids / Khan Academy Kids). Plus de RPC `lookup_child_by_pin` au login : le
-frontend slugifie le username, reconstitue l'email_login, appelle
-`signInWithPassword` directement.
-
-**Tentatives** :
-- ❌ Première tentative (script `phase5_full_username_pin.sh`) :
-  Le script Python utilisait un parseur d'accolades maison pour trouver la fin de
-  `afSubmitChildPinLogin`. Bug : a coupé au mauvais endroit → bloc `} catch (e) {`
-  orphelin ligne 1397. **Le script a quand même committé et pushé en prod** car
-  pas de `node --check` fatal. **Cloudflare a déployé du code cassé**.
-
-- ✅ Recovery : `git revert HEAD` × 2 (un de trop = revert du revert), puis
-  un 3e revert pour stabiliser. Site OK à nouveau.
-
-- ✅ Seconde tentative (`phase5_v2_robust.sh`) — version BLINDÉE :
-  - Backup `.bak` automatique avant modif
-  - `trap ERR` pour rollback auto si erreur
-  - `node --check` FATAL avec `exit 1` si syntaxe KO
-  - Pas de parser maison : `str_replace` exact sur bloc complet
-  - Pause confirmation utilisateur avant commit
-  - Idempotent (skip si déjà migré)
-
-**Modifications appliquées** :
-
-`index.html` (lignes 125-160) :
-- Titre `Entre ton code secret` → `Connexion Aventurier`
-- Hint `Ton parent t'a donné un code...` → `Ton prénom de pirate + ton code secret`
-- Nouveau `#login-child-username-field` AVANT le PIN (même style)
-- Enter sur username → focus sur PIN (UX naturel)
-
-`js/auth.js` :
-- `afSubmitChildPinLogin` réécrit :
-  - Lit username + pin
-  - Slugify (lowercase, NFD normalize, [a-z0-9_-])
-  - `email = slug + '@aca-pirate.ch'`
-  - `sb.auth.signInWithPassword({ email, password: pin })`
-  - `SELECT child_profiles WHERE auth_user_id = auth.uid()` (RLS naturelle)
-  - Erreur générique anti-énumération si échec
-- `afLaunchChild` simplifié :
-  - 32 lignes du hack `ap_child_tokens_*` supprimées
-  - Remplacé par simple `getSession()` pour `_authUser`
-
-**Test prod validé (28/05)** :
-```
-auth.js:1364 [PIN login] ✅ Session créée — auth.uid: f9a26a58...
-auth.js:1040 [auth] session active — auth.uid: f9a26a58...
+**Bonne pratique** :
+```bash
+if ! node --check js/auth.js; then
+  echo "Syntaxe JS cassée — ROLLBACK"
+  cp js/auth.js.bak js/auth.js
+  exit 1
+fi
 ```
 
-(`f9a26a58...` = auth_user_id de tito, pas du parent → Pattern A confirmé)
+**Bénéfice** :
+- Aucun commit possible sur du code cassé
+- Rollback automatique en cas d'erreur
 
-**Commit** : `ac8caeb feat(auth): Phase 5 — login enfant Pattern A natif (username + PIN)`
-
-### 📊 État final Pattern A au 28/05/2026
-
-✅ Phase 0 — Doc fondateur (c48f564)
-✅ Phase 1 — DB schema + cleanup 6 doublons
-✅ Phase 2 — Edge Function child-signup (77443a9)
-✅ Phase 3 — RLS policies + trigger CASCADE
-✅ Phase 4 — Migration 20 enfants legacy (2160ea0)
-✅ Phase 5 — Frontend Pattern A natif (ac8caeb)
-
-🎯 RESTANT :
-- [ ] **Phase 5.4** — `_createChildProfile` via Edge Function `child-signup`
-  (création de NOUVEAUX enfants depuis dashboard parent)
-- [ ] **Phase 6** — Email récapitulatif aux parents avec les credentials enfant
-- [ ] **Phase 7** — Cleanup final :
-  - DROP RPC `lookup_child_by_pin` (devenue inutile)
-  - DROP table `pin_attempts` (rate limit natif Supabase suffit)
-  - Suppression colonnes `pin_hash` (Supabase Auth gère bcrypt)
-  - Mise à jour `LESSONS_LEARNED.md`
+**Statut** : Appliquée dans `phase5_v2_robust.sh` (28/05/2026)
 
 ---
 
-## 🔍 GSC JOUR 7 — Enrichissement SEO français 3ème batch 1A (28/05/2026)
+### Erreur #7 — `git revert HEAD` deux fois = revert du revert
 
-**Contexte** :
-Sur l'export GSC du 28/05, 12 pages étaient en `Explorées, actuellement non indexées`.
-Causes identifiées : contenu trop court (~566 mots, sous le seuil Google content-rich).
+**Date détection** : 28/05/2026, 14h35 GMT+1
+**Contexte** : Recovery après push en prod du commit Phase 5 cassé
+**Symptôme** : Le 2e revert a RÉ-APPLIQUÉ le bug en prod
 
-**Stratégie validée** :
-Compléter avec ~400 mots manquants par leçon (au lieu de réécrire).
-Travailler par BATCH cohérent : matière × niveau.
-Premier batch : Français 3ème (4 sur 8 leçons).
+**Détail du bug** :
+1. Commit cassé pushé en prod
+2. `git revert --no-edit HEAD` une 1ère fois → revert OK
+3. Confusion : relancé une 2e fois
+4. → revert du revert = "Reapply" du bug
+5. Bug à nouveau en prod
+6. 3e revert pour stabiliser
 
-**Livrables** :
-- `scripts/seo/enrichments-francais-3eme-batch-1a.json` (contenu enrichi structuré)
-- `scripts/seo/enrich-lesson-content.py` (script Python réutilisable d'injection)
+**Pourquoi c'est arrivé** :
+- `git revert HEAD` annule le DERNIER commit
+- Si le dernier commit est lui-même un revert, l'annuler RÉ-APPLIQUE le bug
 
-**Sources consultées (rédaction ORIGINALE inspirée)** :
-- Eduscol.education.fr (programmes officiels Éducation Nationale)
-- Lelivrescolaire.fr (fiches notion)
-- Maxicours.com, EspaceFrancais.com
-- Wikipédia (concordance des temps, dialectique)
+**Bonne pratique** :
+- Toujours vérifier `git log --oneline -3` AVANT de relancer `git revert`
+- Si le revert est déjà fait, NE PAS le relancer
 
-**4 leçons enrichies (Sous-batch 1A)** :
-
-| Slug                                              | Hero            | Notion                              | Avant | Après | Δ     |
-|---------------------------------------------------|-----------------|-------------------------------------|-------|-------|-------|
-| argumentation-these-antithese-synthese            | Boa Hancock     | Argumentation TAS                   | 566   | ~1000 | +434  |
-| l-expression-de-la-cause-et-de-la-consequence     | Trafalgar D. Law| Cause / conséquence                 | 646   | 1018  | +372  |
-| l-expression-du-but-et-de-la-condition            | Tony Tony Chopper| But / condition                    | 626   | 1028  | +402  |
-| la-concordance-des-temps                          | Usopp           | Concordance temps                   | 548   | 877   | +329  |
-
-**Sections injectées par leçon** :
-- 📖 Comprendre en profondeur (encadré bleu, ~200 mots)
-- 🎯 Méthode étape par étape (liste numérotée 5-6 étapes)
-- 🚫 Erreurs courantes à éviter (encadré rouge, 4 pièges Brevet)
-
-**GSC J7 — 4 URLs demandées en indexation (28/05/2026)** :
-1. https://aca-pirate.ch/grand-bleu/francais/3eme/argumentation-these-antithese-synthese/
-2. https://aca-pirate.ch/grand-bleu/francais/3eme/l-expression-de-la-cause-et-de-la-consequence/
-3. https://aca-pirate.ch/grand-bleu/francais/3eme/l-expression-du-but-et-de-la-condition/
-4. https://aca-pirate.ch/grand-bleu/francais/3eme/la-concordance-des-temps/
-
-**Actions GSC complémentaires fait le 28/05** :
-- "Valider le correctif" sur 33 pages `Exclue par noindex` (anciennes POC qui redirigent 301)
-- "Valider le correctif" sur 12 pages `Doublons canoniques`
-
-**Cumul GSC J1-J7** : 51 + 4 = **55 URLs prioritaires demandées**
-
-**Commits** :
-- `4e27f25 feat(seo): enrichissement contenu — sous-batch 1A français 3ème (4 leçons)`
-- `d72caf1 chore: ignore __pycache__ Python cache files`
-
-**Prochaines étapes SEO** :
-- [ ] Mesurer l'impact dans 2 semaines (les 4 URLs passent-elles de
-  "Explorée non indexée" à "Indexée" ?)
-- [ ] Si succès → industrialiser sur **sous-batch 1B** (4 dernières leçons français 3ème) :
-  - les-modalisateurs (Nefertari Vivi)
-  - synthese-brevet-grammaire-et-orthographe (Sabo)
-  - l-expression-ecrite-synthese-brevet (Jinbe)
-  - les-figures-de-style-personnification-oxymore (Shanks)
-- [ ] Puis maths 3ème, anglais 3ème, etc.
-- [ ] GSC J8, J9, J10... — continuer l'indexation quotidienne
+**Statut** : Documentée (28/05/2026)
 
 ---
 
-## 🎯 PROCHAINES ÉTAPES — Roadmap au 28/05/2026
+### Erreur #8 — Backup `.bak` + `trap ERR` obligatoires dans scripts de migration
 
-### Chantier A — SEO (quotidien, arrière-plan)
-- [ ] GSC J8+ : continuer indexations
-- [ ] Sous-batch 1B français 3ème (4 leçons restantes)
-- [ ] Étendre enrichissement à maths 3ème, anglais 3ème, puis 4ème, 5ème, etc.
+**Date détection** : 28/05/2026, 14h45 GMT+1
+**Contexte** : Bug Phase 5 a poussé du code cassé sans possibilité de rollback simple
 
-### Chantier B — Pattern A finalisation
-- [ ] **Phase 5.4** — `_createChildProfile` via Edge Function child-signup
-- [ ] **Phase 6** — Email récap parents
-- [ ] **Phase 7** — Cleanup (DROP lookup_child_by_pin, pin_hash, pin_attempts)
+**Le problème** :
+Les scripts de migration modifient directement des fichiers sources.
+Si le script échoue à mi-chemin, les fichiers sont laissés dans un état
+incohérent. Sans backup, il faut faire `git checkout` ou `git revert`.
 
-### Chantier C — Nouveaux mondes
-- [ ] Sindria (langue arabe × Magi) — différé après Phase 5.4
+**Bonne pratique** :
+```bash
+# 1. Backup AVANT modif
+cp js/auth.js js/auth.js.bak
+
+# 2. Trap ERR pour rollback auto
+cleanup_on_error() {
+  cp js/auth.js.bak js/auth.js
+  exit 1
+}
+trap cleanup_on_error ERR
+set -euo pipefail
+
+# 3. Modifs + vérif FATALE
+python3 patch.py
+node --check js/auth.js || exit 1
+
+# 4. Pause confirmation utilisateur
+read -p "Diff OK ? Tape ENTRÉE pour commit"
+
+# 5. Désactiver le trap (zone safe)
+trap - ERR
+rm -f js/auth.js.bak
+
+# 6. Commit
+git add . && git commit && git push
+```
+
+**Bénéfice** :
+- Rollback automatique en 1 ligne si erreur
+- État du repo toujours propre
+
+**Statut** : Appliquée dans `phase5_v2_robust.sh` (28/05/2026)
 
 ---
 
-*Mise à jour : 28 mai 2026*
+## 📚 Méta-leçon : Audit avant production
+
+Les 3 erreurs ci-dessus (#6, #7, #8) auraient TOUTES été évitées par UN script
+de migration BLINDÉ dès le départ. Coût d'investissement initial : ~30 minutes.
+Bénéfice : zéro downtime prod.
+
+**Règle d'or pour TOUS les futurs scripts de migration** :
+1. `set -euo pipefail` en début
+2. Backup `.bak` AVANT modif
+3. `trap ERR` pour rollback auto
+4. Validation FATALE après modif (exit 1 si fail)
+5. Pause confirmation utilisateur avant commit
+6. Désactivation du trap APRÈS confirmation
+7. Cleanup backups seulement en cas de succès complet
+
+**Template canonique** : `phase5_v2_robust.sh`
+
+---
+
+*Erreurs #6-#8 capitalisées le 28 mai 2026 lors de Pattern A Phase 5*
