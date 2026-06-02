@@ -1029,22 +1029,39 @@ async function afLaunchChild(child) {
     window.AP.state.initFromChild(child);
   }
 
-  // ── Pattern A (Phase 5) : la session est créée nativement par
-  // afSubmitChildPinLogin via sb.auth.signInWithPassword(email_login, pin)
-  // OU via le dashboard parent (session parent active).
-  // Plus de hack "restaurer tokens parent depuis localStorage".
-  // Voir ARCHITECTURE_AUTH_V2.md
+  // ── Restaurer la session parent liée à cet enfant ──
+  // Priorité 1 : tokens stockés dans localStorage (connexion PIN depuis page login)
+  // Priorité 2 : session déjà active (connexion depuis le dashboard parent)
+  var sessionRestored = false;
   try {
-    var sessionRes = await sb.auth.getSession();
-    if (sessionRes && sessionRes.data && sessionRes.data.session) {
-      _authUser = sessionRes.data.session.user;
-      var uidShort = _authUser.id.slice(0, 8);
-      console.info('[auth] session active — auth.uid:', uidShort + '...', '(' + (_authUser.user_metadata?.role || 'parent') + ')');
-    } else {
-      console.warn('[auth] pas de session active — progression sauvée en localStorage uniquement');
+    var stored = localStorage.getItem('ap_child_tokens_' + child.id);
+    if (stored) {
+      var tokens = JSON.parse(stored);
+      // Restaurer la session avec le refresh_token (auto-renouvellement si access_token expiré)
+      var { data, error } = await sb.auth.setSession({
+        access_token:  tokens.access_token,
+        refresh_token: tokens.refresh_token
+      });
+      if (!error && data && data.session) {
+        _authUser = data.session.user;
+        sessionRestored = true;
+        console.info('[auth] session parent restaurée pour enfant:', child.username);
+        // Mettre à jour les tokens stockés (ils peuvent avoir été rafraîchis)
+        localStorage.setItem('ap_child_tokens_' + child.id, JSON.stringify({
+          access_token:  data.session.access_token,
+          refresh_token: data.session.refresh_token,
+          parent_id:     tokens.parent_id
+        }));
+      } else if (error) {
+        console.warn('[auth] setSession échoué:', error.message, '— jeu continue sans session');
+      }
     }
   } catch (e) {
-    console.warn('[auth] check session échec :', e.message);
+    console.warn('[auth] restauration session:', e.message);
+  }
+
+  if (!sessionRestored && !_authUser) {
+    console.warn('[auth] pas de session active — progression en localStorage uniquement');
   }
 
   _hideAllScreens();
@@ -1310,91 +1327,40 @@ function afLoginChildByPin() {
 }
 
 async function afSubmitChildPinLogin() {
-  var userField = document.getElementById('login-child-username-field');
-  var pinField  = document.getElementById('login-child-pin-field');
-  var errEl     = document.getElementById('login-child-pin-error');
-  var btn       = document.getElementById('login-child-pin-btn');
-  
-  var username = userField ? userField.value.toLowerCase().trim() : '';
-  var pin      = pinField  ? pinField.value.toUpperCase().trim()  : '';
+  var field = document.getElementById('login-child-pin-field');
+  var pin   = field ? field.value.toUpperCase().trim() : '';
+  var errEl = document.getElementById('login-child-pin-error');
+  var btn   = document.getElementById('login-child-pin-btn');
 
-  if (username.length < 2) {
-    if (errEl) { errEl.textContent = '⚠️ Entre ton prénom de pirate !'; errEl.style.display = 'block'; }
-    if (userField) userField.focus();
-    return;
-  }
   if (pin.length < 4) {
     if (errEl) { errEl.textContent = '⚠️ Entre ton code secret (4 à 8 caractères) !'; errEl.style.display = 'block'; }
-    if (pinField) pinField.focus();
     return;
   }
   if (btn) { btn.textContent = '⏳ Vérification…'; btn.disabled = true; }
   if (errEl) errEl.style.display = 'none';
 
   try {
-    // ── Pattern A (Phase 5) : login natif Supabase Auth ──
-    // 1. Slugifier username pour reconstituer l'email_login
-    // 2. signInWithPassword(email, pin) → JWT enfant natif
-    // 3. SELECT child_profiles WHERE auth_user_id = auth.uid() (RLS child_sees_self)
-    // Voir ARCHITECTURE_AUTH_V2.md
-    
-    // Slug : retire accents, espaces, garde [a-z0-9_-]
-    var slug = username
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9_-]/g, '')
-      .slice(0, 30);
-    
-    if (slug.length < 2) {
-      if (errEl) { errEl.textContent = '❌ Prénom invalide. Vérifie l\'orthographe.'; errEl.style.display = 'block'; }
+    // ── Login sécurisé : RPC lookup_child_by_pin (SECURITY DEFINER + rate limiting) ──
+    // Remplace l'ancien sb.from('child_profiles').select('*').eq('pin', pin)
+    // qui exposait toute la table aux anonymes (faille critique corrigée 22/05/2026).
+    // Voir LESSONS_LEARNED.md erreur #5 + SECURITY_AUDIT.md
+    var childData = null;
+    var res = await sb.rpc('lookup_child_by_pin', { pin_input: pin });
+
+    if (!res.error && res.data && res.data.length > 0) {
+      childData = res.data[0];
+    }
+
+    if (!childData) {
+      // Erreur générique : ne pas révéler si c'est mauvais PIN ou rate limit
+      if (errEl) { errEl.textContent = '❌ Code incorrect ou trop d\'essais. Demande à ton parent !'; errEl.style.display = 'block'; }
       _shakeLoginPinInputs();
       return;
     }
-    
-    var emailLogin = slug + '@aca-pirate.ch';
-    
-    // ── Login Supabase Auth natif ──
-    var authRes = await sb.auth.signInWithPassword({
-      email:    emailLogin,
-      password: pin
-    });
-    
-    if (authRes.error) {
-      // Erreur générique anti-énumération (Supabase retourne "Invalid login credentials")
-      console.warn('[PIN login] échec :', authRes.error.message);
-      if (errEl) { errEl.textContent = '❌ Prénom ou code incorrect. Demande à ton parent !'; errEl.style.display = 'block'; }
-      _shakeLoginPinInputs();
-      return;
-    }
-    
-    // ── Session enfant créée, récupérer le profil ──
-    _authUser = authRes.data.user;
-    console.info('[PIN login] ✅ Session créée — auth.uid:', _authUser.id.slice(0, 8) + '...');
-    
-    var profileRes = await sb.from('child_profiles')
-      .select('id, username, avatar_id, parent_id, xp_total, level, email_login, auth_user_id')
-      .eq('auth_user_id', _authUser.id)
-      .maybeSingle();
-    
-    if (profileRes.error || !profileRes.data) {
-      console.error('[PIN login] profil introuvable après signin :', profileRes.error);
-      if (errEl) { errEl.textContent = '❌ Erreur de chargement du profil. Réessaie.'; errEl.style.display = 'block'; }
-      await sb.auth.signOut();
-      return;
-    }
-    
-    var childData = profileRes.data;
-    
     if (typeof showToast === 'function') showToast('🏴‍☠️ Bienvenue ' + childData.username + ' !');
     afLaunchChild(childData);
 
   } catch (e) {
-    console.error('[PIN login] exception :', e);
-    if (errEl) { errEl.textContent = '❌ Erreur de connexion. Réessaie.'; errEl.style.display = 'block'; }
-  } finally {
-    if (btn) { btn.textContent = '🏴‍☠️ ENTRER !'; btn.disabled = false; }
-  }
-} catch (e) {
     console.error('[PIN login]', e);
     if (errEl) { errEl.textContent = '❌ Erreur de connexion. Réessaie.'; errEl.style.display = 'block'; }
   } finally {

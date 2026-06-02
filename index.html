@@ -125,30 +125,12 @@
       <div style="text-align:center">
         <div style="font-size:2rem;margin-bottom:4px">🧒</div>
         <div class="login-label" style="text-align:center;display:block;margin-bottom:4px">
-          Connexion Aventurier
+          Entre ton code secret
         </div>
         <div style="font-family:'Nunito',sans-serif;font-size:.75rem;
              color:rgba(255,255,255,.35);margin-bottom:12px">
-          Ton prénom de pirate + ton code secret
+          Ton parent t'a donné un code de 4 à 8 caractères
         </div>
-      </div>
-      <div id="login-child-username-wrap" style="margin-bottom:8px">
-        <input type="text" id="login-child-username-field"
-          minlength="2" maxlength="30"
-          autocomplete="off" autocorrect="off"
-          autocapitalize="none" spellcheck="false"
-          placeholder="Ton prénom (ex: taim)"
-          style="
-            width:100%;padding:14px 16px;text-align:center;
-            font-family:'Nunito',sans-serif;font-size:1.2rem;font-weight:700;
-            background:rgba(255,255,255,.07);
-            border:2px solid rgba(255,215,0,.3);
-            border-radius:12px;color:#ffd700;outline:none;
-            caret-color:#ffd700;box-sizing:border-box;
-            transition:border-color .2s;
-          "
-          oninput="this.value=this.value.toLowerCase().replace(/[^a-z0-9_-]/g,'')"
-          onkeydown="if(event.key==='Enter') { var p=document.getElementById('login-child-pin-field'); if(p) p.focus(); }">
       </div>
       <div id="login-child-pin-wrap">
         <input type="text" id="login-child-pin-field"
