@@ -1,0 +1,178 @@
+{
+  "kakashi-hatake-reciproque-de-pythagore": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Kakashi Hatake",
+    "manga": "Naruto",
+    "notion": "La réciproque du théorème de Pythagore",
+    "explication": "Le théorème de Pythagore affirme que, dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés. Sa réciproque sert à répondre à une question différente : un triangle est-il rectangle ? Elle s'énonce ainsi : si, dans un triangle, le carré de la longueur du plus grand côté est égal à la somme des carrés des longueurs des deux autres côtés, alors ce triangle est rectangle, et l'angle droit se situe face au plus grand côté. À l'inverse, si cette égalité n'est pas vérifiée, le triangle n'est pas rectangle : c'est la contraposée, tout aussi utile au collège. La clé de la méthode est de toujours travailler avec le plus grand côté, candidat naturel au rôle d'hypoténuse, et de calculer séparément les deux membres avant de les comparer. Cette distinction entre le théorème (qui calcule une longueur dans un triangle déjà rectangle) et sa réciproque (qui démontre qu'un triangle est rectangle) est régulièrement évaluée et structure de nombreux exercices de géométrie.",
+    "methode": [
+      "Repérer le plus grand côté du triangle : c'est lui qui jouerait le rôle d'hypoténuse",
+      "Calculer d'un côté le carré de la longueur du plus grand côté",
+      "Calculer de l'autre côté la somme des carrés des longueurs des deux autres côtés",
+      "Comparer les deux résultats obtenus",
+      "Si les deux résultats sont égaux : conclure que le triangle est rectangle, avec l'angle droit face au plus grand côté",
+      "S'ils sont différents : conclure, grâce à la contraposée, que le triangle n'est pas rectangle"
+    ],
+    "erreurs": [
+      "Confondre le théorème de Pythagore (calcul d'une longueur) et sa réciproque (preuve d'un angle droit)",
+      "Ne pas choisir le plus grand côté comme candidat hypoténuse, ce qui fausse la comparaison",
+      "Calculer (a + b)² au lieu de a² + b² pour la somme des carrés",
+      "Annoncer la conclusion sans avoir réellement comparé les deux membres calculés séparément"
+    ]
+  },
+  "rock-lee-soh-cah-toa": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Rock Lee",
+    "manga": "Naruto",
+    "notion": "Le cosinus et SOH-CAH-TOA dans le triangle rectangle",
+    "explication": "La trigonométrie relie les angles aigus d'un triangle rectangle aux longueurs de ses côtés. En 4ème, on découvre le cosinus, premier des trois rapports trigonométriques ; le sinus et la tangente complètent l'étude en 3ème. Pour un angle aigu donné, le cosinus est le quotient de la longueur du côté adjacent à l'angle par la longueur de l'hypoténuse. L'hypoténuse est toujours le côté opposé à l'angle droit, le plus long du triangle, tandis que les côtés adjacent et opposé se définissent par rapport à l'angle aigu que l'on étudie. Le moyen mnémotechnique « SOH-CAH-TOA » réunit les trois rapports : Sinus = Opposé/Hypoténuse, Cosinus = Adjacent/Hypoténuse, Tangente = Opposé/Adjacent. Le cosinus permet deux types de calculs : trouver une longueur manquante quand on connaît un angle et un côté, ou trouver la mesure d'un angle quand on connaît deux côtés, en utilisant la touche inverse de la calculatrice (cos⁻¹). Bien identifier, par rapport à l'angle, quel côté est adjacent et lequel est l'hypoténuse est la première compétence à maîtriser.",
+    "methode": [
+      "Repérer l'angle droit puis l'hypoténuse (le côté qui lui est opposé, le plus long)",
+      "Par rapport à l'angle aigu utilisé, identifier le côté adjacent (celui qui le touche, hors hypoténuse)",
+      "Écrire la relation : cosinus de l'angle = longueur du côté adjacent divisée par longueur de l'hypoténuse",
+      "Pour une longueur : remplacer les valeurs connues puis isoler l'inconnue par produit en croix",
+      "Pour un angle : utiliser la touche cos⁻¹ de la calculatrice réglée en mode degré",
+      "Vérifier que le cosinus obtenu est bien compris entre 0 et 1 (sinon il y a une erreur)"
+    ],
+    "erreurs": [
+      "Confondre côté adjacent et côté opposé selon l'angle considéré",
+      "Se tromper d'hypoténuse en prenant un autre côté que celui opposé à l'angle droit",
+      "Laisser la calculatrice en mode radian au lieu du mode degré",
+      "Oublier la touche cos⁻¹ pour trouver un angle et donner la valeur du cosinus au lieu de l'angle"
+    ]
+  },
+  "shikamaru-nara-mediane-et-quartiles": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Shikamaru Nara",
+    "manga": "Naruto",
+    "notion": "La médiane et les quartiles",
+    "explication": "La médiane et les quartiles sont des indicateurs statistiques qui décrivent la répartition d'une série de données, en complément de la moyenne. La médiane est la valeur qui partage une série ordonnée en deux groupes de même effectif : la moitié des données lui sont inférieures ou égales, l'autre moitié supérieures ou égales. Pour la déterminer, il faut d'abord ranger toutes les valeurs dans l'ordre croissant. Si l'effectif total est impair, la médiane est la valeur centrale ; s'il est pair, on prend la moyenne des deux valeurs centrales. Les quartiles affinent cette description : le premier quartile (Q1) est une valeur en dessous de laquelle se trouve au moins un quart des données, et le troisième quartile (Q3) une valeur en dessous de laquelle se trouve au moins trois quarts des données. L'écart interquartile, différence entre Q3 et Q1, mesure la dispersion de la moitié centrale de la série. Contrairement à la moyenne, la médiane est peu sensible aux valeurs extrêmes, ce qui en fait un indicateur robuste pour interpréter des données réelles.",
+    "methode": [
+      "Ranger toutes les valeurs de la série dans l'ordre croissant",
+      "Compter l'effectif total de la série",
+      "Pour la médiane : prendre la valeur centrale si l'effectif est impair, la moyenne des deux valeurs centrales s'il est pair",
+      "Pour Q1 : repérer la valeur située au premier quart de la série ordonnée",
+      "Pour Q3 : repérer la valeur située aux trois quarts de la série ordonnée",
+      "Interpréter les résultats en une phrase reliée au contexte de l'énoncé"
+    ],
+    "erreurs": [
+      "Oublier de ranger la série dans l'ordre croissant avant de chercher la médiane",
+      "Confondre la médiane (valeur centrale) et la moyenne (somme divisée par l'effectif)",
+      "Mal traiter un effectif pair en prenant une seule valeur au lieu de la moyenne des deux centrales",
+      "Confondre l'étendue (max − min) et l'écart interquartile (Q3 − Q1)"
+    ]
+  },
+  "naruto-uzumaki-regles-de-calcul": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les règles de calcul et les priorités opératoires",
+    "explication": "Maîtriser les règles de calcul est indispensable en 4ème, car presque tous les autres chapitres en dépendent. La première règle concerne les priorités opératoires : dans une expression, on effectue d'abord les calculs entre parenthèses, puis les puissances, ensuite les multiplications et divisions de gauche à droite, et enfin les additions et soustractions de gauche à droite. La deuxième règle porte sur les nombres relatifs et les signes : le produit ou le quotient de deux nombres de même signe est positif, celui de deux nombres de signes contraires est négatif. Pour additionner des nombres relatifs, on regarde les signes et on additionne ou soustrait les distances à zéro selon le cas. La troisième règle concerne les fractions : pour additionner ou soustraire, il faut un dénominateur commun ; pour multiplier, on multiplie numérateurs entre eux et dénominateurs entre eux. Enfin, la distributivité permet de développer un produit : on multiplie le facteur extérieur par chaque terme de la parenthèse. Une expression mal calculée par non-respect de ces priorités est l'une des sources d'erreurs les plus fréquentes du collège.",
+    "methode": [
+      "Repérer et effectuer en premier les calculs entre parenthèses",
+      "Calculer ensuite les puissances",
+      "Effectuer les multiplications et divisions de gauche à droite",
+      "Terminer par les additions et soustractions de gauche à droite",
+      "Appliquer la règle des signes à chaque produit ou quotient de nombres relatifs",
+      "Pour les fractions : réduire au même dénominateur avant d'additionner ou soustraire"
+    ],
+    "erreurs": [
+      "Calculer de gauche à droite sans respecter la priorité de la multiplication sur l'addition",
+      "Se tromper de signe : oublier que le produit de deux nombres négatifs est positif",
+      "Additionner des fractions en additionnant directement numérateurs et dénominateurs",
+      "Oublier de multiplier le facteur par tous les termes de la parenthèse lors d'une distribution"
+    ]
+  },
+  "sakura-haruno-methode-de-resolution": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Sakura Haruno",
+    "manga": "Naruto",
+    "notion": "La méthode de résolution d'une équation",
+    "explication": "Résoudre une équation, c'est trouver la valeur de l'inconnue (souvent notée x) qui rend l'égalité vraie. En 4ème, on apprend à résoudre les équations du premier degré, de la forme ax + b = c. Le principe repose sur une idée simple : une équation est comme une balance en équilibre, et toute opération effectuée d'un côté doit l'être aussi de l'autre pour conserver cet équilibre. La méthode consiste d'abord à réduire et simplifier chaque membre si nécessaire, puis à rassembler les termes contenant l'inconnue d'un côté de l'égalité et les nombres seuls de l'autre côté, en ajoutant ou en soustrayant la même quantité aux deux membres. On obtient alors une expression du type ax = d, que l'on résout en divisant les deux membres par le coefficient a. Une étape finale, trop souvent négligée, consiste à vérifier la solution en la remplaçant dans l'équation de départ : si l'égalité est vérifiée, la réponse est juste. Cette démarche rigoureuse prépare directement aux équations et aux systèmes étudiés en 3ème.",
+    "methode": [
+      "Réduire et simplifier chaque membre de l'équation si c'est possible",
+      "Rassembler les termes en x d'un même côté en ajoutant ou soustrayant la même quantité aux deux membres",
+      "Rassembler les nombres seuls de l'autre côté par la même opération équilibrée",
+      "Obtenir une expression de la forme ax = d",
+      "Diviser les deux membres par le coefficient a pour isoler x",
+      "Vérifier la solution en la remplaçant dans l'équation de départ"
+    ],
+    "erreurs": [
+      "Effectuer une opération sur un seul membre en oubliant de la faire sur l'autre",
+      "Se tromper de signe en faisant passer un terme de l'autre côté de l'égalité",
+      "Diviser par le coefficient avant d'avoir isolé le terme en x",
+      "Conclure sans vérifier que la valeur trouvée rend bien l'égalité de départ vraie"
+    ]
+  },
+  "sasuke-uchiha-les-3-identites-remarquables": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Sasuke Uchiha",
+    "manga": "Naruto",
+    "notion": "Découvrir et développer les identités remarquables",
+    "explication": "Les identités remarquables sont trois égalités du calcul littéral qui reviennent si souvent qu'il est rentable de les connaître par cœur plutôt que de tout recalculer à chaque fois. On les découvre ici par le développement, c'est-à-dire en transformant un produit en une somme de termes. La première est le carré d'une somme : (a + b)² = a² + 2ab + b². La deuxième est le carré d'une différence : (a − b)² = a² − 2ab + b². La troisième est le produit d'une somme par une différence : (a + b)(a − b) = a² − b². Le point le plus délicat est le terme central, appelé double produit, qui vaut 2ab et que beaucoup d'élèves oublient en écrivant à tort que (a + b)² serait égal à a² + b². On peut retrouver chaque formule en appliquant la double distributivité, ce qui est rassurant en cas de doute, mais l'objectif est d'aller plus vite en reconnaissant directement la forme de l'expression. Bien maîtrisées dès la 4ème, ces identités facilitent la factorisation et la résolution d'équations abordées en 3ème.",
+    "methode": [
+      "Reconnaître la forme : carré d'une somme, carré d'une différence ou produit d'une somme par une différence",
+      "Identifier clairement les deux termes a et b, même s'ils contiennent des coefficients",
+      "Appliquer la formule correspondante en écrivant les trois termes du résultat",
+      "Soigner le double produit 2ab et son signe (positif pour une somme, négatif pour une différence)",
+      "Mettre au carré aussi les coefficients : (3x)² vaut 9x² et non 3x²",
+      "Vérifier en cas de doute en redéveloppant par la double distributivité"
+    ],
+    "erreurs": [
+      "Écrire (a + b)² = a² + b² en oubliant le double produit 2ab",
+      "Se tromper de signe dans (a − b)² où le double produit devient −2ab",
+      "Oublier d'élever au carré le coefficient d'un terme",
+      "Confondre le développement (produit vers somme) et la factorisation (somme vers produit)"
+    ]
+  },
+  "hinata-hyuga-probabilite": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Hinata Hyuga",
+    "manga": "Naruto",
+    "notion": "Les probabilités : première approche",
+    "explication": "Une expérience aléatoire est une expérience dont on ne peut pas prévoir le résultat à l'avance, comme lancer un dé ou tirer une carte. Chaque résultat possible s'appelle une issue, et un événement est un ensemble d'issues qui nous intéressent. La probabilité d'un événement mesure sa chance de se réaliser : c'est un nombre toujours compris entre 0 et 1. Un événement impossible a une probabilité de 0, un événement certain une probabilité de 1. Lorsque toutes les issues ont la même chance de se produire — on parle alors de situation d'équiprobabilité —, la probabilité d'un événement se calcule simplement : c'est le quotient du nombre de cas favorables (les issues qui réalisent l'événement) par le nombre de cas possibles (toutes les issues). Par exemple, avec un dé équilibré à six faces, la probabilité d'obtenir un nombre pair est de trois cas favorables sur six cas possibles. On peut exprimer une probabilité sous forme de fraction, de nombre décimal ou de pourcentage. Enfin, l'événement contraire d'un événement a une probabilité égale à 1 moins celle de l'événement, ce qui simplifie souvent les calculs.",
+    "methode": [
+      "Vérifier qu'il s'agit d'une situation d'équiprobabilité (toutes les issues ont la même chance)",
+      "Lister ou dénombrer toutes les issues possibles de l'expérience",
+      "Compter le nombre de cas favorables à l'événement étudié",
+      "Calculer la probabilité : nombre de cas favorables divisé par nombre de cas possibles",
+      "Simplifier la fraction obtenue et, si demandé, la convertir en décimal ou en pourcentage",
+      "Pour un événement contraire, utiliser : probabilité = 1 moins la probabilité de l'événement"
+    ],
+    "erreurs": [
+      "Annoncer une probabilité supérieure à 1 ou négative, ce qui est impossible",
+      "Calculer une probabilité sans vérifier que les issues sont équiprobables",
+      "Confondre le nombre de cas favorables et le nombre de cas possibles dans le quotient",
+      "Oublier de simplifier la fraction ou de l'interpréter dans le contexte de l'énoncé"
+    ]
+  },
+  "pain-nagato-bilan-4eme": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Pain (Nagato)",
+    "manga": "Naruto",
+    "notion": "La méthode pour consolider toute la 4ème",
+    "explication": "La classe de 4ème est une année charnière : elle introduit des notions qui seront approfondies en 3ème et évaluées au Brevet, comme le calcul littéral, les puissances, la proportionnalité, le théorème de Pythagore et sa réciproque, le cosinus, les statistiques et les premières probabilités. Consolider ces acquis avant d'entrer en 3ème évite d'accumuler des lacunes difficiles à combler plus tard. Une révision efficace ne consiste pas à tout relire passivement, mais à s'organiser par grands thèmes : le domaine numérique et le calcul (relatifs, fractions, puissances, priorités), le calcul littéral (développement, distributivité, identités remarquables), la géométrie (Pythagore, cosinus, triangles), et la gestion de données (proportionnalité, statistiques, probabilités). Pour chaque thème, le plus rentable est de refaire des exercices variés plutôt que de relire le cours, car c'est en cherchant et en se trompant que l'on identifie ses points faibles. Reprendre ses anciennes erreurs et comprendre pourquoi on s'est trompé vaut mieux que d'enchaîner des exercices déjà réussis. Cette méthode de travail régulière, par petites séances espacées, ancre durablement les notions et prépare sereinement la 3ème.",
+    "methode": [
+      "Classer les chapitres de l'année en grands thèmes : calcul numérique, calcul littéral, géométrie, gestion de données",
+      "Pour chaque thème, repérer les notions les moins sûres à partir des contrôles passés",
+      "Refaire des exercices variés plutôt que de relire passivement le cours",
+      "Reprendre ses anciennes erreurs et comprendre la cause de chacune",
+      "Travailler par petites séances régulières et espacées plutôt qu'en une seule fois",
+      "Vérifier ses résultats et rédiger proprement, comme dans une évaluation"
+    ],
+    "erreurs": [
+      "Se contenter de relire le cours sans jamais refaire d'exercices",
+      "Ne réviser que les notions déjà maîtrisées en évitant les points faibles",
+      "Réviser tout au dernier moment en une seule longue séance peu efficace",
+      "Ne pas analyser ses erreurs passées et donc les répéter"
+    ]
+  }
+}
