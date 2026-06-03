@@ -1,0 +1,178 @@
+{
+  "kakashi-hatake-theoreme-de-thales": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Kakashi Hatake",
+    "manga": "Naruto",
+    "notion": "Le théorème de Thalès",
+    "explication": "Le théorème de Thalès est l'un des piliers de la géométrie de 3ème et un classique du Brevet. Il s'applique dans une configuration précise : deux droites sécantes en un point, coupées par deux droites parallèles. On obtient alors deux triangles emboîtés (ou en « papillon »), et le théorème affirme que les longueurs des côtés correspondants sont proportionnelles. Concrètement, si les droites (BC) et (DE) sont parallèles, alors les rapports des longueurs sont égaux : AD/AB = AE/AC = DE/BC. Cette égalité de trois rapports permet de calculer une longueur manquante par produit en croix, à condition de bien identifier les points correspondants. Le théorème sert aussi à déterminer des distances inaccessibles dans des problèmes concrets. Sa réciproque, elle, permet de démontrer que deux droites sont parallèles : si les rapports AD/AB et AE/AC sont égaux ET que les points sont alignés dans le même ordre, alors (DE) et (BC) sont parallèles. Distinguer le théorème (qui calcule) de sa réciproque (qui prouve le parallélisme) est essentiel pour ne pas perdre de points le jour de l'épreuve.",
+    "methode": [
+      "Repérer la configuration : deux droites sécantes en un point, coupées par deux droites parallèles (triangles emboîtés ou papillon)",
+      "Vérifier et énoncer l'hypothèse de parallélisme avant tout calcul (les droites parallèles sont la condition d'application)",
+      "Écrire l'égalité des trois rapports en respectant l'ordre des points correspondants : sommet commun en haut de chaque fraction",
+      "Repérer le rapport complet (deux longueurs connues) qui sert de référence pour le calcul",
+      "Isoler la longueur cherchée par produit en croix, puis effectuer le calcul",
+      "Pour prouver un parallélisme, utiliser la réciproque : comparer deux rapports et vérifier l'alignement dans le même ordre"
+    ],
+    "erreurs": [
+      "Appliquer le théorème sans énoncer l'hypothèse de parallélisme : la rédaction perd des points même si le résultat est juste",
+      "Mélanger les points correspondants dans les rapports (mettre AB avec AE au lieu de AB avec AC)",
+      "Confondre le théorème de Thalès (calcul d'une longueur) et sa réciproque (preuve d'un parallélisme)",
+      "Oublier de vérifier l'alignement des points dans le même ordre quand on utilise la réciproque, ce qui rend la conclusion fausse"
+    ]
+  },
+  "sasuke-uchiha-rappel-des-3-identites": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Sasuke Uchiha",
+    "manga": "Naruto",
+    "notion": "Les identités remarquables",
+    "explication": "Les identités remarquables sont trois égalités fondamentales du calcul littéral en 3ème, qu'il faut connaître par cœur car elles tombent régulièrement au Brevet. Ce sont des raccourcis qui permettent de développer ou de factoriser des expressions sans poser tous les calculs. La première est le carré d'une somme : (a + b)² = a² + 2ab + b². La deuxième est le carré d'une différence : (a − b)² = a² − 2ab + b². La troisième, souvent appelée « produit remarquable », concerne le produit d'une somme par une différence : (a + b)(a − b) = a² − b². Ces formules se lisent dans les deux sens. De gauche à droite, on développe une expression compacte en une somme de termes. De droite à gauche, on factorise une somme ou une différence en un produit, ce qui est indispensable pour résoudre des équations produit-nul. Reconnaître la forme d'une expression (somme au carré, différence au carré, ou différence de deux carrés) est la clé : c'est ce qui permet de choisir la bonne identité et de gagner un temps précieux le jour de l'examen.",
+    "methode": [
+      "Identifier la forme de l'expression : carré d'une somme, carré d'une différence, ou produit d'une somme par une différence",
+      "Repérer clairement les termes a et b, surtout lorsqu'ils contiennent des coefficients ou des puissances (ex : 2x, 3y)",
+      "Pour développer : appliquer la formule en faisant attention au double produit 2ab et à son signe",
+      "Pour factoriser : reconnaître une différence de deux carrés a² − b² puis l'écrire (a + b)(a − b)",
+      "Vérifier le résultat en redéveloppant mentalement, ou en testant avec une valeur numérique simple",
+      "Réduire l'expression finale en regroupant les termes semblables"
+    ],
+    "erreurs": [
+      "Oublier le double produit 2ab et écrire (a + b)² = a² + b² (l'erreur la plus fréquente au Brevet)",
+      "Se tromper de signe dans (a − b)² en oubliant que le double produit devient négatif (−2ab)",
+      "Oublier de mettre au carré le coefficient : (2x)² vaut 4x² et non 2x²",
+      "Confondre développement et factorisation et appliquer la formule dans le mauvais sens"
+    ]
+  },
+  "naruto-uzumaki-fonctions-affines-et-lineaires": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les fonctions affines et linéaires",
+    "explication": "Les fonctions affines et linéaires sont au cœur du programme de 3ème et constituent une transition vers les mathématiques du lycée. Une fonction linéaire s'écrit f(x) = ax : à chaque nombre x, elle associe son produit par un coefficient a appelé coefficient de proportionnalité. Toute situation de proportionnalité se modélise par une fonction linéaire, et sa représentation graphique est une droite qui passe par l'origine du repère. Une fonction affine, plus générale, s'écrit f(x) = ax + b : le nombre a reste le coefficient directeur (il donne l'inclinaison de la droite) et le nombre b est l'ordonnée à l'origine (le point où la droite coupe l'axe vertical). Une fonction linéaire est donc un cas particulier de fonction affine, celui où b = 0. Calculer l'image d'un nombre revient à remplacer x par ce nombre dans la formule ; chercher un antécédent revient à résoudre une équation pour retrouver x à partir d'une image donnée. Savoir lire et tracer ces droites, calculer un coefficient directeur à partir de deux points, et passer de la formule au graphique sont des compétences évaluées à chaque session du Brevet.",
+    "methode": [
+      "Reconnaître le type de fonction : f(x) = ax est linéaire, f(x) = ax + b est affine",
+      "Pour calculer une image : remplacer x par la valeur donnée dans la formule et effectuer le calcul",
+      "Pour trouver un antécédent : poser l'équation ax + b = (image connue) puis la résoudre",
+      "Pour déterminer le coefficient directeur a à partir de deux points : calculer la différence des ordonnées divisée par la différence des abscisses",
+      "Pour tracer la droite : placer deux points obtenus par deux images, puis tracer la droite passant par ces points",
+      "Vérifier qu'une fonction linéaire passe bien par l'origine (0 ; 0), contrairement à une fonction affine avec b non nul"
+    ],
+    "erreurs": [
+      "Confondre image et antécédent : l'image se calcule directement, l'antécédent demande de résoudre une équation",
+      "Oublier l'ordonnée à l'origine b et traiter une fonction affine comme une fonction linéaire",
+      "Inverser le calcul du coefficient directeur (diviser la différence des abscisses par celle des ordonnées)",
+      "Penser qu'une fonction affine représente toujours une situation de proportionnalité : seule la fonction linéaire le fait"
+    ]
+  },
+  "jiraiya-probabilites-composees": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Jiraiya",
+    "manga": "Naruto",
+    "notion": "Les probabilités composées",
+    "explication": "Les probabilités composées concernent les expériences aléatoires réalisées en plusieurs étapes : tirer deux boules successivement, lancer plusieurs fois un dé, ou enchaîner deux épreuves. En 3ème, l'outil central pour les représenter est l'arbre pondéré, sur lequel chaque branche porte la probabilité de l'événement correspondant. Deux règles gouvernent les calculs. La règle du produit : la probabilité d'un chemin complet (une succession d'issues) s'obtient en multipliant les probabilités rencontrées le long de ce chemin. La règle de la somme : la probabilité d'un événement qui peut se réaliser par plusieurs chemins distincts s'obtient en additionnant les probabilités de ces chemins. Il faut aussi distinguer les tirages avec remise, où les probabilités restent identiques à chaque étape, des tirages sans remise, où le nombre total d'objets diminue et modifie donc les probabilités de la deuxième étape. Une vérification utile consiste à s'assurer que la somme des probabilités des branches issues d'un même nœud vaut bien 1. Ces situations apparaissent fréquemment dans les exercices du Brevet, souvent reliées à un contexte concret.",
+    "methode": [
+      "Identifier les étapes de l'expérience et déterminer s'il y a remise ou non entre les tirages",
+      "Construire un arbre pondéré en plaçant sur chaque branche la probabilité de l'issue correspondante",
+      "Vérifier qu'à chaque nœud, la somme des probabilités des branches vaut 1",
+      "Pour la probabilité d'un chemin précis : multiplier les probabilités le long des branches de ce chemin",
+      "Pour un événement réalisable par plusieurs chemins : additionner les probabilités de tous les chemins concernés",
+      "Simplifier la fraction finale et, si demandé, donner une valeur décimale ou un pourcentage"
+    ],
+    "erreurs": [
+      "Additionner les probabilités le long d'un même chemin au lieu de les multiplier",
+      "Oublier de modifier les probabilités de la deuxième étape dans un tirage sans remise",
+      "Compter une seule fois un événement qui se réalise par plusieurs chemins (oublier d'additionner)",
+      "Confondre l'expérience avec remise et sans remise, ce qui fausse tout l'arbre"
+    ]
+  },
+  "minato-namikaze-trigonometrie-complete": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Minato Namikaze",
+    "manga": "Naruto",
+    "notion": "La trigonométrie dans le triangle rectangle",
+    "explication": "La trigonométrie de 3ème étudie les relations entre les angles aigus et les longueurs des côtés d'un triangle rectangle. Trois rapports fondamentaux relient un angle aigu aux côtés : le cosinus, le sinus et la tangente. Pour un angle aigu donné, le cosinus est le quotient du côté adjacent par l'hypoténuse, le sinus est le quotient du côté opposé par l'hypoténuse, et la tangente est le quotient du côté opposé par le côté adjacent. Le moyen mnémotechnique « SOH-CAH-TOA » résume ces trois définitions : Sinus = Opposé/Hypoténuse, Cosinus = Adjacent/Hypoténuse, Tangente = Opposé/Adjacent. L'hypoténuse est toujours le côté opposé à l'angle droit, le plus long du triangle ; les côtés adjacent et opposé se définissent par rapport à l'angle aigu que l'on considère. Ces rapports permettent deux types de calculs : trouver une longueur manquante lorsqu'on connaît un angle et un côté, ou trouver la mesure d'un angle lorsqu'on connaît deux côtés, en utilisant les touches inverses de la calculatrice (cos⁻¹, sin⁻¹, tan⁻¹). La trigonométrie est un grand classique du Brevet, souvent associée à une situation concrète comme la hauteur d'un mât ou l'inclinaison d'une rampe.",
+    "methode": [
+      "Placer le triangle rectangle et repérer l'hypoténuse (côté opposé à l'angle droit)",
+      "Identifier, par rapport à l'angle aigu utilisé, le côté adjacent et le côté opposé",
+      "Choisir le bon rapport selon les données : cosinus, sinus ou tangente (SOH-CAH-TOA)",
+      "Écrire l'égalité trigonométrique avec les longueurs et l'angle concernés",
+      "Pour une longueur : isoler l'inconnue par produit en croix puis calculer",
+      "Pour un angle : utiliser la fonction inverse de la calculatrice (cos⁻¹, sin⁻¹ ou tan⁻¹) en mode degré"
+    ],
+    "erreurs": [
+      "Se tromper d'hypoténuse ou confondre côté adjacent et côté opposé selon l'angle considéré",
+      "Choisir le mauvais rapport (utiliser le cosinus alors que les données imposent la tangente)",
+      "Laisser la calculatrice en mode radian au lieu du mode degré, ce qui donne un résultat aberrant",
+      "Oublier d'utiliser la fonction inverse pour trouver un angle et donner la valeur du rapport au lieu de l'angle"
+    ]
+  },
+  "sakura-haruno-methode-de-substitution": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Sakura Haruno",
+    "manga": "Naruto",
+    "notion": "La résolution de systèmes par substitution",
+    "explication": "Un système de deux équations à deux inconnues permet de modéliser des problèmes où deux quantités sont liées par deux conditions, par exemple le prix de deux articles achetés en différentes quantités. Résoudre le système, c'est trouver le couple de valeurs (x ; y) qui vérifie simultanément les deux équations. La méthode de substitution est l'une des deux techniques au programme de 3ème. Son principe : exprimer une inconnue en fonction de l'autre à partir de l'une des équations, puis remplacer (substituer) cette expression dans la seconde équation. On obtient alors une équation à une seule inconnue, que l'on sait résoudre. Une fois cette première inconnue trouvée, on revient à l'expression de départ pour calculer la seconde. La substitution est particulièrement efficace quand une inconnue est déjà isolée, ou facile à isoler (coefficient égal à 1). Elle s'oppose à la méthode par combinaison linéaire, plus pratique quand les coefficients se prêtent à une addition. Vérifier le couple solution dans les deux équations de départ est une étape de rédaction valorisée au Brevet.",
+    "methode": [
+      "Choisir l'équation où une inconnue est la plus simple à isoler (coefficient 1 de préférence)",
+      "Exprimer cette inconnue en fonction de l'autre (par exemple y = ... )",
+      "Substituer cette expression dans la seconde équation pour obtenir une équation à une seule inconnue",
+      "Résoudre cette équation pour trouver la première valeur",
+      "Remplacer cette valeur dans l'expression de départ pour calculer la seconde inconnue",
+      "Vérifier le couple (x ; y) obtenu dans les deux équations initiales avant de conclure"
+    ],
+    "erreurs": [
+      "Substituer l'expression dans la même équation que celle utilisée pour l'isoler (on tourne en rond et on aboutit à 0 = 0)",
+      "Oublier les parenthèses lors du remplacement, ce qui fausse les signes",
+      "Ne calculer qu'une seule inconnue et oublier de revenir chercher la seconde",
+      "Conclure sans vérifier le couple solution dans les deux équations de départ"
+    ]
+  },
+  "tsunade-volumes-des-solides": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Tsunade",
+    "manga": "Naruto",
+    "notion": "Les volumes des solides",
+    "explication": "Le calcul de volumes en 3ème rassemble toutes les formules vues depuis la 6ème et y ajoute les solides plus complexes. Pour un prisme droit ou un cylindre, le volume est le produit de l'aire de la base par la hauteur. Pour une pyramide ou un cône, le volume vaut un tiers du produit de l'aire de la base par la hauteur : ces solides « pointus » contiennent exactement trois fois moins que le prisme ou le cylindre de même base et même hauteur. Pour une boule de rayon r, le volume est égal à quatre tiers de pi multiplié par le rayon au cube. La grande difficulté du Brevet n'est pas la formule elle-même, mais la cohérence des unités : toutes les longueurs doivent être exprimées dans la même unité avant le calcul, et l'on n'oublie pas que les volumes s'expriment en unités cubes (cm³, m³). Un autre point clé est l'effet d'un agrandissement ou d'une réduction de rapport k : les longueurs sont multipliées par k, les aires par k², mais les volumes par k³. Maîtriser cette règle évite des erreurs classiques dans les problèmes à plusieurs questions.",
+    "methode": [
+      "Identifier le solide (prisme, cylindre, pyramide, cône, boule) pour choisir la bonne formule",
+      "Convertir toutes les longueurs dans la même unité avant tout calcul",
+      "Calculer d'abord l'aire de la base si le solide en dépend (disque, polygone)",
+      "Appliquer la formule du volume, sans oublier le facteur 1/3 pour les pyramides et cônes",
+      "Donner le résultat dans la bonne unité de volume (cm³, m³) et arrondir si l'énoncé le demande",
+      "En cas d'agrandissement ou de réduction de rapport k, multiplier le volume par k³ (et non par k)"
+    ],
+    "erreurs": [
+      "Oublier le coefficient 1/3 dans le volume d'une pyramide ou d'un cône",
+      "Mélanger les unités de longueur ou confondre unité d'aire et unité de volume",
+      "Appliquer le rapport k aux volumes au lieu de k³ lors d'un agrandissement ou d'une réduction",
+      "Confondre le rayon et le diamètre dans les formules du cylindre, du cône ou de la boule"
+    ]
+  },
+  "madara-uchiha-synthese-brevet": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Madara Uchiha",
+    "manga": "Naruto",
+    "notion": "La méthode pour réussir l'épreuve de maths du Brevet",
+    "explication": "L'épreuve de mathématiques du Diplôme National du Brevet dure deux heures et est notée sur 100 points. Elle se compose de plusieurs exercices indépendants couvrant tout le programme du cycle 4 : calcul numérique et littéral, équations, fonctions, proportionnalité, géométrie (Thalès, Pythagore, trigonométrie), statistiques, probabilités, et souvent un exercice d'algorithmique ou de programmation. Réussir cette épreuve relève autant de la méthode que des connaissances. Comme les exercices sont indépendants, il est judicieux de commencer par ceux que l'on maîtrise le mieux pour sécuriser des points rapidement, plutôt que de buter sur le premier. La rédaction compte énormément : énoncer la propriété ou le théorème utilisé, montrer les étapes du calcul et encadrer ou souligner le résultat permet d'obtenir des points même lorsque le résultat final comporte une erreur. La calculatrice est autorisée, mais il faut vérifier qu'elle est en mode degré pour la trigonométrie. Enfin, gérer son temps en gardant quelques minutes pour relire évite les erreurs d'étourderie qui coûtent cher. Cette épreuve récompense la régularité, la clarté et la rigueur autant que la performance pure.",
+    "methode": [
+      "Lire entièrement le sujet en début d'épreuve pour repérer les exercices les plus accessibles",
+      "Commencer par les exercices maîtrisés afin de sécuriser des points rapidement",
+      "Pour chaque démonstration, énoncer la propriété ou le théorème utilisé avant de l'appliquer",
+      "Détailler les étapes de calcul et faire apparaître clairement le résultat (encadré ou souligné)",
+      "Vérifier le réglage de la calculatrice (mode degré) avant tout calcul de trigonométrie",
+      "Garder quelques minutes en fin d'épreuve pour relire, vérifier les unités et corriger les étourderies"
+    ],
+    "erreurs": [
+      "Rester bloqué trop longtemps sur un exercice difficile au détriment des questions faciles restantes",
+      "Donner un résultat sans justification ni étape, ce qui prive des points de la démarche",
+      "Oublier les unités dans les résultats de géométrie ou de grandeurs",
+      "Ne pas relire en fin d'épreuve et laisser des erreurs de signe ou de calcul évitables"
+    ]
+  }
+}
