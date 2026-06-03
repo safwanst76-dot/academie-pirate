@@ -1634,3 +1634,51 @@ Le trigger CASCADE (Phase 3) a supprimé proprement le compte auth.users associ�
 ---
 
 *Phase 5.4 complétée le 03 juin 2026*
+---
+
+## 🟢 CHANTIER P3 — Enrichissement SEO/AEO chemin matière (MAJ 03/06/2026)
+
+### Décision d'architecture (CONFIRMÉE — ne pas re-débattre)
+- **On enrichit UNIQUEMENT les chemins matière** : `francais/`, `maths/`, `anglais/`, `histoire/`, `geographie/`, `sciences/`.
+- Les chemins monde (`grand-bleu/`, `pays-du-feu/`, `english/`, `magnolia/`, `kanto/`, `namek/`) sont **301-redirigés via Cloudflare** vers les chemins matière → « Pages matière indexables uniquement » (PLAN_ACTION ligne 430).
+- ⚠️ Conséquence : le **batch 1A français** (J7) a été appliqué sur `grand-bleu/francais/3eme/` (chemin redirigé). Les 4 pages **matière** correspondantes ne sont donc PAS encore enrichies → à propager (voir backlog).
+
+### Marqueur d'injection selon le template de la page
+| Template | Pages | Marqueur `--marker` |
+|---|---|---|
+| ancien (français) | `grand-bleu/...` (déjà fait) + `francais/...` (à faire) | `<div class="cta">` (défaut) |
+| `ap-*` (récent) | `maths/`, `anglais/`, `histoire/`, `geographie/`, `sciences/` | `<section class="ap-cta-final">` |
+
+### Outil
+- `scripts/seo/enrich-lesson-content.py` — **enrichi avec option `--marker`** (rétrocompatible, défaut `<div class="cta">`).
+- ⚠️ Le script est **gitignoré** (`.py` exclus) → il vit dans le Codespace local uniquement. Les **JSON de contenu** (`scripts/seo/enrichments-*.json`) sont versionnés, eux.
+- Chaque batch = 1 JSON par matière/niveau, schéma : `{ slug: { matiere, niveau, hero, manga, notion, explication, methode[5-6], erreurs[4] } }`.
+
+### Commande type (reprise)
+```bash
+python3 scripts/seo/enrich-lesson-content.py \
+  --json scripts/seo/enrichments-maths-Xeme.json \
+  --base ./maths/Xeme \
+  --marker '<section class="ap-cta-final">' --dry-run   # puis sans --dry-run
+```
+Workflow : dry-run (gate 8/8) → run réel → vérif (sec/cta/html + mots) → `git add` pages + JSON → commit → push.
+
+### Avancement
+| Lot | Pages | Statut | Commit |
+|---|---|---|---|
+| Maths 3ème | 8 | ✅ FAIT (~968-1050 mots) | `a6f45a2` |
+| Maths 4ème | 8 | ⏳ exécuté ce jour — **confirmer commit/push** | (à noter) |
+| Maths 5ème | 8 | 🔜 JSON en cours (préciser notions de `temari-definition` + `gaara-definition-et-propriete`) | — |
+| Maths 6ème | 8 | ⬜ à faire | — |
+| Maths CM2 | 8 | ⬜ à faire | — |
+| Anglais CM2→3ème | 40 | ⬜ à faire (marqueur `ap-cta-final`) | — |
+| **Français matière** (propager 1A + faire 1B) | 8 | ⬜ à faire (marqueur `<div class="cta">`) | — |
+| Histoire / Géo / Sciences | ~120 | ⬜ P3 — déjà ~1050-1230 mots, n'ajouter QUE Méthode+Erreurs (gain AEO) | — |
+
+### Ordre de reprise recommandé
+1. Finir **maths** : 5ème → 6ème → CM2 (boucle la matière maths complète).
+2. **Anglais** : CM2 → 3ème (même marqueur `ap-cta-final`).
+3. **Propager le français** sur le chemin matière (batch 1A déjà rédigé + 1B : Vivi/modalisateurs, Sabo/synthèse-brevet, Jinbe/expression-écrite, Shanks/figures-de-style).
+4. **Histoire / Géo / Sciences** : ajout des 2 sections AEO uniquement.
+
+*Réf. règles : PR-00 (production ready), NR-01 (zéro régression), DEV-01 (source = GitHub).*
