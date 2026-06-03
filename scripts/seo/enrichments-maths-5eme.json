@@ -1,0 +1,112 @@
+{
+  "naruto-uzumaki-expressions-litterales": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les expressions littérales",
+    "explication": "Une expression littérale est une expression mathématique qui contient une ou plusieurs lettres représentant des nombres. Le calcul littéral, découvert en 5ème, permet d'écrire des formules générales valables pour n'importe quelle valeur : le périmètre d'un carré de côté c s'écrit ainsi 4c, quel que soit c. Pour écrire correctement une expression littérale, on respecte des conventions : on supprime le signe de multiplication devant une lettre (3 × a s'écrit 3a) et entre deux lettres (a × b s'écrit ab), et on note a × a sous la forme a². Réduire une expression consiste à regrouper les termes semblables, c'est-à-dire ceux qui contiennent la même lettre : 3x + 2x donne 5x, mais 3x + 2 ne se réduit pas car les termes ne sont pas semblables. Substituer, ou remplacer, signifie donner une valeur à la lettre pour calculer la valeur numérique de l'expression : si x vaut 4, alors 3x + 1 vaut 13. Ce langage des lettres est la base de toute l'algèbre du collège et du lycée.",
+    "methode": [
+      "Repérer les termes semblables (ceux qui contiennent exactement la même partie littérale)",
+      "Appliquer les conventions d'écriture : supprimer le signe × devant ou entre les lettres, noter a × a en a²",
+      "Réduire l'expression en additionnant ou soustrayant les coefficients des termes semblables",
+      "Pour substituer, remplacer chaque lettre par sa valeur, en mettant les nombres négatifs entre parenthèses",
+      "Effectuer le calcul numérique en respectant les priorités opératoires",
+      "Vérifier que les termes non semblables n'ont pas été regroupés à tort"
+    ],
+    "erreurs": [
+      "Additionner des termes non semblables, par exemple écrire 3x + 2 = 5x",
+      "Oublier que 3a signifie 3 × a au moment de remplacer a par une valeur",
+      "Substituer un nombre négatif sans parenthèses, ce qui fausse les signes",
+      "Confondre 2a (deux fois a) et a² (a multiplié par lui-même)"
+    ]
+  },
+  "sasuke-uchiha-priorites-operatoires": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Sasuke Uchiha",
+    "manga": "Naruto",
+    "notion": "Les priorités opératoires et les fractions",
+    "explication": "Dans un calcul comportant plusieurs opérations, l'ordre dans lequel on les effectue n'est pas libre : il obéit à des règles de priorité. On effectue d'abord les calculs entre parenthèses, en commençant par les parenthèses les plus intérieures. On effectue ensuite les multiplications et les divisions, de la gauche vers la droite. On termine enfin par les additions et les soustractions, également de la gauche vers la droite. Ces priorités expliquent pourquoi 2 + 3 × 4 vaut 14 et non 20 : la multiplication passe avant l'addition. Lorsque le calcul fait intervenir des fractions, les mêmes priorités s'appliquent, mais il faut en plus maîtriser leurs règles propres : pour additionner ou soustraire deux fractions, on les réduit au même dénominateur ; pour les multiplier, on multiplie les numérateurs entre eux et les dénominateurs entre eux ; et on simplifie toujours le résultat final. Une barre de fraction joue d'ailleurs le rôle d'une parenthèse : le numérateur et le dénominateur se calculent séparément avant d'effectuer la division.",
+    "methode": [
+      "Effectuer en premier les calculs entre parenthèses, en commençant par les plus intérieures",
+      "Traiter la barre de fraction comme une parenthèse : calculer numérateur et dénominateur séparément",
+      "Effectuer ensuite les multiplications et divisions de gauche à droite",
+      "Terminer par les additions et soustractions de gauche à droite",
+      "Pour additionner ou soustraire des fractions, les réduire au même dénominateur",
+      "Simplifier la fraction obtenue à la fin du calcul"
+    ],
+    "erreurs": [
+      "Calculer de gauche à droite sans respecter la priorité de la multiplication sur l'addition",
+      "Additionner des fractions en ajoutant directement les numérateurs ET les dénominateurs",
+      "Oublier que la barre de fraction regroupe le numérateur comme une parenthèse",
+      "Ne pas simplifier la fraction finale"
+    ]
+  },
+  "sakura-haruno-theoreme-de-pythagore": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Sakura Haruno",
+    "manga": "Naruto",
+    "notion": "Le théorème de Pythagore",
+    "explication": "Le théorème de Pythagore établit une relation entre les trois côtés d'un triangle rectangle. Il affirme que, dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés. L'hypoténuse est le côté opposé à l'angle droit ; c'est toujours le plus long des trois côtés. Ce théorème sert principalement à calculer une longueur manquante lorsqu'on connaît les deux autres. Pour calculer l'hypoténuse, on additionne les carrés des deux côtés de l'angle droit, puis on prend la racine carrée du résultat. Pour calculer l'un des côtés de l'angle droit, on procède par soustraction : on retranche au carré de l'hypoténuse le carré du côté connu, puis on prend la racine carrée. Il ne faut pas confondre ce théorème, qui calcule une longueur dans un triangle déjà rectangle, avec sa réciproque, qui sert à démontrer qu'un triangle est rectangle. Le théorème de Pythagore est un outil fondamental que l'on retrouve tout au long du collège et du lycée.",
+    "methode": [
+      "Vérifier que le triangle est rectangle et repérer l'hypoténuse (côté opposé à l'angle droit)",
+      "Écrire l'égalité de Pythagore avec les longueurs concernées",
+      "Pour calculer l'hypoténuse : additionner les carrés des deux côtés de l'angle droit",
+      "Pour calculer un côté de l'angle droit : soustraire le carré du côté connu au carré de l'hypoténuse",
+      "Prendre la racine carrée du résultat pour obtenir la longueur cherchée",
+      "Donner le résultat avec l'unité et l'arrondi demandés par l'énoncé"
+    ],
+    "erreurs": [
+      "Se tromper d'hypoténuse en prenant un côté de l'angle droit à sa place",
+      "Additionner les carrés alors qu'on cherche un côté de l'angle droit (il faut soustraire)",
+      "Oublier de prendre la racine carrée à la fin et donner le carré de la longueur",
+      "Confondre le théorème (calcul de longueur) et sa réciproque (preuve d'un angle droit)"
+    ]
+  },
+  "rock-lee-parallelogramme-et-trapeze": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Rock Lee",
+    "manga": "Naruto",
+    "notion": "Les aires du parallélogramme et du trapèze",
+    "explication": "Calculer l'aire d'un parallélogramme et d'un trapèze fait partie des compétences clés de la 5ème. L'aire d'un parallélogramme est égale au produit d'une base par la hauteur relative à cette base. Le point délicat est que la hauteur n'est pas le côté oblique : c'est la distance perpendiculaire entre la base et le côté qui lui est parallèle. On peut comprendre cette formule en imaginant que l'on découpe un triangle d'un côté du parallélogramme pour le recoller de l'autre : on obtient un rectangle de mêmes base et hauteur. L'aire d'un trapèze, figure qui possède deux côtés parallèles appelés les bases, se calcule en multipliant la demi-somme des deux bases par la hauteur, c'est-à-dire en faisant la somme de la grande base et de la petite base, en divisant par deux, puis en multipliant par la hauteur. Dans les deux cas, toutes les longueurs doivent être exprimées dans la même unité, et l'aire s'exprime en unité de surface (cm², m²). Bien distinguer la hauteur du côté oblique évite la majorité des erreurs.",
+    "methode": [
+      "Identifier la base choisie et la hauteur qui lui correspond (distance perpendiculaire, jamais le côté oblique)",
+      "Vérifier que base et hauteur sont exprimées dans la même unité",
+      "Pour le parallélogramme : multiplier la base par la hauteur",
+      "Pour le trapèze : additionner les deux bases, diviser par deux, puis multiplier par la hauteur",
+      "Exprimer le résultat dans la bonne unité d'aire (cm², m²)",
+      "Relire l'énoncé pour vérifier qu'on a utilisé la hauteur et non un côté"
+    ],
+    "erreurs": [
+      "Utiliser la longueur du côté oblique au lieu de la hauteur perpendiculaire",
+      "Oublier de diviser par deux la somme des bases dans la formule du trapèze",
+      "Mélanger les unités de longueur ou confondre unité de longueur et unité d'aire",
+      "Confondre aire (surface intérieure) et périmètre (longueur du contour)"
+    ]
+  },
+  "kankuro-translation": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Kankuro",
+    "manga": "Naruto",
+    "notion": "Les translations et les rotations",
+    "explication": "Les translations et les rotations sont des transformations géométriques : elles déplacent une figure sans la déformer. Ce sont des isométries, c'est-à-dire qu'elles conservent les longueurs, les angles et les aires ; la figure image est donc toujours superposable à la figure de départ. Une translation est un glissement : tous les points de la figure se déplacent de la même façon, dans la même direction, le même sens et sur la même longueur. On peut l'imaginer comme une figure que l'on pousse en ligne droite sans la tourner. Une rotation, elle, fait tourner la figure autour d'un point fixe appelé centre de rotation, d'un certain angle et dans un sens précis (horaire ou anti-horaire). Le centre, l'angle et le sens définissent entièrement la rotation. Dans les deux cas, l'orientation des longueurs est préservée et la figure garde exactement la même taille et la même forme. Reconnaître si un déplacement est une translation ou une rotation, et savoir construire l'image d'une figure, sont les compétences attendues en 5ème.",
+    "methode": [
+      "Identifier le type de transformation : glissement (translation) ou tour autour d'un point (rotation)",
+      "Pour une translation : repérer la direction, le sens et la longueur du glissement",
+      "Construire l'image en déplaçant chaque point de la même façon, puis relier les points obtenus",
+      "Pour une rotation : repérer le centre, l'angle et le sens de rotation",
+      "Reporter chaque point à la même distance du centre, selon l'angle indiqué",
+      "Vérifier que la figure image est bien superposable à la figure de départ"
+    ],
+    "erreurs": [
+      "Confondre une translation (glissement) et une rotation (tour autour d'un centre)",
+      "Modifier la longueur ou la direction du glissement d'un point à l'autre dans une translation",
+      "Se tromper de sens de rotation (horaire au lieu d'anti-horaire)",
+      "Déformer la figure en oubliant que ces transformations conservent les dimensions"
+    ]
+  }
+}
