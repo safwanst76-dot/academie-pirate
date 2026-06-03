@@ -1450,3 +1450,155 @@ Anglais 3ème (3 leçons phares Brevet) :
 ---
 
 *Mise à jour : 28 mai 2026*
+---
+
+## 🏆 PATTERN A — PHASE 5.4 — Création enfant via Edge Function (03/06/2026)
+
+**Date de complétion** : 03 juin 2026, 11h07 GMT+1
+
+**Objectif** :
+Migrer la fonction `_createChildProfile` côté frontend pour appeler l'Edge
+Function `child-signup` (Phase 2) au lieu d'un INSERT direct dans
+`child_profiles`. Conséquence : tous les NOUVEAUX enfants créés depuis le
+dashboard parent sont automatiquement en Pattern A natif (avec compte
+Supabase Auth et `auth_user_id` renseigné).
+
+### Avant Phase 5.4
+
+```javascript
+// js/auth.js (ligne 62-74) AVANT
+async function _createChildProfile(parentId, username, avatarId, pin) {
+  var pinHash = pin ? _hashPin(pin) : null;
+  var res = await sb.from('child_profiles').insert({
+    parent_id: parentId,
+    username:  username,
+    avatar_id: avatarId || 'luffy',
+    pin:       pin,
+    pin_hash:  pinHash,
+    xp_total:  0,
+    level:     1
+  }).select().maybeSingle();
+  return res.data || null;
+}
+```
+
+**Problèmes** :
+- ❌ Pas de compte Supabase Auth créé pour l'enfant
+- ❌ `auth_user_id` reste `NULL`
+- ❌ L'enfant ne peut PAS se logger via `signInWithPassword`
+- ❌ Bloc parallèle de 16 lignes `localStorage.setItem('ap_child_tokens_*')`
+  pour le hack de restauration session parent
+
+### Après Phase 5.4
+
+```javascript
+// js/auth.js (ligne 62-86) APRÈS
+async function _createChildProfile(parentId, username, avatarId, pin) {
+  var invokeRes = await sb.functions.invoke('child-signup', {
+    body: {
+      username: username,
+      pin:      pin,
+      avatar_id: avatarId || 'luffy'
+    }
+  });
+  if (invokeRes.error) {
+    console.error('[create-child] invoke error :', invokeRes.error);
+    throw new Error('Connexion au serveur impossible. Réessaie.');
+  }
+  var data = invokeRes.data;
+  if (!data || data.ok === false) {
+    var serverMsg = (data && data.error) || 'Création échouée';
+    if (serverMsg.toLowerCase().includes('username') ||
+        serverMsg.toLowerCase().includes('déjà') ||
+        serverMsg.toLowerCase().includes('collision')) {
+      throw new Error('Ce prénom est déjà pris. Choisis-en un autre !');
+    }
+    throw new Error(serverMsg);
+  }
+  return data.child || null;
+}
+```
+
+**Améliorations** :
+- ✅ Crée un VRAI compte Supabase Auth (auth.users)
+- ✅ `auth_user_id` automatiquement renseigné dans `child_profiles`
+- ✅ Le slug du username est généré côté serveur (Edge Function)
+- ✅ Le `parent_id` est récupéré côté serveur depuis le JWT (sécurité)
+- ✅ Anti-collision native (Edge Function vérifie l'unicité `email_login`)
+- ✅ Messages d'erreur user-friendly :
+  - `409` (collision) → "Ce prénom est déjà pris"
+  - `401` (pas authentifié) → message générique
+  - `500` (erreur serveur) → message générique
+- ✅ Suppression du bloc 16 lignes `ap_child_tokens_*` (devenu obsolète)
+
+### Test prod validé (03/06/2026, 11h07)
+
+**Procédure exécutée** :
+1. Login parent `safwanst.76@gmail.com` via magic link
+2. Dashboard → "Ajouter un aventurier"
+3. Créé : `testpiratenouveau` / PIN `TEST5678` / avatar luffy
+4. Toast "🏴‍☠️ Aventurier testpiratenouveau créé !" affiché
+5. Logout parent
+6. Login enfant : `testpiratenouveau` + `TEST5678` → ✅ session enfant créée
+
+**Vérification SQL** :
+```sql
+SELECT id, username, email_login, auth_user_id, parent_id
+FROM child_profiles
+WHERE username = 'testpiratenouveau';
+```
+
+**Résultat** :
+| id           | username           | email_login                        | auth_user_id | parent_id    |
+|--------------|--------------------|------------------------------------|--------------|--------------|
+| 374a4523...  | testpiratenouveau  | testpiratenouveau@aca-pirate.ch    | 64f0e1b1...  | 8b89b05b...  |
+
+✅ `email_login` correctement slugifié
+✅ `auth_user_id` renseigné (= id du compte auth.users créé en parallèle)
+✅ `parent_id` = compte parent safwanst.76
+
+**Logs console au login enfant** :
+```
+[PIN login] ✅ Session créée — auth.uid: 64f0e1b1...
+[auth] session active — auth.uid: 64f0e1b1...
+```
+
+→ `auth.uid()` = `64f0e1b1` = MATCH `child.auth_user_id`
+→ Pattern A natif 100% opérationnel
+
+**Cleanup test** : `DELETE FROM child_profiles WHERE username = 'testpiratenouveau';`
+Le trigger CASCADE (Phase 3) a supprimé proprement le compte auth.users associé.
+
+### Commit
+
+`XXXXXXX feat(auth): Phase 5.4 — _createChildProfile via Edge Function child-signup`
+
+### Bilan Pattern A — 100% COMPLET
+
+| Phase | Date     | Description                          | Commit   | Status |
+|-------|----------|--------------------------------------|----------|--------|
+| 0     | 27/05    | Doc fondateur ARCHITECTURE_AUTH_V2   | c48f564  | ✅     |
+| 1     | 27/05    | DB schema + cleanup 6 doublons       | (SQL)    | ✅     |
+| 2     | 27/05    | Edge Function child-signup           | 77443a9  | ✅     |
+| 3     | 27/05    | RLS policies + trigger CASCADE       | (SQL)    | ✅     |
+| 4     | 27/05    | Migration 20 enfants legacy          | 2160ea0  | ✅     |
+| 5     | 28/05    | Frontend login natif (username+PIN)  | ac8caeb  | ✅     |
+| **5.4** | **03/06** | **Création enfant via Edge Function** | (CE COMMIT) | **✅**     |
+
+### Prochaines étapes (optionnelles)
+
+- [ ] **Phase 6** — Email récap parents
+  - Envoyer un email aux parents lors de la création d'un enfant
+  - Contient : username, PIN (rappel), lien de connexion
+  - Implémenté via Edge Function `send-content-email`
+
+- [ ] **Phase 7** — Cleanup DB
+  - DROP RPC `lookup_child_by_pin` (devenue inutile)
+  - DROP table `pin_attempts` (rate limit natif Supabase suffit)
+  - DROP colonne `pin_hash` (Supabase Auth gère bcrypt natif)
+  - DROP colonne `pin` (présent uniquement pour rétrocompatibilité)
+  - Mise à jour `LESSONS_LEARNED.md` avec le bilan complet
+
+---
+
+*Phase 5.4 complétée le 03 juin 2026*
