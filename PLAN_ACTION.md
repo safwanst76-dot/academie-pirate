@@ -972,7 +972,10 @@ réparties sur plusieurs jours.
 | Jour 4  | 22/05/2026 | ✅ FAIT 11/11 | 6 reportées du J3 + 5 français phares                   |
 | Jour 5  | 26/05/2026 | ✅ FAIT 10/10 | Racines histoire + sciences (J6 reste géo + sous-niveaux) |
 | Jour 6  | 27/05/2026 | ✅ FAIT 8/8   | Racines géo (5) + sous-niveaux 3e histoire/sciences/géo (3) |
-| Jour 7+ | À planifier | ⏸️ TODO       | URLs Sindria/Magi (après Phase 4 Pattern A) |
+| Jour 7  | 28/05/2026 | ✅ FAIT 4/4   | 4 leçons français 3ème enrichies batch 1A (Boa Hancock, Trafalgar, Chopper, Usopp) |
+| Jour 8  | 02/06/2026 | ✅ FAIT 10/10 | 4 français 3ème batch 1B + 3 maths 3ème (Thalès/trigo/fonctions) + 3 anglais 3ème (past simple/comparatifs/zero-first conditional) |
+| Jour 9  | 03/06/2026 | ✅ FAIT 10/10 | 4 histoire 3ème (1ère/2nde GM, Guerre Froide, Totalitarismes) + 3 sciences 3ème (énergie, acides/bases, Ohm) + 3 géo 3ème (France monde, aires urbaines, UE) |
+| Jour 10+ | À planifier | ⏸️ TODO       | Leçons 4ème (maths/français/anglais) puis niveaux 5ème/6ème/CM2 |
 
 **Total : 51/51 URLs prioritaires Phase 4 + racines demandées ✅ (J1-J6) 🏆**
 
@@ -1418,6 +1421,35 @@ Anglais 3ème (3 leçons phares Brevet) :
 
 🏆 Cumul J1-J8 : 65/65 URLs prioritaires demandées
 🎯 3ème : tous les sous-niveaux couverts (français complet 8/8 leçons)
+
+
+**Détail Jour 9 (03/06) ✅ FAIT 10/10** — Brevet 3ème (histoire/sciences/géo) :
+
+Histoire 3ème (4 sujets phares du Brevet HG) :
+- ✅ https://aca-pirate.ch/magnolia/histoire/3eme/la-premiere-guerre-mondiale-1914-1918/
+- ✅ https://aca-pirate.ch/magnolia/histoire/3eme/la-seconde-guerre-mondiale-1939-1945/
+- ✅ https://aca-pirate.ch/magnolia/histoire/3eme/la-guerre-froide-1947-1991/
+- ✅ https://aca-pirate.ch/magnolia/histoire/3eme/l-entre-deux-guerres-et-les-totalitarismes/
+
+Sciences 3ème (3 chapitres phares Brevet PC/SVT) :
+- ✅ https://aca-pirate.ch/kanto/sciences/3eme/l-energie-et-la-puissance-electrique/
+- ✅ https://aca-pirate.ch/kanto/sciences/3eme/acides-bases-et-tests-d-identification/
+- ✅ https://aca-pirate.ch/kanto/sciences/3eme/les-fonctions-lineaires-loi-d-ohm/
+
+Géographie 3ème (3 chapitres phares Brevet HG) :
+- ✅ https://aca-pirate.ch/namek/geographie/3eme/la-france-dans-la-mondialisation/
+- ✅ https://aca-pirate.ch/namek/geographie/3eme/les-aires-urbaines-francaises/
+- ✅ https://aca-pirate.ch/namek/geographie/3eme/les-territoires-de-l-union-europeenne/
+
+🏆 Cumul J1-J9 : 75/75 URLs prioritaires demandées
+
+🎯 Couverture niveau 3ème (après J9) :
+   - Français : 8/8 leçons (100%)
+   - Maths    : 4/8 leçons (50%)
+   - Anglais  : 4/8 leçons (50%)
+   - Histoire : 4/8 leçons (50%)
+   - Sciences : 3/8 leçons (37%)
+   - Géo      : 3/8 leçons (37%)
 
 **Prochaines étapes SEO** :
 - [ ] Mesurer l'impact dans 2 semaines (les 4 URLs passent-elles de
