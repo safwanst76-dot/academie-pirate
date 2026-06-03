@@ -60,17 +60,26 @@ async function _createParentProfile(userId, email, prenom, nom, phone, emailProg
 }
 
 async function _createChildProfile(parentId, username, avatarId, pin) {
-  var pinHash = pin ? _hashPin(pin) : null;
-  var res = await sb.from('child_profiles').insert({
-    parent_id: parentId,
-    username:  username,
-    avatar_id: avatarId || 'luffy',
-    pin:       pin,
-    pin_hash:  pinHash,
-    xp_total:  0,
-    level:     1
-  }).select().maybeSingle();
-  return res.data || null;
+  var invokeRes = await sb.functions.invoke('child-signup', {
+    body: {
+      username: username,
+      pin:      pin,
+      avatar_id: avatarId || 'luffy'
+    }
+  });
+  if (invokeRes.error) {
+    console.error('[create-child] invoke error :', invokeRes.error);
+    throw new Error('Connexion au serveur impossible. Réessaie.');
+  }
+  var data = invokeRes.data;
+  if (!data || data.ok === false) {
+    var serverMsg = (data && data.error) || 'Création échouée';
+    if (serverMsg.toLowerCase().includes('username') || serverMsg.toLowerCase().includes('déjà') || serverMsg.toLowerCase().includes('collision')) {
+      throw new Error('Ce prénom est déjà pris. Choisis-en un autre !');
+    }
+    throw new Error(serverMsg);
+  }
+  return data.child || null;
 }
 
 function _hashPin(pin) {
@@ -837,22 +846,6 @@ async function afSubmitCreateChild(isFirstChild) {
   try {
     var child = await _createChildProfile(_authUser.id, username, avatarId, pin);
     if (!child) throw new Error('Impossible de créer le profil aventurier.');
-
-    // ── Sauvegarder les tokens du parent liés à cet enfant ──
-    // Quand l'enfant se connectera par PIN, on restaurera cette session
-    // pour que auth.uid() = parent_id → RLS OK → progression visible par le parent
-    try {
-      var _sr = await sb.auth.getSession();
-      var _ss = _sr.data && _sr.data.session;
-      if (_ss) {
-        localStorage.setItem('ap_child_tokens_' + child.id, JSON.stringify({
-          access_token:  _ss.access_token,
-          refresh_token: _ss.refresh_token,
-          parent_id:     _authUser.id
-        }));
-        console.info('[auth] tokens parent sauvés pour enfant:', child.username);
-      }
-    } catch (_e) { console.warn('[auth] save tokens:', _e); }
 
     if (typeof showToast === 'function') showToast('🏴‍☠️ Aventurier ' + username + ' créé !');
     await afShowParentDashboard();
