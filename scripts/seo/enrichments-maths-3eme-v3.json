@@ -1,0 +1,594 @@
+{
+  "kakashi-hatake-theoreme-de-thales": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Kakashi Hatake",
+    "manga": "Naruto",
+    "notion": "Le théorème de Thalès",
+    "explication": "Le théorème de Thalès s'utilise dans une configuration précise : deux droites sécantes en un point, coupées par deux droites parallèles. Il permet alors d'affirmer que les longueurs des segments correspondants sont proportionnelles. Concrètement, si les droites (BC) et (DE) sont parallèles, on obtient l'égalité de trois rapports : AB/AD = AC/AE = BC/DE. Ce théorème sert à calculer une longueur manquante quand on connaît les autres, et il intervient aussi dans les situations d'agrandissement et de réduction. Il existe deux configurations classiques : la configuration « triangle » (les deux parallèles du même côté du point) et la configuration « papillon » (de part et d'autre du point d'intersection). Il faut bien repérer les points qui se correspondent pour écrire les rapports dans le bon ordre. Le théorème possède aussi une réciproque, qui sert à démontrer que deux droites sont parallèles : si les rapports sont égaux et que les points sont alignés dans le même ordre, alors les droites sont parallèles. Thalès est un grand classique du Brevet, souvent associé à Pythagore et à la trigonométrie. Dans la pratique, on rencontre souvent Thalès dans des problèmes concrets, par exemple pour calculer une hauteur inaccessible ou vérifier qu'une construction est bien proportionnée.",
+    "definitions": [
+      {
+        "terme": "Droites sécantes",
+        "sens": "Deux droites qui se croisent en un point."
+      },
+      {
+        "terme": "Droites parallèles",
+        "sens": "Deux droites qui ne se croisent jamais."
+      },
+      {
+        "terme": "Rapport",
+        "sens": "Le quotient de deux longueurs."
+      },
+      {
+        "terme": "Segments correspondants",
+        "sens": "Les segments placés au même endroit dans la configuration."
+      },
+      {
+        "terme": "Configuration triangle",
+        "sens": "Les deux parallèles situées du même côté du point d'intersection."
+      },
+      {
+        "terme": "Configuration papillon",
+        "sens": "Les deux parallèles situées de part et d'autre du point."
+      },
+      {
+        "terme": "Réciproque",
+        "sens": "La propriété qui permet de prouver que deux droites sont parallèles."
+      },
+      {
+        "terme": "Agrandissement / réduction",
+        "sens": "Multiplication de toutes les longueurs par un même coefficient."
+      }
+    ],
+    "methode": [
+      "Vérifie que tu es bien dans une configuration de Thalès (2 droites sécantes, 2 parallèles).",
+      "Identifie le point d'intersection des deux droites sécantes.",
+      "Repère les points qui se correspondent sur chaque droite.",
+      "Écris l'égalité des trois rapports en respectant l'ordre des points.",
+      "Remplace par les longueurs connues.",
+      "Isole la longueur cherchée, souvent à l'aide d'un produit en croix.",
+      "Calcule et donne le résultat avec son unité.",
+      "Pour prouver un parallélisme, utilise la réciproque (rapports égaux + même ordre)."
+    ],
+    "exemple": {
+      "enonce": "Les droites (BC) et (DE) sont parallèles, avec AB = 3, AD = 6 et AC = 4. Calcule AE.",
+      "etapes": [
+        "On est dans une configuration de Thalès avec le point A.",
+        "On écrit l'égalité des rapports : AB/AD = AC/AE.",
+        "On remplace par les valeurs : 3/6 = 4/AE.",
+        "On utilise le produit en croix : 3 × AE = 6 × 4.",
+        "Donc 3 × AE = 24, et AE = 24 ÷ 3.",
+        "On obtient AE = 8."
+      ]
+    },
+    "astuce": "Kakashi : « Le secret de Thalès, c'est l'ordre des points : écris toujours tes rapports en partant du point d'intersection, et place les points correspondants au même étage dans chaque fraction. Un petit schéma au brouillon, avec les longueurs notées dessus, t'évite la grande majorité des erreurs ! »",
+    "erreurs": [
+      "Appliquer Thalès sans vérifier que les droites sont bien parallèles.",
+      "Mélanger l'ordre des points dans les rapports.",
+      "Confondre les segments qui se correspondent.",
+      "Oublier que le point d'intersection est le départ de chaque rapport.",
+      "Utiliser la réciproque sans vérifier l'alignement dans le même ordre.",
+      "Se tromper dans le produit en croix.",
+      "Confondre Thalès (proportionnalité) et Pythagore (triangle rectangle).",
+      "Oublier l'unité dans le résultat."
+    ]
+  },
+  "sasuke-uchiha-rappel-des-3-identites": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Sasuke Uchiha",
+    "manga": "Naruto",
+    "notion": "Les 3 identités remarquables",
+    "explication": "Les identités remarquables sont trois égalités très utiles qui permettent de développer ou de factoriser rapidement certaines expressions, sans tout calculer terme à terme. La première est le carré d'une somme : (a + b)² = a² + 2ab + b². La deuxième est le carré d'une différence : (a − b)² = a² − 2ab + b². La troisième est le produit d'une somme par une différence : (a + b)(a − b) = a² − b². Développer, c'est passer de la forme factorisée (avec des parenthèses) à la forme développée (une somme de termes). Factoriser, c'est l'opération inverse : reconnaître une identité pour transformer une somme en produit. Ces identités font gagner beaucoup de temps et sont indispensables pour résoudre des équations, simplifier des expressions ou démontrer des égalités. Au Brevet, elles apparaissent très souvent, soit pour développer, soit pour factoriser. Le plus important est de bien identifier qui joue le rôle de « a » et qui joue le rôle de « b » dans l'expression, et de ne jamais oublier le double produit « 2ab », qui est l'erreur la plus fréquente. Avec de l'entraînement, on finit par reconnaître ces formes au premier coup d'œil, ce qui fait gagner un temps précieux le jour du Brevet.",
+    "definitions": [
+      {
+        "terme": "Identité remarquable",
+        "sens": "Une égalité toujours vraie qui sert à développer ou factoriser."
+      },
+      {
+        "terme": "Développer",
+        "sens": "Transformer un produit en une somme de termes."
+      },
+      {
+        "terme": "Factoriser",
+        "sens": "Transformer une somme en un produit."
+      },
+      {
+        "terme": "Carré d'une somme",
+        "sens": "L'identité (a + b)² = a² + 2ab + b²."
+      },
+      {
+        "terme": "Carré d'une différence",
+        "sens": "L'identité (a − b)² = a² − 2ab + b²."
+      },
+      {
+        "terme": "Somme par différence",
+        "sens": "L'identité (a + b)(a − b) = a² − b²."
+      },
+      {
+        "terme": "Double produit",
+        "sens": "Le terme 2ab (ou −2ab), à ne jamais oublier."
+      },
+      {
+        "terme": "Terme",
+        "sens": "Un élément d'une somme algébrique."
+      }
+    ],
+    "methode": [
+      "Repère la forme : carré d'une somme, carré d'une différence, ou (somme)(différence).",
+      "Identifie qui est « a » et qui est « b ».",
+      "Pour (a + b)², écris a² + 2ab + b².",
+      "Pour (a − b)², écris a² − 2ab + b².",
+      "Pour (a + b)(a − b), écris a² − b² (pas de double produit).",
+      "Pour factoriser, reconnais la forme développée d'une identité.",
+      "Vérifie en redéveloppant l'expression factorisée.",
+      "Surveille les signes et n'oublie jamais le double produit."
+    ],
+    "exemple": {
+      "enonce": "Développe l'expression (x + 5)².",
+      "etapes": [
+        "On reconnaît un carré d'une somme : (a + b)² avec a = x et b = 5.",
+        "La formule est a² + 2ab + b².",
+        "On calcule a² : x².",
+        "On calcule le double produit 2ab : 2 × x × 5 = 10x.",
+        "On calcule b² : 5² = 25.",
+        "Donc (x + 5)² = x² + 10x + 25."
+      ]
+    },
+    "astuce": "Sasuke : « L'erreur classique, c'est d'écrire (a + b)² = a² + b² en oubliant le double produit 2ab. Ne tombe JAMAIS dans ce piège : le développement d'un carré contient toujours trois termes. Récite-toi la formule à voix basse avant de l'appliquer, à chaque fois. »",
+    "erreurs": [
+      "Écrire (a + b)² = a² + b² en oubliant le double produit.",
+      "Se tromper de signe dans (a − b)².",
+      "Mettre un double produit dans (a + b)(a − b), où il n'y en a pas.",
+      "Mal identifier « a » et « b ».",
+      "Oublier de mettre le coefficient au carré : (2x)² = 4x², pas 2x².",
+      "Confondre développer et factoriser.",
+      "Ne pas vérifier le résultat en redéveloppant.",
+      "Oublier des parenthèses pendant les calculs."
+    ]
+  },
+  "naruto-uzumaki-fonctions-affines-et-lineaires": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les fonctions affines et linéaires",
+    "explication": "Une fonction affine est une fonction qui s'écrit sous la forme f(x) = ax + b, où a et b sont deux nombres fixés. Le nombre a s'appelle le coefficient directeur : il indique l'inclinaison de la droite. Le nombre b s'appelle l'ordonnée à l'origine : c'est la valeur de la fonction quand x vaut 0, c'est-à-dire l'endroit où la droite coupe l'axe vertical. Une fonction linéaire est un cas particulier de fonction affine, où b = 0 : elle s'écrit f(x) = ax. Une fonction linéaire représente toujours une situation de proportionnalité, et sa représentation graphique est une droite qui passe par l'origine du repère. La représentation graphique d'une fonction affine est aussi une droite, mais qui ne passe pas forcément par l'origine. Calculer l'image d'un nombre, c'est remplacer x par ce nombre dans la formule. Chercher un antécédent, c'est faire l'inverse : trouver le x qui donne une image connue, en résolvant une équation. Ces fonctions sont au cœur du programme de 3ème et reviennent régulièrement au Brevet, souvent avec une lecture graphique.",
+    "definitions": [
+      {
+        "terme": "Fonction affine",
+        "sens": "Une fonction de la forme f(x) = ax + b."
+      },
+      {
+        "terme": "Fonction linéaire",
+        "sens": "Une fonction de la forme f(x) = ax (cas où b = 0)."
+      },
+      {
+        "terme": "Coefficient directeur",
+        "sens": "Le nombre a, qui donne l'inclinaison de la droite."
+      },
+      {
+        "terme": "Ordonnée à l'origine",
+        "sens": "Le nombre b, valeur de la fonction pour x = 0."
+      },
+      {
+        "terme": "Image",
+        "sens": "Le résultat f(x) obtenu en remplaçant x par un nombre."
+      },
+      {
+        "terme": "Antécédent",
+        "sens": "Le nombre x qui donne une image connue."
+      },
+      {
+        "terme": "Repère",
+        "sens": "Les deux axes gradués servant à représenter la fonction."
+      },
+      {
+        "terme": "Représentation graphique",
+        "sens": "La droite qui représente la fonction dans le repère."
+      }
+    ],
+    "methode": [
+      "Repère la forme : f(x) = ax + b (affine) ou f(x) = ax (linéaire si b = 0).",
+      "Identifie le coefficient directeur a et l'ordonnée à l'origine b.",
+      "Pour calculer une image, remplace x par sa valeur dans la formule.",
+      "Effectue le calcul en respectant les priorités opératoires.",
+      "Pour chercher un antécédent, pose l'équation f(x) = valeur, puis résous-la.",
+      "Pour tracer la droite, place deux points (par exemple pour x = 0 et x = 1).",
+      "Relie ces deux points à la règle.",
+      "Vérifie : une fonction linéaire passe toujours par l'origine."
+    ],
+    "exemple": {
+      "enonce": "Soit la fonction f(x) = 2x + 3. Calcule l'image de 4.",
+      "etapes": [
+        "La fonction est affine : f(x) = 2x + 3, avec a = 2 et b = 3.",
+        "Calculer l'image de 4, c'est calculer f(4).",
+        "On remplace x par 4 : f(4) = 2 × 4 + 3.",
+        "On effectue la multiplication : 2 × 4 = 8.",
+        "On ajoute : 8 + 3 = 11.",
+        "Donc l'image de 4 par f est 11."
+      ]
+    },
+    "astuce": "Naruto : « Pour ne pas confondre image et antécédent : l'image, c'est ce qui SORT de la machine quand tu y mets un x ; l'antécédent, c'est le x à RETROUVER quand tu connais déjà la sortie. Image = on calcule, antécédent = on résout une équation. Simple, non ? »",
+    "erreurs": [
+      "Confondre le coefficient directeur (a) et l'ordonnée à l'origine (b).",
+      "Confondre image et antécédent.",
+      "Oublier les priorités de calcul en remplaçant x.",
+      "Croire qu'une fonction affine passe toujours par l'origine.",
+      "Oublier que linéaire signifie proportionnalité (b = 0).",
+      "Se tromper de signe avec un coefficient négatif.",
+      "Tracer la droite à partir d'un seul point.",
+      "Mal lire les valeurs sur un graphique."
+    ]
+  },
+  "jiraiya-probabilites-composees": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Jiraiya",
+    "manga": "Naruto",
+    "notion": "Les probabilités composées",
+    "explication": "Une probabilité composée concerne une expérience qui se déroule en plusieurs étapes, par exemple lancer deux fois une pièce ou tirer deux boules successivement. Pour étudier ce type de situation, l'outil le plus efficace est l'arbre de probabilités. Chaque branche de l'arbre représente une issue possible, et on inscrit sur chaque branche la probabilité correspondante. Pour calculer la probabilité d'un chemin complet (une succession d'issues), on multiplie les probabilités rencontrées le long de ce chemin. Lorsqu'un événement peut être obtenu par plusieurs chemins différents, on additionne les probabilités de tous ces chemins. La somme des probabilités de toutes les branches partant d'un même point est toujours égale à 1, ce qui permet de vérifier son arbre. On distingue les tirages avec remise (les probabilités restent les mêmes à chaque étape) et sans remise (elles changent, car le contenu évolue). Bien construire l'arbre et repérer les chemins qui mènent à l'événement cherché sont les clés de la réussite. Les probabilités composées sont une notion de 3ème qui apparaît régulièrement au Brevet. On peut aussi calculer la probabilité de l'événement contraire, puis la retrancher à 1 : c'est parfois plus rapide. Les probabilités servent à modéliser le hasard dans de nombreuses situations, des jeux de société aux prévisions de la vie courante.",
+    "definitions": [
+      {
+        "terme": "Expérience aléatoire",
+        "sens": "Une expérience dont on ne connaît pas le résultat à l'avance."
+      },
+      {
+        "terme": "Issue",
+        "sens": "Un résultat possible de l'expérience."
+      },
+      {
+        "terme": "Probabilité",
+        "sens": "Un nombre entre 0 et 1 mesurant la chance qu'un événement se produise."
+      },
+      {
+        "terme": "Événement",
+        "sens": "Un ou plusieurs résultats que l'on regroupe."
+      },
+      {
+        "terme": "Arbre de probabilités",
+        "sens": "Un schéma représentant toutes les issues et leurs probabilités."
+      },
+      {
+        "terme": "Chemin",
+        "sens": "Une succession de branches menant à un résultat final."
+      },
+      {
+        "terme": "Tirage avec remise",
+        "sens": "On remet l'objet avant le tirage suivant (probabilités constantes)."
+      },
+      {
+        "terme": "Tirage sans remise",
+        "sens": "On ne remet pas l'objet (les probabilités changent)."
+      }
+    ],
+    "methode": [
+      "Identifie les différentes étapes de l'expérience.",
+      "Construis un arbre avec une branche par issue à chaque étape.",
+      "Inscris la probabilité sur chaque branche.",
+      "Vérifie qu'à chaque embranchement, la somme des probabilités vaut 1.",
+      "Pour la probabilité d'un chemin, multiplie les probabilités le long du chemin.",
+      "Repère tous les chemins qui mènent à l'événement cherché.",
+      "Additionne les probabilités de ces chemins.",
+      "Vérifie que le résultat final est bien compris entre 0 et 1."
+    ],
+    "exemple": {
+      "enonce": "On lance deux fois une pièce équilibrée. Quelle est la probabilité d'obtenir deux fois Pile ?",
+      "etapes": [
+        "L'expérience a deux étapes : le premier lancer, puis le second.",
+        "À chaque lancer, P(Pile) = 1/2 et P(Face) = 1/2.",
+        "On suit le chemin Pile puis Pile.",
+        "On multiplie les probabilités du chemin : 1/2 × 1/2.",
+        "1/2 × 1/2 = 1/4.",
+        "La probabilité d'obtenir deux fois Pile est donc 1/4."
+      ]
+    },
+    "astuce": "Jiraiya : « Le réflexe gagnant : le long d'UN chemin, on MULTIPLIE ; entre PLUSIEURS chemins qui marchent, on ADDITIONNE. Et pour vérifier ton arbre, souviens-toi que les branches d'un même nœud doivent toujours faire 1 à elles toutes ! »",
+    "erreurs": [
+      "Additionner les probabilités le long d'un chemin au lieu de les multiplier.",
+      "Multiplier les probabilités de plusieurs chemins au lieu de les additionner.",
+      "Oublier un chemin qui mène à l'événement cherché.",
+      "Confondre tirage avec remise et tirage sans remise.",
+      "Donner une probabilité supérieure à 1.",
+      "Oublier de simplifier la fraction finale.",
+      "Construire un arbre incomplet (oublier des branches).",
+      "Croire que les branches d'un même nœud ne font pas 1."
+    ]
+  },
+  "minato-namikaze-trigonometrie-complete": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Minato Namikaze",
+    "manga": "Naruto",
+    "notion": "La trigonométrie",
+    "explication": "La trigonométrie permet de calculer des longueurs et des angles dans un triangle rectangle, en reliant un angle aigu aux côtés du triangle. Pour cela, on utilise trois rapports : le cosinus, le sinus et la tangente. Tout dépend de la position des côtés par rapport à l'angle choisi. Le côté opposé est celui qui se trouve en face de l'angle, le côté adjacent est celui qui touche l'angle sans être l'hypoténuse, et l'hypoténuse est toujours le plus grand côté, en face de l'angle droit. On retient les formules grâce au moyen mnémotechnique SOH-CAH-TOA : Sinus = Opposé/Hypoténuse, Cosinus = Adjacent/Hypoténuse, Tangente = Opposé/Adjacent. Pour calculer une longueur, on connaît un angle et une longueur, et on choisit le rapport adapté. Pour calculer un angle, on utilise les touches inverses de la calculatrice. La trigonométrie complète le théorème de Pythagore et celui de Thalès, et c'est un grand classique du Brevet. La clé est de bien repérer, pour l'angle considéré, quel côté est l'opposé, l'adjacent ou l'hypoténuse. Il faut aussi savoir que le cosinus et le sinus d'un angle aigu sont toujours compris entre 0 et 1, ce qui permet de vérifier la cohérence d'un résultat. La trigonométrie est très utile dans la vie réelle : elle sert par exemple à calculer la hauteur d'un bâtiment ou l'inclinaison d'une rampe sans avoir à les mesurer directement. On retiendra enfin que, dans un triangle rectangle, plus l'angle aigu est grand, plus son sinus se rapproche de 1 : observer ces variations aide à mieux comprendre ces trois rapports.",
+    "definitions": [
+      {
+        "terme": "Triangle rectangle",
+        "sens": "Un triangle qui possède un angle droit."
+      },
+      {
+        "terme": "Hypoténuse",
+        "sens": "Le côté le plus long, en face de l'angle droit."
+      },
+      {
+        "terme": "Côté opposé",
+        "sens": "Le côté situé en face de l'angle considéré."
+      },
+      {
+        "terme": "Côté adjacent",
+        "sens": "Le côté qui touche l'angle, sans être l'hypoténuse."
+      },
+      {
+        "terme": "Cosinus",
+        "sens": "Le rapport adjacent / hypoténuse."
+      },
+      {
+        "terme": "Sinus",
+        "sens": "Le rapport opposé / hypoténuse."
+      },
+      {
+        "terme": "Tangente",
+        "sens": "Le rapport opposé / adjacent."
+      },
+      {
+        "terme": "SOH-CAH-TOA",
+        "sens": "Le moyen pour retenir les trois formules."
+      }
+    ],
+    "methode": [
+      "Repère l'angle droit et l'hypoténuse.",
+      "Choisis l'angle aigu sur lequel tu travailles.",
+      "Identifie, par rapport à cet angle, le côté opposé et le côté adjacent.",
+      "Repère ce que tu connais et ce que tu cherches (longueur ou angle).",
+      "Choisis le bon rapport avec SOH-CAH-TOA.",
+      "Écris l'égalité trigonométrique.",
+      "Isole l'inconnue et calcule (calculatrice en mode degrés).",
+      "Pour un angle, utilise les fonctions inverses (arccos, arcsin, arctan)."
+    ],
+    "exemple": {
+      "enonce": "Dans un triangle rectangle, un angle vaut 30° et l'hypoténuse mesure 10 cm. Calcule le côté opposé.",
+      "etapes": [
+        "On connaît l'angle (30°) et l'hypoténuse (10 cm).",
+        "On cherche le côté opposé à cet angle.",
+        "Le rapport qui relie opposé et hypoténuse est le sinus (SOH).",
+        "On écrit : sin(30°) = opposé / 10.",
+        "Donc opposé = 10 × sin(30°) = 10 × 0,5.",
+        "Le côté opposé mesure 5 cm."
+      ]
+    },
+    "astuce": "Minato : « SOH-CAH-TOA est ton meilleur allié : récite-le et choisis le rapport selon ce que tu connais. Mais avant tout calcul, vérifie que ta calculatrice est bien en mode DEGRÉS, sinon tous tes résultats seront faux. C'est l'erreur qui coûte le plus de points au Brevet ! »",
+    "erreurs": [
+      "Confondre le côté opposé et le côté adjacent.",
+      "Se tromper de rapport (sinus au lieu de cosinus, etc.).",
+      "Oublier de mettre la calculatrice en mode degrés.",
+      "Confondre l'hypoténuse avec un autre côté.",
+      "Utiliser la trigonométrie dans un triangle qui n'est pas rectangle.",
+      "Oublier les fonctions inverses pour trouver un angle.",
+      "Mal isoler l'inconnue dans l'égalité.",
+      "Oublier l'unité dans le résultat."
+    ]
+  },
+  "sakura-haruno-methode-de-substitution": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Sakura Haruno",
+    "manga": "Naruto",
+    "notion": "La méthode de substitution",
+    "explication": "La méthode de substitution sert à résoudre un système de deux équations à deux inconnues, c'est-à-dire à trouver les valeurs de x et de y qui vérifient les deux équations en même temps. Le principe est simple : on isole une inconnue dans l'une des équations (on l'exprime en fonction de l'autre), puis on remplace — on « substitue » — cette inconnue dans la seconde équation. On obtient alors une équation à une seule inconnue, que l'on sait résoudre. Une fois cette première inconnue trouvée, on revient à la première équation pour calculer la seconde. La méthode de substitution est particulièrement pratique quand une inconnue est déjà isolée, ou facile à isoler, par exemple quand son coefficient est 1. Résoudre un système permet de répondre à de nombreux problèmes concrets, où deux conditions doivent être satisfaites en même temps. Il est toujours conseillé de vérifier la solution trouvée en la remplaçant dans les deux équations de départ. C'est une méthode incontournable de la 3ème, qui revient régulièrement dans les problèmes du Brevet, souvent sous forme d'énoncés à mettre en équations. Il existe aussi une autre méthode pour résoudre un système, appelée méthode par combinaison, mais la substitution reste la plus intuitive quand une inconnue est facile à isoler.",
+    "definitions": [
+      {
+        "terme": "Système d'équations",
+        "sens": "Deux équations à résoudre en même temps."
+      },
+      {
+        "terme": "Inconnue",
+        "sens": "Une lettre dont on cherche la valeur (souvent x et y)."
+      },
+      {
+        "terme": "Équation",
+        "sens": "Une égalité contenant une ou plusieurs inconnues."
+      },
+      {
+        "terme": "Isoler une inconnue",
+        "sens": "L'exprimer seule en fonction de l'autre."
+      },
+      {
+        "terme": "Substituer",
+        "sens": "Remplacer une inconnue par son expression."
+      },
+      {
+        "terme": "Solution du système",
+        "sens": "Le couple (x ; y) qui vérifie les deux équations."
+      },
+      {
+        "terme": "Coefficient",
+        "sens": "Le nombre placé devant une inconnue."
+      },
+      {
+        "terme": "Vérification",
+        "sens": "Contrôler la solution dans les deux équations de départ."
+      }
+    ],
+    "methode": [
+      "Choisis l'équation où une inconnue est la plus facile à isoler.",
+      "Isole cette inconnue (exprime-la en fonction de l'autre).",
+      "Remplace cette inconnue par son expression dans la seconde équation.",
+      "Tu obtiens une équation à une seule inconnue : résous-la.",
+      "Tu trouves alors la valeur de la première inconnue.",
+      "Reporte cette valeur dans l'expression isolée pour trouver la seconde.",
+      "Écris la solution sous la forme d'un couple (x ; y).",
+      "Vérifie en remplaçant dans les deux équations de départ."
+    ],
+    "exemple": {
+      "enonce": "Résous le système : y = x + 1 et 2x + y = 7.",
+      "etapes": [
+        "Dans la première équation, y est déjà isolé : y = x + 1.",
+        "On substitue y dans la seconde : 2x + (x + 1) = 7.",
+        "On regroupe les termes : 3x + 1 = 7.",
+        "On résout : 3x = 6, donc x = 2.",
+        "On reporte dans y = x + 1 : y = 2 + 1 = 3.",
+        "La solution du système est le couple (2 ; 3)."
+      ]
+    },
+    "astuce": "Sakura : « Repère TOUJOURS l'inconnue la plus facile à isoler — souvent celle dont le coefficient est 1, sans fraction. Ça t'évite des calculs compliqués. Et n'oublie jamais la vérification : remplace ton couple dans les deux équations, c'est ta sécurité anti-erreur ! »",
+    "erreurs": [
+      "Substituer dans la même équation au lieu de l'autre.",
+      "Oublier les parenthèses en remplaçant l'inconnue.",
+      "Se tromper de signe lors de l'isolement.",
+      "Ne trouver qu'une seule inconnue et oublier la seconde.",
+      "Mal écrire la solution en oubliant le couple.",
+      "Oublier de vérifier la solution.",
+      "Faire une erreur de calcul en regroupant les termes.",
+      "Confondre les deux inconnues x et y."
+    ]
+  },
+  "tsunade-volumes-des-solides": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Tsunade",
+    "manga": "Naruto",
+    "notion": "Les volumes des solides",
+    "explication": "Le volume d'un solide mesure la place qu'il occupe dans l'espace. À chaque type de solide correspond une formule. Le volume d'un pavé droit se calcule en multipliant sa longueur, sa largeur et sa hauteur. Le volume d'un cube est l'arête élevée au cube. Le volume d'un cylindre est l'aire de sa base, un disque, multipliée par sa hauteur, soit π × r² × h. Pour les solides pointus, on divise par trois : le volume d'une pyramide ou d'un cône est égal au tiers de l'aire de la base multipliée par la hauteur. Le volume d'une boule se calcule avec la formule (4/3) × π × r³. Toutes les longueurs doivent être exprimées dans la même unité avant le calcul, et le volume s'exprime dans une unité cubique : cm³, m³… Bien connaître ces formules et savoir repérer la base et la hauteur de chaque solide sont essentiels. Les volumes sont souvent associés aux agrandissements et réductions au Brevet : quand on multiplie les longueurs par un nombre k, le volume, lui, est multiplié par k³. Il ne faut pas confondre le volume, qui mesure l'espace occupé, avec l'aire, qui mesure une surface. Maîtriser les volumes est utile dans de nombreuses situations concrètes, comme calculer la contenance d'un réservoir ou la quantité de matière contenue dans un objet.",
+    "definitions": [
+      {
+        "terme": "Volume",
+        "sens": "La mesure de la place occupée par un solide dans l'espace."
+      },
+      {
+        "terme": "Pavé droit",
+        "sens": "Un solide à 6 faces rectangulaires."
+      },
+      {
+        "terme": "Cube",
+        "sens": "Un pavé dont toutes les arêtes sont égales."
+      },
+      {
+        "terme": "Cylindre",
+        "sens": "Un solide dont la base est un disque."
+      },
+      {
+        "terme": "Pyramide",
+        "sens": "Un solide pointu à base polygonale."
+      },
+      {
+        "terme": "Cône",
+        "sens": "Un solide pointu à base circulaire."
+      },
+      {
+        "terme": "Boule",
+        "sens": "Le solide délimité par une sphère."
+      },
+      {
+        "terme": "Unité de volume",
+        "sens": "Une unité cubique : cm³, m³, etc."
+      }
+    ],
+    "methode": [
+      "Identifie le type de solide (pavé, cylindre, pyramide…).",
+      "Repère les dimensions utiles (longueur, rayon, hauteur).",
+      "Vérifie que toutes les longueurs sont dans la même unité.",
+      "Choisis la bonne formule de volume.",
+      "Pour un cylindre, calcule d'abord l'aire de la base (π × r²).",
+      "Multiplie par la hauteur, et divise par 3 pour une pyramide ou un cône.",
+      "Donne le résultat dans la bonne unité cubique.",
+      "En cas d'agrandissement de rapport k, multiplie le volume par k³."
+    ],
+    "exemple": {
+      "enonce": "Calcule le volume d'un pavé droit de 5 cm de long, 3 cm de large et 2 cm de haut.",
+      "etapes": [
+        "Le solide est un pavé droit.",
+        "La formule est : Volume = longueur × largeur × hauteur.",
+        "On remplace : 5 × 3 × 2.",
+        "On calcule d'abord 5 × 3 = 15.",
+        "Puis 15 × 2 = 30.",
+        "Le volume est donc 30 cm³."
+      ]
+    },
+    "astuce": "Tsunade : « Le piège des solides pointus (pyramide, cône) : on n'oublie JAMAIS de diviser par 3. Et pour les agrandissements, retiens bien que le volume est multiplié par k au cube, pas par k : c'est une question piège très classique du Brevet ! »",
+    "erreurs": [
+      "Oublier de diviser par 3 pour une pyramide ou un cône.",
+      "Mélanger les unités des différentes dimensions.",
+      "Donner le volume en cm² au lieu de cm³.",
+      "Confondre rayon et diamètre pour un cylindre.",
+      "Oublier π dans les solides ronds.",
+      "Multiplier le volume par k au lieu de k³ dans un agrandissement.",
+      "Confondre volume et aire.",
+      "Se tromper de formule selon le solide."
+    ]
+  },
+  "madara-uchiha-synthese-brevet": {
+    "matiere": "maths",
+    "niveau": "3eme",
+    "hero": "Madara Uchiha",
+    "manga": "Naruto",
+    "notion": "La synthèse Brevet",
+    "explication": "L'épreuve de mathématiques du Brevet évalue l'ensemble du programme du cycle 4, à travers plusieurs exercices indépendants. Réussir cette épreuve ne demande pas seulement de connaître les notions, mais aussi d'adopter une bonne méthode de travail. Il faut d'abord lire chaque énoncé en entier et calmement, repérer ce qui est demandé et les données utiles. Comme les exercices sont indépendants, on peut commencer par ceux que l'on maîtrise le mieux, pour gagner des points et prendre confiance. Au Brevet, la rédaction compte : il faut justifier ses réponses et écrire les calculs et les formules utilisées, car des points sont attribués au raisonnement même si le résultat final est faux. Il est important de gérer son temps, de ne pas rester bloqué trop longtemps sur une question, et de toujours penser aux unités. Les grands thèmes à maîtriser sont le calcul littéral, les équations, le théorème de Pythagore, le théorème de Thalès, la trigonométrie, les fonctions, la proportionnalité, les statistiques et les probabilités. Enfin, relire sa copie en fin d'épreuve permet de corriger des erreurs de signe ou de calcul évitables. Enfin, il est utile de soigner la présentation de sa copie et d'encadrer ses résultats, pour que le correcteur les repère facilement. Une copie claire et bien organisée met toutes les chances de ton côté le jour de l'épreuve.",
+    "definitions": [
+      {
+        "terme": "Brevet (DNB)",
+        "sens": "L'examen de fin de 3ème."
+      },
+      {
+        "terme": "Cycle 4",
+        "sens": "Les classes de 5ème, 4ème et 3ème."
+      },
+      {
+        "terme": "Énoncé",
+        "sens": "Le texte qui présente l'exercice et ses données."
+      },
+      {
+        "terme": "Justification",
+        "sens": "L'explication écrite du raisonnement."
+      },
+      {
+        "terme": "Barème",
+        "sens": "La répartition des points entre les questions."
+      },
+      {
+        "terme": "Calcul littéral",
+        "sens": "Le calcul avec des lettres."
+      },
+      {
+        "terme": "Gestion du temps",
+        "sens": "Répartir le temps disponible entre les exercices."
+      },
+      {
+        "terme": "Relecture",
+        "sens": "Le contrôle final de la copie avant de rendre."
+      }
+    ],
+    "methode": [
+      "Lis tout le sujet une première fois pour repérer les exercices.",
+      "Commence par les exercices que tu maîtrises le mieux.",
+      "Pour chaque question, repère les données et ce qui est demandé.",
+      "Écris la formule ou la propriété utilisée avant de calculer.",
+      "Justifie chaque réponse, même partiellement.",
+      "Pense aux unités dans tous les résultats.",
+      "Ne reste pas bloqué : passe à la suite et reviens plus tard.",
+      "Relis toute ta copie à la fin pour corriger les erreurs évitables."
+    ],
+    "exemple": {
+      "enonce": "Comment aborder un exercice de géométrie au Brevet ?",
+      "etapes": [
+        "Je lis l'énoncé en entier et je repère la figure.",
+        "Je note les données sur un schéma au brouillon.",
+        "J'identifie l'outil adapté : Pythagore, Thalès ou trigonométrie.",
+        "J'écris la propriété ou la formule utilisée.",
+        "Je fais le calcul proprement, étape par étape.",
+        "Je donne la réponse avec l'unité et je vérifie qu'elle est cohérente."
+      ]
+    },
+    "astuce": "Madara : « Au Brevet, JUSTIFIE tout : un raisonnement juste rapporte des points même si le résultat final est faux. Ne laisse jamais une question vide sans avoir au moins écrit la formule ou tenté un calcul. Et garde toujours dix minutes à la fin pour relire ta copie ! »",
+    "erreurs": [
+      "Se jeter sur les calculs sans lire tout l'énoncé.",
+      "Ne pas justifier ses réponses.",
+      "Rester bloqué trop longtemps sur une seule question.",
+      "Oublier les unités dans les résultats de géométrie ou de grandeurs.",
+      "Négliger la rédaction et écrire seulement le résultat.",
+      "Ne pas relire sa copie en fin d'épreuve.",
+      "Mal gérer son temps et ne pas terminer.",
+      "Laisser des questions complètement vides."
+    ]
+  }
+}
