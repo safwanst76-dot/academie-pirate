@@ -1,0 +1,602 @@
+{
+  "eren-jager-past-simple-regulier": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Eren Jäger",
+    "manga": "L'Attaque des Titans",
+    "notion": "Le Past Simple régulier",
+    "explication": "Le Past Simple est le temps que l'on utilise pour parler d'une action terminée dans le passé : « I played football yesterday » (j'ai joué au football hier). Pour les verbes réguliers, sa formation est très simple : on ajoute la terminaison « -ed » à la forme de base du verbe. Ainsi, play devient played, work devient worked. Un grand avantage de l'anglais : cette forme est la même pour toutes les personnes. On dit « I played », « he played », « they played » : il n'y a aucun « -s » ni autre changement selon le sujet. Quelques règles d'orthographe accompagnent cette terminaison. Si le verbe se termine déjà par un « e », on ajoute seulement « -d » (like devient liked). Si le verbe se termine par une consonne suivie de « y », le « y » se transforme en « -ied » (study devient studied). Enfin, certains verbes courts doublent leur consonne finale avant le « -ed » (stop devient stopped). En 5ème, on apprend à former le Past Simple régulier et à l'utiliser pour raconter des événements passés. C'est une base essentielle pour raconter une histoire, un souvenir ou sa journée de la veille. La principale difficulté est de ne pas oublier la terminaison « -ed ». Avec un peu d'entraînement, ajouter cette terminaison devient un réflexe, et l'on peut raconter facilement tout ce que l'on a fait la veille ou pendant les vacances.",
+    "definitions": [
+      {
+        "terme": "Past Simple",
+        "sens": "le temps d'une action passée et terminée"
+      },
+      {
+        "terme": "Verbe régulier",
+        "sens": "un verbe qui forme son passé en -ed"
+      },
+      {
+        "terme": "La terminaison « -ed »",
+        "sens": "ajoutée à la forme de base (played)"
+      },
+      {
+        "terme": "Forme invariable",
+        "sens": "la même forme pour tous les sujets"
+      },
+      {
+        "terme": "-e → -d",
+        "sens": "like devient liked"
+      },
+      {
+        "terme": "y → ied",
+        "sens": "consonne + y : study devient studied"
+      },
+      {
+        "terme": "Doublement",
+        "sens": "stop devient stopped"
+      },
+      {
+        "terme": "Action passée",
+        "sens": "un événement déjà terminé"
+      }
+    ],
+    "methode": [
+      "Vérifie que l'action est passée et terminée.",
+      "Pars de la forme de base du verbe régulier.",
+      "Ajoute la terminaison « -ed ».",
+      "Si le verbe finit par « e », ajoute seulement « -d ».",
+      "Si le verbe finit par consonne + « y », mets « -ied ».",
+      "Pour un verbe court, double parfois la consonne finale (stopped).",
+      "Garde la même forme pour tous les sujets.",
+      "Relis pour vérifier que la terminaison est bien présente."
+    ],
+    "exemple": {
+      "enonce": "Mets le verbe « play » au Past Simple.",
+      "etapes": [
+        "« Play » est un verbe régulier.",
+        "On part de sa forme de base : play.",
+        "On ajoute la terminaison « -ed ».",
+        "Play devient donc played.",
+        "Cette forme est la même pour tous : I played, he played, they played.",
+        "On obtient par exemple : « I played football »."
+      ]
+    },
+    "astuce": "Eren : « Pour les verbes réguliers, c'est « -ed » et c'est tout, à TOUTES les personnes ! I played, he played, they played : aucun changement selon le sujet. Le seul vrai danger, c'est d'oublier la terminaison. »",
+    "erreurs": [
+      "Oublier la terminaison « -ed ».",
+      "Ajouter un « -s » à la troisième personne (« he playeds »).",
+      "Écrire « studyed » au lieu de studied.",
+      "Oublier de doubler la consonne (« stoped »).",
+      "Ajouter « -ed » à un verbe irrégulier.",
+      "Mal prononcer la terminaison « -ed ».",
+      "Changer la forme selon le sujet.",
+      "Confondre le Past Simple et le présent."
+    ]
+  },
+  "armin-arlert-questions-au-past-simple": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Armin Arlert",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les questions au Past Simple",
+    "explication": "Pour poser une question au Past Simple, l'anglais utilise un auxiliaire spécial : did. C'est la forme passée de do, et il fonctionne pour tous les sujets, sans exception. On place did en début de phrase, suivi du sujet, puis du verbe à sa forme de base : « Did you play football? » (As-tu joué au football ?). Le point le plus important, et le piège classique de la 5ème, est le suivant : après did, le verbe principal revient à sa forme de base, sans aucune terminaison de passé. On dit « Did you play? » et jamais « Did you played? ». L'idée du passé est déjà portée par did, il est donc inutile de le marquer une deuxième fois sur le verbe. Pour répondre brièvement, on utilise des réponses courtes : « Yes, I did » ou « No, I didn't ». Pour le verbe to be, en revanche, on n'utilise pas did : on inverse simplement le sujet et was ou were, comme dans « Were you happy? » (Étais-tu content ?). En 5ème, on apprend à poser des questions sur des événements passés. Bien maîtriser did, sans répéter la marque du passé sur le verbe, est essentiel pour dialoguer au passé. Maîtriser la question au passé permet d'interroger quelqu'un sur ses activités passées, ce qui est très utile dans toute conversation où l'on échange des souvenirs.",
+    "definitions": [
+      {
+        "terme": "did",
+        "sens": "auxiliaire du passé, pour tous les sujets"
+      },
+      {
+        "terme": "Forme de base",
+        "sens": "le verbe sans terminaison après did"
+      },
+      {
+        "terme": "Was / Were",
+        "sens": "passé de to be, sans did (Were you…?)"
+      },
+      {
+        "terme": "Réponse courte",
+        "sens": "Yes, I did / No, I didn't"
+      },
+      {
+        "terme": "didn't",
+        "sens": "did not contracté (négation)"
+      },
+      {
+        "terme": "Question fermée",
+        "sens": "une question à réponse oui / non"
+      },
+      {
+        "terme": "Inversion",
+        "sens": "échanger sujet et was/were avec to be"
+      },
+      {
+        "terme": "Marque du passé",
+        "sens": "portée par did, pas répétée sur le verbe"
+      }
+    ],
+    "methode": [
+      "Repère le verbe : est-ce to be ou un autre verbe ?",
+      "Avec to be, inverse le sujet et was/were (Were you…?).",
+      "Avec un autre verbe, commence la question par did.",
+      "Utilise did pour tous les sujets, sans exception.",
+      "Ajoute le sujet, puis le verbe à sa forme de base.",
+      "Après did, n'écris jamais le verbe au passé.",
+      "Termine par un point d'interrogation.",
+      "Réponds brièvement : Yes, I did / No, I didn't."
+    ],
+    "exemple": {
+      "enonce": "Transforme la phrase « You played football » en question.",
+      "etapes": [
+        "Le verbe est « played », ce n'est pas to be.",
+        "On utilise donc l'auxiliaire du passé : did.",
+        "On place did en tête : Did you…",
+        "Après did, le verbe revient à sa forme de base : play.",
+        "La question correcte est : « Did you play football? ».",
+        "On peut répondre : « Yes, I did » ou « No, I didn't »."
+      ]
+    },
+    "astuce": "Armin : « Le piège mortel du Past Simple : après DID, le verbe perd son « -ed » ! Did you play, jamais « did you played ». Le passé est déjà dans did, inutile de le marquer deux fois. »",
+    "erreurs": [
+      "Garder le « -ed » au verbe après did (« Did you played? »).",
+      "Oublier l'auxiliaire did.",
+      "Utiliser did avec to be (« Did you were…? »).",
+      "Oublier d'inverser was/were avec to be.",
+      "Mal accorder la réponse courte.",
+      "Confondre did (passé) et do/does (présent).",
+      "Oublier le point d'interrogation.",
+      "Mettre did à la fin de la phrase."
+    ]
+  },
+  "levi-ackerman-les-30-irreguliers-essentiels-groupe-1": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Levi Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les verbes irréguliers (groupe 1)",
+    "explication": "Tous les verbes anglais ne forment pas leur passé en ajoutant « -ed ». Une famille importante, les verbes irréguliers, possède une forme de passé particulière, qu'il faut apprendre par cœur. Ce sont souvent les verbes les plus courants de la langue, comme be, have, go ou do, c'est pourquoi il est indispensable de les connaître. Par exemple, go (aller) devient went, have (avoir) devient had, et see (voir) devient saw. Il n'existe pas de règle pour deviner ces formes : seule la mémorisation permet de les maîtriser. La bonne nouvelle, c'est que, comme pour les verbes réguliers, la forme du passé est la même pour tous les sujets : on dit « I went », « he went », « they went », sans aucun changement. Ce premier groupe rassemble une trentaine de verbes irréguliers essentiels, les plus fréquents. Le meilleur moyen de les apprendre est de les réviser par petits groupes, de les répéter régulièrement et de les utiliser dans des phrases. En 5ème, on commence à constituer ce « capital » de verbes irréguliers, qui s'enrichira au fil des années. Bien les connaître est indispensable pour raconter des événements passés correctement, car ces verbes reviennent dans presque toutes les phrases. Plus on en connaît, plus on s'exprime librement au passé : c'est un véritable trésor de vocabulaire qui se construit patiemment, verbe après verbe.",
+    "definitions": [
+      {
+        "terme": "be → was / were",
+        "sens": "être → était / étaient"
+      },
+      {
+        "terme": "have → had",
+        "sens": "avoir → avait"
+      },
+      {
+        "terme": "go → went",
+        "sens": "aller → alla / est allé"
+      },
+      {
+        "terme": "do → did",
+        "sens": "faire → fit / a fait"
+      },
+      {
+        "terme": "make → made",
+        "sens": "fabriquer → fit / a fait"
+      },
+      {
+        "terme": "say → said",
+        "sens": "dire → dit / a dit"
+      },
+      {
+        "terme": "see → saw",
+        "sens": "voir → vit / a vu"
+      },
+      {
+        "terme": "get → got",
+        "sens": "obtenir → obtint / a obtenu"
+      },
+      {
+        "terme": "come → came",
+        "sens": "venir → vint / est venu"
+      },
+      {
+        "terme": "take → took",
+        "sens": "prendre → prit / a pris"
+      }
+    ],
+    "methode": [
+      "Repère si le verbe est irrégulier (il ne suit pas la règle du « -ed »).",
+      "Apprends sa forme de passé par cœur.",
+      "Révise les verbes par petits groupes, pas tous d'un coup.",
+      "Répète-les régulièrement, à voix haute.",
+      "Utilise la même forme pour tous les sujets.",
+      "Emploie-les dans de courtes phrases pour les fixer.",
+      "Note les verbes que tu confonds pour les revoir.",
+      "Teste-toi en cachant la forme du passé."
+    ],
+    "exemple": {
+      "enonce": "Quel est le passé du verbe « go » (aller) ?",
+      "etapes": [
+        "Le verbe « go » est un verbe irrégulier.",
+        "Il ne forme donc pas son passé en « -ed ».",
+        "Sa forme de passé est particulière : went.",
+        "On ne dit jamais « goed ».",
+        "Cette forme est la même pour tous : I went, he went, they went.",
+        "Exemple : « I went to school » (je suis allé à l'école)."
+      ]
+    },
+    "astuce": "Levi : « Les irréguliers ne se devinent pas : ils se mémorisent ! Apprends-les par petits groupes de cinq, répète-les souvent, et rassure-toi : la forme du passé est la même à toutes les personnes. »",
+    "erreurs": [
+      "Ajouter « -ed » à un verbe irrégulier (« goed », « haved »).",
+      "Confondre la forme de base et la forme du passé.",
+      "Inventer une forme par analogie.",
+      "Mélanger deux verbes irréguliers proches.",
+      "Croire qu'il existe une règle pour les deviner.",
+      "Changer la forme selon le sujet.",
+      "Oublier de réviser régulièrement.",
+      "Confondre went (go) et want (vouloir)."
+    ]
+  },
+  "hange-zoe-formation-du-present-continuous": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Hange Zoë",
+    "manga": "L'Attaque des Titans",
+    "notion": "Le Present Continuous",
+    "explication": "Le Present Continuous est le temps qui décrit une action en train de se dérouler au moment où l'on parle : « I am playing football now » (je suis en train de jouer au football maintenant). Il se forme en deux parties : le verbe to be conjugué au présent (am, is ou are), suivi du verbe principal auquel on ajoute la terminaison « -ing ». On dit donc « I am playing », « she is reading », « they are running ». Il ne faut jamais oublier ces deux éléments : le verbe to be ET la terminaison « -ing ». Quelques règles d'orthographe accompagnent le « -ing ». Si le verbe se termine par un « e » muet, on enlève ce « e » avant d'ajouter « -ing » (make devient making). Pour certains verbes courts, on double la consonne finale (run devient running). Ce temps s'utilise souvent avec des marqueurs comme now (maintenant) ou « Look! » (Regarde !), qui signalent une action en cours. En 5ème, on apprend à former et à reconnaître le Present Continuous, et à le distinguer du Present Simple, qui sert lui à exprimer les habitudes. Bien maîtriser ce temps permet de décrire ce qui se passe sous nos yeux, en direct.",
+    "definitions": [
+      {
+        "terme": "Present Continuous",
+        "sens": "le temps d'une action en cours maintenant"
+      },
+      {
+        "terme": "BE + -ing",
+        "sens": "la structure : am/is/are + verbe-ing"
+      },
+      {
+        "terme": "La terminaison « -ing »",
+        "sens": "ajoutée au verbe principal"
+      },
+      {
+        "terme": "am / is / are",
+        "sens": "le verbe to be conjugué au présent"
+      },
+      {
+        "terme": "-e supprimé",
+        "sens": "make devient making"
+      },
+      {
+        "terme": "Doublement",
+        "sens": "run devient running"
+      },
+      {
+        "terme": "now / Look!",
+        "sens": "marqueurs d'une action en cours"
+      },
+      {
+        "terme": "Action en cours",
+        "sens": "qui se déroule au moment où l'on parle"
+      }
+    ],
+    "methode": [
+      "Vérifie que l'action se déroule maintenant.",
+      "Conjugue d'abord le verbe to be (am, is ou are).",
+      "Choisis selon le sujet : I am, he is, they are.",
+      "Ajoute le verbe principal avec la terminaison « -ing ».",
+      "Si le verbe finit par « e » muet, enlève-le (making).",
+      "Pour un verbe court, double parfois la consonne (running).",
+      "Garde bien les deux éléments : to be ET -ing.",
+      "Repère les marqueurs comme now ou « Look! »."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Je suis en train de jouer » en anglais ?",
+      "etapes": [
+        "L'action se déroule maintenant : on utilise le Present Continuous.",
+        "On conjugue d'abord to be avec « I » : am.",
+        "On prend le verbe principal « play ».",
+        "On lui ajoute la terminaison « -ing » : playing.",
+        "On assemble : « I am playing ».",
+        "On n'oublie ni le verbe to be ni le « -ing »."
+      ]
+    },
+    "astuce": "Hange : « Le Present Continuous, c'est une équation à deux ingrédients : BE + -ing. Oublie l'un des deux et la phrase est fausse ! « I am playing », pas « I playing » ni « I am play ». »",
+    "erreurs": [
+      "Oublier le verbe to be (« I playing »).",
+      "Oublier la terminaison « -ing » (« I am play »).",
+      "Garder le « e » muet (« makeing »).",
+      "Oublier de doubler la consonne (« runing »).",
+      "Mal choisir am/is/are selon le sujet.",
+      "Confondre le Present Continuous et le Present Simple.",
+      "Ajouter « -ing » à un verbe d'état (like, want).",
+      "Placer le « -ing » sur le verbe to be."
+    ]
+  },
+  "sasha-blouse-past-simple-vs-present-continuous": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Sasha Blouse",
+    "manga": "L'Attaque des Titans",
+    "notion": "Past Simple vs Present Continuous",
+    "explication": "Il est important de ne pas confondre deux temps qui décrivent des moments très différents : le Past Simple et le Present Continuous. Le Past Simple sert à parler d'une action terminée dans le passé : « I played football yesterday » (j'ai joué hier). Le Present Continuous, lui, décrit une action en train de se dérouler maintenant : « I am playing football now » (je joue en ce moment). Leur formation est aussi très différente. Le Past Simple utilise le verbe au passé, avec « -ed » pour les verbes réguliers (played) ou une forme irrégulière (went). Le Present Continuous utilise le verbe to be au présent suivi de « -ing » (am playing). Pour choisir entre les deux, le meilleur indice est le marqueur de temps. Les mots yesterday (hier), last week (la semaine dernière) ou ago (il y a) signalent le Past Simple. Les mots now (maintenant), at the moment (en ce moment) ou l'exclamation « Look! » (Regarde !) signalent le Present Continuous. En 5ème, on apprend à repérer ces indices pour choisir le bon temps. Bien distinguer le passé terminé du présent en cours est essentiel pour s'exprimer avec justesse et être bien compris. Avec l'habitude, on repère ces indices presque automatiquement, et le choix du temps devient naturel. C'est cette distinction entre le passé révolu et l'instant présent qui donne à l'anglais toute sa précision dans le récit.",
+    "definitions": [
+      {
+        "terme": "Past Simple",
+        "sens": "une action passée et terminée"
+      },
+      {
+        "terme": "Present Continuous",
+        "sens": "une action en cours maintenant"
+      },
+      {
+        "terme": "Marqueur de temps",
+        "sens": "un mot qui signale le bon temps"
+      },
+      {
+        "terme": "yesterday / ago",
+        "sens": "marqueurs du Past Simple"
+      },
+      {
+        "terme": "now / Look!",
+        "sens": "marqueurs du Present Continuous"
+      },
+      {
+        "terme": "Forme du Past Simple",
+        "sens": "-ed ou forme irrégulière (played, went)"
+      },
+      {
+        "terme": "Forme du Present Continuous",
+        "sens": "am/is/are + verbe-ing"
+      },
+      {
+        "terme": "Choisir le temps",
+        "sens": "selon le moment de l'action"
+      }
+    ],
+    "methode": [
+      "Demande-toi quand se déroule l'action.",
+      "Si elle est passée et terminée, choisis le Past Simple.",
+      "Si elle se déroule maintenant, choisis le Present Continuous.",
+      "Cherche les marqueurs de temps dans la phrase.",
+      "yesterday, last week, ago → Past Simple.",
+      "now, at the moment, Look! → Present Continuous.",
+      "Forme alors le temps choisi (-ed/irrégulier ou BE + -ing).",
+      "Vérifie que le temps correspond bien au marqueur."
+    ],
+    "exemple": {
+      "enonce": "Quel temps utiliser : « Look! She ___ (run) » ?",
+      "etapes": [
+        "Le mot « Look! » signale une action qui se déroule maintenant.",
+        "On choisit donc le Present Continuous.",
+        "On conjugue to be avec « she » : is.",
+        "On ajoute le verbe « run » avec « -ing » : running (consonne doublée).",
+        "La phrase correcte est : « Look! She is running ».",
+        "Avec « yesterday », on aurait écrit « She ran » (Past Simple)."
+      ]
+    },
+    "astuce": "Sasha : « Les marqueurs de temps sont tes meilleurs détectives ! yesterday, ago → c'est du passé (Past Simple). now, Look! → ça se passe maintenant (Present Continuous). Repère le marqueur, le temps en découle. »",
+    "erreurs": [
+      "Confondre le passé terminé et l'action en cours.",
+      "Utiliser « -ing » pour une action passée terminée.",
+      "Utiliser le Past Simple avec « now » ou « Look! ».",
+      "Ignorer les marqueurs de temps de la phrase.",
+      "Oublier le verbe to be au Present Continuous.",
+      "Oublier la marque du passé au Past Simple.",
+      "Mélanger les deux formes dans une même phrase.",
+      "Choisir le temps au hasard sans indice."
+    ]
+  },
+  "erwin-smith-can-et-must": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Erwin Smith",
+    "manga": "L'Attaque des Titans",
+    "notion": "CAN et MUST",
+    "explication": "Can et must sont deux verbes particuliers, appelés modaux. Ils ne décrivent pas une action, mais expriment une idée qui accompagne le verbe principal. Can exprime la capacité ou la permission : « I can swim » (je sais nager), « You can go » (tu peux y aller). Must exprime une obligation ou une forte nécessité : « You must work » (tu dois travailler). Les verbes modaux suivent des règles bien particulières. D'abord, ils sont toujours suivis d'un verbe à sa forme de base, sans « to » : on dit « I can swim », et jamais « I can to swim ». Ensuite, ils ne prennent jamais de « -s » à la troisième personne du singulier : on dit « He can swim » et « She must go », et non « He cans » ni « She musts ». Enfin, pour la forme négative, on utilise cannot (souvent contracté en can't) et must not (contracté en mustn't). En 5ème, on apprend à utiliser can et must pour exprimer ce que l'on est capable de faire, ce qui est permis et ce qui est obligatoire. Bien maîtriser ces modaux, en respectant leurs règles, permet d'exprimer la capacité, la permission et l'obligation, des notions très utiles au quotidien.",
+    "definitions": [
+      {
+        "terme": "Verbe modal",
+        "sens": "un verbe qui accompagne un autre verbe"
+      },
+      {
+        "terme": "can",
+        "sens": "pouvoir, savoir (capacité, permission)"
+      },
+      {
+        "terme": "must",
+        "sens": "devoir (obligation, nécessité)"
+      },
+      {
+        "terme": "Forme de base",
+        "sens": "le verbe sans « to » après le modal"
+      },
+      {
+        "terme": "Pas de « -s »",
+        "sens": "He can, She must (jamais cans/musts)"
+      },
+      {
+        "terme": "can't",
+        "sens": "cannot contracté (négation de can)"
+      },
+      {
+        "terme": "mustn't",
+        "sens": "must not contracté (interdiction)"
+      },
+      {
+        "terme": "Pas de « to »",
+        "sens": "I can swim, jamais « can to swim »"
+      }
+    ],
+    "methode": [
+      "Repère l'idée à exprimer : capacité, permission ou obligation.",
+      "Choisis can pour la capacité ou la permission.",
+      "Choisis must pour une obligation ou une nécessité.",
+      "Place le modal juste après le sujet.",
+      "Ajoute le verbe principal à sa forme de base, sans « to ».",
+      "N'ajoute jamais de « -s », même avec he/she/it.",
+      "Pour la négation, utilise can't ou mustn't.",
+      "Garde la même forme du modal pour tous les sujets."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Il doit partir » en anglais ?",
+      "etapes": [
+        "L'idée exprimée est une obligation : on choisit must.",
+        "Le sujet est « il » : He.",
+        "On place le modal après le sujet : He must…",
+        "On ajoute le verbe « partir » à sa forme de base : go.",
+        "On n'ajoute ni « to » ni « -s ».",
+        "La phrase correcte est : « He must go »."
+      ]
+    },
+    "astuce": "Erwin : « Les modaux can et must détestent deux choses : le « to » et le « -s » ! On dit He can swim et He must go, jamais « can to swim » ni « he musts ». Le verbe qui suit reste toujours à la base. »",
+    "erreurs": [
+      "Ajouter « to » après le modal (« can to swim »).",
+      "Ajouter « -s » à la troisième personne (« he musts »).",
+      "Mettre le verbe principal au passé ou en -ing.",
+      "Confondre can (capacité) et must (obligation).",
+      "Oublier le verbe principal après le modal.",
+      "Mal contracter (« cann't »).",
+      "Conjuguer can ou must comme un verbe ordinaire.",
+      "Utiliser « must » pour une simple capacité."
+    ]
+  },
+  "connie-springer-comparatif-de-superiorite": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Connie Springer",
+    "manga": "L'Attaque des Titans",
+    "notion": "Le comparatif de supériorité",
+    "explication": "Le comparatif de supériorité sert à comparer deux éléments en disant que l'un possède davantage d'une qualité que l'autre : « Tom is taller than Sam » (Tom est plus grand que Sam). En anglais, sa formation dépend de la longueur de l'adjectif. Pour les adjectifs courts, d'une syllabe, on ajoute la terminaison « -er » à l'adjectif, suivie de « than » : tall devient taller than (plus grand que). Pour les adjectifs longs, de deux syllabes ou plus, on n'ajoute rien à l'adjectif : on place « more » devant et « than » après : interesting devient more interesting than (plus intéressant que). Le mot « than » (que) est indispensable dans les deux cas : il introduit le second élément de la comparaison. Quelques règles d'orthographe s'appliquent aux adjectifs courts : un adjectif terminé par « y » transforme ce « y » en « -ier » (happy devient happier), et certains doublent leur consonne finale (big devient bigger). Attention aussi à deux comparatifs irréguliers très courants : good devient better (meilleur) et bad devient worse (pire). En 5ème, on apprend à construire ces comparaisons. Bien maîtriser le comparatif de supériorité permet de comparer des personnes, des objets ou des situations avec précision. Bien manier le comparatif ouvre la porte au superlatif, qui sert lui à désigner l'élément qui possède le plus une qualité, comme « the tallest » (le plus grand), étudié un peu plus tard.",
+    "definitions": [
+      {
+        "terme": "Comparatif de supériorité",
+        "sens": "dire que l'un a plus d'une qualité"
+      },
+      {
+        "terme": "Adjectif court",
+        "sens": "une syllabe : on ajoute « -er »"
+      },
+      {
+        "terme": "Adjectif long",
+        "sens": "deux syllabes ou plus : on met « more »"
+      },
+      {
+        "terme": "than",
+        "sens": "« que », introduit le second élément"
+      },
+      {
+        "terme": "-er",
+        "sens": "terminaison des adjectifs courts (taller)"
+      },
+      {
+        "terme": "more",
+        "sens": "placé devant les adjectifs longs"
+      },
+      {
+        "terme": "y → ier",
+        "sens": "happy devient happier"
+      },
+      {
+        "terme": "Irréguliers",
+        "sens": "good → better, bad → worse"
+      }
+    ],
+    "methode": [
+      "Identifie l'adjectif de la comparaison.",
+      "Compte ses syllabes : court (1) ou long (2 et plus).",
+      "Pour un adjectif court, ajoute « -er » à l'adjectif.",
+      "Pour un adjectif long, place « more » devant l'adjectif.",
+      "Ajoute toujours « than » avant le second élément.",
+      "Adapte l'orthographe : y → ier, consonne doublée (bigger).",
+      "Apprends les irréguliers : good → better, bad → worse.",
+      "Vérifie que « than » est bien présent."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « plus grand que » avec l'adjectif « tall » ?",
+      "etapes": [
+        "L'adjectif est « tall » (grand).",
+        "Il a une seule syllabe : c'est un adjectif court.",
+        "On ajoute donc la terminaison « -er » : taller.",
+        "On ajoute « than » pour introduire le second élément.",
+        "On obtient : taller than (plus grand que).",
+        "Exemple : « Tom is taller than Sam »."
+      ]
+    },
+    "astuce": "Connie : « Adjectif COURT → -er than (taller than). Adjectif LONG → more … than (more interesting than). Et ne dis jamais « more taller » : on ne cumule pas les deux ! N'oublie jamais le petit mot « than ». »",
+    "erreurs": [
+      "Cumuler les deux formes (« more taller »).",
+      "Oublier le mot « than ».",
+      "Mettre « more » devant un adjectif court.",
+      "Ajouter « -er » à un adjectif long.",
+      "Oublier de transformer le « y » en « -ier ».",
+      "Oublier de doubler la consonne (« biger »).",
+      "Ignorer les irréguliers (« gooder » au lieu de better).",
+      "Confondre comparatif et superlatif."
+    ]
+  },
+  "mikasa-ackerman-synthese-des-temps-etudies": {
+    "matiere": "anglais",
+    "niveau": "5eme",
+    "hero": "Mikasa Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "La synthèse des temps étudiés",
+    "explication": "À ce stade de la 5ème, on a étudié plusieurs temps qu'il est important de savoir distinguer pour choisir le bon dans chaque situation. Le Present Simple sert à parler des habitudes et des vérités générales : « I play football every weekend » (je joue au football chaque week-end). Le Present Continuous décrit une action en train de se dérouler maintenant : « I am playing football now » (je joue en ce moment). Le Past Simple raconte une action terminée dans le passé : « I played football yesterday » (j'ai joué hier). La clé pour ne pas se tromper est de bien repérer le moment de l'action et les marqueurs de temps présents dans la phrase. Les mots every day ou usually annoncent le Present Simple ; now ou « Look! » annoncent le Present Continuous ; yesterday ou ago annoncent le Past Simple. Chaque temps a aussi sa propre formation, qu'il faut connaître : le « -s » de la troisième personne au Present Simple, la structure BE + -ing au Present Continuous, et le « -ed » ou la forme irrégulière au Past Simple. Faire une bonne synthèse, c'est revoir ces trois temps ensemble, comprendre leurs différences et s'entraîner à choisir le bon. C'est une étape essentielle pour s'exprimer avec justesse en anglais. S'entraîner sur des phrases mélangées, où les trois temps se côtoient, est le meilleur moyen de vérifier que l'on sait vraiment les distinguer et les employer à bon escient.",
+    "definitions": [
+      {
+        "terme": "Present Simple",
+        "sens": "les habitudes et les vérités générales"
+      },
+      {
+        "terme": "Present Continuous",
+        "sens": "une action en cours maintenant"
+      },
+      {
+        "terme": "Past Simple",
+        "sens": "une action passée et terminée"
+      },
+      {
+        "terme": "Marqueur de temps",
+        "sens": "un mot qui indique le bon temps"
+      },
+      {
+        "terme": "every day / usually",
+        "sens": "marqueurs du Present Simple"
+      },
+      {
+        "terme": "now / Look!",
+        "sens": "marqueurs du Present Continuous"
+      },
+      {
+        "terme": "yesterday / ago",
+        "sens": "marqueurs du Past Simple"
+      },
+      {
+        "terme": "Formation",
+        "sens": "-s, BE + -ing, ou -ed/irrégulier"
+      }
+    ],
+    "methode": [
+      "Pour chaque phrase, demande-toi quand se passe l'action.",
+      "Habitude ou vérité générale → Present Simple.",
+      "Action en cours maintenant → Present Continuous.",
+      "Action passée et terminée → Past Simple.",
+      "Cherche les marqueurs de temps pour confirmer ton choix.",
+      "Applique la bonne formation du temps choisi.",
+      "Révise un temps à la fois, puis compare-les.",
+      "Entraîne-toi à choisir le temps sur des phrases variées."
+    ],
+    "exemple": {
+      "enonce": "Quel temps choisir : « Every day, I ___ (go) to school » ?",
+      "etapes": [
+        "Le marqueur « every day » indique une habitude.",
+        "Une habitude se dit au Present Simple.",
+        "Le sujet est « I » : pas de « -s » sur le verbe.",
+        "On garde donc le verbe de base : go.",
+        "La phrase correcte est : « Every day, I go to school ».",
+        "Avec « now », on aurait dit « I am going » (Present Continuous)."
+      ]
+    },
+    "astuce": "Mikasa : « Trois temps, trois moments : habitude (Present Simple), en cours maintenant (Present Continuous), passé terminé (Past Simple). Les marqueurs de temps — every day, now, yesterday — sont la boussole qui t'indique lequel choisir. »",
+    "erreurs": [
+      "Choisir le temps sans repérer le moment de l'action.",
+      "Ignorer les marqueurs de temps.",
+      "Confondre habitude (Present Simple) et action en cours.",
+      "Oublier le « -s » du Present Simple à la 3e personne.",
+      "Oublier le verbe to be au Present Continuous.",
+      "Oublier la marque du passé au Past Simple.",
+      "Mélanger deux temps dans une même phrase.",
+      "Confondre les marqueurs de chaque temps."
+    ]
+  }
+}
