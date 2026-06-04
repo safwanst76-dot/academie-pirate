@@ -1,0 +1,674 @@
+{
+  "mikasa-ackerman-nombres-1-20": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Mikasa Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les nombres de 1 à 20",
+    "explication": "En anglais, savoir compter de 1 à 20 est l'une des toutes premières bases. Les nombres servent partout : donner son âge, dire l'heure, compter des objets ou faire les courses. De 1 à 12, chaque nombre a un mot bien à lui qu'il faut mémoriser : one, two, three… jusqu'à twelve. À partir de 13, on remarque une régularité : la plupart des nombres se terminent par le son « -teen » (thirteen, fourteen, fifteen…), un peu comme notre « -ze » français dans « treize, quatorze ». Attention toutefois à quelques nombres irréguliers, comme thirteen (et non « threeteen ») ou fifteen (et non « fiveteen »). Vingt se dit twenty. Bien prononcer ces nombres demande de l'entraînement, car certains sons n'existent pas en français, comme le « th » de three. En CM2, on apprend à les reconnaître à l'écrit, à les écrire et à les prononcer. C'est une base indispensable, car ces nombres reviendront ensuite pour dire les dates, les prix et les âges. Le meilleur moyen de les retenir est de les répéter à voix haute, de compter souvent et de les associer à des objets du quotidien. Une fois ces vingt nombres maîtrisés, on peut déjà construire de nombreuses phrases simples en anglais.",
+    "definitions": [
+      {
+        "terme": "one",
+        "sens": "un (1)"
+      },
+      {
+        "terme": "three",
+        "sens": "trois (3) — attention au son « th »"
+      },
+      {
+        "terme": "five",
+        "sens": "cinq (5)"
+      },
+      {
+        "terme": "eight",
+        "sens": "huit (8)"
+      },
+      {
+        "terme": "ten",
+        "sens": "dix (10)"
+      },
+      {
+        "terme": "eleven",
+        "sens": "onze (11)"
+      },
+      {
+        "terme": "twelve",
+        "sens": "douze (12)"
+      },
+      {
+        "terme": "thirteen",
+        "sens": "treize (13) — pas « threeteen »"
+      },
+      {
+        "terme": "fifteen",
+        "sens": "quinze (15) — pas « fiveteen »"
+      },
+      {
+        "terme": "twenty",
+        "sens": "vingt (20)"
+      }
+    ],
+    "methode": [
+      "Écoute attentivement la prononciation de chaque nombre.",
+      "Répète chaque nombre à voix haute plusieurs fois.",
+      "Mémorise d'abord les nombres de 1 à 12, qui sont uniques.",
+      "Repère ensuite la régularité du son « -teen » de 13 à 19.",
+      "Fais attention aux irréguliers : thirteen et fifteen.",
+      "Entraîne-toi à compter des objets réels autour de toi.",
+      "Utilise les nombres pour dire ton âge ou un numéro.",
+      "Teste-toi régulièrement en comptant dans le désordre."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « J'ai 11 ans » en anglais ?",
+      "etapes": [
+        "En anglais, on ne dit pas « avoir » son âge, mais « être » son âge.",
+        "On utilise donc le verbe to be : on commence par « I am ».",
+        "On ajoute le nombre : eleven.",
+        "On termine par « years old » (années).",
+        "La phrase complète est : « I am eleven years old ».",
+        "Traduction mot à mot : « Je suis onze années »."
+      ]
+    },
+    "astuce": "Mikasa : « Le son « th » de three et thirteen se fait en plaçant le bout de la langue entre les dents, puis en soufflant. Entraîne-toi devant un miroir ! Et repère bien le « -teen » commun aux nombres de 13 à 19. »",
+    "erreurs": [
+      "Dire « threeteen » au lieu de thirteen.",
+      "Dire « fiveteen » au lieu de fifteen.",
+      "Confondre le son « -teen » (13-19) et « -ty » (20, 30…).",
+      "Mal prononcer le « th » de three (le dire comme « tri »).",
+      "Oublier que l'âge se dit avec to be (et non to have).",
+      "Écrire les nombres comme en français (« neuf » au lieu de nine).",
+      "Confondre eleven et seven à l'oral.",
+      "Oublier le « w » muet de two."
+    ]
+  },
+  "armin-arlert-les-couleurs-principales": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Armin Arlert",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les couleurs principales",
+    "explication": "Les couleurs (colours en anglais britannique, colors en américain) font partie du vocabulaire de base. On les utilise pour décrire des objets, des vêtements, des animaux ou la nature. En anglais, l'adjectif de couleur se place AVANT le nom, contrairement au français : on dit « a red car » (une voiture rouge), et non « a car red ». C'est une différence très importante à retenir. Les couleurs principales à connaître sont notamment red (rouge), blue (bleu), green (vert), yellow (jaune), black (noir) et white (blanc). Pour demander la couleur de quelque chose, on utilise la question « What colour is it? » (De quelle couleur est-ce ?), et on répond « It is… » suivi de la couleur. En CM2, on apprend à reconnaître, écrire et prononcer ces couleurs, et à les utiliser dans des phrases simples. C'est un vocabulaire concret et facile à mémoriser, car on peut l'associer à des objets que l'on voit tous les jours. Bien placer l'adjectif de couleur avant le nom est la principale règle de grammaire à intégrer ici. Maîtriser les couleurs permet déjà de décrire le monde autour de soi en anglais et prépare des descriptions plus riches. On peut combiner une couleur et un objet pour décrire précisément ce que l'on voit, par exemple « a blue bag » (un sac bleu) ou « a green apple » (une pomme verte). S'entraîner à nommer la couleur des objets de sa chambre ou de sa trousse est un excellent moyen de fixer ce vocabulaire. Les couleurs reviennent dans presque toutes les descriptions, c'est pourquoi il vaut la peine de bien les mémoriser dès le début. Une fois les couleurs principales connues, on peut déjà décrire une foule d'objets autour de soi.",
+    "definitions": [
+      {
+        "terme": "red",
+        "sens": "rouge"
+      },
+      {
+        "terme": "blue",
+        "sens": "bleu"
+      },
+      {
+        "terme": "green",
+        "sens": "vert"
+      },
+      {
+        "terme": "yellow",
+        "sens": "jaune"
+      },
+      {
+        "terme": "orange",
+        "sens": "orange"
+      },
+      {
+        "terme": "pink",
+        "sens": "rose"
+      },
+      {
+        "terme": "purple",
+        "sens": "violet"
+      },
+      {
+        "terme": "brown",
+        "sens": "marron"
+      },
+      {
+        "terme": "black",
+        "sens": "noir"
+      },
+      {
+        "terme": "white",
+        "sens": "blanc"
+      },
+      {
+        "terme": "grey",
+        "sens": "gris"
+      }
+    ],
+    "methode": [
+      "Écoute et répète la prononciation de chaque couleur.",
+      "Associe chaque couleur à un objet que tu connais.",
+      "Retiens la règle clé : l'adjectif de couleur se place AVANT le nom.",
+      "Pour demander une couleur, utilise « What colour is it? ».",
+      "Pour répondre, dis « It is… » suivi de la couleur.",
+      "Entraîne-toi à décrire des objets autour de toi.",
+      "Révise avec des images ou des objets colorés.",
+      "Teste-toi en nommant les couleurs dans le désordre."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « une voiture rouge » en anglais ?",
+      "etapes": [
+        "En anglais, l'adjectif se place AVANT le nom.",
+        "La couleur « rouge » se dit red.",
+        "Le nom « voiture » se dit car.",
+        "L'article « une » se dit a.",
+        "On place donc red avant car : « a red car ».",
+        "On ne dit jamais « a car red » : ce serait l'ordre français."
+      ]
+    },
+    "astuce": "Armin : « En anglais, la couleur passe TOUJOURS devant le nom : a blue bird, et pas a bird blue. C'est l'inverse du français, mais une fois la règle comprise, ça devient vite un automatisme. »",
+    "erreurs": [
+      "Placer la couleur après le nom (« a car red »).",
+      "Confondre l'orthographe colour (GB) et color (US).",
+      "Confondre yellow (jaune) et orange.",
+      "Oublier l'article « a » devant le nom.",
+      "Mal prononcer le « ou » de blue.",
+      "Confondre green (vert) et grey (gris).",
+      "Traduire les couleurs mot à mot sans les mémoriser.",
+      "Oublier que white se prononce avec un « w » soufflé."
+    ]
+  },
+  "erwin-smith-decrire-la-meteo": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Erwin Smith",
+    "manga": "L'Attaque des Titans",
+    "notion": "Décrire la météo",
+    "explication": "En anglais, pour parler de la météo (the weather), on utilise une structure particulière. On commence souvent par « It is… » suivi d'un adjectif (It is sunny = il fait soleil), ou par « It is + -ing » pour la pluie et la neige (It is raining = il pleut). Pour demander le temps qu'il fait, on dit « What's the weather like? » (Quel temps fait-il ?). Le vocabulaire de base comprend sunny (ensoleillé), rainy (pluvieux), cloudy (nuageux), windy (venteux), snowy (neigeux), hot (chaud) et cold (froid). En anglais, contrairement au français, on n'utilise pas « il fait » : on emploie le sujet impersonnel « it » avec le verbe to be. Par exemple, « il fait froid » se dit « it is cold », mot à mot « c'est froid ». En CM2, on apprend ce vocabulaire et cette structure pour décrire le temps simplement. C'est utile dans la vie de tous les jours et dans les conversations courantes. Décrire la météo est aussi une bonne occasion de réviser le verbe to be et de s'habituer à la structure des phrases anglaises, qui ne se traduisent pas toujours mot à mot depuis le français. C'est une notion concrète, que l'on peut réviser chaque jour en regardant par la fenêtre. On peut aussi associer la météo aux saisons (the seasons) pour aller plus loin, mais la structure « It is… » reste la base à maîtriser en priorité.",
+    "definitions": [
+      {
+        "terme": "weather",
+        "sens": "le temps, la météo"
+      },
+      {
+        "terme": "sunny",
+        "sens": "ensoleillé"
+      },
+      {
+        "terme": "rainy / raining",
+        "sens": "pluvieux / il pleut"
+      },
+      {
+        "terme": "cloudy",
+        "sens": "nuageux"
+      },
+      {
+        "terme": "windy",
+        "sens": "venteux"
+      },
+      {
+        "terme": "snowy / snowing",
+        "sens": "neigeux / il neige"
+      },
+      {
+        "terme": "hot",
+        "sens": "chaud"
+      },
+      {
+        "terme": "cold",
+        "sens": "froid"
+      },
+      {
+        "terme": "warm",
+        "sens": "doux, agréablement chaud"
+      },
+      {
+        "terme": "What's the weather like?",
+        "sens": "Quel temps fait-il ?"
+      }
+    ],
+    "methode": [
+      "Pour décrire le temps, commence par « It is… ».",
+      "Ajoute l'adjectif adapté : sunny, cold, windy…",
+      "Pour la pluie ou la neige, utilise la forme en -ing (It is raining).",
+      "Pour poser la question, dis « What's the weather like? ».",
+      "Ne traduis jamais « il fait » mot à mot depuis le français.",
+      "Associe chaque mot à une image de météo.",
+      "Entraîne-toi avec le temps qu'il fait aujourd'hui.",
+      "Révise en même temps le verbe to be."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Il fait froid » en anglais ?",
+      "etapes": [
+        "En français, on dit « il fait froid ».",
+        "En anglais, on n'utilise pas l'expression « il fait ».",
+        "On emploie « it is » (mot à mot : « c'est »).",
+        "L'adjectif « froid » se dit cold.",
+        "La phrase est donc : « It is cold ».",
+        "Mot à mot, cela donne « c'est froid »."
+      ]
+    },
+    "astuce": "Erwin : « Oublie le « il fait » du français ! En anglais, la météo commence toujours par « It is… » : It is sunny, It is cold. Et pour la pluie qui tombe, on ajoute -ing : « It is raining ». »",
+    "erreurs": [
+      "Traduire « il fait » mot à mot depuis le français.",
+      "Oublier « it is » au début de la phrase.",
+      "Confondre sunny (ensoleillé) et snowy (neigeux).",
+      "Oublier le -ing pour la pluie ou la neige qui tombe.",
+      "Confondre hot (chaud) et cold (froid).",
+      "Mal prononcer le « ea » de weather.",
+      "Utiliser « he » ou « she » au lieu de « it » pour la météo.",
+      "Oublier le verbe to be dans la phrase."
+    ]
+  },
+  "hange-zoe-objets-scolaires": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Hange Zoë",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les objets scolaires",
+    "explication": "Le vocabulaire des objets scolaires (school things) est très utile en classe d'anglais. Il comprend des mots comme a pen (un stylo), a pencil (un crayon), a book (un livre), a ruler (une règle), a rubber (une gomme), a bag (un sac) et a notebook (un cahier). Pour présenter un objet, on utilise « This is… » (Ceci est…) ou « It is… ». Un point de grammaire important accompagne ce vocabulaire : l'article indéfini « a » devient « an » devant un mot qui commence par un son voyelle. On dit « a pen » mais « an apple » ou « an eraser ». Pour demander ce qu'est un objet, on utilise « What is it? » et on répond « It is a… ». En CM2, on apprend à nommer les objets de la trousse et de la classe, à les écrire et à les prononcer. C'est un vocabulaire concret, que l'on peut réviser en désignant les objets réels autour de soi. Maîtriser ces mots permet de comprendre les consignes du professeur et de participer en classe. C'est aussi l'occasion d'apprendre la règle de « a / an », qui reviendra constamment dans l'apprentissage de l'anglais et dans toutes les descriptions d'objets.",
+    "definitions": [
+      {
+        "terme": "a pen",
+        "sens": "un stylo"
+      },
+      {
+        "terme": "a pencil",
+        "sens": "un crayon"
+      },
+      {
+        "terme": "a book",
+        "sens": "un livre"
+      },
+      {
+        "terme": "a ruler",
+        "sens": "une règle"
+      },
+      {
+        "terme": "a rubber / an eraser",
+        "sens": "une gomme"
+      },
+      {
+        "terme": "a bag",
+        "sens": "un sac, un cartable"
+      },
+      {
+        "terme": "a notebook",
+        "sens": "un cahier"
+      },
+      {
+        "terme": "a pencil case",
+        "sens": "une trousse"
+      },
+      {
+        "terme": "a desk",
+        "sens": "un bureau, une table"
+      },
+      {
+        "terme": "a teacher",
+        "sens": "un professeur"
+      },
+      {
+        "terme": "a school",
+        "sens": "une école"
+      }
+    ],
+    "methode": [
+      "Nomme chaque objet de ta trousse à voix haute en anglais.",
+      "Utilise « This is a… » pour présenter un objet.",
+      "Choisis « a » ou « an » selon le son qui suit le mot.",
+      "Mets « an » devant un son voyelle (an eraser, an apple).",
+      "Pour demander, dis « What is it? ».",
+      "Pour répondre, dis « It is a… ».",
+      "Désigne les objets réels autour de toi pour réviser.",
+      "Teste-toi en cachant la traduction française."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « C'est une gomme » en anglais ?",
+      "etapes": [
+        "« C'est » se dit « It is » ou « This is ».",
+        "« Une gomme » se dit a rubber (GB) ou an eraser (US).",
+        "Eraser commence par un son voyelle : on met donc « an eraser ».",
+        "Rubber commence par un son consonne : on met « a rubber ».",
+        "La phrase est donc « It is a rubber » ou « It is an eraser ».",
+        "On choisit a ou an selon le son du mot qui suit."
+      ]
+    },
+    "astuce": "Hange : « La règle magique de « a / an » : on met « an » devant un son VOYELLE (an apple, an eraser) et « a » devant un son consonne (a pen, a book). Écoute le SON du mot, pas seulement sa première lettre ! »",
+    "erreurs": [
+      "Dire « a apple » au lieu de « an apple ».",
+      "Choisir a ou an selon la lettre au lieu du son.",
+      "Confondre a pen (stylo) et a pencil (crayon).",
+      "Oublier l'article a / an devant le nom.",
+      "Confondre a book (livre) et a notebook (cahier).",
+      "Mal prononcer le « u » de ruler.",
+      "Oublier que rubber et eraser désignent la même gomme.",
+      "Traduire les mots sans les mémoriser."
+    ]
+  },
+  "historia-reiss-la-famille-proche": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Historia Reiss",
+    "manga": "L'Attaque des Titans",
+    "notion": "La famille proche",
+    "explication": "Le vocabulaire de la famille (the family) permet de parler des personnes qui nous entourent. Les mots de base de la famille proche sont mother ou mum (mère, maman), father ou dad (père, papa), brother (frère), sister (sœur), parents (parents), son (fils) et daughter (fille). Pour parler de SA famille, on utilise l'adjectif possessif « my » (mon, ma, mes) : « my mother » (ma mère), « my brother » (mon frère). En anglais, « my » ne change jamais selon le genre ou le nombre, contrairement au français : on dit toujours « my », que ce soit pour « ma mère », « mon père » ou « mes parents ». Pour présenter quelqu'un, on dit « This is my… » (Voici mon/ma…). En CM2, on apprend à nommer les membres de la famille proche, à les écrire et à les présenter simplement. C'est un vocabulaire utile et personnel, que chacun peut relier à sa propre famille. Apprendre ces mots est aussi l'occasion de découvrir l'adjectif possessif « my », un outil que l'on retrouvera très souvent dans les conversations. Décrire sa famille est un grand classique des premières discussions en anglais, et un excellent moyen de se présenter. On peut aussi préciser l'âge des membres de sa famille pour enrichir sa présentation. Décrire sa famille est souvent l'un des tout premiers exercices d'expression orale en anglais, car c'est un sujet familier et concret. S'entraîner à présenter chaque membre en une phrase simple aide à gagner en aisance et en confiance à l'oral.",
+    "definitions": [
+      {
+        "terme": "mother / mum",
+        "sens": "mère / maman"
+      },
+      {
+        "terme": "father / dad",
+        "sens": "père / papa"
+      },
+      {
+        "terme": "brother",
+        "sens": "frère"
+      },
+      {
+        "terme": "sister",
+        "sens": "sœur"
+      },
+      {
+        "terme": "parents",
+        "sens": "les parents"
+      },
+      {
+        "terme": "son",
+        "sens": "fils"
+      },
+      {
+        "terme": "daughter",
+        "sens": "fille (d'un parent)"
+      },
+      {
+        "terme": "grandmother",
+        "sens": "grand-mère"
+      },
+      {
+        "terme": "grandfather",
+        "sens": "grand-père"
+      },
+      {
+        "terme": "baby",
+        "sens": "bébé"
+      },
+      {
+        "terme": "family",
+        "sens": "famille"
+      }
+    ],
+    "methode": [
+      "Nomme chaque membre de la famille à voix haute en anglais.",
+      "Utilise « my » pour parler de ta propre famille.",
+      "Retiens que « my » ne change jamais (genre ou nombre).",
+      "Présente une personne avec « This is my… ».",
+      "Associe chaque mot à une personne réelle de ta famille.",
+      "Entraîne-toi à présenter ta famille en quelques phrases.",
+      "Révise avec un arbre généalogique en anglais.",
+      "Teste-toi en cachant la traduction française."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Voici ma sœur » en anglais ?",
+      "etapes": [
+        "« Voici » se dit « This is ».",
+        "« Ma » se dit my, qui est invariable.",
+        "« Sœur » se dit sister.",
+        "On assemble : « This is my sister ».",
+        "« My » reste identique au masculin, au féminin et au pluriel.",
+        "On dirait de même « This is my brother » ou « These are my parents »."
+      ]
+    },
+    "astuce": "Historia : « En anglais, « my » ne change JAMAIS ! Ma mère, mon père, mes parents deviennent my mother, my father, my parents. Pas besoin de choisir entre mon, ma et mes : un seul mot pour tout ! »",
+    "erreurs": [
+      "Chercher à accorder « my » comme en français.",
+      "Confondre brother (frère) et sister (sœur).",
+      "Confondre mother (mère) et father (père).",
+      "Confondre son (fils) et sun (soleil) à l'oral.",
+      "Oublier le « gh » muet de daughter.",
+      "Utiliser « he » ou « she » au lieu de « my » pour présenter.",
+      "Confondre parents et grandparents.",
+      "Traduire les mots sans les mémoriser."
+    ]
+  },
+  "jean-kirstein-la-tete-et-le-visage": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Jean Kirstein",
+    "manga": "L'Attaque des Titans",
+    "notion": "La tête et le visage",
+    "explication": "Le vocabulaire de la tête (the head) et du visage (the face) sert à décrire une personne et à parler de soi. Les mots de base sont head (tête), face (visage), eye et eyes (œil et yeux), nose (nez), mouth (bouche), ear et ears (oreille et oreilles), hair (cheveux), tooth et teeth (dent et dents). Un point important accompagne ce vocabulaire : le pluriel. La plupart des noms forment leur pluriel en ajoutant « -s » (eye devient eyes). Mais certains mots sont irréguliers : tooth devient teeth, et le mot hair (cheveux) est souvent employé au singulier en anglais, même quand on parle de toute la chevelure. Pour décrire quelqu'un, on peut utiliser « He has… » ou « She has… » (Il a / Elle a…) suivi du vocabulaire. En CM2, on apprend à nommer les parties de la tête et du visage, à les écrire et à les prononcer. C'est un vocabulaire concret, facile à réviser en se regardant dans un miroir ou en montrant les parties sur un dessin. Maîtriser ces mots permet de décrire un visage et prépare des descriptions plus complètes. C'est aussi une bonne occasion de découvrir quelques pluriels irréguliers de l'anglais, que l'on retrouvera souvent. Pour décrire son propre visage, on peut dire par exemple « I have brown eyes » (j'ai les yeux marron) ou « I have black hair » (j'ai les cheveux noirs). Ce vocabulaire se combine donc naturellement avec les couleurs apprises par ailleurs. S'entraîner à se décrire soi-même, ou à décrire un camarade, est une activité motivante et utile. C'est aussi une excellente préparation aux descriptions de personnes, très fréquentes dans les premières conversations en anglais.",
+    "definitions": [
+      {
+        "terme": "head",
+        "sens": "tête"
+      },
+      {
+        "terme": "face",
+        "sens": "visage"
+      },
+      {
+        "terme": "eye / eyes",
+        "sens": "œil / yeux"
+      },
+      {
+        "terme": "nose",
+        "sens": "nez"
+      },
+      {
+        "terme": "mouth",
+        "sens": "bouche"
+      },
+      {
+        "terme": "ear / ears",
+        "sens": "oreille / oreilles"
+      },
+      {
+        "terme": "hair",
+        "sens": "cheveux (souvent au singulier)"
+      },
+      {
+        "terme": "tooth / teeth",
+        "sens": "dent / dents (pluriel irrégulier)"
+      },
+      {
+        "terme": "neck",
+        "sens": "cou"
+      },
+      {
+        "terme": "lips",
+        "sens": "lèvres"
+      }
+    ],
+    "methode": [
+      "Nomme chaque partie de la tête et du visage à voix haute.",
+      "Ajoute « -s » pour former le pluriel régulier (eye → eyes).",
+      "Retiens les irréguliers : tooth devient teeth.",
+      "Note que « hair » reste souvent au singulier.",
+      "Décris une personne avec « He has… » ou « She has… ».",
+      "Montre les parties sur un dessin ou un visage.",
+      "Entraîne-toi devant un miroir.",
+      "Teste-toi en cachant la traduction française."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « deux yeux » en anglais ?",
+      "etapes": [
+        "« Œil » au singulier se dit eye.",
+        "Pour le pluriel régulier, on ajoute « -s ».",
+        "Eye devient donc eyes.",
+        "« Deux » se dit two.",
+        "On assemble : « two eyes ».",
+        "C'est un pluriel régulier, en « -s »."
+      ]
+    },
+    "astuce": "Jean : « La plupart des pluriels prennent un « -s » (eye → eyes), mais attention aux pièges : tooth devient teeth, et surtout pas « tooths » ! Et « hair » reste souvent au singulier pour parler de toute la chevelure. »",
+    "erreurs": [
+      "Dire « tooths » au lieu de teeth.",
+      "Mettre « hair » au pluriel pour la chevelure.",
+      "Confondre eye (œil) et ear (oreille).",
+      "Oublier le « -s » du pluriel régulier.",
+      "Confondre mouth (bouche) et mouse (souris).",
+      "Mal prononcer le « th » de mouth et teeth.",
+      "Confondre nose (nez) et neck (cou).",
+      "Traduire les mots sans les mémoriser."
+    ]
+  },
+  "levi-ackerman-animaux-domestiques-et-de-ferme": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Levi Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les animaux domestiques et de ferme",
+    "explication": "Le vocabulaire des animaux (animals) est l'un des plus appréciés des débutants. On distingue souvent les animaux domestiques (pets), que l'on garde à la maison, et les animaux de la ferme (farm animals). Parmi les animaux domestiques : a dog (un chien), a cat (un chat), a rabbit (un lapin), a bird (un oiseau) et a fish (un poisson). Parmi les animaux de la ferme : a cow (une vache), a horse (un cheval), a pig (un cochon), a sheep (un mouton), a chicken (une poule) et a duck (un canard). Pour dire que l'on possède un animal, on utilise « I have a… » (J'ai un…). Pour parler de plusieurs animaux, on met le pluriel : two dogs, three cats. Attention à quelques pluriels particuliers, comme sheep et fish, qui ne changent pas au pluriel (one sheep, two sheep). En CM2, on apprend à nommer ces animaux, à les écrire et à les prononcer. C'est un vocabulaire concret et motivant, que l'on peut réviser avec des images ou ses propres animaux. Maîtriser ces mots permet de parler de ses animaux préférés et prépare de nombreuses conversations simples en anglais. On peut aussi préciser la couleur ou le nombre de ses animaux, par exemple « I have two black cats » (j'ai deux chats noirs). Ce vocabulaire se combine ainsi avec les nombres et les couleurs déjà appris. Parler de ses animaux est souvent un sujet apprécié, qui donne envie de s'exprimer en anglais et facilite la mémorisation.",
+    "definitions": [
+      {
+        "terme": "a dog",
+        "sens": "un chien"
+      },
+      {
+        "terme": "a cat",
+        "sens": "un chat"
+      },
+      {
+        "terme": "a rabbit",
+        "sens": "un lapin"
+      },
+      {
+        "terme": "a bird",
+        "sens": "un oiseau"
+      },
+      {
+        "terme": "a fish",
+        "sens": "un poisson (pluriel : fish)"
+      },
+      {
+        "terme": "a cow",
+        "sens": "une vache"
+      },
+      {
+        "terme": "a horse",
+        "sens": "un cheval"
+      },
+      {
+        "terme": "a pig",
+        "sens": "un cochon"
+      },
+      {
+        "terme": "a sheep",
+        "sens": "un mouton (pluriel : sheep)"
+      },
+      {
+        "terme": "a chicken",
+        "sens": "une poule, un poulet"
+      },
+      {
+        "terme": "a duck",
+        "sens": "un canard"
+      }
+    ],
+    "methode": [
+      "Nomme chaque animal à voix haute en anglais.",
+      "Classe les animaux : domestiques (pets) ou de ferme.",
+      "Pour dire que tu en possèdes un, utilise « I have a… ».",
+      "Pour le pluriel régulier, ajoute « -s » (two cats).",
+      "Retiens les irréguliers : sheep et fish ne changent pas.",
+      "Associe chaque animal à une image.",
+      "Entraîne-toi à parler de ton animal préféré.",
+      "Teste-toi en cachant la traduction française."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « J'ai un chien » en anglais ?",
+      "etapes": [
+        "« J'ai » se dit « I have ».",
+        "« Un » se dit a.",
+        "« Chien » se dit dog.",
+        "On assemble : « I have a dog ».",
+        "Pour deux chiens, on met le pluriel : « I have two dogs ».",
+        "Le pluriel régulier se forme en ajoutant « -s »."
+      ]
+    },
+    "astuce": "Levi : « La plupart des animaux prennent un « -s » au pluriel (cats, dogs), mais « sheep » et « fish » ne changent pas : one sheep, two sheep ; one fish, two fish. Ce sont des exceptions à ne jamais oublier. »",
+    "erreurs": [
+      "Dire « sheeps » ou « fishs » au pluriel.",
+      "Oublier l'article « a » devant l'animal.",
+      "Confondre a chicken (poule) et a kitchen (cuisine).",
+      "Confondre a horse (cheval) et a house (maison).",
+      "Oublier le pluriel en « -s » pour les animaux réguliers.",
+      "Mal prononcer le « ow » de cow.",
+      "Confondre a cat (chat) et a cap (casquette).",
+      "Traduire les mots sans les mémoriser."
+    ]
+  },
+  "eren-jager-epeler-en-anglais-spelling": {
+    "matiere": "anglais",
+    "niveau": "cm2",
+    "hero": "Eren Jäger",
+    "manga": "L'Attaque des Titans",
+    "notion": "Épeler en anglais (Spelling)",
+    "explication": "Épeler (to spell), c'est dire un mot lettre par lettre. C'est une compétence très importante en anglais, car on demande souvent d'épeler son nom ou un mot. Pour cela, il faut connaître l'alphabet anglais, qui comporte les mêmes 26 lettres que le français, mais qui se prononcent différemment. Par exemple, la lettre « A » se prononce « eï », la lettre « E » se prononce « i », la lettre « I » se prononce « aï » et la lettre « G » se prononce « djii ». Ces différences sont la principale difficulté : une lettre peut se prononcer en anglais comme une autre lettre en français, car le « E » anglais ressemble au « I » français. Pour demander d'épeler, on dit « How do you spell…? » (Comment épelle-t-on… ?), et on répond en donnant les lettres une à une. Quand une lettre est doublée, on dit « double » suivi de la lettre (par exemple « double L » pour « ll »). En CM2, on apprend à reconnaître et prononcer les lettres de l'alphabet, et à épeler des mots simples comme son prénom. C'est une base essentielle pour communiquer et se faire comprendre, notamment à l'oral. Bien connaître l'alphabet anglais ouvre la porte à toute la prononciation de la langue.",
+    "definitions": [
+      {
+        "terme": "to spell",
+        "sens": "épeler"
+      },
+      {
+        "terme": "the alphabet",
+        "sens": "l'alphabet"
+      },
+      {
+        "terme": "a letter",
+        "sens": "une lettre"
+      },
+      {
+        "terme": "A",
+        "sens": "se prononce « eï »"
+      },
+      {
+        "terme": "E",
+        "sens": "se prononce « i »"
+      },
+      {
+        "terme": "G",
+        "sens": "se prononce « djii »"
+      },
+      {
+        "terme": "I",
+        "sens": "se prononce « aï »"
+      },
+      {
+        "terme": "J",
+        "sens": "se prononce « djeï »"
+      },
+      {
+        "terme": "W",
+        "sens": "se prononce « double-you »"
+      },
+      {
+        "terme": "Y",
+        "sens": "se prononce « waï »"
+      }
+    ],
+    "methode": [
+      "Apprends l'alphabet anglais dans l'ordre.",
+      "Écoute la prononciation de chaque lettre.",
+      "Repère les lettres « pièges » : E, I, G, J.",
+      "Entraîne-toi à épeler ton prénom à voix haute.",
+      "Pour demander, dis « How do you spell…? ».",
+      "Dis « double » devant une lettre qui est doublée.",
+      "Répète régulièrement pour fixer les sons.",
+      "Teste-toi en épelant des mots simples."
+    ],
+    "exemple": {
+      "enonce": "Comment épeler le prénom « Tom » en anglais ?",
+      "etapes": [
+        "On épelle le mot lettre par lettre.",
+        "La lettre T se prononce « tii ».",
+        "La lettre O se prononce « ow ».",
+        "La lettre M se prononce « em ».",
+        "On dit donc : « tii – ow – em ».",
+        "Pour demander, on dirait : « How do you spell Tom? »."
+      ]
+    },
+    "astuce": "Eren : « Méfie-toi des lettres pièges ! Le « E » anglais se dit « i », le « I » se dit « aï », le « G » se dit « djii » et le « J » se dit « djeï ». Beaucoup de débutants les confondent : entraîne-toi à épeler ton prénom à voix haute ! »",
+    "erreurs": [
+      "Prononcer les lettres à la française.",
+      "Confondre la lettre E (« i ») et la lettre I (« aï »).",
+      "Confondre la lettre G (« djii ») et la lettre J (« djeï »).",
+      "Oublier de dire « double » pour une lettre doublée.",
+      "Confondre la lettre A (« eï ») et la lettre E (« i »).",
+      "Prononcer le W comme en français.",
+      "Aller trop vite et mélanger les lettres.",
+      "Oublier que l'alphabet a le même nombre de lettres qu'en français."
+    ]
+  }
+}
