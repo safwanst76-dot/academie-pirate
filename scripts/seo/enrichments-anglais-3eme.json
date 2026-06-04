@@ -1,0 +1,606 @@
+{
+  "eren-jager-past-simple-action-terminee": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Eren Jäger",
+    "manga": "L'Attaque des Titans",
+    "notion": "Le Past Simple : action terminée",
+    "explication": "Le Past Simple est le temps de référence pour raconter une action terminée à un moment précis du passé : « I went to Paris last year » (je suis allé à Paris l'an dernier). Il s'emploie dès que l'action est révolue et souvent datée. Sa formation dépend du verbe. Pour les verbes réguliers, on ajoute « -ed » à la forme de base (played, worked). Pour les verbes irréguliers, on utilise une forme particulière qu'il faut connaître par cœur (go devient went, see devient saw). À la forme affirmative, cette forme du passé est la même pour tous les sujets. Pour la forme négative, on utilise l'auxiliaire didn't, suivi du verbe à sa forme de base : « I didn't play » (et non « I didn't played »). Pour poser une question, on place did en tête, suivi du sujet et du verbe de base : « Did you play? ». Le point essentiel est que, dès qu'apparaît did ou didn't, le verbe principal revient à sa base, car le passé est déjà marqué par l'auxiliaire. Pour le verbe to be, on n'utilise pas did : on emploie was ou were directement. Les marqueurs yesterday, ago, last week ou in 2010 signalent ce temps. En 3ème, bien maîtriser le Past Simple est indispensable pour raconter des événements passés au Brevet. S'entraîner à raconter sa journée de la veille ou un souvenir au Past Simple est un exercice simple et efficace pour ancrer durablement ce temps fondamental.",
+    "definitions": [
+      {
+        "terme": "Past Simple",
+        "sens": "le temps d'une action passée et terminée"
+      },
+      {
+        "terme": "Action terminée",
+        "sens": "un événement révolu, souvent daté"
+      },
+      {
+        "terme": "-ed",
+        "sens": "terminaison des verbes réguliers (played)"
+      },
+      {
+        "terme": "Verbe irrégulier",
+        "sens": "forme particulière (go → went)"
+      },
+      {
+        "terme": "did",
+        "sens": "auxiliaire pour les questions au passé"
+      },
+      {
+        "terme": "didn't",
+        "sens": "did not : la négation au passé"
+      },
+      {
+        "terme": "was / were",
+        "sens": "passé de to be, sans did"
+      },
+      {
+        "terme": "yesterday / ago",
+        "sens": "marqueurs du Past Simple"
+      }
+    ],
+    "methode": [
+      "Vérifie que l'action est passée et terminée.",
+      "À l'affirmatif, mets le verbe au passé (-ed ou forme irrégulière).",
+      "Garde la même forme pour tous les sujets.",
+      "Au négatif, utilise didn't suivi du verbe à la base.",
+      "À l'interrogatif, commence par did + sujet + verbe de base.",
+      "Après did ou didn't, n'écris jamais le verbe au passé.",
+      "Pour to be, emploie was ou were sans did.",
+      "Repère les marqueurs : yesterday, ago, last week."
+    ],
+    "exemple": {
+      "enonce": "Mets le verbe : « I ___ (go) to Paris last year ».",
+      "etapes": [
+        "Le marqueur « last year » indique une action passée et datée.",
+        "On utilise donc le Past Simple.",
+        "Le verbe « go » est irrégulier.",
+        "Sa forme de passé est went (pas « goed »).",
+        "On obtient : « I went to Paris last year ».",
+        "À la forme négative, on aurait dit « I didn't go »."
+      ]
+    },
+    "astuce": "Eren : « Past Simple = action finie et datée. Mais attention : dès que did ou didn't apparaît, le verbe revient à la base ! « I didn't go », jamais « I didn't went ». Le passé est déjà dans l'auxiliaire. »",
+    "erreurs": [
+      "Garder le passé du verbe après did/didn't (« didn't went »).",
+      "Ajouter « -ed » à un verbe irrégulier.",
+      "Utiliser did avec to be (« Did you were? »).",
+      "Oublier la marque du passé à l'affirmatif.",
+      "Changer la forme du verbe selon le sujet.",
+      "Confondre le Past Simple et le Present Perfect.",
+      "Oublier l'auxiliaire didn't à la négation.",
+      "Mal mémoriser une forme irrégulière."
+    ]
+  },
+  "mikasa-ackerman-forme-havehas-v3": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Mikasa Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "La forme have/has + V3",
+    "explication": "La forme « have/has + V3 » est la construction du Present Perfect, un temps qui relie une action passée au présent. Elle se compose de deux éléments à toujours réunir. Le premier est l'auxiliaire have, qui devient has à la troisième personne du singulier (he, she, it). Le second est le participe passé du verbe, souvent appelé « V3 », car c'est la troisième forme du verbe dans les tableaux de conjugaison (base – prétérit – participe passé). Pour les verbes réguliers, ce participe passé se forme en ajoutant « -ed », exactement comme le prétérit : finish donne finished. Mais pour les verbes irréguliers, le V3 est une forme particulière à apprendre par cœur, et il faut bien la distinguer du prétérit (V2). Par exemple, pour le verbe go, le prétérit est went (V2) mais le participe passé est gone (V3). On dit donc « I have gone », et jamais « I have went ». De même, see donne seen, et do donne done. On obtient ainsi « I have finished », « she has seen », « they have done ». En 3ème, bien maîtriser la forme have/has + V3 est essentiel, notamment pour ne pas confondre le V2 et le V3 des verbes irréguliers. C'est la base du Present Perfect, très utilisé au Brevet. S'entraîner à réciter les trois formes des verbes irréguliers (base, prétérit, participe passé) est le meilleur moyen de ne plus jamais confondre le V2 et le V3 le jour du contrôle.",
+    "definitions": [
+      {
+        "terme": "have / has",
+        "sens": "l'auxiliaire (has pour he, she, it)"
+      },
+      {
+        "terme": "V3",
+        "sens": "le participe passé, 3e forme du verbe"
+      },
+      {
+        "terme": "Present Perfect",
+        "sens": "le temps formé par have/has + V3"
+      },
+      {
+        "terme": "V1 (base)",
+        "sens": "la forme de base du verbe (go)"
+      },
+      {
+        "terme": "V2 (prétérit)",
+        "sens": "le passé simple du verbe (went)"
+      },
+      {
+        "terme": "V3 régulier",
+        "sens": "en -ed (finished, played)"
+      },
+      {
+        "terme": "V3 irrégulier",
+        "sens": "forme particulière (gone, seen, done)"
+      },
+      {
+        "terme": "V2 ≠ V3",
+        "sens": "went (V2) mais gone (V3)"
+      }
+    ],
+    "methode": [
+      "Choisis l'auxiliaire : have, ou has pour he/she/it.",
+      "Identifie le verbe principal.",
+      "Mets-le au participe passé (V3).",
+      "Pour un verbe régulier, le V3 se forme en « -ed ».",
+      "Pour un verbe irrégulier, utilise la 3e colonne du tableau.",
+      "Distingue bien le V2 (prétérit) et le V3 (participe passé).",
+      "Garde le V3 identique quel que soit le sujet.",
+      "Vérifie la présence de have ou has."
+    ],
+    "exemple": {
+      "enonce": "Conjugue : « She (see) » avec have/has + V3.",
+      "etapes": [
+        "Le sujet est « She » : on utilise has.",
+        "Le verbe est « see », un verbe irrégulier.",
+        "Son prétérit (V2) est saw, mais on a besoin du V3.",
+        "Le participe passé (V3) de see est seen.",
+        "On assemble : « She has seen ».",
+        "On ne dit jamais « She has saw » (ça, c'est le V2)."
+      ]
+    },
+    "astuce": "Mikasa : « V3, c'est la 3e colonne du tableau (go – went – gone). Ne confonds pas le V2 (prétérit) et le V3 (participe passé) ! « I have gone », jamais « I have went ». Et n'oublie pas : has pour he/she/it. »",
+    "erreurs": [
+      "Utiliser le V2 au lieu du V3 (« have went »).",
+      "Employer have au lieu de has avec he/she/it.",
+      "Oublier l'auxiliaire have ou has.",
+      "Oublier le « -ed » du V3 régulier.",
+      "Mal mémoriser un V3 irrégulier.",
+      "Changer le V3 selon le sujet.",
+      "Ajouter un « -s » au participe passé.",
+      "Confondre la 2e et la 3e colonne du tableau."
+    ]
+  },
+  "annie-leonhart-reported-speech-recul-des-temps": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Annie Leonhart",
+    "manga": "L'Attaque des Titans",
+    "notion": "Le reported speech : recul des temps",
+    "explication": "Le reported speech, ou discours indirect, sert à rapporter les paroles de quelqu'un sans les citer mot à mot. Au lieu de dire « He said: \"I am tired\" » (discours direct), on dit « He said that he was tired » (discours indirect). Le passage au discours indirect entraîne plusieurs changements, dont le plus important est le recul des temps, aussi appelé « backshift ». Quand le verbe introducteur est au passé (said, told), le temps de la phrase rapportée recule d'un cran vers le passé. Ainsi, le présent devient du prétérit (am devient was), le Past Simple devient du Present Perfect ou du past perfect, will devient would, can devient could, et must devient had to. D'autres éléments changent aussi : les pronoms s'adaptent au nouveau locuteur (I peut devenir he), et certains marqueurs de temps évoluent (now devient then, today devient that day). On utilise souvent « that » pour introduire la phrase rapportée, mais il peut être omis. En 3ème, on apprend surtout à appliquer le recul des temps et à adapter les pronoms. Bien maîtriser le reported speech permet de rapporter une conversation, de citer une personne et de raconter ce qui a été dit, des compétences très utiles à l'écrit comme à l'oral. S'entraîner à transformer de courtes phrases du discours direct au discours indirect, en pensant d'abord au recul du temps puis aux pronoms, rend cette transformation progressivement automatique et naturelle.",
+    "definitions": [
+      {
+        "terme": "Reported speech",
+        "sens": "le discours indirect (rapporter des paroles)"
+      },
+      {
+        "terme": "Discours direct",
+        "sens": "les paroles citées entre guillemets"
+      },
+      {
+        "terme": "Recul des temps",
+        "sens": "le « backshift » : le temps recule d'un cran"
+      },
+      {
+        "terme": "say / tell",
+        "sens": "les verbes qui introduisent le discours rapporté"
+      },
+      {
+        "terme": "présent → prétérit",
+        "sens": "am devient was"
+      },
+      {
+        "terme": "will → would",
+        "sens": "le futur recule en would"
+      },
+      {
+        "terme": "can → could",
+        "sens": "le modal recule en could"
+      },
+      {
+        "terme": "Changement de pronom",
+        "sens": "I peut devenir he / she"
+      }
+    ],
+    "methode": [
+      "Repère le verbe introducteur (said, told) au passé.",
+      "Identifie le temps de la phrase citée.",
+      "Fais reculer ce temps d'un cran vers le passé.",
+      "présent → prétérit (am → was), will → would, can → could.",
+      "Adapte les pronoms au nouveau locuteur.",
+      "Adapte les marqueurs de temps (now → then).",
+      "Introduis la phrase rapportée avec « that » (souvent facultatif).",
+      "Relis pour vérifier la cohérence des temps et pronoms."
+    ],
+    "exemple": {
+      "enonce": "Rapporte au discours indirect : « He said: \"I am tired\" ».",
+      "etapes": [
+        "Le verbe introducteur est « said », au passé.",
+        "La phrase citée « I am tired » est au présent.",
+        "Le présent recule d'un cran : am devient was.",
+        "Le pronom « I » s'adapte au locuteur : il devient he.",
+        "On introduit avec « that » (facultatif).",
+        "On obtient : « He said that he was tired »."
+      ]
+    },
+    "astuce": "Annie : « Au discours indirect, chaque temps RECULE d'un cran : am → was, will → would, can → could. Pense aussi à adapter les pronoms (I → he) et certains repères de temps (now → then). »",
+    "erreurs": [
+      "Oublier de faire reculer le temps (backshift).",
+      "Ne pas adapter les pronoms au nouveau locuteur.",
+      "Laisser will ou can au lieu de would ou could.",
+      "Oublier d'adapter les marqueurs de temps (now → then).",
+      "Garder les guillemets du discours direct.",
+      "Confondre say et tell dans la construction.",
+      "Mal accorder le pronom et le verbe.",
+      "Reculer le temps quand l'introducteur est au présent."
+    ]
+  },
+  "armin-arlert-zero-first-conditional": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Armin Arlert",
+    "manga": "L'Attaque des Titans",
+    "notion": "Le Zero et le First Conditional",
+    "explication": "Les phrases conditionnelles relient une condition (introduite par « if », si) à une conséquence. En 3ème, on étudie deux types proches mais distincts. Le Zero Conditional exprime une vérité générale ou un fait scientifique, toujours vrai : « If you heat ice, it melts » (si on chauffe la glace, elle fond). Sa construction est : if + présent, puis présent. Le First Conditional, lui, exprime une condition réelle et probable dans le futur : « If it rains, I will stay home » (s'il pleut, je resterai à la maison). Sa construction est : if + présent, puis will + verbe de base. La grande règle à retenir, et le piège classique, est qu'on ne met JAMAIS « will » dans la proposition introduite par « if ». On dit « If it rains », et jamais « If it will rain ». Le futur ne s'exprime que dans l'autre partie de la phrase. La différence entre les deux conditionnels tient au sens : le Zero décrit ce qui est toujours vrai, le First décrit une possibilité future précise. On peut aussi inverser l'ordre des deux propositions sans changer le sens. En 3ème, bien maîtriser ces deux conditionnels, et la règle du « pas de will après if », est essentiel pour exprimer des conditions correctement.",
+    "definitions": [
+      {
+        "terme": "Conditionnel",
+        "sens": "une phrase avec une condition (if)"
+      },
+      {
+        "terme": "if",
+        "sens": "« si », introduit la condition"
+      },
+      {
+        "terme": "Zero Conditional",
+        "sens": "une vérité générale toujours vraie"
+      },
+      {
+        "terme": "First Conditional",
+        "sens": "une condition réelle et future"
+      },
+      {
+        "terme": "Zero : structure",
+        "sens": "if + présent, présent"
+      },
+      {
+        "terme": "First : structure",
+        "sens": "if + présent, will + base"
+      },
+      {
+        "terme": "Pas de will après if",
+        "sens": "la règle d'or à respecter"
+      },
+      {
+        "terme": "Vérité générale",
+        "sens": "un fait toujours vrai (la glace fond)"
+      }
+    ],
+    "methode": [
+      "Repère la condition introduite par « if ».",
+      "Demande-toi : vérité générale ou possibilité future ?",
+      "Vérité générale → Zero : if + présent, présent.",
+      "Possibilité future → First : if + présent, will + base.",
+      "Ne mets jamais « will » dans la proposition en « if ».",
+      "Place le futur uniquement dans l'autre partie.",
+      "Tu peux inverser l'ordre des deux propositions.",
+      "Vérifie qu'il n'y a pas de « will » après « if »."
+    ],
+    "exemple": {
+      "enonce": "Complète : « If it rains, I ___ (stay) home ».",
+      "etapes": [
+        "La phrase exprime une possibilité future : c'est le First Conditional.",
+        "Structure : if + présent, puis will + verbe de base.",
+        "La condition « If it rains » est au présent : on n'y met pas will.",
+        "Dans l'autre partie, on emploie will + base : will stay.",
+        "On obtient : « If it rains, I will stay home ».",
+        "On ne dit jamais « If it will rain »."
+      ]
+    },
+    "astuce": "Armin : « La règle d'or absolue : JAMAIS de « will » après « if » ! On dit « If it rains, I will stay », et non « If it will rain ». Le futur va dans l'autre partie de la phrase, jamais dans la condition. »",
+    "erreurs": [
+      "Mettre « will » dans la proposition en « if ».",
+      "Confondre le Zero et le First Conditional.",
+      "Oublier « will » dans la partie conséquence du First.",
+      "Mettre les deux propositions au futur.",
+      "Ajouter « to » après will.",
+      "Oublier le présent dans la proposition en « if ».",
+      "Mal placer la virgule entre les deux propositions.",
+      "Employer un autre temps que le présent après « if »."
+    ]
+  },
+  "hange-zoe-obligation-et-interdiction": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Hange Zoë",
+    "manga": "L'Attaque des Titans",
+    "notion": "L'obligation et l'interdiction",
+    "explication": "Pour exprimer l'obligation et l'interdiction, l'anglais dispose de plusieurs outils qu'il faut bien distinguer. L'obligation se dit avec must ou avec have to, suivis du verbe à sa forme de base : « You must work » ou « You have to work » (tu dois travailler). Must exprime souvent une obligation ressentie ou une règle, tandis que have to exprime une obligation extérieure ; au quotidien, les deux sont très proches. L'interdiction se dit avec mustn't (la contraction de must not) : « You mustn't smoke here » (tu ne dois pas / il est interdit de fumer ici). Le piège le plus important de cette leçon concerne la différence entre mustn't et don't have to. Ces deux formes semblent proches, mais elles ont un sens opposé. Mustn't exprime une interdiction : c'est défendu. Don't have to exprime au contraire une absence d'obligation : ce n'est pas nécessaire, mais c'est permis. Ainsi, « You don't have to come » signifie « tu n'es pas obligé de venir » (mais tu peux), alors que « You mustn't come » signifie « tu ne dois pas venir » (c'est interdit). En 3ème, bien distinguer ces nuances est essentiel pour exprimer correctement règles, obligations et interdictions. S'entraîner à formuler des règles de la vie courante, en choisissant à chaque fois entre obligation, interdiction et absence d'obligation, est un excellent moyen de fixer ces nuances et d'éviter le piège entre mustn't et don't have to.",
+    "definitions": [
+      {
+        "terme": "Obligation",
+        "sens": "ce que l'on doit faire"
+      },
+      {
+        "terme": "Interdiction",
+        "sens": "ce qui est défendu"
+      },
+      {
+        "terme": "must",
+        "sens": "devoir (obligation, règle)"
+      },
+      {
+        "terme": "have to",
+        "sens": "devoir (obligation extérieure)"
+      },
+      {
+        "terme": "mustn't",
+        "sens": "must not : interdiction (c'est défendu)"
+      },
+      {
+        "terme": "don't have to",
+        "sens": "absence d'obligation (pas nécessaire)"
+      },
+      {
+        "terme": "Forme de base",
+        "sens": "le verbe sans « to » après must"
+      },
+      {
+        "terme": "mustn't ≠ don't have to",
+        "sens": "interdit ≠ pas obligé"
+      }
+    ],
+    "methode": [
+      "Identifie le sens : obligation, interdiction ou absence d'obligation.",
+      "Pour une obligation, utilise must ou have to + verbe de base.",
+      "Pour une interdiction, utilise mustn't + verbe de base.",
+      "Pour une absence d'obligation, utilise don't have to.",
+      "Ne confonds jamais mustn't (interdit) et don't have to (pas obligé).",
+      "Après must, n'ajoute ni « to » ni « -s ».",
+      "Avec have to, conjugue : he has to.",
+      "Vérifie que le sens correspond bien à la forme choisie."
+    ],
+    "exemple": {
+      "enonce": "Complète (interdiction) : « You ___ smoke here ».",
+      "etapes": [
+        "Le sens recherché est une interdiction : c'est défendu.",
+        "L'interdiction se dit avec mustn't.",
+        "On place mustn't après le sujet : You mustn't…",
+        "On ajoute le verbe à sa forme de base : smoke.",
+        "On obtient : « You mustn't smoke here ».",
+        "« You don't have to smoke » signifierait « tu n'es pas obligé »."
+      ]
+    },
+    "astuce": "Hange : « Le piège n°1 : mustn't ≠ don't have to ! « You mustn't » = c'est INTERDIT. « You don't have to » = tu n'es PAS OBLIGÉ (mais tu peux). Sens opposés pour des formes qui se ressemblent ! »",
+    "erreurs": [
+      "Confondre mustn't (interdit) et don't have to (pas obligé).",
+      "Ajouter « to » après must (« must to work »).",
+      "Ajouter « -s » à must (« he musts »).",
+      "Oublier de conjuguer have to (« he have to »).",
+      "Mettre le verbe au passé ou en -ing après must.",
+      "Confondre must (obligation) et can (capacité).",
+      "Mal contracter mustn't.",
+      "Employer mustn't pour une simple absence d'obligation."
+    ]
+  },
+  "reiner-braun-comparatifs-et-superlatifs": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Reiner Braun",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les comparatifs et superlatifs",
+    "explication": "Le comparatif et le superlatif permettent de comparer des éléments, et il est utile de les revoir ensemble. Le comparatif de supériorité compare deux éléments : on ajoute « -er » + than aux adjectifs courts (taller than, plus grand que), et on met « more » + adjectif + than aux adjectifs longs (more interesting than, plus intéressant que). Le mot « than » (que) est indispensable. Le superlatif, lui, désigne l'élément qui possède le plus une qualité dans un groupe : on ajoute « the …-est » aux adjectifs courts (the tallest, le plus grand), et « the most » + adjectif aux adjectifs longs (the most interesting). L'article « the » est obligatoire devant le superlatif. La règle de longueur est donc la même pour les deux : terminaison pour les adjectifs courts, mot ajouté (more / the most) pour les adjectifs longs. Il faut connaître quelques formes irrégulières, identiques au comparatif et au superlatif : good devient better puis the best, et bad devient worse puis the worst. On peut aussi exprimer l'égalité avec la structure « as … as » (aussi … que). En 3ème, on consolide ces structures et on évite les erreurs classiques, comme cumuler « more » et « -er ». Bien maîtriser comparatifs et superlatifs permet d'exprimer des comparaisons et des classements précis, très utiles au Brevet.",
+    "definitions": [
+      {
+        "terme": "Comparatif",
+        "sens": "compare deux éléments"
+      },
+      {
+        "terme": "Superlatif",
+        "sens": "désigne le plus d'une qualité dans un groupe"
+      },
+      {
+        "terme": "-er than",
+        "sens": "comparatif des adjectifs courts (taller than)"
+      },
+      {
+        "terme": "more … than",
+        "sens": "comparatif des adjectifs longs"
+      },
+      {
+        "terme": "the …-est",
+        "sens": "superlatif des adjectifs courts (the tallest)"
+      },
+      {
+        "terme": "the most",
+        "sens": "superlatif des adjectifs longs"
+      },
+      {
+        "terme": "Irréguliers",
+        "sens": "good → better → the best ; bad → worse → the worst"
+      },
+      {
+        "terme": "as … as",
+        "sens": "aussi … que (égalité)"
+      }
+    ],
+    "methode": [
+      "Identifie si tu compares deux éléments ou un groupe.",
+      "Deux éléments → comparatif ; un groupe → superlatif.",
+      "Compte les syllabes de l'adjectif : court ou long.",
+      "Comparatif court : -er than ; long : more … than.",
+      "Superlatif court : the …-est ; long : the most ….",
+      "N'oublie ni « than » (comparatif) ni « the » (superlatif).",
+      "Apprends les irréguliers : good/better/best, bad/worse/worst.",
+      "Ne cumule jamais « more » et « -er »."
+    ],
+    "exemple": {
+      "enonce": "Donne le comparatif et le superlatif de « good ».",
+      "etapes": [
+        "« good » (bon) est un adjectif irrégulier.",
+        "On ne dit jamais « gooder » ni « the goodest ».",
+        "Son comparatif de supériorité est better (meilleur).",
+        "Son superlatif est the best (le meilleur).",
+        "Exemple comparatif : « This is better than that ».",
+        "Exemple superlatif : « This is the best »."
+      ]
+    },
+    "astuce": "Reiner : « Comparatif = comparer DEUX éléments (-er than / more … than). Superlatif = le TOP d'un groupe (the …-est / the most). Et n'oublie jamais : « than » pour comparer, « the » pour le superlatif. Jamais « more taller » ! »",
+    "erreurs": [
+      "Cumuler les deux formes (« more taller », « the most tallest »).",
+      "Oublier « than » au comparatif.",
+      "Oublier « the » au superlatif.",
+      "Mettre « more » ou « the most » devant un adjectif court.",
+      "Ajouter « -er » ou « -est » à un adjectif long.",
+      "Ignorer les irréguliers (« gooder », « baddest »).",
+      "Confondre comparatif et superlatif.",
+      "Oublier de doubler la consonne (« biger »)."
+    ]
+  },
+  "erwin-smith-school-life": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Erwin Smith",
+    "manga": "L'Attaque des Titans",
+    "notion": "School life",
+    "explication": "Le thème « school life » (la vie scolaire) regroupe le vocabulaire et les repères culturels liés à l'école dans les pays anglophones. Connaître ce vocabulaire permet de parler de son quotidien d'élève et de comprendre des documents sur le système scolaire britannique ou américain. Parmi les mots essentiels : a subject (une matière), the timetable (l'emploi du temps), homework (les devoirs), a break (une récréation), a classmate (un camarade de classe), the headteacher (le directeur ou la directrice), et a uniform (un uniforme). Le système scolaire britannique présente quelques différences avec le système français qu'il est intéressant de connaître. Au Royaume-Uni, le port de l'uniforme (school uniform) est très répandu, dès l'école primaire. L'année scolaire y est organisée en trois grands trimestres, appelés terms. À la fin de la scolarité obligatoire, les élèves passent des examens importants, les GCSE, un peu comme une étape menant vers le Brevet et au-delà. Le vocabulaire de la vie scolaire se travaille bien en décrivant sa propre journée, en comparant son école avec une école britannique, ou en parlant de ses matières préférées. En 3ème, maîtriser ce thème permet de s'exprimer sur un sujet familier, fréquent aux examens, et d'enrichir sa culture sur le monde anglophone. On peut enrichir ce thème en parlant de sa matière préférée, de son emploi du temps ou de ses activités après les cours. Comparer concrètement une journée d'école en France et au Royaume-Uni rend l'apprentissage plus vivant et plus mémorable. Ce sujet, proche du quotidien des élèves, revient très souvent aux examens, à l'écrit comme à l'oral, ce qui en fait un thème à travailler en priorité.",
+    "definitions": [
+      {
+        "terme": "school life",
+        "sens": "la vie scolaire"
+      },
+      {
+        "terme": "a subject",
+        "sens": "une matière (maths, history…)"
+      },
+      {
+        "terme": "the timetable",
+        "sens": "l'emploi du temps"
+      },
+      {
+        "terme": "homework",
+        "sens": "les devoirs"
+      },
+      {
+        "terme": "a break",
+        "sens": "une récréation, une pause"
+      },
+      {
+        "terme": "a classmate",
+        "sens": "un camarade de classe"
+      },
+      {
+        "terme": "the headteacher",
+        "sens": "le directeur, la directrice"
+      },
+      {
+        "terme": "a uniform",
+        "sens": "un uniforme"
+      },
+      {
+        "terme": "a term",
+        "sens": "un trimestre scolaire"
+      },
+      {
+        "terme": "GCSE",
+        "sens": "examens de fin de scolarité au Royaume-Uni"
+      }
+    ],
+    "methode": [
+      "Apprends le vocabulaire de base de l'école.",
+      "Classe les mots par thèmes : matières, lieux, personnes, rythme.",
+      "Décris ta propre journée d'élève en anglais.",
+      "Parle de tes matières préférées (My favourite subject is…).",
+      "Compare ton école avec une école britannique.",
+      "Repère les différences culturelles (uniforme, terms, GCSE).",
+      "Associe chaque mot à une réalité concrète de ta vie scolaire.",
+      "Teste-toi en cachant la traduction française."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Mon emploi du temps est chargé » en anglais ?",
+      "etapes": [
+        "« Mon » se dit my (invariable).",
+        "« Emploi du temps » se dit timetable.",
+        "« Est » se dit is (verbe to be).",
+        "« Chargé / bien rempli » peut se dire busy.",
+        "On assemble : « My timetable is busy ».",
+        "On utilise le vocabulaire scolaire dans une phrase simple."
+      ]
+    },
+    "astuce": "Erwin : « Repère bien les différences culturelles : au Royaume-Uni, l'uniforme (school uniform) est courant, l'année se divise en trois terms, et la scolarité se termine par les GCSE. De bons éléments de culture pour le Brevet ! »",
+    "erreurs": [
+      "Confondre a subject (matière) et a topic (sujet).",
+      "Mal traduire timetable (ce n'est pas « emploi »).",
+      "Mettre homework au pluriel (c'est indénombrable).",
+      "Confondre headteacher et teacher.",
+      "Oublier que l'uniforme est courant au Royaume-Uni.",
+      "Confondre term (trimestre) et année.",
+      "Traduire le vocabulaire mot à mot sans le mémoriser.",
+      "Mal prononcer le « ea » de break."
+    ]
+  },
+  "levi-ackerman-united-kingdom": {
+    "matiere": "anglais",
+    "niveau": "3eme",
+    "hero": "Levi Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "United Kingdom",
+    "explication": "Le Royaume-Uni, en anglais the United Kingdom (souvent abrégé en UK), est un pays dont il faut bien comprendre la composition, car on le confond souvent avec l'Angleterre. Le Royaume-Uni est en réalité formé de quatre nations : England (l'Angleterre), Scotland (l'Écosse), Wales (le pays de Galles) et Northern Ireland (l'Irlande du Nord). L'Angleterre n'est donc qu'une de ces quatre nations, et non le pays tout entier : dire « England » pour parler du Royaume-Uni est une erreur fréquente. Il existe aussi une nuance avec « Great Britain » (la Grande-Bretagne), qui désigne seulement l'île regroupant l'Angleterre, l'Écosse et le pays de Galles, sans l'Irlande du Nord. La capitale du Royaume-Uni est London (Londres), une ville mondialement connue. Le drapeau britannique s'appelle l'Union Jack ; il combine les symboles de plusieurs nations. Le Royaume-Uni est une monarchie : il a un roi ou une reine, dont le rôle est aujourd'hui surtout symbolique, le pouvoir réel appartenant au Parlement. En 3ème, connaître ces repères de géographie et de culture est utile pour comprendre des documents authentiques et pour les épreuves du Brevet. Bien distinguer UK, Great Britain et England est la base de cette culture du monde anglophone. Au-delà de la géographie, le Royaume-Uni possède une histoire et des traditions riches, que l'on découvre peu à peu : la monarchie, le Parlement de Westminster, ou encore des symboles connus comme les célèbres bus rouges de Londres. Chaque nation garde par ailleurs sa propre identité, ses symboles et parfois sa langue régionale, comme le gallois au pays de Galles. Bien connaître ces repères aide à comprendre des documents authentiques, des cartes ou des textes, et à éviter les confusions les plus fréquentes. Ce thème de civilisation revient régulièrement aux examens et enrichit la culture générale sur le monde anglophone, utile bien au-delà du cours d'anglais.",
+    "definitions": [
+      {
+        "terme": "United Kingdom (UK)",
+        "sens": "le Royaume-Uni (4 nations)"
+      },
+      {
+        "terme": "Great Britain",
+        "sens": "la Grande-Bretagne (l'île : Angleterre, Écosse, Galles)"
+      },
+      {
+        "terme": "England",
+        "sens": "l'Angleterre (une seule des 4 nations)"
+      },
+      {
+        "terme": "Scotland",
+        "sens": "l'Écosse"
+      },
+      {
+        "terme": "Wales",
+        "sens": "le pays de Galles"
+      },
+      {
+        "terme": "Northern Ireland",
+        "sens": "l'Irlande du Nord"
+      },
+      {
+        "terme": "London",
+        "sens": "Londres, la capitale du Royaume-Uni"
+      },
+      {
+        "terme": "the Union Jack",
+        "sens": "le drapeau du Royaume-Uni"
+      },
+      {
+        "terme": "Monarchy",
+        "sens": "une monarchie (un roi ou une reine)"
+      }
+    ],
+    "methode": [
+      "Retiens que le Royaume-Uni regroupe quatre nations.",
+      "Nomme-les : England, Scotland, Wales, Northern Ireland.",
+      "Distingue UK (4 nations) et England (une seule nation).",
+      "Distingue aussi Great Britain (l'île, sans l'Irlande du Nord).",
+      "Situe la capitale : London.",
+      "Reconnais le drapeau : l'Union Jack.",
+      "Retiens que le UK est une monarchie.",
+      "Teste-toi en plaçant les nations sur une carte."
+    ],
+    "exemple": {
+      "enonce": "De quelles nations le Royaume-Uni est-il composé ?",
+      "etapes": [
+        "Le Royaume-Uni (United Kingdom) regroupe quatre nations.",
+        "La première est England (l'Angleterre).",
+        "La deuxième est Scotland (l'Écosse).",
+        "La troisième est Wales (le pays de Galles).",
+        "La quatrième est Northern Ireland (l'Irlande du Nord).",
+        "L'Angleterre n'est donc qu'une partie du Royaume-Uni."
+      ]
+    },
+    "astuce": "Levi : « UK ≠ England ! Le Royaume-Uni rassemble QUATRE nations (Angleterre, Écosse, Galles, Irlande du Nord). Et attention à « Great Britain », qui ne désigne que l'île, sans l'Irlande du Nord. »",
+    "erreurs": [
+      "Confondre United Kingdom et England.",
+      "Croire que l'Angleterre est le pays tout entier.",
+      "Confondre Great Britain et United Kingdom.",
+      "Inclure l'Irlande du Nord dans Great Britain.",
+      "Oublier l'une des quatre nations.",
+      "Se tromper de capitale.",
+      "Confondre l'Union Jack avec un autre drapeau.",
+      "Ignorer que le UK est une monarchie."
+    ]
+  }
+}
