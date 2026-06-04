@@ -1,0 +1,594 @@
+{
+  "naruto-uzumaki-regles-de-calcul": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les règles de calcul (puissances)",
+    "explication": "En 4ème, les règles de calcul concernent surtout les puissances, un outil pour écrire et manipuler les produits d'un même nombre. La puissance aⁿ signifie que l'on multiplie le nombre a par lui-même n fois : par exemple, 2⁴ = 2 × 2 × 2 × 2 = 16. Le nombre a est la base, et n est l'exposant. Plusieurs règles permettent de calculer rapidement : pour multiplier deux puissances d'un même nombre, on additionne les exposants (aᵐ × aⁿ = aᵐ⁺ⁿ) ; pour les diviser, on soustrait les exposants ; pour élever une puissance à une puissance, on multiplie les exposants. Il faut aussi retenir que tout nombre non nul élevé à la puissance 0 vaut 1. Les puissances de 10 sont particulièrement utiles : elles servent à écrire les très grands et les très petits nombres en notation scientifique, sous la forme d'un nombre compris entre 1 et 10 multiplié par une puissance de 10. Bien maîtriser ces règles évite des calculs longs et prépare le travail scientifique des années suivantes. C'est une notion centrale de la 4ème, qui revient ensuite dans de nombreux chapitres et au Brevet. On retrouve les puissances dans de nombreux domaines : les aires en unités carrées, les volumes en unités cubiques, ou encore les très grandes distances en astronomie écrites en notation scientifique.",
+    "definitions": [
+      {
+        "terme": "Puissance",
+        "sens": "aⁿ : le produit de a par lui-même, n fois."
+      },
+      {
+        "terme": "Base",
+        "sens": "Le nombre a que l'on multiplie."
+      },
+      {
+        "terme": "Exposant",
+        "sens": "Le nombre n, qui indique combien de fois on multiplie."
+      },
+      {
+        "terme": "Carré",
+        "sens": "Une puissance d'exposant 2, notée a²."
+      },
+      {
+        "terme": "Cube",
+        "sens": "Une puissance d'exposant 3, notée a³."
+      },
+      {
+        "terme": "Puissance de 10",
+        "sens": "10ⁿ, utile pour les très grands et très petits nombres."
+      },
+      {
+        "terme": "Notation scientifique",
+        "sens": "Un nombre entre 1 et 10 multiplié par une puissance de 10."
+      },
+      {
+        "terme": "Exposant nul",
+        "sens": "Tout nombre non nul à la puissance 0 vaut 1."
+      }
+    ],
+    "methode": [
+      "Repère la base et l'exposant de chaque puissance.",
+      "Pour multiplier deux puissances d'une même base, additionne les exposants.",
+      "Pour les diviser, soustrais les exposants.",
+      "Pour une puissance de puissance, multiplie les exposants.",
+      "Rappelle-toi que a⁰ = 1 pour tout nombre a non nul.",
+      "Pour la notation scientifique, écris d'abord un nombre entre 1 et 10.",
+      "Multiplie-le par la puissance de 10 adaptée.",
+      "Vérifie en comptant les déplacements de la virgule."
+    ],
+    "exemple": {
+      "enonce": "Calcule 2³ × 2⁴ en utilisant les règles des puissances.",
+      "etapes": [
+        "Les deux puissances ont la même base : 2.",
+        "On multiplie deux puissances d'une même base.",
+        "La règle dit : on additionne les exposants.",
+        "Donc 2³ × 2⁴ = 2³⁺⁴.",
+        "On additionne : 3 + 4 = 7, le résultat est 2⁷.",
+        "On peut calculer : 2⁷ = 128."
+      ]
+    },
+    "astuce": "Naruto : « Le piège classique : pour multiplier des puissances d'un même nombre, on ADDITIONNE les exposants, on ne les multiplie pas ! 2³ × 2⁴ = 2⁷, et surtout pas 2¹². Récite-toi la règle avant chaque calcul, et applique-la seulement si la base est la même. »",
+    "erreurs": [
+      "Multiplier les exposants au lieu de les additionner dans un produit.",
+      "Appliquer les règles à des bases différentes.",
+      "Confondre 2³ (= 8) et 2 × 3 (= 6).",
+      "Oublier que a⁰ = 1.",
+      "Se tromper de signe d'exposant lors d'une division.",
+      "Mal placer la virgule en notation scientifique.",
+      "Écrire un nombre en dehors de l'intervalle [1 ; 10[ en notation scientifique.",
+      "Confondre une puissance et une simple multiplication."
+    ]
+  },
+  "sakura-haruno-methode-de-resolution": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Sakura Haruno",
+    "manga": "Naruto",
+    "notion": "La méthode de résolution (équations)",
+    "explication": "Résoudre une équation, c'est trouver la valeur de l'inconnue (souvent x) qui rend l'égalité vraie. En 4ème, on apprend à résoudre les équations du premier degré, c'est-à-dire celles où l'inconnue n'apparaît qu'à la puissance 1. La méthode repose sur un principe fondamental : on peut effectuer la même opération des deux côtés du signe égal sans changer les solutions. On ajoute, soustrait, multiplie ou divise des deux côtés à la fois, pour isoler progressivement l'inconnue. L'objectif est d'arriver à une écriture du type x = nombre. On commence généralement par regrouper les termes contenant l'inconnue d'un côté et les nombres de l'autre, puis on simplifie. Lorsque l'équation contient des fractions, on peut multiplier toute l'équation par un même dénominateur pour s'en débarrasser. Une fois la solution trouvée, il est essentiel de la vérifier en la remplaçant dans l'équation de départ : si les deux côtés sont égaux, la solution est correcte. Savoir résoudre une équation est indispensable pour modéliser une foule de problèmes concrets, où une quantité inconnue doit satisfaire une condition. C'est une compétence clé de la 4ème, qui revient sans cesse au collège. Mettre un problème en équation est une compétence puissante : on traduit un énoncé en langage mathématique, on résout, puis on revient au problème pour interpréter la solution dans son contexte.",
+    "definitions": [
+      {
+        "terme": "Équation",
+        "sens": "Une égalité contenant une inconnue à trouver."
+      },
+      {
+        "terme": "Inconnue",
+        "sens": "La lettre dont on cherche la valeur (souvent x)."
+      },
+      {
+        "terme": "Premier degré",
+        "sens": "L'inconnue apparaît seulement à la puissance 1."
+      },
+      {
+        "terme": "Membre",
+        "sens": "Chaque côté du signe égal (gauche et droit)."
+      },
+      {
+        "terme": "Isoler l'inconnue",
+        "sens": "La laisser seule d'un côté de l'égalité."
+      },
+      {
+        "terme": "Solution",
+        "sens": "La valeur de l'inconnue qui rend l'égalité vraie."
+      },
+      {
+        "terme": "Opération inverse",
+        "sens": "Celle qui annule une autre : + et −, × et ÷."
+      },
+      {
+        "terme": "Vérification",
+        "sens": "Remplacer la solution dans l'équation de départ."
+      }
+    ],
+    "methode": [
+      "Repère le membre de gauche et le membre de droite.",
+      "Regroupe les termes en x d'un côté, les nombres de l'autre.",
+      "Pour cela, effectue la même opération des deux côtés.",
+      "S'il y a des fractions, multiplie toute l'équation par le dénominateur.",
+      "Simplifie jusqu'à obtenir une écriture du type ax = b.",
+      "Divise les deux côtés par le coefficient de x.",
+      "Tu obtiens x = solution.",
+      "Vérifie en remplaçant x dans l'équation de départ."
+    ],
+    "exemple": {
+      "enonce": "Résous l'équation 2x + 3 = 11.",
+      "etapes": [
+        "On veut isoler x.",
+        "On soustrait 3 des deux côtés : 2x + 3 − 3 = 11 − 3.",
+        "On obtient 2x = 8.",
+        "On divise les deux côtés par 2 : 2x ÷ 2 = 8 ÷ 2.",
+        "On obtient x = 4.",
+        "Vérification : 2 × 4 + 3 = 11, c'est correct."
+      ]
+    },
+    "astuce": "Sakura : « La règle d'or : tout ce que tu fais d'un côté du signe égal, fais-le AUSSI de l'autre côté. L'équation reste équilibrée comme une balance. Et termine toujours par la vérification : remplace ta solution dans l'équation de départ, c'est ta sécurité anti-erreur ! »",
+    "erreurs": [
+      "N'effectuer une opération que d'un seul côté de l'égalité.",
+      "Se tromper de signe en déplaçant un terme.",
+      "Oublier de diviser par le coefficient de x à la fin.",
+      "Mal gérer les fractions en oubliant de multiplier tous les termes.",
+      "Confondre une équation et une simple expression.",
+      "Oublier la vérification de la solution.",
+      "Diviser par x au lieu d'isoler x.",
+      "Faire une erreur de calcul en regroupant les termes."
+    ]
+  },
+  "kakashi-hatake-reciproque-de-pythagore": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Kakashi Hatake",
+    "manga": "Naruto",
+    "notion": "La réciproque de Pythagore",
+    "explication": "La réciproque du théorème de Pythagore sert à démontrer qu'un triangle est rectangle, alors que le théorème direct sert à calculer une longueur. Le principe est le suivant : dans un triangle, on repère le côté le plus long, puis on calcule séparément le carré de ce côté d'une part, et la somme des carrés des deux autres côtés d'autre part. Si ces deux résultats sont égaux, alors le triangle est rectangle, et l'angle droit se trouve face au côté le plus long. S'ils sont différents, le triangle n'est pas rectangle. Cette réciproque est très utile pour justifier la présence d'un angle droit sans avoir à le mesurer. En 4ème, on apprend aussi à calculer la distance entre deux points dans un repère, à partir de leurs coordonnées : on applique Pythagore au triangle rectangle formé par les écarts horizontaux et verticaux, et la formule de la distance en découle directement. Bien distinguer le théorème direct (calculer une longueur) et sa réciproque (prouver un angle droit) est essentiel : c'est une confusion très fréquente. Ces notions reviennent régulièrement, au collège comme au Brevet. Cette propriété est aussi utilisée par les artisans et les maçons pour vérifier qu'un angle est bien droit, par exemple grâce à la fameuse règle du triangle 3-4-5.",
+    "definitions": [
+      {
+        "terme": "Théorème de Pythagore",
+        "sens": "La relation entre les côtés d'un triangle rectangle."
+      },
+      {
+        "terme": "Réciproque",
+        "sens": "La propriété qui sert à prouver qu'un triangle est rectangle."
+      },
+      {
+        "terme": "Hypoténuse",
+        "sens": "Le côté le plus long, en face de l'angle droit."
+      },
+      {
+        "terme": "Carré d'un côté",
+        "sens": "La longueur du côté multipliée par elle-même."
+      },
+      {
+        "terme": "Triangle rectangle",
+        "sens": "Un triangle qui possède un angle droit."
+      },
+      {
+        "terme": "Repère",
+        "sens": "Les deux axes gradués servant à situer des points."
+      },
+      {
+        "terme": "Coordonnées",
+        "sens": "Les deux nombres qui situent un point : (x ; y)."
+      },
+      {
+        "terme": "Distance entre deux points",
+        "sens": "La longueur du segment qui relie ces deux points."
+      }
+    ],
+    "methode": [
+      "Repère le côté le plus long du triangle.",
+      "Calcule le carré de ce côté le plus long.",
+      "Calcule séparément la somme des carrés des deux autres côtés.",
+      "Compare les deux résultats obtenus.",
+      "S'ils sont égaux, le triangle est rectangle (angle droit face au plus long côté).",
+      "S'ils sont différents, le triangle n'est pas rectangle.",
+      "Pour une distance dans un repère, calcule les écarts en x et en y.",
+      "Applique Pythagore : distance = racine de (écart x² + écart y²)."
+    ],
+    "exemple": {
+      "enonce": "Un triangle a pour côtés 3 cm, 4 cm et 5 cm. Est-il rectangle ?",
+      "etapes": [
+        "Le côté le plus long est 5 cm.",
+        "On calcule son carré : 5² = 25.",
+        "On calcule la somme des carrés des deux autres : 3² + 4² = 9 + 16 = 25.",
+        "On compare les deux résultats : 25 = 25.",
+        "Les deux résultats sont égaux.",
+        "D'après la réciproque de Pythagore, le triangle est donc rectangle."
+      ]
+    },
+    "astuce": "Kakashi : « Ne confonds jamais le théorème et sa réciproque ! Le théorème direct CALCULE une longueur dans un triangle déjà rectangle ; la réciproque PROUVE qu'un triangle est rectangle. Compare toujours le carré du plus grand côté à la somme des carrés des deux autres. »",
+    "erreurs": [
+      "Confondre le théorème direct et sa réciproque.",
+      "Ne pas prendre le côté le plus long comme référence.",
+      "Comparer les longueurs au lieu de comparer leurs carrés.",
+      "Conclure « rectangle » alors que les résultats sont différents.",
+      "Oublier la racine carrée dans le calcul d'une distance.",
+      "Se tromper dans les écarts de coordonnées.",
+      "Oublier l'unité dans le résultat.",
+      "Mélanger les coordonnées x et y."
+    ]
+  },
+  "rock-lee-soh-cah-toa": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Rock Lee",
+    "manga": "Naruto",
+    "notion": "SOH-CAH-TOA (la trigonométrie)",
+    "explication": "SOH-CAH-TOA est un moyen mnémotechnique pour retenir les trois rapports de la trigonométrie dans un triangle rectangle : ils relient un angle aigu aux longueurs des côtés. Tout dépend de la position des côtés par rapport à l'angle étudié. Le côté opposé est en face de l'angle, le côté adjacent touche l'angle sans être l'hypoténuse, et l'hypoténuse est le plus grand côté, en face de l'angle droit. Les trois formules se lisent ainsi : Sinus = Opposé/Hypoténuse (SOH), Cosinus = Adjacent/Hypoténuse (CAH), Tangente = Opposé/Adjacent (TOA). Ces rapports permettent de calculer une longueur quand on connaît un angle et une longueur, ou de retrouver un angle à partir de deux longueurs, grâce aux fonctions inverses de la calculatrice. Certaines valeurs sont remarquables et utiles à connaître, comme celles des angles de 30°, 45° et 60°. La trigonométrie complète le théorème de Pythagore : Pythagore relie les trois côtés, tandis que la trigonométrie relie les côtés aux angles. Avant tout calcul, il faut vérifier que la calculatrice est bien réglée en degrés. Bien repérer, pour l'angle choisi, quel côté est opposé, adjacent ou hypoténuse est la clé de la réussite. Ces rapports ne dépendent que de l'angle, pas de la taille du triangle : deux triangles de tailles différentes mais de même angle ont exactement le même cosinus. C'est ce qui rend la trigonométrie si puissante pour calculer des distances dans la vie réelle.",
+    "definitions": [
+      {
+        "terme": "Triangle rectangle",
+        "sens": "Un triangle qui possède un angle droit."
+      },
+      {
+        "terme": "Hypoténuse",
+        "sens": "Le côté le plus long, en face de l'angle droit."
+      },
+      {
+        "terme": "Côté opposé",
+        "sens": "Le côté situé en face de l'angle considéré."
+      },
+      {
+        "terme": "Côté adjacent",
+        "sens": "Le côté qui touche l'angle, sans être l'hypoténuse."
+      },
+      {
+        "terme": "Cosinus",
+        "sens": "Le rapport adjacent / hypoténuse (CAH)."
+      },
+      {
+        "terme": "Sinus",
+        "sens": "Le rapport opposé / hypoténuse (SOH)."
+      },
+      {
+        "terme": "Tangente",
+        "sens": "Le rapport opposé / adjacent (TOA)."
+      },
+      {
+        "terme": "Valeurs remarquables",
+        "sens": "Les valeurs connues pour les angles de 30°, 45° et 60°."
+      }
+    ],
+    "methode": [
+      "Repère l'angle droit et l'hypoténuse.",
+      "Choisis l'angle aigu sur lequel tu travailles.",
+      "Identifie le côté opposé et le côté adjacent à cet angle.",
+      "Repère ce que tu connais et ce que tu cherches.",
+      "Choisis le bon rapport grâce à SOH-CAH-TOA.",
+      "Écris l'égalité trigonométrique, puis isole l'inconnue.",
+      "Calcule avec la calculatrice réglée en mode degrés.",
+      "Pour un angle, utilise les fonctions inverses (arccos, arcsin, arctan)."
+    ],
+    "exemple": {
+      "enonce": "Dans un triangle rectangle, un angle vaut 60° et le côté adjacent mesure 4 cm. Calcule l'hypoténuse.",
+      "etapes": [
+        "On connaît l'angle (60°) et le côté adjacent (4 cm).",
+        "On cherche l'hypoténuse.",
+        "Le rapport reliant adjacent et hypoténuse est le cosinus (CAH).",
+        "On écrit : cos(60°) = 4 / hypoténuse.",
+        "Donc hypoténuse = 4 / cos(60°) = 4 / 0,5.",
+        "L'hypoténuse mesure 8 cm."
+      ]
+    },
+    "astuce": "Rock Lee : « SOH-CAH-TOA, récite-le comme un cri de combat ! Choisis le rapport selon ce que tu connais et ce que tu cherches. Et vérifie TOUJOURS que ta calculatrice est en mode degrés avant de te lancer : c'est l'erreur qui fait tout rater au Brevet ! »",
+    "erreurs": [
+      "Confondre le côté opposé et le côté adjacent.",
+      "Se tromper de rapport (sinus au lieu de cosinus, etc.).",
+      "Oublier de régler la calculatrice en mode degrés.",
+      "Confondre l'hypoténuse avec un autre côté.",
+      "Utiliser la trigonométrie dans un triangle qui n'est pas rectangle.",
+      "Oublier les fonctions inverses pour calculer un angle.",
+      "Mal isoler l'inconnue dans l'égalité.",
+      "Oublier l'unité dans le résultat."
+    ]
+  },
+  "hinata-hyuga-probabilite": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Hinata Hyuga",
+    "manga": "Naruto",
+    "notion": "Les probabilités",
+    "explication": "Une probabilité mesure la chance qu'un événement se produise lors d'une expérience aléatoire, c'est-à-dire une expérience dont on ne connaît pas le résultat à l'avance, comme un lancer de dé. La probabilité d'un événement se calcule en divisant le nombre d'issues favorables par le nombre total d'issues possibles, à condition que toutes les issues aient la même chance de se produire : on parle alors d'équiprobabilité. Une probabilité est toujours un nombre compris entre 0 et 1 : elle vaut 0 pour un événement impossible et 1 pour un événement certain. On peut l'exprimer sous forme de fraction, de nombre décimal ou de pourcentage. Un outil important est la probabilité de l'événement contraire : l'événement contraire de A est « A ne se produit pas », et sa probabilité se calcule par P(non A) = 1 − P(A). Cette propriété est très pratique, car il est parfois plus rapide de calculer la probabilité du contraire que celle de l'événement lui-même. Les probabilités permettent de modéliser le hasard et d'estimer des chances dans de nombreuses situations, des jeux aux décisions de la vie courante. C'est une notion essentielle de la 4ème, qui se poursuit en 3ème avec les probabilités composées. On distingue la probabilité théorique, que l'on calcule à l'avance, et la fréquence observée lors d'essais réels : plus on répète l'expérience, plus la fréquence observée se rapproche de la probabilité théorique.",
+    "definitions": [
+      {
+        "terme": "Expérience aléatoire",
+        "sens": "Une expérience dont le résultat est imprévisible."
+      },
+      {
+        "terme": "Issue",
+        "sens": "Un résultat possible de l'expérience."
+      },
+      {
+        "terme": "Événement",
+        "sens": "Un ou plusieurs résultats que l'on regroupe."
+      },
+      {
+        "terme": "Issue favorable",
+        "sens": "Une issue qui réalise l'événement cherché."
+      },
+      {
+        "terme": "Probabilité",
+        "sens": "Favorable / total : un nombre entre 0 et 1."
+      },
+      {
+        "terme": "Équiprobabilité",
+        "sens": "Toutes les issues ont la même chance de se produire."
+      },
+      {
+        "terme": "Événement certain / impossible",
+        "sens": "Probabilité égale à 1 / égale à 0."
+      },
+      {
+        "terme": "Événement contraire",
+        "sens": "« A ne se produit pas » : P(non A) = 1 − P(A)."
+      }
+    ],
+    "methode": [
+      "Identifie l'expérience aléatoire et toutes ses issues.",
+      "Vérifie que les issues sont équiprobables.",
+      "Compte le nombre total d'issues possibles.",
+      "Compte le nombre d'issues favorables à l'événement.",
+      "Calcule la probabilité : favorable / total.",
+      "Simplifie la fraction si possible.",
+      "Vérifie que le résultat est bien compris entre 0 et 1.",
+      "Pour l'événement contraire, calcule 1 − P(A)."
+    ],
+    "exemple": {
+      "enonce": "On lance un dé équilibré à 6 faces. Quelle est la probabilité d'obtenir un nombre pair ?",
+      "etapes": [
+        "L'expérience est le lancer d'un dé équilibré.",
+        "Il y a 6 issues possibles : 1, 2, 3, 4, 5, 6.",
+        "Les issues favorables (nombres pairs) sont 2, 4 et 6, soit 3 issues.",
+        "La probabilité est : favorable / total = 3/6.",
+        "On simplifie : 3/6 = 1/2.",
+        "La probabilité d'obtenir un nombre pair est donc 1/2."
+      ]
+    },
+    "astuce": "Hinata : « Quand un événement est compliqué à compter, pense à son CONTRAIRE : il est parfois bien plus simple de calculer P(non A), puis de faire 1 − P(non A). Et garde en tête qu'une probabilité reste toujours entre 0 et 1 : si tu trouves plus, c'est une erreur ! »",
+    "erreurs": [
+      "Diviser par le nombre de favorables au lieu du total.",
+      "Donner une probabilité supérieure à 1.",
+      "Oublier de vérifier l'équiprobabilité des issues.",
+      "Confondre une issue et un événement.",
+      "Mal compter les issues favorables.",
+      "Oublier de simplifier la fraction finale.",
+      "Se tromper dans le calcul de l'événement contraire.",
+      "Confondre P(A) et P(non A)."
+    ]
+  },
+  "shikamaru-nara-mediane-et-quartiles": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Shikamaru Nara",
+    "manga": "Naruto",
+    "notion": "Médiane et quartiles",
+    "explication": "En statistiques, après avoir recueilli une série de données, on cherche à la résumer avec des indicateurs. La médiane est une valeur qui partage la série, rangée dans l'ordre croissant, en deux groupes de même effectif : au moins la moitié des valeurs lui sont inférieures ou égales, et au moins la moitié lui sont supérieures ou égales. Pour la trouver, on range les données puis on repère la valeur centrale. Les quartiles complètent la médiane : le premier quartile Q1 est une valeur telle qu'au moins un quart des données lui sont inférieures ou égales, et le troisième quartile Q3 telle qu'au moins trois quarts le sont. Ces indicateurs permettent de décrire la répartition d'une série, mieux que la seule moyenne, car ils sont moins sensibles aux valeurs extrêmes. On peut représenter ces informations par une boîte à moustaches, un schéma qui montre d'un coup d'œil le minimum, Q1, la médiane, Q3 et le maximum. Bien ranger les données dans l'ordre est l'étape essentielle avant tout calcul. Ces notions sont importantes pour comparer deux séries et interpréter des résultats, par exemple des notes de classe ou des performances sportives. L'écart entre Q1 et Q3, appelé écart interquartile, renseigne sur la dispersion des valeurs centrales de la série, en ignorant les extrêmes qui pourraient fausser l'analyse.",
+    "definitions": [
+      {
+        "terme": "Série statistique",
+        "sens": "L'ensemble des données recueillies."
+      },
+      {
+        "terme": "Effectif",
+        "sens": "Le nombre de données de la série."
+      },
+      {
+        "terme": "Médiane",
+        "sens": "La valeur qui partage la série ordonnée en deux moitiés."
+      },
+      {
+        "terme": "Premier quartile (Q1)",
+        "sens": "Au moins un quart des données lui sont inférieures ou égales."
+      },
+      {
+        "terme": "Troisième quartile (Q3)",
+        "sens": "Au moins trois quarts des données lui sont inférieures ou égales."
+      },
+      {
+        "terme": "Étendue",
+        "sens": "La différence entre la plus grande et la plus petite valeur."
+      },
+      {
+        "terme": "Boîte à moustaches",
+        "sens": "Un schéma résumant min, Q1, médiane, Q3 et max."
+      },
+      {
+        "terme": "Valeur centrale",
+        "sens": "La valeur du milieu d'une série rangée."
+      }
+    ],
+    "methode": [
+      "Range toutes les données dans l'ordre croissant.",
+      "Compte l'effectif total de la série.",
+      "Repère la valeur centrale : c'est la médiane.",
+      "Si l'effectif est pair, prends la moyenne des deux valeurs centrales.",
+      "Détermine Q1 dans le premier quart de la série.",
+      "Détermine Q3 dans le dernier quart de la série.",
+      "Repère aussi le minimum et le maximum.",
+      "Représente le tout par une boîte à moustaches."
+    ],
+    "exemple": {
+      "enonce": "Voici 5 notes rangées : 8, 10, 12, 14, 16. Quelle est la médiane ?",
+      "etapes": [
+        "Les données sont déjà rangées dans l'ordre croissant.",
+        "L'effectif total est 5, un nombre impair.",
+        "La valeur centrale est la 3ème : 12.",
+        "Il y a deux valeurs avant (8 et 10) et deux après (14 et 16).",
+        "La médiane partage donc bien la série en deux.",
+        "La médiane est égale à 12."
+      ]
+    },
+    "astuce": "Shikamaru : « La règle d'or, c'est de RANGER les données dans l'ordre croissant AVANT tout. Sans ça, ta médiane et tes quartiles seront faux. C'est fastidieux, je sais… mais c'est l'étape qui décide de tout le reste, alors ne la saute jamais. »",
+    "erreurs": [
+      "Chercher la médiane sans avoir rangé les données.",
+      "Confondre la médiane et la moyenne.",
+      "Oublier le cas de l'effectif pair (moyenne des deux valeurs centrales).",
+      "Confondre Q1 et Q3.",
+      "Mal repérer la position des quartiles.",
+      "Confondre la médiane et la valeur la plus fréquente (le mode).",
+      "Mal construire la boîte à moustaches.",
+      "Oublier le minimum ou le maximum de la série."
+    ]
+  },
+  "sasuke-uchiha-les-3-identites-remarquables": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Sasuke Uchiha",
+    "manga": "Naruto",
+    "notion": "Les 3 identités remarquables",
+    "explication": "Les identités remarquables sont trois égalités qui permettent de développer ou de factoriser des expressions plus rapidement. La première est le carré d'une somme : (a + b)² = a² + 2ab + b². La deuxième est le carré d'une différence : (a − b)² = a² − 2ab + b². La troisième est le produit d'une somme par une différence : (a + b)(a − b) = a² − b². Développer, c'est transformer un produit, avec des parenthèses, en une somme de termes ; factoriser, c'est l'opération inverse, qui transforme une somme en un produit. Pour factoriser, on cherche souvent un facteur commun à tous les termes, que l'on met en évidence devant une parenthèse, ou bien on reconnaît la forme développée d'une identité remarquable. Ces outils sont très utiles pour simplifier des expressions et, plus tard, pour résoudre des équations. Au collège, on s'entraîne d'abord à appliquer les formules dans le bon sens, en identifiant clairement qui joue le rôle de « a » et qui joue le rôle de « b ». L'erreur la plus fréquente est d'oublier le double produit « 2ab » dans le développement d'un carré : il faut toujours penser aux trois termes. Avec de l'entraînement, on reconnaît ces formes au premier coup d'œil.",
+    "definitions": [
+      {
+        "terme": "Identité remarquable",
+        "sens": "Une égalité toujours vraie pour développer ou factoriser."
+      },
+      {
+        "terme": "Développer",
+        "sens": "Transformer un produit en une somme de termes."
+      },
+      {
+        "terme": "Factoriser",
+        "sens": "Transformer une somme en un produit."
+      },
+      {
+        "terme": "Facteur commun",
+        "sens": "Un terme présent dans tous les termes d'une somme."
+      },
+      {
+        "terme": "Carré d'une somme",
+        "sens": "(a + b)² = a² + 2ab + b²."
+      },
+      {
+        "terme": "Carré d'une différence",
+        "sens": "(a − b)² = a² − 2ab + b²."
+      },
+      {
+        "terme": "Somme par différence",
+        "sens": "(a + b)(a − b) = a² − b²."
+      },
+      {
+        "terme": "Double produit",
+        "sens": "Le terme 2ab, qu'il ne faut jamais oublier."
+      }
+    ],
+    "methode": [
+      "Repère la forme de l'expression à transformer.",
+      "Pour développer, identifie qui est « a » et qui est « b ».",
+      "Applique la formule correspondante.",
+      "Pour (a + b)(a − b), n'écris pas de double produit.",
+      "Pour factoriser, cherche d'abord un facteur commun.",
+      "Mets ce facteur commun en évidence devant une parenthèse.",
+      "Ou reconnais la forme développée d'une identité remarquable.",
+      "Vérifie toujours en redéveloppant le résultat."
+    ],
+    "exemple": {
+      "enonce": "Développe l'expression (x − 3)².",
+      "etapes": [
+        "On reconnaît un carré d'une différence : (a − b)² avec a = x et b = 3.",
+        "La formule est a² − 2ab + b².",
+        "On calcule a² : x².",
+        "On calcule le double produit −2ab : −2 × x × 3 = −6x.",
+        "On calcule b² : 3² = 9.",
+        "Donc (x − 3)² = x² − 6x + 9."
+      ]
+    },
+    "astuce": "Sasuke : « Le double produit 2ab est l'erreur numéro un : (a − b)² n'est PAS égal à a² − b². Il y a toujours trois termes, et le signe du milieu suit celui de la formule. Vérifie en redéveloppant : c'est ta meilleure protection contre les fautes. »",
+    "erreurs": [
+      "Écrire (a − b)² = a² − b² en oubliant le double produit.",
+      "Se tromper de signe pour le double produit.",
+      "Mettre un double produit dans (a + b)(a − b).",
+      "Mal identifier « a » et « b ».",
+      "Oublier de mettre le coefficient au carré : (2x)² = 4x².",
+      "Oublier le facteur commun lors d'une factorisation.",
+      "Confondre développer et factoriser.",
+      "Ne pas vérifier le résultat en redéveloppant."
+    ]
+  },
+  "pain-nagato-bilan-4eme": {
+    "matiere": "maths",
+    "niveau": "4eme",
+    "hero": "Pain (Nagato)",
+    "manga": "Naruto",
+    "notion": "Le bilan 4ème",
+    "explication": "La 4ème est une année charnière du collège : elle introduit de nombreuses notions nouvelles qui seront approfondies en 3ème et évaluées au Brevet. Faire un bon bilan de 4ème, c'est revenir sur chaque grand domaine du programme pour consolider ses acquis. En calcul, on retient les puissances et leurs règles, ainsi que les trois identités remarquables pour développer et factoriser. En algèbre, on maîtrise la résolution des équations du premier degré. En géométrie, on consolide le théorème de Pythagore et sa réciproque, ainsi que les premiers pas en trigonométrie avec le cosinus et les rapports SOH-CAH-TOA. En gestion de données, on travaille les probabilités, avec l'événement contraire, et les statistiques, avec la médiane et les quartiles. Un bilan efficace ne consiste pas à tout relire d'un coup, mais à cibler ses points faibles, à refaire des exercices variés et à comprendre ses erreurs passées. Travailler par petites séances régulières aide à mieux mémoriser. Bien consolider la 4ème, c'est aborder la 3ème avec des bases solides et limiter les lacunes qui seraient difficiles à combler plus tard. C'est un investissement précieux pour réussir, l'année suivante, l'épreuve du Brevet. Une bonne organisation est la clé : un cahier de révision clair, des fiches par chapitre et un planning réaliste permettent de réviser sereinement, sans se laisser submerger par la quantité de notions à revoir. Enfin, refaire d'anciens sujets de Brevet dans les conditions de l'examen est l'un des meilleurs entraînements : cela permet de s'habituer au format des questions et de mieux gérer son temps le jour J.",
+    "definitions": [
+      {
+        "terme": "Puissance",
+        "sens": "aⁿ : le produit de a par lui-même, n fois."
+      },
+      {
+        "terme": "Identité remarquable",
+        "sens": "Une égalité pour développer ou factoriser."
+      },
+      {
+        "terme": "Équation",
+        "sens": "Une égalité contenant une inconnue à trouver."
+      },
+      {
+        "terme": "Réciproque de Pythagore",
+        "sens": "La propriété qui prouve qu'un triangle est rectangle."
+      },
+      {
+        "terme": "Cosinus",
+        "sens": "Le rapport adjacent / hypoténuse dans un triangle rectangle."
+      },
+      {
+        "terme": "Probabilité",
+        "sens": "La mesure de la chance qu'un événement se produise."
+      },
+      {
+        "terme": "Médiane",
+        "sens": "La valeur centrale d'une série ordonnée."
+      },
+      {
+        "terme": "Bilan",
+        "sens": "Une révision organisée de l'ensemble du programme."
+      }
+    ],
+    "methode": [
+      "Classe le programme par domaines : calcul, algèbre, géométrie, données.",
+      "Repère tes points faibles grâce à tes contrôles passés.",
+      "Reprends une notion à la fois, en relisant l'essentiel.",
+      "Refais des exercices variés plutôt que de relire passivement.",
+      "Analyse tes erreurs pour comprendre leur origine.",
+      "Travaille par petites séances régulières.",
+      "Pense toujours aux unités et à la rédaction.",
+      "Vérifie chaque réponse avant de passer à la suite."
+    ],
+    "exemple": {
+      "enonce": "Comment réviser efficacement le chapitre des puissances ?",
+      "etapes": [
+        "Je relis les règles clés : produit, quotient, puissance d'une puissance.",
+        "Je note que a⁰ = 1 pour tout nombre non nul.",
+        "Je refais deux exercices déjà corrigés.",
+        "Je repère l'erreur que je faisais (par exemple multiplier les exposants).",
+        "Je m'entraîne sur un nouvel exercice du même type.",
+        "Je vérifie mes réponses et je note ce qui reste à revoir."
+      ]
+    },
+    "astuce": "Pain : « Ne révise pas tout la veille. Cible tes points faibles, reprends surtout tes erreurs passées, et travaille par petites séances régulières. C'est en comprenant POURQUOI tu te trompais que tu progresses vraiment, pas en relisant cent fois ce que tu sais déjà. »",
+    "erreurs": [
+      "Tout réviser au dernier moment en une seule longue séance.",
+      "Ne réviser que ce que l'on maîtrise déjà.",
+      "Relire passivement sans refaire d'exercices.",
+      "Ne pas analyser ses erreurs passées.",
+      "Négliger la rédaction et les unités.",
+      "Confondre les différentes règles des puissances.",
+      "Oublier le double produit des identités remarquables.",
+      "Ne pas vérifier ses résultats."
+    ]
+  }
+}
