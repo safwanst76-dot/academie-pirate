@@ -1,0 +1,610 @@
+{
+  "levi-ackerman-verbe-to-be": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Levi Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "Le verbe TO BE",
+    "explication": "Le verbe to be signifie « être », et c'est le verbe le plus important de l'anglais : on l'utilise sans arrêt. Contrairement au français, il ne se conjugue qu'en trois formes au présent : am, is et are. On dit « I am » (je suis), « he is / she is / it is » (il est / elle est), et « you are / we are / they are » (tu es / nous sommes / ils sont). Il faut donc d'abord repérer le sujet, puis choisir la bonne forme. En anglais courant, on utilise très souvent les formes contractées : I'm, you're, he's, she's, it's, we're, they're. Le verbe to be sert à dire qui l'on est, son âge, son état (I am tired = je suis fatigué) ou à décrire quelque chose. Pour la forme négative, on ajoute « not » : I am not, he is not (isn't), they are not (aren't). Pour poser une question, on inverse le sujet et le verbe : « Are you ready? » (Es-tu prêt ?). En 6ème, bien maîtriser to be est essentiel, car ce verbe est partout : dans les présentations, les descriptions et de nombreuses structures grammaticales. C'est la toute première brique de la conjugaison anglaise.",
+    "definitions": [
+      {
+        "terme": "to be",
+        "sens": "être (le verbe le plus utilisé)"
+      },
+      {
+        "terme": "am",
+        "sens": "forme du verbe avec « I » (je)"
+      },
+      {
+        "terme": "is",
+        "sens": "forme avec he / she / it"
+      },
+      {
+        "terme": "are",
+        "sens": "forme avec you / we / they"
+      },
+      {
+        "terme": "contraction",
+        "sens": "forme raccourcie : I'm, he's, they're"
+      },
+      {
+        "terme": "not",
+        "sens": "le mot ajouté pour la négation"
+      },
+      {
+        "terme": "isn't / aren't",
+        "sens": "is not / are not contractés"
+      },
+      {
+        "terme": "pronom personnel",
+        "sens": "I, you, he, she, it, we, they"
+      }
+    ],
+    "methode": [
+      "Repère le sujet de la phrase (qui fait l'action).",
+      "Choisis la forme : I → am, he/she/it → is, you/we/they → are.",
+      "Place le sujet, puis le verbe to be, puis le reste.",
+      "Pour aller plus vite, utilise la contraction (I'm, he's…).",
+      "Pour la négation, ajoute « not » après le verbe.",
+      "Contracte la négation : isn't, aren't.",
+      "Pour une question, inverse le sujet et le verbe (Are you…?).",
+      "Vérifie que la forme du verbe correspond bien au sujet."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Je suis fatigué » en anglais ?",
+      "etapes": [
+        "Le sujet est « je », soit « I ».",
+        "Avec « I », le verbe to be devient am.",
+        "« Fatigué » se dit tired.",
+        "On assemble : « I am tired ».",
+        "En anglais courant, on contracte souvent : « I'm tired ».",
+        "On n'oublie jamais le verbe to be, même si le français ne le répète pas."
+      ]
+    },
+    "astuce": "Levi : « Retiens le trio : I → am, he/she/it → is, et tout le reste (you/we/they) → are. C'est la base de toute la conjugaison anglaise. Et en conversation, contracte : I'm, he's, they're, c'est plus naturel. »",
+    "erreurs": [
+      "Dire « I is » ou « you is » au lieu de I am / you are.",
+      "Oublier complètement le verbe to be (« I tired »).",
+      "Confondre is (singulier) et are (pluriel).",
+      "Mal contracter (« I's » au lieu de I'm).",
+      "Oublier « not » dans la négation.",
+      "Confondre it's (it is) et its (son, sa).",
+      "Utiliser to be là où l'anglais utilise to have (l'âge).",
+      "Oublier d'inverser sujet et verbe dans la question."
+    ]
+  },
+  "armin-arlert-affirmation-au-present-simple": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Armin Arlert",
+    "manga": "L'Attaque des Titans",
+    "notion": "L'affirmation au Present Simple",
+    "explication": "Le Present Simple est le temps que l'on utilise pour parler des habitudes, des goûts et des vérités générales : « I play football every day » (je joue au football tous les jours). À la forme affirmative, il se construit très simplement : le sujet suivi du verbe à sa forme de base. La grande règle à retenir, et le piège classique de la 6ème, concerne la troisième personne du singulier (he, she, it) : à ce moment-là, on ajoute un « -s » au verbe. On écrit donc « I play » mais « he plays », « she works » mais « I work ». Quelques cas particuliers existent : on ajoute « -es » après les verbes qui se terminent par o, s, x, ch ou sh (he goes, she watches), et un verbe terminé par une consonne suivie de « y » transforme le y en « -ies » (study devient studies). Le Present Simple est l'un des temps les plus fréquents de l'anglais. En 6ème, on apprend surtout à ne jamais oublier le « -s » de la troisième personne du singulier, car c'est l'erreur la plus courante. Bien maîtriser ce temps permet déjà de parler de soi, de ses habitudes et de son quotidien.",
+    "definitions": [
+      {
+        "terme": "Present Simple",
+        "sens": "le temps des habitudes et des vérités générales"
+      },
+      {
+        "terme": "Verbe de base",
+        "sens": "le verbe sans terminaison (play, work)"
+      },
+      {
+        "terme": "Troisième personne du singulier",
+        "sens": "he, she, it"
+      },
+      {
+        "terme": "Le « -s »",
+        "sens": "ajouté au verbe avec he / she / it"
+      },
+      {
+        "terme": "Le « -es »",
+        "sens": "après o, s, x, ch, sh (goes, watches)"
+      },
+      {
+        "terme": "y → ies",
+        "sens": "consonne + y : study devient studies"
+      },
+      {
+        "terme": "Habitude",
+        "sens": "une action répétée régulièrement"
+      },
+      {
+        "terme": "Sujet",
+        "sens": "celui qui fait l'action"
+      }
+    ],
+    "methode": [
+      "Identifie le sujet de la phrase.",
+      "Écris le verbe à sa forme de base après le sujet.",
+      "Si le sujet est he, she ou it, ajoute un « -s » au verbe.",
+      "Ajoute « -es » après o, s, x, ch ou sh.",
+      "Si le verbe finit par consonne + y, transforme le y en « -ies ».",
+      "Vérifie : tous les autres sujets (I, you, we, they) ne prennent pas de « -s ».",
+      "Relis ta phrase pour contrôler la terminaison du verbe.",
+      "Entraîne-toi avec des verbes d'habitude (play, like, watch…)."
+    ],
+    "exemple": {
+      "enonce": "Mets le verbe à la bonne forme : « He (play) football ».",
+      "etapes": [
+        "Le sujet est « He », troisième personne du singulier.",
+        "Le verbe de base est « play ».",
+        "À la troisième personne du singulier, on ajoute « -s ».",
+        "Play devient donc plays.",
+        "La phrase correcte est : « He plays football ».",
+        "Avec « I » ou « they », on aurait gardé « play »."
+      ]
+    },
+    "astuce": "Armin : « Le « -s » de he/she/it est l'erreur n°1 en 6ème ! Récite-toi : he plays, she works, it rains. Et souviens-toi : ce « -s » n'apparaît QUE pour he, she et it, jamais pour I, you, we ou they. »",
+    "erreurs": [
+      "Oublier le « -s » à la troisième personne (« he play »).",
+      "Ajouter un « -s » à tous les sujets (« I plays »).",
+      "Oublier le « -es » après ch, sh, o, s, x.",
+      "Ne pas transformer le y en « -ies » (« studys »).",
+      "Confondre le « -s » du verbe et le « -s » du pluriel.",
+      "Ajouter « -s » à un verbe déjà conjugué autrement.",
+      "Mettre « -s » après you ou they.",
+      "Oublier le sujet dans la phrase."
+    ]
+  },
+  "connie-springer-questions-fermees-yesno": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Connie Springer",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les questions fermées (Yes/No)",
+    "explication": "Une question fermée est une question à laquelle on peut répondre par « oui » ou par « non ». En anglais, leur construction dépend du verbe. Avec le verbe to be, il suffit d'inverser le sujet et le verbe : « You are ready » devient « Are you ready? ». Avec tous les autres verbes, on a besoin d'un auxiliaire : do ou does. On place do (ou does à la troisième personne du singulier) en début de phrase, suivi du sujet, puis du verbe à sa forme de base : « Do you like pizza? », « Does he play football? ». Attention, un point très important : quand on utilise does, le verbe principal reprend sa forme de base, sans « -s » : on dit « Does he play? » et jamais « Does he plays? ». Pour répondre brièvement, on utilise des réponses courtes : « Yes, I do » / « No, I don't », ou « Yes, he is » / « No, he isn't ». En 6ème, on apprend à distinguer les questions avec to be (inversion) et les questions avec les autres verbes (auxiliaire do/does). Bien poser une question fermée est essentiel pour dialoguer et obtenir des informations en anglais.",
+    "definitions": [
+      {
+        "terme": "Question fermée",
+        "sens": "une question à réponse oui / non"
+      },
+      {
+        "terme": "Auxiliaire",
+        "sens": "un petit verbe outil : do, does"
+      },
+      {
+        "terme": "do",
+        "sens": "auxiliaire pour I, you, we, they"
+      },
+      {
+        "terme": "does",
+        "sens": "auxiliaire pour he, she, it"
+      },
+      {
+        "terme": "Inversion",
+        "sens": "échanger sujet et verbe (avec to be)"
+      },
+      {
+        "terme": "Forme de base",
+        "sens": "le verbe sans terminaison après do/does"
+      },
+      {
+        "terme": "Réponse courte",
+        "sens": "Yes, I do / No, I don't"
+      },
+      {
+        "terme": "don't / doesn't",
+        "sens": "do not / does not contractés"
+      }
+    ],
+    "methode": [
+      "Repère le verbe de la phrase : est-ce to be ou un autre verbe ?",
+      "Avec to be, inverse simplement le sujet et le verbe (Are you…?).",
+      "Avec un autre verbe, commence par do ou does.",
+      "Utilise does si le sujet est he, she ou it ; sinon do.",
+      "Place ensuite le sujet, puis le verbe à sa forme de base.",
+      "Avec does, n'ajoute jamais de « -s » au verbe principal.",
+      "Termine par un point d'interrogation.",
+      "Pour répondre, utilise une réponse courte (Yes, I do / No, he doesn't)."
+    ],
+    "exemple": {
+      "enonce": "Transforme la phrase « You like pizza » en question fermée.",
+      "etapes": [
+        "Le verbe est « like », ce n'est pas to be.",
+        "On a donc besoin de l'auxiliaire do ou does.",
+        "Le sujet est « you », donc on utilise do.",
+        "On place do en tête : Do you…",
+        "On ajoute le verbe de base et le reste : Do you like pizza ?",
+        "On peut répondre : « Yes, I do » ou « No, I don't »."
+      ]
+    },
+    "astuce": "Connie : « Deux mondes : avec to be, on INVERSE (Are you…?). Avec les autres verbes, on appelle do/does à la rescousse. Et le piège mortel : après does, le verbe perd son « -s » ! Does he play, jamais « does he plays ». »",
+    "erreurs": [
+      "Oublier l'auxiliaire do/does avec les verbes autres que to be.",
+      "Laisser le « -s » au verbe après does (« Does he plays? »).",
+      "Utiliser do au lieu de does avec he/she/it.",
+      "Inverser sujet et verbe avec un verbe normal (« Like you pizza? »).",
+      "Oublier le point d'interrogation.",
+      "Mal accorder la réponse courte (Yes, I does).",
+      "Confondre don't (do not) et doesn't (does not).",
+      "Mettre l'auxiliaire à la fin de la phrase."
+    ]
+  },
+  "erwin-smith-prepositions-de-lieu-principales": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Erwin Smith",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les prépositions de lieu",
+    "explication": "Les prépositions de lieu servent à indiquer où se trouve quelque chose ou quelqu'un. Ce sont de petits mots très utiles pour décrire une scène ou situer un objet. Les principales à connaître en 6ème sont : in (dans), on (sur), under (sous), behind (derrière), in front of (devant), next to (à côté de), between (entre) et above (au-dessus de). En anglais, la préposition se place avant le lieu : « The cat is on the table » (le chat est sur la table). Il faut être attentif aux nuances : in signifie « à l'intérieur de » (in the box, dans la boîte), tandis que on signifie « posé sur une surface » (on the table, sur la table). Ces deux prépositions sont souvent confondues par les débutants. Pour situer un objet, on utilise généralement le verbe to be : « The ball is under the chair » (le ballon est sous la chaise). En 6ème, on apprend à reconnaître, prononcer et employer ces prépositions dans des phrases simples. C'est un vocabulaire concret, que l'on peut réviser en décrivant la position des objets autour de soi. Bien maîtriser les prépositions de lieu permet de décrire précisément l'espace et de comprendre des consignes. Avec l'habitude, on peut combiner plusieurs prépositions pour décrire une scène entière, par exemple « The book is on the table, next to the lamp ». Ces petits mots reviennent constamment dès qu'on décrit un lieu ou une image. S'entraîner à situer chaque objet d'une pièce est un excellent exercice, à la fois concret et progressif, pour ancrer ce vocabulaire durablement.",
+    "definitions": [
+      {
+        "terme": "Préposition de lieu",
+        "sens": "un mot qui indique une position"
+      },
+      {
+        "terme": "in",
+        "sens": "dans (à l'intérieur de)"
+      },
+      {
+        "terme": "on",
+        "sens": "sur (posé sur une surface)"
+      },
+      {
+        "terme": "under",
+        "sens": "sous"
+      },
+      {
+        "terme": "behind",
+        "sens": "derrière"
+      },
+      {
+        "terme": "in front of",
+        "sens": "devant"
+      },
+      {
+        "terme": "next to",
+        "sens": "à côté de"
+      },
+      {
+        "terme": "between",
+        "sens": "entre"
+      },
+      {
+        "terme": "above",
+        "sens": "au-dessus de"
+      }
+    ],
+    "methode": [
+      "Repère l'objet ou la personne à situer.",
+      "Observe sa position par rapport à un repère.",
+      "Choisis la préposition qui correspond à cette position.",
+      "Distingue bien in (dans) et on (sur).",
+      "Utilise le verbe to be pour situer (The cat is…).",
+      "Place la préposition avant le lieu (on the table).",
+      "Entraîne-toi en décrivant les objets autour de toi.",
+      "Teste-toi en cachant la traduction française."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Le chat est sous la table » en anglais ?",
+      "etapes": [
+        "Le sujet est « le chat » : the cat.",
+        "On utilise le verbe to be pour situer : is.",
+        "« Sous » se dit under.",
+        "« La table » se dit the table.",
+        "On assemble : « The cat is under the table ».",
+        "La préposition (under) se place avant le lieu (the table)."
+      ]
+    },
+    "astuce": "Erwin : « Le duo à ne jamais confondre : in = DANS (à l'intérieur), on = SUR (sur une surface). In the box, mais on the table. Une fois ce duo maîtrisé, les autres prépositions suivent facilement. »",
+    "erreurs": [
+      "Confondre in (dans) et on (sur).",
+      "Placer la préposition après le lieu.",
+      "Oublier le verbe to be pour situer.",
+      "Confondre under (sous) et over/above (au-dessus).",
+      "Confondre behind (derrière) et in front of (devant).",
+      "Oublier le « of » dans in front of.",
+      "Mal prononcer le « th » de behind… (en réalité de « the »).",
+      "Traduire les prépositions mot à mot sans les mémoriser."
+    ]
+  },
+  "hange-zoe-adjectifs-placement-et-accord": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Hange Zoë",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les adjectifs : placement et accord",
+    "explication": "Un adjectif est un mot qui décrit un nom : big (grand), small (petit), red (rouge), happy (content). En anglais, les adjectifs suivent deux règles très différentes du français. Première règle : l'adjectif se place AVANT le nom qu'il décrit, et non après. On dit « a big house » (une grande maison), et non « a house big ». Deuxième règle, et c'est une excellente nouvelle : l'adjectif est invariable. Il ne s'accorde jamais, ni en genre ni en nombre. On écrit « a red car » et « two red cars » : red ne prend pas de « -s », même quand le nom est au pluriel. De même, l'adjectif ne change pas au féminin. C'est une grande différence avec le français, où l'adjectif s'accorde. Quand il y a plusieurs adjectifs, ils se placent tous avant le nom, dans un certain ordre (taille, puis couleur, par exemple : a big red ball). En 6ème, on retient surtout ces deux règles d'or : placement avant le nom, et aucune variation. Bien maîtriser les adjectifs permet de décrire avec précision et d'enrichir ses phrases, tout en évitant l'erreur très fréquente d'accorder l'adjectif comme en français. Cette absence d'accord rend d'ailleurs l'anglais plus simple que le français sur ce point : une fois la forme de l'adjectif apprise, elle ne change plus jamais, quel que soit le contexte. On peut donc se concentrer sur le sens et sur l'enrichissement du vocabulaire. S'entraîner à décrire des objets avec un ou deux adjectifs aide à fixer la règle du placement.",
+    "definitions": [
+      {
+        "terme": "Adjectif",
+        "sens": "un mot qui décrit un nom (big, red, happy)"
+      },
+      {
+        "terme": "Placement",
+        "sens": "l'adjectif se place AVANT le nom"
+      },
+      {
+        "terme": "Invariable",
+        "sens": "il ne change jamais (ni genre ni nombre)"
+      },
+      {
+        "terme": "Nom",
+        "sens": "le mot décrit par l'adjectif"
+      },
+      {
+        "terme": "Genre",
+        "sens": "masculin / féminin (n'affecte pas l'adjectif anglais)"
+      },
+      {
+        "terme": "Nombre",
+        "sens": "singulier / pluriel (n'affecte pas l'adjectif)"
+      },
+      {
+        "terme": "Épithète",
+        "sens": "un adjectif placé juste à côté du nom"
+      },
+      {
+        "terme": "Ordre des adjectifs",
+        "sens": "taille puis couleur : a big red ball"
+      }
+    ],
+    "methode": [
+      "Repère le nom que tu veux décrire.",
+      "Choisis l'adjectif qui le décrit.",
+      "Place l'adjectif AVANT le nom (a big house).",
+      "N'accorde jamais l'adjectif : pas de « -s » au pluriel.",
+      "Ne change pas l'adjectif au féminin.",
+      "S'il y a plusieurs adjectifs, place-les tous avant le nom.",
+      "Respecte l'ordre habituel : taille, puis couleur.",
+      "Vérifie que l'adjectif n'a pas pris de terminaison."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « deux grandes maisons » en anglais ?",
+      "etapes": [
+        "Le nom est « maisons » : houses (pluriel en -s).",
+        "L'adjectif est « grandes » : big.",
+        "L'adjectif se place AVANT le nom.",
+        "L'adjectif est invariable : il ne prend pas de « -s ».",
+        "« Deux » se dit two.",
+        "On assemble : « two big houses » (et non « two bigs houses »)."
+      ]
+    },
+    "astuce": "Hange : « Deux règles d'or : l'adjectif se met AVANT le nom (a big house), et il ne s'accorde JAMAIS. Two big houses, pas « two bigs houses ». En anglais, l'adjectif ne change jamais de forme : quel soulagement ! »",
+    "erreurs": [
+      "Placer l'adjectif après le nom (« a house big »).",
+      "Accorder l'adjectif au pluriel (« bigs »).",
+      "Accorder l'adjectif au féminin.",
+      "Oublier l'article devant l'ensemble (a big house).",
+      "Mal ordonner plusieurs adjectifs.",
+      "Confondre l'adjectif et l'adverbe.",
+      "Traduire l'ordre français mot à mot.",
+      "Ajouter « -s » à l'adjectif quand le nom est pluriel."
+    ]
+  },
+  "historia-reiss-a-et-an-articles-indefinis": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Historia Reiss",
+    "manga": "L'Attaque des Titans",
+    "notion": "A et AN, les articles indéfinis",
+    "explication": "En anglais, l'article indéfini « a » correspond au français « un » ou « une ». Il s'utilise devant un nom singulier dont on parle pour la première fois ou de façon générale : « a dog » (un chien), « a book » (un livre). Cet article possède deux formes : a et an. La règle est simple, mais il faut bien la comprendre : on utilise « a » devant un mot qui commence par un son consonne, et « an » devant un mot qui commence par un son voyelle. Le point essentiel est qu'il faut écouter le SON et non regarder seulement la lettre. Ainsi, on dit « an apple » (une pomme) et « an orange » (une orange), car ces mots commencent par un son voyelle. Mais attention aux pièges : on dit « an hour » (une heure) parce que le « h » est muet et que le mot commence par un son voyelle, alors qu'on dit « a university » parce que ce mot commence par le son « you », qui est un son consonne. En 6ème, on apprend à choisir entre a et an en se fiant au son. Cette règle revient constamment, dans toutes les descriptions et présentations d'objets : la maîtriser évite une erreur très fréquente.",
+    "definitions": [
+      {
+        "terme": "Article indéfini",
+        "sens": "« un » ou « une » : a / an"
+      },
+      {
+        "terme": "a",
+        "sens": "devant un son consonne (a dog, a book)"
+      },
+      {
+        "terme": "an",
+        "sens": "devant un son voyelle (an apple, an egg)"
+      },
+      {
+        "terme": "Son voyelle",
+        "sens": "le son a, e, i, o, u entendu au début du mot"
+      },
+      {
+        "terme": "Son consonne",
+        "sens": "tout autre son de début de mot"
+      },
+      {
+        "terme": "h muet",
+        "sens": "un « h » non prononcé : an hour"
+      },
+      {
+        "terme": "Singulier",
+        "sens": "a / an ne s'emploient qu'au singulier"
+      },
+      {
+        "terme": "Piège du son",
+        "sens": "a university (son « you »), an hour (h muet)"
+      }
+    ],
+    "methode": [
+      "Vérifie que le nom est au singulier.",
+      "Écoute le son par lequel commence le mot qui suit.",
+      "Si c'est un son voyelle, utilise « an ».",
+      "Si c'est un son consonne, utilise « a ».",
+      "Fie-toi au SON entendu, pas seulement à la lettre écrite.",
+      "Méfie-toi du h muet : an hour, an honest man.",
+      "Méfie-toi du son « you » : a university, a European.",
+      "Place l'article juste devant le nom (ou son adjectif)."
+    ],
+    "exemple": {
+      "enonce": "Faut-il dire « a egg » ou « an egg » ?",
+      "etapes": [
+        "Le nom est « egg » (un œuf), au singulier.",
+        "On écoute le son de début : « egg » commence par le son « e ».",
+        "« e » est un son voyelle.",
+        "Devant un son voyelle, on utilise « an ».",
+        "La bonne réponse est donc « an egg ».",
+        "On ne dit jamais « a egg »."
+      ]
+    },
+    "astuce": "Historia : « Écoute le SON, pas la lettre ! « an hour » (le h est muet, son voyelle) mais « a university » (ça commence par le son « you », un son consonne). C'est l'oreille qui décide entre a et an, pas l'orthographe. »",
+    "erreurs": [
+      "Dire « a apple » au lieu de « an apple ».",
+      "Choisir a ou an selon la lettre au lieu du son.",
+      "Dire « a hour » au lieu de « an hour » (h muet).",
+      "Dire « an university » au lieu de « a university ».",
+      "Employer a ou an avec un nom pluriel.",
+      "Oublier complètement l'article devant le nom.",
+      "Confondre l'article a/an et le chiffre « one ».",
+      "Placer l'article au mauvais endroit."
+    ]
+  },
+  "jean-kirstein-pluriels-reguliers-et-regles": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Jean Kirstein",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les pluriels réguliers",
+    "explication": "Former le pluriel d'un nom en anglais suit des règles précises. La règle générale est très simple : on ajoute un « -s » à la fin du nom. Ainsi, a cat devient two cats, a book devient three books. Mais il existe plusieurs règles particulières à connaître. Lorsqu'un nom se termine par s, x, z, ch ou sh, on ajoute « -es » pour faciliter la prononciation : a box devient boxes, a watch devient watches. Lorsqu'un nom se termine par une consonne suivie de « y », le y se transforme en « -ies » : a baby devient babies, a city devient cities. En revanche, si le « y » est précédé d'une voyelle, on ajoute simplement « -s » : a boy devient boys. Certains noms terminés par f ou fe changent en « -ves » : a knife devient knives. En 6ème, on apprend surtout la règle générale (ajouter -s) et les deux principales règles particulières (-es après les sifflantes, et y qui devient -ies). Il existe aussi des pluriels totalement irréguliers, comme child qui devient children, mais ils s'apprennent au cas par cas. Bien maîtriser les pluriels réguliers est indispensable pour parler de plusieurs objets ou personnes correctement.",
+    "definitions": [
+      {
+        "terme": "Pluriel",
+        "sens": "la forme d'un nom pour plusieurs éléments"
+      },
+      {
+        "terme": "Singulier",
+        "sens": "la forme d'un nom pour un seul élément"
+      },
+      {
+        "terme": "Le « -s »",
+        "sens": "la terminaison habituelle du pluriel"
+      },
+      {
+        "terme": "Le « -es »",
+        "sens": "ajouté après s, x, z, ch, sh (boxes)"
+      },
+      {
+        "terme": "y → ies",
+        "sens": "consonne + y : baby devient babies"
+      },
+      {
+        "terme": "y → s",
+        "sens": "voyelle + y : boy devient boys"
+      },
+      {
+        "terme": "f → ves",
+        "sens": "knife devient knives"
+      },
+      {
+        "terme": "Pluriel irrégulier",
+        "sens": "child → children (à part)"
+      }
+    ],
+    "methode": [
+      "Pars du nom au singulier.",
+      "En règle générale, ajoute simplement « -s ».",
+      "Si le nom finit par s, x, z, ch ou sh, ajoute « -es ».",
+      "Si le nom finit par consonne + y, transforme le y en « -ies ».",
+      "Si le « y » est précédé d'une voyelle, ajoute juste « -s ».",
+      "Pour certains noms en f/fe, change en « -ves ».",
+      "Mémorise à part les pluriels irréguliers (children, men…).",
+      "Vérifie la terminaison selon la dernière lettre du nom."
+    ],
+    "exemple": {
+      "enonce": "Quel est le pluriel du mot « baby » ?",
+      "etapes": [
+        "Le mot « baby » (bébé) se termine par « y ».",
+        "On regarde la lettre juste avant le « y » : c'est « b », une consonne.",
+        "Règle : consonne + y, le y devient « -ies ».",
+        "On enlève le « y » et on ajoute « -ies ».",
+        "Baby devient donc babies.",
+        "On n'écrit jamais « babys »."
+      ]
+    },
+    "astuce": "Jean : « Trois réflexes : -s en général, -es après les sons sifflants (boxes, watches), et le « y » précédé d'une consonne se change en -ies (babies). Regarde toujours la dernière lettre du mot avant de choisir ! »",
+    "erreurs": [
+      "Écrire « babys » au lieu de babies.",
+      "Oublier le « -es » après ch, sh, s, x, z.",
+      "Transformer un « y » précédé d'une voyelle (« boies »).",
+      "Ajouter « -s » à un pluriel irrégulier (« childs »).",
+      "Confondre le « -s » du pluriel et le « -s » du verbe.",
+      "Oublier d'enlever le « y » avant d'ajouter « -ies ».",
+      "Mettre un pluriel à un nom indénombrable.",
+      "Mal prononcer la terminaison « -es »."
+    ]
+  },
+  "sasha-blouse-nourriture-et-boissons": {
+    "matiere": "anglais",
+    "niveau": "6eme",
+    "hero": "Sasha Blouse",
+    "manga": "L'Attaque des Titans",
+    "notion": "La nourriture et les boissons",
+    "explication": "Le vocabulaire de la nourriture (food) et des boissons (drinks) est très utile au quotidien, notamment pour parler de ses goûts ou commander quelque chose. Parmi les aliments de base : bread (le pain), cheese (le fromage), meat (la viande), fish (le poisson), an apple (une pomme), an egg (un œuf), rice (le riz). Parmi les boissons : water (l'eau), milk (le lait), juice (le jus), tea (le thé). Pour exprimer ses goûts, on utilise « I like… » (j'aime) ou « I don't like… » (je n'aime pas), suivi de l'aliment. Un point important : pour parler des aliments en général, on n'utilise pas d'article défini. On dit « I like cheese » (j'aime le fromage), et non « I like the cheese ». Le mot « the » changerait le sens en désignant un fromage précis. Pour demander à quelqu'un ses goûts, on dit « Do you like…? ». En 6ème, on apprend à nommer les aliments et boissons courants, à exprimer ce que l'on aime ou non, et à poser la question. C'est un vocabulaire concret et motivant, que l'on peut réviser à chaque repas. Maîtriser ces mots permet de tenir de vraies petites conversations sur un sujet familier. On peut aussi nuancer ses goûts avec d'autres expressions, comme « I love… » (j'adore) ou « I hate… » (je déteste), toujours suivies de l'aliment sans article. Parler de nourriture est un sujet du quotidien que l'on retrouve dans de nombreuses conversations, à la maison comme au restaurant. S'entraîner à décrire ses repas préférés est à la fois utile et motivant.",
+    "definitions": [
+      {
+        "terme": "food",
+        "sens": "la nourriture"
+      },
+      {
+        "terme": "drinks",
+        "sens": "les boissons"
+      },
+      {
+        "terme": "bread",
+        "sens": "le pain"
+      },
+      {
+        "terme": "cheese",
+        "sens": "le fromage"
+      },
+      {
+        "terme": "meat",
+        "sens": "la viande"
+      },
+      {
+        "terme": "an apple",
+        "sens": "une pomme"
+      },
+      {
+        "terme": "an egg",
+        "sens": "un œuf"
+      },
+      {
+        "terme": "water",
+        "sens": "l'eau"
+      },
+      {
+        "terme": "milk",
+        "sens": "le lait"
+      },
+      {
+        "terme": "juice",
+        "sens": "le jus de fruit"
+      },
+      {
+        "terme": "I like / I don't like",
+        "sens": "j'aime / je n'aime pas"
+      }
+    ],
+    "methode": [
+      "Nomme chaque aliment et boisson à voix haute.",
+      "Classe les mots : nourriture (food) ou boissons (drinks).",
+      "Pour tes goûts, utilise « I like… » ou « I don't like… ».",
+      "Pour parler en général, n'ajoute pas « the » devant l'aliment.",
+      "Pour demander, utilise « Do you like…? ».",
+      "Associe chaque mot à un aliment réel.",
+      "Entraîne-toi à parler de tes repas préférés.",
+      "Teste-toi en cachant la traduction française."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « J'aime le fromage » en anglais ?",
+      "etapes": [
+        "« J'aime » se dit « I like ».",
+        "« Le fromage » se dit cheese.",
+        "Ici, on parle du fromage en général, pas d'un fromage précis.",
+        "On n'ajoute donc PAS « the » devant cheese.",
+        "La phrase correcte est « I like cheese ».",
+        "« I like the cheese » désignerait un fromage particulier."
+      ]
+    },
+    "astuce": "Sasha : « Quand tu parles d'un aliment EN GÉNÉRAL, oublie « the » ! On dit « I like chocolate », pas « I like the chocolate ». Le « the » servirait à désigner un aliment bien précis posé devant toi. »",
+    "erreurs": [
+      "Ajouter « the » pour parler d'un aliment en général.",
+      "Confondre food (nourriture) et meat (viande).",
+      "Dire « a water » (l'eau est indénombrable).",
+      "Confondre milk (lait) et meat (viande) à l'oral.",
+      "Oublier l'auxiliaire dans « Do you like…? ».",
+      "Mal prononcer le « ea » de meat et bread.",
+      "Confondre juice et jus à l'écrit.",
+      "Traduire les mots sans les mémoriser."
+    ]
+  }
+}
