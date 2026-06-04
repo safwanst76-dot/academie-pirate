@@ -1,0 +1,594 @@
+{
+  "naruto-uzumaki-les-classes-de-nombres": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les classes de nombres",
+    "explication": "En CM2, on apprend à lire et à écrire de très grands nombres, jusqu'au milliard. Pour s'y retrouver, on regroupe les chiffres par paquets de trois, appelés les classes. De droite à gauche, on trouve : la classe des unités simples, la classe des mille, la classe des millions, puis la classe des milliards. Dans chaque classe, il y a toujours des unités, des dizaines et des centaines. On laisse un petit espace entre les classes pour faciliter la lecture : 12 345 678 se lit « douze millions, trois cent quarante-cinq mille, six cent soixante-dix-huit ». Comprendre les classes, c'est comprendre la numération de position : un même chiffre n'a pas la même valeur selon l'endroit où il est placé. Cette organisation aide à lire, écrire, comparer et décomposer les nombres sans se tromper, et elle sert de base à tout le calcul. On peut aussi écrire un grand nombre en lettres, en respectant les règles d'orthographe des nombres. Savoir lire et écrire ces grands nombres est très utile, par exemple pour comprendre des distances, des populations ou des sommes d'argent.",
+    "definitions": [
+      {
+        "terme": "Chiffre",
+        "sens": "Un des dix symboles (0 à 9) qui servent à écrire les nombres."
+      },
+      {
+        "terme": "Nombre",
+        "sens": "Une quantité, écrite avec un ou plusieurs chiffres."
+      },
+      {
+        "terme": "Classe",
+        "sens": "Un groupe de trois chiffres : unités, dizaines, centaines."
+      },
+      {
+        "terme": "Classe des unités",
+        "sens": "Les trois premiers chiffres à droite du nombre."
+      },
+      {
+        "terme": "Classe des mille",
+        "sens": "Les trois chiffres situés juste à gauche des unités."
+      },
+      {
+        "terme": "Classe des millions",
+        "sens": "Les trois chiffres encore plus à gauche."
+      },
+      {
+        "terme": "Numération de position",
+        "sens": "La valeur d'un chiffre dépend de la place qu'il occupe."
+      },
+      {
+        "terme": "Milliard",
+        "sens": "Une très grande quantité : mille millions, la classe la plus à gauche vue en CM2."
+      }
+    ],
+    "methode": [
+      "Pars toujours de la droite du nombre.",
+      "Regroupe les chiffres par paquets de trois.",
+      "Sépare chaque paquet par un petit espace.",
+      "Nomme chaque classe de gauche à droite : milliards, millions, mille, unités.",
+      "Dans chaque classe, lis les centaines, puis les dizaines, puis les unités.",
+      "Pour décomposer, donne la valeur de chaque chiffre selon sa place.",
+      "Pour comparer deux nombres, regarde d'abord celui qui a le plus de chiffres.",
+      "Vérifie en relisant le nombre à voix haute."
+    ],
+    "exemple": {
+      "enonce": "Lis et décompose le nombre 45 302.",
+      "etapes": [
+        "On regroupe par classes : 45 | 302.",
+        "Classe des mille : 45 → quarante-cinq mille.",
+        "Classe des unités : 302 → trois cent deux.",
+        "On lit donc : « quarante-cinq mille trois cent deux ».",
+        "Le chiffre 4 est à la place des dizaines de mille : il vaut 40 000.",
+        "Le chiffre 3 est à la place des centaines : il vaut 300."
+      ]
+    },
+    "astuce": "Naruto : « Pour ne jamais te perdre dans un grand nombre, commence TOUJOURS par la droite et fais des paquets de trois chiffres. Une fois les classes repérées, lire un nombre géant devient aussi facile que lire un petit nombre. L'espace entre les classes, c'est ton meilleur allié : ne l'oublie jamais ! »",
+    "erreurs": [
+      "Regrouper les chiffres en partant de la gauche au lieu de la droite.",
+      "Oublier l'espace entre les classes, ce qui rend le nombre illisible.",
+      "Confondre la classe des mille et la classe des millions.",
+      "Donner la même valeur à un chiffre quelle que soit sa place.",
+      "Mettre une virgule à la place de l'espace entre les classes.",
+      "Oublier les zéros intercalés, comme le 0 dans 45 302.",
+      "Lire les chiffres un par un au lieu de lire par classes.",
+      "Oublier qu'une classe est toujours composée de trois rangs : centaines, dizaines, unités."
+    ]
+  },
+  "kakashi-hatake-lire-les-decimaux": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Kakashi Hatake",
+    "manga": "Naruto",
+    "notion": "Lire les décimaux",
+    "explication": "En CM2, on découvre les nombres décimaux : des nombres qui contiennent une virgule. Un nombre décimal a deux parties. À gauche de la virgule se trouve la partie entière, et à droite la partie décimale. Juste après la virgule, on trouve d'abord les dixièmes, puis les centièmes, puis les millièmes. Par exemple, dans 3,45, le chiffre 4 est celui des dixièmes et le 5 celui des centièmes. Pour lire un nombre décimal, on lit la partie entière, on dit « virgule », puis on lit la partie décimale. On peut aussi lire 3,45 comme « 3 unités et 45 centièmes ». Les décimaux servent partout dans la vie de tous les jours : les prix en euros, la taille d'une personne, la masse d'un objet. Bien comprendre la place de chaque chiffre après la virgule permet de lire, d'écrire et de comparer ces nombres sans se tromper. C'est une notion nouvelle et importante du CM2. On peut aussi placer un nombre décimal sur une droite graduée, entre deux nombres entiers, pour mieux le situer. Les décimaux permettent d'écrire des quantités plus précises que les nombres entiers seuls.",
+    "definitions": [
+      {
+        "terme": "Nombre décimal",
+        "sens": "Un nombre qui contient une virgule, comme 3,45."
+      },
+      {
+        "terme": "Partie entière",
+        "sens": "Les chiffres situés à gauche de la virgule."
+      },
+      {
+        "terme": "Partie décimale",
+        "sens": "Les chiffres situés à droite de la virgule."
+      },
+      {
+        "terme": "Virgule",
+        "sens": "Le signe qui sépare la partie entière de la partie décimale."
+      },
+      {
+        "terme": "Dixième",
+        "sens": "Le premier chiffre après la virgule (une part sur dix)."
+      },
+      {
+        "terme": "Centième",
+        "sens": "Le deuxième chiffre après la virgule (une part sur cent)."
+      },
+      {
+        "terme": "Millième",
+        "sens": "Le troisième chiffre après la virgule (une part sur mille)."
+      },
+      {
+        "terme": "Unité",
+        "sens": "Le rang situé juste à gauche de la virgule."
+      }
+    ],
+    "methode": [
+      "Repère d'abord la virgule.",
+      "À gauche, c'est la partie entière ; à droite, la partie décimale.",
+      "Lis d'abord la partie entière.",
+      "Dis ensuite « virgule ».",
+      "Lis les chiffres de la partie décimale.",
+      "Pour chaque chiffre après la virgule, repère sa position : dixième, centième, millième.",
+      "Tu peux aussi lire autrement : « X unités et Y centièmes ».",
+      "Vérifie en relisant le nombre à voix haute."
+    ],
+    "exemple": {
+      "enonce": "Lis le nombre 12,07 et donne la valeur de chaque chiffre après la virgule.",
+      "etapes": [
+        "La virgule sépare 12 (partie entière) et 07 (partie décimale).",
+        "Partie entière : douze.",
+        "On dit « virgule ».",
+        "Le 0 est à la place des dixièmes : il vaut 0 dixième.",
+        "Le 7 est à la place des centièmes : il vaut 7 centièmes.",
+        "On lit donc « douze virgule zéro sept », ou « douze unités et sept centièmes »."
+      ]
+    },
+    "astuce": "Kakashi : « Le truc à retenir : juste après la virgule, c'est TOUJOURS les dixièmes, puis les centièmes, puis les millièmes. Si tu hésites, compte les positions une par une à partir de la virgule. Et souviens-toi : ajouter un zéro tout à droite à la fin ne change pas la valeur du nombre. »",
+    "erreurs": [
+      "Lire la partie décimale comme un nombre entier (lire 12,07 « douze virgule sept »).",
+      "Confondre les dixièmes et les centièmes.",
+      "Penser que 3,5 est plus petit que 3,45.",
+      "Oublier le zéro intercalé : 12,07 n'est pas égal à 12,7.",
+      "Croire que la virgule sépare deux nombres indépendants.",
+      "Écrire un point au lieu d'une virgule (notation des calculatrices).",
+      "Oublier la partie entière quand elle vaut 0.",
+      "Croire qu'un nombre décimal est toujours plus petit qu'un nombre entier."
+    ]
+  },
+  "sakura-haruno-lire-une-fraction": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Sakura Haruno",
+    "manga": "Naruto",
+    "notion": "Lire une fraction",
+    "explication": "Une fraction sert à représenter une partie d'un tout que l'on a partagé en parts égales. Elle s'écrit avec deux nombres séparés par un trait. Le nombre du bas, le dénominateur, indique en combien de parts égales on a partagé le tout. Le nombre du haut, le numérateur, indique combien de ces parts on prend. Par exemple, dans la fraction trois quarts, on a partagé en 4 parts égales (dénominateur 4) et on en prend 3 (numérateur 3). On lit les fractions avec des mots : un demi, un tiers, un quart, trois quarts… En CM2, on apprend à lire, écrire et représenter des fractions simples, par exemple en coloriant une partie d'une figure ou en plaçant une fraction sur une bande graduée. Comprendre les fractions, c'est comprendre l'idée de partage équitable. C'est une notion nouvelle et très utile, qui prépare tout le travail sur les fractions et les nombres décimaux des années suivantes. Une fraction peut aussi se placer sur une droite graduée, par exemple entre 0 et 1 pour les fractions plus petites que l'unité. Comprendre les fractions aide à partager équitablement et prépare l'étude des nombres décimaux.",
+    "definitions": [
+      {
+        "terme": "Fraction",
+        "sens": "Une écriture qui représente une partie d'un tout partagé en parts égales."
+      },
+      {
+        "terme": "Numérateur",
+        "sens": "Le nombre du haut : combien de parts on prend."
+      },
+      {
+        "terme": "Dénominateur",
+        "sens": "Le nombre du bas : en combien de parts égales on partage."
+      },
+      {
+        "terme": "Trait de fraction",
+        "sens": "La barre qui sépare le numérateur du dénominateur."
+      },
+      {
+        "terme": "Un demi",
+        "sens": "Une part sur deux, écrite 1/2."
+      },
+      {
+        "terme": "Un tiers",
+        "sens": "Une part sur trois, écrite 1/3."
+      },
+      {
+        "terme": "Un quart",
+        "sens": "Une part sur quatre, écrite 1/4."
+      },
+      {
+        "terme": "Le tout (l'unité)",
+        "sens": "La quantité de départ que l'on partage en parts égales."
+      }
+    ],
+    "methode": [
+      "Regarde le nombre du bas (le dénominateur) : il dit en combien de parts égales le tout est partagé.",
+      "Regarde le nombre du haut (le numérateur) : il dit combien de parts on prend.",
+      "Vérifie bien que les parts sont toutes égales.",
+      "Pour lire, dis le numérateur puis le mot lié au dénominateur (quart, tiers…).",
+      "Pour représenter, partage une figure en autant de parts que le dénominateur.",
+      "Colorie autant de parts que l'indique le numérateur.",
+      "Sur une bande graduée, place les repères selon le dénominateur.",
+      "Vérifie que la partie coloriée correspond bien à la fraction."
+    ],
+    "exemple": {
+      "enonce": "Que représente la fraction 3/4 ?",
+      "etapes": [
+        "Le dénominateur est 4 : on partage le tout en 4 parts égales.",
+        "Le numérateur est 3 : on prend 3 de ces parts.",
+        "On lit « trois quarts ».",
+        "Sur un gâteau coupé en 4 parts égales, on prend 3 parts.",
+        "Il reste donc 1 part sur 4, soit un quart.",
+        "La fraction 3/4 représente donc trois parts sur les quatre du tout."
+      ]
+    },
+    "astuce": "Sakura : « Pour ne pas confondre les deux nombres, pense à une pizza : le nombre du BAS dit en combien de parts on la coupe, le nombre du HAUT dit combien de parts on mange. Le dénominateur est en bas comme le sol qui porte tout le partage, le numérateur est en haut, c'est ce qu'on attrape ! »",
+    "erreurs": [
+      "Confondre le numérateur (en haut) et le dénominateur (en bas).",
+      "Partager le tout en parts qui ne sont pas égales.",
+      "Croire que 1/4 est plus grand que 1/2 (plus le dénominateur est grand, plus les parts sont petites).",
+      "Lire la fraction sans comprendre l'idée de partage.",
+      "Oublier que les parts doivent être égales.",
+      "Penser que le numérateur ne peut jamais dépasser le dénominateur.",
+      "Confondre une fraction avec une soustraction.",
+      "Oublier de préciser de quel tout on parle quand on lit une fraction."
+    ]
+  },
+  "sasuke-uchiha-multiplication-posee": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Sasuke Uchiha",
+    "manga": "Naruto",
+    "notion": "La multiplication posée",
+    "explication": "La multiplication posée permet de multiplier deux nombres, même grands, en organisant le calcul en colonnes. On écrit d'abord les deux nombres l'un sous l'autre, en alignant bien les chiffres par la droite. On multiplie ensuite chaque chiffre du nombre du bas par tout le nombre du haut, en commençant par les unités. À chaque ligne, on note les retenues quand un produit dépasse 9. Quand on passe au chiffre des dizaines du nombre du bas, on décale d'un cran vers la gauche : pour ne pas se tromper, on écrit un zéro qui marque ce décalage. Enfin, on additionne tous les produits partiels pour obtenir le résultat final. En CM2, on apprend à poser et à calculer la multiplication d'un nombre par un nombre à deux ou trois chiffres. C'est une technique précise qui demande de la rigueur : il faut bien aligner les chiffres, ne pas oublier les retenues, et penser au décalage. Bien la maîtriser donne beaucoup d'autonomie pour résoudre les problèmes. On peut vérifier le résultat d'une multiplication en estimant un ordre de grandeur, ou en refaisant le calcul. Cette technique sert dans une foule de problèmes du quotidien, dès qu'il faut compter plusieurs paquets identiques.",
+    "definitions": [
+      {
+        "terme": "Multiplication",
+        "sens": "Une opération qui revient à additionner plusieurs fois le même nombre."
+      },
+      {
+        "terme": "Facteurs",
+        "sens": "Les deux nombres que l'on multiplie ensemble."
+      },
+      {
+        "terme": "Produit",
+        "sens": "Le résultat de la multiplication."
+      },
+      {
+        "terme": "Retenue",
+        "sens": "Le chiffre que l'on reporte quand un produit dépasse 9."
+      },
+      {
+        "terme": "Produit partiel",
+        "sens": "Le résultat de la multiplication par un seul chiffre du bas."
+      },
+      {
+        "terme": "Décalage",
+        "sens": "Le décalage d'un cran vers la gauche pour multiplier par les dizaines."
+      },
+      {
+        "terme": "Table de multiplication",
+        "sens": "Les résultats des multiplications à connaître par cœur."
+      },
+      {
+        "terme": "Ordre de grandeur",
+        "sens": "Une estimation rapide du résultat pour vérifier qu'il est plausible."
+      }
+    ],
+    "methode": [
+      "Écris les deux nombres l'un sous l'autre, alignés par la droite.",
+      "Commence par multiplier le chiffre des unités du bas par tout le nombre du haut.",
+      "Note les retenues au-dessus quand un produit dépasse 9.",
+      "Écris ce premier produit partiel.",
+      "Passe au chiffre des dizaines : décale d'un cran vers la gauche en écrivant un 0.",
+      "Multiplie de nouveau tout le nombre du haut.",
+      "Additionne tous les produits partiels.",
+      "Vérifie le résultat, par exemple avec un ordre de grandeur."
+    ],
+    "exemple": {
+      "enonce": "Pose et calcule 34 × 12.",
+      "etapes": [
+        "On écrit 34, et 12 juste en dessous, alignés à droite.",
+        "On multiplie 34 par 2 (les unités) : 34 × 2 = 68.",
+        "On passe aux dizaines : on écrit d'abord un 0 pour décaler.",
+        "On multiplie 34 par 1 (la dizaine) : 34 × 1 = 34, donc on écrit 340.",
+        "On additionne les deux produits partiels : 68 + 340 = 408.",
+        "Donc 34 × 12 = 408."
+      ]
+    },
+    "astuce": "Sasuke : « Le piège numéro un, c'est d'oublier le décalage. Quand tu multiplies par les dizaines, écris toujours un zéro à droite avant de commencer : ça t'évite de désaligner tout ton calcul. Et apprends bien tes tables de multiplication par cœur : c'est la vraie clé pour calculer vite et juste. »",
+    "erreurs": [
+      "Mal aligner les chiffres en ne les calant pas par la droite.",
+      "Oublier le zéro de décalage en passant aux dizaines.",
+      "Oublier d'ajouter les retenues.",
+      "Ajouter la retenue avant de multiplier au lieu d'après.",
+      "Se tromper dans une table de multiplication.",
+      "Oublier d'additionner les produits partiels à la fin.",
+      "Mélanger les retenues d'une ligne à l'autre.",
+      "Ne jamais vérifier son résultat et conserver une erreur de calcul."
+    ]
+  },
+  "hinata-hyuga-perimetres": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Hinata Hyuga",
+    "manga": "Naruto",
+    "notion": "Les périmètres",
+    "explication": "Le périmètre d'une figure est la longueur de son contour, c'est-à-dire la distance totale autour de la figure. Pour calculer un périmètre, on additionne les longueurs de tous les côtés. Pour certaines figures, il existe des formules plus rapides. Le périmètre d'un carré se calcule en multipliant la longueur d'un côté par 4, parce que ses 4 côtés sont égaux. Le périmètre d'un rectangle se calcule en additionnant la longueur et la largeur, puis en multipliant le résultat par 2. Avant d'additionner, il faut toujours vérifier que toutes les longueurs sont exprimées dans la même unité. Le périmètre se mesure dans une unité de longueur : le centimètre, le mètre ou le kilomètre. En CM2, on apprend à calculer le périmètre d'un polygone en additionnant ses côtés, et à utiliser les formules du carré et du rectangle. C'est une notion très concrète : calculer la longueur de grillage nécessaire pour entourer un jardin, par exemple, c'est calculer un périmètre. Le périmètre ne dit rien sur la place occupée à l'intérieur de la figure : ce rôle revient à l'aire. Deux figures de formes très différentes peuvent d'ailleurs avoir exactement le même périmètre.",
+    "definitions": [
+      {
+        "terme": "Périmètre",
+        "sens": "La longueur du contour d'une figure."
+      },
+      {
+        "terme": "Contour",
+        "sens": "Le tour complet de la figure."
+      },
+      {
+        "terme": "Côté",
+        "sens": "Un des segments qui forment la figure."
+      },
+      {
+        "terme": "Polygone",
+        "sens": "Une figure fermée formée de segments (les côtés)."
+      },
+      {
+        "terme": "Carré",
+        "sens": "Un quadrilatère à 4 côtés égaux et 4 angles droits."
+      },
+      {
+        "terme": "Rectangle",
+        "sens": "Un quadrilatère à 4 angles droits, dont les côtés opposés sont égaux."
+      },
+      {
+        "terme": "Unité de longueur",
+        "sens": "Une unité comme le cm, le m ou le km."
+      },
+      {
+        "terme": "Aire",
+        "sens": "La mesure de la surface intérieure d'une figure, à ne pas confondre avec le périmètre."
+      }
+    ],
+    "methode": [
+      "Repère tous les côtés de la figure.",
+      "Vérifie que toutes les longueurs sont dans la même unité.",
+      "Si besoin, convertis pour avoir la même unité partout.",
+      "Additionne la longueur de tous les côtés.",
+      "Pour un carré, multiplie plutôt la longueur d'un côté par 4.",
+      "Pour un rectangle, calcule (Longueur + largeur) × 2.",
+      "Donne le résultat avec son unité de longueur.",
+      "Vérifie que ta réponse a du sens (ordre de grandeur)."
+    ],
+    "exemple": {
+      "enonce": "Quel est le périmètre d'un rectangle de 5 cm de long et 3 cm de large ?",
+      "etapes": [
+        "Les côtés du rectangle mesurent : 5 cm, 3 cm, 5 cm et 3 cm.",
+        "Méthode 1 : on additionne tout : 5 + 3 + 5 + 3 = 16 cm.",
+        "Méthode 2 : on utilise la formule (5 + 3) × 2.",
+        "On calcule d'abord la parenthèse : 5 + 3 = 8.",
+        "On multiplie : 8 × 2 = 16.",
+        "Le périmètre est donc 16 cm."
+      ]
+    },
+    "astuce": "Hinata : « Pour le périmètre, retiens le mot tour : tu fais le tour complet de la figure en additionnant chaque côté. Les formules du carré et du rectangle vont plus vite, mais additionner tous les côtés marche toujours. Et n'oublie jamais d'écrire l'unité dans ta réponse ! »",
+    "erreurs": [
+      "Oublier un ou plusieurs côtés dans l'addition.",
+      "Additionner des longueurs exprimées dans des unités différentes.",
+      "Confondre le périmètre et l'aire.",
+      "Pour le carré, multiplier le côté par 2 au lieu de 4.",
+      "Pour le rectangle, oublier de multiplier par 2.",
+      "Oublier l'unité dans la réponse.",
+      "Croire que toutes les figures ont une formule toute prête.",
+      "Mesurer un seul côté et oublier de faire le tour complet de la figure."
+    ]
+  },
+  "rock-lee-longueurs-et-masses": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Rock Lee",
+    "manga": "Naruto",
+    "notion": "Longueurs et masses",
+    "explication": "En CM2, on apprend à mesurer, comparer et convertir des longueurs et des masses. Les longueurs se mesurent avec des unités comme le kilomètre (km), le mètre (m), le centimètre (cm) et le millimètre (mm). Les masses se mesurent avec le kilogramme (kg), le gramme (g) et la tonne (t). Pour passer d'une unité à une autre, on utilise un tableau de conversion : chaque colonne correspond à une unité, et on place les chiffres en mettant l'unité du nombre dans la bonne colonne. Par exemple, 1 mètre vaut 100 centimètres, et 1 kilogramme vaut 1000 grammes. Pour comparer deux mesures, il faut d'abord les exprimer dans la même unité. Ces notions sont très utiles dans la vie quotidienne : mesurer une distance, peser les ingrédients d'une recette, comparer la taille de deux objets. Bien manipuler les unités et les conversions évite beaucoup d'erreurs et permet de résoudre de nombreux problèmes de mesure. Choisir la bonne unité est important : on n'exprime pas la longueur d'un crayon en kilomètres, ni la masse d'un camion en grammes. Savoir convertir permet aussi de comparer des objets décrits avec des unités différentes. On rencontre ces conversions partout : à la cuisine, en sport, ou pour lire un plan.",
+    "definitions": [
+      {
+        "terme": "Longueur",
+        "sens": "La mesure d'une distance."
+      },
+      {
+        "terme": "Masse",
+        "sens": "La mesure de la quantité de matière (ce que l'on pèse)."
+      },
+      {
+        "terme": "Mètre (m)",
+        "sens": "L'unité principale de longueur."
+      },
+      {
+        "terme": "Kilomètre (km)",
+        "sens": "Une grande unité de longueur : 1 km = 1000 m."
+      },
+      {
+        "terme": "Gramme (g)",
+        "sens": "Une petite unité de masse."
+      },
+      {
+        "terme": "Kilogramme (kg)",
+        "sens": "Une unité de masse : 1 kg = 1000 g."
+      },
+      {
+        "terme": "Tableau de conversion",
+        "sens": "Un tableau pour passer d'une unité à une autre."
+      },
+      {
+        "terme": "Millimètre (mm)",
+        "sens": "Une très petite unité de longueur : 1 cm = 10 mm."
+      }
+    ],
+    "methode": [
+      "Identifie ce que tu mesures : une longueur ou une masse.",
+      "Repère l'unité utilisée dans l'énoncé.",
+      "Pour convertir, place le nombre dans un tableau de conversion.",
+      "Place bien le dernier chiffre dans la colonne de son unité.",
+      "Décale jusqu'à la colonne de l'unité que tu veux obtenir.",
+      "Complète avec des zéros si nécessaire.",
+      "Pour comparer deux mesures, convertis-les d'abord dans la même unité.",
+      "Vérifie que le résultat a du sens."
+    ],
+    "exemple": {
+      "enonce": "Convertis 2,5 m en centimètres.",
+      "etapes": [
+        "On veut passer des mètres aux centimètres.",
+        "On sait que 1 m = 100 cm.",
+        "On multiplie donc par 100.",
+        "2,5 × 100 = 250.",
+        "Donc 2,5 m = 250 cm.",
+        "Vérification : 2,5 m, c'est un peu plus de 2 mètres, soit 250 cm, c'est cohérent."
+      ]
+    },
+    "astuce": "Rock Lee : « Pour les conversions, le tableau est ton meilleur entraînement ! Garde en tête trois repères simples : 1 m = 100 cm, 1 km = 1000 m, 1 kg = 1000 g. Avec ces clés et un peu de rigueur, aucune conversion ne te résistera. La fougue de la jeunesse fait le reste ! »",
+    "erreurs": [
+      "Mélanger les unités de longueur et les unités de masse.",
+      "Se tromper de sens : multiplier au lieu de diviser, ou l'inverse.",
+      "Mal placer le chiffre dans le tableau de conversion.",
+      "Oublier les zéros lors d'une conversion.",
+      "Comparer deux mesures sans les mettre dans la même unité.",
+      "Confondre kilomètre et kilogramme à cause du préfixe « kilo ».",
+      "Oublier l'unité dans la réponse.",
+      "Choisir une unité qui n'est pas adaptée à l'objet que l'on mesure."
+    ]
+  },
+  "gaara-polygones-et-angles": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Gaara",
+    "manga": "Naruto",
+    "notion": "Les polygones et les angles",
+    "explication": "Un polygone est une figure géométrique fermée formée uniquement de segments de droite, appelés côtés. On nomme les polygones selon leur nombre de côtés : le triangle a 3 côtés, le quadrilatère en a 4, le pentagone 5 et l'hexagone 6. Les points où deux côtés se rejoignent s'appellent les sommets. À chaque sommet se forme un angle, qui mesure l'écartement entre deux côtés. En CM2, on apprend à reconnaître et à classer les angles. L'angle droit forme un coin parfait, comme le coin d'une feuille, et on le vérifie avec l'équerre. L'angle aigu est plus petit qu'un angle droit, et l'angle obtus est plus grand. Savoir reconnaître les polygones, compter leurs côtés et leurs sommets, et identifier la nature de leurs angles permet de décrire précisément les figures. C'est la base de la géométrie : ce vocabulaire servira ensuite à construire, comparer et étudier des figures de plus en plus complexes. Certains polygones ont des noms particuliers selon leurs propriétés : le carré, le rectangle et le losange sont des quadrilatères spéciaux. Bien observer les côtés et les angles permet de les reconnaître à coup sûr.",
+    "definitions": [
+      {
+        "terme": "Polygone",
+        "sens": "Une figure fermée formée uniquement de segments."
+      },
+      {
+        "terme": "Côté",
+        "sens": "Un des segments qui forment le polygone."
+      },
+      {
+        "terme": "Sommet",
+        "sens": "Un point où deux côtés se rejoignent."
+      },
+      {
+        "terme": "Angle",
+        "sens": "L'écartement entre deux côtés à un sommet."
+      },
+      {
+        "terme": "Angle droit",
+        "sens": "Un angle qui forme un coin parfait, comme celui d'une équerre."
+      },
+      {
+        "terme": "Angle aigu",
+        "sens": "Un angle plus petit qu'un angle droit."
+      },
+      {
+        "terme": "Angle obtus",
+        "sens": "Un angle plus grand qu'un angle droit."
+      },
+      {
+        "terme": "Quadrilatère",
+        "sens": "Un polygone à 4 côtés, comme le carré ou le rectangle."
+      }
+    ],
+    "methode": [
+      "Vérifie que la figure est fermée et formée seulement de segments : c'est un polygone.",
+      "Compte le nombre de côtés.",
+      "Nomme le polygone selon ce nombre (triangle, quadrilatère…).",
+      "Compte les sommets : il y en a autant que de côtés.",
+      "À chaque sommet, observe l'angle.",
+      "Compare l'angle à un angle droit à l'aide de l'équerre.",
+      "Classe l'angle : droit, aigu ou obtus.",
+      "Vérifie en repassant chaque côté et chaque angle."
+    ],
+    "exemple": {
+      "enonce": "Combien de côtés a un quadrilatère, et comment reconnaître un angle droit ?",
+      "etapes": [
+        "« Quadri » veut dire quatre : un quadrilatère a donc 4 côtés.",
+        "Il a aussi 4 sommets.",
+        "À chacun de ces sommets se trouve un angle.",
+        "Pour vérifier un angle droit, on place le coin de l'équerre sur le sommet.",
+        "Si l'angle épouse parfaitement le coin de l'équerre, c'est un angle droit.",
+        "Un carré et un rectangle ont chacun 4 angles droits."
+      ]
+    },
+    "astuce": "Gaara : « Pour reconnaître un angle droit sans hésiter, l'équerre est ton arme. Pose son coin sur le sommet : si ça colle parfaitement, c'est un angle droit. Plus petit, c'est un angle aigu ; plus grand, c'est un angle obtus. Et pour nommer un polygone, il suffit de compter ses côtés ! »",
+    "erreurs": [
+      "Appeler « polygone » une figure ouverte ou qui contient des courbes.",
+      "Confondre les côtés et les sommets.",
+      "Confondre un angle aigu et un angle obtus.",
+      "Affirmer qu'un angle est droit sans le vérifier à l'équerre.",
+      "Se tromper dans le nom du polygone en comptant mal les côtés.",
+      "Oublier qu'un polygone a autant de sommets que de côtés.",
+      "Croire qu'un cercle est un polygone.",
+      "Confondre deux polygones qui ont le même nombre de côtés mais des angles différents."
+    ]
+  },
+  "hokage-reconnaitre-la-proportionnalite": {
+    "matiere": "maths",
+    "niveau": "cm2",
+    "hero": "Hokage",
+    "manga": "Naruto",
+    "notion": "Reconnaître la proportionnalité",
+    "explication": "En CM2, on découvre la proportionnalité. Deux grandeurs sont proportionnelles quand on passe de l'une à l'autre en multipliant (ou en divisant) toujours par le même nombre. Par exemple, si 1 stylo coûte 2 €, alors 2 stylos coûtent 4 €, et 3 stylos coûtent 6 €. Le prix est proportionnel au nombre de stylos. Pour reconnaître une situation de proportionnalité, on vérifie si le rapport entre les deux grandeurs reste toujours le même. Beaucoup de situations de la vie courante sont proportionnelles : le prix selon la quantité achetée, les ingrédients d'une recette selon le nombre de personnes. Mais attention, ce n'est pas toujours le cas : l'âge d'une personne et sa taille, par exemple, ne sont pas proportionnels. En CM2, on apprend surtout à reconnaître la proportionnalité et à résoudre des problèmes simples, souvent en passant par la valeur d'une seule unité. C'est une première approche d'une notion que l'on approfondira tout au long du collège. La proportionnalité se cache dans énormément de situations du quotidien, et savoir la reconnaître permet de résoudre les problèmes plus vite. C'est pourquoi on s'entraîne à la repérer dès le CM2, avant de l'étudier en détail au collège.",
+    "definitions": [
+      {
+        "terme": "Grandeur",
+        "sens": "Ce que l'on mesure : un prix, une longueur, un nombre d'objets…"
+      },
+      {
+        "terme": "Proportionnalité",
+        "sens": "On multiplie toujours par le même nombre pour passer d'une grandeur à l'autre."
+      },
+      {
+        "terme": "Situation proportionnelle",
+        "sens": "Deux grandeurs reliées par un même rapport constant."
+      },
+      {
+        "terme": "Passage à l'unité",
+        "sens": "Trouver la valeur pour 1 avant de calculer le reste."
+      },
+      {
+        "terme": "Rapport",
+        "sens": "Le résultat de la division d'une grandeur par l'autre."
+      },
+      {
+        "terme": "Tableau",
+        "sens": "Un outil pour ranger les deux grandeurs côte à côte."
+      },
+      {
+        "terme": "Multiplier",
+        "sens": "L'opération clé pour calculer en proportionnalité."
+      },
+      {
+        "terme": "Prix unitaire",
+        "sens": "Le prix d'un seul objet, très utile pour le passage à l'unité."
+      }
+    ],
+    "methode": [
+      "Repère les deux grandeurs en jeu (par exemple le nombre d'objets et le prix).",
+      "Vérifie si l'on passe de l'une à l'autre en multipliant toujours par le même nombre.",
+      "Si c'est le cas, la situation est proportionnelle.",
+      "Pour résoudre, cherche d'abord la valeur pour 1 (le passage à l'unité).",
+      "Multiplie cette valeur par la quantité demandée.",
+      "Tu peux ranger les valeurs dans un petit tableau.",
+      "Vérifie que le rapport reste le même partout.",
+      "Donne la réponse avec la bonne unité."
+    ],
+    "exemple": {
+      "enonce": "Si 3 croissants coûtent 3 €, combien coûtent 5 croissants ?",
+      "etapes": [
+        "Les deux grandeurs sont : le nombre de croissants et le prix.",
+        "On cherche d'abord le prix d'un seul croissant (passage à l'unité).",
+        "3 € pour 3 croissants, donc 1 croissant coûte 3 ÷ 3 = 1 €.",
+        "On multiplie par 5 : 1 × 5 = 5.",
+        "Donc 5 croissants coûtent 5 €.",
+        "Vérification : chaque croissant coûte 1 €, le rapport est bien constant."
+      ]
+    },
+    "astuce": "Hokage : « Le secret de la proportionnalité, c'est le passage à l'unité : trouve d'abord combien coûte UN seul objet, et ensuite tu peux calculer n'importe quelle quantité. Mais méfie-toi : toutes les situations ne sont pas proportionnelles, vérifie toujours que tu multiplies bien par le même nombre ! »",
+    "erreurs": [
+      "Croire que toutes les situations sont proportionnelles.",
+      "Additionner au lieu de multiplier.",
+      "Oublier de vérifier que le rapport reste constant.",
+      "Se tromper dans le passage à l'unité (mauvaise division).",
+      "Mélanger les deux grandeurs dans le tableau.",
+      "Oublier l'unité dans la réponse.",
+      "Confondre proportionnalité et simple augmentation.",
+      "Appliquer la proportionnalité à une situation qui ne l'est pas."
+    ]
+  }
+}
