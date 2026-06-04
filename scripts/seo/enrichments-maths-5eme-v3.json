@@ -1,0 +1,594 @@
+{
+  "naruto-uzumaki-expressions-litterales": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les expressions littérales",
+    "explication": "Une expression littérale est une expression mathématique qui contient une ou plusieurs lettres, en plus des nombres. Ces lettres représentent des nombres que l'on ne connaît pas encore, ou qui peuvent varier. Le calcul littéral consiste à manipuler ces expressions, et trois opérations sont essentielles en 5ème. Substituer, c'est remplacer une lettre par une valeur donnée, puis effectuer le calcul. Réduire, c'est regrouper les termes semblables : par exemple, 3x + 2x devient 5x, ce qui simplifie l'écriture. Développer, c'est transformer un produit en somme en utilisant la distributivité : k(a + b) = ka + kb. Une règle d'écriture importante simplifie les expressions : on n'écrit pas le signe × devant une lettre, donc 3 × x s'écrit simplement 3x. Le calcul littéral est un outil très puissant : il permet d'écrire des formules générales, valables pour n'importe quelle valeur, et de mettre des problèmes en équation. À partir d'une expression littérale, on peut d'ailleurs résoudre une équation simple, c'est-à-dire trouver la valeur de la lettre qui rend une égalité vraie. Bien manipuler les expressions littérales, en respectant les règles d'écriture et de calcul, est une base indispensable de la 5ème, que l'on retrouve dans presque tous les chapitres des années suivantes. Avec un peu d'habitude, on apprend aussi à reconnaître les expressions équivalentes : elles s'écrivent différemment mais donnent toujours le même résultat, quelle que soit la valeur de la lettre.",
+    "definitions": [
+      {
+        "terme": "Expression littérale",
+        "sens": "Une expression qui contient des lettres en plus des nombres."
+      },
+      {
+        "terme": "Variable",
+        "sens": "La lettre qui représente un nombre inconnu ou qui varie."
+      },
+      {
+        "terme": "Substituer",
+        "sens": "Remplacer une lettre par une valeur, puis calculer."
+      },
+      {
+        "terme": "Réduire",
+        "sens": "Regrouper les termes semblables pour simplifier."
+      },
+      {
+        "terme": "Terme",
+        "sens": "Un élément d'une somme algébrique."
+      },
+      {
+        "terme": "Termes semblables",
+        "sens": "Des termes qui contiennent la même lettre."
+      },
+      {
+        "terme": "Développer",
+        "sens": "Transformer un produit en une somme de termes."
+      },
+      {
+        "terme": "Distributivité",
+        "sens": "La règle k(a + b) = ka + kb."
+      }
+    ],
+    "methode": [
+      "Repère les lettres (variables) présentes dans l'expression.",
+      "Pour substituer, remplace chaque lettre par sa valeur, puis calcule.",
+      "Respecte toujours les priorités opératoires dans le calcul.",
+      "Pour réduire, regroupe les termes semblables (même lettre).",
+      "Additionne ou soustrais les nombres devant ces lettres.",
+      "Pour développer, applique la distributivité : k(a + b) = ka + kb.",
+      "N'écris jamais le signe × devant une lettre (3 × x = 3x).",
+      "Vérifie ton expression réduite en substituant une valeur simple."
+    ],
+    "exemple": {
+      "enonce": "Réduis l'expression 3x + 2x + 4.",
+      "etapes": [
+        "On repère les termes semblables : 3x et 2x contiennent la même lettre.",
+        "On les regroupe : 3x + 2x = 5x.",
+        "Le terme 4 n'a pas de lettre : il reste seul.",
+        "On ne peut pas l'ajouter à 5x (termes non semblables).",
+        "On écrit donc le résultat : 5x + 4.",
+        "L'expression est réduite : on ne peut pas simplifier davantage."
+      ]
+    },
+    "astuce": "Naruto : « On n'additionne que ce qui se ressemble ! 3x et 2x se regroupent en 5x, mais 5x et 4 restent séparés. C'est comme additionner des pommes avec des pommes : on ne mélange pas les pommes et les oranges ! »",
+    "erreurs": [
+      "Additionner des termes non semblables (écrire 3x + 4 = 7x).",
+      "Oublier le signe × implicite devant une lettre.",
+      "Mal appliquer la distributivité en oubliant un produit.",
+      "Se tromper de signe en réduisant.",
+      "Confondre 3x et x³.",
+      "Oublier les priorités opératoires lors d'une substitution.",
+      "Croire que 2x signifie 2 + x.",
+      "Ne pas vérifier le résultat réduit."
+    ]
+  },
+  "sasuke-uchiha-priorites-operatoires": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Sasuke Uchiha",
+    "manga": "Naruto",
+    "notion": "Les priorités opératoires",
+    "explication": "Quand un calcul contient plusieurs opérations, on ne les effectue pas de gauche à droite au hasard : il existe un ordre de priorité à respecter, sinon le résultat est faux. L'ordre est le suivant : on commence par ce qui est entre parenthèses, puis on calcule les puissances, ensuite les multiplications et les divisions de gauche à droite, et enfin les additions et les soustractions de gauche à droite. Par exemple, dans 2 + 3 × 4, on effectue d'abord la multiplication (3 × 4 = 12), puis l'addition (2 + 12 = 14), et non l'inverse. Les parenthèses servent justement à modifier cet ordre : ce qu'elles contiennent passe en premier. Lorsqu'il y a plusieurs parenthèses imbriquées, on commence par les plus intérieures. Ces règles s'appliquent aussi aux calculs avec des fractions : une barre de fraction joue le rôle d'une grande parenthèse, regroupant le numérateur d'un côté et le dénominateur de l'autre. Respecter les priorités opératoires est fondamental : c'est une source d'erreurs très fréquente, et une seule inversion fausse tout le résultat. Bien maîtriser cet ordre permet de calculer juste, à la main comme à la calculatrice, et constitue une base solide pour tout le calcul de la 5ème et des classes suivantes. Sur la calculatrice, ces priorités sont déjà programmées, mais il faut savoir placer les parenthèses au bon endroit, sinon la machine calcule autre chose que ce que l'on voulait vraiment.",
+    "definitions": [
+      {
+        "terme": "Opération",
+        "sens": "Un calcul : addition, soustraction, multiplication, division."
+      },
+      {
+        "terme": "Priorité opératoire",
+        "sens": "L'ordre dans lequel on effectue les opérations."
+      },
+      {
+        "terme": "Parenthèses",
+        "sens": "Ce qu'elles contiennent se calcule en premier."
+      },
+      {
+        "terme": "Puissance",
+        "sens": "Une multiplication répétée, calculée après les parenthèses."
+      },
+      {
+        "terme": "Produit",
+        "sens": "Le résultat d'une multiplication."
+      },
+      {
+        "terme": "Quotient",
+        "sens": "Le résultat d'une division."
+      },
+      {
+        "terme": "Somme et différence",
+        "sens": "Addition et soustraction, calculées en dernier."
+      },
+      {
+        "terme": "Barre de fraction",
+        "sens": "Elle joue le rôle d'une grande parenthèse."
+      }
+    ],
+    "methode": [
+      "Repère d'abord les parenthèses : calcule leur contenu en premier.",
+      "Pour des parenthèses imbriquées, commence par les plus intérieures.",
+      "Calcule ensuite les puissances.",
+      "Effectue les multiplications et divisions, de gauche à droite.",
+      "Termine par les additions et soustractions, de gauche à droite.",
+      "Pour une fraction, traite le numérateur et le dénominateur séparément.",
+      "Réécris le calcul à chaque étape pour ne pas te perdre.",
+      "Vérifie le résultat, éventuellement à la calculatrice."
+    ],
+    "exemple": {
+      "enonce": "Calcule 2 + 3 × 4 en respectant les priorités.",
+      "etapes": [
+        "Le calcul contient une addition et une multiplication.",
+        "La multiplication est prioritaire sur l'addition.",
+        "On calcule d'abord 3 × 4 = 12.",
+        "Il reste alors 2 + 12.",
+        "On effectue l'addition : 2 + 12 = 14.",
+        "Le résultat est 14 (et non 20, qui serait faux)."
+      ]
+    },
+    "astuce": "Sasuke : « Retiens l'ordre : Parenthèses, Puissances, ×÷, puis +−. La multiplication passe TOUJOURS avant l'addition. Dans 2 + 3 × 4, ce n'est pas 5 × 4 = 20, mais 2 + 12 = 14. Une inversion, et tout le résultat est faux. »",
+    "erreurs": [
+      "Calculer de gauche à droite sans respecter les priorités.",
+      "Oublier que la multiplication est prioritaire sur l'addition.",
+      "Ne pas calculer en premier le contenu des parenthèses.",
+      "Commencer par les parenthèses extérieures au lieu des intérieures.",
+      "Oublier que la barre de fraction regroupe numérateur et dénominateur.",
+      "Mal gérer le sens de gauche à droite pour × et ÷.",
+      "Oublier de calculer les puissances avant les multiplications.",
+      "Se tromper de signe dans une soustraction."
+    ]
+  },
+  "sakura-haruno-theoreme-de-pythagore": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Sakura Haruno",
+    "manga": "Naruto",
+    "notion": "Le théorème de Pythagore",
+    "explication": "Le théorème de Pythagore s'applique dans un triangle rectangle. Il relie les longueurs des trois côtés : le carré de l'hypoténuse, le côté le plus long, opposé à l'angle droit, est égal à la somme des carrés des deux autres côtés, soit a² + b² = c². Ce théorème sert à calculer une longueur manquante dès que l'on connaît les deux autres côtés. Pour trouver l'hypoténuse, on additionne les carrés des deux côtés de l'angle droit, puis on prend la racine carrée. Pour trouver un côté de l'angle droit, on soustrait le carré du côté connu au carré de l'hypoténuse, puis on prend la racine carrée. Le théorème possède aussi une réciproque, qui sert à démontrer qu'un triangle est rectangle : si le carré du plus grand côté est égal à la somme des carrés des deux autres, alors le triangle est rectangle ; sinon, il ne l'est pas. Il faut bien distinguer le théorème direct, qui calcule une longueur, de sa réciproque, qui prouve un angle droit. Le théorème de Pythagore est l'un des plus importants de toute la géométrie : il intervient dans de nombreux problèmes, du calcul de distances aux vérifications de constructions. C'est une notion clé de la 5ème, réutilisée pendant tout le collège.",
+    "definitions": [
+      {
+        "terme": "Triangle rectangle",
+        "sens": "Un triangle qui possède un angle droit."
+      },
+      {
+        "terme": "Hypoténuse",
+        "sens": "Le côté le plus long, en face de l'angle droit."
+      },
+      {
+        "terme": "Côtés de l'angle droit",
+        "sens": "Les deux côtés qui forment l'angle droit."
+      },
+      {
+        "terme": "Carré d'un nombre",
+        "sens": "Le nombre multiplié par lui-même."
+      },
+      {
+        "terme": "Racine carrée",
+        "sens": "L'opération inverse du carré."
+      },
+      {
+        "terme": "Théorème de Pythagore",
+        "sens": "a² + b² = c² dans un triangle rectangle."
+      },
+      {
+        "terme": "Réciproque",
+        "sens": "Elle sert à prouver qu'un triangle est rectangle."
+      },
+      {
+        "terme": "Angle droit",
+        "sens": "Un angle de 90°."
+      }
+    ],
+    "methode": [
+      "Repère l'angle droit, puis l'hypoténuse (en face de cet angle).",
+      "Écris l'égalité de Pythagore : a² + b² = c².",
+      "Pour l'hypoténuse, additionne les carrés des deux autres côtés.",
+      "Prends ensuite la racine carrée du résultat.",
+      "Pour un côté de l'angle droit, soustrais le carré connu au carré de l'hypoténuse.",
+      "Prends la racine carrée du résultat.",
+      "Pour la réciproque, compare le carré du plus grand côté à la somme des carrés des deux autres.",
+      "Donne le résultat avec son unité."
+    ],
+    "exemple": {
+      "enonce": "Un triangle ABC est rectangle en A, avec AB = 3 cm et AC = 4 cm. Calcule BC.",
+      "etapes": [
+        "BC est l'hypoténuse, car elle est en face de l'angle droit A.",
+        "On écrit : BC² = AB² + AC².",
+        "On remplace : BC² = 3² + 4² = 9 + 16.",
+        "On additionne : BC² = 25.",
+        "On prend la racine carrée : BC = √25 = 5.",
+        "L'hypoténuse BC mesure donc 5 cm."
+      ]
+    },
+    "astuce": "Sakura : « L'hypoténuse est TOUJOURS le côté le plus long, en face de l'angle droit. Tu cherches l'hypoténuse ? Tu ADDITIONNES les carrés. Tu cherches un autre côté ? Tu SOUSTRAIS. Et n'oublie jamais la racine carrée à la fin ! »",
+    "erreurs": [
+      "Se tromper d'hypoténuse (ce n'est pas toujours le côté nommé en dernier).",
+      "Additionner alors qu'on cherche un côté de l'angle droit (il faut soustraire).",
+      "Oublier de prendre la racine carrée à la fin.",
+      "Donner le carré de la longueur au lieu de la longueur.",
+      "Confondre le théorème direct et sa réciproque.",
+      "Appliquer Pythagore dans un triangle non rectangle.",
+      "Se tromper dans le calcul des carrés.",
+      "Oublier l'unité dans le résultat."
+    ]
+  },
+  "rock-lee-parallelogramme-et-trapeze": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Rock Lee",
+    "manga": "Naruto",
+    "notion": "Aires : parallélogramme et trapèze",
+    "explication": "Calculer l'aire d'un quadrilatère, c'est mesurer la surface qu'il occupe. À chaque figure correspond une formule. L'aire d'un parallélogramme se calcule en multipliant la longueur d'une base par la hauteur correspondante, c'est-à-dire la distance perpendiculaire entre cette base et le côté opposé : Aire = base × hauteur. Attention, la hauteur n'est pas un côté oblique, mais bien la distance perpendiculaire. L'aire d'un trapèze, qui possède deux côtés parallèles de longueurs différentes appelés les deux bases, se calcule avec la formule : Aire = (base 1 + base 2) × hauteur ÷ 2. On additionne donc les deux bases parallèles, on multiplie par la hauteur, puis on divise par deux. L'aire d'un losange, dont les diagonales se coupent à angle droit, se calcule en multipliant ses deux diagonales et en divisant par deux : Aire = (diagonale 1 × diagonale 2) ÷ 2. Dans tous les cas, il faut veiller à exprimer toutes les longueurs dans la même unité, et l'aire s'exprime dans une unité carrée. Bien identifier la base et la hauteur de chaque figure, sans les confondre avec les côtés, est essentiel. Ces formules d'aires sont très utilisées en 5ème et dans les problèmes concrets de géométrie et de mesure. Connaître ces aires est très utile au quotidien : calculer la surface d'un terrain, d'un mur à peindre ou d'un terrain de sport revient souvent à reconnaître l'un de ces quadrilatères et à appliquer la bonne formule.",
+    "definitions": [
+      {
+        "terme": "Aire",
+        "sens": "La mesure d'une surface, en unités carrées."
+      },
+      {
+        "terme": "Quadrilatère",
+        "sens": "Une figure à quatre côtés."
+      },
+      {
+        "terme": "Parallélogramme",
+        "sens": "Un quadrilatère dont les côtés opposés sont parallèles."
+      },
+      {
+        "terme": "Trapèze",
+        "sens": "Un quadrilatère ayant deux côtés parallèles (les bases)."
+      },
+      {
+        "terme": "Losange",
+        "sens": "Un parallélogramme dont les quatre côtés sont égaux."
+      },
+      {
+        "terme": "Base",
+        "sens": "Le côté choisi comme appui pour le calcul de l'aire."
+      },
+      {
+        "terme": "Hauteur",
+        "sens": "La distance perpendiculaire entre la base et le côté opposé."
+      },
+      {
+        "terme": "Diagonale",
+        "sens": "Un segment qui relie deux sommets non voisins."
+      }
+    ],
+    "methode": [
+      "Identifie la figure : parallélogramme, trapèze ou losange.",
+      "Repère la base et la hauteur (perpendiculaire), ou les diagonales.",
+      "Vérifie que toutes les longueurs sont dans la même unité.",
+      "Pour un parallélogramme, calcule base × hauteur.",
+      "Pour un trapèze, calcule (base 1 + base 2) × hauteur ÷ 2.",
+      "Pour un losange, calcule (diagonale 1 × diagonale 2) ÷ 2.",
+      "Donne le résultat dans la bonne unité carrée.",
+      "Vérifie que ta réponse a du sens."
+    ],
+    "exemple": {
+      "enonce": "Calcule l'aire d'un parallélogramme de base 6 cm et de hauteur 4 cm.",
+      "etapes": [
+        "La figure est un parallélogramme.",
+        "La formule est : Aire = base × hauteur.",
+        "On repère la base (6 cm) et la hauteur perpendiculaire (4 cm).",
+        "On remplace : Aire = 6 × 4.",
+        "On calcule : 6 × 4 = 24.",
+        "L'aire du parallélogramme est donc 24 cm²."
+      ]
+    },
+    "astuce": "Rock Lee : « La hauteur est TOUJOURS perpendiculaire à la base, jamais un côté oblique ! C'est l'erreur classique. Et pour le trapèze comme pour le losange, n'oublie jamais de diviser par 2 à la fin. »",
+    "erreurs": [
+      "Prendre un côté oblique comme hauteur au lieu de la perpendiculaire.",
+      "Oublier de diviser par 2 pour le trapèze ou le losange.",
+      "Confondre l'aire et le périmètre.",
+      "Mélanger les unités des longueurs.",
+      "Donner le résultat en cm au lieu de cm².",
+      "Additionner les mauvaises longueurs pour le trapèze.",
+      "Confondre base et diagonale.",
+      "Utiliser la mauvaise formule selon la figure."
+    ]
+  },
+  "kankuro-translation": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Kankuro",
+    "manga": "Naruto",
+    "notion": "Translation et rotation",
+    "explication": "Une transformation géométrique déplace une figure dans le plan sans la déformer : la figure obtenue, appelée image, a exactement la même forme et les mêmes dimensions que la figure de départ. La translation est un glissement : tous les points de la figure se déplacent de la même distance, dans la même direction et le même sens. On décrit ce glissement par un vecteur, qui indique à la fois la direction, le sens et la longueur du déplacement. Pour construire l'image d'un point par une translation, on reporte ce vecteur à partir du point. La rotation, elle, est un pivotement : la figure tourne autour d'un point fixe, appelé centre de rotation, d'un certain angle et dans un sens donné, horaire ou anti-horaire. Chaque point garde la même distance au centre, mais change de position. Ces transformations conservent les longueurs, les angles et les aires : l'image est toujours superposable à la figure de départ. Elles permettent de comprendre les frises, les pavages et de nombreux motifs décoratifs que l'on rencontre dans l'art et la nature. Savoir reconnaître et construire l'image d'une figure par une translation ou une rotation est au programme de la 5ème, et développe le sens de l'espace, utile pour toute la géométrie du collège.",
+    "definitions": [
+      {
+        "terme": "Transformation",
+        "sens": "Une opération qui déplace une figure dans le plan."
+      },
+      {
+        "terme": "Image",
+        "sens": "La figure obtenue après la transformation."
+      },
+      {
+        "terme": "Translation",
+        "sens": "Un glissement de tous les points dans la même direction."
+      },
+      {
+        "terme": "Vecteur",
+        "sens": "Il indique la direction, le sens et la longueur du déplacement."
+      },
+      {
+        "terme": "Direction",
+        "sens": "La droite selon laquelle on se déplace."
+      },
+      {
+        "terme": "Sens",
+        "sens": "Le côté vers lequel on se déplace sur cette direction."
+      },
+      {
+        "terme": "Rotation",
+        "sens": "Un pivotement autour d'un point fixe."
+      },
+      {
+        "terme": "Centre de rotation",
+        "sens": "Le point fixe autour duquel la figure tourne."
+      }
+    ],
+    "methode": [
+      "Identifie la transformation demandée : translation ou rotation.",
+      "Pour une translation, repère le vecteur (direction, sens, longueur).",
+      "Reporte ce vecteur à partir de chaque point de la figure.",
+      "Relie les images obtenues pour tracer la figure transformée.",
+      "Pour une rotation, repère le centre, l'angle et le sens.",
+      "Fais pivoter chaque point en gardant sa distance au centre.",
+      "Vérifie que l'image est superposable à la figure de départ.",
+      "Contrôle que longueurs et angles sont conservés."
+    ],
+    "exemple": {
+      "enonce": "Translate le point A(2 ; 1) par le vecteur de coordonnées (3 ; 0).",
+      "etapes": [
+        "Le vecteur (3 ; 0) indique un déplacement de 3 vers la droite, 0 en vertical.",
+        "On ajoute les coordonnées du vecteur à celles de A.",
+        "Nouvelle abscisse : 2 + 3 = 5.",
+        "Nouvelle ordonnée : 1 + 0 = 1.",
+        "L'image est le point A'(5 ; 1).",
+        "A' est bien décalé de 3 vers la droite, sans changer de hauteur."
+      ]
+    },
+    "astuce": "Kankuro : « Translation = glissement, tout bouge pareil dans la même direction. Rotation = pivotement autour d'un centre. Dans les deux cas, la figure ne change ni de forme ni de taille : l'image est une copie parfaite, juste déplacée ! »",
+    "erreurs": [
+      "Déformer la figure au lieu de la déplacer à l'identique.",
+      "Mal reporter le vecteur d'une translation.",
+      "Oublier le sens de rotation (horaire ou anti-horaire).",
+      "Confondre translation et rotation.",
+      "Changer la distance d'un point au centre lors d'une rotation.",
+      "Se tromper de signe dans les coordonnées du vecteur.",
+      "Oublier de transformer tous les points de la figure.",
+      "Croire que la transformation change les longueurs."
+    ]
+  },
+  "temari-definition": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Temari",
+    "manga": "Naruto",
+    "notion": "La symétrie centrale",
+    "explication": "La symétrie centrale est une transformation qui fait correspondre à chaque point un point symétrique par rapport à un point fixe, appelé centre de symétrie. Deux points A et A' sont symétriques par rapport à un centre O lorsque O est exactement le milieu du segment [AA']. Concrètement, faire une symétrie centrale de centre O revient à faire pivoter la figure d'un demi-tour, soit 180°, autour de O : c'est comme retourner la figure tête-bêche autour du point central. La symétrie centrale conserve les longueurs, les angles et les aires : l'image d'une figure a exactement la même forme et la même taille, mais elle est retournée. Une figure possède un centre de symétrie lorsqu'elle se superpose à elle-même après un demi-tour autour d'un point : c'est le cas du parallélogramme, du cercle ou du rectangle. Dans un repère, on peut calculer les coordonnées de l'image : si O est le centre, les coordonnées de A' se déduisent de celles de A par la relation A' = (2 × Ox − Ax ; 2 × Oy − Ay). Bien comprendre la symétrie centrale, et la distinguer de la symétrie axiale, qui se fait par rapport à une droite comme un miroir, est une notion importante de la 5ème.",
+    "definitions": [
+      {
+        "terme": "Symétrie centrale",
+        "sens": "Une transformation par rapport à un point (un demi-tour)."
+      },
+      {
+        "terme": "Centre de symétrie",
+        "sens": "Le point fixe autour duquel on retourne la figure."
+      },
+      {
+        "terme": "Point symétrique",
+        "sens": "L'image d'un point par la symétrie centrale."
+      },
+      {
+        "terme": "Milieu",
+        "sens": "Le point qui partage un segment en deux parts égales."
+      },
+      {
+        "terme": "Demi-tour",
+        "sens": "Une rotation de 180° autour du centre."
+      },
+      {
+        "terme": "Image",
+        "sens": "La figure obtenue après la transformation."
+      },
+      {
+        "terme": "Symétrie axiale",
+        "sens": "Une symétrie par rapport à une droite (à ne pas confondre)."
+      },
+      {
+        "terme": "Centre de symétrie d'une figure",
+        "sens": "Le point autour duquel la figure se superpose à elle-même."
+      }
+    ],
+    "methode": [
+      "Repère le centre de symétrie O.",
+      "Pour le symétrique d'un point A, trace la demi-droite passant par A et O.",
+      "Reporte la même longueur de l'autre côté : O est le milieu de [AA'].",
+      "Dans un repère, applique A' = (2 × Ox − Ax ; 2 × Oy − Ay).",
+      "Recommence pour chaque point de la figure.",
+      "Relie les images obtenues pour tracer la figure symétrique.",
+      "Vérifie que O est bien le milieu de chaque segment [point ; image].",
+      "Distingue bien la symétrie centrale de la symétrie axiale."
+    ],
+    "exemple": {
+      "enonce": "Quel est le symétrique du point A(4 ; 2) par rapport au centre O(1 ; 1) ?",
+      "etapes": [
+        "On utilise la relation A' = (2 × Ox − Ax ; 2 × Oy − Ay).",
+        "Pour l'abscisse : 2 × 1 − 4 = 2 − 4 = −2.",
+        "Pour l'ordonnée : 2 × 1 − 2 = 2 − 2 = 0.",
+        "Donc le symétrique est A'(−2 ; 0).",
+        "Vérification : O(1 ; 1) est bien le milieu de [AA'].",
+        "Le point A a donc pivoté d'un demi-tour autour de O."
+      ]
+    },
+    "astuce": "Temari : « La symétrie centrale, c'est un demi-tour autour d'un point, comme un boomerang qui revient ! Ne la confonds pas avec la symétrie axiale (le miroir, le pliage). Et souviens-toi : le centre O est toujours le MILIEU du segment qui relie un point à son image. »",
+    "erreurs": [
+      "Confondre la symétrie centrale et la symétrie axiale.",
+      "Mal placer le centre de symétrie.",
+      "Oublier que le centre est le milieu de [AA'].",
+      "Se tromper de signe dans le calcul des coordonnées.",
+      "Déformer la figure au lieu de la retourner à l'identique.",
+      "Confondre demi-tour (180°) et quart de tour (90°).",
+      "Oublier de transformer tous les points.",
+      "Croire que la symétrie centrale change les longueurs."
+    ]
+  },
+  "gaara-definition-et-propriete": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Gaara",
+    "manga": "Naruto",
+    "notion": "La médiatrice",
+    "explication": "La médiatrice d'un segment est une droite particulière qui possède deux caractéristiques liées. D'abord, par définition, la médiatrice d'un segment [AB] est la droite perpendiculaire à ce segment et qui passe par son milieu. Ensuite, elle possède une propriété très utile : tous les points situés sur la médiatrice sont à égale distance des deux extrémités du segment. Autrement dit, un point M appartient à la médiatrice de [AB] si et seulement si MA = MB. Cette propriété fonctionne dans les deux sens, ce qui en fait un outil puissant pour les démonstrations. Pour tracer la médiatrice, on peut utiliser l'équerre et la règle graduée, en traçant la perpendiculaire qui passe par le milieu, ou bien le compas, en traçant des arcs de cercle de même rayon de chaque côté. Dans un triangle, chaque côté possède sa médiatrice : les trois médiatrices d'un triangle se croisent en un même point, qui est le centre du cercle passant par les trois sommets, appelé cercle circonscrit. La médiatrice est une notion importante de la géométrie de 5ème, à la fois pour réaliser des constructions précises et pour justifier des égalités de distances dans les démonstrations. La médiatrice est aussi très utilisée dans les problèmes de construction, par exemple pour placer un point à égale distance de deux lieux donnés, comme deux villes sur une carte.",
+    "definitions": [
+      {
+        "terme": "Médiatrice",
+        "sens": "La perpendiculaire à un segment passant par son milieu."
+      },
+      {
+        "terme": "Segment",
+        "sens": "La portion de droite entre deux points."
+      },
+      {
+        "terme": "Perpendiculaire",
+        "sens": "Qui forme un angle droit avec le segment."
+      },
+      {
+        "terme": "Milieu",
+        "sens": "Le point qui partage le segment en deux parts égales."
+      },
+      {
+        "terme": "Équidistant",
+        "sens": "Situé à égale distance de deux points."
+      },
+      {
+        "terme": "Propriété de la médiatrice",
+        "sens": "M sur la médiatrice de [AB] ⇔ MA = MB."
+      },
+      {
+        "terme": "Cercle circonscrit",
+        "sens": "Le cercle passant par les trois sommets d'un triangle."
+      },
+      {
+        "terme": "Médiatrices d'un triangle",
+        "sens": "Elles se croisent au centre du cercle circonscrit."
+      }
+    ],
+    "methode": [
+      "Repère le segment [AB] dont tu cherches la médiatrice.",
+      "Trouve le milieu du segment.",
+      "Trace la droite perpendiculaire passant par ce milieu (à l'équerre).",
+      "Ou, au compas, trace des arcs de même rayon depuis A et depuis B.",
+      "Relie les deux points d'intersection des arcs : c'est la médiatrice.",
+      "Pour prouver que MA = MB, utilise la propriété de la médiatrice.",
+      "Dans un triangle, trace les trois médiatrices.",
+      "Leur point commun est le centre du cercle circonscrit."
+    ],
+    "exemple": {
+      "enonce": "M est un point de la médiatrice de [AB] et MA = 5 cm. Combien vaut MB ?",
+      "etapes": [
+        "On utilise la propriété de la médiatrice.",
+        "Tout point de la médiatrice de [AB] est à égale distance de A et de B.",
+        "Donc, pour le point M, on a MA = MB.",
+        "Or on sait que MA = 5 cm.",
+        "On en déduit que MB = 5 cm.",
+        "Le point M est bien équidistant de A et de B."
+      ]
+    },
+    "astuce": "Gaara : « Médiatrice = PERPENDICULAIRE + MILIEU, les deux à la fois. Et sa super-pouvoir : tout point posé dessus est à égale distance des deux extrémités (MA = MB). Deux informations puissantes dans une seule droite ! »",
+    "erreurs": [
+      "Oublier « perpendiculaire » ou « milieu » dans la définition.",
+      "Confondre la médiatrice avec la hauteur ou la bissectrice.",
+      "Mal placer le milieu du segment.",
+      "Tracer une droite qui n'est pas perpendiculaire.",
+      "Oublier la propriété d'équidistance (MA = MB).",
+      "Confondre médiatrice d'un segment et médiane d'un triangle.",
+      "Mal utiliser le compas (rayons différents).",
+      "Oublier que les 3 médiatrices donnent le cercle circonscrit."
+    ]
+  },
+  "orochimaru-bilan-5eme": {
+    "matiere": "maths",
+    "niveau": "5eme",
+    "hero": "Orochimaru",
+    "manga": "Naruto",
+    "notion": "Le bilan 5ème",
+    "explication": "La 5ème approfondit les bases du collège et introduit des outils qui serviront jusqu'au Brevet. Faire un bon bilan de 5ème, c'est reprendre méthodiquement chaque grand domaine pour consolider ses acquis. En calcul, on retient les priorités opératoires et le calcul littéral : substituer, réduire et développer. En géométrie, on consolide le théorème de Pythagore et sa réciproque, les aires des quadrilatères comme le parallélogramme, le trapèze et le losange, ainsi que les transformations : translation, rotation, symétrie centrale, et la médiatrice. En proportionnalité, on travaille des situations plus avancées, avec les pourcentages et les échelles. Un bilan efficace ne consiste pas à tout relire d'un coup, mais à cibler ses points faibles, à refaire des exercices variés et à comprendre ses erreurs passées. Travailler par petites séances régulières aide à mieux mémoriser durablement. Il est aussi utile de soigner sa rédaction et de toujours penser aux unités, deux réflexes qui rapportent des points. Bien consolider la 5ème, c'est aborder la 4ème, puis la 3ème, avec des bases solides, et limiter les lacunes difficiles à combler plus tard. C'est un investissement précieux pour réussir toute la suite du collège, jusqu'au Brevet. Refaire d'anciens contrôles dans les conditions réelles, sans regarder le cours, est l'un des meilleurs entraînements : cela révèle précisément les notions qui ne sont pas encore solides et qu'il faut retravailler en priorité. Garder une trace écrite de ses progrès, dans un petit carnet de révision, motive et permet de voir le chemin parcouru tout au long de l'année.",
+    "definitions": [
+      {
+        "terme": "Priorités opératoires",
+        "sens": "L'ordre dans lequel on effectue les opérations."
+      },
+      {
+        "terme": "Calcul littéral",
+        "sens": "Le calcul avec des lettres : substituer, réduire, développer."
+      },
+      {
+        "terme": "Théorème de Pythagore",
+        "sens": "a² + b² = c² dans un triangle rectangle."
+      },
+      {
+        "terme": "Aire",
+        "sens": "La mesure d'une surface, en unités carrées."
+      },
+      {
+        "terme": "Transformation",
+        "sens": "Une opération qui déplace une figure sans la déformer."
+      },
+      {
+        "terme": "Symétrie centrale",
+        "sens": "Une transformation par rapport à un point (demi-tour)."
+      },
+      {
+        "terme": "Médiatrice",
+        "sens": "La perpendiculaire à un segment passant par son milieu."
+      },
+      {
+        "terme": "Bilan",
+        "sens": "Une révision organisée de l'ensemble du programme."
+      }
+    ],
+    "methode": [
+      "Classe le programme par domaines : calcul, géométrie, transformations, proportionnalité.",
+      "Repère tes points faibles grâce à tes contrôles passés.",
+      "Reprends une notion à la fois, en relisant l'essentiel.",
+      "Refais des exercices variés plutôt que de relire passivement.",
+      "Analyse tes erreurs pour comprendre leur origine.",
+      "Travaille par petites séances régulières.",
+      "Pense toujours aux unités et soigne ta rédaction.",
+      "Vérifie chaque réponse avant de passer à la suite."
+    ],
+    "exemple": {
+      "enonce": "Comment réviser efficacement le théorème de Pythagore en une courte séance ?",
+      "etapes": [
+        "Je relis la formule clé : a² + b² = c² dans un triangle rectangle.",
+        "Je refais un calcul d'hypoténuse déjà corrigé.",
+        "Je refais un calcul d'un côté de l'angle droit.",
+        "Je distingue bien le théorème direct et sa réciproque.",
+        "Je m'entraîne sur un nouvel exercice du même type.",
+        "Je vérifie mes réponses et je note ce qui reste à revoir."
+      ]
+    },
+    "astuce": "Orochimaru : « Ne révise pas tout la veille. Cible surtout tes erreurs passées : c'est là que tu gagnes le plus de points. Quelques séances courtes et régulières valent bien mieux qu'une longue nuit de panique avant le contrôle. »",
+    "erreurs": [
+      "Tout réviser au dernier moment en une seule séance.",
+      "Ne réviser que ce que l'on maîtrise déjà.",
+      "Relire passivement sans refaire d'exercices.",
+      "Ne pas analyser ses erreurs passées.",
+      "Négliger la rédaction et les unités.",
+      "Confondre les différentes transformations.",
+      "Oublier de distinguer le théorème de Pythagore et sa réciproque.",
+      "Ne pas vérifier ses résultats."
+    ]
+  }
+}
