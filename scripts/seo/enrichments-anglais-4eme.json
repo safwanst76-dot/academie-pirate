@@ -1,0 +1,594 @@
+{
+  "eren-jager-superlatifs": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Eren Jäger",
+    "manga": "L'Attaque des Titans",
+    "notion": "Les superlatifs",
+    "explication": "Le superlatif sert à désigner l'élément qui possède le plus (ou le moins) une qualité parmi un ensemble : « Tom is the tallest boy in the class » (Tom est le garçon le plus grand de la classe). Comme pour le comparatif, sa formation dépend de la longueur de l'adjectif, mais une règle est commune à tous les cas : on utilise toujours l'article « the » devant le superlatif. Pour les adjectifs courts, d'une syllabe, on ajoute la terminaison « -est » à l'adjectif : tall devient the tallest (le plus grand). Pour les adjectifs longs, de deux syllabes ou plus, on n'ajoute rien à l'adjectif : on place « the most » devant : interesting devient the most interesting (le plus intéressant). Quelques règles d'orthographe s'appliquent aux adjectifs courts : un adjectif terminé par « y » transforme ce « y » en « -iest » (happy devient the happiest), et certains doublent leur consonne finale (big devient the biggest). Attention enfin à deux superlatifs irréguliers très courants : good devient the best (le meilleur) et bad devient the worst (le pire). En 4ème, on apprend à construire ces superlatifs et à ne jamais oublier l'article « the ». Bien maîtriser le superlatif permet d'exprimer des classements et de désigner ce qui est le plus remarquable dans un groupe.",
+    "definitions": [
+      {
+        "terme": "Superlatif",
+        "sens": "désigne le plus (ou le moins) d'une qualité"
+      },
+      {
+        "terme": "the",
+        "sens": "article toujours présent devant le superlatif"
+      },
+      {
+        "terme": "Adjectif court",
+        "sens": "une syllabe : on ajoute « -est »"
+      },
+      {
+        "terme": "Adjectif long",
+        "sens": "deux syllabes ou plus : on met « the most »"
+      },
+      {
+        "terme": "-est",
+        "sens": "terminaison des adjectifs courts (tallest)"
+      },
+      {
+        "terme": "the most",
+        "sens": "placé devant les adjectifs longs"
+      },
+      {
+        "terme": "y → iest",
+        "sens": "happy devient the happiest"
+      },
+      {
+        "terme": "Irréguliers",
+        "sens": "good → the best, bad → the worst"
+      }
+    ],
+    "methode": [
+      "Identifie l'adjectif et le groupe comparé.",
+      "Compte les syllabes : adjectif court (1) ou long (2 et plus).",
+      "Place toujours l'article « the » devant le superlatif.",
+      "Pour un adjectif court, ajoute « -est » à l'adjectif.",
+      "Pour un adjectif long, place « the most » devant l'adjectif.",
+      "Adapte l'orthographe : y → iest, consonne doublée (biggest).",
+      "Apprends les irréguliers : good → best, bad → worst.",
+      "Vérifie que « the » est bien présent."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « le plus grand » avec l'adjectif « tall » ?",
+      "etapes": [
+        "L'adjectif est « tall » (grand), d'une seule syllabe : il est court.",
+        "Le superlatif utilise toujours l'article « the ».",
+        "Pour un adjectif court, on ajoute la terminaison « -est ».",
+        "Tall devient donc tallest.",
+        "On place « the » devant : the tallest.",
+        "Exemple : « Tom is the tallest boy in the class »."
+      ]
+    },
+    "astuce": "Eren : « Le superlatif réclame TOUJOURS son « the » ! Court → the …-est (the tallest). Long → the most … (the most interesting). Et ne cumule jamais : « the most tallest » est faux. »",
+    "erreurs": [
+      "Oublier l'article « the » devant le superlatif.",
+      "Cumuler les deux formes (« the most tallest »).",
+      "Mettre « the most » devant un adjectif court.",
+      "Ajouter « -est » à un adjectif long.",
+      "Oublier de transformer le « y » en « -iest ».",
+      "Oublier de doubler la consonne (« bigest »).",
+      "Ignorer les irréguliers (« the goodest »).",
+      "Confondre superlatif et comparatif."
+    ]
+  },
+  "erwin-smith-be-going-to-plans-et-intentions": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Erwin Smith",
+    "manga": "L'Attaque des Titans",
+    "notion": "BE GOING TO : plans et intentions",
+    "explication": "La structure « be going to » est l'une des façons d'exprimer le futur en anglais. Elle s'emploie surtout pour parler d'un plan ou d'une intention décidés à l'avance : « I am going to visit London next week » (je vais visiter Londres la semaine prochaine). Elle sert aussi à faire une prévision fondée sur ce que l'on observe : « Look at those clouds! It is going to rain » (regarde ces nuages, il va pleuvoir). Sa formation comporte trois éléments à ne jamais oublier. D'abord, le verbe to be conjugué au présent (am, is ou are) selon le sujet. Ensuite, l'expression invariable « going to ». Enfin, le verbe principal à sa forme de base. On obtient donc « I am going to play », « she is going to work », « they are going to travel ». Pour la forme négative, on ajoute « not » après le verbe to be (I am not going to…). Pour poser une question, on inverse le sujet et le verbe to be (Are you going to…?). En 4ème, on apprend à utiliser cette structure pour parler de ses projets. Bien maîtriser « be going to » permet d'exprimer clairement ses intentions et ses plans, ce qui est très utile dans la conversation courante.",
+    "definitions": [
+      {
+        "terme": "be going to",
+        "sens": "exprime un plan ou une intention future"
+      },
+      {
+        "terme": "Plan / intention",
+        "sens": "une décision prise à l'avance"
+      },
+      {
+        "terme": "am / is / are",
+        "sens": "le verbe to be conjugué au présent"
+      },
+      {
+        "terme": "going to",
+        "sens": "expression invariable de la structure"
+      },
+      {
+        "terme": "Forme de base",
+        "sens": "le verbe principal sans terminaison"
+      },
+      {
+        "terme": "Prévision",
+        "sens": "annonce fondée sur ce que l'on observe"
+      },
+      {
+        "terme": "Négation",
+        "sens": "not après le verbe to be"
+      },
+      {
+        "terme": "Question",
+        "sens": "inversion du sujet et du verbe to be"
+      }
+    ],
+    "methode": [
+      "Vérifie qu'il s'agit d'un plan, d'une intention ou d'une prévision.",
+      "Conjugue d'abord le verbe to be (am, is ou are).",
+      "Choisis selon le sujet : I am, he is, they are.",
+      "Ajoute l'expression « going to ».",
+      "Ajoute le verbe principal à sa forme de base.",
+      "Pour la négation, place « not » après le verbe to be.",
+      "Pour une question, inverse le sujet et le verbe to be.",
+      "Vérifie la présence des trois éléments : be + going to + verbe."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Je vais visiter Londres » en anglais ?",
+      "etapes": [
+        "C'est une intention : on utilise « be going to ».",
+        "On conjugue to be avec « I » : am.",
+        "On ajoute l'expression « going to ».",
+        "On ajoute le verbe principal à la base : visit.",
+        "On assemble : « I am going to visit London ».",
+        "On n'oublie ni le verbe to be ni « going to »."
+      ]
+    },
+    "astuce": "Erwin : « « be going to » sert aux projets déjà décidés. Trois ingrédients obligatoires : to be (am/is/are) + going to + verbe à la base. Oublie le to be et la phrase s'écroule : « I going to » est faux ! »",
+    "erreurs": [
+      "Oublier le verbe to be (« I going to play »).",
+      "Oublier « going to ».",
+      "Mettre le verbe principal au passé ou en -ing.",
+      "Mal choisir am/is/are selon le sujet.",
+      "Oublier « not » dans la négation.",
+      "Ne pas inverser le sujet dans la question.",
+      "Ajouter « to » deux fois.",
+      "Confondre « be going to » et le présent continu."
+    ]
+  },
+  "hange-zoe-formation-et-usages-de-will": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Hange Zoë",
+    "manga": "L'Attaque des Titans",
+    "notion": "Formation et usages de WILL",
+    "explication": "« Will » est une autre façon d'exprimer le futur en anglais, et c'est un verbe modal. On l'emploie surtout dans trois situations : une décision prise spontanément, sur le moment (« I will help you » : je vais t'aider, là, maintenant) ; une promesse (« I will always remember you ») ; et une prédiction sur l'avenir (« It will rain tomorrow »). Sa formation est très simple, car will suit les règles des modaux. Il se place après le sujet et il est suivi du verbe principal à sa forme de base, sans « to » : on dit « I will go », et jamais « I will to go ». De plus, will ne prend jamais de « -s » à la troisième personne du singulier : on dit « He will come », et non « He wills ». La forme est donc identique pour tous les sujets. Pour la négation, on utilise will not, presque toujours contracté en won't. À l'oral et à l'écrit courant, will se contracte aussi en « 'll » : I'll, you'll, he'll. En 4ème, on apprend à utiliser will pour parler du futur, en le distinguant de « be going to », qui exprime plutôt des plans décidés à l'avance. Bien maîtriser will permet d'exprimer des décisions immédiates, des promesses et des prédictions.",
+    "definitions": [
+      {
+        "terme": "will",
+        "sens": "verbe modal du futur"
+      },
+      {
+        "terme": "Forme de base",
+        "sens": "le verbe sans « to » après will"
+      },
+      {
+        "terme": "Pas de « -s »",
+        "sens": "He will (jamais « he wills »)"
+      },
+      {
+        "terme": "Décision spontanée",
+        "sens": "prise sur le moment (I will help)"
+      },
+      {
+        "terme": "Promesse",
+        "sens": "un engagement (I will remember)"
+      },
+      {
+        "terme": "Prédiction",
+        "sens": "annonce sur l'avenir (It will rain)"
+      },
+      {
+        "terme": "won't",
+        "sens": "will not contracté (négation)"
+      },
+      {
+        "terme": "'ll",
+        "sens": "will contracté : I'll, he'll"
+      }
+    ],
+    "methode": [
+      "Repère l'usage : décision spontanée, promesse ou prédiction.",
+      "Place will juste après le sujet.",
+      "Ajoute le verbe principal à sa forme de base.",
+      "N'ajoute jamais « to » après will.",
+      "N'ajoute jamais de « -s », même avec he/she/it.",
+      "Garde la même forme pour tous les sujets.",
+      "Pour la négation, utilise won't.",
+      "À l'oral, contracte en « 'll » (I'll, he'll)."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « Je t'aiderai » en anglais ?",
+      "etapes": [
+        "On exprime une décision ou une promesse : on utilise will.",
+        "Le sujet est « I ».",
+        "On place will après le sujet : I will…",
+        "On ajoute le verbe « aider » à sa base : help.",
+        "On obtient : « I will help you ».",
+        "À l'oral, on contracte souvent : « I'll help you »."
+      ]
+    },
+    "astuce": "Hange : « will est un modal : verbe à la base après lui (pas de « to »), et jamais de « -s » (he will, pas « he wills »). Et souviens-toi : will = décision ou promesse sur le moment, « be going to » = projet déjà prévu. »",
+    "erreurs": [
+      "Ajouter « to » après will (« I will to go »).",
+      "Ajouter « -s » à la 3e personne (« he wills »).",
+      "Mettre le verbe principal au passé ou en -ing.",
+      "Mal contracter la négation (« willn't »).",
+      "Conjuguer will comme un verbe ordinaire.",
+      "Confondre will et « be going to » dans tous les cas.",
+      "Oublier le verbe principal après will.",
+      "Oublier que la forme est la même pour tous."
+    ]
+  },
+  "historia-reiss-formation-du-present-perfect": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Historia Reiss",
+    "manga": "L'Attaque des Titans",
+    "notion": "Formation du Present Perfect",
+    "explication": "Le Present Perfect est un temps qui relie le passé au présent : il décrit une action passée qui a un lien ou une conséquence dans le présent. Par exemple, « I have finished my homework » (j'ai fini mes devoirs) signifie que le travail est terminé maintenant. Sa formation comporte deux éléments. D'abord, l'auxiliaire have, qui devient has à la troisième personne du singulier (he, she, it). Ensuite, le participe passé du verbe principal. Pour les verbes réguliers, ce participe passé se forme en ajoutant « -ed », exactement comme le Past Simple (finished, played). Mais pour les verbes irréguliers, le participe passé est une forme particulière, la « troisième forme » du verbe, qu'il faut apprendre par cœur : go donne gone, see donne seen, do donne done. On dit donc « I have gone », « she has seen », « they have done ». Ce temps s'emploie souvent avec des mots comme ever (déjà), never (jamais), just (juste), already (déjà) ou yet (encore). En 4ème, on apprend à former correctement le Present Perfect, sans oublier l'auxiliaire have ou has, et en utilisant le bon participe passé. Bien le maîtriser permet de parler d'expériences et de résultats présents d'actions passées. S'entraîner à conjuguer quelques verbes au Present Perfect, réguliers comme irréguliers, est le meilleur moyen de rendre ce temps automatique et de ne plus hésiter sur le participe passé.",
+    "definitions": [
+      {
+        "terme": "Present Perfect",
+        "sens": "relie une action passée au présent"
+      },
+      {
+        "terme": "have / has",
+        "sens": "l'auxiliaire (has pour he, she, it)"
+      },
+      {
+        "terme": "Participe passé",
+        "sens": "la forme du verbe après have/has"
+      },
+      {
+        "terme": "Participe régulier",
+        "sens": "en -ed (finished, played)"
+      },
+      {
+        "terme": "Participe irrégulier",
+        "sens": "3e forme : gone, seen, done"
+      },
+      {
+        "terme": "Lien avec le présent",
+        "sens": "l'action a une conséquence actuelle"
+      },
+      {
+        "terme": "ever / never",
+        "sens": "déjà / jamais (expérience)"
+      },
+      {
+        "terme": "just / already / yet",
+        "sens": "marqueurs fréquents du Present Perfect"
+      }
+    ],
+    "methode": [
+      "Vérifie que l'action passée a un lien avec le présent.",
+      "Choisis l'auxiliaire : have, ou has pour he/she/it.",
+      "Ajoute le participe passé du verbe principal.",
+      "Pour un verbe régulier, le participe se forme en « -ed ».",
+      "Pour un verbe irrégulier, utilise la 3e forme (gone, seen).",
+      "Garde have/has + participe, sans changer le participe selon le sujet.",
+      "Repère les marqueurs : ever, never, just, already, yet.",
+      "Vérifie la présence de l'auxiliaire have ou has."
+    ],
+    "exemple": {
+      "enonce": "Comment dire « J'ai fini » en anglais (Present Perfect) ?",
+      "etapes": [
+        "L'action est terminée et a une conséquence présente.",
+        "On choisit l'auxiliaire pour « I » : have.",
+        "Le verbe « finir » est régulier : finish.",
+        "Son participe passé est finished (en -ed).",
+        "On assemble : « I have finished ».",
+        "Avec « he », on dirait « He has finished »."
+      ]
+    },
+    "astuce": "Historia : « Present Perfect = have/has + participe passé. N'oublie pas : has pour he/she/it ! Et pour les verbes irréguliers, c'est la 3e forme (go-went-gone) : « I have gone », jamais « I have went ». »",
+    "erreurs": [
+      "Oublier l'auxiliaire have ou has.",
+      "Utiliser have au lieu de has avec he/she/it.",
+      "Employer la forme du Past Simple au lieu du participe (« have went »).",
+      "Oublier le « -ed » du participe régulier.",
+      "Mal mémoriser un participe irrégulier.",
+      "Changer le participe selon le sujet.",
+      "Confondre le Present Perfect et le Past Simple.",
+      "Ajouter un « -s » au participe passé."
+    ]
+  },
+  "levi-ackerman-present-perfect-vs-past-simple": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Levi Ackerman",
+    "manga": "L'Attaque des Titans",
+    "notion": "Present Perfect vs Past Simple",
+    "explication": "Le Present Perfect et le Past Simple parlent tous deux du passé, mais ils ne s'emploient pas dans les mêmes situations : c'est l'une des distinctions les plus importantes de l'anglais. Le Past Simple s'utilise pour une action terminée à un moment précis du passé, un moment souvent indiqué dans la phrase : « I saw him yesterday » (je l'ai vu hier). Le Present Perfect, lui, s'utilise quand le moment exact n'est pas précisé, ou quand l'action garde un lien avec le présent : une expérience de vie, un résultat actuel. On dira par exemple « I have visited London » (j'ai visité Londres, à un moment de ma vie). La clé pour choisir est de regarder s'il y a un repère de temps passé précis. Les marqueurs yesterday, last week, in 2010 ou ago imposent le Past Simple. Les marqueurs ever, never, just, already, yet, ainsi que since et for, appellent le Present Perfect. Une règle d'or à retenir : dès qu'un moment passé précis est mentionné, on emploie le Past Simple, jamais le Present Perfect. En 4ème, on apprend à analyser la phrase pour choisir le bon temps. Bien distinguer ces deux temps est essentiel pour raconter le passé avec justesse et nuance. Avec l'habitude, repérer le bon temps devient un réflexe : il suffit souvent de chercher le marqueur de temps dans la phrase pour trancher sans hésitation.",
+    "definitions": [
+      {
+        "terme": "Past Simple",
+        "sens": "action passée à un moment précis"
+      },
+      {
+        "terme": "Present Perfect",
+        "sens": "moment non précisé ou lien avec le présent"
+      },
+      {
+        "terme": "Moment précis",
+        "sens": "indiqué dans la phrase (yesterday, in 2010)"
+      },
+      {
+        "terme": "yesterday / ago",
+        "sens": "marqueurs imposant le Past Simple"
+      },
+      {
+        "terme": "ever / never / just",
+        "sens": "marqueurs du Present Perfect"
+      },
+      {
+        "terme": "since / for",
+        "sens": "depuis : marqueurs du Present Perfect"
+      },
+      {
+        "terme": "Expérience",
+        "sens": "ce qu'on a vécu (Present Perfect)"
+      },
+      {
+        "terme": "Règle d'or",
+        "sens": "moment passé précis → Past Simple"
+      }
+    ],
+    "methode": [
+      "Demande-toi si un moment passé précis est indiqué.",
+      "Si oui (yesterday, in 2010, ago), choisis le Past Simple.",
+      "Si non, ou s'il y a un lien avec le présent, choisis le Present Perfect.",
+      "Cherche les marqueurs de temps de la phrase.",
+      "yesterday, last week, ago → Past Simple.",
+      "ever, never, just, already, yet, since, for → Present Perfect.",
+      "Forme alors le temps choisi correctement.",
+      "Vérifie que le temps correspond bien au marqueur."
+    ],
+    "exemple": {
+      "enonce": "Quel temps choisir : « I ___ (see) him yesterday » ?",
+      "etapes": [
+        "Le mot « yesterday » indique un moment passé précis.",
+        "La règle d'or impose alors le Past Simple.",
+        "Le verbe « see » est irrégulier : son passé est saw.",
+        "On écrit donc : « I saw him yesterday ».",
+        "On n'emploie jamais le Present Perfect avec « yesterday ».",
+        "Sans repère précis, on aurait pu dire « I have seen him »."
+      ]
+    },
+    "astuce": "Levi : « La règle d'or : dès qu'un moment passé PRÉCIS apparaît (yesterday, in 2010, two days ago), c'est Past Simple, point. Garde le Present Perfect pour ever, never, just, since : quand le moment reste flou ou touche le présent. »",
+    "erreurs": [
+      "Employer le Present Perfect avec « yesterday ».",
+      "Employer le Past Simple avec « since » ou « for ».",
+      "Ignorer les marqueurs de temps de la phrase.",
+      "Confondre l'expérience (Present Perfect) et le récit daté.",
+      "Mélanger les deux temps dans une même idée.",
+      "Oublier l'auxiliaire have/has au Present Perfect.",
+      "Oublier la marque du passé au Past Simple.",
+      "Choisir le temps sans analyser la phrase."
+    ]
+  },
+  "jean-kirstein-formation-de-la-voix-passive": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Jean Kirstein",
+    "manga": "L'Attaque des Titans",
+    "notion": "Formation de la voix passive",
+    "explication": "La voix passive permet de présenter une action en mettant en avant non pas celui qui la fait, mais celui ou ce qui la subit. Comparons deux phrases. À la voix active, on dit « Tom eats the cake » (Tom mange le gâteau) : le sujet, Tom, fait l'action. À la voix passive, on dit « The cake is eaten (by Tom) » (le gâteau est mangé par Tom) : le sujet, le gâteau, subit l'action. La formation de la voix passive repose sur deux éléments : le verbe to be, conjugué au temps voulu, suivi du participe passé du verbe principal. C'est le verbe to be qui porte le temps : « is eaten » (présent), « was eaten » (passé), « will be eaten » (futur). Le participe passé, lui, ne change pas. Si l'on souhaite préciser qui fait l'action, on l'introduit par « by » (par) : « by Tom ». Mais souvent, on ne le mentionne pas, notamment quand il est inconnu ou sans importance. En 4ème, on apprend à transformer une phrase active en phrase passive et à former correctement le passif. Bien maîtriser la voix passive permet de varier ses phrases et de mettre en valeur le résultat d'une action plutôt que son auteur. Transformer régulièrement des phrases actives en phrases passives, et inversement, est un excellent entraînement pour bien comprendre le rôle de chaque élément et automatiser la structure.",
+    "definitions": [
+      {
+        "terme": "Voix passive",
+        "sens": "le sujet subit l'action"
+      },
+      {
+        "terme": "Voix active",
+        "sens": "le sujet fait l'action"
+      },
+      {
+        "terme": "be + participe passé",
+        "sens": "la structure du passif"
+      },
+      {
+        "terme": "Participe passé",
+        "sens": "la forme du verbe (eaten, made)"
+      },
+      {
+        "terme": "Le temps",
+        "sens": "porté par le verbe to be"
+      },
+      {
+        "terme": "by",
+        "sens": "« par », introduit celui qui fait l'action"
+      },
+      {
+        "terme": "Agent",
+        "sens": "celui qui réalise l'action (souvent omis)"
+      },
+      {
+        "terme": "Sujet passif",
+        "sens": "celui ou ce qui subit l'action"
+      }
+    ],
+    "methode": [
+      "Repère ce qui subit l'action : ce sera le sujet du passif.",
+      "Place ce sujet en début de phrase.",
+      "Conjugue le verbe to be au temps voulu.",
+      "Ajoute le participe passé du verbe principal.",
+      "Le verbe to be porte le temps ; le participe ne change pas.",
+      "Pour préciser l'auteur, ajoute « by + agent ».",
+      "Omets l'agent s'il est inconnu ou sans importance.",
+      "Vérifie la structure : sujet + be + participe passé."
+    ],
+    "exemple": {
+      "enonce": "Mets « Tom eats the cake » à la voix passive.",
+      "etapes": [
+        "Ce qui subit l'action est « the cake » : il devient sujet.",
+        "On place « The cake » en tête.",
+        "On conjugue to be au présent : is.",
+        "On ajoute le participe passé de eat : eaten.",
+        "On obtient : « The cake is eaten ».",
+        "Pour préciser l'auteur : « The cake is eaten by Tom »."
+      ]
+    },
+    "astuce": "Jean : « Le passif, c'est toujours be + participe passé. C'est le verbe « be » qui indique le temps (is eaten, was eaten, will be eaten), pas le participe. Et l'auteur de l'action, introduit par « by », est souvent facultatif. »",
+    "erreurs": [
+      "Oublier le verbe to be dans le passif.",
+      "Utiliser la forme du Past Simple au lieu du participe.",
+      "Mal conjuguer to be au temps voulu.",
+      "Changer le participe passé selon le sujet.",
+      "Oublier « by » devant l'agent quand on le mentionne.",
+      "Confondre voix active et voix passive.",
+      "Mettre le temps sur le participe au lieu de to be.",
+      "Garder le sujet actif comme sujet de la phrase."
+    ]
+  },
+  "historia-reiss-formation-des-question-tags": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Historia Reiss",
+    "manga": "L'Attaque des Titans",
+    "notion": "Formation des question tags",
+    "explication": "Un question tag est une petite question ajoutée à la fin d'une phrase, pour demander une confirmation ou un accord, un peu comme le français « n'est-ce pas ? ». Par exemple : « You are happy, aren't you? » (Tu es content, n'est-ce pas ?). Sa formation suit une règle d'inversion de polarité très régulière. Si la phrase est affirmative, le tag est négatif ; si la phrase est négative, le tag est positif. Ainsi, « You are happy » (affirmatif) appelle « aren't you? » (négatif), tandis que « He doesn't like it » (négatif) appelle « does he? » (positif). Le tag reprend l'auxiliaire de la phrase : le verbe to be (You are… aren't you?), l'auxiliaire do/does/did (You like… don't you?), have/has, ou un modal comme will ou can. S'il n'y a pas d'auxiliaire visible dans la phrase, on utilise do, does ou did, selon le temps. Enfin, le tag reprend le sujet sous la forme d'un pronom personnel (Tom → he, the girls → they). En 4ème, on apprend à former ces question tags en respectant l'inversion de polarité et le bon auxiliaire. Bien les maîtriser rend l'expression plus naturelle et plus proche de l'anglais parlé au quotidien. Les question tags sont très fréquents à l'oral, où ils servent à vérifier une information ou à relancer la conversation. S'entraîner à les ajouter à ses propres phrases, en pensant d'abord à la polarité puis à l'auxiliaire, est le meilleur moyen de les maîtriser. Avec un peu de pratique, ils deviennent un réflexe naturel.",
+    "definitions": [
+      {
+        "terme": "Question tag",
+        "sens": "petite question en fin de phrase (n'est-ce pas ?)"
+      },
+      {
+        "terme": "Inversion de polarité",
+        "sens": "affirmatif → tag négatif, et inversement"
+      },
+      {
+        "terme": "Auxiliaire repris",
+        "sens": "be, do/does/did, have, ou un modal"
+      },
+      {
+        "terme": "Phrase affirmative",
+        "sens": "appelle un tag négatif"
+      },
+      {
+        "terme": "Phrase négative",
+        "sens": "appelle un tag positif"
+      },
+      {
+        "terme": "aren't you?",
+        "sens": "tag de « You are… »"
+      },
+      {
+        "terme": "does he?",
+        "sens": "tag de « He doesn't… »"
+      },
+      {
+        "terme": "Pronom sujet",
+        "sens": "le sujet repris : Tom → he"
+      }
+    ],
+    "methode": [
+      "Regarde si la phrase est affirmative ou négative.",
+      "Si elle est affirmative, le tag sera négatif.",
+      "Si elle est négative, le tag sera positif.",
+      "Repère l'auxiliaire de la phrase (be, do/does/did, have, modal).",
+      "S'il n'y en a pas, utilise do, does ou did selon le temps.",
+      "Reprends ce même auxiliaire dans le tag.",
+      "Reprends le sujet sous forme de pronom (Tom → he).",
+      "Assemble : auxiliaire (+ n't) + pronom sujet."
+    ],
+    "exemple": {
+      "enonce": "Complète : « You are happy, ___ ? »",
+      "etapes": [
+        "La phrase « You are happy » est affirmative.",
+        "Le tag sera donc négatif.",
+        "L'auxiliaire de la phrase est le verbe to be : are.",
+        "À la forme négative contractée : aren't.",
+        "On reprend le sujet en pronom : you.",
+        "Le tag est donc : « aren't you? »."
+      ]
+    },
+    "astuce": "Historia : « Le question tag inverse la polarité : phrase positive → tag négatif (You are…, aren't you?), phrase négative → tag positif (He doesn't…, does he?). Reprends toujours le même auxiliaire et le sujet en pronom. »",
+    "erreurs": [
+      "Garder la même polarité (positif + tag positif).",
+      "Reprendre le mauvais auxiliaire.",
+      "Oublier l'auxiliaire do/does/did quand il n'est pas visible.",
+      "Ne pas reprendre le sujet en pronom.",
+      "Se tromper de temps dans l'auxiliaire.",
+      "Mal contracter la négation du tag.",
+      "Confondre le sujet et le complément.",
+      "Oublier le point d'interrogation."
+    ]
+  },
+  "connie-springer-synthese-niveau-4eme": {
+    "matiere": "anglais",
+    "niveau": "4eme",
+    "hero": "Connie Springer",
+    "manga": "L'Attaque des Titans",
+    "notion": "La synthèse niveau 4ème",
+    "explication": "La 4ème introduit des notions de grammaire plus riches, qu'il est utile de revoir ensemble pour bien les distinguer. On y a étudié plusieurs grands domaines. La comparaison, d'abord, avec le superlatif (the tallest, the most interesting), qui prolonge le comparatif de 5ème. Le futur, ensuite, avec deux structures à ne pas confondre : « be going to » pour les plans décidés à l'avance, et « will » pour les décisions spontanées, les promesses et les prédictions. Les temps du passé, aussi, avec le Present Perfect (have/has + participe passé) et son importante distinction avec le Past Simple, selon qu'un moment précis est indiqué ou non. La voix passive, par ailleurs (be + participe passé), qui met en avant ce qui subit l'action. Et enfin les question tags, ces petites questions en fin de phrase qui inversent la polarité. Pour bien réviser, il ne faut pas tout mélanger : mieux vaut reprendre un domaine à la fois, comprendre la règle, puis s'entraîner sur des exercices variés en analysant ses erreurs. Travailler par petites séances régulières aide à mémoriser durablement. En 4ème, faire cette synthèse permet de consolider des bases solides avant la 3ème et le Brevet, où ces notions seront réutilisées et approfondies. Garder une fiche de révision claire pour chaque domaine, avec un exemple type, aide à retrouver rapidement la bonne règle au moment d'un contrôle. Cette organisation fait gagner un temps précieux et renforce la confiance.",
+    "definitions": [
+      {
+        "terme": "Superlatif",
+        "sens": "the …-est / the most … (the tallest)"
+      },
+      {
+        "terme": "be going to",
+        "sens": "futur : plan décidé à l'avance"
+      },
+      {
+        "terme": "will",
+        "sens": "futur : décision, promesse, prédiction"
+      },
+      {
+        "terme": "Present Perfect",
+        "sens": "have/has + participe passé"
+      },
+      {
+        "terme": "Past Simple",
+        "sens": "action passée à un moment précis"
+      },
+      {
+        "terme": "Voix passive",
+        "sens": "be + participe passé (le sujet subit)"
+      },
+      {
+        "terme": "Question tag",
+        "sens": "petite question finale (n'est-ce pas ?)"
+      },
+      {
+        "terme": "Synthèse",
+        "sens": "une révision organisée par domaines"
+      }
+    ],
+    "methode": [
+      "Classe le programme par domaines : comparaison, futur, temps, passif, tags.",
+      "Repère tes points faibles grâce à tes contrôles.",
+      "Reprends un domaine à la fois, en relisant la règle.",
+      "Distingue bien « be going to » et « will ».",
+      "Distingue bien le Present Perfect et le Past Simple.",
+      "Refais des exercices variés plutôt que de relire passivement.",
+      "Analyse tes erreurs pour comprendre leur origine.",
+      "Travaille par petites séances régulières."
+    ],
+    "exemple": {
+      "enonce": "Comment réviser efficacement le futur en une courte séance ?",
+      "etapes": [
+        "Je relis les deux structures : « be going to » et « will ».",
+        "Je note la différence : plan prévu (going to) ou décision/promesse (will).",
+        "Je refais un exercice déjà corrigé sur chaque structure.",
+        "Je vérifie la formation (be + going to ; will + verbe de base).",
+        "Je m'entraîne sur de nouvelles phrases à compléter.",
+        "Je relève les cas qui me posent encore problème."
+      ]
+    },
+    "astuce": "Connie : « Ne révise pas tout en bloc : organise par familles — la comparaison, le futur, les temps, le passif, les tags. Cible tes points faibles, c'est là que tu gagnes le plus de points avant le Brevet. »",
+    "erreurs": [
+      "Tout réviser au dernier moment, en une seule fois.",
+      "Ne réviser que ce que l'on maîtrise déjà.",
+      "Relire passivement sans refaire d'exercices.",
+      "Confondre « be going to » et « will ».",
+      "Confondre le Present Perfect et le Past Simple.",
+      "Ne pas analyser ses erreurs passées.",
+      "Mélanger les domaines au lieu de les revoir un par un.",
+      "Négliger l'entraînement régulier."
+    ]
+  }
+}
