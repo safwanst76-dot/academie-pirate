@@ -1,0 +1,557 @@
+{
+  "hinata-hyuga-fractions-equivalentes": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Hinata Hyuga",
+    "manga": "Naruto",
+    "notion": "Les fractions équivalentes",
+    "explication": "Deux fractions sont équivalentes lorsqu'elles représentent exactement la même quantité, même si elles ne s'écrivent pas pareil : un demi, deux quarts et trois sixièmes désignent la même part d'un tout. Pour obtenir une fraction équivalente, il suffit de multiplier le numérateur et le dénominateur par un même nombre non nul ; pour simplifier, on les divise au contraire par un même nombre. Cette propriété est très utile : elle permet de simplifier une fraction jusqu'à sa forme la plus simple (la fraction irréductible), mais aussi de comparer ou d'additionner des fractions en les ramenant au même dénominateur. Comprendre les fractions équivalentes en 6ème, c'est poser une base solide pour tout le travail sur les fractions des années suivantes. Et on peut vérifier avec le produit en croix : 2 × 18 = 36 et 3 × 12 = 36, les produits sont égaux.",
+    "definitions": [
+      {
+        "terme": "Fraction",
+        "sens": "Un nombre écrit sous la forme a/b qui représente une part d'un tout."
+      },
+      {
+        "terme": "Numérateur",
+        "sens": "Le nombre du haut : combien de parts on prend."
+      },
+      {
+        "terme": "Dénominateur",
+        "sens": "Le nombre du bas : en combien de parts égales le tout est partagé."
+      },
+      {
+        "terme": "Fractions équivalentes",
+        "sens": "Deux fractions qui représentent la même quantité (1/2 = 2/4)."
+      },
+      {
+        "terme": "Simplifier",
+        "sens": "Diviser numérateur et dénominateur par un même nombre pour réduire la fraction."
+      },
+      {
+        "terme": "Fraction irréductible",
+        "sens": "Une fraction qu'on ne peut plus simplifier davantage."
+      },
+      {
+        "terme": "Produit en croix",
+        "sens": "Méthode pour vérifier que deux fractions sont équivalentes : les produits croisés sont égaux."
+      }
+    ],
+    "methode": [
+      "Pour obtenir une fraction équivalente, multiplie le numérateur ET le dénominateur par le même nombre non nul.",
+      "Pour simplifier, cherche un nombre qui divise à la fois le numérateur et le dénominateur.",
+      "Divise les deux par ce nombre, puis recommence tant que c'est possible.",
+      "Arrête-toi quand plus aucun nombre (à part 1) ne divise les deux : la fraction est irréductible.",
+      "Pour comparer deux fractions, réduis-les au même dénominateur puis compare les numérateurs.",
+      "Vérifie toujours que tu as fait la même opération en haut ET en bas.",
+      "Contrôle ton résultat : la fraction simplifiée doit représenter la même quantité que la fraction de départ.",
+      "Pour vérifier deux fractions équivalentes, multiplie en croix : les deux résultats doivent être égaux."
+    ],
+    "exemple": {
+      "enonce": "Simplifie la fraction 12/18 jusqu'à la rendre irréductible.",
+      "etapes": [
+        "12 et 18 sont tous les deux divisibles par 2.",
+        "On divise : 12 ÷ 2 = 6 et 18 ÷ 2 = 9, donc 12/18 = 6/9.",
+        "6 et 9 sont tous les deux divisibles par 3.",
+        "On divise : 6 ÷ 3 = 2 et 9 ÷ 3 = 3, donc 6/9 = 2/3.",
+        "2 et 3 n'ont plus de diviseur commun : 2/3 est la fraction irréductible.",
+        "Vérification finale : 2/3 est bien la forme la plus simple de 12/18."
+      ]
+    },
+    "astuce": "Hinata : « Pour aller vite, cherche le plus grand nombre qui divise les deux à la fois. En divisant une seule fois par ce nombre, tu obtiens directement la fraction irréductible ! » Et souviens-toi : une fraction simplifiée représente toujours exactement la même quantité que celle de départ.",
+    "erreurs": [
+      "Ne multiplier (ou diviser) que le numérateur en oubliant le dénominateur.",
+      "Additionner un nombre au lieu de multiplier les deux termes.",
+      "S'arrêter trop tôt et laisser une fraction encore simplifiable.",
+      "Croire que 1/2 et 1/3 sont équivalentes parce qu'elles « se ressemblent ».",
+      "Multiplier le numérateur et le dénominateur par des nombres différents.",
+      "Oublier que multiplier par zéro est interdit.",
+      "Confondre simplifier une fraction et la transformer en nombre décimal."
+    ]
+  },
+  "shikamaru-nara-tableau-de-proportionnalite": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Shikamaru Nara",
+    "manga": "Naruto",
+    "notion": "Le tableau de proportionnalité",
+    "explication": "Un tableau est un tableau de proportionnalité lorsqu'on passe de la première ligne à la deuxième en multipliant toujours par un même nombre, appelé coefficient de proportionnalité. Beaucoup de situations de la vie courante sont proportionnelles : le prix payé en fonction de la quantité achetée, la distance parcourue en fonction du temps à vitesse constante, les ingrédients d'une recette selon le nombre de personnes. Reconnaître une situation de proportionnalité permet de compléter un tableau, de calculer une quantité manquante et de résoudre de nombreux problèmes. La clé est de trouver le coefficient de proportionnalité, puis de l'appliquer. C'est un outil central de la 6ème qu'on retrouvera ensuite avec les pourcentages, les échelles et les vitesses. Attention : toutes les situations ne sont pas proportionnelles. L'âge d'une personne et sa taille, par exemple, ne le sont pas, car le rapport entre les deux n'est jamais constant.",
+    "definitions": [
+      {
+        "terme": "Proportionnalité",
+        "sens": "Une situation où deux grandeurs varient toujours dans le même rapport."
+      },
+      {
+        "terme": "Coefficient de proportionnalité",
+        "sens": "Le nombre par lequel on multiplie pour passer d'une ligne à l'autre."
+      },
+      {
+        "terme": "Tableau de proportionnalité",
+        "sens": "Un tableau où chaque colonne respecte le même coefficient."
+      },
+      {
+        "terme": "Grandeur",
+        "sens": "Ce que l'on mesure : un prix, une longueur, une durée…"
+      },
+      {
+        "terme": "Produit en croix",
+        "sens": "Une méthode pour trouver une valeur manquante dans un tableau de proportionnalité."
+      },
+      {
+        "terme": "Échelle",
+        "sens": "Un coefficient de proportionnalité entre un plan et la réalité."
+      },
+      {
+        "terme": "Quatrième proportionnelle",
+        "sens": "La valeur manquante que l'on cherche à calculer dans un tableau de proportionnalité."
+      }
+    ],
+    "methode": [
+      "Vérifie que le tableau est bien proportionnel : le passage d'une ligne à l'autre se fait avec le même nombre.",
+      "Calcule le coefficient : divise une valeur de la 2e ligne par la valeur correspondante de la 1re ligne.",
+      "Pour compléter une case, multiplie la valeur de la 1re ligne par ce coefficient.",
+      "Si tu cherches une valeur de la 1re ligne, divise au contraire par le coefficient.",
+      "Tu peux aussi utiliser le produit en croix quand trois valeurs sur quatre sont connues.",
+      "Vérifie ton résultat en contrôlant que le coefficient reste le même partout.",
+      "Donne la réponse avec l'unité correcte (euros, km, g…).",
+      "Repère bien dans le tableau les trois valeurs connues qui vont te permettre de trouver la quatrième."
+    ],
+    "exemple": {
+      "enonce": "3 stylos identiques coûtent 6 €. Combien coûtent 5 stylos ?",
+      "etapes": [
+        "On vérifie que le prix est proportionnel au nombre de stylos : oui, ils sont identiques.",
+        "Coefficient : 6 € ÷ 3 stylos = 2 € par stylo.",
+        "Pour 5 stylos, on multiplie : 5 × 2 = 10.",
+        "Donc 5 stylos coûtent 10 €.",
+        "Vérification : 10 ÷ 5 = 2, le coefficient est bien le même.",
+        "On peut aussi contrôler avec le produit en croix : 3 × 10 = 6 × 5 = 30."
+      ]
+    },
+    "astuce": "Shikamaru : « Trouve le coefficient une bonne fois, et tout le tableau devient facile. Pas besoin de se compliquer la vie : un seul nombre suffit à tout calculer. » Un seul nombre, le coefficient, et hop : tout le tableau se complète sans effort.",
+    "erreurs": [
+      "Ajouter une valeur au lieu de multiplier par le coefficient.",
+      "Supposer qu'une situation est proportionnelle sans le vérifier.",
+      "Se tromper de sens : multiplier alors qu'il fallait diviser.",
+      "Mélanger les colonnes en associant des valeurs qui ne se correspondent pas.",
+      "Oublier l'unité dans la réponse finale.",
+      "Confondre coefficient de proportionnalité et différence entre deux valeurs.",
+      "Croire que deux grandeurs quelconques sont toujours proportionnelles entre elles."
+    ]
+  },
+  "naruto-uzumaki-decimaux-niveau-6eme": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Naruto Uzumaki",
+    "manga": "Naruto",
+    "notion": "Les nombres décimaux",
+    "explication": "Un nombre décimal possède une partie entière et une partie décimale, séparées par une virgule. Chaque chiffre y occupe une position précise qui lui donne sa valeur : juste après la virgule se trouvent les dixièmes, puis les centièmes, puis les millièmes. Bien comprendre ces positions est essentiel pour lire, écrire, comparer et ranger les nombres décimaux. Pour comparer deux décimaux, on regarde d'abord la partie entière ; si elle est égale, on compare les chiffres après la virgule, position par position, de gauche à droite. On peut aussi placer les décimaux sur une demi-droite graduée pour mieux les visualiser. Les nombres décimaux servent partout : prix, mesures, résultats de calculs, et leur maîtrise est un fondamental de la 6ème. Entre deux décimaux, on peut toujours en intercaler d'autres : entre 3,4 et 3,5 se trouvent 3,41 ; 3,42 ; jusqu'à 3,49 et au-delà. Les nombres décimaux servent partout dans la vie quotidienne : les prix en euros, les mesures de longueur ou de masse, ou encore les résultats d'une division.",
+    "definitions": [
+      {
+        "terme": "Nombre décimal",
+        "sens": "Un nombre à virgule, comme 3,45."
+      },
+      {
+        "terme": "Partie entière",
+        "sens": "Les chiffres situés à gauche de la virgule."
+      },
+      {
+        "terme": "Partie décimale",
+        "sens": "Les chiffres situés à droite de la virgule."
+      },
+      {
+        "terme": "Dixième",
+        "sens": "Le premier chiffre après la virgule (1/10)."
+      },
+      {
+        "terme": "Centième",
+        "sens": "Le deuxième chiffre après la virgule (1/100)."
+      },
+      {
+        "terme": "Demi-droite graduée",
+        "sens": "Une droite avec des repères réguliers pour placer les nombres."
+      },
+      {
+        "terme": "Millième",
+        "sens": "Le troisième chiffre après la virgule, qui vaut un sur mille (1/1000)."
+      }
+    ],
+    "methode": [
+      "Repère la partie entière (avant la virgule) et la partie décimale (après la virgule).",
+      "Identifie la valeur de chaque chiffre selon sa position : dixième, centième, millième.",
+      "Pour comparer deux décimaux, compare d'abord les parties entières.",
+      "Si les parties entières sont égales, compare les chiffres après la virgule un par un, de gauche à droite.",
+      "Pour t'aider, tu peux compléter avec des zéros à droite (3,5 = 3,50).",
+      "Pour ranger plusieurs nombres, applique cette comparaison entre chaque paire.",
+      "Vérifie en plaçant les nombres sur une demi-droite graduée.",
+      "Pour ranger une liste de décimaux, compare-les deux par deux puis classe-les du plus petit au plus grand."
+    ],
+    "exemple": {
+      "enonce": "Compare les nombres 3,5 et 3,45.",
+      "etapes": [
+        "Les parties entières sont égales : 3 et 3.",
+        "On compare les dixièmes : 5 pour 3,5 et 4 pour 3,45.",
+        "Comme 5 est plus grand que 4, on a 3,5 > 3,45.",
+        "Astuce de contrôle : on écrit 3,5 comme 3,50.",
+        "On compare alors 3,50 et 3,45 : 50 centièmes valent plus que 45 centièmes.",
+        "Conclusion : 3,5 est bien plus grand que 3,45."
+      ]
+    },
+    "astuce": "Naruto : « Ajouter des zéros à droite après la virgule ne change RIEN à la valeur : 3,5 = 3,50 = 3,500. C'est super pratique pour comparer des décimaux qui n'ont pas le même nombre de chiffres ! » Aligner les virgules les unes sous les autres aide énormément à comparer sans se tromper.",
+    "erreurs": [
+      "Croire que 3,45 est plus grand que 3,5 parce que « 45 est plus grand que 5 ».",
+      "Comparer les parties décimales avant les parties entières.",
+      "Confondre la position des dixièmes et des centièmes.",
+      "Penser qu'ajouter un zéro à droite augmente le nombre.",
+      "Mal aligner les virgules lors d'une comparaison ou d'un calcul.",
+      "Oublier que la virgule sépare entiers et décimaux, pas n'importe où.",
+      "Penser qu'un nombre avec plus de chiffres après la virgule est forcément plus grand."
+    ]
+  },
+  "choji-akimichi-aire-du-triangle": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Choji Akimichi",
+    "manga": "Naruto",
+    "notion": "L'aire du triangle",
+    "explication": "L'aire d'un triangle est la mesure de la surface qu'il occupe. Elle se calcule en multipliant une base par la hauteur correspondante, puis en divisant le résultat par deux. Le point important à comprendre est que la hauteur n'est pas forcément un côté du triangle : c'est le segment qui part d'un sommet et tombe perpendiculairement sur la base opposée. On peut comprendre la formule en imaginant qu'un triangle est exactement la moitié d'un rectangle qui aurait la même base et la même hauteur. N'importe quel côté du triangle peut servir de base, à condition d'utiliser la hauteur qui lui correspond. Comme toujours en géométrie, les longueurs doivent être dans la même unité, et l'aire s'exprime en unités carrées. Dans un triangle rectangle, c'est encore plus simple : les deux côtés de l'angle droit servent directement de base et de hauteur. L'aire est très utile concrètement : connaître la surface d'un terrain, d'une voile ou d'un panneau triangulaire revient toujours à appliquer cette même formule.",
+    "definitions": [
+      {
+        "terme": "Aire",
+        "sens": "La mesure de la surface d'une figure, en unités carrées (cm², m²)."
+      },
+      {
+        "terme": "Base",
+        "sens": "Le côté du triangle choisi comme appui pour le calcul."
+      },
+      {
+        "terme": "Hauteur",
+        "sens": "Le segment perpendiculaire allant d'un sommet à la base opposée."
+      },
+      {
+        "terme": "Perpendiculaire",
+        "sens": "Qui forme un angle droit (90°) avec la base."
+      },
+      {
+        "terme": "Sommet",
+        "sens": "Un des trois points où se rencontrent les côtés du triangle."
+      },
+      {
+        "terme": "Unité d'aire",
+        "sens": "Une unité carrée : cm², m², km²…"
+      },
+      {
+        "terme": "Triangle rectangle",
+        "sens": "Un triangle avec un angle droit, où la hauteur se repère très facilement."
+      }
+    ],
+    "methode": [
+      "Choisis l'un des trois côtés comme base.",
+      "Repère la hauteur correspondante : le segment perpendiculaire issu du sommet opposé.",
+      "Vérifie que la base et la hauteur sont exprimées dans la même unité.",
+      "Multiplie la base par la hauteur.",
+      "Divise le résultat par deux : c'est l'aire du triangle.",
+      "Exprime le résultat dans la bonne unité d'aire (cm², m²…).",
+      "Relis : la valeur utilisée pour la hauteur doit bien être perpendiculaire à la base.",
+      "Si la hauteur n'est pas dessinée, trace-la toi-même : un segment perpendiculaire à la base, partant du sommet opposé."
+    ],
+    "exemple": {
+      "enonce": "Un triangle a une base de 6 cm et une hauteur de 4 cm. Quelle est son aire ?",
+      "etapes": [
+        "On repère la base : 6 cm.",
+        "On repère la hauteur correspondante : 4 cm.",
+        "On multiplie : 6 × 4 = 24.",
+        "On divise par deux : 24 ÷ 2 = 12.",
+        "L'aire du triangle est donc 12 cm².",
+        "Vérification : 12 cm² est bien la moitié du rectangle 6 × 4 = 24 cm²."
+      ]
+    },
+    "astuce": "Choji : « Tu peux choisir n'importe quel côté comme base : prends celui dont la hauteur est la plus facile à repérer. Et n'oublie JAMAIS de diviser par deux à la fin ! » Le triangle, c'est toujours la moitié d'un rectangle de même base et même hauteur : voilà pourquoi on divise par deux.",
+    "erreurs": [
+      "Oublier de diviser par deux (on calcule alors l'aire d'un rectangle).",
+      "Prendre un côté oblique comme hauteur au lieu du segment perpendiculaire.",
+      "Mélanger les unités de la base et de la hauteur.",
+      "Donner le résultat en cm au lieu de cm² (aire = unité carrée).",
+      "Utiliser une hauteur qui ne correspond pas à la base choisie.",
+      "Confondre aire et périmètre du triangle.",
+      "Calculer base × hauteur sans diviser, ce qui donne l'aire du rectangle et non du triangle."
+    ]
+  },
+  "neji-hyuga-indicateurs-statistiques": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Neji Hyuga",
+    "manga": "Naruto",
+    "notion": "Les indicateurs statistiques",
+    "explication": "Faire des statistiques, c'est recueillir des données, les organiser, puis les analyser pour en tirer des informations. En 6ème, on apprend d'abord à compter et à comparer ces données grâce à des indicateurs simples. L'effectif d'une valeur est le nombre de fois qu'elle apparaît ; l'effectif total est le nombre total de données recueillies. La fréquence d'une valeur s'obtient en divisant son effectif par l'effectif total, et s'exprime souvent en pourcentage. Pour présenter clairement les résultats, on utilise des tableaux d'effectifs, des diagrammes en bâtons ou des diagrammes circulaires. Ces premiers indicateurs permettent de comparer des catégories, de repérer la valeur la plus fréquente et de mieux comprendre une situation à partir de chiffres. La valeur qui possède le plus grand effectif porte un nom : c'est le mode, la donnée qui revient le plus souvent. Les statistiques sont partout : résultats sportifs, sondages, météo, notes d'une classe. Savoir les organiser permet de transformer une longue liste de chiffres en informations claires et utiles. Bien lire un tableau ou un diagramme, c'est déjà faire des mathématiques utiles pour comprendre le monde qui nous entoure.",
+    "definitions": [
+      {
+        "terme": "Donnée",
+        "sens": "Une information recueillie (une note, un choix, une mesure…)."
+      },
+      {
+        "terme": "Effectif",
+        "sens": "Le nombre de fois qu'une valeur apparaît."
+      },
+      {
+        "terme": "Effectif total",
+        "sens": "Le nombre total de données recueillies."
+      },
+      {
+        "terme": "Fréquence",
+        "sens": "L'effectif d'une valeur divisé par l'effectif total."
+      },
+      {
+        "terme": "Tableau d'effectifs",
+        "sens": "Un tableau qui range chaque valeur avec son effectif."
+      },
+      {
+        "terme": "Diagramme en bâtons",
+        "sens": "Un graphique où la hauteur de chaque barre représente un effectif."
+      },
+      {
+        "terme": "Mode",
+        "sens": "La valeur qui apparaît le plus souvent dans une série de données."
+      }
+    ],
+    "methode": [
+      "Recueille ou lis l'ensemble des données.",
+      "Compte combien de fois chaque valeur apparaît : c'est son effectif.",
+      "Additionne tous les effectifs pour obtenir l'effectif total.",
+      "Pour une fréquence, divise l'effectif de la valeur par l'effectif total.",
+      "Convertis si besoin la fréquence en pourcentage (en multipliant par 100).",
+      "Présente le tout dans un tableau ou un diagramme adapté.",
+      "Interprète : quelle valeur est la plus fréquente, quelle catégorie domine ?",
+      "Pour comparer des catégories, regarde leurs effectifs ou leurs fréquences, pas seulement les noms.",
+      "Pense à vérifier que ton interprétation répond bien à la question posée dans l'énoncé."
+    ],
+    "exemple": {
+      "enonce": "Dans une classe de 30 élèves, 12 préfèrent le football. Quelle est la fréquence ?",
+      "etapes": [
+        "L'effectif de « football » est 12.",
+        "L'effectif total est 30 (toute la classe).",
+        "La fréquence est 12 ÷ 30 = 0,4.",
+        "En pourcentage : 0,4 × 100 = 40 %.",
+        "Donc 40 % des élèves préfèrent le football.",
+        "On vérifie : tous les effectifs additionnés doivent bien redonner 30."
+      ]
+    },
+    "astuce": "Neji : « Pour vérifier ton travail : la somme de tous les effectifs doit donner l'effectif total, et la somme de toutes les fréquences doit faire 1 (soit 100 %). Si ce n'est pas le cas, il y a une erreur. » Petit contrôle imparable : la somme des fréquences fait toujours 1, soit 100 %.",
+    "erreurs": [
+      "Confondre l'effectif (le nombre de fois) avec la valeur elle-même.",
+      "Trouver une fréquence supérieure à 1, ce qui est impossible.",
+      "Oublier de diviser par l'effectif total pour calculer une fréquence.",
+      "Mal lire la hauteur des barres d'un diagramme en bâtons.",
+      "Inverser effectif et effectif total dans la division.",
+      "Oublier de relier le résultat au contexte de l'énoncé.",
+      "Confondre la fréquence (un rapport, entre 0 et 1) et l'effectif (un nombre de fois)."
+    ]
+  },
+  "tenten-cercle-vs-disque": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Tenten",
+    "manga": "Naruto",
+    "notion": "Le cercle et le disque",
+    "explication": "On confond souvent le cercle et le disque, alors que ce sont deux objets différents. Le cercle est une LIGNE : c'est l'ensemble de tous les points situés à la même distance d'un point appelé centre. Cette distance constante est le rayon. Le disque, lui, est une SURFACE : c'est toute la zone à l'intérieur du cercle, contour compris. Le rayon relie le centre à un point du cercle ; le diamètre est un segment qui traverse le cercle en passant par le centre, et il mesure exactement le double du rayon. Pour tracer un cercle, on utilise un compas dont l'écartement est égal au rayon. Le périmètre du cercle, aussi appelé circonférence, se calcule en multipliant le diamètre par le nombre pi. Le nombre pi (environ 3,14) est très spécial : il relie toujours le périmètre d'un cercle à son diamètre, et c'est vrai pour absolument tous les cercles.",
+    "definitions": [
+      {
+        "terme": "Cercle",
+        "sens": "La ligne formée par tous les points à égale distance du centre."
+      },
+      {
+        "terme": "Disque",
+        "sens": "La surface située à l'intérieur du cercle, contour compris."
+      },
+      {
+        "terme": "Centre",
+        "sens": "Le point situé au milieu, à égale distance de tout le cercle."
+      },
+      {
+        "terme": "Rayon",
+        "sens": "La distance entre le centre et un point du cercle."
+      },
+      {
+        "terme": "Diamètre",
+        "sens": "Un segment qui traverse le cercle par le centre ; il vaut 2 × rayon."
+      },
+      {
+        "terme": "Périmètre (circonférence)",
+        "sens": "La longueur du cercle : pi × diamètre."
+      },
+      {
+        "terme": "Pi (π)",
+        "sens": "Un nombre constant, environ 3,14, qui relie le périmètre d'un cercle à son diamètre."
+      }
+    ],
+    "methode": [
+      "Demande-toi si on parle d'une ligne (cercle) ou d'une surface (disque).",
+      "Repère le centre du cercle.",
+      "Mesure le rayon : du centre jusqu'à un point du cercle.",
+      "Pour le diamètre, multiplie le rayon par deux (ou mesure d'un bord à l'autre en passant par le centre).",
+      "Pour tracer un cercle, règle l'écartement du compas sur le rayon.",
+      "Pour le périmètre, multiplie le diamètre par pi (environ 3,14).",
+      "Donne le résultat avec l'unité (cm, m) et arrondis si nécessaire.",
+      "Pour repérer un diamètre, cherche le segment qui passe par le centre et touche le cercle des deux côtés."
+    ],
+    "exemple": {
+      "enonce": "Un cercle a un rayon de 3 cm. Quels sont son diamètre et son périmètre ?",
+      "etapes": [
+        "Le diamètre vaut 2 × rayon = 2 × 3 = 6 cm.",
+        "Le périmètre vaut pi × diamètre.",
+        "On calcule : 3,14 × 6 = 18,84.",
+        "Le périmètre est donc environ 18,84 cm.",
+        "On retient : diamètre = 6 cm, périmètre ≈ 18,8 cm.",
+        "On retient : le périmètre d'un cercle vaut toujours un peu plus de 3 fois son diamètre."
+      ]
+    },
+    "astuce": "Tenten : « Pense à une cible : le cercle, c'est le trait qui fait le tour ; le disque, c'est toute la surface à viser. Et le diamètre, c'est toujours deux fois le rayon ! » Le cercle, c'est le trait ; le disque, c'est la galette à l'intérieur. Ne mélange pas la ligne et la surface !",
+    "erreurs": [
+      "Confondre le cercle (une ligne) et le disque (une surface).",
+      "Confondre le rayon et le diamètre dans les calculs.",
+      "Multiplier le rayon par pi pour le périmètre (c'est le diamètre qu'il faut prendre).",
+      "Oublier que le diamètre vaut exactement deux fois le rayon.",
+      "Régler le compas sur le diamètre au lieu du rayon pour tracer.",
+      "Donner le périmètre sans unité ou dans une unité d'aire.",
+      "Oublier que le périmètre se calcule à partir du diamètre, pas du seul rayon."
+    ]
+  },
+  "ino-yamanaka-angles-et-droites": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Ino Yamanaka",
+    "manga": "Naruto",
+    "notion": "Les angles et les droites",
+    "explication": "En géométrie, deux droites peuvent entretenir des relations particulières. Deux droites sont perpendiculaires lorsqu'elles se croisent en formant un angle droit ; elles sont parallèles lorsqu'elles ne se croisent jamais et restent toujours à la même distance l'une de l'autre. Un angle, lui, mesure l'écartement entre deux demi-droites partant d'un même point appelé sommet ; on le mesure en degrés à l'aide d'un rapporteur. On classe les angles selon leur mesure : l'angle droit mesure exactement 90°, l'angle aigu est plus petit que 90°, l'angle obtus est compris entre 90° et 180°, et l'angle plat mesure 180°. Savoir reconnaître, nommer, mesurer et tracer ces angles et ces relations entre droites est la base de toute la géométrie du collège. On nomme un angle avec trois lettres, en plaçant toujours celle du sommet au milieu : par exemple, l'angle ABC a pour sommet le point B. Reconnaître les angles et les positions de droites est indispensable pour construire des figures précises, lire un plan ou comprendre les triangles et les quadrilatères étudiés ensuite.",
+    "definitions": [
+      {
+        "terme": "Droites perpendiculaires",
+        "sens": "Deux droites qui se croisent en formant un angle droit."
+      },
+      {
+        "terme": "Droites parallèles",
+        "sens": "Deux droites qui ne se croisent jamais, toujours à la même distance."
+      },
+      {
+        "terme": "Angle droit",
+        "sens": "Un angle qui mesure exactement 90°."
+      },
+      {
+        "terme": "Angle aigu",
+        "sens": "Un angle plus petit qu'un angle droit (moins de 90°)."
+      },
+      {
+        "terme": "Angle obtus",
+        "sens": "Un angle compris entre 90° et 180°."
+      },
+      {
+        "terme": "Rapporteur",
+        "sens": "L'instrument qui sert à mesurer les angles en degrés."
+      },
+      {
+        "terme": "Angle plat",
+        "sens": "Un angle qui mesure exactement 180°, comme une ligne droite."
+      }
+    ],
+    "methode": [
+      "Pour mesurer un angle, place le centre du rapporteur sur le sommet de l'angle.",
+      "Aligne une des demi-droites de l'angle sur la graduation zéro.",
+      "Lis la mesure indiquée par l'autre demi-droite, sur la bonne échelle.",
+      "Classe l'angle : aigu (< 90°), droit (= 90°), obtus (entre 90° et 180°) ou plat (180°).",
+      "Pour vérifier un angle droit, utilise l'équerre.",
+      "Pour des droites parallèles, vérifie qu'elles gardent toujours le même écart.",
+      "Pour des droites perpendiculaires, vérifie qu'elles forment bien un angle de 90°.",
+      "Pour tracer un angle d'une mesure donnée, place le rapporteur sur le sommet et marque le point à la bonne graduation.",
+      "Pour deux droites, observe bien si elles se croisent (sécantes), forment un angle droit (perpendiculaires) ou ne se croisent jamais (parallèles)."
+    ],
+    "exemple": {
+      "enonce": "Un angle mesure 120°. Quelle est sa nature ?",
+      "etapes": [
+        "On compare 120° à 90° (l'angle droit).",
+        "120° est plus grand que 90°.",
+        "On compare aussi à 180° (l'angle plat) : 120° est plus petit que 180°.",
+        "L'angle est donc compris entre 90° et 180°.",
+        "C'est un angle obtus.",
+        "On conclut : un angle de 120° est bien un angle obtus."
+      ]
+    },
+    "astuce": "Ino : « Un angle aigu est petit et pointu (comme une aiguille), un angle obtus est large et ouvert. Et pour repérer un angle droit sans rapporteur, l'équerre est ta meilleure amie ! » Aigu = petit et pointu comme une aiguille ; obtus = large et ouvert. L'équerre, elle, repère l'angle droit en un clin d'œil.",
+    "erreurs": [
+      "Lire la mauvaise graduation du rapporteur (il y a deux échelles, 0–180 dans les deux sens).",
+      "Confondre angle aigu et angle obtus.",
+      "Confondre droites parallèles et droites perpendiculaires.",
+      "Mal placer le centre du rapporteur, qui doit être sur le sommet.",
+      "Oublier d'aligner une demi-droite sur le zéro avant de lire.",
+      "Penser qu'un angle plat (180°) est un angle droit.",
+      "Nommer un angle sans placer la lettre du sommet au milieu des trois lettres."
+    ]
+  },
+  "zabuza-momochi-recapitulatif-6eme": {
+    "matiere": "maths",
+    "niveau": "6eme",
+    "hero": "Zabuza Momochi",
+    "manga": "Naruto",
+    "notion": "Le récapitulatif de la 6ème",
+    "explication": "La 6ème est la première année du collège : elle consolide les acquis du primaire et introduit de nouveaux outils qui serviront toute la scolarité. Le programme s'organise en grands domaines : les nombres (décimaux, fractions, opérations), la proportionnalité, la géométrie (droites, angles, cercle, triangles et aires) et l'organisation de données (effectifs, fréquences, diagrammes). Faire un bon récapitulatif ne consiste pas à tout relire d'un coup, mais à reprendre chaque domaine, à refaire des exercices variés et à comprendre ses erreurs passées. Travailler par petites séances régulières ancre durablement les notions. Bien consolider la 6ème, c'est aborder la 5ème avec des bases solides et éviter d'accumuler des lacunes difficiles à combler ensuite. Réviser un peu chaque jour plutôt que tout d'un coup aide le cerveau à mieux retenir : c'est ce qu'on appelle la mémorisation espacée. L'objectif d'un récapitulatif n'est pas d'en faire le plus possible, mais de cibler intelligemment : mieux vaut maîtriser parfaitement les notions clés que survoler tout le programme. Un bon récapitulatif te redonne aussi confiance : en revoyant ce que tu sais déjà faire, tu arrives au contrôle plus serein et mieux préparé.",
+    "definitions": [
+      {
+        "terme": "Nombre décimal",
+        "sens": "Un nombre à virgule, avec une partie entière et une partie décimale."
+      },
+      {
+        "terme": "Fraction",
+        "sens": "Une écriture a/b qui représente une part d'un tout."
+      },
+      {
+        "terme": "Proportionnalité",
+        "sens": "Une situation où deux grandeurs varient dans le même rapport."
+      },
+      {
+        "terme": "Aire",
+        "sens": "La mesure d'une surface, en unités carrées."
+      },
+      {
+        "terme": "Effectif",
+        "sens": "Le nombre de fois qu'une valeur apparaît dans des données."
+      },
+      {
+        "terme": "Périmètre",
+        "sens": "La longueur du contour d'une figure."
+      },
+      {
+        "terme": "Mémorisation espacée",
+        "sens": "Réviser par petites séances régulières plutôt qu'en une seule fois, pour mieux retenir."
+      }
+    ],
+    "methode": [
+      "Classe le programme en domaines : nombres, proportionnalité, géométrie, gestion de données.",
+      "Pour chaque domaine, repère les notions les moins sûres grâce à tes contrôles passés.",
+      "Refais des exercices variés plutôt que de relire passivement le cours.",
+      "Reprends tes anciennes erreurs et comprends d'où elles venaient.",
+      "Travaille par petites séances régulières plutôt qu'en une seule fois.",
+      "Rédige proprement et n'oublie jamais les unités dans tes résultats.",
+      "Vérifie chaque réponse avant de passer à l'exercice suivant.",
+      "À la fin de chaque séance, note la notion que tu reverras la prochaine fois.",
+      "Fais-toi un mini-test sur chaque domaine pour mesurer où tu en es vraiment."
+    ],
+    "exemple": {
+      "enonce": "Comment réviser efficacement le chapitre des fractions en une courte séance ?",
+      "etapes": [
+        "Je relis rapidement la règle clé : simplifier en divisant haut et bas par le même nombre.",
+        "Je refais deux exercices de simplification déjà corrigés.",
+        "Je repère l'erreur que j'avais faite la dernière fois.",
+        "Je m'entraîne sur un exercice nouveau du même type.",
+        "Je vérifie mes réponses et je note ce qui reste à revoir.",
+        "Je note enfin la prochaine notion à revoir pour ma séance suivante."
+      ]
+    },
+    "astuce": "Zabuza : « Ne révise pas tout la veille du contrôle. Quelques minutes régulières, en reprenant surtout tes erreurs, valent bien mieux qu'une longue séance de panique. » Reprends surtout ce que tu rates : c'est sur tes erreurs que tu progresses le plus vite.",
+    "erreurs": [
+      "Se contenter de relire le cours sans jamais refaire d'exercices.",
+      "Ne réviser que ce qu'on maîtrise déjà en évitant les points faibles.",
+      "Tout réviser au dernier moment en une seule longue séance.",
+      "Ne pas analyser ses erreurs passées et donc les répéter.",
+      "Négliger la rédaction et les unités.",
+      "Oublier de vérifier ses résultats.",
+      "Réviser uniquement la veille du contrôle en comptant sur la chance."
+    ]
+  }
+}
