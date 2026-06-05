@@ -1,0 +1,378 @@
+{
+  "brook-types-et-formes-de-phrases": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Brook", "manga": "One Piece",
+    "notion": "Les types et formes de phrases",
+    "explication": "Une phrase peut être classée selon son type et selon sa forme : ce sont deux informations différentes, et chaque phrase possède un type ET une forme. Le type dépend de l'intention de celui qui parle. Il existe quatre types de phrases. La phrase déclarative sert à dire quelque chose, à donner une information ; elle se termine par un point : « Le navire arrive. ». La phrase interrogative sert à poser une question ; elle se termine par un point d'interrogation : « Le navire arrive-t-il ? ». La phrase impérative sert à donner un ordre, un conseil ou une consigne ; elle se termine par un point ou un point d'exclamation : « Ferme la porte. ». La phrase exclamative sert à exprimer un sentiment fort (joie, colère, surprise) ; elle se termine par un point d'exclamation : « Quel beau bateau ! ». À côté du type, il y a la forme. Une phrase est soit à la forme affirmative, soit à la forme négative. La forme négative se reconnaît à la présence de mots de négation, le plus souvent « ne… pas », mais aussi « ne… plus », « ne… jamais ». En CM2, on apprend à identifier le type et la forme de chaque phrase, ce qui aide à mieux lire, écrire et ponctuer correctement.",
+    "definitions": [
+      {"terme": "Type de phrase", "sens": "il dépend de l'intention (4 types)"},
+      {"terme": "Phrase déclarative", "sens": "elle déclare, informe (point)"},
+      {"terme": "Phrase interrogative", "sens": "elle pose une question (point d'interrogation)"},
+      {"terme": "Phrase impérative", "sens": "elle donne un ordre ou un conseil"},
+      {"terme": "Phrase exclamative", "sens": "elle exprime un sentiment fort (!)"},
+      {"terme": "Forme affirmative", "sens": "elle affirme, sans négation"},
+      {"terme": "Forme négative", "sens": "elle contient ne… pas, ne… plus…"},
+      {"terme": "Type ET forme", "sens": "chaque phrase a les deux"}
+    ],
+    "methode": [
+      "Lis la phrase et cherche l'intention de celui qui parle.",
+      "S'il informe → phrase déclarative (point).",
+      "S'il interroge → phrase interrogative (point d'interrogation).",
+      "S'il ordonne ou conseille → phrase impérative.",
+      "S'il exprime un sentiment fort → phrase exclamative (!).",
+      "Observe ensuite la forme : y a-t-il une négation ?",
+      "Pas de négation → forme affirmative.",
+      "Présence de ne… pas → forme négative."
+    ],
+    "exemple": {
+      "enonce": "De quel type est la phrase « Ferme la porte. » ?",
+      "etapes": [
+        "On cherche l'intention de celui qui parle.",
+        "Ici, il donne un ordre.",
+        "Une phrase qui donne un ordre est une phrase impérative.",
+        "On vérifie la ponctuation : un point (ou un point d'exclamation).",
+        "Le type est donc : phrase impérative.",
+        "Sa forme est affirmative (aucune négation)."
+      ]
+    },
+    "astuce": "Brook : « Yohohoho ! Une phrase a TOUJOURS un type ET une forme. Le type, c'est l'intention (déclarer, questionner, ordonner, s'exclamer). La forme, c'est affirmatif ou négatif (ne… pas). Deux questions à se poser, pas une ! »",
+    "erreurs": [
+      "Confondre le type et la forme d'une phrase.",
+      "Oublier le point d'interrogation d'une interrogative.",
+      "Confondre phrase impérative et exclamative.",
+      "Oublier qu'une phrase a un type ET une forme.",
+      "Ne pas repérer la négation (ne… pas).",
+      "Croire qu'une exclamative est forcément négative.",
+      "Mal placer la ponctuation finale.",
+      "Confondre l'ordre (impératif) et la question (interrogatif)."
+    ]
+  },
+  "monkey-d-luffy-infinitif-en-er-vs-participe-en-e": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Monkey D. Luffy", "manga": "One Piece",
+    "notion": "L'infinitif en -ER vs le participe en -É",
+    "explication": "Pour les verbes du 1er groupe, l'infinitif (en -er) et le participe passé (en -é) se prononcent exactement de la même façon : « manger » et « mangé » sonnent pareil. C'est une source d'erreurs très fréquente à l'écrit, car il faut choisir entre les deux orthographes. Heureusement, il existe une astuce simple et infaillible : la substitution. On remplace le verbe en [é] par un verbe du 3e groupe que l'on entend différemment à l'infinitif et au participe, comme « mordre » (infinitif) et « mordu » (participe), ou « vendre » et « vendu ». Si la phrase sonne juste avec « mordre » (l'infinitif), alors il faut écrire l'infinitif en -er. Si elle sonne juste avec « mordu » (le participe), alors il faut écrire le participe en -é. Par exemple, dans « Il va manger », on teste : « Il va mordre » sonne juste, donc on écrit « manger » (infinitif). Dans « Il a mangé », on teste : « Il a mordu » sonne juste, donc on écrit « mangé » (participe). En règle générale, après un autre verbe conjugué (aller, vouloir, pouvoir…) on a l'infinitif, et après les auxiliaires être ou avoir on a le participe. En CM2, ce test de substitution est l'outil clé pour ne plus confondre -er et -é.",
+    "definitions": [
+      {"terme": "Infinitif", "sens": "la forme non conjuguée du verbe (manger)"},
+      {"terme": "Participe passé", "sens": "la forme en -é (mangé)"},
+      {"terme": "Verbe du 1er groupe", "sens": "verbe en -er, dont -er et -é sonnent pareil"},
+      {"terme": "Homophone", "sens": "deux formes qui se prononcent pareil"},
+      {"terme": "Test de substitution", "sens": "remplacer par mordre / mordu"},
+      {"terme": "mordre", "sens": "si ça marche → infinitif en -er"},
+      {"terme": "mordu", "sens": "si ça marche → participe en -é"},
+      {"terme": "Auxiliaire", "sens": "être ou avoir : suivis du participe"}
+    ],
+    "methode": [
+      "Repère le verbe en [é] dans la phrase.",
+      "Remplace-le par le verbe « mordre » (infinitif).",
+      "Si la phrase sonne juste, écris l'infinitif en -er.",
+      "Sinon, remplace par « mordu » (participe).",
+      "Si la phrase sonne juste, écris le participe en -é.",
+      "Repère l'indice : après un autre verbe → infinitif.",
+      "Après être ou avoir → participe passé.",
+      "Vérifie ton choix en relisant la phrase."
+    ],
+    "exemple": {
+      "enonce": "Faut-il écrire « Il va mang... » avec -er ou -é ?",
+      "etapes": [
+        "On repère le verbe en [é] : mang...",
+        "On applique le test de substitution avec « mordre ».",
+        "On teste : « Il va mordre » : la phrase sonne juste.",
+        "Comme « mordre » (infinitif) fonctionne, c'est l'infinitif.",
+        "On écrit donc -er : « Il va manger ».",
+        "Avec « Il a mordu », on aurait écrit « Il a mangé »."
+      ]
+    },
+    "astuce": "Luffy : « Le test imparable : remplace par « mordre » ! Si « Il va mordre » sonne juste → infinitif en -ER. Si c'est « Il a mordu » qui sonne juste → participe en -É. Simple et efficace ! »",
+    "erreurs": [
+      "Écrire -é après un autre verbe (« il va mangé »).",
+      "Écrire -er après être ou avoir (« il a manger »).",
+      "Oublier d'appliquer le test de substitution.",
+      "Choisir au hasard sans vérifier.",
+      "Confondre l'infinitif et le participe passé.",
+      "Mal entendre la phrase test.",
+      "Oublier que -er et -é se prononcent pareil.",
+      "Ne pas repérer l'auxiliaire être ou avoir."
+    ]
+  },
+  "nami-accord-du-participe-passe-avec-etre": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Nami", "manga": "One Piece",
+    "notion": "L'accord du participe passé avec ÊTRE",
+    "explication": "Dans les temps composés (passé composé, plus-que-parfait…), le verbe est formé d'un auxiliaire, être ou avoir, suivi du participe passé. Quand l'auxiliaire est ÊTRE, une règle d'accord importante s'applique : le participe passé s'accorde en genre et en nombre avec le sujet du verbe, exactement comme le ferait un adjectif. Par exemple, dans « Elle est partie », le sujet « elle » est féminin singulier, donc le participe « parti » prend un -e : « partie ». Dans « Elles sont parties », le sujet est féminin pluriel, donc le participe prend -es : « parties ». Dans « Ils sont partis », le sujet est masculin pluriel, donc le participe prend -s : « partis ». Pour appliquer cette règle, il faut d'abord repérer que l'auxiliaire est bien « être », puis trouver le sujet du verbe et déterminer son genre et son nombre. Attention à ne pas confondre avec l'auxiliaire « avoir », qui suit une règle différente : avec « avoir », le participe ne s'accorde pas avec le sujet. En CM2, on se concentre sur l'accord avec « être », qui est régulier et systématique. Bien maîtriser cet accord est essentiel pour écrire correctement les temps composés et éviter une faute très fréquente.",
+    "definitions": [
+      {"terme": "Participe passé", "sens": "la forme du verbe dans les temps composés"},
+      {"terme": "Auxiliaire être", "sens": "il déclenche l'accord avec le sujet"},
+      {"terme": "Accord avec le sujet", "sens": "en genre et en nombre"},
+      {"terme": "Genre", "sens": "masculin ou féminin"},
+      {"terme": "Nombre", "sens": "singulier ou pluriel"},
+      {"terme": "Temps composé", "sens": "auxiliaire + participe passé"},
+      {"terme": "Marque du féminin", "sens": "un -e ajouté (partie)"},
+      {"terme": "Marque du pluriel", "sens": "un -s ajouté (partis)"}
+    ],
+    "methode": [
+      "Repère le verbe au temps composé.",
+      "Vérifie que l'auxiliaire est bien « être ».",
+      "Trouve le sujet du verbe.",
+      "Détermine son genre : masculin ou féminin.",
+      "Détermine son nombre : singulier ou pluriel.",
+      "Accorde le participe passé avec ce sujet.",
+      "Ajoute -e (féminin) et/ou -s (pluriel) si besoin.",
+      "Ne confonds pas avec l'auxiliaire « avoir »."
+    ],
+    "exemple": {
+      "enonce": "Accorde : « Elles (être) parti... » au passé composé.",
+      "etapes": [
+        "L'auxiliaire est « être » (sont) : la règle d'accord s'applique.",
+        "On cherche le sujet : « Elles ».",
+        "« Elles » est féminin pluriel.",
+        "Le participe « parti » s'accorde avec le sujet.",
+        "Au féminin pluriel, on ajoute -es.",
+        "On écrit : « Elles sont parties »."
+      ]
+    },
+    "astuce": "Nami : « Règle d'or : avec l'auxiliaire ÊTRE, le participe passé s'accorde avec le SUJET, comme un adjectif. Elle est partie, ils sont partis, elles sont parties. Trouve le sujet, regarde son genre et son nombre ! »",
+    "erreurs": [
+      "Oublier d'accorder le participe avec le sujet.",
+      "Accorder de la même façon avec « avoir ».",
+      "Se tromper sur le genre du sujet.",
+      "Se tromper sur le nombre du sujet.",
+      "Oublier le -e du féminin (« elle est parti »).",
+      "Oublier le -s du pluriel (« ils sont parti »).",
+      "Confondre l'auxiliaire être et l'auxiliaire avoir.",
+      "Accorder avec un autre mot que le sujet."
+    ]
+  },
+  "nico-robin-nature-des-mots-classes-grammaticales": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Nico Robin", "manga": "One Piece",
+    "notion": "La nature des mots",
+    "explication": "La nature d'un mot, aussi appelée sa classe grammaticale, indique à quelle catégorie il appartient. C'est une information fixe, attachée au mot : elle ne change pas selon la phrase. Il ne faut pas la confondre avec la fonction, qui désigne le rôle joué par le mot dans une phrase précise. La nature dit ce qu'est le mot ; la fonction dit ce qu'il fait. On classe les mots dans de grandes catégories. Le nom désigne un être, une chose ou une idée (pirate, bateau, liberté) ; il peut être commun ou propre. Le verbe exprime une action ou un état (naviguer, être). Le déterminant accompagne le nom (le, un, mes). L'adjectif qualificatif précise le nom (grand, courageux). Le pronom remplace un nom (il, elle, celui-ci). L'adverbe modifie un verbe ou un adjectif (vite, très) et reste invariable. La préposition relie des mots (à, de, pour). La conjonction relie des mots ou des propositions (et, mais, parce que). Certains mots sont variables (ils changent de forme : nom, verbe, adjectif), d'autres invariables (adverbe, préposition, conjonction). En CM2, on apprend à donner la nature de chaque mot d'une phrase. Bien connaître la nature des mots est la base de l'analyse grammaticale et aide à comprendre les accords.",
+    "definitions": [
+      {"terme": "Nature (classe)", "sens": "la catégorie fixe d'un mot"},
+      {"terme": "Nom", "sens": "désigne un être, une chose, une idée"},
+      {"terme": "Verbe", "sens": "exprime une action ou un état"},
+      {"terme": "Déterminant", "sens": "accompagne le nom (le, un, mes)"},
+      {"terme": "Adjectif qualificatif", "sens": "précise le nom (grand, beau)"},
+      {"terme": "Pronom", "sens": "remplace un nom (il, elle, celui-ci)"},
+      {"terme": "Adverbe", "sens": "modifie un verbe ou un adjectif (invariable)"},
+      {"terme": "Nature ≠ fonction", "sens": "ce qu'est le mot ≠ son rôle"}
+    ],
+    "methode": [
+      "Pour chaque mot, demande-toi : qu'est-ce que c'est ?",
+      "Désigne-t-il un être ou une chose ? → un nom.",
+      "Exprime-t-il une action ou un état ? → un verbe.",
+      "Accompagne-t-il un nom ? → un déterminant.",
+      "Précise-t-il un nom ? → un adjectif qualificatif.",
+      "Remplace-t-il un nom ? → un pronom.",
+      "Modifie-t-il un verbe ou un adjectif ? → un adverbe.",
+      "Ne confonds jamais la nature et la fonction."
+    ],
+    "exemple": {
+      "enonce": "Quelle est la nature du mot « bateau » ?",
+      "etapes": [
+        "On observe ce que désigne le mot.",
+        "« bateau » désigne une chose, un objet.",
+        "Un mot qui désigne un être ou une chose est un nom.",
+        "Il désigne une chose ordinaire : c'est un nom commun.",
+        "La nature de « bateau » est donc : nom commun.",
+        "Cette nature reste la même dans toutes les phrases."
+      ]
+    },
+    "astuce": "Nico Robin : « Ne confonds jamais la NATURE et la FONCTION ! La nature, c'est ce qu'EST le mot (nom, verbe, adjectif…) et elle ne change pas. La fonction, c'est son RÔLE dans la phrase (sujet, COD…). »",
+    "erreurs": [
+      "Confondre la nature et la fonction d'un mot.",
+      "Confondre le nom et le verbe d'une même famille.",
+      "Prendre un adjectif pour un adverbe.",
+      "Confondre déterminant et pronom.",
+      "Oublier que certains mots sont invariables.",
+      "Confondre nom commun et nom propre.",
+      "Croire que la nature change selon la phrase.",
+      "Confondre adjectif et participe passé."
+    ]
+  },
+  "portgas-d-ace-imparfait-vs-passe-compose": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Portgas D. Ace", "manga": "One Piece",
+    "notion": "L'imparfait vs le passé composé",
+    "explication": "L'imparfait et le passé composé sont deux temps du passé, mais ils ne s'emploient pas de la même façon : ils racontent le passé sous deux angles différents. L'imparfait sert à décrire et à exprimer une action qui dure, qui se répète ou qui se déroule en arrière-plan. C'est le temps du décor, des habitudes et des descriptions : « Il faisait beau », « Tous les jours, il s'entraînait ». Le passé composé, lui, sert à exprimer une action ponctuelle, achevée, qui se produit à un moment précis et fait avancer le récit. C'est le temps des événements de premier plan : « Soudain, il est tombé », « Hier, j'ai gagné ». Très souvent, les deux temps se combinent dans un même récit : l'imparfait plante le décor, et le passé composé apporte l'événement qui survient. Par exemple : « Il lisait tranquillement quand le téléphone a sonné ». « Lisait » (imparfait) décrit l'action en cours ; « a sonné » (passé composé) marque l'événement soudain. Pour choisir, on se demande si l'action dure ou décrit (imparfait), ou si elle est ponctuelle et achevée (passé composé). En CM2, on apprend à distinguer ces deux temps et à les employer ensemble. Bien les maîtriser est essentiel pour raconter au passé de façon claire et vivante.",
+    "definitions": [
+      {"terme": "Imparfait", "sens": "action qui dure, se répète ou décrit"},
+      {"terme": "Passé composé", "sens": "action ponctuelle et achevée"},
+      {"terme": "Action longue", "sens": "elle se déroule dans la durée (imparfait)"},
+      {"terme": "Action habituelle", "sens": "elle se répète (imparfait)"},
+      {"terme": "Action ponctuelle", "sens": "elle survient à un moment précis (passé composé)"},
+      {"terme": "Arrière-plan", "sens": "le décor du récit (imparfait)"},
+      {"terme": "Premier plan", "sens": "l'événement qui fait avancer (passé composé)"},
+      {"terme": "Combinaison", "sens": "décor à l'imparfait, événement au passé composé"}
+    ],
+    "methode": [
+      "Demande-toi quel rôle joue l'action dans le récit.",
+      "Décrit-elle, dure-t-elle ou se répète-t-elle ? → imparfait.",
+      "Est-elle ponctuelle, soudaine et achevée ? → passé composé.",
+      "Repère les indices de durée ou d'habitude (tous les jours).",
+      "Repère les indices de soudaineté (soudain, hier).",
+      "Dans un récit, place le décor à l'imparfait.",
+      "Place l'événement qui survient au passé composé.",
+      "Relis pour vérifier la cohérence des temps."
+    ],
+    "exemple": {
+      "enonce": "Complète : « Il ___ (lire) quand le téléphone ___ (sonner) ».",
+      "etapes": [
+        "La première action « lire » est en cours, elle dure : imparfait.",
+        "On écrit : « Il lisait ».",
+        "La seconde action « sonner » survient soudainement : passé composé.",
+        "On écrit : « le téléphone a sonné ».",
+        "On obtient : « Il lisait quand le téléphone a sonné ».",
+        "L'imparfait plante le décor, le passé composé apporte l'événement."
+      ]
+    },
+    "astuce": "Ace : « Imparfait = le décor qui dure (il faisait beau, il lisait). Passé composé = l'action soudaine (il est tombé, le téléphone a sonné). L'un plante le décor, l'autre fait avancer l'histoire ! »",
+    "erreurs": [
+      "Confondre l'imparfait et le passé composé.",
+      "Mettre une description au passé composé.",
+      "Mettre un événement soudain à l'imparfait.",
+      "Ignorer les indices de temps (soudain, tous les jours).",
+      "Oublier l'accord du participe au passé composé.",
+      "Mélanger les deux temps sans logique.",
+      "Confondre « il lisait » et « il a lu ».",
+      "Ne pas distinguer décor et événement."
+    ]
+  },
+  "roronoa-zoro-accord-sujet-verbe": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Roronoa Zoro", "manga": "One Piece",
+    "notion": "L'accord du sujet et du verbe",
+    "explication": "Dans une phrase, le verbe s'accorde toujours avec son sujet : il prend les marques de la personne et du nombre de ce sujet. Si le sujet est au singulier, le verbe est au singulier ; s'il est au pluriel, le verbe est au pluriel. Par exemple : « L'enfant joue » (singulier), mais « Les enfants jouent » (pluriel). Pour bien accorder, la première chose à faire est de trouver le sujet du verbe. L'astuce la plus sûre est de poser la question « Qui est-ce qui + verbe ? ». Dans « Les enfants jouent », on demande « Qui est-ce qui joue ? » : la réponse est « les enfants », qui est le sujet, au pluriel. Le verbe se met donc au pluriel : « jouent ». Il faut rester vigilant dans certains cas. Parfois le sujet est éloigné du verbe, séparé par d'autres mots ; le piège est alors d'accorder avec le mot le plus proche plutôt qu'avec le vrai sujet. Parfois le sujet est inversé, placé après le verbe (« Où vont les pirates ? »). Dans tous les cas, c'est bien le sujet trouvé grâce à la question qui commande l'accord. En CM2, on apprend à toujours repérer le sujet avant d'accorder le verbe. Bien maîtriser cet accord est l'une des bases pour écrire sans fautes.",
+    "definitions": [
+      {"terme": "Accord sujet-verbe", "sens": "le verbe s'accorde avec son sujet"},
+      {"terme": "Sujet", "sens": "il répond à « Qui est-ce qui + verbe ? »"},
+      {"terme": "Verbe", "sens": "il prend les marques du sujet"},
+      {"terme": "Personne", "sens": "1re, 2e ou 3e personne"},
+      {"terme": "Nombre", "sens": "singulier ou pluriel"},
+      {"terme": "Sujet éloigné", "sens": "séparé du verbe par d'autres mots"},
+      {"terme": "Sujet inversé", "sens": "placé après le verbe"},
+      {"terme": "Question-test", "sens": "« Qui est-ce qui + verbe ? »"}
+    ],
+    "methode": [
+      "Repère le verbe conjugué de la phrase.",
+      "Pose la question « Qui est-ce qui + verbe ? ».",
+      "Identifie le sujet grâce à la réponse.",
+      "Détermine sa personne et son nombre.",
+      "Accorde le verbe avec ce sujet.",
+      "Méfie-toi du mot le plus proche s'il n'est pas le sujet.",
+      "Cherche le sujet même s'il est éloigné ou inversé.",
+      "Relis pour vérifier l'accord."
+    ],
+    "exemple": {
+      "enonce": "Accorde : « Les enfants ___ (jouer) dans la cour ».",
+      "etapes": [
+        "Le verbe à accorder est « jouer ».",
+        "On pose la question : « Qui est-ce qui joue ? ».",
+        "La réponse est : « les enfants ».",
+        "« les enfants » est à la 3e personne du pluriel.",
+        "Le verbe se met donc au pluriel : jouent.",
+        "On écrit : « Les enfants jouent dans la cour »."
+      ]
+    },
+    "astuce": "Zoro : « Avant d'accorder, TROUVE le sujet ! Pose « Qui est-ce qui + verbe ? ». Et méfie-toi du piège : on accorde avec le sujet, pas avec le mot le plus proche du verbe. »",
+    "erreurs": [
+      "Accorder avec le mot le plus proche au lieu du sujet.",
+      "Oublier d'accorder quand le sujet est éloigné.",
+      "Ne pas chercher le sujet inversé.",
+      "Oublier le -nt du pluriel (« les enfants joue »).",
+      "Confondre le sujet et un complément.",
+      "Oublier de poser la question « Qui est-ce qui ? ».",
+      "Se tromper de personne.",
+      "Mettre un verbe au singulier avec un sujet pluriel."
+    ]
+  },
+  "shanks-le-roux-homophones-grammaticaux-a-et-on": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Shanks le Roux", "manga": "One Piece",
+    "notion": "Les homophones grammaticaux (a/à, et/est, on/ont)",
+    "explication": "Les homophones grammaticaux sont des mots qui se prononcent de la même façon, mais qui s'écrivent différemment et n'ont pas la même nature. Trois couples sont très fréquents et causent beaucoup de fautes. Le premier est « a » et « à ». « a » est le verbe avoir (il a) ; « à » est une préposition (à la maison). Pour les distinguer, on remplace par « avait » : si la phrase reste correcte, c'est le verbe « a » ; sinon, c'est la préposition « à ». Le deuxième est « et » et « est ». « et » est une conjonction qui relie (le pain et le sel) ; « est » est le verbe être (il est). On remplace par « était » : si ça marche, c'est le verbe « est » ; sinon, c'est « et ». Le troisième est « on » et « ont ». « on » est un pronom (on joue) ; « ont » est le verbe avoir au pluriel (ils ont). On remplace par « avaient » : si ça marche, c'est le verbe « ont » ; sinon, c'est le pronom « on ». Le secret est donc le même à chaque fois : remplacer par le verbe à un autre temps. Si le remplacement fonctionne, on écrit le verbe (a, est, ont). En CM2, ces tests de substitution sont les outils clés pour ne plus confondre ces homophones et écrire sans fautes.",
+    "definitions": [
+      {"terme": "Homophone grammatical", "sens": "même son, orthographe et nature différentes"},
+      {"terme": "a", "sens": "verbe avoir (test : « avait »)"},
+      {"terme": "à", "sens": "préposition (lieu, but…)"},
+      {"terme": "et", "sens": "conjonction qui relie (« et puis »)"},
+      {"terme": "est", "sens": "verbe être (test : « était »)"},
+      {"terme": "on", "sens": "pronom (on joue)"},
+      {"terme": "ont", "sens": "verbe avoir au pluriel (test : « avaient »)"},
+      {"terme": "Test de substitution", "sens": "remplacer par le verbe à un autre temps"}
+    ],
+    "methode": [
+      "Repère le mot homophone à analyser.",
+      "Pour a/à, remplace par « avait ».",
+      "Si la phrase reste correcte, écris « a » (verbe), sinon « à ».",
+      "Pour et/est, remplace par « était ».",
+      "Si ça marche, écris « est » (verbe), sinon « et ».",
+      "Pour on/ont, remplace par « avaient ».",
+      "Si ça marche, écris « ont » (verbe), sinon « on ».",
+      "Relis la phrase pour confirmer ton choix."
+    ],
+    "exemple": {
+      "enonce": "« Il (a/à) un chapeau » : quel mot écrire ?",
+      "etapes": [
+        "Le mot à analyser est l'homophone a/à.",
+        "On applique le test : on remplace par « avait ».",
+        "On teste : « Il avait un chapeau » : la phrase est correcte.",
+        "Comme « avait » fonctionne, c'est le verbe avoir.",
+        "On écrit donc « a » (sans accent).",
+        "On obtient : « Il a un chapeau »."
+      ]
+    },
+    "astuce": "Shanks : « Les tests magiques : a → « avait », est → « était », ont → « avaient ». Si le remplacement marche, c'est le VERBE (a, est, ont). S'il ne marche pas, c'est l'autre mot (à, et, on) ! »",
+    "erreurs": [
+      "Confondre « a » (verbe) et « à » (préposition).",
+      "Confondre « et » (relie) et « est » (verbe).",
+      "Confondre « on » (pronom) et « ont » (verbe).",
+      "Oublier d'appliquer le test de substitution.",
+      "Mettre un accent à « a » (verbe).",
+      "Écrire « et » à la place de « est ».",
+      "Écrire « on » à la place de « ont ».",
+      "Choisir au hasard sans vérifier."
+    ]
+  },
+  "trafalgar-d-law-present-de-l-indicatif": {
+    "matiere": "francais", "niveau": "cm2", "hero": "Trafalgar D. Law", "manga": "One Piece",
+    "notion": "Le présent de l'indicatif",
+    "explication": "Le présent de l'indicatif est le temps qui exprime une action en train de se dérouler au moment où l'on parle : « Je lis une carte ». Mais il sert aussi à exprimer une habitude (« Chaque matin, il s'entraîne ») et une vérité générale, toujours vraie (« La Terre tourne autour du Soleil »). Sa conjugaison dépend du groupe du verbe. Les verbes du 1er groupe (en -er) prennent les terminaisons -e, -es, -e, -ons, -ez, -ent : je chante, tu chantes, il chante, nous chantons, vous chantez, ils chantent. Les verbes du 2e groupe (en -ir comme finir) prennent -is, -is, -it, -issons, -issez, -issent : je finis, nous finissons. Les verbes du 3e groupe sont plus variés et souvent irréguliers (je prends, je veux, je vais) : il faut les apprendre au cas par cas, en particulier les verbes très fréquents être, avoir, aller et faire. Un point d'attention : à la deuxième personne du singulier (tu), le verbe se termine presque toujours par un -s (tu chantes, tu finis, tu prends). En CM2, on apprend à conjuguer les verbes au présent en repérant leur groupe et la bonne terminaison. Bien maîtriser le présent de l'indicatif est une base essentielle de la conjugaison française.",
+    "definitions": [
+      {"terme": "Présent de l'indicatif", "sens": "le temps de l'action actuelle"},
+      {"terme": "Action actuelle", "sens": "elle se déroule au moment où l'on parle"},
+      {"terme": "Habitude", "sens": "une action qui se répète"},
+      {"terme": "Vérité générale", "sens": "un fait toujours vrai"},
+      {"terme": "1er groupe", "sens": "-e, -es, -e, -ons, -ez, -ent"},
+      {"terme": "2e groupe", "sens": "-is, -is, -it, -issons, -issez, -issent"},
+      {"terme": "3e groupe", "sens": "formes variées, souvent irrégulières"},
+      {"terme": "Le -s du « tu »", "sens": "le verbe finit presque toujours par -s à « tu »"}
+    ],
+    "methode": [
+      "Vérifie que l'action est actuelle, habituelle ou toujours vraie.",
+      "Identifie le groupe du verbe.",
+      "Pour le 1er groupe, utilise -e, -es, -e, -ons, -ez, -ent.",
+      "Pour le 2e groupe, utilise -is, -it, -issons, -issez, -issent.",
+      "Pour le 3e groupe, retiens les formes au cas par cas.",
+      "Repère la personne et choisis la bonne terminaison.",
+      "N'oublie pas le -s à la 2e personne du singulier (tu).",
+      "Mémorise les irréguliers fréquents (être, avoir, aller, faire)."
+    ],
+    "exemple": {
+      "enonce": "Conjugue « chanter » au présent, à la 1re personne du singulier.",
+      "etapes": [
+        "Le verbe « chanter » appartient au 1er groupe (en -er).",
+        "On prend le radical : chant-.",
+        "À la 1re personne du singulier, la terminaison est -e.",
+        "On assemble : chant- + -e.",
+        "On obtient : je chante.",
+        "À la 2e personne, on aurait : tu chantes (avec un -s)."
+      ]
+    },
+    "astuce": "Law : « Repère d'abord le groupe ! 1er groupe (en -er) → -e, -es, -e, -ons, -ez, -ent : les terminaisons les plus fréquentes. Et n'oublie jamais le -s à « tu » (tu chantes, tu finis). »",
+    "erreurs": [
+      "Confondre les terminaisons des différents groupes.",
+      "Oublier le -s à la 2e personne du singulier (tu).",
+      "Écrire « je chantes » (1re pers. sans -s).",
+      "Mal conjuguer un verbe irrégulier (être, aller).",
+      "Confondre le présent et un autre temps.",
+      "Oublier le -ent à la 3e personne du pluriel.",
+      "Confondre 1er et 2e groupe.",
+      "Se tromper de radical."
+    ]
+  }
+}
