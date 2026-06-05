@@ -1,0 +1,378 @@
+{
+  "boa-hancock-determinants": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Boa Hancock", "manga": "One Piece",
+    "notion": "Les déterminants",
+    "explication": "Le déterminant est un petit mot qui se place devant le nom pour l'introduire et l'accompagner. On ne peut presque jamais employer un nom commun seul : il a besoin d'un déterminant. Dans « le bateau », « un trésor » ou « mes amis », les mots le, un et mes sont des déterminants. Une caractéristique essentielle : le déterminant s'accorde en genre (masculin ou féminin) et en nombre (singulier ou pluriel) avec le nom qu'il accompagne. On dit « le pirate » mais « la carte », « un navire » mais « des navires ». Il existe plusieurs sortes de déterminants. Les articles définis (le, la, les) désignent quelque chose de précis ; les articles indéfinis (un, une, des) désignent quelque chose de non précisé ; les articles partitifs (du, de la) désignent une quantité indénombrable. À côté des articles, on trouve les déterminants possessifs (mon, ta, ses, notre), qui indiquent à qui appartient le nom ; les déterminants démonstratifs (ce, cette, ces), qui montrent ; les déterminants numéraux (deux, trois) ; et les déterminants indéfinis (quelques, plusieurs, chaque). En 6ème, on apprend à repérer le déterminant, à identifier sa sorte et à vérifier son accord. Bien connaître les déterminants aide à comprendre la structure du groupe nominal et à écrire sans fautes d'accord.",
+    "definitions": [
+      {"terme": "Déterminant", "sens": "un mot placé devant le nom pour l'introduire"},
+      {"terme": "Article défini", "sens": "le, la, les : désigne quelque chose de précis"},
+      {"terme": "Article indéfini", "sens": "un, une, des : désigne quelque chose de non précisé"},
+      {"terme": "Article partitif", "sens": "du, de la : une quantité indénombrable"},
+      {"terme": "Déterminant possessif", "sens": "mon, ta, ses : indique l'appartenance"},
+      {"terme": "Déterminant démonstratif", "sens": "ce, cette, ces : il montre"},
+      {"terme": "Déterminant numéral", "sens": "deux, trois : il compte"},
+      {"terme": "Accord", "sens": "le déterminant s'accorde en genre et en nombre"}
+    ],
+    "methode": [
+      "Repère le nom dans la phrase.",
+      "Le déterminant est le mot qui se place juste devant ce nom.",
+      "Vérifie qu'il accompagne bien le nom (et n'est pas un pronom).",
+      "Identifie sa sorte : article, possessif, démonstratif, numéral…",
+      "Détermine le genre du nom : masculin ou féminin.",
+      "Détermine son nombre : singulier ou pluriel.",
+      "Vérifie que le déterminant s'accorde avec le nom.",
+      "Relis pour t'assurer qu'aucun nom n'est resté sans déterminant."
+    ],
+    "exemple": {
+      "enonce": "Quel est le déterminant dans le groupe « mes amis » ?",
+      "etapes": [
+        "Le nom du groupe est « amis ».",
+        "Le mot placé juste devant est « mes ».",
+        "« mes » accompagne le nom : c'est donc un déterminant.",
+        "Il indique l'appartenance : c'est un déterminant possessif.",
+        "Le nom « amis » est au pluriel.",
+        "Le déterminant « mes » est bien accordé au pluriel."
+      ]
+    },
+    "astuce": "Boa Hancock : « Pour trouver le déterminant, demande-toi : quel petit mot accompagne le nom ? Il se place devant lui et s'accorde avec lui. Et souviens-toi : un nom commun est presque toujours précédé d'un déterminant. »",
+    "erreurs": [
+      "Confondre un déterminant et un pronom.",
+      "Oublier l'accord du déterminant avec le nom.",
+      "Confondre article défini (le) et indéfini (un).",
+      "Oublier qu'un nom commun a besoin d'un déterminant.",
+      "Confondre « ces » (démonstratif) et « ses » (possessif).",
+      "Prendre l'adjectif pour le déterminant.",
+      "Oublier les articles partitifs (du, de la).",
+      "Mal identifier le genre du nom."
+    ]
+  },
+  "franky-classes-grammaticales-consolidation": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Franky", "manga": "One Piece",
+    "notion": "Les classes grammaticales",
+    "explication": "La classe grammaticale d'un mot, aussi appelée sa nature, indique à quelle catégorie ce mot appartient. C'est une information fixe : la nature d'un mot ne change pas selon la phrase, contrairement à sa fonction. Il faut bien distinguer les deux : la classe dit ce qu'est le mot, la fonction dit le rôle qu'il joue dans la phrase. On classe les mots en grandes catégories. Le nom désigne un être, une chose ou une idée (pirate, bateau, courage). Le verbe exprime une action ou un état (naviguer, être). Le déterminant accompagne le nom (le, un, mes). L'adjectif qualificatif précise le nom (grand, courageux). Le pronom remplace un nom (il, celui-ci, qui). L'adverbe modifie un verbe, un adjectif ou un autre adverbe (rapidement, très). La préposition relie des mots (à, de, pour). La conjonction relie des groupes ou des propositions (et, mais, parce que). Certains mots sont variables (ils changent de forme), d'autres invariables (adverbes, prépositions, conjonctions). En 6ème, on consolide cette classification, déjà rencontrée au primaire, en apprenant à donner la nature de n'importe quel mot. Bien maîtriser les classes grammaticales est indispensable pour analyser une phrase, comprendre les accords et progresser en grammaire.",
+    "definitions": [
+      {"terme": "Classe grammaticale", "sens": "la nature d'un mot, sa catégorie fixe"},
+      {"terme": "Nom", "sens": "désigne un être, une chose, une idée"},
+      {"terme": "Verbe", "sens": "exprime une action ou un état"},
+      {"terme": "Adjectif qualificatif", "sens": "précise, qualifie le nom"},
+      {"terme": "Déterminant", "sens": "accompagne le nom (le, un, mes)"},
+      {"terme": "Pronom", "sens": "remplace un nom"},
+      {"terme": "Adverbe", "sens": "modifie un verbe, un adjectif (invariable)"},
+      {"terme": "Mot invariable", "sens": "adverbe, préposition, conjonction"}
+    ],
+    "methode": [
+      "Pour chaque mot, demande-toi : qu'est-ce que c'est ?",
+      "Désigne-t-il un être ou une chose ? → un nom.",
+      "Exprime-t-il une action ou un état ? → un verbe.",
+      "Précise-t-il un nom ? → un adjectif qualificatif.",
+      "Accompagne-t-il un nom ? → un déterminant.",
+      "Remplace-t-il un nom ? → un pronom.",
+      "Modifie-t-il un verbe ou un adjectif ? → un adverbe.",
+      "Ne confonds jamais la classe (nature) et la fonction (rôle)."
+    ],
+    "exemple": {
+      "enonce": "Donne la classe grammaticale du mot « rapidement ».",
+      "etapes": [
+        "On observe le rôle du mot : il indique « comment ».",
+        "Il modifie le sens d'un verbe (courir rapidement).",
+        "Un mot qui modifie un verbe est un adverbe.",
+        "On vérifie qu'il est invariable : il ne change jamais de forme.",
+        "« rapidement » est donc un adverbe.",
+        "Sa classe reste la même dans toutes les phrases."
+      ]
+    },
+    "astuce": "Franky : « Ne confonds jamais NATURE et FONCTION ! La classe (nature) d'un mot ne change pas : « table » est toujours un nom. La fonction, elle, dépend de la phrase (sujet, COD…). Deux questions différentes ! »",
+    "erreurs": [
+      "Confondre la classe (nature) et la fonction (rôle).",
+      "Confondre le nom et le verbe d'une même famille.",
+      "Prendre un adjectif pour un adverbe.",
+      "Confondre déterminant et pronom.",
+      "Oublier que certains mots sont invariables.",
+      "Confondre préposition et conjonction.",
+      "Croire que la classe change selon la phrase.",
+      "Confondre adjectif qualificatif et participe passé."
+    ]
+  },
+  "jinbe-passe-simple": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Jinbe", "manga": "One Piece",
+    "notion": "Le passé simple",
+    "explication": "Le passé simple est un temps du passé, surtout employé à l'écrit, dans les récits, les contes et les romans. Il sert à exprimer une action passée, achevée et souvent brève ou de premier plan, comme un événement qui fait avancer l'histoire : « Le pirate ouvrit le coffre et découvrit le trésor ». On l'oppose souvent à l'imparfait, qui sert lui à décrire ou à exprimer une action longue ou habituelle en arrière-plan. La formation du passé simple dépend du groupe du verbe. Pour les verbes du 1er groupe (en -er), les terminaisons sont -ai, -as, -a, -âmes, -âtes, -èrent : il chanta, ils chantèrent. Pour les verbes du 2e groupe (en -ir comme finir), les terminaisons sont -is, -is, -it, -îmes, -îtes, -irent : il finit. Les verbes du 3e groupe sont plus variés (il prit, il vint, il fut). Dans les récits, c'est surtout la troisième personne (il, elle, ils) que l'on rencontre. Quelques verbes très fréquents sont irréguliers et doivent être mémorisés : être (il fut), avoir (il eut), faire (il fit), venir (il vint). En 6ème, on apprend à reconnaître et à former le passé simple, et à le distinguer de l'imparfait. Bien le maîtriser est essentiel pour lire et écrire des récits.",
+    "definitions": [
+      {"terme": "Passé simple", "sens": "un temps du récit écrit, action achevée"},
+      {"terme": "Temps du récit", "sens": "il fait avancer l'histoire"},
+      {"terme": "Action achevée", "sens": "un événement terminé, souvent bref"},
+      {"terme": "1er groupe", "sens": "verbes en -er : il chanta, ils chantèrent"},
+      {"terme": "2e groupe", "sens": "verbes en -ir : il finit, ils finirent"},
+      {"terme": "3e groupe", "sens": "formes variées : il prit, il vint"},
+      {"terme": "Opposition à l'imparfait", "sens": "le passé simple agit, l'imparfait décrit"},
+      {"terme": "Verbes irréguliers", "sens": "être (fut), avoir (eut), faire (fit)"}
+    ],
+    "methode": [
+      "Vérifie que l'action est passée, achevée et de premier plan.",
+      "Identifie le groupe du verbe.",
+      "Pour le 1er groupe, utilise -ai, -as, -a, -âmes, -âtes, -èrent.",
+      "Pour le 2e groupe, utilise -is, -is, -it, -îmes, -îtes, -irent.",
+      "Pour le 3e groupe, retiens les formes au cas par cas.",
+      "Repère la personne, souvent la 3e dans un récit.",
+      "Mémorise les irréguliers fréquents (fut, eut, fit, vint).",
+      "Distingue bien le passé simple de l'imparfait."
+    ],
+    "exemple": {
+      "enonce": "Conjugue « chanter » au passé simple, à la 3e personne du singulier.",
+      "etapes": [
+        "Le verbe « chanter » appartient au 1er groupe (en -er).",
+        "On prend le radical : chant-.",
+        "À la 3e personne du singulier, la terminaison du 1er groupe est -a.",
+        "On assemble : chant- + -a.",
+        "On obtient : il chanta.",
+        "Au pluriel, on aurait : ils chantèrent."
+      ]
+    },
+    "astuce": "Jinbe : « Le passé simple est le temps du récit écrit. Pour le 1er groupe, retiens la terminaison la plus fréquente : -a (il chanta, elle entra). Et ne le confonds pas avec l'imparfait : le passé simple agit, l'imparfait décrit. »",
+    "erreurs": [
+      "Confondre le passé simple et l'imparfait.",
+      "Se tromper de terminaison selon le groupe.",
+      "Oublier l'accent circonflexe (nous chantâmes).",
+      "Mal conjuguer un verbe irrégulier (être, avoir).",
+      "Employer le passé simple à l'oral courant.",
+      "Confondre « il chanta » et « il chantait ».",
+      "Oublier le -èrent à la 3e personne du pluriel.",
+      "Mélanger les terminaisons des trois groupes."
+    ]
+  },
+  "nefertari-vivi-accord-dans-le-groupe-nominal": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Nefertari Vivi", "manga": "One Piece",
+    "notion": "L'accord dans le groupe nominal",
+    "explication": "Le groupe nominal, abrégé GN, est un ensemble de mots organisé autour d'un nom principal, appelé le nom noyau. Ce groupe comprend en général un déterminant, le nom noyau, et souvent un ou plusieurs adjectifs qualificatifs : dans « les grandes voiles blanches », le nom noyau est « voiles ». La règle essentielle est la suivante : tous les mots du groupe nominal qui peuvent s'accorder s'accordent en genre (masculin ou féminin) et en nombre (singulier ou pluriel) avec le nom noyau. Le déterminant et les adjectifs prennent donc les marques du nom. Si le nom noyau est féminin pluriel, le déterminant et les adjectifs se mettent au féminin pluriel : « les grandes voiles blanches ». C'est le nom noyau qui commande tout l'accord du groupe. La difficulté est de bien repérer ce nom noyau, surtout quand un adjectif est placé loin de lui, ou quand plusieurs adjectifs se suivent. Il faut alors penser à accorder chaque adjectif, même éloigné. En 6ème, on apprend à identifier le nom noyau et à accorder correctement tout le groupe nominal. Bien maîtriser cet accord est l'une des clés pour écrire sans fautes, car les erreurs d'accord dans le GN sont parmi les plus fréquentes.",
+    "definitions": [
+      {"terme": "Groupe nominal (GN)", "sens": "un ensemble de mots autour d'un nom"},
+      {"terme": "Nom noyau", "sens": "le nom principal qui commande l'accord"},
+      {"terme": "Déterminant", "sens": "il s'accorde avec le nom noyau"},
+      {"terme": "Adjectif qualificatif", "sens": "il s'accorde aussi avec le nom noyau"},
+      {"terme": "Accord en genre", "sens": "masculin ou féminin"},
+      {"terme": "Accord en nombre", "sens": "singulier ou pluriel"},
+      {"terme": "Marque du féminin", "sens": "souvent un -e ajouté"},
+      {"terme": "Marque du pluriel", "sens": "souvent un -s ajouté"}
+    ],
+    "methode": [
+      "Repère le nom noyau du groupe nominal.",
+      "Détermine son genre : masculin ou féminin.",
+      "Détermine son nombre : singulier ou pluriel.",
+      "Accorde le déterminant avec le nom noyau.",
+      "Accorde chaque adjectif qualificatif avec le nom noyau.",
+      "N'oublie pas les adjectifs placés loin du nom.",
+      "Vérifie les marques de genre (-e) et de nombre (-s).",
+      "Relis tout le groupe pour contrôler la cohérence."
+    ],
+    "exemple": {
+      "enonce": "Accorde au féminin pluriel : « le petit chat blanc ».",
+      "etapes": [
+        "Le nom noyau « chat » devient « chattes » (féminin pluriel).",
+        "Le nom noyau commande tout l'accord du groupe.",
+        "Le déterminant « le » s'accorde : il devient « les ».",
+        "L'adjectif « petit » s'accorde : il devient « petites ».",
+        "L'adjectif « blanc » s'accorde : il devient « blanches ».",
+        "On obtient : « les petites chattes blanches »."
+      ]
+    },
+    "astuce": "Nefertari Vivi : « Dans le groupe nominal, tout tourne autour du nom noyau ! Trouve-le d'abord, repère son genre et son nombre, puis accorde tout autour : déterminant et adjectifs, même ceux placés loin du nom. »",
+    "erreurs": [
+      "Oublier d'accorder un adjectif éloigné du nom.",
+      "Mal identifier le nom noyau.",
+      "Oublier la marque du pluriel (-s).",
+      "Oublier la marque du féminin (-e).",
+      "Accorder avec un autre mot que le nom noyau.",
+      "Oublier l'accord du déterminant.",
+      "Confondre le genre du nom.",
+      "Ne pas vérifier la cohérence de tout le groupe."
+    ]
+  },
+  "sabo-phrases-simples-et-complexes": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Sabo", "manga": "One Piece",
+    "notion": "Phrases simples et phrases complexes",
+    "explication": "Pour distinguer une phrase simple d'une phrase complexe, il faut d'abord comprendre la notion de proposition. Une proposition est un ensemble de mots organisé autour d'un verbe conjugué. Le repère est donc le nombre de verbes conjugués dans la phrase. Une phrase simple ne contient qu'un seul verbe conjugué : elle est formée d'une seule proposition, appelée proposition indépendante. Par exemple : « Le pirate cherche un trésor ». Une phrase complexe contient plusieurs verbes conjugués : elle est donc formée de plusieurs propositions. Par exemple : « Le pirate cherche un trésor et il déchiffre la carte » comporte deux verbes conjugués (cherche, déchiffre), donc deux propositions. Dans une phrase complexe, les propositions peuvent être reliées de trois façons. Par juxtaposition, elles sont simplement séparées par un signe de ponctuation, virgule, point-virgule ou deux-points. Par coordination, elles sont reliées par une conjonction de coordination (mais, ou, et, donc, or, ni, car). Par subordination, une proposition dépend d'une autre, introduite par un mot subordonnant (que, qui, parce que, quand). En 6ème, on apprend à compter les verbes conjugués pour classer la phrase et à reconnaître le type de lien. Bien distinguer ces phrases aide à mieux lire, écrire et ponctuer.",
+    "definitions": [
+      {"terme": "Proposition", "sens": "un ensemble organisé autour d'un verbe conjugué"},
+      {"terme": "Phrase simple", "sens": "une seule proposition (un verbe conjugué)"},
+      {"terme": "Phrase complexe", "sens": "plusieurs propositions (plusieurs verbes conjugués)"},
+      {"terme": "Verbe conjugué", "sens": "le repère pour compter les propositions"},
+      {"terme": "Juxtaposition", "sens": "propositions séparées par une ponctuation"},
+      {"terme": "Coordination", "sens": "reliées par mais, ou, et, donc, or, ni, car"},
+      {"terme": "Subordination", "sens": "une proposition dépend d'une autre (que, qui)"},
+      {"terme": "Proposition indépendante", "sens": "elle se suffit à elle-même"}
+    ],
+    "methode": [
+      "Lis la phrase en entier.",
+      "Repère et compte les verbes conjugués.",
+      "Un seul verbe conjugué → phrase simple.",
+      "Plusieurs verbes conjugués → phrase complexe.",
+      "Si la phrase est complexe, observe le lien entre propositions.",
+      "Signe de ponctuation seul → juxtaposition.",
+      "Conjonction de coordination → coordination.",
+      "Mot subordonnant (que, qui, parce que) → subordination."
+    ],
+    "exemple": {
+      "enonce": "« Il pleut et je reste à la maison » : phrase simple ou complexe ?",
+      "etapes": [
+        "On cherche les verbes conjugués.",
+        "Premier verbe conjugué : « pleut ».",
+        "Second verbe conjugué : « reste ».",
+        "Il y a deux verbes conjugués, donc deux propositions.",
+        "La phrase est donc complexe.",
+        "Les propositions sont reliées par « et » : c'est une coordination."
+      ]
+    },
+    "astuce": "Sabo : « Le réflexe gagnant : compte les verbes CONJUGUÉS ! Un seul → phrase simple. Plusieurs → phrase complexe. Attention, les verbes à l'infinitif ne comptent pas dans ce repérage. »",
+    "erreurs": [
+      "Compter les verbes à l'infinitif comme des verbes conjugués.",
+      "Confondre juxtaposition et coordination.",
+      "Oublier un verbe conjugué dans la phrase.",
+      "Confondre proposition et phrase.",
+      "Prendre une phrase complexe pour une phrase simple.",
+      "Oublier de repérer le mot subordonnant.",
+      "Confondre conjonction de coordination et subordonnant.",
+      "Croire qu'une phrase longue est forcément complexe."
+    ]
+  },
+  "sanji-vinsmoke-cod-et-coi": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Sanji Vinsmoke", "manga": "One Piece",
+    "notion": "Le COD et le COI",
+    "explication": "Le COD et le COI sont deux compléments du verbe, appelés compléments d'objet. Ils complètent un verbe et indiquent sur quoi ou sur qui porte l'action. Le COD est le complément d'objet direct : il complète le verbe directement, sans préposition. Pour le trouver, on pose la question « qui ? » ou « quoi ? » juste après le verbe. Par exemple, dans « Le cuisinier prépare un plat », on demande « prépare quoi ? » : « un plat ». « Un plat » est donc le COD. Le COI est le complément d'objet indirect : il complète le verbe de façon indirecte, par l'intermédiaire d'une préposition, le plus souvent « à » ou « de ». Pour le trouver, on pose la question « à qui ? », « à quoi ? », « de qui ? » ou « de quoi ? » après le verbe. Par exemple, dans « Il parle à son ami », on demande « parle à qui ? » : « à son ami ». « À son ami » est donc le COI. La grande différence est donc la présence ou l'absence d'une préposition : le COD est direct (sans préposition), le COI est indirect (avec préposition). En 6ème, on apprend à les distinguer en posant les bonnes questions. Bien identifier le COD et le COI aide à analyser la phrase et à mieux écrire.",
+    "definitions": [
+      {"terme": "Complément d'objet", "sens": "il complète le verbe"},
+      {"terme": "COD", "sens": "complément d'objet direct, sans préposition"},
+      {"terme": "COI", "sens": "complément d'objet indirect, avec préposition"},
+      {"terme": "Question du COD", "sens": "verbe + qui ? ou quoi ?"},
+      {"terme": "Question du COI", "sens": "verbe + à qui ? de quoi ?"},
+      {"terme": "Préposition", "sens": "à, de… : elle introduit le COI"},
+      {"terme": "Verbe transitif", "sens": "un verbe qui admet un complément d'objet"},
+      {"terme": "Direct / indirect", "sens": "la présence ou non d'une préposition"}
+    ],
+    "methode": [
+      "Repère le verbe de la phrase.",
+      "Pose la question « qui ? » ou « quoi ? » après le verbe.",
+      "Si la réponse vient sans préposition, c'est un COD.",
+      "Pose la question « à qui ? », « de quoi ? » après le verbe.",
+      "Si la réponse vient avec une préposition, c'est un COI.",
+      "Repère la préposition (à, de) qui signale le COI.",
+      "Ne confonds pas avec un complément circonstanciel (où, quand).",
+      "Vérifie que le complément dépend bien du verbe."
+    ],
+    "exemple": {
+      "enonce": "Dans « Le cuisinier prépare un plat », quel est le complément ?",
+      "etapes": [
+        "Le verbe est « prépare ».",
+        "On pose la question : « prépare quoi ? ».",
+        "La réponse est : « un plat ».",
+        "Cette réponse vient sans préposition.",
+        "« un plat » est donc un COD (complément d'objet direct).",
+        "Dans « Il parle à son ami », « à son ami » serait un COI."
+      ]
+    },
+    "astuce": "Sanji : « La clé, c'est la préposition ! COD = DIRECT, sans préposition (manger quoi ?). COI = INDIRECT, avec préposition à ou de (parler à qui ?). Pose la question après le verbe, et regarde s'il y a une préposition. »",
+    "erreurs": [
+      "Confondre le COD et le COI.",
+      "Oublier de repérer la préposition du COI.",
+      "Confondre un complément d'objet et un complément circonstanciel.",
+      "Poser la question avant le verbe au lieu d'après.",
+      "Prendre le sujet pour un COD.",
+      "Oublier que le COD répond à « qui ? » ou « quoi ? ».",
+      "Croire qu'un COI n'a pas de préposition.",
+      "Ne pas relier le complément au bon verbe."
+    ]
+  },
+  "tony-tony-chopper-accord-sujet-verbe-cas-complexes": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Tony Tony Chopper", "manga": "One Piece",
+    "notion": "L'accord sujet-verbe : cas complexes",
+    "explication": "La règle de base est simple : le verbe s'accorde toujours avec son sujet, en personne et en nombre. Mais certaines situations rendent cet accord plus difficile, car le sujet n'est pas toujours là où on l'attend. Le réflexe essentiel est de toujours chercher le sujet en posant la question « Qui est-ce qui + verbe ? ». Premier cas complexe : le sujet est éloigné du verbe, séparé par d'autres mots, comme un complément ou une proposition. Dans « Les fleurs que j'aime sentent bon », le sujet de « sentent » est « les fleurs » (pluriel), même s'il en est éloigné. Deuxième cas : le sujet est inversé, placé après le verbe, souvent dans une question ou après certains mots (« Où vont ces pirates ? »). Troisième cas : le sujet est le pronom relatif « qui ». Dans ce cas, le verbe s'accorde avec l'antécédent, c'est-à-dire le mot que « qui » remplace : « C'est moi qui parle ». Quatrième cas : plusieurs sujets coordonnés (« Luffy et Zoro arrivent ») entraînent un verbe au pluriel. En 6ème, on apprend à débusquer le vrai sujet dans ces cas piégeux. Bien maîtriser cet accord, même dans les cas complexes, est l'une des clés pour écrire sans fautes.",
+    "definitions": [
+      {"terme": "Accord sujet-verbe", "sens": "le verbe s'accorde avec son sujet"},
+      {"terme": "Sujet", "sens": "il répond à « Qui est-ce qui + verbe ? »"},
+      {"terme": "Sujet éloigné", "sens": "séparé du verbe par d'autres mots"},
+      {"terme": "Sujet inversé", "sens": "placé après le verbe"},
+      {"terme": "Pronom relatif « qui »", "sens": "le verbe s'accorde avec l'antécédent"},
+      {"terme": "Antécédent", "sens": "le mot que « qui » remplace"},
+      {"terme": "Sujets coordonnés", "sens": "plusieurs sujets → verbe au pluriel"},
+      {"terme": "Personne et nombre", "sens": "les marques de l'accord"}
+    ],
+    "methode": [
+      "Repère le verbe à accorder.",
+      "Pose la question « Qui est-ce qui + verbe ? ».",
+      "Identifie le vrai sujet, même s'il est éloigné.",
+      "Méfie-toi du mot le plus proche : ce n'est pas toujours le sujet.",
+      "Si le sujet est inversé, cherche-le après le verbe.",
+      "Si le sujet est « qui », accorde avec l'antécédent.",
+      "Si plusieurs sujets sont coordonnés, mets le verbe au pluriel.",
+      "Vérifie la personne et le nombre du sujet trouvé."
+    ],
+    "exemple": {
+      "enonce": "Accorde : « Les fleurs que j'aime ___ (sentir) bon ».",
+      "etapes": [
+        "Le verbe à accorder est « sentir ».",
+        "On pose la question : « Qui est-ce qui sent bon ? ».",
+        "La réponse est « les fleurs », et non « je ».",
+        "Le sujet « les fleurs » est éloigné, mais c'est bien lui.",
+        "« les fleurs » est à la 3e personne du pluriel.",
+        "On écrit donc : « Les fleurs que j'aime sentent bon »."
+      ]
+    },
+    "astuce": "Tony Tony Chopper : « Le piège, c'est d'accorder avec le mot le plus proche ! Pose toujours « Qui est-ce qui + verbe ? » pour trouver le VRAI sujet, même éloigné, inversé ou caché derrière un « qui ». »",
+    "erreurs": [
+      "Accorder avec le mot le plus proche au lieu du sujet.",
+      "Oublier d'accorder quand le sujet est éloigné.",
+      "Ne pas chercher le sujet inversé après le verbe.",
+      "Mal accorder avec le pronom relatif « qui ».",
+      "Oublier le pluriel avec des sujets coordonnés.",
+      "Confondre le sujet et un complément.",
+      "Oublier de poser la question « Qui est-ce qui ? ».",
+      "Se tromper de personne dans l'accord."
+    ]
+  },
+  "usopp-futur-simple": {
+    "matiere": "francais", "niveau": "6eme", "hero": "Usopp", "manga": "One Piece",
+    "notion": "Le futur simple",
+    "explication": "Le futur simple est le temps qui exprime une action située dans l'avenir, après le moment où l'on parle : « Demain, nous partirons à l'aventure ». Sa formation est régulière et facile à retenir, car les terminaisons sont les mêmes pour tous les verbes : -ai, -as, -a, -ons, -ez, -ont. Ces terminaisons s'ajoutent le plus souvent à l'infinitif du verbe. Pour les verbes du 1er groupe (en -er) et du 2e groupe (en -ir), on garde l'infinitif entier : chanter donne je chanterai, finir donne je finirai. Pour beaucoup de verbes du 3e groupe en -re, on enlève le « e » final de l'infinitif avant d'ajouter la terminaison : prendre donne je prendrai. Un point important : il ne faut pas oublier le « e » de l'infinitif des verbes en -er, que l'on entend peu à l'oral mais qui s'écrit : on écrit « je jouerai », et non « je jourai ». Certains verbes très fréquents sont irréguliers et changent de radical : être donne je serai, avoir donne j'aurai, aller donne j'irai, faire donne je ferai. Il faut les mémoriser. En 6ème, on apprend à former le futur simple et à le distinguer du conditionnel présent, qui possède des terminaisons proches. Bien maîtriser le futur simple permet d'exprimer ses projets et de raconter ce qui va arriver.",
+    "definitions": [
+      {"terme": "Futur simple", "sens": "exprime une action située dans l'avenir"},
+      {"terme": "Terminaisons", "sens": "-ai, -as, -a, -ons, -ez, -ont (pour tous)"},
+      {"terme": "Infinitif", "sens": "la base sur laquelle on forme le futur"},
+      {"terme": "Verbes en -re", "sens": "on enlève le « e » : prendre → je prendrai"},
+      {"terme": "Le « e » de l'infinitif", "sens": "à ne pas oublier : je jouerai"},
+      {"terme": "Verbes irréguliers", "sens": "être → serai, avoir → aurai, aller → irai"},
+      {"terme": "Radical", "sens": "la partie du verbe avant la terminaison"},
+      {"terme": "Opposition au conditionnel", "sens": "terminaisons proches à ne pas confondre"}
+    ],
+    "methode": [
+      "Vérifie que l'action se situe dans l'avenir.",
+      "Pars de l'infinitif du verbe.",
+      "Pour les verbes en -er et -ir, garde l'infinitif entier.",
+      "Pour les verbes en -re, enlève le « e » final.",
+      "Ajoute la terminaison : -ai, -as, -a, -ons, -ez, -ont.",
+      "N'oublie pas le « e » de l'infinitif (je jouerai).",
+      "Mémorise les irréguliers (serai, aurai, irai, ferai).",
+      "Distingue le futur du conditionnel présent."
+    ],
+    "exemple": {
+      "enonce": "Conjugue « chanter » au futur simple, à la 1re personne du singulier.",
+      "etapes": [
+        "L'action est située dans l'avenir : on utilise le futur simple.",
+        "Le verbe « chanter » est au 1er groupe (en -er).",
+        "On garde l'infinitif entier : chanter.",
+        "À la 1re personne du singulier, la terminaison est -ai.",
+        "On assemble : chanter + -ai.",
+        "On obtient : je chanterai."
+      ]
+    },
+    "astuce": "Usopp : « Les terminaisons du futur sont TOUJOURS les mêmes : -ai, -as, -a, -ons, -ez, -ont, ajoutées à l'infinitif. N'oublie jamais le « e » de l'infinitif : « je jouerai », pas « je jourai » ! »",
+    "erreurs": [
+      "Oublier le « e » de l'infinitif (« je jourai »).",
+      "Confondre le futur simple et le conditionnel présent.",
+      "Se tromper de terminaison.",
+      "Mal conjuguer un verbe irrégulier (être, avoir, aller).",
+      "Oublier d'enlever le « e » des verbes en -re.",
+      "Confondre le futur et le présent.",
+      "Changer les terminaisons selon le groupe.",
+      "Oublier le radical irrégulier (j'irai, pas « j'allerai »)."
+    ]
+  }
+}
