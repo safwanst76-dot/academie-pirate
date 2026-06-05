@@ -1,0 +1,378 @@
+{
+  "son-goku-la-prehistoire-paleolithique-et-neolithique": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "Son Goku", "manga": "Dragon Ball Z",
+    "notion": "La Préhistoire : Paléolithique et Néolithique",
+    "explication": "La Préhistoire est la très longue période qui précède l'invention de l'écriture. Comme il n'existe pas de documents écrits, on l'étudie grâce aux traces laissées par les hommes : outils, ossements, peintures. On la divise en deux grandes périodes. Le Paléolithique, qui signifie « âge de la pierre taillée », est la plus ancienne. Les hommes y sont nomades : ils se déplacent sans cesse pour chasser le gibier et cueillir des plantes. Ce sont des chasseurs-cueilleurs. Ils maîtrisent le feu, fabriquent des outils en taillant la pierre, et réalisent de magnifiques peintures sur les parois des grottes, comme à Lascaux. Le Néolithique, qui signifie « âge de la pierre polie », commence vers 10 000 ans avant J.-C. au Proche-Orient. Il marque une transformation majeure, appelée la révolution néolithique : les hommes deviennent sédentaires, c'est-à-dire qu'ils se fixent en un lieu. Ils inventent l'agriculture et l'élevage, construisent les premiers villages et fabriquent de la poterie. La Préhistoire prend fin avec l'invention de l'écriture, vers 3300 avant J.-C. En CM2, on découvre ces grandes étapes. Bien les comprendre, c'est saisir comment l'humanité est passée de la chasse à l'agriculture.",
+    "definitions": [
+      {"terme": "Préhistoire", "sens": "la période avant l'invention de l'écriture"},
+      {"terme": "Paléolithique", "sens": "« âge de la pierre taillée », le plus ancien"},
+      {"terme": "Néolithique", "sens": "« âge de la pierre polie », vers 10 000 av. J.-C."},
+      {"terme": "Nomade", "sens": "qui se déplace sans cesse, sans habitat fixe"},
+      {"terme": "Sédentaire", "sens": "qui se fixe en un lieu, dans un village"},
+      {"terme": "Chasseur-cueilleur", "sens": "qui vit de la chasse et de la cueillette"},
+      {"terme": "Révolution néolithique", "sens": "le passage à l'agriculture et à l'élevage"},
+      {"terme": "Art pariétal", "sens": "les peintures sur les parois des grottes (Lascaux)"}
+    ],
+    "methode": [
+      "Retiens que la Préhistoire précède l'invention de l'écriture.",
+      "Distingue les deux périodes : Paléolithique et Néolithique.",
+      "Paléolithique = pierre taillée, hommes nomades, chasseurs-cueilleurs.",
+      "Retiens la maîtrise du feu et l'art des grottes (Lascaux).",
+      "Néolithique = pierre polie, vers 10 000 av. J.-C.",
+      "Comprends la révolution néolithique : agriculture et élevage.",
+      "Relie-la à la sédentarisation et aux premiers villages.",
+      "Situe la fin de la Préhistoire : l'écriture, vers 3300 av. J.-C."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce que la révolution néolithique ?",
+      "etapes": [
+        "Au Paléolithique, les hommes sont nomades et chasseurs-cueilleurs.",
+        "Vers 10 000 av. J.-C., un grand changement a lieu : le Néolithique.",
+        "Les hommes inventent l'agriculture et l'élevage.",
+        "Ils n'ont plus besoin de se déplacer : ils deviennent sédentaires.",
+        "Ils construisent les premiers villages.",
+        "Ce bouleversement s'appelle la révolution néolithique."
+      ]
+    },
+    "astuce": "Son Goku : « Astuce de mémoire : Paléo = pierre TAILLÉE (nomades chasseurs), Néo = pierre POLIE (sédentaires agriculteurs). La grande bascule entre les deux, c'est la révolution néolithique ! »",
+    "erreurs": [
+      "Confondre Paléolithique et Néolithique.",
+      "Croire que la Préhistoire a laissé des documents écrits.",
+      "Confondre nomade et sédentaire.",
+      "Oublier que la révolution néolithique apporte l'agriculture.",
+      "Situer la fin de la Préhistoire à la mauvaise époque.",
+      "Confondre Préhistoire et Antiquité.",
+      "Oublier l'invention de l'agriculture et de l'élevage.",
+      "Penser que l'écriture existe dès le Paléolithique."
+    ]
+  },
+  "vegeta-l-antiquite-egypte-grece-rome": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "Vegeta", "manga": "Dragon Ball Z",
+    "notion": "L'Antiquité : Égypte, Grèce, Rome",
+    "explication": "L'Antiquité est la période qui commence avec l'invention de l'écriture, vers 3300 avant J.-C., et qui se termine avec la chute de l'Empire romain d'Occident, en 476 après J.-C. C'est l'époque des grandes civilisations, dont trois sont particulièrement importantes à connaître. L'Égypte ancienne se développe le long du Nil, dont les crues permettent l'agriculture. Elle est dirigée par le pharaon, un roi considéré comme un dieu, et nous a laissé les pyramides et l'écriture hiéroglyphique. La Grèce antique est formée de cités indépendantes, comme Athènes, qui invente la démocratie, le « pouvoir du peuple », au Ve siècle avant J.-C. Les Grecs nous ont aussi laissé un riche héritage en art, en sciences et en philosophie. Rome, enfin, est d'abord une cité d'Italie qui devient une immense puissance. Elle connaît d'abord la République, puis l'Empire, et finit par dominer tout le pourtour de la Méditerranée. Ces civilisations nous ont transmis de nombreux héritages : l'écriture, le droit, la démocratie, des monuments. En CM2, on découvre cette grande période. Bien la comprendre, c'est saisir d'où viennent beaucoup de nos connaissances et de nos institutions actuelles.",
+    "definitions": [
+      {"terme": "Antiquité", "sens": "de l'écriture (3300 av. J.-C.) à 476 apr. J.-C."},
+      {"terme": "Écriture", "sens": "son invention marque le début de l'Antiquité"},
+      {"terme": "Égypte", "sens": "civilisation du Nil, dirigée par le pharaon"},
+      {"terme": "Pharaon", "sens": "le roi égyptien, considéré comme un dieu"},
+      {"terme": "Grèce", "sens": "cités grecques ; Athènes invente la démocratie"},
+      {"terme": "Démocratie", "sens": "le « pouvoir du peuple », né à Athènes"},
+      {"terme": "Rome", "sens": "cité devenue République puis Empire"},
+      {"terme": "476 apr. J.-C.", "sens": "la chute de Rome, fin de l'Antiquité"}
+    ],
+    "methode": [
+      "Situe l'Antiquité : de l'écriture (3300 av. J.-C.) à 476.",
+      "Retiens les trois grandes civilisations : Égypte, Grèce, Rome.",
+      "Égypte : le Nil, le pharaon, les pyramides.",
+      "Grèce : les cités, Athènes et la démocratie.",
+      "Rome : d'abord République, puis Empire.",
+      "Note l'extension de Rome autour de la Méditerranée.",
+      "Identifie les héritages : écriture, droit, démocratie.",
+      "Situe la fin de l'Antiquité : 476."
+    ],
+    "exemple": {
+      "enonce": "Quelles sont les trois grandes civilisations de l'Antiquité ?",
+      "etapes": [
+        "La première est l'Égypte, civilisation du Nil et des pharaons.",
+        "La deuxième est la Grèce, avec ses cités comme Athènes.",
+        "C'est à Athènes que naît la démocratie.",
+        "La troisième est Rome, d'abord République puis Empire.",
+        "Rome finit par dominer tout le pourtour de la Méditerranée.",
+        "Ces civilisations nous ont laissé de grands héritages."
+      ]
+    },
+    "astuce": "Vegeta : « L'Antiquité va de l'invention de l'écriture (~3300 av. J.-C.) à la chute de Rome (476). Trois civilisations phares à retenir, dans l'ordre : Égypte, Grèce, Rome ! »",
+    "erreurs": [
+      "Confondre la Grèce et Rome.",
+      "Oublier les bornes de l'Antiquité (écriture / 476).",
+      "Confondre Antiquité et Moyen Âge.",
+      "Croire que Rome a toujours été un Empire.",
+      "Oublier qu'Athènes invente la démocratie.",
+      "Confondre pharaon et empereur romain.",
+      "Situer la chute de Rome à la mauvaise date.",
+      "Confondre Préhistoire et Antiquité."
+    ]
+  },
+  "piccolo-le-moyen-age-charlemagne-feodalite": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "Piccolo", "manga": "Dragon Ball Z",
+    "notion": "Le Moyen Âge : Charlemagne et la féodalité",
+    "explication": "Le Moyen Âge est une longue période qui s'étend de la chute de l'Empire romain d'Occident, en 476, jusqu'à la fin du XVe siècle, vers 1492. Au début de cette période, un grand roi marque l'histoire : Charlemagne. Roi des Francs, il agrandit considérablement son royaume et est couronné empereur en l'an 800. Il favorise l'instruction et l'organisation de son empire. À partir du Xe siècle environ, la société s'organise selon la féodalité. C'est un système de relations entre les hommes : un seigneur accorde à un autre homme, son vassal, une terre, en échange de sa fidélité et de son aide militaire. La société est divisée en trois grands groupes, appelés les trois ordres : ceux qui prient (le clergé), ceux qui combattent (les seigneurs et chevaliers), et ceux qui travaillent (les paysans, dont beaucoup sont des serfs). Les seigneurs vivent dans des châteaux forts, qui protègent la région. L'Église catholique joue un rôle central dans la vie quotidienne et les croyances. En CM2, on découvre cette période. Bien la comprendre, c'est saisir comment était organisée la société pendant près de mille ans.",
+    "definitions": [
+      {"terme": "Moyen Âge", "sens": "de 476 à la fin du XVe siècle (vers 1492)"},
+      {"terme": "Charlemagne", "sens": "roi des Francs, couronné empereur en 800"},
+      {"terme": "Féodalité", "sens": "le système de liens entre seigneurs et vassaux"},
+      {"terme": "Seigneur", "sens": "celui qui possède une terre et des droits"},
+      {"terme": "Vassal", "sens": "celui qui sert un seigneur en échange d'une terre"},
+      {"terme": "Les trois ordres", "sens": "ceux qui prient, combattent, travaillent"},
+      {"terme": "Château fort", "sens": "la demeure fortifiée du seigneur"},
+      {"terme": "L'Église", "sens": "elle joue un rôle central au Moyen Âge"}
+    ],
+    "methode": [
+      "Situe le Moyen Âge : de 476 à la fin du XVe siècle.",
+      "Retiens Charlemagne, couronné empereur en l'an 800.",
+      "Comprends la féodalité : liens entre seigneur et vassal.",
+      "Le vassal reçoit une terre en échange de sa fidélité.",
+      "Décris la société des trois ordres.",
+      "Associe chaque ordre à son rôle : prier, combattre, travailler.",
+      "Note le rôle des châteaux forts.",
+      "Retiens la place centrale de l'Église."
+    ],
+    "exemple": {
+      "enonce": "Comment fonctionne la féodalité ?",
+      "etapes": [
+        "La féodalité est un système de liens entre les hommes.",
+        "Un seigneur possède des terres et du pouvoir.",
+        "Il confie une terre à un autre homme : son vassal.",
+        "En échange, le vassal lui doit fidélité et aide militaire.",
+        "La société est divisée en trois ordres.",
+        "Ceux qui prient, ceux qui combattent et ceux qui travaillent."
+      ]
+    },
+    "astuce": "Piccolo : « Le Moyen Âge : de 476 à 1492. Date clé : Charlemagne empereur en l'an 800. Et le mot à retenir : la féodalité, le système des seigneurs et des vassaux. »",
+    "erreurs": [
+      "Se tromper sur les bornes du Moyen Âge (476 / 1492).",
+      "Confondre Charlemagne et un roi plus tardif.",
+      "Oublier la date du couronnement (800).",
+      "Confondre seigneur et vassal.",
+      "Oublier les trois ordres de la société.",
+      "Confondre Moyen Âge et Antiquité.",
+      "Oublier le rôle de l'Église.",
+      "Confondre château fort et château de la Renaissance."
+    ]
+  },
+  "son-gohan-les-temps-modernes-renaissance-decouvertes": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "Son Gohan", "manga": "Dragon Ball Z",
+    "notion": "Les Temps modernes : Renaissance et grandes découvertes",
+    "explication": "Les Temps modernes forment la période qui va de la fin du Moyen Âge, vers 1492, jusqu'à la Révolution française, en 1789. Cette époque est marquée par de grands bouleversements. D'abord, les grandes découvertes : les Européens explorent le monde par la mer. En 1492, Christophe Colomb atteint l'Amérique, un continent jusque-là inconnu des Européens. Ces voyages ouvrent de nouvelles routes commerciales et mettent en contact des mondes qui s'ignoraient. Ensuite, la Renaissance : c'est un renouveau extraordinaire des arts, des sciences et des idées, qui part d'Italie et se diffuse en Europe. Des artistes comme Léonard de Vinci créent des chefs-d'œuvre. Une invention bouleverse la diffusion du savoir : l'imprimerie, mise au point par Gutenberg vers 1450, qui permet de produire des livres en grand nombre. Enfin, sur le plan politique, le pouvoir des rois se renforce : c'est la monarchie absolue, dont le roi Louis XIV, en France, est le plus célèbre exemple. En CM2, on découvre cette période riche en changements. Bien la comprendre, c'est saisir comment l'Europe s'est ouverte sur le monde et a connu un grand renouveau intellectuel et artistique.",
+    "definitions": [
+      {"terme": "Temps modernes", "sens": "de 1492 à la Révolution de 1789"},
+      {"terme": "Grandes découvertes", "sens": "l'exploration du monde par les Européens"},
+      {"terme": "Christophe Colomb", "sens": "atteint l'Amérique en 1492"},
+      {"terme": "Renaissance", "sens": "le renouveau des arts, sciences et idées"},
+      {"terme": "Imprimerie", "sens": "invention permettant de produire des livres"},
+      {"terme": "Gutenberg", "sens": "met au point l'imprimerie vers 1450"},
+      {"terme": "Monarchie absolue", "sens": "le roi détient tous les pouvoirs"},
+      {"terme": "Louis XIV", "sens": "le roi symbole de la monarchie absolue"}
+    ],
+    "methode": [
+      "Situe les Temps modernes : de 1492 à 1789.",
+      "Retiens les grandes découvertes par la mer.",
+      "Date clé : 1492, Christophe Colomb atteint l'Amérique.",
+      "Comprends la Renaissance : renouveau des arts et des sciences.",
+      "Retiens un artiste majeur, comme Léonard de Vinci.",
+      "Note l'invention de l'imprimerie (Gutenberg, vers 1450).",
+      "Identifie la monarchie absolue (Louis XIV).",
+      "Situe la fin de la période : 1789."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi 1492 marque-t-elle le début des Temps modernes ?",
+      "etapes": [
+        "En 1492, Christophe Colomb traverse l'océan Atlantique.",
+        "Il atteint l'Amérique, inconnue des Européens.",
+        "Cette découverte ouvre de nouvelles routes commerciales.",
+        "Des mondes qui s'ignoraient entrent en contact.",
+        "C'est le début des grandes découvertes.",
+        "Cette date ouvre la période des Temps modernes."
+      ]
+    },
+    "astuce": "Son Gohan : « Les Temps modernes s'ouvrent en 1492 (Colomb en Amérique) et se ferment en 1789 (Révolution). Au cœur de la période : la Renaissance et les grandes découvertes ! »",
+    "erreurs": [
+      "Se tromper sur les bornes (1492 / 1789).",
+      "Confondre Renaissance et Révolution.",
+      "Oublier que Colomb atteint l'Amérique en 1492.",
+      "Confondre Temps modernes et Moyen Âge.",
+      "Oublier l'invention de l'imprimerie.",
+      "Confondre Gutenberg et un autre inventeur.",
+      "Oublier la monarchie absolue (Louis XIV).",
+      "Croire que les Temps modernes vont jusqu'à aujourd'hui."
+    ]
+  },
+  "trunks-la-revolution-francaise-1789": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "Trunks", "manga": "Dragon Ball Z",
+    "notion": "La Révolution française (1789)",
+    "explication": "La Révolution française commence en 1789 et bouleverse profondément la France. Avant elle, sous l'Ancien Régime, la société est très inégalitaire : elle est divisée en trois ordres, et le roi détient un pouvoir absolu. La noblesse et le clergé bénéficient de privilèges, tandis que le tiers état, c'est-à-dire la grande majorité de la population, paie l'essentiel des impôts. À cela s'ajoute une grave crise économique. En 1789, le roi Louis XVI réunit les États généraux pour trouver des solutions, mais la situation s'aggrave. Le 14 juillet 1789, le peuple de Paris prend la Bastille, une prison symbole du pouvoir royal : c'est un événement majeur, encore célébré aujourd'hui comme fête nationale. La même année, les députés rédigent la Déclaration des droits de l'homme et du citoyen, qui proclame des principes nouveaux : la liberté et l'égalité des hommes. La Révolution met fin à la monarchie absolue, puis, en 1792, la République est proclamée. En CM2, on découvre ces événements fondateurs. Bien les comprendre, c'est saisir l'origine de valeurs essentielles de notre société, comme la liberté et l'égalité.",
+    "definitions": [
+      {"terme": "Révolution française", "sens": "le grand bouleversement commencé en 1789"},
+      {"terme": "Ancien Régime", "sens": "la société inégalitaire d'avant 1789"},
+      {"terme": "Tiers état", "sens": "la majorité de la population, sans privilèges"},
+      {"terme": "États généraux", "sens": "l'assemblée réunie par le roi en 1789"},
+      {"terme": "Prise de la Bastille", "sens": "le 14 juillet 1789, événement majeur"},
+      {"terme": "Déclaration des droits de l'homme", "sens": "proclame liberté et égalité (1789)"},
+      {"terme": "Monarchie absolue", "sens": "le pouvoir total du roi, auquel la Révolution met fin"},
+      {"terme": "République", "sens": "proclamée en 1792"}
+    ],
+    "methode": [
+      "Situe le début de la Révolution : 1789.",
+      "Décris l'Ancien Régime : société inégalitaire, trois ordres.",
+      "Comprends le poids des privilèges et de la crise.",
+      "Retiens la réunion des États généraux en 1789.",
+      "Date clé : la prise de la Bastille, le 14 juillet 1789.",
+      "Retiens la Déclaration des droits de l'homme (1789).",
+      "Note la fin de la monarchie absolue.",
+      "Situe la proclamation de la République (1792)."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi le 14 juillet 1789 est-il une date importante ?",
+      "etapes": [
+        "En 1789, la France connaît une grave crise.",
+        "Le peuple de Paris se soulève contre le pouvoir royal.",
+        "Le 14 juillet 1789, il prend la Bastille.",
+        "La Bastille est une prison, symbole du pouvoir du roi.",
+        "Cet événement marque le début de la Révolution.",
+        "Le 14 juillet est aujourd'hui la fête nationale française."
+      ]
+    },
+    "astuce": "Trunks : « 1789 = la Révolution française. Deux repères à retenir : le 14 juillet 1789 (prise de la Bastille) et la Déclaration des droits de l'homme. C'est la fin de l'Ancien Régime et de la monarchie absolue ! »",
+    "erreurs": [
+      "Se tromper sur la date de la Révolution (1789).",
+      "Confondre prise de la Bastille et proclamation de la République.",
+      "Oublier les inégalités de l'Ancien Régime.",
+      "Confondre la Révolution et un autre événement.",
+      "Oublier la Déclaration des droits de l'homme.",
+      "Croire que la République est proclamée dès 1789.",
+      "Confondre tiers état et noblesse.",
+      "Oublier que la Révolution met fin à la monarchie absolue."
+    ]
+  },
+  "krilin-le-xixe-siecle-empire-republique-industrie": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "Krilin", "manga": "Dragon Ball Z",
+    "notion": "Le XIXe siècle : Empire, République, industrie",
+    "explication": "Le XIXe siècle, qui s'étend des années 1800 aux années 1900, est une période d'instabilité politique et de profondes transformations en France. Sur le plan politique, le pays change plusieurs fois de régime. Après la Révolution, Napoléon Bonaparte prend le pouvoir et fonde un Empire. Puis les rois reviennent un temps, avant que la République ne finisse par s'imposer durablement : la Troisième République est proclamée en 1870. Mais le grand bouleversement du siècle est économique : c'est la révolution industrielle. De nouvelles machines, souvent mues par la vapeur et le charbon, permettent de produire beaucoup plus, dans de grandes usines. Le chemin de fer se développe et transforme les transports. Ces changements provoquent l'exode rural : de nombreux paysans quittent les campagnes pour travailler en ville, dans les usines. Une nouvelle classe sociale apparaît, la classe ouvrière, dont les conditions de vie et de travail sont souvent très dures. Le XIXe siècle est donc un siècle de progrès, mais aussi de fortes inégalités sociales. En CM2, on découvre ces évolutions. Bien les comprendre, c'est saisir comment la société française est entrée dans le monde moderne.",
+    "definitions": [
+      {"terme": "XIXe siècle", "sens": "des années 1800 aux années 1900"},
+      {"terme": "Napoléon", "sens": "il prend le pouvoir et fonde un Empire"},
+      {"terme": "République", "sens": "régime qui finit par s'imposer (1870)"},
+      {"terme": "Révolution industrielle", "sens": "l'essor des machines et des usines"},
+      {"terme": "Usine", "sens": "le lieu de la production industrielle"},
+      {"terme": "Chemin de fer", "sens": "il transforme les transports"},
+      {"terme": "Exode rural", "sens": "le départ des paysans vers les villes"},
+      {"terme": "Classe ouvrière", "sens": "les travailleurs des usines, conditions dures"}
+    ],
+    "methode": [
+      "Situe le XIXe siècle : des années 1800 aux années 1900.",
+      "Retiens l'instabilité politique : Empire, rois, République.",
+      "Note la fondation de l'Empire par Napoléon.",
+      "Situe la Troisième République : 1870.",
+      "Comprends la révolution industrielle : machines et usines.",
+      "Associe-la au charbon, à la vapeur et au chemin de fer.",
+      "Explique l'exode rural vers les villes.",
+      "Identifie la classe ouvrière et ses conditions difficiles."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce que la révolution industrielle ?",
+      "etapes": [
+        "Au XIXe siècle, de nouvelles machines apparaissent.",
+        "Elles fonctionnent souvent à la vapeur et au charbon.",
+        "Elles permettent de produire beaucoup plus, dans de grandes usines.",
+        "Le chemin de fer transforme les transports.",
+        "Des paysans quittent les campagnes pour les villes : l'exode rural.",
+        "Une nouvelle classe sociale naît : la classe ouvrière."
+      ]
+    },
+    "astuce": "Krilin : « Le XIXe siècle, c'est deux choses en parallèle : l'instabilité politique (Empire, rois, République) ET la révolution industrielle (usines, chemin de fer). La Troisième République s'installe en 1870. »",
+    "erreurs": [
+      "Confondre les différents régimes politiques du siècle.",
+      "Confondre Napoléon Ier et un autre dirigeant.",
+      "Oublier la révolution industrielle.",
+      "Confondre exode rural et exode urbain.",
+      "Situer la Troisième République à la mauvaise date.",
+      "Oublier l'apparition de la classe ouvrière.",
+      "Confondre XIXe et XXe siècle.",
+      "Oublier le rôle du charbon et de la vapeur."
+    ]
+  },
+  "c-18-les-guerres-mondiales-introduction": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "C-18", "manga": "Dragon Ball Z",
+    "notion": "Les guerres mondiales : introduction",
+    "explication": "Le XXe siècle est marqué par deux conflits d'une ampleur jamais vue, qui touchent de nombreux pays sur plusieurs continents : on les appelle les guerres mondiales. La Première Guerre mondiale se déroule de 1914 à 1918. Elle oppose de grandes puissances européennes et se caractérise par la guerre des tranchées, où les soldats vivent et combattent dans des conditions terribles. Elle fait des millions de morts et se termine par l'armistice du 11 novembre 1918, encore commémoré chaque année. La Seconde Guerre mondiale se déroule de 1939 à 1945. Encore plus vaste, elle touche le monde entier. Elle est marquée par une violence extrême contre les populations civiles, et notamment par le génocide des Juifs d'Europe, appelé la Shoah, qu'il est important de connaître pour ne jamais oublier. Elle se termine en 1945. Ces deux guerres ont profondément marqué le monde et expliquent l'importance accordée aujourd'hui à la paix et au souvenir des victimes : c'est ce qu'on appelle le devoir de mémoire. En CM2, on découvre ces événements de façon générale. Bien les situer, c'est comprendre pourquoi le souvenir de ces conflits reste si présent.",
+    "definitions": [
+      {"terme": "Guerre mondiale", "sens": "un conflit touchant de nombreux pays"},
+      {"terme": "Première Guerre mondiale", "sens": "de 1914 à 1918"},
+      {"terme": "Tranchées", "sens": "fossés où vivent et combattent les soldats (1914-1918)"},
+      {"terme": "Armistice", "sens": "l'arrêt des combats (11 novembre 1918)"},
+      {"terme": "Seconde Guerre mondiale", "sens": "de 1939 à 1945"},
+      {"terme": "Victimes civiles", "sens": "les populations non combattantes touchées"},
+      {"terme": "Devoir de mémoire", "sens": "le souvenir des victimes pour ne pas oublier"},
+      {"terme": "1945", "sens": "la fin de la Seconde Guerre mondiale"}
+    ],
+    "methode": [
+      "Situe les guerres mondiales au XXe siècle.",
+      "Retiens les dates de la Première Guerre : 1914-1918.",
+      "Associe-la à la guerre des tranchées.",
+      "Retiens l'armistice du 11 novembre 1918.",
+      "Retiens les dates de la Seconde Guerre : 1939-1945.",
+      "Comprends qu'elle touche le monde entier et les civils.",
+      "Note l'importance du devoir de mémoire.",
+      "Ne confonds jamais les dates des deux guerres."
+    ],
+    "exemple": {
+      "enonce": "Comment distinguer les deux guerres mondiales ?",
+      "etapes": [
+        "La Première Guerre mondiale se déroule de 1914 à 1918.",
+        "Elle est marquée par la guerre des tranchées.",
+        "Elle se termine par l'armistice du 11 novembre 1918.",
+        "La Seconde Guerre mondiale se déroule de 1939 à 1945.",
+        "Elle est encore plus vaste et touche le monde entier.",
+        "Retenir ces deux périodes permet de ne pas les confondre."
+      ]
+    },
+    "astuce": "C-18 : « Deux dates à ne jamais confondre : 1914-1918 (Première Guerre mondiale) et 1939-1945 (Seconde Guerre mondiale). Et chaque 11 novembre, on commémore l'armistice de 1918. »",
+    "erreurs": [
+      "Confondre les dates des deux guerres mondiales.",
+      "Confondre Première et Seconde Guerre mondiale.",
+      "Oublier la date de l'armistice (11 novembre 1918).",
+      "Situer la fin de la Seconde Guerre à la mauvaise date.",
+      "Croire que les guerres ne touchent que les soldats.",
+      "Oublier le devoir de mémoire.",
+      "Confondre tranchées (1914-1918) et autre conflit.",
+      "Penser que ces guerres ne concernent qu'un seul pays."
+    ]
+  },
+  "babidi-la-france-contemporaine-ve-republique": {
+    "matiere": "histoire", "niveau": "cm2", "hero": "Babidi", "manga": "Dragon Ball Z",
+    "notion": "La France contemporaine : la Ve République",
+    "explication": "L'époque contemporaine est la période la plus récente de l'histoire, celle dans laquelle nous vivons. En France, le régime politique actuel s'appelle la Cinquième République. Elle est fondée en 1958, à l'initiative du général de Gaulle, qui en devient le premier président. Dans la Cinquième République, le président de la République joue un rôle important : il est aujourd'hui élu directement par les citoyens. La France est une démocratie : le pouvoir appartient au peuple, qui s'exprime par le vote. Le pays est attaché à des valeurs et à des symboles républicains que l'on retrouve partout. Sa devise est « Liberté, Égalité, Fraternité ». Son drapeau est tricolore (bleu, blanc, rouge), son hymne est « La Marseillaise », sa fête nationale est le 14 juillet, et Marianne en est la figure symbolique. La France participe aussi à la construction européenne : elle est l'un des membres fondateurs de l'Union européenne, qui rapproche de nombreux pays du continent. En CM2, on découvre le fonctionnement de notre pays aujourd'hui. Bien le comprendre, c'est mieux connaître les institutions, les valeurs et les symboles de la République dans laquelle on vit.",
+    "definitions": [
+      {"terme": "Époque contemporaine", "sens": "la période la plus récente, la nôtre"},
+      {"terme": "Cinquième République", "sens": "le régime actuel, fondé en 1958"},
+      {"terme": "De Gaulle", "sens": "fondateur et premier président de la Ve République"},
+      {"terme": "Président de la République", "sens": "élu par les citoyens, il joue un grand rôle"},
+      {"terme": "Démocratie", "sens": "le pouvoir appartient au peuple, par le vote"},
+      {"terme": "Devise", "sens": "« Liberté, Égalité, Fraternité »"},
+      {"terme": "Symboles républicains", "sens": "drapeau, Marseillaise, Marianne, 14 juillet"},
+      {"terme": "Union européenne", "sens": "elle rapproche de nombreux pays d'Europe"}
+    ],
+    "methode": [
+      "Situe l'époque contemporaine : la période actuelle.",
+      "Retiens la fondation de la Ve République : 1958.",
+      "Associe-la au général de Gaulle, premier président.",
+      "Comprends le rôle du président de la République.",
+      "Retiens que la France est une démocratie (le vote).",
+      "Mémorise la devise : Liberté, Égalité, Fraternité.",
+      "Identifie les symboles : drapeau, Marseillaise, Marianne, 14 juillet.",
+      "Note la participation à la construction européenne."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les grands symboles de la République française ?",
+      "etapes": [
+        "La devise est « Liberté, Égalité, Fraternité ».",
+        "Le drapeau est tricolore : bleu, blanc, rouge.",
+        "L'hymne national est « La Marseillaise ».",
+        "La fête nationale est le 14 juillet.",
+        "Marianne est la figure symbolique de la République.",
+        "Ces symboles rappellent les valeurs partagées par les citoyens."
+      ]
+    },
+    "astuce": "Babidi : « Le régime actuel de la France, c'est la Cinquième République, née en 1958 avec de Gaulle. Retiens la devise — Liberté, Égalité, Fraternité — et les symboles : drapeau tricolore, Marseillaise, Marianne, 14 juillet ! »",
+    "erreurs": [
+      "Se tromper sur la date de la Ve République (1958).",
+      "Confondre les différentes Républiques.",
+      "Oublier le rôle de de Gaulle.",
+      "Oublier la devise de la République.",
+      "Confondre les symboles républicains.",
+      "Croire que le président n'est pas élu par les citoyens.",
+      "Oublier la participation de la France à l'Union européenne.",
+      "Confondre époque contemporaine et époque moderne."
+    ]
+  }
+}
