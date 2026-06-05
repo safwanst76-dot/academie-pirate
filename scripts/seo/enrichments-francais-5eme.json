@@ -1,0 +1,378 @@
+{
+  "barbe-blanche-pronoms-relatifs-qui-que-dont-ou": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Barbe Blanche", "manga": "One Piece",
+    "notion": "Les pronoms relatifs (qui, que, dont, où)",
+    "explication": "Un pronom relatif est un mot qui sert à relier deux propositions en évitant de répéter un nom. Il introduit une proposition subordonnée relative, qui apporte une précision sur un nom appelé l'antécédent. L'antécédent est le mot placé juste avant le pronom relatif, celui que le pronom remplace. Par exemple, dans « le bateau qui navigue », l'antécédent est « le bateau », et « qui » le remplace. Les quatre pronoms relatifs les plus courants ont chacun un rôle précis. « Qui » remplace le sujet du verbe qui suit : « le marin qui chante » (qui = le marin, sujet de chante). « Que » remplace le complément d'objet direct : « le livre que je lis » (que = le livre, COD de lis). « Dont » remplace un complément introduit par la préposition « de » : « le trésor dont je rêve » (rêver de quelque chose). « Où » remplace un complément de lieu ou de temps : « l'île où nous allons », « le jour où il arriva ». Pour bien choisir, il faut donc identifier la fonction du mot que le pronom remplace. En 5ème, on apprend à employer ces pronoms relatifs sans les confondre. Bien les maîtriser permet d'écrire des phrases plus riches et mieux construites.",
+    "definitions": [
+      {"terme": "Pronom relatif", "sens": "il relie deux propositions et remplace un nom"},
+      {"terme": "Antécédent", "sens": "le nom placé avant, que le pronom remplace"},
+      {"terme": "Subordonnée relative", "sens": "la proposition introduite par le pronom relatif"},
+      {"terme": "qui", "sens": "remplace le sujet du verbe qui suit"},
+      {"terme": "que", "sens": "remplace le complément d'objet direct (COD)"},
+      {"terme": "dont", "sens": "remplace un complément introduit par « de »"},
+      {"terme": "où", "sens": "remplace un complément de lieu ou de temps"},
+      {"terme": "Fonction remplacée", "sens": "elle détermine le bon pronom"}
+    ],
+    "methode": [
+      "Repère l'antécédent : le nom placé juste avant le pronom.",
+      "Demande-toi quelle est la fonction du mot remplacé.",
+      "Si c'est le sujet du verbe suivant, utilise « qui ».",
+      "Si c'est le COD, utilise « que ».",
+      "Si le verbe se construit avec « de », utilise « dont ».",
+      "Si c'est un lieu ou un moment, utilise « où ».",
+      "Vérifie que la phrase obtenue a bien du sens.",
+      "Relis pour t'assurer du lien avec l'antécédent."
+    ],
+    "exemple": {
+      "enonce": "Quel pronom relatif : « le livre ___ je lis » ?",
+      "etapes": [
+        "L'antécédent est « le livre ».",
+        "On regarde la fonction du mot remplacé dans la relative.",
+        "On dit « je lis le livre » : « le livre » est COD de « lis ».",
+        "Le pronom qui remplace un COD est « que ».",
+        "On écrit donc : « le livre que je lis ».",
+        "Pour un sujet, on aurait dit « le livre qui est ouvert »."
+      ]
+    },
+    "astuce": "Barbe Blanche : « Chaque pronom a son rôle : qui = sujet (qui + verbe), que = COD (que + sujet + verbe), dont = remplace « de », où = lieu ou temps. Demande-toi quelle fonction tu remplaces ! »",
+    "erreurs": [
+      "Confondre « qui » (sujet) et « que » (COD).",
+      "Utiliser « que » à la place de « dont ».",
+      "Oublier l'antécédent du pronom relatif.",
+      "Employer « ou » (sans accent) au lieu de « où ».",
+      "Mettre « qui » devant un sujet déjà exprimé.",
+      "Confondre pronom relatif et conjonction.",
+      "Mal identifier la fonction du mot remplacé.",
+      "Oublier que « dont » remplace un complément en « de »."
+    ]
+  },
+  "brook-propositions-subordonnees": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Brook", "manga": "One Piece",
+    "notion": "Les propositions subordonnées",
+    "explication": "Dans une phrase complexe, on distingue la proposition principale et la ou les propositions subordonnées. La proposition principale peut exister seule et porte le sens essentiel de la phrase. La proposition subordonnée, au contraire, dépend de la principale : elle ne peut pas exister toute seule et complète ou précise un élément de la phrase. Une subordonnée est toujours introduite par un mot subordonnant, c'est-à-dire un pronom relatif (qui, que, dont, où) ou une conjonction de subordination (que, quand, parce que, si, comme). On reconnaît une subordonnée à deux choses : elle contient un verbe conjugué, et elle commence par ce mot subordonnant. Il existe plusieurs sortes de subordonnées. La subordonnée relative est introduite par un pronom relatif et complète un nom : « le bateau qui navigue ». La subordonnée conjonctive est introduite par une conjonction et complète souvent un verbe : « Je pense que tu as raison ». Pour repérer une subordonnée, on identifie d'abord la principale, puis la partie qui en dépend et commence par un subordonnant. En 5ème, on apprend à distinguer principale et subordonnée et à reconnaître les types de subordonnées. Bien les maîtriser permet de comprendre la structure des phrases complexes et de mieux écrire.",
+    "definitions": [
+      {"terme": "Proposition principale", "sens": "elle peut exister seule"},
+      {"terme": "Proposition subordonnée", "sens": "elle dépend de la principale"},
+      {"terme": "Subordonnant", "sens": "le mot qui introduit la subordonnée"},
+      {"terme": "Pronom relatif", "sens": "qui, que, dont, où (subordonnée relative)"},
+      {"terme": "Conjonction de subordination", "sens": "que, quand, parce que, si"},
+      {"terme": "Subordonnée relative", "sens": "elle complète un nom"},
+      {"terme": "Subordonnée conjonctive", "sens": "elle complète souvent un verbe"},
+      {"terme": "Verbe conjugué", "sens": "toute proposition en contient un"}
+    ],
+    "methode": [
+      "Vérifie que la phrase est complexe (plusieurs verbes conjugués).",
+      "Repère la proposition principale, qui se suffit à elle-même.",
+      "Cherche la partie qui en dépend : la subordonnée.",
+      "Identifie le mot subordonnant qui l'introduit.",
+      "Si c'est un pronom relatif → subordonnée relative.",
+      "Si c'est une conjonction de subordination → subordonnée conjonctive.",
+      "Vérifie que la subordonnée contient un verbe conjugué.",
+      "Contrôle qu'elle ne peut pas exister seule."
+    ],
+    "exemple": {
+      "enonce": "Trouve la subordonnée dans « Je pense que tu as raison ».",
+      "etapes": [
+        "On repère les verbes conjugués : « pense » et « as ».",
+        "La principale est « Je pense » : elle peut exister seule.",
+        "La partie « que tu as raison » dépend de la principale.",
+        "Elle commence par le subordonnant « que ».",
+        "C'est donc une proposition subordonnée conjonctive.",
+        "Elle ne peut pas exister seule : elle complète « pense »."
+      ]
+    },
+    "astuce": "Brook : « Yohohoho ! La subordonnée ne tient pas debout toute seule : elle DÉPEND de la principale et commence par un subordonnant (que, qui, quand, parce que…). La principale, elle, peut vivre seule ! »",
+    "erreurs": [
+      "Confondre proposition principale et subordonnée.",
+      "Oublier de repérer le mot subordonnant.",
+      "Confondre subordonnée relative et conjonctive.",
+      "Croire qu'une subordonnée peut exister seule.",
+      "Confondre conjonction de coordination et de subordination.",
+      "Oublier un verbe conjugué de la phrase.",
+      "Prendre une phrase simple pour une phrase complexe.",
+      "Mal délimiter la subordonnée."
+    ]
+  },
+  "dracule-mihawk-complements-circonstanciels": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Dracule Mihawk", "manga": "One Piece",
+    "notion": "Les compléments circonstanciels",
+    "explication": "Les compléments circonstanciels, abrégés CC, sont des compléments qui précisent les circonstances de l'action exprimée par le verbe : quand, où, comment, pourquoi… Ils apportent des informations utiles mais non indispensables à la phrase. C'est ce qui les distingue du complément d'objet : un complément circonstanciel possède deux caractéristiques importantes. Il est généralement mobile, c'est-à-dire qu'on peut le déplacer dans la phrase sans la rendre incorrecte (« Demain, il part » ou « Il part demain »). Il est aussi le plus souvent supprimable : on peut l'enlever et la phrase reste correcte (« Il part »). Il existe plusieurs sortes de compléments circonstanciels, selon la question à laquelle ils répondent. Le complément circonstanciel de temps répond à « quand ? » (demain, hier). Celui de lieu répond à « où ? » (à l'école, ici). Celui de manière répond à « comment ? » (lentement, avec soin). Celui de cause répond à « pourquoi ? » (à cause de la pluie). On en trouve d'autres encore : but, moyen, accompagnement. En 5ème, on apprend à repérer ces compléments et à identifier leur type grâce aux questions. Bien les maîtriser aide à analyser une phrase et à enrichir ses propres écrits avec des précisions variées.",
+    "definitions": [
+      {"terme": "Complément circonstanciel", "sens": "il précise les circonstances de l'action"},
+      {"terme": "Mobile", "sens": "on peut le déplacer dans la phrase"},
+      {"terme": "Supprimable", "sens": "on peut l'enlever, la phrase reste correcte"},
+      {"terme": "CC de temps", "sens": "répond à « quand ? » (demain)"},
+      {"terme": "CC de lieu", "sens": "répond à « où ? » (à l'école)"},
+      {"terme": "CC de manière", "sens": "répond à « comment ? » (lentement)"},
+      {"terme": "CC de cause", "sens": "répond à « pourquoi ? »"},
+      {"terme": "Distinction avec le COD", "sens": "le COD n'est ni mobile ni supprimable"}
+    ],
+    "methode": [
+      "Repère le verbe de la phrase.",
+      "Pose les questions quand ?, où ?, comment ?, pourquoi ?",
+      "Le groupe qui répond est un complément circonstanciel.",
+      "Vérifie qu'il est déplaçable dans la phrase.",
+      "Vérifie qu'il est supprimable sans rendre la phrase fausse.",
+      "Identifie son type selon la question posée.",
+      "Ne le confonds pas avec le COD (lui, non supprimable).",
+      "Relie-le bien au verbe."
+    ],
+    "exemple": {
+      "enonce": "Quel est le complément circonstanciel dans « Il part demain » ?",
+      "etapes": [
+        "Le verbe est « part ».",
+        "On pose la question : « part quand ? ».",
+        "La réponse est « demain ».",
+        "On vérifie : « Demain, il part » fonctionne (mobile).",
+        "On vérifie : « Il part » reste correct (supprimable).",
+        "« demain » est donc un CC de temps."
+      ]
+    },
+    "astuce": "Dracule Mihawk : « Le CC répond à quand ? où ? comment ? pourquoi ? Et surtout, il est DÉPLAÇABLE et SUPPRIMABLE. Si tu peux le bouger ou l'enlever, c'est un CC — pas un COD ! »",
+    "erreurs": [
+      "Confondre un CC et un COD.",
+      "Oublier de tester la mobilité et la suppression.",
+      "Se tromper de type de CC.",
+      "Prendre un CC pour le sujet.",
+      "Poser la mauvaise question.",
+      "Confondre CC de lieu et CC de temps.",
+      "Croire qu'un CC est indispensable à la phrase.",
+      "Mal délimiter le groupe complément."
+    ]
+  },
+  "franky-accord-participe-passe-avec-avoir": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Franky", "manga": "One Piece",
+    "notion": "L'accord du participe passé avec AVOIR",
+    "explication": "L'accord du participe passé avec l'auxiliaire AVOIR suit une règle différente de celle avec « être », et c'est une difficulté classique. Première chose à retenir : avec l'auxiliaire avoir, le participe passé ne s'accorde JAMAIS avec le sujet. On écrit « Elles ont mangé » et non « Elles ont mangées ». La règle est la suivante : le participe passé employé avec avoir s'accorde avec le complément d'objet direct (COD), mais uniquement si ce COD est placé AVANT le verbe. Si le COD est placé après le verbe, ou s'il n'y a pas de COD, le participe ne s'accorde pas. Comparons. Dans « J'ai mangé des pommes », le COD « des pommes » est placé après le verbe : pas d'accord, on écrit « mangé ». Dans « Les pommes que j'ai mangées », le COD est « que », qui remplace « les pommes » et qui est placé avant le verbe : le participe s'accorde, on écrit « mangées » (féminin pluriel). Pour appliquer la règle, on cherche le COD, puis on regarde s'il est avant ou après le verbe. En 5ème, cette règle est essentielle. Bien la maîtriser, et ne pas la confondre avec l'accord avec « être », permet d'éviter une faute très répandue.",
+    "definitions": [
+      {"terme": "Participe passé", "sens": "la forme du verbe au temps composé"},
+      {"terme": "Auxiliaire avoir", "sens": "il suit une règle d'accord particulière"},
+      {"terme": "COD", "sens": "complément d'objet direct"},
+      {"terme": "COD placé avant", "sens": "il déclenche l'accord du participe"},
+      {"terme": "COD placé après", "sens": "aucun accord du participe"},
+      {"terme": "Pas d'accord avec le sujet", "sens": "contrairement à l'auxiliaire être"},
+      {"terme": "Règle", "sens": "accord avec le COD seulement s'il précède le verbe"},
+      {"terme": "Distinction avec être", "sens": "être → accord avec le sujet"}
+    ],
+    "methode": [
+      "Vérifie que l'auxiliaire est bien « avoir ».",
+      "Rappelle-toi : pas d'accord avec le sujet.",
+      "Cherche le complément d'objet direct (COD).",
+      "Regarde où se trouve ce COD.",
+      "S'il est placé AVANT le verbe, accorde le participe avec lui.",
+      "S'il est placé après, ou absent, n'accorde pas.",
+      "Détermine le genre et le nombre du COD pour l'accord.",
+      "Ne confonds pas avec l'accord avec « être »."
+    ],
+    "exemple": {
+      "enonce": "Accorde : « Les fleurs que j'ai (cueillir) ».",
+      "etapes": [
+        "L'auxiliaire est « avoir » (ai).",
+        "On cherche le COD : « que », qui remplace « les fleurs ».",
+        "Ce COD est placé AVANT le verbe.",
+        "Le participe s'accorde donc avec lui.",
+        "« les fleurs » est féminin pluriel : on ajoute -es.",
+        "On écrit : « Les fleurs que j'ai cueillies »."
+      ]
+    },
+    "astuce": "Franky : « Avec AVOIR, oublie le sujet ! Le participe s'accorde avec le COD, et SEULEMENT s'il est placé AVANT le verbe. « j'ai mangé des pommes » (après → rien), mais « les pommes que j'ai mangées » (avant → accord) ! »",
+    "erreurs": [
+      "Accorder le participe avec le sujet (comme avec être).",
+      "Accorder alors que le COD est placé après le verbe.",
+      "Oublier d'accorder quand le COD est avant.",
+      "Ne pas repérer le COD.",
+      "Confondre l'auxiliaire avoir et l'auxiliaire être.",
+      "Se tromper sur le genre ou le nombre du COD.",
+      "Accorder en l'absence de COD.",
+      "Confondre le COD et un complément circonstanciel."
+    ]
+  },
+  "nefertari-vivi-discours-direct-et-indirect": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Nefertari Vivi", "manga": "One Piece",
+    "notion": "Le discours direct et indirect",
+    "explication": "Pour rapporter les paroles de quelqu'un, on peut utiliser deux procédés : le discours direct et le discours indirect. Le discours direct rapporte les paroles exactement telles qu'elles ont été prononcées. Il se reconnaît à sa ponctuation particulière : guillemets, tirets, et souvent deux-points après le verbe introducteur (dire, demander, répondre). Par exemple : « Il dit : 'Je suis prêt.' ». Le discours indirect, lui, rapporte les paroles sans les citer mot à mot : elles sont intégrées dans la phrase sous la forme d'une proposition subordonnée, introduite le plus souvent par « que ». On supprime alors les guillemets. Par exemple : « Il dit qu'il est prêt. ». Le passage du discours direct au discours indirect entraîne plusieurs changements. On ajoute un mot subordonnant (que). On supprime la ponctuation du discours direct (guillemets, tirets). On adapte les pronoms personnels au nouveau locuteur (« je » peut devenir « il »). Selon le temps du verbe introducteur, les temps et certains marqueurs peuvent aussi changer. En 5ème, on apprend à reconnaître ces deux discours et à passer de l'un à l'autre. Bien les maîtriser permet de rapporter des paroles avec précision, à l'écrit comme dans les récits.",
+    "definitions": [
+      {"terme": "Discours direct", "sens": "les paroles citées exactement"},
+      {"terme": "Discours indirect", "sens": "les paroles rapportées, intégrées à la phrase"},
+      {"terme": "Verbe introducteur", "sens": "dire, demander, répondre…"},
+      {"terme": "Guillemets", "sens": "ils marquent le discours direct"},
+      {"terme": "Proposition subordonnée", "sens": "elle porte les paroles au discours indirect"},
+      {"terme": "que", "sens": "le subordonnant fréquent du discours indirect"},
+      {"terme": "Changement de pronom", "sens": "« je » peut devenir « il »"},
+      {"terme": "Changement de ponctuation", "sens": "suppression des guillemets"}
+    ],
+    "methode": [
+      "Repère le verbe introducteur (dire, demander…).",
+      "Au discours direct, garde les paroles exactes entre guillemets.",
+      "Pour passer à l'indirect, supprime les guillemets et les tirets.",
+      "Ajoute un mot subordonnant, le plus souvent « que ».",
+      "Adapte les pronoms personnels au nouveau locuteur.",
+      "Adapte les temps si le verbe introducteur est au passé.",
+      "Vérifie la cohérence des pronoms et des temps.",
+      "Relis la phrase obtenue."
+    ],
+    "exemple": {
+      "enonce": "Mets au discours indirect : « Il dit : \"Je suis prêt.\" ».",
+      "etapes": [
+        "Le verbe introducteur est « dit ».",
+        "On supprime les guillemets et les deux-points.",
+        "On ajoute le subordonnant « que ».",
+        "On adapte le pronom : « je » devient « il ».",
+        "On adapte le verbe : « suis » devient « est ».",
+        "On obtient : « Il dit qu'il est prêt »."
+      ]
+    },
+    "astuce": "Nefertari Vivi : « Pour passer à l'indirect : on enlève les guillemets, on ajoute « que », et on adapte les pronoms (je → il) ! Les paroles ne sont plus citées, elles sont intégrées à la phrase. »",
+    "erreurs": [
+      "Garder les guillemets au discours indirect.",
+      "Oublier d'ajouter le subordonnant « que ».",
+      "Ne pas adapter les pronoms au nouveau locuteur.",
+      "Oublier d'adapter les temps si besoin.",
+      "Confondre verbe introducteur et paroles rapportées.",
+      "Mal ponctuer le discours direct.",
+      "Confondre discours direct et indirect.",
+      "Oublier les deux-points avant les guillemets (direct)."
+    ]
+  },
+  "portgas-d-ace-subjonctif-present": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Portgas D. Ace", "manga": "One Piece",
+    "notion": "Le subjonctif présent",
+    "explication": "Le subjonctif est un mode du verbe, comme l'indicatif. Mais alors que l'indicatif présente une action comme réelle et certaine, le subjonctif présente une action comme envisagée, souhaitée, possible ou incertaine. On l'emploie très souvent dans une proposition subordonnée introduite par « que », après des verbes ou des expressions qui expriment la volonté, le souhait, l'obligation, le doute ou le sentiment : « il faut que », « je veux que », « je souhaite que ». Par exemple : « Il faut que je finisse mon travail ». La formation du subjonctif présent est régulière pour la plupart des verbes. On part en général du radical de la troisième personne du pluriel du présent de l'indicatif (ils finissent → finiss-), auquel on ajoute les terminaisons -e, -es, -e, -ions, -iez, -ent. On obtient : que je finisse, que tu finisses, qu'il finisse, que nous finissions, que vous finissiez, qu'ils finissent. Quelques verbes très fréquents sont irréguliers et doivent être mémorisés : être (que je sois), avoir (que j'aie), faire (que je fasse), aller (que j'aille), pouvoir (que je puisse). En 5ème, on apprend à reconnaître les déclencheurs du subjonctif et à le former. Bien le maîtriser permet d'exprimer un souhait, une obligation ou un doute correctement.",
+    "definitions": [
+      {"terme": "Subjonctif présent", "sens": "le mode de l'action envisagée ou souhaitée"},
+      {"terme": "Mode", "sens": "la façon de présenter l'action"},
+      {"terme": "Action envisagée", "sens": "souhaitée, possible ou incertaine"},
+      {"terme": "« que »", "sens": "il introduit souvent le subjonctif"},
+      {"terme": "Déclencheurs", "sens": "il faut que, je veux que, je souhaite que"},
+      {"terme": "Terminaisons", "sens": "-e, -es, -e, -ions, -iez, -ent"},
+      {"terme": "Radical", "sens": "souvent celui de « ils » au présent"},
+      {"terme": "Irréguliers", "sens": "sois, aie, fasse, aille, puisse"}
+    ],
+    "methode": [
+      "Repère un déclencheur du subjonctif (il faut que, je veux que…).",
+      "Vérifie la présence de « que » introduisant la subordonnée.",
+      "Pour former le verbe, pars du radical de « ils » au présent.",
+      "Ajoute les terminaisons -e, -es, -e, -ions, -iez, -ent.",
+      "Mémorise les verbes irréguliers fréquents.",
+      "Distingue bien le subjonctif de l'indicatif.",
+      "Vérifie le sens : souhait, obligation, doute ?",
+      "Relis la phrase pour confirmer l'emploi."
+    ],
+    "exemple": {
+      "enonce": "Conjugue : « Il faut que je (finir) mon travail ».",
+      "etapes": [
+        "Le déclencheur « il faut que » impose le subjonctif présent.",
+        "On part du radical de « ils finissent » : finiss-.",
+        "À la 1re personne du singulier, la terminaison est -e.",
+        "On assemble : finiss- + -e.",
+        "On obtient : que je finisse.",
+        "La phrase est : « Il faut que je finisse mon travail »."
+      ]
+    },
+    "astuce": "Ace : « Le subjonctif suit souvent « que » et exprime le souhait, l'obligation ou le doute. Le réflexe : « il faut que je fasse », « je veux que tu sois là ». Pense à la formule « il faut que » pour le déclencher ! »",
+    "erreurs": [
+      "Confondre le subjonctif et l'indicatif.",
+      "Oublier le « que » déclencheur.",
+      "Mal former le radical du verbe.",
+      "Se tromper de terminaison.",
+      "Mal conjuguer un verbe irrégulier (être, faire, aller).",
+      "Employer l'indicatif après « il faut que ».",
+      "Oublier les -i- de « nous » et « vous » (finissions, finissiez).",
+      "Confondre subjonctif présent et conditionnel."
+    ]
+  },
+  "trafalgar-d-law-conditionnel-present": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Trafalgar D. Law", "manga": "One Piece",
+    "notion": "Le conditionnel présent",
+    "explication": "Le conditionnel présent est un mode qui sert à exprimer une action soumise à une condition, mais aussi un souhait ou une demande polie. On l'emploie par exemple pour dire « Si j'avais le temps, je voyagerais » (condition), « Je voudrais un café » (politesse) ou « J'aimerais partir » (souhait). Sa formation est régulière et facile à retenir grâce à une formule simple : on prend le même radical que pour le futur simple (le plus souvent l'infinitif), auquel on ajoute les terminaisons de l'imparfait : -ais, -ais, -ait, -ions, -iez, -aient. On obtient : je chanterais, tu chanterais, il chanterait, nous chanterions, vous chanteriez, ils chanteraient. Une attention particulière est nécessaire pour ne pas confondre le futur simple et le conditionnel présent à la première personne du singulier, car ils se ressemblent : « je chanterai » (futur, terminaison -ai) et « je chanterais » (conditionnel, terminaison -ais). Une seule lettre les distingue à l'écrit, mais le sens est différent. Les verbes irréguliers au futur le sont aussi au conditionnel : je serais, j'aurais, j'irais, je ferais. En 5ème, on apprend à former le conditionnel présent et à le distinguer du futur. Bien le maîtriser permet d'exprimer des hypothèses, des souhaits et des formules de politesse.",
+    "definitions": [
+      {"terme": "Conditionnel présent", "sens": "le mode de la condition, du souhait, de la politesse"},
+      {"terme": "Condition", "sens": "l'action dépend d'une autre (si…)"},
+      {"terme": "Politesse", "sens": "demande polie (je voudrais)"},
+      {"terme": "Souhait", "sens": "expression d'un désir (j'aimerais)"},
+      {"terme": "Radical du futur", "sens": "souvent l'infinitif du verbe"},
+      {"terme": "Terminaisons de l'imparfait", "sens": "-ais, -ais, -ait, -ions, -iez, -aient"},
+      {"terme": "Futur ≠ conditionnel", "sens": "je chanterai (-ai) ≠ je chanterais (-ais)"},
+      {"terme": "Irréguliers", "sens": "serais, aurais, irais, ferais"}
+    ],
+    "methode": [
+      "Vérifie le sens : condition, souhait ou politesse ?",
+      "Prends le radical du futur (souvent l'infinitif).",
+      "Ajoute les terminaisons de l'imparfait.",
+      "Utilise -ais, -ais, -ait, -ions, -iez, -aient.",
+      "Distingue le futur (-ai) du conditionnel (-ais) à « je ».",
+      "Mémorise les radicaux irréguliers (serais, aurais, irais).",
+      "Vérifie qu'il ne s'agit pas du futur simple.",
+      "Relis la phrase pour confirmer le sens."
+    ],
+    "exemple": {
+      "enonce": "Conjugue « aimer » au conditionnel présent, 1re personne du singulier.",
+      "etapes": [
+        "On prend le radical du futur : aimer-.",
+        "On ajoute la terminaison de l'imparfait pour « je » : -ais.",
+        "On assemble : aimer- + -ais.",
+        "On obtient : j'aimerais.",
+        "Au futur, on aurait écrit « j'aimerai » (-ai).",
+        "La terminaison -ais signale bien le conditionnel."
+      ]
+    },
+    "astuce": "Law : « La recette : radical du FUTUR + terminaisons de l'IMPARFAIT. Et le piège à éviter : « je chanterai » (futur, -ai) contre « je chanterais » (conditionnel, -ais). Une lettre change tout ! »",
+    "erreurs": [
+      "Confondre le futur simple (-ai) et le conditionnel (-ais).",
+      "Se tromper de terminaison.",
+      "Oublier le « e » du radical (j'aimerais).",
+      "Mal conjuguer un verbe irrégulier (être, avoir, aller).",
+      "Confondre conditionnel présent et imparfait.",
+      "Employer le futur après « si » au lieu de l'imparfait.",
+      "Oublier les terminaisons de l'imparfait.",
+      "Confondre conditionnel et subjonctif."
+    ]
+  },
+  "usopp-valeurs-des-temps-du-recit": {
+    "matiere": "francais", "niveau": "5eme", "hero": "Usopp", "manga": "One Piece",
+    "notion": "Les valeurs des temps du récit",
+    "explication": "Dans un récit au passé, plusieurs temps cohabitent, et chacun joue un rôle précis : c'est ce qu'on appelle sa valeur. Comprendre ces valeurs permet de bien lire et de bien écrire des histoires. Le passé simple est le temps des actions de premier plan : il exprime les événements importants, qui se succèdent et font avancer le récit. Par exemple : « Le pirate ouvrit le coffre ». L'imparfait, lui, est le temps de l'arrière-plan : il sert à décrire le décor, les personnages, ainsi que les actions qui durent, se répètent ou se déroulent en toile de fond. Par exemple : « Le soleil brillait, les oiseaux chantaient ». Très souvent, les deux temps se combinent : l'imparfait pose le décor, et le passé simple apporte l'événement qui survient (« Il dormait quand un bruit retentit »). Le plus-que-parfait, enfin, exprime l'antériorité : il indique une action qui s'est produite avant une autre action passée (« Il raconta ce qu'il avait vu »). En reconnaissant la valeur de chaque temps, on comprend mieux l'organisation d'un récit. En 5ème, on apprend à identifier ces valeurs et à employer chaque temps à bon escient. Bien les maîtriser est essentiel pour lire finement et écrire des récits clairs et vivants.",
+    "definitions": [
+      {"terme": "Valeur d'un temps", "sens": "le rôle qu'il joue dans le récit"},
+      {"terme": "Passé simple", "sens": "les actions de premier plan"},
+      {"terme": "Imparfait", "sens": "le décor, la description, l'arrière-plan"},
+      {"terme": "Plus-que-parfait", "sens": "l'antériorité (une action avant une autre)"},
+      {"terme": "Premier plan", "sens": "les événements qui font avancer le récit"},
+      {"terme": "Arrière-plan", "sens": "le décor et les actions qui durent"},
+      {"terme": "Combinaison", "sens": "décor à l'imparfait, action au passé simple"},
+      {"terme": "Antériorité", "sens": "ce qui s'est passé avant"}
+    ],
+    "methode": [
+      "Repère les temps employés dans le récit.",
+      "Demande-toi le rôle de chaque action.",
+      "Action de premier plan qui fait avancer → passé simple.",
+      "Décor, description ou action qui dure → imparfait.",
+      "Action antérieure à une autre → plus-que-parfait.",
+      "Observe la combinaison imparfait / passé simple.",
+      "Vérifie la cohérence des temps dans le récit.",
+      "Emploie chaque temps selon sa valeur."
+    ],
+    "exemple": {
+      "enonce": "Analyse : « Il dormait quand un bruit retentit ».",
+      "etapes": [
+        "On repère deux temps : « dormait » et « retentit ».",
+        "« dormait » est à l'imparfait : c'est une action qui dure.",
+        "C'est le décor, l'arrière-plan du récit.",
+        "« retentit » est au passé simple : c'est un événement soudain.",
+        "C'est l'action de premier plan qui survient.",
+        "L'imparfait pose le décor, le passé simple apporte l'événement."
+      ]
+    },
+    "astuce": "Usopp : « Dans un récit : le passé simple = les actions qui font avancer l'histoire, l'imparfait = le décor qui dure, le plus-que-parfait = ce qui s'était passé AVANT. Chaque temps a son rôle ! »",
+    "erreurs": [
+      "Confondre la valeur du passé simple et de l'imparfait.",
+      "Mettre une description au passé simple.",
+      "Mettre une action de premier plan à l'imparfait.",
+      "Oublier le rôle d'antériorité du plus-que-parfait.",
+      "Mélanger les temps sans logique.",
+      "Confondre « il dormait » et « il dormit ».",
+      "Ignorer la combinaison imparfait / passé simple.",
+      "Ne pas distinguer décor et événement."
+    ]
+  }
+}
