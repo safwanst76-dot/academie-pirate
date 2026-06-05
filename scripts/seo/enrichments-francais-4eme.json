@@ -1,0 +1,378 @@
+{
+  "brook-valeurs-des-modes-indicatif-subjonctif-conditionnel": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Brook", "manga": "One Piece",
+    "notion": "Les valeurs des modes",
+    "explication": "Le mode d'un verbe indique la façon dont on présente l'action : comme réelle, envisagée ou soumise à une condition. Comprendre la valeur de chaque mode permet de choisir le bon verbe et de mieux analyser un texte. L'indicatif est le mode du réel et du certain : il présente l'action comme un fait qui a lieu, a eu lieu ou aura lieu (« Il vient », « Il viendra »). C'est le mode le plus courant, celui de l'information. Le subjonctif est le mode de l'action envisagée, souhaitée, possible ou incertaine. Il s'emploie surtout dans une subordonnée introduite par « que », après des verbes exprimant la volonté, le souhait, l'obligation ou le doute : « Je veux qu'il vienne », « Il faut que tu partes ». Le conditionnel, enfin, présente l'action comme soumise à une condition, ou exprime une hypothèse, un souhait ou une demande polie : « Si j'avais le temps, je viendrais », « Je voudrais un café ». Pour identifier la valeur d'un mode, on observe comment l'action est présentée : réelle, envisagée ou hypothétique. En 4ème, on apprend à distinguer ces trois modes et leurs valeurs. Bien les maîtriser permet de comprendre les nuances d'un texte et d'exprimer précisément le réel, le souhait ou l'hypothèse.",
+    "definitions": [
+      {"terme": "Mode", "sens": "la façon de présenter l'action"},
+      {"terme": "Indicatif", "sens": "le mode du réel et du certain"},
+      {"terme": "Subjonctif", "sens": "le mode de l'action envisagée ou souhaitée"},
+      {"terme": "Conditionnel", "sens": "le mode de l'hypothèse et de la condition"},
+      {"terme": "Réel / certain", "sens": "valeur de l'indicatif"},
+      {"terme": "Envisagé / souhaité", "sens": "valeur du subjonctif"},
+      {"terme": "Hypothétique", "sens": "valeur du conditionnel"},
+      {"terme": "Valeur d'un mode", "sens": "le sens qu'il donne à l'action"}
+    ],
+    "methode": [
+      "Observe comment l'action est présentée dans la phrase.",
+      "Si c'est un fait réel ou certain → indicatif.",
+      "Si c'est une action envisagée ou souhaitée → subjonctif.",
+      "Si c'est une hypothèse ou une condition → conditionnel.",
+      "Repère les indices : « que » + souhait → subjonctif.",
+      "Repère « si » ou la politesse → conditionnel.",
+      "Identifie la valeur du mode employé.",
+      "Vérifie la cohérence avec le sens de la phrase."
+    ],
+    "exemple": {
+      "enonce": "Quel mode pour « viennes » dans « Je veux que tu viennes » ?",
+      "etapes": [
+        "On observe comment l'action est présentée.",
+        "L'action est souhaitée par celui qui parle (« je veux que »).",
+        "Une action souhaitée relève du subjonctif.",
+        "Le verbe « viennes » est donc au subjonctif.",
+        "À l'indicatif, on aurait « tu viens » (fait réel).",
+        "Le mode change selon la valeur donnée à l'action."
+      ]
+    },
+    "astuce": "Brook : « Yohohoho ! Indicatif = le réel (il vient), subjonctif = l'envisagé (qu'il vienne), conditionnel = l'hypothétique (il viendrait). Demande-toi comment l'action est présentée : fait, souhait ou hypothèse ? »",
+    "erreurs": [
+      "Confondre indicatif et subjonctif.",
+      "Employer l'indicatif après « il faut que ».",
+      "Confondre conditionnel et futur.",
+      "Confondre subjonctif et conditionnel.",
+      "Ne pas repérer les indices de chaque mode.",
+      "Croire que tout verbe est à l'indicatif.",
+      "Mal identifier la valeur du mode.",
+      "Oublier le « que » déclencheur du subjonctif."
+    ]
+  },
+  "franky-figures-de-style-comparaison-metaphore": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Franky", "manga": "One Piece",
+    "notion": "Les figures de style (comparaison, métaphore)",
+    "explication": "La comparaison et la métaphore sont deux figures de style qui créent des images en rapprochant deux éléments. Elles se ressemblent, mais une différence essentielle les sépare. La comparaison rapproche deux éléments à l'aide d'un mot-outil de comparaison, comme « comme », « tel », « pareil à », « ressembler à » ou « semblable à ». Par exemple : « Il est fort comme un lion ». Dans une comparaison, on distingue le comparé (l'élément dont on parle, ici « il »), le comparant (ce à quoi on le compare, ici « un lion »), et l'outil de comparaison (« comme »). La métaphore, elle, rapproche les deux éléments sans utiliser d'outil de comparaison : le lien est sous-entendu, ce qui rend l'image plus forte et plus directe. Par exemple : « Cet homme est un lion » ou « un lion de courage ». Il n'y a plus de « comme » : le comparant est employé directement. Pour distinguer ces deux figures, le test est simple : on cherche la présence ou l'absence d'un outil de comparaison. S'il y en a un, c'est une comparaison ; s'il n'y en a pas, c'est une métaphore. En 4ème, on apprend à les identifier et à analyser l'effet qu'elles produisent. Bien les maîtriser enrichit l'analyse des textes et rend ses propres écrits plus imagés.",
+    "definitions": [
+      {"terme": "Figure de style", "sens": "un procédé qui crée une image ou un effet"},
+      {"terme": "Comparaison", "sens": "rapprochement avec un outil (comme, tel)"},
+      {"terme": "Métaphore", "sens": "rapprochement sans outil de comparaison"},
+      {"terme": "Comparé", "sens": "l'élément dont on parle"},
+      {"terme": "Comparant", "sens": "ce à quoi on le compare"},
+      {"terme": "Outil de comparaison", "sens": "comme, tel, semblable à, ressembler à"},
+      {"terme": "Image", "sens": "la représentation créée par la figure"},
+      {"terme": "Test", "sens": "présence ou absence d'un outil"}
+    ],
+    "methode": [
+      "Repère un rapprochement entre deux éléments.",
+      "Cherche un outil de comparaison (comme, tel, semblable à).",
+      "Si l'outil est présent → comparaison.",
+      "Si l'outil est absent → métaphore.",
+      "Identifie le comparé (ce dont on parle).",
+      "Identifie le comparant (ce à quoi on le compare).",
+      "Nomme précisément la figure repérée.",
+      "Analyse l'effet produit sur le lecteur."
+    ],
+    "exemple": {
+      "enonce": "« Cet homme est un lion » : comparaison ou métaphore ?",
+      "etapes": [
+        "On repère le rapprochement : l'homme et le lion.",
+        "On cherche un outil de comparaison (comme, tel…).",
+        "Il n'y a aucun outil de comparaison dans la phrase.",
+        "L'absence d'outil indique une métaphore.",
+        "C'est donc une métaphore.",
+        "Avec « comme », on aurait eu : « fort comme un lion » (comparaison)."
+      ]
+    },
+    "astuce": "Franky : « Le test SUPER simple : y a-t-il un outil (comme, tel, semblable à) ? OUI → comparaison (« fort comme un lion »). NON → métaphore (« c'est un lion »). C'est l'outil qui fait toute la différence ! »",
+    "erreurs": [
+      "Confondre comparaison et métaphore.",
+      "Oublier de chercher l'outil de comparaison.",
+      "Confondre comparant et comparé.",
+      "Prendre une métaphore pour une comparaison.",
+      "Oublier d'analyser l'effet produit.",
+      "Confondre métaphore et personnification.",
+      "Nommer une figure sans la justifier.",
+      "Croire que toute image est une métaphore."
+    ]
+  },
+  "monkey-d-luffy-conditionnel-passe": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Monkey D. Luffy", "manga": "One Piece",
+    "notion": "Le conditionnel passé",
+    "explication": "Le conditionnel passé est un temps composé du mode conditionnel. Il sert à exprimer une action qui aurait pu ou aurait dû se réaliser dans le passé, mais qui ne s'est finalement pas produite. Il exprime souvent le regret, le reproche, ou une hypothèse non réalisée. Par exemple : « J'aurais aimé venir » (mais je ne suis pas venu), « Tu aurais dû travailler » (mais tu ne l'as pas fait), « Il serait venu si on l'avait invité » (mais il n'est pas venu). Sa formation est régulière : on prend l'auxiliaire être ou avoir conjugué au conditionnel présent (j'aurais, tu aurais, il serait…), suivi du participe passé du verbe. On obtient : « j'aurais aimé », « il serait parti ». Comme pour tous les temps composés, l'accord du participe passé suit les règles habituelles : avec l'auxiliaire être, le participe s'accorde avec le sujet (« elle serait partie ») ; avec avoir, il s'accorde avec le COD placé avant. Il ne faut pas confondre le conditionnel passé (« j'aurais aimé ») avec le conditionnel présent (« j'aimerais »), qui exprime lui une action future ou hypothétique non encore réalisée. En 4ème, on apprend à former et à employer le conditionnel passé. Bien le maîtriser permet d'exprimer le regret, le reproche et les hypothèses sur le passé.",
+    "definitions": [
+      {"terme": "Conditionnel passé", "sens": "temps composé du mode conditionnel"},
+      {"terme": "Action non réalisée", "sens": "elle aurait pu se produire, mais non"},
+      {"terme": "Regret / reproche", "sens": "valeurs fréquentes du conditionnel passé"},
+      {"terme": "Auxiliaire au conditionnel présent", "sens": "j'aurais, tu serais…"},
+      {"terme": "Participe passé", "sens": "il suit l'auxiliaire"},
+      {"terme": "Accord", "sens": "avec le sujet (être) ou le COD avant (avoir)"},
+      {"terme": "Hypothèse passée", "sens": "une condition non réalisée"},
+      {"terme": "Distinction", "sens": "conditionnel passé ≠ conditionnel présent"}
+    ],
+    "methode": [
+      "Vérifie qu'il s'agit d'une action passée non réalisée.",
+      "Repère la valeur : regret, reproche ou hypothèse.",
+      "Prends l'auxiliaire être ou avoir au conditionnel présent.",
+      "Ajoute le participe passé du verbe.",
+      "Accorde le participe avec le sujet si l'auxiliaire est être.",
+      "Avec avoir, accorde avec le COD placé avant.",
+      "Ne confonds pas avec le conditionnel présent.",
+      "Vérifie le sens de la phrase."
+    ],
+    "exemple": {
+      "enonce": "Conjugue « aimer » au conditionnel passé, 1re personne du singulier.",
+      "etapes": [
+        "On prend l'auxiliaire « avoir » au conditionnel présent : aurais.",
+        "On ajoute le participe passé de « aimer » : aimé.",
+        "On assemble : j'aurais aimé.",
+        "Il n'y a pas de COD placé avant : pas d'accord du participe.",
+        "On obtient : « J'aurais aimé venir ».",
+        "Au conditionnel présent, on aurait dit « j'aimerais »."
+      ]
+    },
+    "astuce": "Luffy : « Conditionnel passé = auxiliaire au conditionnel PRÉSENT (aurais, serais) + participe passé. Il sert surtout au regret : « j'aurais aimé », « tu aurais dû ». Ne le confonds pas avec « j'aimerais » (présent) ! »",
+    "erreurs": [
+      "Confondre conditionnel passé et conditionnel présent.",
+      "Oublier l'accord du participe passé.",
+      "Se tromper d'auxiliaire (être ou avoir).",
+      "Mettre l'auxiliaire au futur au lieu du conditionnel.",
+      "Confondre avec le plus-que-parfait.",
+      "Oublier le participe passé.",
+      "Mal accorder avec le sujet (auxiliaire être).",
+      "Employer « j'aimerais » à la place de « j'aurais aimé »."
+    ]
+  },
+  "nami-discours-rapporte-consolidation": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Nami", "manga": "One Piece",
+    "notion": "Le discours rapporté (consolidation)",
+    "explication": "Rapporter les paroles de quelqu'un peut se faire de deux grandes façons. Le discours direct cite les paroles exactement, entre guillemets, après un verbe introducteur : « Il dit : Je viendrai demain. ». Le discours indirect rapporte ces paroles en les intégrant dans la phrase, sous forme d'une subordonnée introduite par « que », sans guillemets. Le passage du discours direct au discours indirect entraîne trois types de changements qu'il faut tous penser. D'abord, les pronoms personnels s'adaptent au nouveau locuteur : « je » peut devenir « il ». Ensuite, les temps des verbes changent selon la concordance des temps : si le verbe introducteur est au passé, les temps reculent (le présent devient imparfait, le futur devient conditionnel). Enfin, les marqueurs de temps et de lieu s'adaptent : « demain » devient « le lendemain », « ici » devient « là », « maintenant » devient « alors ». Par exemple : « Il dit : Je viendrai demain. » devient « Il a dit qu'il viendrait le lendemain. ». Oublier l'un de ces trois changements est l'erreur la plus fréquente. En 4ème, on consolide cette transformation déjà abordée en 5ème, en insistant sur les marqueurs spatio-temporels. Bien la maîtriser permet de rapporter des paroles avec précision dans un récit.",
+    "definitions": [
+      {"terme": "Discours direct", "sens": "les paroles citées entre guillemets"},
+      {"terme": "Discours indirect", "sens": "les paroles intégrées à la phrase"},
+      {"terme": "Verbe introducteur", "sens": "dire, demander, affirmer…"},
+      {"terme": "Changement de pronoms", "sens": "« je » devient « il »"},
+      {"terme": "Concordance des temps", "sens": "les temps reculent (présent → imparfait)"},
+      {"terme": "Marqueurs de temps", "sens": "demain → le lendemain"},
+      {"terme": "Marqueurs de lieu", "sens": "ici → là"},
+      {"terme": "Subordonnée", "sens": "introduite par « que »"}
+    ],
+    "methode": [
+      "Repère le verbe introducteur et les paroles citées.",
+      "Pour passer à l'indirect, supprime les guillemets.",
+      "Ajoute le subordonnant « que ».",
+      "Adapte les pronoms au nouveau locuteur (je → il).",
+      "Applique la concordance des temps si besoin.",
+      "Adapte les marqueurs de temps (demain → le lendemain).",
+      "Adapte les marqueurs de lieu (ici → là).",
+      "Relis pour vérifier les trois types de changements."
+    ],
+    "exemple": {
+      "enonce": "Mets à l'indirect : « Il dit : Je viendrai demain. » (au passé)",
+      "etapes": [
+        "On supprime les guillemets et on ajoute « que ».",
+        "On adapte le pronom : « je » devient « il ».",
+        "Le verbe introducteur passe au passé : « Il a dit ».",
+        "Concordance : le futur « viendrai » devient conditionnel « viendrait ».",
+        "Marqueur de temps : « demain » devient « le lendemain ».",
+        "On obtient : « Il a dit qu'il viendrait le lendemain »."
+      ]
+    },
+    "astuce": "Nami : « Au discours indirect, pense aux TROIS changements : les pronoms (je → il), les temps (concordance : viendrai → viendrait), et les repères (demain → le lendemain, ici → là). Oublier l'un des trois, c'est l'erreur classique ! »",
+    "erreurs": [
+      "Oublier d'adapter les marqueurs de temps et de lieu.",
+      "Ne pas adapter les pronoms au nouveau locuteur.",
+      "Oublier la concordance des temps.",
+      "Garder les guillemets au discours indirect.",
+      "Oublier le subordonnant « que ».",
+      "Confondre discours direct et indirect.",
+      "Adapter les temps quand le verbe introducteur est au présent.",
+      "Mélanger les paroles et le récit."
+    ]
+  },
+  "nico-robin-voix-active-et-voix-passive": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Nico Robin", "manga": "One Piece",
+    "notion": "La voix active et la voix passive",
+    "explication": "Une phrase peut être tournée à la voix active ou à la voix passive, selon que l'on met en avant celui qui fait l'action ou celui qui la subit. À la voix active, le sujet fait l'action : « Le chat mange la souris ». Le sujet « le chat » est l'auteur de l'action. À la voix passive, le sujet subit l'action : « La souris est mangée par le chat ». Le sujet « la souris » subit l'action, et celui qui la fait devient le complément d'agent, introduit par « par ». Pour transformer une phrase active en phrase passive, on suit plusieurs étapes. Le complément d'objet direct (COD) de la phrase active devient le sujet de la phrase passive. Le verbe se met à la forme « être + participe passé », en gardant le temps de la phrase active (mange → est mangée). Enfin, le sujet de la phrase active devient le complément d'agent, introduit par « par ». À la voix passive, le participe passé, employé avec être, s'accorde toujours avec le sujet. Le complément d'agent peut parfois être sous-entendu, surtout quand on ne sait pas qui fait l'action. En 4ème, on apprend à reconnaître et à transformer ces deux voix. Bien les maîtriser permet de varier ses phrases et de choisir ce que l'on veut mettre en valeur.",
+    "definitions": [
+      {"terme": "Voix active", "sens": "le sujet fait l'action"},
+      {"terme": "Voix passive", "sens": "le sujet subit l'action"},
+      {"terme": "Complément d'agent", "sens": "celui qui fait l'action, introduit par « par »"},
+      {"terme": "être + participe passé", "sens": "la forme du verbe au passif"},
+      {"terme": "COD → sujet", "sens": "le COD actif devient sujet du passif"},
+      {"terme": "Conservation du temps", "sens": "le passif garde le temps de l'actif"},
+      {"terme": "Accord du participe", "sens": "avec le sujet (auxiliaire être)"},
+      {"terme": "par", "sens": "introduit le complément d'agent"}
+    ],
+    "methode": [
+      "Repère le sujet, le verbe et le COD de la phrase active.",
+      "Le COD de l'active devient le sujet du passif.",
+      "Mets le verbe à la forme être + participe passé.",
+      "Garde le même temps que la phrase active.",
+      "Accorde le participe passé avec le nouveau sujet.",
+      "Transforme le sujet actif en complément d'agent (par…).",
+      "Vérifie que le sens reste identique.",
+      "Le complément d'agent peut parfois être omis."
+    ],
+    "exemple": {
+      "enonce": "Mets à la voix passive : « Le chat mange la souris ».",
+      "etapes": [
+        "Le COD « la souris » devient sujet de la phrase passive.",
+        "Le verbe « mange » devient « est mangée » (être + participe passé).",
+        "On garde le présent et on accorde : mangée (féminin singulier).",
+        "Le sujet « le chat » devient complément d'agent.",
+        "On l'introduit par « par » : par le chat.",
+        "On obtient : « La souris est mangée par le chat »."
+      ]
+    },
+    "astuce": "Nico Robin : « Pour passer au passif : le COD devient sujet, le verbe devient « être + participe passé » (au même temps), et le sujet d'origine devient complément d'agent (par…). Et le participe s'accorde avec le sujet ! »",
+    "erreurs": [
+      "Oublier d'accorder le participe avec le sujet.",
+      "Changer le temps du verbe lors de la transformation.",
+      "Oublier le complément d'agent (par…) quand il est utile.",
+      "Confondre voix active et voix passive.",
+      "Ne pas faire du COD le sujet du passif.",
+      "Oublier le verbe être dans la forme passive.",
+      "Mal identifier le COD de la phrase active.",
+      "Inverser le sens de la phrase."
+    ]
+  },
+  "portgas-d-ace-connecteurs-logiques": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Portgas D. Ace", "manga": "One Piece",
+    "notion": "Les connecteurs logiques",
+    "explication": "Les connecteurs logiques sont des mots ou des expressions qui relient les idées d'un texte et marquent le rapport logique entre elles. Ils assurent la cohérence et la progression d'un raisonnement, et sont particulièrement importants dans les textes argumentatifs. Chaque connecteur exprime un rapport précis. Pour l'addition, c'est-à-dire pour ajouter une idée, on utilise « de plus », « en outre », « également », « d'abord », « ensuite », « enfin ». Pour l'opposition, on utilise « mais », « cependant », « pourtant », « en revanche », « néanmoins ». Pour la cause, c'est-à-dire pour donner une raison, on utilise « car », « en effet », « parce que ». Pour la conséquence, c'est-à-dire pour indiquer un résultat, on utilise « donc », « par conséquent », « c'est pourquoi », « ainsi ». Pour la conclusion, on utilise « enfin », « en conclusion », « en somme », « pour finir ». Bien choisir son connecteur revient à identifier le rapport que l'on veut exprimer entre deux idées. En 4ème, on apprend à reconnaître ces connecteurs dans un texte et à les employer pour structurer ses propres écrits. Bien les maîtriser rend un raisonnement clair, logique et facile à suivre, ce qui est essentiel pour argumenter et pour rédiger.",
+    "definitions": [
+      {"terme": "Connecteur logique", "sens": "il relie les idées et marque un rapport"},
+      {"terme": "Addition", "sens": "de plus, en outre, ensuite"},
+      {"terme": "Opposition", "sens": "mais, cependant, pourtant, en revanche"},
+      {"terme": "Cause", "sens": "car, en effet, parce que"},
+      {"terme": "Conséquence", "sens": "donc, par conséquent, ainsi"},
+      {"terme": "Conclusion", "sens": "enfin, en somme, en conclusion"},
+      {"terme": "Rapport logique", "sens": "le lien entre deux idées"},
+      {"terme": "Cohérence", "sens": "ce que les connecteurs assurent"}
+    ],
+    "methode": [
+      "Identifie le rapport entre les deux idées à relier.",
+      "Pour ajouter une idée → addition (de plus, ensuite).",
+      "Pour opposer → opposition (mais, cependant, pourtant).",
+      "Pour donner une raison → cause (car, en effet).",
+      "Pour indiquer un résultat → conséquence (donc, ainsi).",
+      "Pour terminer → conclusion (enfin, en somme).",
+      "Choisis le connecteur adapté au rapport voulu.",
+      "Vérifie que le texte progresse logiquement."
+    ],
+    "exemple": {
+      "enonce": "Quel connecteur pour marquer une opposition entre deux idées ?",
+      "etapes": [
+        "On identifie le rapport voulu : une opposition.",
+        "On cherche les connecteurs qui marquent l'opposition.",
+        "Parmi eux : « mais », « cependant », « pourtant ».",
+        "Par exemple : « Il est doué, cependant il manque de travail ».",
+        "Le connecteur « cependant » relie les deux idées opposées.",
+        "Pour une addition, on aurait choisi « de plus »."
+      ]
+    },
+    "astuce": "Ace : « Les connecteurs balisent ton raisonnement : addition (de plus), opposition (cependant), cause (car), conséquence (donc), conclusion (enfin). Demande-toi quel lien tu veux exprimer, puis choisis le bon mot ! »",
+    "erreurs": [
+      "Employer un connecteur inadapté au rapport voulu.",
+      "Confondre cause et conséquence.",
+      "Confondre addition et opposition.",
+      "Surcharger le texte de connecteurs.",
+      "Oublier les connecteurs dans un texte argumentatif.",
+      "Confondre « car » (cause) et « donc » (conséquence).",
+      "Mal placer le connecteur dans la phrase.",
+      "Répéter toujours le même connecteur."
+    ]
+  },
+  "roronoa-zoro-plus-que-parfait": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Roronoa Zoro", "manga": "One Piece",
+    "notion": "Le plus-que-parfait",
+    "explication": "Le plus-que-parfait est un temps composé du passé. Sa valeur principale est d'exprimer l'antériorité : il indique une action qui s'est déroulée avant une autre action passée. Par exemple : « Quand il arriva, le bateau était déjà parti ». L'action « était parti » (plus-que-parfait) a eu lieu avant l'action « arriva » (passé simple). Le plus-que-parfait permet donc de situer un événement encore plus loin dans le passé. Sa formation est régulière, comme celle de tous les temps composés. On prend l'auxiliaire être ou avoir conjugué à l'imparfait (j'avais, tu avais, il était…), suivi du participe passé du verbe. On obtient : « il avait fini », « elle était partie ». L'accord du participe passé suit les règles habituelles : avec l'auxiliaire être, le participe s'accorde avec le sujet (« elles étaient parties ») ; avec l'auxiliaire avoir, il s'accorde avec le complément d'objet direct placé avant le verbe. Il ne faut pas confondre le plus-que-parfait (auxiliaire à l'imparfait : « il avait mangé ») avec le passé composé (auxiliaire au présent : « il a mangé »). En 4ème, on apprend à former le plus-que-parfait et à comprendre sa valeur d'antériorité. Bien le maîtriser permet d'organiser un récit en situant clairement les actions les unes par rapport aux autres.",
+    "definitions": [
+      {"terme": "Plus-que-parfait", "sens": "un temps composé du passé"},
+      {"terme": "Antériorité", "sens": "une action avant une autre action passée"},
+      {"terme": "Auxiliaire à l'imparfait", "sens": "j'avais, tu étais…"},
+      {"terme": "Participe passé", "sens": "il suit l'auxiliaire"},
+      {"terme": "Temps composé", "sens": "auxiliaire + participe passé"},
+      {"terme": "Accord", "sens": "avec le sujet (être) ou le COD avant (avoir)"},
+      {"terme": "Distinction", "sens": "plus-que-parfait ≠ passé composé"},
+      {"terme": "Récit", "sens": "le plus-que-parfait situe l'action la plus ancienne"}
+    ],
+    "methode": [
+      "Repère une action antérieure à une autre action passée.",
+      "Prends l'auxiliaire être ou avoir à l'imparfait.",
+      "Ajoute le participe passé du verbe.",
+      "Accorde le participe avec le sujet si l'auxiliaire est être.",
+      "Avec avoir, accorde avec le COD placé avant.",
+      "Vérifie la valeur d'antériorité dans le récit.",
+      "Ne confonds pas avec le passé composé.",
+      "Contrôle la cohérence des temps."
+    ],
+    "exemple": {
+      "enonce": "Conjugue « finir » au plus-que-parfait, 3e personne du singulier.",
+      "etapes": [
+        "On prend l'auxiliaire « avoir » à l'imparfait : avait.",
+        "On ajoute le participe passé de « finir » : fini.",
+        "On assemble : il avait fini.",
+        "Il n'y a pas de COD placé avant : pas d'accord.",
+        "On obtient : « Il avait fini son travail ».",
+        "Au passé composé, on aurait dit « il a fini »."
+      ]
+    },
+    "astuce": "Zoro : « Plus-que-parfait = auxiliaire à l'IMPARFAIT (avait, était) + participe passé. Il exprime une action passée AVANT une autre. Ne le confonds pas avec le passé composé (« il a mangé » vs « il avait mangé ») ! »",
+    "erreurs": [
+      "Confondre plus-que-parfait et passé composé.",
+      "Mettre l'auxiliaire au présent au lieu de l'imparfait.",
+      "Oublier l'accord du participe passé.",
+      "Se tromper d'auxiliaire (être ou avoir).",
+      "Oublier le participe passé.",
+      "Confondre avec le conditionnel passé.",
+      "Mal accorder avec le sujet (auxiliaire être).",
+      "Ne pas repérer la valeur d'antériorité."
+    ]
+  },
+  "sanji-vinsmoke-subordonnees-relatives-et-conjonctives": {
+    "matiere": "francais", "niveau": "4eme", "hero": "Sanji Vinsmoke", "manga": "One Piece",
+    "notion": "Subordonnées relatives et conjonctives",
+    "explication": "Dans une phrase complexe, on distingue plusieurs sortes de propositions subordonnées. Deux d'entre elles sont essentielles en 4ème : la subordonnée relative et la subordonnée conjonctive. On les reconnaît au mot qui les introduit, le subordonnant. La proposition subordonnée relative est introduite par un pronom relatif : qui, que, dont, où, lequel. Elle complète un nom ou un pronom, appelé l'antécédent, qui se trouve juste avant le pronom relatif. Par exemple, dans « le bateau qui navigue », la relative « qui navigue » complète le nom « bateau ». La subordonnée relative a donc une fonction proche de celle d'un adjectif : elle précise un nom. La proposition subordonnée conjonctive, elle, est introduite par une conjonction de subordination : que, quand, parce que, si, comme, lorsque. Elle complète le plus souvent un verbe : on parle alors de subordonnée complétive, qui peut être COD du verbe (« Je sais que tu mens »). La différence essentielle est donc le subordonnant : un pronom relatif pour la relative, une conjonction pour la conjonctive. Un piège fréquent est le mot « que », qui peut être pronom relatif (« le livre que je lis ») ou conjonction (« je pense que »). En 4ème, on apprend à distinguer ces deux subordonnées. Bien les maîtriser aide à analyser les phrases complexes et à mieux écrire.",
+    "definitions": [
+      {"terme": "Subordonnée relative", "sens": "introduite par un pronom relatif"},
+      {"terme": "Subordonnée conjonctive", "sens": "introduite par une conjonction de subordination"},
+      {"terme": "Pronom relatif", "sens": "qui, que, dont, où, lequel"},
+      {"terme": "Conjonction de subordination", "sens": "que, quand, parce que, si"},
+      {"terme": "Antécédent", "sens": "le nom complété par la relative"},
+      {"terme": "Complétive", "sens": "une conjonctive souvent COD du verbe"},
+      {"terme": "La relative complète un nom", "sens": "comme un adjectif"},
+      {"terme": "Le piège du « que »", "sens": "pronom relatif ou conjonction"}
+    ],
+    "methode": [
+      "Repère la proposition subordonnée et son subordonnant.",
+      "Si c'est un pronom relatif (qui, que, dont, où) → relative.",
+      "Si c'est une conjonction (que, quand, parce que) → conjonctive.",
+      "Pour la relative, cherche l'antécédent (le nom complété).",
+      "Pour la conjonctive, observe qu'elle complète souvent un verbe.",
+      "Méfie-toi du « que » : relatif s'il a un antécédent.",
+      "« que » est conjonction s'il complète un verbe (je pense que).",
+      "Vérifie la fonction de la subordonnée."
+    ],
+    "exemple": {
+      "enonce": "« Je sais que tu mens » : relative ou conjonctive ?",
+      "etapes": [
+        "On repère le subordonnant : « que ».",
+        "On vérifie s'il a un antécédent (un nom juste avant).",
+        "Ici, « que » suit le verbe « sais », sans antécédent nom.",
+        "« que » est donc une conjonction de subordination.",
+        "La subordonnée « que tu mens » complète le verbe « sais ».",
+        "C'est donc une subordonnée conjonctive (complétive)."
+      ]
+    },
+    "astuce": "Sanji : « Relative = introduite par un PRONOM relatif (qui, que, dont, où) et complète un NOM. Conjonctive = introduite par une CONJONCTION (que, quand…) et complète souvent un verbe. Le piège : « que » peut être les deux, regarde s'il a un antécédent ! »",
+    "erreurs": [
+      "Confondre le « que » relatif et le « que » conjonctif.",
+      "Confondre subordonnée relative et conjonctive.",
+      "Oublier l'antécédent de la relative.",
+      "Confondre pronom relatif et conjonction.",
+      "Mal repérer le subordonnant.",
+      "Croire que toute subordonnée complète un nom.",
+      "Confondre la fonction des deux subordonnées.",
+      "Oublier de vérifier la présence d'un antécédent."
+    ]
+  }
+}
