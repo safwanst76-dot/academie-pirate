@@ -1,0 +1,594 @@
+{
+  "kento-nanami-les-inegalites-face-aux-ressources": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Kento Nanami",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les inégalités face aux ressources",
+    "explication": "Une ressource est un élément naturel que les hommes utilisent pour satisfaire leurs besoins : l'eau, la nourriture, l'énergie ou encore les minerais en sont des exemples. Mais tous les habitants de la planète ne sont pas égaux face à ces ressources, et c'est l'une des grandes questions de la géographie. Cette inégalité a deux causes principales. D'abord, les ressources sont inégalement réparties sur la Terre : certains pays disposent d'immenses réserves, par exemple de pétrole ou d'eau, tandis que d'autres en sont presque dépourvus. Ensuite, et surtout, l'accès aux ressources est inégal : il dépend de la richesse des pays et des populations. Ainsi, dans les pays développés, la plupart des habitants ont facilement accès à l'eau potable, à une nourriture abondante et à l'énergie. À l'inverse, dans de nombreux pays en développement, une partie de la population manque d'eau potable, souffre de la faim ou n'a pas accès à l'électricité. À cela s'ajoute une demande mondiale en hausse, car la population augmente et consomme davantage. Le partage et la gestion durable des ressources sont donc des enjeux majeurs. En 5ème, on étudie ces inégalités. Bien les comprendre, c'est prendre conscience d'un des grands défis du monde actuel.",
+    "definitions": [
+      {
+        "terme": "Ressource",
+        "sens": "un élément naturel utilisé pour les besoins humains"
+      },
+      {
+        "terme": "Inégalité",
+        "sens": "une différence entre les hommes ou les pays"
+      },
+      {
+        "terme": "Répartition",
+        "sens": "la façon dont les ressources sont distribuées"
+      },
+      {
+        "terme": "Accès",
+        "sens": "la possibilité d'utiliser une ressource"
+      },
+      {
+        "terme": "Pays développé",
+        "sens": "un pays riche, où l'accès est plus facile"
+      },
+      {
+        "terme": "Pays en développement",
+        "sens": "un pays où l'accès est souvent limité"
+      },
+      {
+        "terme": "Demande",
+        "sens": "le besoin croissant en ressources"
+      },
+      {
+        "terme": "Gestion durable",
+        "sens": "utiliser les ressources sans les épuiser"
+      }
+    ],
+    "methode": [
+      "Définis ce qu'est une ressource.",
+      "Comprends que les ressources sont inégalement réparties.",
+      "Distingue répartition et accès aux ressources.",
+      "Note que l'accès dépend de la richesse.",
+      "Compare pays développés et pays en développement.",
+      "Comprends la hausse de la demande mondiale.",
+      "Identifie les enjeux : partage et gestion durable.",
+      "Mesure l'importance de ce défi mondial."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi parle-t-on d'inégalités face aux ressources ?",
+      "etapes": [
+        "Les ressources sont inégalement réparties sur la Terre.",
+        "Certains pays en ont beaucoup, d'autres très peu.",
+        "Surtout, l'accès aux ressources dépend de la richesse.",
+        "Dans les pays développés, l'accès est plus facile.",
+        "Dans des pays en développement, l'eau ou la nourriture manquent.",
+        "Le partage des ressources est donc un enjeu majeur."
+      ]
+    },
+    "astuce": "Kento Nanami : « Les ressources (eau, nourriture, énergie) sont inégalement RÉPARTIES et inégalement ACCESSIBLES. Certains en manquent, d'autres gaspillent. Le défi : un partage plus juste et durable. »",
+    "erreurs": [
+      "Confondre répartition et accès aux ressources.",
+      "Croire que tous les pays ont le même accès.",
+      "Confondre pays développé et pays en développement.",
+      "Oublier que la demande mondiale augmente.",
+      "Oublier la notion de gestion durable.",
+      "Confondre ressource et produit fabriqué.",
+      "Croire que les inégalités viennent seulement de la nature.",
+      "Ignorer l'enjeu du partage des ressources."
+    ]
+  },
+  "maki-zenin-les-risques-naturels": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Maki Zenin",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les risques naturels",
+    "explication": "Un risque naturel correspond à la possibilité qu'un phénomène naturel dangereux touche une population et lui cause des dommages. Pour bien comprendre, il faut distinguer deux éléments. D'un côté, il y a l'aléa : c'est le phénomène naturel lui-même, comme un séisme (tremblement de terre), une éruption volcanique, un cyclone ou une inondation. De l'autre, il y a les enjeux : ce sont les populations, les habitations et les activités qui peuvent être touchées. Le risque naît de la rencontre entre un aléa et des enjeux : un séisme dans un désert vide ne présente pas de risque, mais le même séisme dans une grande ville en présente un très important. On parle aussi de vulnérabilité pour désigner la fragilité d'une population face à un aléa. Quand un risque se réalise et provoque de gros dégâts, on parle de catastrophe naturelle. Face à ces risques, les sociétés cherchent à se protéger : c'est la prévention. Elle passe par la surveillance des phénomènes, l'information de la population, des constructions adaptées (par exemple antisismiques) et l'organisation des secours. En 5ème, on étudie ces risques. Bien les comprendre, c'est savoir pourquoi certaines régions sont plus exposées et comment réduire les dangers.",
+    "definitions": [
+      {
+        "terme": "Risque naturel",
+        "sens": "le danger qu'un phénomène naturel touche des hommes"
+      },
+      {
+        "terme": "Aléa",
+        "sens": "le phénomène naturel dangereux lui-même"
+      },
+      {
+        "terme": "Enjeux",
+        "sens": "les populations et biens menacés"
+      },
+      {
+        "terme": "Séisme",
+        "sens": "un tremblement de terre"
+      },
+      {
+        "terme": "Cyclone",
+        "sens": "une violente tempête tropicale"
+      },
+      {
+        "terme": "Vulnérabilité",
+        "sens": "la fragilité d'une population face à l'aléa"
+      },
+      {
+        "terme": "Catastrophe naturelle",
+        "sens": "un risque réalisé causant de gros dégâts"
+      },
+      {
+        "terme": "Prévention",
+        "sens": "les actions pour réduire le risque"
+      }
+    ],
+    "methode": [
+      "Définis le risque : un aléa qui menace des enjeux.",
+      "Distingue bien l'aléa et les enjeux.",
+      "Cite des aléas : séisme, volcan, cyclone, inondation.",
+      "Comprends que le risque dépend des deux.",
+      "Note la vulnérabilité des populations.",
+      "Distingue le risque et la catastrophe.",
+      "Identifie les actions de prévention.",
+      "Comprends pourquoi certaines régions sont exposées."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi un même séisme peut-il être un risque, ou non ?",
+      "etapes": [
+        "Le risque naît de la rencontre d'un aléa et d'enjeux.",
+        "L'aléa, ici, est le séisme (le tremblement de terre).",
+        "Les enjeux sont les populations et les habitations.",
+        "Un séisme dans un désert vide ne présente pas de risque.",
+        "Le même séisme dans une grande ville est très dangereux.",
+        "La prévention permet de réduire ce risque."
+      ]
+    },
+    "astuce": "Maki Zenin : « Un risque naturel = un ALÉA (séisme, cyclone…) + des ENJEUX (populations exposées). Sans population menacée, pas de risque. On le réduit par la PRÉVENTION ! »",
+    "erreurs": [
+      "Confondre l'aléa et le risque.",
+      "Oublier les enjeux dans la définition du risque.",
+      "Confondre risque et catastrophe.",
+      "Oublier la notion de vulnérabilité.",
+      "Ignorer les actions de prévention.",
+      "Confondre risque naturel et risque technologique.",
+      "Croire qu'un aléa est toujours un risque.",
+      "Oublier que la prévention réduit le danger."
+    ]
+  },
+  "megumi-fushiguro-les-ressources-eau-et-alimentation": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Megumi Fushiguro",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les ressources : eau et alimentation",
+    "explication": "L'eau et l'alimentation sont deux ressources vitales, c'est-à-dire indispensables à la vie des hommes. Pourtant, l'accès à ces ressources est très inégal dans le monde. L'eau douce, utilisable par les hommes, ne représente qu'une petite partie de l'eau de la planète, et elle est inégalement répartie. Dans certaines régions, l'eau potable est abondante ; dans d'autres, elle manque, et de nombreuses personnes n'y ont pas un accès suffisant ou doivent parcourir de longues distances pour s'en procurer. L'alimentation pose le même type de problème : il faut aujourd'hui nourrir environ huit milliards d'humains, ce qui suppose une agriculture capable de produire en grande quantité. Or, là encore, les situations sont très contrastées. Dans certains pays, une partie de la population souffre de la faim, voire de famine, tandis que dans d'autres, on produit en abondance et on gaspille une grande quantité de nourriture. La pression sur ces ressources augmente avec la croissance de la population. Assurer à tous l'accès à l'eau et à une alimentation suffisante, tout en préservant l'environnement, est un grand objectif du développement durable. En 5ème, on étudie ces ressources. Bien les comprendre, c'est saisir des enjeux essentiels pour l'humanité.",
+    "definitions": [
+      {
+        "terme": "Ressource vitale",
+        "sens": "indispensable à la vie (eau, nourriture)"
+      },
+      {
+        "terme": "Eau potable",
+        "sens": "l'eau que l'on peut boire sans danger"
+      },
+      {
+        "terme": "Accès à l'eau",
+        "sens": "la possibilité d'obtenir de l'eau potable"
+      },
+      {
+        "terme": "Alimentation",
+        "sens": "le fait de nourrir la population"
+      },
+      {
+        "terme": "Agriculture",
+        "sens": "la production de la nourriture"
+      },
+      {
+        "terme": "Famine",
+        "sens": "un manque grave et durable de nourriture"
+      },
+      {
+        "terme": "Gaspillage",
+        "sens": "le gâchis de nourriture ou d'eau"
+      },
+      {
+        "terme": "Sécurité alimentaire",
+        "sens": "assurer à tous une nourriture suffisante"
+      }
+    ],
+    "methode": [
+      "Comprends que l'eau et l'alimentation sont vitales.",
+      "Note la faible part d'eau douce utilisable.",
+      "Comprends l'inégal accès à l'eau potable.",
+      "Relie l'alimentation à l'agriculture.",
+      "Mesure le défi : nourrir 8 milliards d'humains.",
+      "Oppose les situations : famine et gaspillage.",
+      "Comprends la pression croissante sur ces ressources.",
+      "Relie ces enjeux au développement durable."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi l'accès à l'eau et à la nourriture est-il inégal ?",
+      "etapes": [
+        "L'eau et l'alimentation sont des ressources vitales.",
+        "L'eau douce utilisable est rare et inégalement répartie.",
+        "Certaines régions manquent d'eau potable.",
+        "Pour l'alimentation, il faut nourrir 8 milliards d'humains.",
+        "Certains souffrent de la faim, d'autres gaspillent.",
+        "Assurer l'accès à tous est un enjeu du développement durable."
+      ]
+    },
+    "astuce": "Megumi Fushiguro : « L'eau et l'alimentation sont VITALES mais inégalement réparties : certains manquent d'eau potable ou souffrent de la faim, pendant que d'autres gaspillent. »",
+    "erreurs": [
+      "Croire que l'eau douce est illimitée.",
+      "Oublier l'inégal accès à l'eau et à la nourriture.",
+      "Confondre famine et simple manque passager.",
+      "Oublier le rôle de l'agriculture.",
+      "Ignorer le gaspillage alimentaire.",
+      "Oublier la pression liée à la croissance de la population.",
+      "Confondre eau douce et eau de mer.",
+      "Ignorer le lien avec le développement durable."
+    ]
+  },
+  "mei-mei-le-developpement-durable": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Mei Mei",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Le développement durable",
+    "explication": "Le développement durable est une façon de se développer qui cherche à répondre aux besoins des hommes d'aujourd'hui sans compromettre la capacité des générations futures à satisfaire les leurs. Autrement dit, il s'agit de progresser et d'améliorer les conditions de vie, mais sans épuiser les ressources de la planète ni détruire l'environnement, afin que nos enfants et petits-enfants puissent vivre correctement à leur tour. Le développement durable repose sur l'équilibre entre trois grands aspects, que l'on appelle ses trois piliers. Le pilier économique vise à permettre l'activité, la production et les richesses nécessaires aux sociétés. Le pilier social vise à assurer le bien-être des hommes, la justice et l'accès de tous aux besoins essentiels. Le pilier environnemental vise à protéger la nature, les ressources et les milieux. Un projet est dit durable lorsqu'il respecte à la fois ces trois piliers, et non un seul. Par exemple, développer les énergies renouvelables, économiser l'eau, recycler les déchets ou favoriser les transports propres sont des actions qui s'inscrivent dans le développement durable. En 5ème, on étudie cette notion centrale. Bien la comprendre, c'est pouvoir analyser les grands enjeux du monde actuel et imaginer des solutions pour l'avenir. Cette notion est aujourd'hui au cœur de très nombreuses décisions, qu'elles concernent les villes, les transports, l'agriculture ou l'industrie.",
+    "definitions": [
+      {
+        "terme": "Développement durable",
+        "sens": "répondre aux besoins sans nuire à l'avenir"
+      },
+      {
+        "terme": "Besoin",
+        "sens": "ce dont les hommes ont besoin pour vivre"
+      },
+      {
+        "terme": "Générations futures",
+        "sens": "ceux qui vivront après nous"
+      },
+      {
+        "terme": "Pilier économique",
+        "sens": "l'activité, la production, les richesses"
+      },
+      {
+        "terme": "Pilier social",
+        "sens": "le bien-être et la justice pour les hommes"
+      },
+      {
+        "terme": "Pilier environnemental",
+        "sens": "la protection de la nature et des ressources"
+      },
+      {
+        "terme": "Équilibre",
+        "sens": "le respect des trois piliers à la fois"
+      },
+      {
+        "terme": "Action durable",
+        "sens": "qui respecte les trois piliers"
+      }
+    ],
+    "methode": [
+      "Définis le développement durable.",
+      "Retiens l'idée : présent sans nuire au futur.",
+      "Identifie les trois piliers.",
+      "Comprends le pilier économique.",
+      "Comprends le pilier social.",
+      "Comprends le pilier environnemental.",
+      "Retiens qu'il faut respecter les trois à la fois.",
+      "Cite des exemples d'actions durables."
+    ],
+    "exemple": {
+      "enonce": "Sur quels piliers repose le développement durable ?",
+      "etapes": [
+        "Le développement durable veut répondre aux besoins du présent.",
+        "Mais sans compromettre ceux des générations futures.",
+        "Il repose sur trois piliers à équilibrer.",
+        "Le pilier économique : l'activité et les richesses.",
+        "Le pilier social : le bien-être et la justice.",
+        "Le pilier environnemental : la protection de la nature."
+      ]
+    },
+    "astuce": "Mei Mei : « Le développement durable répond aux besoins d'aujourd'hui SANS compromettre ceux de demain. Retiens ses 3 piliers : économique, social et environnemental — il faut les respecter tous les trois ! »",
+    "erreurs": [
+      "Oublier l'un des trois piliers.",
+      "Réduire le développement durable à l'environnement seul.",
+      "Oublier les générations futures.",
+      "Croire qu'un seul pilier suffit.",
+      "Confondre développement durable et croissance sans limite.",
+      "Oublier le pilier social.",
+      "Confondre pilier économique et environnemental.",
+      "Ignorer l'idée d'équilibre entre les piliers."
+    ]
+  },
+  "nobara-kugisaki-les-ressources-energetiques": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Nobara Kugisaki",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les ressources énergétiques",
+    "explication": "Les ressources énergétiques sont les sources d'énergie utilisées par les hommes pour se chauffer, se déplacer, produire de l'électricité ou faire fonctionner les industries. On les classe en deux grandes catégories. Les énergies fossiles, comme le pétrole, le charbon et le gaz naturel, fournissent aujourd'hui la plus grande partie de l'énergie consommée dans le monde. Mais elles présentent deux inconvénients majeurs : elles existent en quantité limitée et finiront par s'épuiser, et surtout elles polluent fortement et contribuent au réchauffement climatique. Les énergies renouvelables, comme l'énergie solaire, éolienne (le vent) ou hydraulique (l'eau), proviennent au contraire de sources inépuisables et sont beaucoup plus propres. La demande mondiale en énergie ne cesse d'augmenter, car la population croît et les modes de vie consomment de plus en plus. Cette situation pose un grand défi : continuer à fournir l'énergie nécessaire tout en réduisant la pollution et en préservant l'avenir. C'est pourquoi de nombreux pays cherchent à utiliser davantage les énergies renouvelables, dans une démarche appelée transition énergétique. En 5ème, on étudie ces ressources. Bien les comprendre, c'est saisir l'un des enjeux les plus importants pour l'environnement et pour le développement durable. Trouver de nouvelles sources d'énergie propres et économiser celles dont on dispose sont donc devenus des objectifs essentiels pour préserver la planète et son avenir.",
+    "definitions": [
+      {
+        "terme": "Ressource énergétique",
+        "sens": "une source d'énergie utilisée par les hommes"
+      },
+      {
+        "terme": "Énergie fossile",
+        "sens": "pétrole, charbon, gaz : limitée et polluante"
+      },
+      {
+        "terme": "Pétrole",
+        "sens": "une énergie fossile très utilisée"
+      },
+      {
+        "terme": "Énergie renouvelable",
+        "sens": "inépuisable et propre (solaire, éolien)"
+      },
+      {
+        "terme": "Épuisement",
+        "sens": "le fait qu'une ressource finisse par manquer"
+      },
+      {
+        "terme": "Pollution",
+        "sens": "les dégâts causés à l'environnement"
+      },
+      {
+        "terme": "Demande",
+        "sens": "le besoin croissant en énergie"
+      },
+      {
+        "terme": "Transition énergétique",
+        "sens": "le passage vers les énergies renouvelables"
+      }
+    ],
+    "methode": [
+      "Définis les ressources énergétiques.",
+      "Distingue énergies fossiles et renouvelables.",
+      "Cite les fossiles : pétrole, charbon, gaz.",
+      "Retiens leurs inconvénients (limitées, polluantes).",
+      "Cite les renouvelables : solaire, éolien, hydraulique.",
+      "Note leurs avantages (inépuisables, propres).",
+      "Comprends la hausse de la demande mondiale.",
+      "Découvre la transition énergétique."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre énergies fossiles et renouvelables ?",
+      "etapes": [
+        "Les énergies fossiles sont le pétrole, le charbon et le gaz.",
+        "Elles fournissent la plus grande partie de l'énergie aujourd'hui.",
+        "Mais elles sont limitées et polluent fortement.",
+        "Les énergies renouvelables viennent de sources inépuisables.",
+        "Le solaire, l'éolien et l'hydraulique sont propres.",
+        "Passer des unes aux autres, c'est la transition énergétique."
+      ]
+    },
+    "astuce": "Nobara Kugisaki : « Les énergies fossiles (pétrole, charbon, gaz) sont limitées et polluantes ; les renouvelables (solaire, éolien) sont inépuisables et propres. D'où la transition énergétique ! »",
+    "erreurs": [
+      "Confondre énergie fossile et énergie renouvelable.",
+      "Croire que les fossiles sont inépuisables.",
+      "Oublier que les fossiles polluent.",
+      "Confondre solaire, éolien et hydraulique.",
+      "Oublier la hausse de la demande en énergie.",
+      "Ignorer la transition énergétique.",
+      "Croire que toutes les énergies se valent.",
+      "Oublier le lien avec le développement durable."
+    ]
+  },
+  "satoru-gojo-les-changements-climatiques": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Satoru Gojo",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les changements climatiques",
+    "explication": "Le changement climatique désigne la transformation durable du climat de la planète, marquée aujourd'hui par un réchauffement, c'est-à-dire une hausse des températures moyennes à la surface de la Terre. Les scientifiques expliquent que ce réchauffement actuel est principalement dû aux activités humaines. En brûlant des énergies fossiles (pétrole, charbon, gaz) pour les transports, les industries et le chauffage, les hommes rejettent de grandes quantités de gaz à effet de serre dans l'atmosphère. Ces gaz retiennent la chaleur et font monter la température de la planète. Les conséquences sont nombreuses et préoccupantes : la fonte des glaciers et de la banquise, la montée du niveau des mers qui menace les littoraux, ainsi que la multiplication d'événements climatiques extrêmes comme les fortes chaleurs, les sécheresses ou les tempêtes violentes. Ce changement climatique touche le monde entier : c'est un enjeu mondial. Pour le limiter, il faut réduire les émissions de gaz à effet de serre, notamment en utilisant moins d'énergies fossiles et davantage d'énergies renouvelables. En 5ème, on étudie ce phénomène. Bien le comprendre, c'est saisir l'un des plus grands défis de notre époque et l'importance d'agir pour l'environnement.",
+    "definitions": [
+      {
+        "terme": "Changement climatique",
+        "sens": "la transformation durable du climat"
+      },
+      {
+        "terme": "Réchauffement",
+        "sens": "la hausse des températures moyennes"
+      },
+      {
+        "terme": "Gaz à effet de serre",
+        "sens": "les gaz qui retiennent la chaleur"
+      },
+      {
+        "terme": "Énergie fossile",
+        "sens": "pétrole, charbon, gaz, sources de ces gaz"
+      },
+      {
+        "terme": "Fonte des glaces",
+        "sens": "la disparition des glaciers et de la banquise"
+      },
+      {
+        "terme": "Montée des eaux",
+        "sens": "la hausse du niveau des mers"
+      },
+      {
+        "terme": "Événement extrême",
+        "sens": "sécheresse, canicule, tempête violente"
+      },
+      {
+        "terme": "Enjeu mondial",
+        "sens": "un défi qui concerne le monde entier"
+      }
+    ],
+    "methode": [
+      "Définis le changement climatique (réchauffement).",
+      "Comprends la cause principale : les activités humaines.",
+      "Relie-la aux gaz à effet de serre.",
+      "Note le rôle des énergies fossiles.",
+      "Identifie les conséquences : fonte des glaces.",
+      "Note la montée du niveau des mers.",
+      "Cite les événements extrêmes.",
+      "Comprends les solutions (réduire les émissions)."
+    ],
+    "exemple": {
+      "enonce": "Quelles sont les causes et conséquences du réchauffement climatique ?",
+      "etapes": [
+        "Le réchauffement est une hausse des températures moyennes.",
+        "Il est surtout dû aux activités humaines.",
+        "Brûler des énergies fossiles rejette des gaz à effet de serre.",
+        "Ces gaz retiennent la chaleur et réchauffent la planète.",
+        "Conséquences : fonte des glaces, montée des eaux.",
+        "On observe aussi des événements climatiques extrêmes."
+      ]
+    },
+    "astuce": "Satoru Gojo : « Le réchauffement climatique est surtout dû aux activités humaines (gaz à effet de serre, énergies fossiles). Conséquences : fonte des glaces, montée des eaux, événements extrêmes. Un enjeu mondial ! »",
+    "erreurs": [
+      "Oublier que les activités humaines en sont la cause principale.",
+      "Confondre changement climatique et météo d'un jour.",
+      "Oublier le rôle des gaz à effet de serre.",
+      "Oublier le rôle des énergies fossiles.",
+      "Ignorer la montée du niveau des mers.",
+      "Oublier les événements climatiques extrêmes.",
+      "Croire que le problème ne concerne qu'une région.",
+      "Ignorer les solutions (réduire les émissions)."
+    ]
+  },
+  "yuji-itadori-la-demographie-mondiale": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Yuji Itadori",
+    "manga": "Jujutsu Kaisen",
+    "notion": "La démographie mondiale",
+    "explication": "La démographie est l'étude de la population : son nombre, sa répartition et ses évolutions. À l'échelle du monde, la population a connu une très forte croissance au cours des deux derniers siècles : la Terre compte aujourd'hui environ huit milliards d'humains, alors qu'elle en comptait beaucoup moins il y a seulement cent ans. Cette croissance démographique s'explique par la différence entre la natalité (le nombre de naissances) et la mortalité (le nombre de décès) : quand les naissances sont plus nombreuses que les décès, la population augmente. Aujourd'hui, cette croissance se poursuit, mais elle ralentit dans de nombreuses régions. Surtout, les situations sont très différentes selon les pays. Certains pays, souvent en développement, ont une population jeune et une forte natalité : leur population continue d'augmenter rapidement. D'autres pays, souvent développés, ont une faible natalité et une population qui vieillit : on parle de vieillissement de la population, car la part des personnes âgées y augmente, notamment grâce à l'allongement de l'espérance de vie. En 5ème, on étudie ces évolutions. Bien les comprendre, c'est savoir analyser la population d'un pays et anticiper les défis liés à la croissance ou au vieillissement.",
+    "definitions": [
+      {
+        "terme": "Démographie",
+        "sens": "l'étude de la population"
+      },
+      {
+        "terme": "Croissance démographique",
+        "sens": "l'augmentation de la population"
+      },
+      {
+        "terme": "Natalité",
+        "sens": "le nombre de naissances"
+      },
+      {
+        "terme": "Mortalité",
+        "sens": "le nombre de décès"
+      },
+      {
+        "terme": "Population jeune",
+        "sens": "beaucoup de jeunes, forte natalité"
+      },
+      {
+        "terme": "Vieillissement",
+        "sens": "la hausse de la part des personnes âgées"
+      },
+      {
+        "terme": "Espérance de vie",
+        "sens": "la durée de vie moyenne, en hausse"
+      },
+      {
+        "terme": "Transition démographique",
+        "sens": "le passage d'une forte à une faible natalité"
+      }
+    ],
+    "methode": [
+      "Définis la démographie (l'étude de la population).",
+      "Retiens le nombre d'humains : environ 8 milliards.",
+      "Comprends la croissance des deux derniers siècles.",
+      "Relie-la à la natalité et à la mortalité.",
+      "Note que la croissance ralentit aujourd'hui.",
+      "Distingue pays à population jeune et pays vieillissants.",
+      "Comprends le vieillissement de la population.",
+      "Relie-le à l'allongement de l'espérance de vie."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi la population n'évolue-t-elle pas pareil partout ?",
+      "etapes": [
+        "La démographie étudie l'évolution de la population.",
+        "La croissance dépend de la natalité et de la mortalité.",
+        "Certains pays ont une population jeune et une forte natalité.",
+        "Leur population continue d'augmenter rapidement.",
+        "D'autres pays ont une faible natalité et vieillissent.",
+        "L'espérance de vie y est élevée, d'où le vieillissement."
+      ]
+    },
+    "astuce": "Yuji Itadori : « La démographie étudie la population. Le monde compte ~8 milliards d'humains. Certains pays sont jeunes (forte natalité), d'autres vieillissent (faible natalité, espérance de vie élevée). »",
+    "erreurs": [
+      "Confondre natalité et mortalité.",
+      "Se tromper sur le nombre d'humains (~8 milliards).",
+      "Croire que la population évolue partout pareil.",
+      "Confondre population jeune et population vieillissante.",
+      "Oublier le rôle de l'espérance de vie.",
+      "Croire que la croissance n'a jamais ralenti.",
+      "Confondre démographie et géographie physique.",
+      "Oublier la différence entre les pays."
+    ]
+  },
+  "yuta-okkotsu-les-risques-technologiques": {
+    "matiere": "geographie",
+    "niveau": "5eme",
+    "hero": "Yuta Okkotsu",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les risques technologiques",
+    "explication": "Un risque technologique correspond à la possibilité qu'un accident lié aux activités humaines et aux techniques cause des dommages aux populations et à l'environnement. Contrairement au risque naturel, qui vient d'un phénomène de la nature, le risque technologique est créé par l'homme lui-même, à travers ses installations et ses activités. Les sources de ces risques sont variées. On trouve les risques industriels, liés aux usines, en particulier celles qui manipulent des produits chimiques dangereux. On trouve aussi les risques liés aux transports de matières dangereuses (par route, rail ou mer), les risques nucléaires liés aux centrales, ou encore les pollutions, comme les marées noires causées par le déversement de pétrole en mer. Comme pour les risques naturels, le risque technologique naît de la rencontre entre un aléa (l'accident possible) et des enjeux (les populations et les milieux exposés). Pour réduire ces risques, les sociétés mettent en place une prévention : des normes de sécurité strictes, la surveillance des installations, l'information de la population et l'organisation des secours. En 5ème, on étudie ces risques liés à l'activité humaine. Bien les comprendre, c'est mesurer que le progrès technique peut aussi créer des dangers qu'il faut apprendre à maîtriser.",
+    "definitions": [
+      {
+        "terme": "Risque technologique",
+        "sens": "le danger lié aux activités et techniques humaines"
+      },
+      {
+        "terme": "Aléa",
+        "sens": "l'accident possible (industriel, nucléaire…)"
+      },
+      {
+        "terme": "Enjeux",
+        "sens": "les populations et milieux exposés"
+      },
+      {
+        "terme": "Risque industriel",
+        "sens": "lié aux usines et produits dangereux"
+      },
+      {
+        "terme": "Risque nucléaire",
+        "sens": "lié aux centrales nucléaires"
+      },
+      {
+        "terme": "Marée noire",
+        "sens": "une pollution par déversement de pétrole en mer"
+      },
+      {
+        "terme": "Prévention",
+        "sens": "les actions pour réduire le risque"
+      },
+      {
+        "terme": "Norme de sécurité",
+        "sens": "une règle stricte pour limiter les dangers"
+      }
+    ],
+    "methode": [
+      "Définis le risque technologique (lié aux activités humaines).",
+      "Distingue-le du risque naturel.",
+      "Cite les sources : industries, transports, nucléaire.",
+      "Donne des exemples : accident industriel, marée noire.",
+      "Comprends qu'il naît d'un aléa et d'enjeux.",
+      "Note la vulnérabilité des populations et milieux.",
+      "Identifie la prévention (normes, surveillance).",
+      "Comprends que le progrès peut créer des dangers."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce qui distingue un risque technologique d'un risque naturel ?",
+      "etapes": [
+        "Le risque naturel vient d'un phénomène de la nature.",
+        "Le risque technologique est créé par l'homme.",
+        "Il est lié aux industries, aux transports ou au nucléaire.",
+        "Un accident industriel ou une marée noire en sont des exemples.",
+        "Il naît, lui aussi, d'un aléa et d'enjeux exposés.",
+        "On le réduit par des normes de sécurité strictes."
+      ]
+    },
+    "astuce": "Yuta Okkotsu : « Un risque technologique vient des activités humaines (industries, transports, nucléaire), pas de la nature. Exemples : accident industriel, marée noire. On le réduit par des normes de sécurité ! »",
+    "erreurs": [
+      "Confondre risque technologique et risque naturel.",
+      "Croire que le risque technologique vient de la nature.",
+      "Oublier les différentes sources (industrie, nucléaire).",
+      "Oublier que le risque naît d'un aléa et d'enjeux.",
+      "Ignorer la prévention (normes de sécurité).",
+      "Confondre aléa et risque.",
+      "Oublier les exemples (accident industriel, marée noire).",
+      "Croire que le progrès technique ne crée aucun danger."
+    ]
+  }
+}
