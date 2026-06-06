@@ -1,0 +1,594 @@
+{
+  "aoi-todo-les-inegalites-face-a-la-mondialisation": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Aoi Todo",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les inégalités face à la mondialisation",
+    "explication": "La mondialisation, c'est-à-dire la mise en relation croissante de toutes les parties du monde par les échanges, ne profite pas de la même façon à tous les pays ni à tous les habitants : elle crée des gagnants et des perdants. On observe ainsi de fortes inégalités de développement à l'échelle de la planète. D'un côté, les pays développés, souvent situés au Nord (comme en Europe ou en Amérique du Nord), sont riches, bien intégrés aux échanges et concentrent une grande partie de la richesse mondiale. De l'autre, de nombreux pays en développement, souvent situés au Sud, restent plus pauvres et profitent moins de la mondialisation, même si certains progressent. Pour mesurer ces écarts, on utilise des indicateurs comme le PIB (la richesse produite) ou l'IDH (l'indice de développement humain), qui prend en compte la santé, l'éducation et le niveau de vie. Mais les inégalités n'existent pas seulement entre les pays : elles se retrouvent aussi à l'intérieur de chaque pays, entre les habitants riches et pauvres. En 4ème, on étudie ces inégalités. Bien les comprendre, c'est saisir que la mondialisation rapproche le monde tout en y maintenant, voire en y creusant, de profondes différences.",
+    "definitions": [
+      {
+        "terme": "Mondialisation",
+        "sens": "la mise en relation du monde par les échanges"
+      },
+      {
+        "terme": "Inégalités",
+        "sens": "les différences de richesse et de développement"
+      },
+      {
+        "terme": "Pays développés",
+        "sens": "des pays riches, souvent au Nord"
+      },
+      {
+        "terme": "Pays en développement",
+        "sens": "des pays plus pauvres, souvent au Sud"
+      },
+      {
+        "terme": "Nord / Sud",
+        "sens": "une façon d'opposer pays riches et pauvres"
+      },
+      {
+        "terme": "PIB",
+        "sens": "la richesse produite par un pays"
+      },
+      {
+        "terme": "IDH",
+        "sens": "l'indice de développement humain"
+      },
+      {
+        "terme": "Inégalités internes",
+        "sens": "les écarts au sein d'un même pays"
+      }
+    ],
+    "methode": [
+      "Rappelle ce qu'est la mondialisation.",
+      "Comprends qu'elle profite inégalement.",
+      "Distingue gagnants et perdants.",
+      "Oppose pays développés et pays en développement.",
+      "Comprends l'opposition Nord / Sud.",
+      "Utilise les indicateurs (PIB, IDH).",
+      "Note aussi les inégalités à l'intérieur des pays.",
+      "Mesure l'ampleur de ces écarts mondiaux."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi parle-t-on d'inégalités face à la mondialisation ?",
+      "etapes": [
+        "La mondialisation relie toutes les parties du monde.",
+        "Mais elle ne profite pas également à tous.",
+        "Les pays développés sont riches et bien intégrés.",
+        "De nombreux pays en développement en profitent moins.",
+        "L'IDH permet de mesurer ces écarts de développement.",
+        "Des inégalités existent aussi à l'intérieur des pays."
+      ]
+    },
+    "astuce": "Aoi Todo : « La mondialisation fait des gagnants et des perdants. De fortes inégalités séparent les pays riches (Nord) des pays pauvres (Sud) — et elles existent aussi À L'INTÉRIEUR des pays ! »",
+    "erreurs": [
+      "Croire que la mondialisation profite également à tous.",
+      "Confondre pays développés et pays en développement.",
+      "Oublier les inégalités à l'intérieur des pays.",
+      "Confondre PIB et IDH.",
+      "Oublier l'opposition Nord / Sud.",
+      "Croire qu'il n'y a que des gagnants.",
+      "Confondre mondialisation et simple commerce local.",
+      "Ignorer les indicateurs de développement."
+    ]
+  },
+  "choso-les-puissances-emergentes": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Choso",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les puissances émergentes",
+    "explication": "Les puissances émergentes sont des pays qui connaissent, depuis quelques décennies, un développement économique rapide et qui prennent une place de plus en plus importante dans la mondialisation. Le mot « émergent » signifie qu'ils sortent peu à peu de la pauvreté et s'affirment comme de nouvelles puissances. Les exemples les plus connus sont la Chine, l'Inde et le Brésil, mais on peut en citer d'autres. Ces pays ont en commun une croissance économique forte, une industrialisation importante (de nombreuses usines y produisent pour le monde entier), et un poids grandissant dans les échanges mondiaux et dans les décisions internationales. La Chine, par exemple, est devenue l'une des plus grandes puissances économiques du monde. Cependant, ces puissances émergentes connaissent aussi des limites. Leur développement reste souvent inégal : à côté de villes modernes et de populations qui s'enrichissent, de fortes inégalités internes persistent, et une partie de la population reste pauvre. Des problèmes environnementaux et sociaux accompagnent fréquemment cette croissance rapide. En 4ème, on étudie ces pays. Bien les comprendre, c'est saisir comment la carte des puissances du monde se transforme et comment de nouveaux acteurs s'affirment dans la mondialisation.",
+    "definitions": [
+      {
+        "terme": "Puissance émergente",
+        "sens": "un pays en fort développement récent"
+      },
+      {
+        "terme": "Émergence",
+        "sens": "le fait de sortir de la pauvreté et de s'affirmer"
+      },
+      {
+        "terme": "Croissance",
+        "sens": "l'augmentation rapide de l'économie"
+      },
+      {
+        "terme": "Industrialisation",
+        "sens": "le développement des usines et de l'industrie"
+      },
+      {
+        "terme": "Chine",
+        "sens": "une grande puissance émergente"
+      },
+      {
+        "terme": "Inde et Brésil",
+        "sens": "d'autres exemples de puissances émergentes"
+      },
+      {
+        "terme": "Poids mondial",
+        "sens": "leur importance croissante dans le monde"
+      },
+      {
+        "terme": "Inégalités internes",
+        "sens": "des écarts persistants dans le pays"
+      }
+    ],
+    "methode": [
+      "Définis une puissance émergente.",
+      "Comprends le sens du mot « émergent ».",
+      "Cite les exemples : Chine, Inde, Brésil.",
+      "Retiens leur croissance économique rapide.",
+      "Note leur industrialisation importante.",
+      "Comprends leur poids croissant dans le monde.",
+      "Identifie leurs limites (inégalités internes).",
+      "Mesure la transformation de la carte des puissances."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce qu'une puissance émergente comme la Chine ?",
+      "etapes": [
+        "Une puissance émergente se développe rapidement depuis peu.",
+        "Elle sort peu à peu de la pauvreté.",
+        "La Chine, l'Inde et le Brésil en sont des exemples.",
+        "Leur économie croît vite et s'industrialise fortement.",
+        "Leur poids dans le monde augmente.",
+        "Mais de fortes inégalités internes y persistent."
+      ]
+    },
+    "astuce": "Choso : « Les puissances émergentes (Chine, Inde, Brésil) connaissent une croissance rapide et pèsent de plus en plus dans le monde. Mais attention : de fortes inégalités internes y persistent ! »",
+    "erreurs": [
+      "Confondre puissance émergente et pays développé de longue date.",
+      "Oublier les exemples (Chine, Inde, Brésil).",
+      "Croire qu'il n'y a aucune inégalité dans ces pays.",
+      "Oublier leur croissance rapide.",
+      "Confondre émergence et pauvreté totale.",
+      "Oublier leur industrialisation.",
+      "Ignorer leur poids croissant dans le monde.",
+      "Confondre puissance émergente et puissance en déclin."
+    ]
+  },
+  "maki-zenin-les-territoires-ultramarins-francais": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Maki Zenin",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les territoires ultramarins français",
+    "explication": "Les territoires ultramarins français, souvent appelés l'outre-mer, sont les territoires de la France situés loin de la métropole, c'est-à-dire loin de la partie européenne du pays. Ils sont dispersés dans plusieurs océans du monde : la Guadeloupe et la Martinique dans les Caraïbes, la Guyane en Amérique du Sud, La Réunion et Mayotte dans l'océan Indien, et d'autres territoires dans le Pacifique. Malgré leur éloignement, ces territoires font pleinement partie de la France. Ils représentent à la fois des atouts et des contraintes. Parmi les atouts, ils offrent à la France une grande richesse naturelle (une biodiversité exceptionnelle), un immense espace maritime (la France possède grâce à eux l'un des plus vastes domaines maritimes du monde), et des positions stratégiques dans plusieurs régions. Parmi les contraintes, l'éloignement de la métropole pose des difficultés pour les transports et l'approvisionnement, et ces territoires connaissent souvent une certaine dépendance économique et des risques naturels (cyclones, volcans). En 4ème, on étudie ces territoires. Bien les comprendre, c'est saisir la dimension mondiale de la France et la diversité de ses espaces. Ces territoires donnent ainsi à la France une présence sur presque tous les océans du globe, ce qui constitue un véritable atout.",
+    "definitions": [
+      {
+        "terme": "Territoires ultramarins",
+        "sens": "les territoires français loin de la métropole"
+      },
+      {
+        "terme": "Outre-mer",
+        "sens": "un autre nom pour ces territoires"
+      },
+      {
+        "terme": "Métropole",
+        "sens": "la partie européenne de la France"
+      },
+      {
+        "terme": "Biodiversité",
+        "sens": "la richesse en espèces vivantes (un atout)"
+      },
+      {
+        "terme": "Espace maritime",
+        "sens": "le vaste domaine marin offert par l'outre-mer"
+      },
+      {
+        "terme": "Éloignement",
+        "sens": "une contrainte majeure de ces territoires"
+      },
+      {
+        "terme": "Risques naturels",
+        "sens": "cyclones, volcans, fréquents en outre-mer"
+      },
+      {
+        "terme": "Appartenance à la France",
+        "sens": "l'outre-mer fait pleinement partie de la France"
+      }
+    ],
+    "methode": [
+      "Définis les territoires ultramarins.",
+      "Comprends qu'ils sont loin de la métropole.",
+      "Repère leur dispersion dans plusieurs océans.",
+      "Cite des exemples (Guadeloupe, Guyane, La Réunion).",
+      "Retiens les atouts (biodiversité, espace maritime).",
+      "Retiens les contraintes (éloignement, risques).",
+      "Rappelle qu'ils font partie de la France.",
+      "Mesure la dimension mondiale de la France."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les atouts et les contraintes de l'outre-mer ?",
+      "etapes": [
+        "Les territoires ultramarins sont loin de la métropole.",
+        "Ils sont dispersés dans plusieurs océans.",
+        "Atout : une biodiversité exceptionnelle.",
+        "Atout : un immense espace maritime pour la France.",
+        "Contrainte : l'éloignement, qui complique les transports.",
+        "Contrainte : des risques naturels comme les cyclones."
+      ]
+    },
+    "astuce": "Maki Zenin : « Les territoires ultramarins (Guadeloupe, La Réunion, Guyane…) sont loin de la métropole mais font PLEINEMENT partie de la France. Atouts : biodiversité et immense espace maritime ! »",
+    "erreurs": [
+      "Croire que l'outre-mer ne fait pas partie de la France.",
+      "Confondre métropole et outre-mer.",
+      "Oublier les atouts (biodiversité, espace maritime).",
+      "Oublier les contraintes (éloignement, risques).",
+      "Croire que tous les territoires sont dans le même océan.",
+      "Confondre territoire ultramarin et pays étranger.",
+      "Oublier la dimension mondiale de la France.",
+      "Ignorer les risques naturels de ces territoires."
+    ]
+  },
+  "megumi-fushiguro-les-mobilites-humaines": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Megumi Fushiguro",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les mobilités humaines",
+    "explication": "Les mobilités humaines désignent l'ensemble des déplacements des hommes à la surface de la Terre. Dans le cadre de la mondialisation, ces déplacements sont de plus en plus nombreux et concernent le monde entier. On distingue deux grandes formes de mobilités. Les migrations sont des déplacements durables : une personne, appelée migrant, quitte son lieu de vie pour s'installer ailleurs, parfois dans un autre pays, pour une longue période. Les causes des migrations sont variées : raisons économiques (chercher du travail, une vie meilleure), mais aussi conflits, persécutions ou catastrophes qui poussent des populations à fuir. Le tourisme, lui, est un déplacement temporaire : on se rend dans un autre lieu pour les loisirs, la découverte ou le repos, avant de revenir chez soi. Le tourisme international connaît une très forte croissance. Ces mobilités créent d'importants flux à travers le monde et relient les territoires entre eux. Elles ont des conséquences sur les régions de départ comme sur les régions d'accueil. En 4ème, on étudie ces déplacements. Bien les comprendre, c'est savoir distinguer les différentes formes de mobilités et en analyser les causes et les effets.",
+    "definitions": [
+      {
+        "terme": "Mobilité humaine",
+        "sens": "le déplacement des hommes"
+      },
+      {
+        "terme": "Migration",
+        "sens": "un déplacement durable pour s'installer ailleurs"
+      },
+      {
+        "terme": "Migrant",
+        "sens": "une personne qui migre"
+      },
+      {
+        "terme": "Cause économique",
+        "sens": "migrer pour le travail, une vie meilleure"
+      },
+      {
+        "terme": "Cause politique",
+        "sens": "fuir un conflit ou des persécutions"
+      },
+      {
+        "terme": "Tourisme",
+        "sens": "un déplacement temporaire pour les loisirs"
+      },
+      {
+        "terme": "Flux",
+        "sens": "un mouvement de personnes à travers le monde"
+      },
+      {
+        "terme": "Région d'accueil",
+        "sens": "le lieu où arrivent les migrants ou touristes"
+      }
+    ],
+    "methode": [
+      "Définis les mobilités humaines.",
+      "Distingue migration et tourisme.",
+      "Comprends que la migration est durable.",
+      "Identifie les causes des migrations (économiques, conflits).",
+      "Comprends que le tourisme est temporaire.",
+      "Note la forte croissance du tourisme.",
+      "Repère les flux à travers le monde.",
+      "Analyse les effets sur départ et accueil."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre une migration et un déplacement touristique ?",
+      "etapes": [
+        "Les mobilités humaines sont les déplacements des hommes.",
+        "La migration est un déplacement durable.",
+        "Le migrant s'installe ailleurs pour une longue période.",
+        "Ses causes : économiques, conflits, persécutions.",
+        "Le tourisme est un déplacement temporaire pour les loisirs.",
+        "On revient ensuite chez soi : c'est la grande différence."
+      ]
+    },
+    "astuce": "Megumi Fushiguro : « Les mobilités humaines = les déplacements des hommes. La MIGRATION est durable (s'installer ailleurs) ; le TOURISME est temporaire (loisirs). Les flux augmentent avec la mondialisation ! »",
+    "erreurs": [
+      "Confondre migration et tourisme.",
+      "Croire que la migration est temporaire.",
+      "Oublier les différentes causes des migrations.",
+      "Croire que le tourisme est un déplacement durable.",
+      "Oublier la croissance du tourisme.",
+      "Confondre migrant et touriste.",
+      "Oublier les effets sur les régions concernées.",
+      "Ignorer le lien avec la mondialisation."
+    ]
+  },
+  "nobara-kugisaki-la-mondialisation-flux-et-acteurs": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Nobara Kugisaki",
+    "manga": "Jujutsu Kaisen",
+    "notion": "La mondialisation : flux et acteurs",
+    "explication": "La mondialisation est le processus de mise en relation des différentes parties du monde, par des échanges de plus en plus nombreux et rapides. Pour bien la comprendre, on étudie deux éléments essentiels : les flux et les acteurs. Les flux sont les mouvements qui circulent à travers le monde. Il en existe plusieurs types : les flux de marchandises (les produits qui s'échangent d'un pays à l'autre), les flux de capitaux (l'argent et les investissements), les flux d'informations (les données qui circulent grâce à internet), et les flux de personnes (migrations, tourisme). Ces flux relient les territoires et forment de vastes réseaux à l'échelle mondiale. Les acteurs sont ceux qui organisent et animent la mondialisation. Les plus puissants sont les firmes transnationales, de très grandes entreprises présentes dans de nombreux pays, qui produisent et vendent dans le monde entier. Les États jouent aussi un rôle, en favorisant ou en encadrant les échanges, tout comme certaines organisations internationales. En 4ème, on étudie ces flux et ces acteurs. Bien les comprendre, c'est savoir comment fonctionne concrètement la mondialisation et qui en tire les principales décisions.",
+    "definitions": [
+      {
+        "terme": "Mondialisation",
+        "sens": "la mise en relation du monde par les échanges"
+      },
+      {
+        "terme": "Flux",
+        "sens": "un mouvement qui circule dans le monde"
+      },
+      {
+        "terme": "Flux de marchandises",
+        "sens": "les produits échangés entre pays"
+      },
+      {
+        "terme": "Flux de capitaux",
+        "sens": "la circulation de l'argent et des investissements"
+      },
+      {
+        "terme": "Flux d'informations",
+        "sens": "les données qui circulent (internet)"
+      },
+      {
+        "terme": "Acteur",
+        "sens": "celui qui organise la mondialisation"
+      },
+      {
+        "terme": "Firme transnationale",
+        "sens": "une grande entreprise présente dans plusieurs pays"
+      },
+      {
+        "terme": "Réseau",
+        "sens": "l'ensemble des liens entre les territoires"
+      }
+    ],
+    "methode": [
+      "Définis la mondialisation.",
+      "Distingue les flux et les acteurs.",
+      "Cite les types de flux (marchandises, capitaux, infos, personnes).",
+      "Comprends que les flux relient les territoires.",
+      "Identifie les principaux acteurs.",
+      "Retiens le rôle des firmes transnationales.",
+      "Note le rôle des États et organisations.",
+      "Comprends le fonctionnement concret de la mondialisation."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les flux et les acteurs de la mondialisation ?",
+      "etapes": [
+        "La mondialisation relie le monde par des échanges.",
+        "Les flux sont les mouvements qui circulent.",
+        "On distingue marchandises, capitaux, informations et personnes.",
+        "Les acteurs sont ceux qui organisent ces échanges.",
+        "Les firmes transnationales en sont les plus puissants.",
+        "Les États et organisations jouent aussi un rôle."
+      ]
+    },
+    "astuce": "Nobara Kugisaki : « La mondialisation relie le monde par des FLUX (marchandises, capitaux, informations, personnes). Ses grands ACTEURS : les firmes transnationales et les États. Retiens : flux + acteurs ! »",
+    "erreurs": [
+      "Confondre flux et acteurs.",
+      "Oublier un type de flux.",
+      "Oublier le rôle des firmes transnationales.",
+      "Confondre firme transnationale et petite entreprise locale.",
+      "Oublier le rôle des États.",
+      "Réduire la mondialisation aux seules marchandises.",
+      "Ignorer les flux d'informations.",
+      "Confondre mondialisation et commerce purement local."
+    ]
+  },
+  "satoru-gojo-les-espaces-productifs-en-france": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Satoru Gojo",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Les espaces productifs en France",
+    "explication": "Un espace productif est un espace aménagé et organisé pour produire des biens ou des services. En France, on distingue trois grands types d'espaces productifs, qui correspondent aux trois grands secteurs de l'économie. Les espaces productifs agricoles sont les campagnes où l'on pratique l'agriculture et l'élevage : ils produisent la nourriture. L'agriculture française est moderne et productive, et exporte une partie de sa production. Les espaces productifs industriels sont ceux où se trouvent les usines et les zones industrielles, qui transforment les matières premières en produits manufacturés. Les espaces productifs de services, enfin, regroupent les activités tournées vers les services aux personnes et aux entreprises : commerces, banques, tourisme, transports. Ils se concentrent surtout dans les villes et représentent aujourd'hui la plus grande part de l'activité économique. Tous ces espaces évoluent et s'adaptent à la mondialisation : ils doivent faire face à la concurrence internationale, ce qui transforme les lieux de production et entraîne parfois des fermetures ou des reconversions. En 4ème, on étudie ces espaces. Bien les comprendre, c'est savoir comment et où la France produit, et comment ses territoires s'organisent face à la mondialisation. Comprendre l'organisation de ces espaces permet de saisir comment un territoire crée de la richesse et des emplois, et comment il évolue au fil du temps.",
+    "definitions": [
+      {
+        "terme": "Espace productif",
+        "sens": "un espace organisé pour produire"
+      },
+      {
+        "terme": "Espace agricole",
+        "sens": "les campagnes qui produisent la nourriture"
+      },
+      {
+        "terme": "Espace industriel",
+        "sens": "usines et zones industrielles"
+      },
+      {
+        "terme": "Espace de services",
+        "sens": "commerces, banques, tourisme, transports"
+      },
+      {
+        "terme": "Production",
+        "sens": "la fabrication de biens ou de services"
+      },
+      {
+        "terme": "Secteur",
+        "sens": "agriculture, industrie ou services"
+      },
+      {
+        "terme": "Concurrence internationale",
+        "sens": "la compétition liée à la mondialisation"
+      },
+      {
+        "terme": "Reconversion",
+        "sens": "le changement d'activité d'un espace"
+      }
+    ],
+    "methode": [
+      "Définis un espace productif.",
+      "Retiens les trois grands types.",
+      "Décris les espaces agricoles (nourriture).",
+      "Décris les espaces industriels (usines).",
+      "Décris les espaces de services (commerces, tourisme).",
+      "Note que les services dominent l'économie.",
+      "Comprends l'adaptation à la mondialisation.",
+      "Repère les transformations (reconversions, fermetures)."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les trois types d'espaces productifs en France ?",
+      "etapes": [
+        "Un espace productif est organisé pour produire.",
+        "Les espaces agricoles produisent la nourriture.",
+        "Les espaces industriels abritent usines et zones industrielles.",
+        "Les espaces de services regroupent commerces, banques, tourisme.",
+        "Les services représentent aujourd'hui la plus grande part.",
+        "Tous s'adaptent à la concurrence de la mondialisation."
+      ]
+    },
+    "astuce": "Satoru Gojo : « Un espace productif est un lieu où l'on produit. En France, trois types : AGRICOLE, INDUSTRIEL et de SERVICES. Tous s'adaptent à la concurrence de la mondialisation ! »",
+    "erreurs": [
+      "Confondre les trois types d'espaces productifs.",
+      "Oublier les espaces de services.",
+      "Croire que l'industrie domine l'économie française.",
+      "Oublier l'adaptation à la mondialisation.",
+      "Confondre espace agricole et espace industriel.",
+      "Oublier les reconversions et transformations.",
+      "Réduire la production à l'agriculture seule.",
+      "Ignorer la concurrence internationale."
+    ]
+  },
+  "yuji-itadori-l-urbanisation-mondiale-et-les-metropoles": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Yuji Itadori",
+    "manga": "Jujutsu Kaisen",
+    "notion": "L'urbanisation mondiale et les métropoles",
+    "explication": "L'urbanisation est la croissance des villes et l'augmentation de la part de la population qui y vit. C'est un phénomène majeur de notre époque : aujourd'hui, plus de la moitié de l'humanité vit en ville, et cette proportion ne cesse d'augmenter, surtout dans les pays en développement. Cette croissance des villes s'explique notamment par l'exode rural, c'est-à-dire le départ des habitants des campagnes vers les villes, à la recherche de travail et de meilleures conditions de vie. Au cœur de cette urbanisation, on trouve les métropoles : de très grandes villes qui concentrent une importante population, mais aussi de nombreuses activités économiques et des pouvoirs (politiques, culturels, financiers). Les plus immenses sont parfois appelées mégapoles. Les métropoles s'étendent souvent très loin autour de leur centre : c'est l'étalement urbain. Cette urbanisation rapide pose de nombreux défis : les transports, le logement, la pollution, ou encore les inégalités entre quartiers riches et pauvres. En 4ème, on étudie ce phénomène à l'échelle mondiale. Bien le comprendre, c'est saisir comment les hommes se concentrent de plus en plus dans les villes et quels défis cela représente. Cette concentration croissante des hommes dans les villes transforme en profondeur les paysages et les modes de vie, et oblige les sociétés à repenser sans cesse l'organisation des espaces urbains pour qu'ils restent agréables à vivre.",
+    "definitions": [
+      {
+        "terme": "Urbanisation",
+        "sens": "la croissance des villes et de leur population"
+      },
+      {
+        "terme": "Ville",
+        "sens": "un espace où se concentrent habitants et activités"
+      },
+      {
+        "terme": "Métropole",
+        "sens": "une grande ville qui concentre population et pouvoirs"
+      },
+      {
+        "terme": "Mégapole",
+        "sens": "une métropole de plusieurs millions d'habitants"
+      },
+      {
+        "terme": "Exode rural",
+        "sens": "le départ des campagnes vers les villes"
+      },
+      {
+        "terme": "Étalement urbain",
+        "sens": "l'extension de la ville autour de son centre"
+      },
+      {
+        "terme": "Concentration",
+        "sens": "le regroupement de population et d'activités"
+      },
+      {
+        "terme": "Défi urbain",
+        "sens": "transports, logement, pollution, inégalités"
+      }
+    ],
+    "methode": [
+      "Définis l'urbanisation.",
+      "Retiens que plus de la moitié des humains vit en ville.",
+      "Comprends le rôle de l'exode rural.",
+      "Définis la métropole.",
+      "Distingue métropole et mégapole.",
+      "Comprends l'étalement urbain.",
+      "Identifie les défis (transports, logement, pollution).",
+      "Mesure l'ampleur mondiale du phénomène."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce que l'urbanisation mondiale ?",
+      "etapes": [
+        "L'urbanisation est la croissance des villes.",
+        "Plus de la moitié de l'humanité vit aujourd'hui en ville.",
+        "L'exode rural alimente cette croissance.",
+        "Les métropoles concentrent population, activités et pouvoirs.",
+        "Elles s'étendent loin autour de leur centre.",
+        "Cette croissance pose de nombreux défis."
+      ]
+    },
+    "astuce": "Yuji Itadori : « L'urbanisation = la croissance des villes. Aujourd'hui, plus de la moitié des humains vit en ville ! Les métropoles concentrent population, activités et pouvoirs. »",
+    "erreurs": [
+      "Confondre urbanisation et exode rural.",
+      "Croire que la majorité des humains vit à la campagne.",
+      "Confondre métropole et mégapole.",
+      "Oublier l'étalement urbain.",
+      "Ignorer les défis de l'urbanisation.",
+      "Confondre ville et métropole.",
+      "Oublier le rôle de l'exode rural.",
+      "Croire que l'urbanisation ralentit partout."
+    ]
+  },
+  "yuta-okkotsu-l-europe-dans-la-mondialisation": {
+    "matiere": "geographie",
+    "niveau": "4eme",
+    "hero": "Yuta Okkotsu",
+    "manga": "Jujutsu Kaisen",
+    "notion": "L'Europe dans la mondialisation",
+    "explication": "L'Europe est l'un des grands centres de la mondialisation : c'est un espace riche, puissant et très intégré aux échanges mondiaux. Sur le plan économique, l'Europe est une puissance majeure, qui produit et commerce énormément avec le reste du monde. Une grande partie des pays européens sont réunis au sein de l'Union européenne, qui facilite les échanges entre eux et renforce leur poids dans le monde. L'Europe participe intensément aux flux mondiaux. Elle dispose pour cela de grandes façades maritimes, c'est-à-dire de littoraux très actifs où se concentrent de grands ports. Le port de Rotterdam, aux Pays-Bas, est par exemple l'un des plus importants du monde : d'immenses quantités de marchandises y arrivent et en repartent. L'Europe compte aussi de grandes métropoles, comme Londres ou Paris, qui sont des centres de décision et d'activité de rang mondial. Cependant, tous les territoires européens ne profitent pas également de la mondialisation : il existe des inégalités entre les régions les plus dynamiques et celles qui le sont moins. En 4ème, on étudie la place de l'Europe. Bien la comprendre, c'est saisir pourquoi ce continent reste un acteur central des échanges mondiaux.",
+    "definitions": [
+      {
+        "terme": "Europe",
+        "sens": "un grand centre de la mondialisation"
+      },
+      {
+        "terme": "Mondialisation",
+        "sens": "la mise en relation du monde par les échanges"
+      },
+      {
+        "terme": "Union européenne",
+        "sens": "elle réunit de nombreux pays européens"
+      },
+      {
+        "terme": "Puissance économique",
+        "sens": "l'Europe produit et commerce beaucoup"
+      },
+      {
+        "terme": "Façade maritime",
+        "sens": "un littoral très actif, riche en ports"
+      },
+      {
+        "terme": "Port",
+        "sens": "un lieu majeur d'échange (ex. Rotterdam)"
+      },
+      {
+        "terme": "Métropole",
+        "sens": "une grande ville de rang mondial (Londres, Paris)"
+      },
+      {
+        "terme": "Inégalités régionales",
+        "sens": "des écarts entre régions européennes"
+      }
+    ],
+    "methode": [
+      "Situe l'Europe comme grand centre de la mondialisation.",
+      "Retiens sa puissance économique.",
+      "Note le rôle de l'Union européenne.",
+      "Comprends sa forte participation aux flux mondiaux.",
+      "Identifie les grandes façades maritimes et leurs ports.",
+      "Cite un exemple : le port de Rotterdam.",
+      "Retiens les grandes métropoles (Londres, Paris).",
+      "Note les inégalités entre régions européennes."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi l'Europe est-elle un centre majeur de la mondialisation ?",
+      "etapes": [
+        "L'Europe est un espace riche et puissant.",
+        "C'est une grande puissance économique et commerciale.",
+        "L'Union européenne facilite les échanges entre ses pays.",
+        "Ses façades maritimes abritent de grands ports, comme Rotterdam.",
+        "Ses métropoles, comme Londres ou Paris, rayonnent dans le monde.",
+        "Mais toutes les régions n'en profitent pas également."
+      ]
+    },
+    "astuce": "Yuta Okkotsu : « L'Europe est l'un des grands centres de la mondialisation : forte puissance économique, Union européenne, grands ports (comme Rotterdam) et métropoles mondiales (Londres, Paris). »",
+    "erreurs": [
+      "Croire que l'Europe est à l'écart de la mondialisation.",
+      "Oublier le rôle de l'Union européenne.",
+      "Confondre façade maritime et arrière-pays.",
+      "Oublier le rôle des grands ports.",
+      "Croire que toutes les régions profitent également.",
+      "Oublier les grandes métropoles européennes.",
+      "Confondre Europe et Union européenne (ce n'est pas identique).",
+      "Ignorer la puissance économique de l'Europe."
+    ]
+  }
+}
