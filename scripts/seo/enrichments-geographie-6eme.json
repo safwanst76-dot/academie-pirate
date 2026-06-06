@@ -1,0 +1,594 @@
+{
+  "choso-le-monde-habite-huit-milliards-d-humains": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Choso",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Le monde habité : 8 milliards d'humains",
+    "explication": "La Terre est aujourd'hui peuplée d'environ huit milliards d'êtres humains. Ce nombre, considérable, n'a cessé d'augmenter au cours de l'histoire, et particulièrement vite depuis deux siècles : on parle de croissance démographique. En géographie, on s'intéresse à la façon dont ces milliards d'humains occupent la planète, c'est-à-dire à la manière dont ils habitent. Habiter, ce n'est pas seulement vivre quelque part : c'est occuper un espace, l'aménager pour y vivre, y travailler, s'y déplacer et y satisfaire ses besoins. Or, ces huit milliards d'habitants ne sont pas répartis de façon égale sur la Terre. Certaines régions sont très densément peuplées et concentrent une grande partie de l'humanité : on les appelle les foyers de peuplement. À l'inverse, d'immenses espaces sont presque vides d'habitants, comme les déserts, les hautes montagnes ou les régions polaires. La densité de population permet de mesurer cette répartition : c'est le nombre d'habitants par kilomètre carré. En 6ème, on découvre comment les humains habitent le monde. Bien le comprendre, c'est prendre conscience de la place des hommes sur la planète et de la grande diversité des façons d'y vivre.",
+    "definitions": [
+      {
+        "terme": "Population mondiale",
+        "sens": "le nombre total d'humains sur Terre (environ 8 milliards)"
+      },
+      {
+        "terme": "Croissance démographique",
+        "sens": "l'augmentation du nombre d'habitants"
+      },
+      {
+        "terme": "Habiter",
+        "sens": "occuper et aménager un espace pour y vivre"
+      },
+      {
+        "terme": "Foyer de peuplement",
+        "sens": "une région très densément peuplée"
+      },
+      {
+        "terme": "Densité de population",
+        "sens": "le nombre d'habitants par km²"
+      },
+      {
+        "terme": "Répartition",
+        "sens": "la façon dont la population se répartit"
+      },
+      {
+        "terme": "Espace vide",
+        "sens": "une région presque sans habitants"
+      },
+      {
+        "terme": "Aménager",
+        "sens": "transformer un espace pour l'habiter"
+      }
+    ],
+    "methode": [
+      "Retiens le nombre d'humains : environ 8 milliards.",
+      "Comprends la croissance démographique récente.",
+      "Définis le verbe « habiter » en géographie.",
+      "Note que la population est inégalement répartie.",
+      "Identifie les foyers de peuplement.",
+      "Repère les espaces presque vides.",
+      "Comprends la densité de population (hab/km²).",
+      "Prends conscience de la diversité des façons d'habiter."
+    ],
+    "exemple": {
+      "enonce": "Que signifie « habiter » en géographie ?",
+      "etapes": [
+        "La Terre compte environ 8 milliards d'humains.",
+        "Habiter ne veut pas seulement dire vivre quelque part.",
+        "C'est occuper un espace et l'aménager pour y vivre.",
+        "On y travaille, on s'y déplace, on y satisfait ses besoins.",
+        "Tous les humains n'habitent pas de la même façon.",
+        "La densité mesure la répartition de la population."
+      ]
+    },
+    "astuce": "Choso : « La Terre compte environ 8 milliards d'humains, mais ils sont très inégalement répartis. En géographie, « habiter » signifie occuper ET aménager un espace pour y vivre. »",
+    "erreurs": [
+      "Se tromper sur le nombre d'humains (environ 8 milliards).",
+      "Croire que la population est répartie également.",
+      "Réduire « habiter » au simple fait de vivre quelque part.",
+      "Confondre foyer de peuplement et espace vide.",
+      "Oublier la notion de densité de population.",
+      "Ignorer la croissance démographique.",
+      "Confondre densité et nombre total d'habitants.",
+      "Oublier la diversité des façons d'habiter."
+    ]
+  },
+  "kento-nanami-la-repartition-de-la-population-mondiale": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Kento Nanami",
+    "manga": "Jujutsu Kaisen",
+    "notion": "La répartition de la population mondiale",
+    "explication": "La population mondiale est très inégalement répartie sur la planète : les humains ne sont pas dispersés de façon uniforme. La majorité d'entre eux se concentre dans quelques grandes régions très densément peuplées, appelées les foyers de peuplement. Les principaux se situent en Asie : l'Asie de l'Est (autour de la Chine) et l'Asie du Sud (autour de l'Inde) rassemblent à elles seules une part énorme de l'humanité. L'Europe constitue un autre foyer de peuplement important. À l'opposé, de vastes étendues de la planète sont presque vides d'habitants. C'est le cas des déserts chauds, comme le Sahara, des régions polaires, comme l'Antarctique, des très hautes montagnes et de certaines forêts denses. Plusieurs facteurs expliquent cette répartition : le climat (ni trop chaud, ni trop froid, ni trop sec), le relief (les plaines sont plus faciles à habiter que les montagnes), la présence d'eau et de ressources, mais aussi l'histoire du peuplement. Pour mesurer cette répartition, on utilise la densité de population. En 6ème, on étudie où et pourquoi les hommes se concentrent. Bien le comprendre, c'est savoir lire une carte de population et en expliquer les contrastes.",
+    "definitions": [
+      {
+        "terme": "Répartition",
+        "sens": "la façon dont la population se distribue"
+      },
+      {
+        "terme": "Densité de population",
+        "sens": "le nombre d'habitants par km²"
+      },
+      {
+        "terme": "Foyer de peuplement",
+        "sens": "une grande région très densément peuplée"
+      },
+      {
+        "terme": "Asie de l'Est et du Sud",
+        "sens": "les principaux foyers de peuplement"
+      },
+      {
+        "terme": "Espace vide",
+        "sens": "une région presque sans habitants"
+      },
+      {
+        "terme": "Climat",
+        "sens": "un facteur clé de la répartition"
+      },
+      {
+        "terme": "Relief",
+        "sens": "il facilite ou gêne le peuplement"
+      },
+      {
+        "terme": "Facteur",
+        "sens": "un élément qui explique la répartition"
+      }
+    ],
+    "methode": [
+      "Comprends que la population est inégalement répartie.",
+      "Identifie les grands foyers de peuplement.",
+      "Retiens leur concentration en Asie (Est et Sud).",
+      "Repère les espaces presque vides.",
+      "Cite les exemples : déserts, pôles, hautes montagnes.",
+      "Explique les facteurs : climat, relief, eau, histoire.",
+      "Utilise la densité pour mesurer la répartition.",
+      "Apprends à lire une carte de population."
+    ],
+    "exemple": {
+      "enonce": "Où se concentre la population mondiale, et pourquoi ?",
+      "etapes": [
+        "La population n'est pas répartie de façon uniforme.",
+        "Elle se concentre dans quelques foyers de peuplement.",
+        "Les principaux se situent en Asie de l'Est et du Sud.",
+        "À l'inverse, déserts et pôles sont presque vides.",
+        "Le climat, le relief et l'eau expliquent ces contrastes.",
+        "La densité mesure cette répartition inégale."
+      ]
+    },
+    "astuce": "Kento Nanami : « La population se concentre dans quelques grands foyers, surtout en Asie. Déserts, hautes montagnes et pôles restent presque vides. La densité (hab/km²) mesure cette répartition. »",
+    "erreurs": [
+      "Croire que la population est répartie de façon égale.",
+      "Oublier que les foyers se situent surtout en Asie.",
+      "Confondre foyer de peuplement et espace vide.",
+      "Oublier les facteurs (climat, relief, eau).",
+      "Confondre densité et population totale.",
+      "Ignorer les espaces presque vides.",
+      "Mal lire une carte de population.",
+      "Oublier le rôle de l'histoire du peuplement."
+    ]
+  },
+  "maki-zenin-habiter-une-montagne": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Maki Zenin",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Habiter une montagne",
+    "explication": "Habiter une montagne, c'est vivre dans un espace marqué par de fortes contraintes naturelles, c'est-à-dire des difficultés liées au milieu. La première est l'altitude : plus on monte, plus il fait froid et plus l'air est rare. La deuxième est la pente : les terrains en forte inclinaison sont difficiles à cultiver et à construire. La troisième est l'accès parfois difficile, à cause des reliefs et de la neige en hiver. Pour habiter malgré ces contraintes, les hommes s'adaptent de nombreuses façons. Ils installent souvent leurs villages dans les vallées, là où le terrain est plus plat. Ils aménagent des terrasses pour cultiver sur les pentes, construisent des routes en lacets et des tunnels pour franchir les massifs. La montagne offre aussi des atouts qui sont mis en valeur : l'élevage, l'exploitation de la forêt et de l'eau (barrages), et surtout le tourisme, notamment grâce aux stations de ski en hiver et à la randonnée en été. En 6ème, on étudie comment on habite ce milieu particulier. Bien le comprendre, c'est voir comment les hommes transforment un espace difficile pour y vivre et en tirer parti.",
+    "definitions": [
+      {
+        "terme": "Montagne",
+        "sens": "un milieu de relief élevé, à fortes contraintes"
+      },
+      {
+        "terme": "Altitude",
+        "sens": "la hauteur au-dessus du niveau de la mer"
+      },
+      {
+        "terme": "Pente",
+        "sens": "l'inclinaison du terrain, une contrainte forte"
+      },
+      {
+        "terme": "Contrainte",
+        "sens": "une difficulté liée au milieu naturel"
+      },
+      {
+        "terme": "Adaptation",
+        "sens": "la façon dont les hommes s'organisent"
+      },
+      {
+        "terme": "Terrasse",
+        "sens": "un aménagement pour cultiver sur les pentes"
+      },
+      {
+        "terme": "Tourisme",
+        "sens": "un atout valorisé (ski, randonnée)"
+      },
+      {
+        "terme": "Vallée",
+        "sens": "le fond plus plat où s'installent les villages"
+      }
+    ],
+    "methode": [
+      "Identifie les contraintes de la montagne.",
+      "Retiens l'altitude (froid, air rare).",
+      "Note la pente (difficile à cultiver, à construire).",
+      "Comprends les difficultés d'accès.",
+      "Repère les adaptations des habitants.",
+      "Cite les terrasses, routes en lacets, tunnels.",
+      "Identifie les atouts (élevage, eau, tourisme).",
+      "Comprends la mise en valeur par le tourisme."
+    ],
+    "exemple": {
+      "enonce": "Comment les hommes s'adaptent-ils pour habiter la montagne ?",
+      "etapes": [
+        "La montagne impose des contraintes : altitude, pente, accès.",
+        "Les villages s'installent souvent dans les vallées, plus plates.",
+        "On aménage des terrasses pour cultiver sur les pentes.",
+        "On construit des routes en lacets et des tunnels.",
+        "On met en valeur les atouts : élevage, eau, tourisme.",
+        "Les stations de ski attirent de nombreux visiteurs."
+      ]
+    },
+    "astuce": "Maki Zenin : « Habiter une montagne, c'est s'adapter à de fortes contraintes (altitude, pente, froid) : terrasses, tunnels, villages dans les vallées. Mais la montagne a aussi des atouts, comme le tourisme ! »",
+    "erreurs": [
+      "Oublier les contraintes de la montagne (pente, altitude).",
+      "Ignorer les adaptations des habitants.",
+      "Oublier le rôle des vallées.",
+      "Ne retenir aucun atout de la montagne.",
+      "Confondre altitude et pente.",
+      "Oublier l'importance du tourisme.",
+      "Croire que la montagne n'a que des contraintes.",
+      "Confondre montagne et plaine."
+    ]
+  },
+  "megumi-fushiguro-habiter-une-ville-de-taille-moyenne": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Megumi Fushiguro",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Habiter une ville de taille moyenne",
+    "explication": "Une ville de taille moyenne se situe, comme son nom l'indique, entre les petites communes ou villages et les très grandes villes appelées métropoles. Elle compte généralement de quelques dizaines de milliers à environ cent mille habitants. Habiter une telle ville, c'est vivre dans un espace urbain organisé, mais à une échelle qui reste humaine. La ville de taille moyenne s'organise en plusieurs parties. On y trouve un centre-ville, souvent ancien, qui rassemble les commerces, les principaux services et parfois des monuments. Autour s'étendent différents quartiers, résidentiels ou plus animés. En périphérie, c'est-à-dire en bordure de la ville, se trouvent souvent des zones d'activités (commerciales ou industrielles) et des quartiers plus récents. Habiter une ville moyenne offre de nombreux avantages : on y dispose des services essentiels (écoles, collège, hôpital ou clinique, commerces, gare), tout en bénéficiant d'une vie souvent plus calme et moins coûteuse que dans une grande métropole. En 6ème, on étudie comment on habite ce type de ville. Bien le comprendre, c'est savoir décrire l'organisation d'un espace urbain et comprendre ce qu'il offre à ses habitants. Ce type de ville joue un rôle important dans l'organisation du territoire, car il permet aux habitants des campagnes environnantes de trouver des services qu'ils n'ont pas sur place.",
+    "definitions": [
+      {
+        "terme": "Ville de taille moyenne",
+        "sens": "entre le village et la métropole"
+      },
+      {
+        "terme": "Espace urbain",
+        "sens": "un espace de ville, aménagé pour y vivre"
+      },
+      {
+        "terme": "Centre-ville",
+        "sens": "le cœur de la ville (commerces, services)"
+      },
+      {
+        "terme": "Quartier",
+        "sens": "une partie de la ville"
+      },
+      {
+        "terme": "Périphérie",
+        "sens": "la bordure de la ville"
+      },
+      {
+        "terme": "Service",
+        "sens": "école, hôpital, commerce, gare…"
+      },
+      {
+        "terme": "Zone d'activités",
+        "sens": "un espace commercial ou industriel"
+      },
+      {
+        "terme": "Fonction de la ville",
+        "sens": "ce que la ville offre à ses habitants"
+      }
+    ],
+    "methode": [
+      "Situe la ville moyenne entre village et métropole.",
+      "Retiens son ordre de grandeur (dizaines de milliers d'habitants).",
+      "Repère le centre-ville et son rôle.",
+      "Identifie les différents quartiers.",
+      "Comprends ce qu'est la périphérie.",
+      "Note les zones d'activités en bordure.",
+      "Cite les services disponibles.",
+      "Comprends les avantages d'y habiter."
+    ],
+    "exemple": {
+      "enonce": "Comment s'organise une ville de taille moyenne ?",
+      "etapes": [
+        "Elle se situe entre le village et la grande métropole.",
+        "Au cœur se trouve le centre-ville, avec ses commerces.",
+        "Autour s'étendent différents quartiers.",
+        "En périphérie se trouvent des zones d'activités.",
+        "On y dispose des services essentiels (école, hôpital, gare).",
+        "La vie y est souvent plus calme que dans une métropole."
+      ]
+    },
+    "astuce": "Megumi Fushiguro : « Une ville de taille moyenne se situe entre le village et la grande métropole. On y trouve un centre-ville, des quartiers, une périphérie et tous les services essentiels. »",
+    "erreurs": [
+      "Confondre ville moyenne et métropole.",
+      "Confondre ville moyenne et village.",
+      "Oublier le rôle du centre-ville.",
+      "Confondre centre-ville et périphérie.",
+      "Oublier les services de la ville.",
+      "Ignorer les zones d'activités.",
+      "Oublier les avantages d'y habiter.",
+      "Confondre quartier et commune."
+    ]
+  },
+  "nobara-kugisaki-habiter-un-espace-de-faible-densite": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Nobara Kugisaki",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Habiter un espace de faible densité",
+    "explication": "Un espace de faible densité est un espace où vivent peu d'habitants par rapport à sa superficie : la densité de population, c'est-à-dire le nombre d'habitants par kilomètre carré, y est basse. Il s'agit le plus souvent d'espaces ruraux, c'est-à-dire de campagnes, par opposition aux villes. Dans ces espaces, l'habitat est dispersé : les maisons, les hameaux et les villages sont éloignés les uns des autres. Les activités y sont souvent liées à la nature et à la terre : l'agriculture et l'élevage y tiennent une place importante. Habiter un espace de faible densité présente des contraintes : les services (commerces, écoles, médecins) sont parfois éloignés, ce qui oblige à effectuer de longs déplacements, souvent en voiture. Certains de ces espaces, autrefois touchés par l'exode rural (le départ des habitants vers les villes), connaissent des difficultés. Mais ces espaces offrent aussi des atouts : de grands espaces, le calme, la nature, et parfois un renouveau grâce au tourisme ou à l'installation de nouveaux habitants. En 6ème, on étudie comment on habite ces espaces. Bien le comprendre, c'est saisir la diversité des manières d'habiter, en ville comme à la campagne.",
+    "definitions": [
+      {
+        "terme": "Faible densité",
+        "sens": "peu d'habitants par km²"
+      },
+      {
+        "terme": "Espace rural",
+        "sens": "la campagne, par opposition à la ville"
+      },
+      {
+        "terme": "Habitat dispersé",
+        "sens": "des maisons éloignées les unes des autres"
+      },
+      {
+        "terme": "Agriculture",
+        "sens": "une activité majeure de ces espaces"
+      },
+      {
+        "terme": "Service",
+        "sens": "commerce, école, médecin, parfois éloignés"
+      },
+      {
+        "terme": "Exode rural",
+        "sens": "le départ des habitants vers les villes"
+      },
+      {
+        "terme": "Atout",
+        "sens": "espace, calme, nature"
+      },
+      {
+        "terme": "Renouveau",
+        "sens": "l'arrivée de nouveaux habitants ou du tourisme"
+      }
+    ],
+    "methode": [
+      "Définis la faible densité (peu d'habitants par km²).",
+      "Identifie les espaces concernés : la campagne.",
+      "Note l'habitat dispersé.",
+      "Retiens les activités principales (agriculture, élevage).",
+      "Repère les contraintes (services éloignés, déplacements).",
+      "Comprends le phénomène de l'exode rural.",
+      "Cite les atouts (espace, calme, nature).",
+      "Note le possible renouveau de ces espaces."
+    ],
+    "exemple": {
+      "enonce": "Quelles sont les caractéristiques d'un espace de faible densité ?",
+      "etapes": [
+        "On y compte peu d'habitants par kilomètre carré.",
+        "Il s'agit le plus souvent d'espaces ruraux (campagnes).",
+        "L'habitat y est dispersé : maisons et villages éloignés.",
+        "L'agriculture et l'élevage y sont des activités importantes.",
+        "Les services sont parfois éloignés, d'où de longs déplacements.",
+        "Mais ces espaces offrent de l'espace, du calme et de la nature."
+      ]
+    },
+    "astuce": "Nobara Kugisaki : « Un espace de faible densité (la campagne) compte peu d'habitants au km². Activité phare : l'agriculture. Contrainte : des services éloignés. Atout : l'espace et la nature ! »",
+    "erreurs": [
+      "Confondre faible densité et forte densité.",
+      "Croire que ces espaces sont surtout urbains.",
+      "Oublier le rôle de l'agriculture.",
+      "Oublier les contraintes (services éloignés).",
+      "Confondre exode rural et arrivée de nouveaux habitants.",
+      "Ne retenir aucun atout de ces espaces.",
+      "Confondre habitat dispersé et habitat groupé.",
+      "Ignorer le possible renouveau de ces espaces."
+    ]
+  },
+  "satoru-gojo-habiter-un-littoral-touristique-industriel": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Satoru Gojo",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Habiter un littoral (touristique ou industriel)",
+    "explication": "Un littoral est un espace situé au bord de la mer, à la rencontre de la terre et de l'eau. C'est un espace très attractif : partout dans le monde, de plus en plus de personnes et d'activités viennent s'y installer, un phénomène appelé la littoralisation. On distingue plusieurs grands types de littoraux selon la façon dont ils sont aménagés. Le littoral touristique est aménagé pour accueillir des vacanciers : on y trouve des plages, des stations balnéaires, des hôtels, des ports de plaisance et de nombreuses activités de loisirs. Le tourisme y est l'activité principale. Le littoral industrialo-portuaire, au contraire, est aménagé pour les activités économiques : on y trouve de grands ports de commerce, par lesquels passent les marchandises, ainsi que des industries installées à proximité, dans ce qu'on appelle des zones industrialo-portuaires. Ces aménagements transforment fortement le littoral. Ils posent aussi des enjeux environnementaux importants, car ils peuvent fragiliser ces milieux fragiles. En 6ème, on étudie comment on habite et on aménage les littoraux. Bien le comprendre, c'est saisir pourquoi ces espaces attirent autant et comment les hommes les transforment. C'est pourquoi de nombreuses régions du monde cherchent aujourd'hui à concilier le développement de leurs littoraux avec la protection de ces espaces naturels précieux.",
+    "definitions": [
+      {
+        "terme": "Littoral",
+        "sens": "l'espace situé au bord de la mer"
+      },
+      {
+        "terme": "Littoralisation",
+        "sens": "l'attirance croissante vers les littoraux"
+      },
+      {
+        "terme": "Littoral touristique",
+        "sens": "aménagé pour les vacanciers (plages, stations)"
+      },
+      {
+        "terme": "Station balnéaire",
+        "sens": "une ville touristique de bord de mer"
+      },
+      {
+        "terme": "Littoral industrialo-portuaire",
+        "sens": "aménagé pour ports et industries"
+      },
+      {
+        "terme": "Port",
+        "sens": "un lieu d'accueil et d'échange des marchandises"
+      },
+      {
+        "terme": "Zone industrialo-portuaire",
+        "sens": "un espace de ports et d'industries"
+      },
+      {
+        "terme": "Enjeu environnemental",
+        "sens": "la protection de ce milieu fragile"
+      }
+    ],
+    "methode": [
+      "Définis le littoral (le bord de la mer).",
+      "Comprends la littoralisation (forte attraction).",
+      "Distingue les deux grands types de littoraux.",
+      "Décris le littoral touristique (plages, stations).",
+      "Décris le littoral industrialo-portuaire (ports, industries).",
+      "Comprends le rôle des ports de commerce.",
+      "Identifie les aménagements de chaque type.",
+      "Repère les enjeux environnementaux."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les deux grands types de littoraux aménagés ?",
+      "etapes": [
+        "Un littoral est un espace au bord de la mer.",
+        "Le littoral touristique accueille les vacanciers.",
+        "On y trouve plages, stations balnéaires et loisirs.",
+        "Le littoral industrialo-portuaire accueille l'activité économique.",
+        "On y trouve de grands ports et des industries.",
+        "Les deux transforment fortement le littoral."
+      ]
+    },
+    "astuce": "Satoru Gojo : « Un littoral peut être TOURISTIQUE (plages, stations balnéaires) ou INDUSTRIALO-PORTUAIRE (ports, industries). Et partout, les littoraux attirent de plus en plus : c'est la littoralisation ! »",
+    "erreurs": [
+      "Confondre littoral touristique et industrialo-portuaire.",
+      "Oublier la notion de littoralisation.",
+      "Oublier les enjeux environnementaux.",
+      "Confondre port de plaisance et port de commerce.",
+      "Croire qu'un littoral n'a qu'un seul usage.",
+      "Confondre littoral et arrière-pays.",
+      "Oublier la forte attraction des littoraux.",
+      "Ignorer les aménagements du littoral."
+    ]
+  },
+  "yuji-itadori-habiter-une-metropole-tokyo-new-york": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Yuji Itadori",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Habiter une métropole : Tokyo, New York",
+    "explication": "Une métropole est une très grande ville qui concentre un grand nombre d'habitants, mais aussi de nombreuses activités et des pouvoirs importants (économiques, politiques, culturels). Les plus grandes, qui comptent plusieurs millions, voire plus de dix millions d'habitants, sont parfois appelées des mégapoles. Tokyo, au Japon, et New York, aux États-Unis, en sont deux exemples célèbres dans le monde. Habiter une métropole, c'est vivre dans un espace marqué par une très forte densité de population : les habitants y sont très nombreux sur un espace limité. On y trouve de grands quartiers d'affaires, reconnaissables à leurs gratte-ciel, où se concentrent les entreprises. Pour faire circuler des millions de personnes chaque jour, les métropoles disposent d'immenses réseaux de transport (métros, trains, autoroutes, aéroports). Autour du centre s'étendent de vastes banlieues, où vit une grande partie de la population. Habiter une métropole offre de nombreux avantages (emplois, services, loisirs), mais pose aussi des défis, comme les embouteillages, la pollution ou le coût de la vie. En 6ème, on étudie ces espaces. Bien les comprendre, c'est saisir ce qui fait la puissance et la complexité des plus grandes villes du monde.",
+    "definitions": [
+      {
+        "terme": "Métropole",
+        "sens": "une très grande ville concentrant population et pouvoirs"
+      },
+      {
+        "terme": "Mégapole",
+        "sens": "une métropole de plusieurs millions d'habitants"
+      },
+      {
+        "terme": "Tokyo",
+        "sens": "une grande métropole mondiale (Japon)"
+      },
+      {
+        "terme": "New York",
+        "sens": "une grande métropole mondiale (États-Unis)"
+      },
+      {
+        "terme": "Densité",
+        "sens": "très forte dans les métropoles"
+      },
+      {
+        "terme": "Quartier d'affaires",
+        "sens": "où se concentrent les entreprises (gratte-ciel)"
+      },
+      {
+        "terme": "Réseau de transport",
+        "sens": "métros, trains, autoroutes, aéroports"
+      },
+      {
+        "terme": "Banlieue",
+        "sens": "l'espace autour du centre de la métropole"
+      }
+    ],
+    "methode": [
+      "Définis la métropole (grande ville qui concentre tout).",
+      "Distingue métropole et mégapole.",
+      "Retiens des exemples : Tokyo, New York.",
+      "Note la très forte densité de population.",
+      "Repère les quartiers d'affaires (gratte-ciel).",
+      "Comprends le rôle des grands réseaux de transport.",
+      "Identifie les banlieues autour du centre.",
+      "Pèse les avantages et les défis de la métropole."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce qui caractérise une métropole comme Tokyo ?",
+      "etapes": [
+        "Une métropole est une très grande ville.",
+        "Elle concentre population, activités et pouvoirs.",
+        "Tokyo et New York en sont des exemples mondiaux.",
+        "La densité de population y est très forte.",
+        "On y trouve des quartiers d'affaires et des gratte-ciel.",
+        "D'immenses réseaux de transport y font circuler les habitants."
+      ]
+    },
+    "astuce": "Yuji Itadori : « Une métropole (comme Tokyo ou New York) est une très grande ville qui concentre population, activités et pouvoirs. Forte densité, gratte-ciel, immenses réseaux de transport ! »",
+    "erreurs": [
+      "Confondre métropole et ville de taille moyenne.",
+      "Confondre métropole et mégapole.",
+      "Oublier la forte densité de population.",
+      "Oublier le rôle des réseaux de transport.",
+      "Ignorer les quartiers d'affaires.",
+      "Oublier les banlieues.",
+      "Ne retenir que les avantages, sans les défis.",
+      "Confondre métropole et capitale."
+    ]
+  },
+  "yuta-okkotsu-habiter-un-espace-a-fortes-contraintes": {
+    "matiere": "geographie",
+    "niveau": "6eme",
+    "hero": "Yuta Okkotsu",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Habiter un espace à fortes contraintes",
+    "explication": "Un espace à fortes contraintes est un espace dont le milieu naturel rend la vie difficile pour les hommes. Ces contraintes peuvent être de plusieurs sortes. Il y a les espaces où il fait extrêmement chaud et sec, comme les déserts chauds (par exemple le Sahara). Il y a les espaces où il fait extrêmement froid, comme les régions polaires (l'Arctique, l'Antarctique). Il y a aussi les très hautes montagnes, où l'altitude et le froid sont des obstacles, ainsi que certaines forêts denses, difficiles d'accès. À cause de ces conditions, ces espaces sont en général très peu peuplés. Pourtant, les hommes parviennent parfois à y habiter, en s'adaptant : ils inventent des techniques pour se protéger du froid ou de la chaleur, pour trouver de l'eau ou se déplacer. Certains de ces espaces sont aussi mis en valeur, par exemple pour exploiter leurs ressources (minerais, pétrole) ou pour le tourisme. En 6ème, on étudie comment on peut habiter des milieux aussi difficiles. Bien le comprendre, c'est mesurer la capacité des hommes à s'adapter et à transformer même les espaces les plus hostiles de la planète.",
+    "definitions": [
+      {
+        "terme": "Espace à fortes contraintes",
+        "sens": "un milieu naturel difficile à habiter"
+      },
+      {
+        "terme": "Contrainte",
+        "sens": "une difficulté liée au milieu naturel"
+      },
+      {
+        "terme": "Désert",
+        "sens": "un espace très chaud et sec, ou très froid"
+      },
+      {
+        "terme": "Région polaire",
+        "sens": "un espace au froid extrême (Arctique, Antarctique)"
+      },
+      {
+        "terme": "Haute montagne",
+        "sens": "un espace d'altitude, froid et difficile"
+      },
+      {
+        "terme": "Adaptation",
+        "sens": "les techniques pour vivre malgré les contraintes"
+      },
+      {
+        "terme": "Mise en valeur",
+        "sens": "l'exploitation des ressources ou le tourisme"
+      },
+      {
+        "terme": "Peu peuplé",
+        "sens": "la conséquence des fortes contraintes"
+      }
+    ],
+    "methode": [
+      "Définis un espace à fortes contraintes.",
+      "Identifie les déserts chauds (très chauds et secs).",
+      "Identifie les régions polaires (très froides).",
+      "Note les hautes montagnes et forêts denses.",
+      "Comprends pourquoi ces espaces sont peu peuplés.",
+      "Repère les adaptations des hommes.",
+      "Note la mise en valeur (ressources, tourisme).",
+      "Mesure la capacité d'adaptation des hommes."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi les espaces à fortes contraintes sont-ils peu peuplés ?",
+      "etapes": [
+        "Leur milieu naturel rend la vie difficile.",
+        "Certains sont très chauds et secs, comme les déserts.",
+        "D'autres sont très froids, comme les régions polaires.",
+        "Les hautes montagnes ajoutent l'altitude et le froid.",
+        "Ces conditions difficiles expliquent la faible population.",
+        "Mais les hommes s'y adaptent parfois et les mettent en valeur."
+      ]
+    },
+    "astuce": "Yuta Okkotsu : « Les espaces à fortes contraintes (déserts, pôles, hautes montagnes) sont peu peuplés car difficiles à vivre. Mais l'homme sait s'y adapter et parfois les mettre en valeur ! »",
+    "erreurs": [
+      "Oublier les différents types de contraintes.",
+      "Confondre désert chaud et région polaire.",
+      "Croire que ces espaces sont densément peuplés.",
+      "Oublier les adaptations des hommes.",
+      "Ignorer la mise en valeur de ces espaces.",
+      "Confondre contrainte et atout.",
+      "Oublier le lien entre contraintes et faible peuplement.",
+      "Croire que ces espaces sont totalement inhabités."
+    ]
+  }
+}
