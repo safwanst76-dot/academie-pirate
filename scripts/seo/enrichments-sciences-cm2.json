@@ -1,0 +1,594 @@
+{
+  "tanjiro-kamado-les-etats-de-la-matiere": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Tanjiro Kamado",
+    "manga": "Demon Slayer",
+    "notion": "Les états de la matière",
+    "explication": "Tout ce qui nous entoure est constitué de matière. Cette matière peut se présenter sous trois états différents : l'état solide, l'état liquide et l'état gazeux. Chaque état a ses propres caractéristiques, faciles à reconnaître. Un solide possède une forme propre : il garde sa forme même quand on le déplace ou qu'on le pose ailleurs. Par exemple, un glaçon ou une pierre gardent toujours la même forme. Un liquide, lui, n'a pas de forme propre : il prend la forme du récipient qui le contient, et sa surface au repos est toujours plane et horizontale. L'eau dans un verre en est un bon exemple. Un gaz, enfin, n'a ni forme propre ni volume propre : il occupe tout l'espace qui lui est offert, en se répandant partout dans le récipient. L'air est un gaz. L'eau est un excellent exemple pour comprendre les trois états : on la trouve à l'état solide (la glace), à l'état liquide (l'eau que l'on boit) et à l'état gazeux (la vapeur d'eau). En CM2, on apprend à reconnaître ces trois états. Bien les comprendre, c'est savoir décrire la matière qui nous entoure et préparer l'étude des changements d'état.",
+    "definitions": [
+      {
+        "terme": "Matière",
+        "sens": "ce dont sont faits tous les objets"
+      },
+      {
+        "terme": "État solide",
+        "sens": "la matière a une forme propre"
+      },
+      {
+        "terme": "État liquide",
+        "sens": "la matière prend la forme du récipient"
+      },
+      {
+        "terme": "État gazeux",
+        "sens": "la matière occupe tout l'espace disponible"
+      },
+      {
+        "terme": "Forme propre",
+        "sens": "une forme qui ne change pas (les solides)"
+      },
+      {
+        "terme": "Surface plane",
+        "sens": "la surface horizontale d'un liquide au repos"
+      },
+      {
+        "terme": "Récipient",
+        "sens": "ce qui contient un liquide ou un gaz"
+      },
+      {
+        "terme": "Exemple de l'eau",
+        "sens": "glace, eau liquide, vapeur"
+      }
+    ],
+    "methode": [
+      "Retiens les trois états : solide, liquide, gazeux.",
+      "Reconnais le solide à sa forme propre.",
+      "Reconnais le liquide : il prend la forme du récipient.",
+      "Observe que sa surface au repos est plane.",
+      "Reconnais le gaz : il occupe tout l'espace.",
+      "Utilise l'exemple de l'eau pour les trois états.",
+      "Glace = solide, eau = liquide, vapeur = gaz.",
+      "Apprends à décrire la matière qui t'entoure."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les trois états de l'eau ?",
+      "etapes": [
+        "L'eau est un excellent exemple des trois états.",
+        "À l'état solide, c'est la glace : elle a une forme propre.",
+        "À l'état liquide, c'est l'eau que l'on boit.",
+        "Elle prend alors la forme du récipient.",
+        "À l'état gazeux, c'est la vapeur d'eau.",
+        "Elle occupe tout l'espace disponible."
+      ]
+    },
+    "astuce": "Tanjiro Kamado : « La matière existe en 3 états : SOLIDE (forme propre), LIQUIDE (prend la forme du récipient), GAZ (occupe tout l'espace). Pense à l'eau : glace, eau liquide, vapeur ! »",
+    "erreurs": [
+      "Confondre l'état liquide et l'état gazeux.",
+      "Croire qu'un liquide a une forme propre.",
+      "Oublier que le gaz occupe tout l'espace.",
+      "Croire que l'air n'est pas de la matière.",
+      "Confondre solide et liquide.",
+      "Oublier que la surface d'un liquide au repos est plane.",
+      "Penser que la matière n'a qu'un seul état.",
+      "Confondre la glace et l'eau liquide."
+    ]
+  },
+  "zenitsu-agatsuma-les-changements-d-etat": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Zenitsu Agatsuma",
+    "manga": "Demon Slayer",
+    "notion": "Les changements d'état",
+    "explication": "La matière peut passer d'un état à un autre : ce sont les changements d'état. Ils portent chacun un nom précis, selon les états de départ et d'arrivée. La fusion est le passage de l'état solide à l'état liquide : par exemple, un glaçon qui fond devient de l'eau liquide. La solidification est le passage inverse, de l'état liquide à l'état solide : l'eau qui gèle devient de la glace. La vaporisation est le passage de l'état liquide à l'état gazeux : l'eau qui bout se transforme en vapeur. La condensation (ou liquéfaction) est le passage inverse, de l'état gazeux à l'état liquide : la vapeur d'eau qui se transforme en gouttelettes, par exemple sur une vitre froide. Tous ces changements d'état dépendent de la température. Pour l'eau, par exemple, la fusion de la glace se produit à 0 degré Celsius, et l'ébullition (une vaporisation rapide) se produit vers 100 degrés Celsius. Pendant un changement d'état, la matière ne disparaît pas : elle change seulement de forme. En CM2, on étudie ces transformations. Bien les comprendre, c'est savoir expliquer ce qui se passe quand la matière chauffe ou refroidit.",
+    "definitions": [
+      {
+        "terme": "Changement d'état",
+        "sens": "le passage d'un état à un autre"
+      },
+      {
+        "terme": "Fusion",
+        "sens": "le passage de solide à liquide"
+      },
+      {
+        "terme": "Solidification",
+        "sens": "le passage de liquide à solide"
+      },
+      {
+        "terme": "Vaporisation",
+        "sens": "le passage de liquide à gazeux"
+      },
+      {
+        "terme": "Condensation",
+        "sens": "le passage de gazeux à liquide"
+      },
+      {
+        "terme": "Température",
+        "sens": "elle déclenche les changements d'état"
+      },
+      {
+        "terme": "0 °C",
+        "sens": "la fusion de la glace"
+      },
+      {
+        "terme": "100 °C",
+        "sens": "l'ébullition de l'eau"
+      }
+    ],
+    "methode": [
+      "Comprends qu'un changement d'état dépend de la température.",
+      "Fusion : solide vers liquide (la glace fond).",
+      "Solidification : liquide vers solide (l'eau gèle).",
+      "Vaporisation : liquide vers gazeux (l'eau bout).",
+      "Condensation : gazeux vers liquide (la vapeur se dépose).",
+      "Retiens : fusion de l'eau à 0 °C.",
+      "Retiens : ébullition de l'eau vers 100 °C.",
+      "Souviens-toi que la matière ne disparaît pas."
+    ],
+    "exemple": {
+      "enonce": "Comment s'appellent les changements d'état de l'eau ?",
+      "etapes": [
+        "Quand la glace fond, c'est la fusion (solide vers liquide).",
+        "Quand l'eau gèle, c'est la solidification (liquide vers solide).",
+        "Quand l'eau bout, c'est la vaporisation (liquide vers gazeux).",
+        "Quand la vapeur se dépose, c'est la condensation (gazeux vers liquide).",
+        "La fusion de la glace se produit à 0 °C.",
+        "L'ébullition de l'eau se produit vers 100 °C."
+      ]
+    },
+    "astuce": "Zenitsu Agatsuma : « Fusion (solide → liquide), solidification (liquide → solide), vaporisation (liquide → gaz), condensation (gaz → liquide). Tout dépend de la température ! Eau : 0 °C et 100 °C. »",
+    "erreurs": [
+      "Confondre fusion et solidification.",
+      "Confondre vaporisation et condensation.",
+      "Oublier le rôle de la température.",
+      "Se tromper sur la fusion de l'eau (0 °C).",
+      "Se tromper sur l'ébullition de l'eau (100 °C).",
+      "Croire que la matière disparaît lors du changement.",
+      "Confondre fusion et vaporisation.",
+      "Inverser le sens d'un changement d'état."
+    ]
+  },
+  "shinobu-kocho-les-melanges-et-solutions": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Shinobu Kocho",
+    "manga": "Demon Slayer",
+    "notion": "Les mélanges et les solutions",
+    "explication": "Un mélange est obtenu lorsqu'on réunit plusieurs substances ensemble. On distingue deux grandes sortes de mélanges. Dans un mélange homogène, on ne peut plus distinguer les différents composants à l'œil nu : le mélange semble former une seule substance uniforme. Par exemple, quand on dissout du sel dans de l'eau, on obtient de l'eau salée, qui paraît parfaitement transparente : on ne voit plus le sel, c'est un mélange homogène. Dans un mélange hétérogène, au contraire, on distingue les différents composants : par exemple, un mélange d'eau et de sable, où l'on voit nettement le sable au fond, est hétérogène. Un cas particulier de mélange homogène est la solution. Une solution est obtenue lorsqu'une substance, appelée le soluté, se dissout complètement dans un liquide, appelé le solvant. Dans l'eau salée, le sel est le soluté et l'eau est le solvant. On peut souvent séparer les composants d'un mélange par différentes techniques, comme la filtration ou l'évaporation. En CM2, on apprend à reconnaître ces mélanges. Bien les comprendre, c'est savoir observer et classer ce qui nous entoure dans la vie quotidienne.",
+    "definitions": [
+      {
+        "terme": "Mélange",
+        "sens": "plusieurs substances réunies ensemble"
+      },
+      {
+        "terme": "Mélange homogène",
+        "sens": "on ne distingue pas les composants"
+      },
+      {
+        "terme": "Mélange hétérogène",
+        "sens": "on distingue les composants"
+      },
+      {
+        "terme": "Solution",
+        "sens": "un mélange homogène d'un soluté dissous"
+      },
+      {
+        "terme": "Soluté",
+        "sens": "la substance qui se dissout (ex. le sel)"
+      },
+      {
+        "terme": "Solvant",
+        "sens": "le liquide qui dissout (ex. l'eau)"
+      },
+      {
+        "terme": "Dissolution",
+        "sens": "le fait qu'un soluté disparaisse dans le solvant"
+      },
+      {
+        "terme": "Séparation",
+        "sens": "la filtration ou l'évaporation"
+      }
+    ],
+    "methode": [
+      "Définis un mélange (plusieurs substances ensemble).",
+      "Observe si l'on distingue les composants.",
+      "Si on ne les distingue pas → mélange homogène.",
+      "Si on les distingue → mélange hétérogène.",
+      "Reconnais une solution (mélange homogène).",
+      "Identifie le soluté (ce qui se dissout).",
+      "Identifie le solvant (le liquide).",
+      "Connais les techniques de séparation."
+    ],
+    "exemple": {
+      "enonce": "L'eau salée et l'eau + sable : quels types de mélanges ?",
+      "etapes": [
+        "L'eau salée mélange du sel et de l'eau.",
+        "On ne distingue plus le sel : c'est un mélange homogène.",
+        "C'est même une solution : le sel (soluté) se dissout dans l'eau (solvant).",
+        "L'eau + sable mélange du sable et de l'eau.",
+        "On distingue nettement le sable : c'est un mélange hétérogène.",
+        "On peut séparer ce mélange par filtration."
+      ]
+    },
+    "astuce": "Shinobu Kocho : « Mélange HOMOGÈNE (eau salée) : on ne voit pas les composants. HÉTÉROGÈNE (eau + sable) : on les distingue. Une solution = un soluté (sel) dissous dans un solvant (eau) ! »",
+    "erreurs": [
+      "Confondre mélange homogène et hétérogène.",
+      "Confondre soluté et solvant.",
+      "Croire que le sel disparaît vraiment dans l'eau salée.",
+      "Confondre solution et mélange hétérogène.",
+      "Oublier qu'on peut séparer un mélange.",
+      "Croire qu'un mélange forme toujours une seule substance.",
+      "Confondre dissolution et disparition de la matière.",
+      "Confondre filtration et évaporation."
+    ]
+  },
+  "tengen-uzui-la-masse-et-le-volume": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Tengen Uzui",
+    "manga": "Demon Slayer",
+    "notion": "La masse et le volume",
+    "explication": "La masse et le volume sont deux grandeurs différentes que l'on utilise pour décrire la matière, et qu'il ne faut surtout pas confondre. La masse correspond à la quantité de matière contenue dans un objet. Elle se mesure en kilogrammes (kg) ou en grammes (g), à l'aide d'une balance. Plus un objet contient de matière, plus sa masse est grande. Le volume, lui, correspond à l'espace qu'occupe un objet ou une quantité de matière. Il se mesure en litres (L) ou en millilitres (mL), ou encore en centimètres cubes (cm³). Pour mesurer le volume d'un liquide, on utilise un récipient gradué, comme une éprouvette graduée. Deux objets peuvent avoir la même masse mais des volumes différents, ou inversement : par exemple, un kilogramme de plumes occupe beaucoup plus de place qu'un kilogramme de plomb, mais les deux ont la même masse. Il est donc essentiel de bien distinguer ces deux grandeurs et de connaître leurs unités et leurs instruments de mesure. En CM2, on apprend à mesurer la masse et le volume. Bien les comprendre, c'est savoir décrire précisément la matière et faire des mesures justes.",
+    "definitions": [
+      {
+        "terme": "Masse",
+        "sens": "la quantité de matière d'un objet"
+      },
+      {
+        "terme": "Volume",
+        "sens": "l'espace qu'occupe un objet"
+      },
+      {
+        "terme": "Kilogramme (kg)",
+        "sens": "une unité de masse"
+      },
+      {
+        "terme": "Gramme (g)",
+        "sens": "une unité de masse plus petite"
+      },
+      {
+        "terme": "Litre (L)",
+        "sens": "une unité de volume"
+      },
+      {
+        "terme": "Balance",
+        "sens": "l'instrument qui mesure la masse"
+      },
+      {
+        "terme": "Éprouvette graduée",
+        "sens": "l'instrument qui mesure le volume d'un liquide"
+      },
+      {
+        "terme": "Distinction",
+        "sens": "masse et volume sont deux grandeurs différentes"
+      }
+    ],
+    "methode": [
+      "Définis la masse (quantité de matière).",
+      "Retiens ses unités : kilogramme, gramme.",
+      "Retiens son instrument : la balance.",
+      "Définis le volume (espace occupé).",
+      "Retiens ses unités : litre, millilitre.",
+      "Retiens son instrument : l'éprouvette graduée.",
+      "Ne confonds jamais masse et volume.",
+      "Apprends à faire des mesures justes."
+    ],
+    "exemple": {
+      "enonce": "Comment distinguer la masse et le volume ?",
+      "etapes": [
+        "La masse est la quantité de matière d'un objet.",
+        "On la mesure en kg ou g, avec une balance.",
+        "Le volume est l'espace que l'objet occupe.",
+        "On le mesure en L ou mL, avec une éprouvette graduée.",
+        "Un kilo de plumes et un kilo de plomb ont la même masse.",
+        "Mais les plumes occupent un volume bien plus grand."
+      ]
+    },
+    "astuce": "Tengen Uzui : « La MASSE = quantité de matière (en kg/g, avec une balance). Le VOLUME = espace occupé (en L/mL, avec une éprouvette graduée). Ce sont deux grandeurs DIFFÉRENTES ! »",
+    "erreurs": [
+      "Confondre la masse et le volume.",
+      "Confondre les unités (kg pour la masse, L pour le volume).",
+      "Croire qu'on mesure le volume avec une balance.",
+      "Croire qu'on mesure la masse avec une éprouvette.",
+      "Penser que même masse signifie même volume.",
+      "Oublier les unités de mesure.",
+      "Confondre balance et éprouvette graduée.",
+      "Croire que la masse et le volume sont identiques."
+    ]
+  },
+  "muichiro-tokito-l-air-autour-de-nous": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Muichiro Tokito",
+    "manga": "Demon Slayer",
+    "notion": "L'air autour de nous",
+    "explication": "L'air qui nous entoure est invisible, mais il s'agit bel et bien de matière, à l'état gazeux. On peut le prouver par plusieurs observations. D'abord, l'air occupe de l'espace : si l'on plonge un verre retourné dans l'eau, l'eau ne remplit pas le verre, car l'air à l'intérieur prend la place. Ensuite, l'air possède une masse : même si elle est faible, on peut la mesurer, par exemple en pesant un ballon vide puis gonflé. Enfin, l'air peut être comprimé, c'est-à-dire qu'on peut réduire le volume qu'il occupe en le tassant, par exemple avec une seringue bouchée. L'air n'est pas un seul gaz, mais un mélange de plusieurs gaz. Il est composé principalement de diazote (environ les quatre cinquièmes) et de dioxygène (environ un cinquième), avec d'autres gaz en petite quantité. Le dioxygène est le gaz indispensable à la respiration des êtres vivants. En CM2, on apprend à connaître l'air et ses propriétés. Bien les comprendre, c'est saisir que même ce qui est invisible peut être de la matière, et comprendre pourquoi l'air est essentiel à la vie.",
+    "definitions": [
+      {
+        "terme": "Air",
+        "sens": "un gaz invisible, qui est de la matière"
+      },
+      {
+        "terme": "Gaz",
+        "sens": "l'état de la matière de l'air"
+      },
+      {
+        "terme": "Matière",
+        "sens": "ce dont l'air est constitué"
+      },
+      {
+        "terme": "Occuper de l'espace",
+        "sens": "l'air prend de la place"
+      },
+      {
+        "terme": "Masse de l'air",
+        "sens": "l'air a une masse, même faible"
+      },
+      {
+        "terme": "Compression",
+        "sens": "réduire le volume de l'air"
+      },
+      {
+        "terme": "Diazote et dioxygène",
+        "sens": "les principaux gaz de l'air"
+      },
+      {
+        "terme": "Respiration",
+        "sens": "le dioxygène est vital pour respirer"
+      }
+    ],
+    "methode": [
+      "Comprends que l'air est de la matière (un gaz).",
+      "Prouve qu'il occupe de l'espace (verre retourné).",
+      "Prouve qu'il a une masse (ballon pesé).",
+      "Comprends qu'il peut être comprimé (seringue).",
+      "Retiens que l'air est un mélange de gaz.",
+      "Cite les principaux : diazote et dioxygène.",
+      "Retiens le rôle du dioxygène (respiration).",
+      "Comprends pourquoi l'air est essentiel à la vie."
+    ],
+    "exemple": {
+      "enonce": "Comment prouver que l'air est de la matière ?",
+      "etapes": [
+        "L'air est invisible, mais c'est bien de la matière.",
+        "Il occupe de l'espace : un verre retourné dans l'eau ne se remplit pas.",
+        "Il a une masse : un ballon gonflé pèse plus qu'un ballon vide.",
+        "Il peut être comprimé : on le tasse dans une seringue bouchée.",
+        "Il est composé surtout de diazote et de dioxygène.",
+        "Le dioxygène est indispensable à la respiration."
+      ]
+    },
+    "astuce": "Muichiro Tokito : « L'air est invisible mais c'est de la MATIÈRE : il occupe de l'espace, il a une masse et peut être comprimé. Il contient surtout du diazote et du dioxygène, vital pour respirer ! »",
+    "erreurs": [
+      "Croire que l'air n'est pas de la matière.",
+      "Penser que l'air n'occupe pas d'espace.",
+      "Croire que l'air n'a pas de masse.",
+      "Oublier que l'air peut être comprimé.",
+      "Croire que l'air est un seul gaz.",
+      "Confondre diazote et dioxygène.",
+      "Oublier le rôle du dioxygène dans la respiration.",
+      "Penser que l'invisible n'est jamais de la matière."
+    ]
+  },
+  "kyojuro-rengoku-la-chaleur-et-la-temperature": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Kyojuro Rengoku",
+    "manga": "Demon Slayer",
+    "notion": "La chaleur et la température",
+    "explication": "On confond souvent la chaleur et la température, mais ce sont deux notions différentes. La température est une grandeur qui indique si un objet est plus ou moins chaud. Elle se mesure en degrés Celsius (°C) à l'aide d'un thermomètre. Par exemple, l'eau glacée a une température basse, proche de 0 °C, tandis que l'eau bouillante a une température élevée, proche de 100 °C. La chaleur, elle, est une forme d'énergie qui se transfère d'un corps à un autre. Le point important à retenir est le sens de ce transfert : la chaleur passe toujours du corps le plus chaud vers le corps le plus froid, jamais l'inverse. Par exemple, si l'on plonge une cuillère froide dans une boisson chaude, la chaleur passe de la boisson vers la cuillère : la boisson se refroidit un peu et la cuillère se réchauffe. Ce transfert continue jusqu'à ce que les deux atteignent la même température. En CM2, on apprend à distinguer ces deux notions et à mesurer une température. Bien les comprendre, c'est savoir expliquer pourquoi les objets se réchauffent ou se refroidissent autour de nous.",
+    "definitions": [
+      {
+        "terme": "Température",
+        "sens": "elle indique si un objet est chaud ou froid"
+      },
+      {
+        "terme": "Chaleur",
+        "sens": "une forme d'énergie qui se transfère"
+      },
+      {
+        "terme": "Degré Celsius (°C)",
+        "sens": "l'unité de température"
+      },
+      {
+        "terme": "Thermomètre",
+        "sens": "l'instrument qui mesure la température"
+      },
+      {
+        "terme": "Énergie",
+        "sens": "ce qu'est la chaleur"
+      },
+      {
+        "terme": "Transfert",
+        "sens": "le passage de la chaleur d'un corps à un autre"
+      },
+      {
+        "terme": "Du chaud vers le froid",
+        "sens": "le sens du transfert de chaleur"
+      },
+      {
+        "terme": "Équilibre",
+        "sens": "les corps atteignent la même température"
+      }
+    ],
+    "methode": [
+      "Définis la température (chaud ou froid).",
+      "Retiens son unité : le degré Celsius.",
+      "Retiens son instrument : le thermomètre.",
+      "Définis la chaleur (une forme d'énergie).",
+      "Comprends que la chaleur se transfère.",
+      "Retiens le sens : du chaud vers le froid.",
+      "Ne confonds pas chaleur et température.",
+      "Comprends que les corps tendent vers la même température."
+    ],
+    "exemple": {
+      "enonce": "Dans quel sens la chaleur se transfère-t-elle ?",
+      "etapes": [
+        "La température indique si un objet est chaud ou froid.",
+        "La chaleur, elle, est une énergie qui se transfère.",
+        "On plonge une cuillère froide dans une boisson chaude.",
+        "La chaleur passe de la boisson vers la cuillère.",
+        "La chaleur va toujours du plus chaud vers le plus froid.",
+        "Le transfert s'arrête quand les deux ont la même température."
+      ]
+    },
+    "astuce": "Kyojuro Rengoku : « La TEMPÉRATURE se mesure en °C avec un thermomètre. La CHALEUR est une énergie qui va toujours du CHAUD vers le FROID. Ne confonds pas ces deux notions ! »",
+    "erreurs": [
+      "Confondre la chaleur et la température.",
+      "Croire que la chaleur va du froid vers le chaud.",
+      "Oublier l'unité de température (°C).",
+      "Croire qu'on mesure la chaleur avec un thermomètre.",
+      "Oublier que la chaleur est une énergie.",
+      "Penser que le transfert ne s'arrête jamais.",
+      "Confondre température élevée et grande quantité de chaleur.",
+      "Oublier le sens du transfert de chaleur."
+    ]
+  },
+  "giyu-tomioka-le-cycle-de-l-eau": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Giyu Tomioka",
+    "manga": "Demon Slayer",
+    "notion": "Le cycle de l'eau",
+    "explication": "L'eau de la planète est sans cesse en mouvement et change d'état : elle suit un parcours qui se répète en boucle, appelé le cycle de l'eau. Ce cycle s'appuie directement sur les changements d'état de l'eau. Tout commence par l'évaporation : sous l'effet de la chaleur du Soleil, l'eau des océans, des lacs et des rivières se transforme en vapeur d'eau et s'élève dans l'air. En montant, cette vapeur rencontre des couches d'air plus froides : c'est la condensation, qui transforme la vapeur en fines gouttelettes formant les nuages. Lorsque ces gouttelettes deviennent trop nombreuses et trop lourdes, elles retombent : ce sont les précipitations, sous forme de pluie, de neige ou de grêle. Une partie de cette eau ruisselle à la surface du sol et rejoint les rivières, tandis qu'une autre partie s'infiltre dans le sol. L'eau finit par retourner vers les océans, où le cycle recommence. Le cycle de l'eau est donc un mouvement perpétuel, sans véritable début ni fin. En CM2, on apprend à décrire ce cycle. Bien le comprendre, c'est saisir comment l'eau circule sur Terre et relier ce phénomène aux changements d'état.",
+    "definitions": [
+      {
+        "terme": "Cycle de l'eau",
+        "sens": "le parcours de l'eau qui se répète en boucle"
+      },
+      {
+        "terme": "Évaporation",
+        "sens": "l'eau se transforme en vapeur (chaleur du Soleil)"
+      },
+      {
+        "terme": "Condensation",
+        "sens": "la vapeur forme des gouttelettes (les nuages)"
+      },
+      {
+        "terme": "Précipitations",
+        "sens": "la pluie, la neige ou la grêle"
+      },
+      {
+        "terme": "Nuage",
+        "sens": "un ensemble de fines gouttelettes d'eau"
+      },
+      {
+        "terme": "Ruissellement",
+        "sens": "l'eau qui s'écoule à la surface du sol"
+      },
+      {
+        "terme": "Infiltration",
+        "sens": "l'eau qui pénètre dans le sol"
+      },
+      {
+        "terme": "Cycle perpétuel",
+        "sens": "un mouvement sans fin"
+      }
+    ],
+    "methode": [
+      "Comprends que l'eau circule en boucle.",
+      "Relie le cycle aux changements d'état.",
+      "Évaporation : l'eau devient vapeur (Soleil).",
+      "Condensation : la vapeur forme les nuages.",
+      "Précipitations : pluie, neige ou grêle.",
+      "Ruissellement et infiltration de l'eau.",
+      "Retour de l'eau vers les océans.",
+      "Retiens que le cycle recommence sans fin."
+    ],
+    "exemple": {
+      "enonce": "Quelles sont les grandes étapes du cycle de l'eau ?",
+      "etapes": [
+        "Le Soleil chauffe l'eau, qui s'évapore : c'est l'évaporation.",
+        "La vapeur monte et se refroidit : c'est la condensation.",
+        "Elle forme des nuages faits de gouttelettes.",
+        "L'eau retombe en pluie ou en neige : les précipitations.",
+        "L'eau ruisselle ou s'infiltre dans le sol.",
+        "Elle retourne aux océans et le cycle recommence."
+      ]
+    },
+    "astuce": "Giyu Tomioka : « Le cycle de l'eau : ÉVAPORATION (le Soleil chauffe), CONDENSATION (les nuages se forment), PRÉCIPITATIONS (la pluie tombe), puis l'eau retourne à la mer. Un cycle sans fin ! »",
+    "erreurs": [
+      "Confondre évaporation et condensation.",
+      "Oublier le rôle du Soleil dans l'évaporation.",
+      "Croire que les nuages ne sont pas de l'eau.",
+      "Oublier l'étape des précipitations.",
+      "Confondre ruissellement et infiltration.",
+      "Croire que le cycle a un début et une fin.",
+      "Oublier que le cycle s'appuie sur les changements d'état.",
+      "Inverser l'ordre des étapes du cycle."
+    ]
+  },
+  "inosuke-hashibira-les-sources-d-energie": {
+    "matiere": "sciences",
+    "niveau": "cm2",
+    "hero": "Inosuke Hashibira",
+    "manga": "Demon Slayer",
+    "notion": "Les sources d'énergie",
+    "explication": "L'énergie est indispensable à notre vie quotidienne : elle nous permet de nous chauffer, de nous éclairer, de faire fonctionner les appareils et de nous déplacer. Cette énergie provient de différentes sources, que l'on peut classer en deux grandes catégories. Les sources d'énergie renouvelables proviennent de phénomènes naturels qui ne s'épuisent pas : l'énergie solaire (le Soleil), l'énergie éolienne (le vent) et l'énergie hydraulique (l'eau) en sont des exemples. Elles sont inépuisables et peu polluantes. Les sources d'énergie non renouvelables, au contraire, existent en quantité limitée et finiront par s'épuiser : c'est le cas des énergies fossiles, comme le pétrole, le charbon et le gaz, qui ont de plus l'inconvénient de polluer. À partir de ces sources, on produit souvent de l'électricité, une forme d'énergie très pratique que l'on utilise partout. Comme certaines sources s'épuisent et que produire de l'énergie peut polluer, il est important de ne pas gaspiller : faire des économies d'énergie est un geste essentiel pour protéger l'environnement. En CM2, on découvre ces sources d'énergie. Bien les comprendre, c'est savoir d'où vient l'énergie que nous utilisons et pourquoi il faut l'économiser. Apprendre à connaître ces sources d'énergie permet aussi de mieux comprendre les grands débats actuels sur l'environnement et sur la façon de produire l'énergie de demain.",
+    "definitions": [
+      {
+        "terme": "Énergie",
+        "sens": "ce qui permet de chauffer, éclairer, se déplacer"
+      },
+      {
+        "terme": "Source d'énergie",
+        "sens": "ce d'où provient l'énergie"
+      },
+      {
+        "terme": "Énergie renouvelable",
+        "sens": "inépuisable et peu polluante"
+      },
+      {
+        "terme": "Énergie fossile",
+        "sens": "pétrole, charbon, gaz : limitée et polluante"
+      },
+      {
+        "terme": "Énergie solaire",
+        "sens": "produite à partir du Soleil"
+      },
+      {
+        "terme": "Énergie éolienne",
+        "sens": "produite à partir du vent"
+      },
+      {
+        "terme": "Électricité",
+        "sens": "une forme d'énergie très utilisée"
+      },
+      {
+        "terme": "Économie d'énergie",
+        "sens": "éviter le gaspillage d'énergie"
+      }
+    ],
+    "methode": [
+      "Comprends à quoi sert l'énergie au quotidien.",
+      "Distingue sources renouvelables et non renouvelables.",
+      "Cite les renouvelables : solaire, éolien, hydraulique.",
+      "Retiens qu'elles sont inépuisables et peu polluantes.",
+      "Cite les fossiles : pétrole, charbon, gaz.",
+      "Retiens qu'elles sont limitées et polluantes.",
+      "Comprends que l'on produit souvent de l'électricité.",
+      "Retiens l'importance des économies d'énergie."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre énergies renouvelables et fossiles ?",
+      "etapes": [
+        "L'énergie sert à se chauffer, s'éclairer, se déplacer.",
+        "Les énergies renouvelables viennent du Soleil, du vent, de l'eau.",
+        "Elles sont inépuisables et peu polluantes.",
+        "Les énergies fossiles sont le pétrole, le charbon, le gaz.",
+        "Elles sont limitées et polluent l'environnement.",
+        "Pour les préserver, il faut économiser l'énergie."
+      ]
+    },
+    "astuce": "Inosuke Hashibira : « L'énergie sert à se chauffer, s'éclairer, se déplacer ! Sources RENOUVELABLES (solaire, éolien, eau) vs FOSSILES (pétrole, charbon, gaz). Et pense à ÉCONOMISER l'énergie ! »",
+    "erreurs": [
+      "Confondre énergie renouvelable et énergie fossile.",
+      "Croire que les énergies fossiles sont inépuisables.",
+      "Oublier que les fossiles polluent.",
+      "Confondre solaire, éolien et hydraulique.",
+      "Oublier que l'on produit souvent de l'électricité.",
+      "Ignorer l'importance des économies d'énergie.",
+      "Croire que toutes les énergies sont propres.",
+      "Penser que l'énergie est illimitée."
+    ]
+  }
+}
