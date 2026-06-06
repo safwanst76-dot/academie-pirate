@@ -1,0 +1,594 @@
+{
+  "yuta-okkotsu-la-france-et-ses-regions": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Yuta Okkotsu",
+    "manga": "Jujutsu Kaisen",
+    "notion": "La France et ses régions",
+    "explication": "La France est un pays organisé en plusieurs échelons administratifs, c'est-à-dire en différents niveaux qui permettent de la gérer et de l'administrer. Le plus grand de ces échelons est la région. La France métropolitaine, c'est-à-dire la partie située en Europe, compte treize régions. Chaque région est elle-même divisée en départements, et chaque département est divisé en communes. La commune, qui correspond à une ville ou à un village, est l'échelon le plus proche des habitants : elle est dirigée par un maire. Le département a pour centre une préfecture, et la région a sa propre capitale régionale. La capitale de toute la France est Paris. Mais la France ne se limite pas à la métropole : elle comprend aussi des territoires d'outre-mer, situés loin de l'Europe, dans plusieurs océans du monde, comme la Guadeloupe, la Martinique, La Réunion ou la Guyane. Ces territoires font pleinement partie de la France. En CM2, on découvre cette organisation du territoire. Bien la comprendre, c'est savoir comment la France est divisée et administrée, et se repérer dans les différents échelons, de la commune jusqu'à l'État.",
+    "definitions": [
+      {
+        "terme": "Région",
+        "sens": "le plus grand échelon administratif (13 en métropole)"
+      },
+      {
+        "terme": "Département",
+        "sens": "une division de la région"
+      },
+      {
+        "terme": "Commune",
+        "sens": "une ville ou un village, dirigé par un maire"
+      },
+      {
+        "terme": "Métropole",
+        "sens": "la partie de la France située en Europe"
+      },
+      {
+        "terme": "Outre-mer",
+        "sens": "les territoires français loin de l'Europe"
+      },
+      {
+        "terme": "Préfecture",
+        "sens": "la ville centre d'un département"
+      },
+      {
+        "terme": "Paris",
+        "sens": "la capitale de la France"
+      },
+      {
+        "terme": "Échelon administratif",
+        "sens": "un niveau d'organisation du territoire"
+      }
+    ],
+    "methode": [
+      "Retiens les trois échelons : région, département, commune.",
+      "Situe la région comme le plus grand échelon.",
+      "Retiens qu'il y a treize régions en métropole.",
+      "Comprends que la région se divise en départements.",
+      "Note que le département se divise en communes.",
+      "Identifie la capitale de la France : Paris.",
+      "N'oublie pas les territoires d'outre-mer.",
+      "Sache que l'outre-mer fait partie de la France."
+    ],
+    "exemple": {
+      "enonce": "Comment la France est-elle organisée, de la région à la commune ?",
+      "etapes": [
+        "La France métropolitaine compte treize régions.",
+        "Chaque région est divisée en départements.",
+        "Chaque département est divisé en communes.",
+        "La commune est l'échelon le plus proche des habitants.",
+        "Elle correspond à une ville ou un village, avec un maire.",
+        "La capitale de toute la France est Paris."
+      ]
+    },
+    "astuce": "Yuta Okkotsu : « La France s'organise en trois grands échelons : RÉGION, DÉPARTEMENT, COMMUNE. La capitale est Paris. Et n'oublie jamais l'outre-mer : il fait partie de la France ! »",
+    "erreurs": [
+      "Confondre région et département.",
+      "Confondre département et commune.",
+      "Oublier les territoires d'outre-mer.",
+      "Croire que l'outre-mer ne fait pas partie de la France.",
+      "Confondre préfecture et capitale du pays.",
+      "Se tromper sur le nombre de régions.",
+      "Confondre la commune et la région.",
+      "Oublier que Paris est la capitale."
+    ]
+  },
+  "panda-la-france-et-ses-paysages": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Panda",
+    "manga": "Jujutsu Kaisen",
+    "notion": "La France et ses paysages",
+    "explication": "La France présente une grande variété de paysages, c'est-à-dire de portions de territoire telles qu'on peut les observer. Cette diversité s'explique d'abord par la variété du relief, c'est-à-dire la forme de la surface de la Terre. On trouve en France de hautes montagnes, comme les Alpes et les Pyrénées, mais aussi des massifs plus anciens et plus arrondis, comme le Massif central. On y trouve également des plaines, vastes étendues plates, et des plateaux, surfaces élevées et relativement planes. La France possède aussi de longs littoraux, c'est-à-dire des bords de mer, le long de l'océan Atlantique, de la Manche et de la mer Méditerranée, ainsi que de grands fleuves, comme la Loire, la Seine, le Rhône ou la Garonne. À ces paysages naturels s'ajoutent des paysages aménagés par l'être humain : paysages urbains (les villes), paysages ruraux et agricoles (les campagnes, les champs), ou encore paysages industriels. En CM2, on apprend à reconnaître et à décrire ces différents paysages. Bien les comprendre, c'est savoir observer un territoire, identifier son relief et distinguer ce qui est naturel de ce que l'homme a transformé. Savoir lire et décrire un paysage est une compétence essentielle en géographie, car elle permet de comprendre comment les hommes occupent et transforment le territoire.",
+    "definitions": [
+      {
+        "terme": "Paysage",
+        "sens": "une portion de territoire telle qu'on l'observe"
+      },
+      {
+        "terme": "Relief",
+        "sens": "la forme de la surface de la Terre"
+      },
+      {
+        "terme": "Montagne",
+        "sens": "un relief élevé (Alpes, Pyrénées)"
+      },
+      {
+        "terme": "Plaine",
+        "sens": "une vaste étendue plate"
+      },
+      {
+        "terme": "Plateau",
+        "sens": "une surface élevée et plane"
+      },
+      {
+        "terme": "Littoral",
+        "sens": "le bord de mer"
+      },
+      {
+        "terme": "Fleuve",
+        "sens": "un grand cours d'eau (Loire, Seine, Rhône)"
+      },
+      {
+        "terme": "Paysage aménagé",
+        "sens": "un paysage transformé par l'homme"
+      }
+    ],
+    "methode": [
+      "Comprends ce qu'est un paysage.",
+      "Distingue les formes du relief.",
+      "Repère les montagnes (Alpes, Pyrénées).",
+      "Identifie les plaines et les plateaux.",
+      "Note les littoraux (bords de mer).",
+      "Retiens les grands fleuves (Loire, Seine, Rhône).",
+      "Distingue paysages naturels et paysages aménagés.",
+      "Apprends à décrire un paysage observé."
+    ],
+    "exemple": {
+      "enonce": "Comment distinguer les grands types de relief en France ?",
+      "etapes": [
+        "Le relief est la forme de la surface de la Terre.",
+        "Les montagnes sont des reliefs élevés, comme les Alpes.",
+        "Les plaines sont de vastes étendues plates.",
+        "Les plateaux sont des surfaces élevées mais planes.",
+        "Les littoraux correspondent aux bords de mer.",
+        "Cette variété explique la diversité des paysages français."
+      ]
+    },
+    "astuce": "Panda : « La France a des paysages variés : montagnes (Alpes, Pyrénées), plaines, plateaux, littoraux, fleuves. Et n'oublie pas : l'homme aménage les paysages (villes, champs, industries) ! »",
+    "erreurs": [
+      "Confondre montagne et plateau.",
+      "Confondre plaine et plateau.",
+      "Oublier les littoraux et les fleuves.",
+      "Confondre paysage naturel et paysage aménagé.",
+      "Confondre relief et paysage.",
+      "Oublier la diversité des paysages français.",
+      "Confondre les Alpes et le Massif central.",
+      "Croire que tous les paysages sont naturels."
+    ]
+  },
+  "yuji-itadori-se-deplacer-en-france-au-quotidien": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Yuji Itadori",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Se déplacer en France au quotidien",
+    "explication": "Chaque jour, les habitants de la France se déplacent : pour aller à l'école, au travail, faire des courses ou se distraire. Pour cela, ils utilisent différents moyens de transport. Le plus courant est la voiture individuelle, très utilisée surtout à la campagne et dans les zones peu desservies. Mais dans les villes, les transports en commun jouent un grand rôle : le bus, le métro, le tramway, ou encore le train régional, comme le TER, permettent de transporter de nombreuses personnes en même temps. Il existe aussi des moyens de déplacement plus simples, comme le vélo et la marche à pied. Tous ces déplacements s'appuient sur des réseaux : le réseau routier (les routes et autoroutes) et le réseau ferroviaire (les voies de chemin de fer). Ces déplacements quotidiens posent cependant des défis : les embouteillages dans les villes, et la pollution provoquée par les transports. C'est pourquoi on cherche aujourd'hui à développer une mobilité plus durable, c'est-à-dire des façons de se déplacer qui respectent mieux l'environnement. En CM2, on étudie ces déplacements. Bien les comprendre, c'est réfléchir à la façon dont on circule et à ses conséquences.",
+    "definitions": [
+      {
+        "terme": "Déplacement",
+        "sens": "le fait de se rendre d'un lieu à un autre"
+      },
+      {
+        "terme": "Voiture individuelle",
+        "sens": "un transport personnel très utilisé"
+      },
+      {
+        "terme": "Transports en commun",
+        "sens": "bus, métro, tramway, train régional"
+      },
+      {
+        "terme": "TER",
+        "sens": "le train express régional"
+      },
+      {
+        "terme": "Réseau routier",
+        "sens": "l'ensemble des routes et autoroutes"
+      },
+      {
+        "terme": "Réseau ferroviaire",
+        "sens": "l'ensemble des voies de chemin de fer"
+      },
+      {
+        "terme": "Embouteillage",
+        "sens": "l'encombrement de la circulation"
+      },
+      {
+        "terme": "Mobilité durable",
+        "sens": "des déplacements respectueux de l'environnement"
+      }
+    ],
+    "methode": [
+      "Identifie les déplacements du quotidien (école, travail…).",
+      "Retiens le moyen le plus courant : la voiture.",
+      "Note les transports en commun (bus, métro, tramway, TER).",
+      "Pense aux moyens simples : vélo et marche.",
+      "Comprends le rôle des réseaux (routier, ferroviaire).",
+      "Repère les défis : embouteillages et pollution.",
+      "Découvre l'enjeu de la mobilité durable.",
+      "Réfléchis aux conséquences de tes déplacements."
+    ],
+    "exemple": {
+      "enonce": "Quels moyens de transport utilise-t-on au quotidien ?",
+      "etapes": [
+        "On se déplace chaque jour pour de nombreuses raisons.",
+        "La voiture individuelle est le moyen le plus courant.",
+        "En ville, les transports en commun sont très utilisés.",
+        "Bus, métro, tramway et TER transportent beaucoup de personnes.",
+        "Le vélo et la marche sont des moyens plus simples.",
+        "Tous s'appuient sur des réseaux routiers et ferroviaires."
+      ]
+    },
+    "astuce": "Yuji Itadori : « Au quotidien, on se déplace en voiture, en transports en commun (bus, métro, tramway, TER), à vélo ou à pied. L'enjeu d'aujourd'hui : des déplacements plus propres, la mobilité durable ! »",
+    "erreurs": [
+      "Confondre transport individuel et transport en commun.",
+      "Oublier le rôle des réseaux (routier, ferroviaire).",
+      "Oublier les défis : embouteillages et pollution.",
+      "Confondre TER et transport international.",
+      "Ignorer la mobilité durable.",
+      "Croire que la voiture est le seul moyen de transport.",
+      "Confondre déplacement quotidien et voyage lointain.",
+      "Oublier le vélo et la marche."
+    ]
+  },
+  "megumi-fushiguro-se-deplacer-dans-le-monde": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Megumi Fushiguro",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Se déplacer dans le monde",
+    "explication": "Aujourd'hui, on peut se déplacer d'un bout à l'autre de la planète, et les marchandises voyagent elles aussi à travers le monde entier. Pour les déplacements de personnes sur de longues distances, le moyen le plus rapide est l'avion, qui permet de relier des continents en quelques heures. Pour le transport des marchandises, c'est surtout le bateau qui domine : d'immenses navires appelés porte-conteneurs transportent à travers les océans des quantités énormes de produits. Tous ces déplacements reposent sur de grandes infrastructures, c'est-à-dire de grands équipements : les aéroports pour les avions, et les ports pour les bateaux. On distingue ainsi deux grands types de flux, c'est-à-dire de mouvements : les flux de personnes (par exemple le tourisme ou les migrations) et les flux de marchandises (le commerce mondial). Ces déplacements de plus en plus nombreux sont une des grandes caractéristiques de la mondialisation, c'est-à-dire la mise en relation de toutes les parties du monde. En CM2, on étudie ces déplacements à l'échelle de la planète. Bien les comprendre, c'est saisir comment les hommes et les marchandises circulent dans un monde de plus en plus connecté.",
+    "definitions": [
+      {
+        "terme": "Avion",
+        "sens": "le transport rapide des personnes sur de longues distances"
+      },
+      {
+        "terme": "Porte-conteneurs",
+        "sens": "un immense navire de transport de marchandises"
+      },
+      {
+        "terme": "Port",
+        "sens": "l'infrastructure d'accueil des bateaux"
+      },
+      {
+        "terme": "Aéroport",
+        "sens": "l'infrastructure d'accueil des avions"
+      },
+      {
+        "terme": "Flux",
+        "sens": "un mouvement de personnes ou de marchandises"
+      },
+      {
+        "terme": "Marchandises",
+        "sens": "les produits transportés et échangés"
+      },
+      {
+        "terme": "Mondialisation",
+        "sens": "la mise en relation de toutes les parties du monde"
+      },
+      {
+        "terme": "Infrastructure",
+        "sens": "un grand équipement (port, aéroport)"
+      }
+    ],
+    "methode": [
+      "Distingue déplacements de personnes et de marchandises.",
+      "Retiens l'avion pour les personnes sur longues distances.",
+      "Retiens le porte-conteneurs pour les marchandises.",
+      "Identifie les grandes infrastructures : ports et aéroports.",
+      "Comprends la notion de flux (mouvements).",
+      "Distingue flux de personnes et flux de marchandises.",
+      "Relie ces déplacements à la mondialisation.",
+      "Mesure l'importance de ces échanges mondiaux."
+    ],
+    "exemple": {
+      "enonce": "Comment voyagent les personnes et les marchandises dans le monde ?",
+      "etapes": [
+        "Les personnes voyagent surtout en avion sur de longues distances.",
+        "L'avion relie les continents en quelques heures.",
+        "Les marchandises voyagent surtout par bateau.",
+        "Les porte-conteneurs transportent d'énormes quantités de produits.",
+        "Aéroports et ports sont les grandes infrastructures de ces flux.",
+        "Ces échanges sont au cœur de la mondialisation."
+      ]
+    },
+    "astuce": "Megumi Fushiguro : « Pour se déplacer dans le monde : l'avion (les personnes), le porte-conteneurs (les marchandises). Ports et aéroports sont au cœur de la mondialisation ! »",
+    "erreurs": [
+      "Confondre transport de personnes et de marchandises.",
+      "Oublier le rôle des ports et des aéroports.",
+      "Confondre port et aéroport.",
+      "Oublier la notion de flux.",
+      "Ignorer le lien avec la mondialisation.",
+      "Croire que tout voyage se fait en avion.",
+      "Confondre déplacement mondial et déplacement quotidien.",
+      "Oublier le rôle du porte-conteneurs."
+    ]
+  },
+  "nobara-kugisaki-communiquer-d-un-bout-a-l-autre-du-monde": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Nobara Kugisaki",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Communiquer d'un bout à l'autre du monde",
+    "explication": "Aujourd'hui, il est possible de communiquer presque instantanément avec une personne située à l'autre bout de la planète. Cette communication mondiale repose sur plusieurs outils et infrastructures. Internet est l'outil principal : il permet d'échanger des messages, des images, des vidéos et toutes sortes d'informations en un instant. Le téléphone, en particulier le téléphone portable, joue lui aussi un rôle essentiel. Mais ces échanges, qui semblent immatériels, reposent en réalité sur des équipements bien concrets. La majeure partie des informations qui circulent dans le monde passe par d'immenses câbles sous-marins, posés au fond des océans, qui relient les continents entre eux. Les satellites, en orbite autour de la Terre, participent eux aussi à la transmission des informations. Cette communication instantanée est une autre grande caractéristique de la mondialisation. Pourtant, tout le monde n'y a pas accès de la même façon : certaines régions du monde sont beaucoup moins connectées que d'autres, ce qu'on appelle la fracture numérique. En CM2, on étudie ces moyens de communication. Bien les comprendre, c'est saisir comment l'information circule et relie les habitants de la planète, tout en gardant à l'esprit les inégalités d'accès.",
+    "definitions": [
+      {
+        "terme": "Communiquer",
+        "sens": "échanger des informations avec d'autres"
+      },
+      {
+        "terme": "Internet",
+        "sens": "l'outil principal de communication mondiale"
+      },
+      {
+        "terme": "Câble sous-marin",
+        "sens": "un câble au fond des océans reliant les continents"
+      },
+      {
+        "terme": "Satellite",
+        "sens": "un engin en orbite transmettant les informations"
+      },
+      {
+        "terme": "Réseau numérique",
+        "sens": "l'ensemble qui permet les échanges d'information"
+      },
+      {
+        "terme": "Information",
+        "sens": "message, image ou vidéo échangé"
+      },
+      {
+        "terme": "Instantané",
+        "sens": "qui se fait en un instant"
+      },
+      {
+        "terme": "Fracture numérique",
+        "sens": "les inégalités d'accès à internet"
+      }
+    ],
+    "methode": [
+      "Comprends que l'on peut communiquer instantanément.",
+      "Retiens l'outil principal : internet.",
+      "Note le rôle du téléphone portable.",
+      "Découvre les câbles sous-marins entre les continents.",
+      "Note le rôle des satellites.",
+      "Comprends le lien avec la mondialisation.",
+      "Repère les inégalités : la fracture numérique.",
+      "Garde à l'esprit que l'accès n'est pas le même partout."
+    ],
+    "exemple": {
+      "enonce": "Comment l'information circule-t-elle d'un continent à l'autre ?",
+      "etapes": [
+        "On communique aujourd'hui de façon presque instantanée.",
+        "Internet permet d'échanger messages, images et vidéos.",
+        "Mais ces échanges reposent sur des équipements concrets.",
+        "De grands câbles sous-marins relient les continents.",
+        "Les satellites participent aussi à la transmission.",
+        "L'accès reste cependant inégal : c'est la fracture numérique."
+      ]
+    },
+    "astuce": "Nobara Kugisaki : « On communique en un instant d'un bout à l'autre du monde grâce à internet, aux satellites et aux câbles sous-marins. Mais attention : l'accès reste inégal, c'est la fracture numérique ! »",
+    "erreurs": [
+      "Croire que la communication ne repose sur aucun équipement.",
+      "Oublier le rôle des câbles sous-marins.",
+      "Oublier le rôle des satellites.",
+      "Ignorer la fracture numérique.",
+      "Confondre communication et déplacement.",
+      "Croire que tout le monde a le même accès à internet.",
+      "Oublier le lien avec la mondialisation.",
+      "Confondre câble sous-marin et satellite."
+    ]
+  },
+  "maki-zenin-mieux-habiter-deplacements-doux": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Maki Zenin",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Mieux habiter : les déplacements doux",
+    "explication": "« Mieux habiter » signifie chercher des façons de vivre et d'aménager les lieux qui respectent davantage l'environnement et améliorent la vie des habitants. Les déplacements doux, aussi appelés mobilités douces, en sont un bon exemple. Ce sont des moyens de se déplacer qui ne polluent pas ou très peu, contrairement à la voiture individuelle qui rejette des gaz dans l'air. Parmi les déplacements doux, on trouve d'abord la marche à pied et le vélo, qui ne produisent aucune pollution et sont bons pour la santé. On y ajoute aussi les transports en commun (bus, tramway, métro), qui transportent beaucoup de personnes en même temps et polluent donc moins, par voyageur, que les voitures individuelles. Développer ces déplacements doux permet de réduire la pollution de l'air et les embouteillages dans les villes. Pour les encourager, les villes réalisent des aménagements : pistes cyclables, zones piétonnes, transports en commun pratiques. C'est une démarche de développement durable, qui cherche à répondre aux besoins d'aujourd'hui sans nuire à l'avenir. En CM2, on étudie ces solutions. Bien les comprendre, c'est réfléchir à des manières de se déplacer plus respectueuses de l'environnement.",
+    "definitions": [
+      {
+        "terme": "Mieux habiter",
+        "sens": "vivre et aménager en respectant l'environnement"
+      },
+      {
+        "terme": "Déplacement doux",
+        "sens": "un moyen de transport peu ou pas polluant"
+      },
+      {
+        "terme": "Vélo",
+        "sens": "un déplacement doux, sans pollution"
+      },
+      {
+        "terme": "Marche à pied",
+        "sens": "le déplacement doux le plus simple"
+      },
+      {
+        "terme": "Piste cyclable",
+        "sens": "un aménagement réservé aux vélos"
+      },
+      {
+        "terme": "Pollution",
+        "sens": "ce que les déplacements doux permettent de réduire"
+      },
+      {
+        "terme": "Développement durable",
+        "sens": "répondre aux besoins sans nuire à l'avenir"
+      },
+      {
+        "terme": "Voiture individuelle",
+        "sens": "un transport polluant, à limiter"
+      }
+    ],
+    "methode": [
+      "Comprends l'idée de « mieux habiter ».",
+      "Définis les déplacements doux (peu ou pas polluants).",
+      "Cite les principaux : marche et vélo.",
+      "Ajoute les transports en commun.",
+      "Comprends leurs avantages (moins de pollution).",
+      "Repère les aménagements (pistes cyclables, zones piétonnes).",
+      "Relie ces solutions au développement durable.",
+      "Compare-les à la voiture individuelle."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi favoriser les déplacements doux ?",
+      "etapes": [
+        "La voiture individuelle rejette des gaz polluants.",
+        "Les déplacements doux ne polluent pas ou très peu.",
+        "La marche et le vélo ne produisent aucune pollution.",
+        "Les transports en commun polluent moins, par voyageur.",
+        "Les développer réduit la pollution et les embouteillages.",
+        "Pour cela, on aménage pistes cyclables et zones piétonnes."
+      ]
+    },
+    "astuce": "Maki Zenin : « Les déplacements doux (marche, vélo, transports en commun) polluent bien moins que la voiture individuelle. Pour les favoriser : des pistes cyclables et des zones piétonnes ! »",
+    "erreurs": [
+      "Confondre déplacement doux et voiture individuelle.",
+      "Oublier que les transports en commun sont des mobilités douces.",
+      "Ignorer le lien avec le développement durable.",
+      "Oublier les aménagements (pistes cyclables).",
+      "Croire que les déplacements doux polluent autant.",
+      "Confondre marche et transport motorisé.",
+      "Oublier les avantages pour la santé.",
+      "Ignorer le problème de la pollution."
+    ]
+  },
+  "satoru-gojo-mieux-habiter-energies-renouvelables": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Satoru Gojo",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Mieux habiter : les énergies renouvelables",
+    "explication": "Pour « mieux habiter » la planète, l'utilisation des énergies renouvelables est un enjeu majeur. Une énergie renouvelable est une énergie qui provient de sources naturelles inépuisables, c'est-à-dire qui ne s'épuisent pas, et qui ne polluent pas ou très peu. Il en existe plusieurs sortes. L'énergie solaire est produite à partir du Soleil, grâce à des panneaux solaires. L'énergie éolienne est produite par le vent, qui fait tourner des éoliennes. L'énergie hydraulique est produite par la force de l'eau, par exemple dans les barrages. On peut y ajouter la biomasse et la géothermie. Ces énergies s'opposent aux énergies fossiles, comme le charbon, le pétrole et le gaz. Ces dernières posent deux grands problèmes : elles existent en quantité limitée et finiront par s'épuiser, et surtout elles polluent fortement et contribuent au réchauffement de la planète. C'est pourquoi on cherche aujourd'hui à utiliser davantage les énergies renouvelables : c'est ce qu'on appelle la transition énergétique, une démarche de développement durable. En CM2, on étudie ces énergies. Bien les comprendre, c'est réfléchir à des façons de produire de l'énergie plus respectueuses de l'environnement et de l'avenir. Développer ces énergies propres est aujourd'hui un grand défi pour de nombreux pays, soucieux de protéger la planète tout en répondant à leurs besoins en énergie.",
+    "definitions": [
+      {
+        "terme": "Énergie renouvelable",
+        "sens": "une énergie inépuisable et peu polluante"
+      },
+      {
+        "terme": "Énergie fossile",
+        "sens": "charbon, pétrole, gaz : limitée et polluante"
+      },
+      {
+        "terme": "Énergie solaire",
+        "sens": "produite à partir du Soleil (panneaux)"
+      },
+      {
+        "terme": "Énergie éolienne",
+        "sens": "produite par le vent (éoliennes)"
+      },
+      {
+        "terme": "Énergie hydraulique",
+        "sens": "produite par la force de l'eau (barrages)"
+      },
+      {
+        "terme": "Inépuisable",
+        "sens": "qui ne s'épuise pas"
+      },
+      {
+        "terme": "Transition énergétique",
+        "sens": "le passage vers les énergies renouvelables"
+      },
+      {
+        "terme": "Développement durable",
+        "sens": "répondre aux besoins sans nuire à l'avenir"
+      }
+    ],
+    "methode": [
+      "Définis une énergie renouvelable (inépuisable, propre).",
+      "Cite l'énergie solaire (panneaux).",
+      "Cite l'énergie éolienne (vent).",
+      "Cite l'énergie hydraulique (eau, barrages).",
+      "Oppose-les aux énergies fossiles.",
+      "Comprends les problèmes des fossiles (limitées, polluantes).",
+      "Découvre la transition énergétique.",
+      "Relie-la au développement durable."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre énergies renouvelables et fossiles ?",
+      "etapes": [
+        "Les énergies renouvelables viennent de sources inépuisables.",
+        "Le solaire, l'éolien et l'hydraulique en font partie.",
+        "Elles polluent peu ou pas du tout.",
+        "Les énergies fossiles (charbon, pétrole, gaz) sont limitées.",
+        "Elles polluent fortement et réchauffent la planète.",
+        "Passer des fossiles aux renouvelables, c'est la transition énergétique."
+      ]
+    },
+    "astuce": "Satoru Gojo : « Les énergies renouvelables (solaire, éolien, hydraulique) sont inépuisables et propres, contrairement aux fossiles (charbon, pétrole, gaz). En passer aux unes vers les autres : la transition énergétique ! »",
+    "erreurs": [
+      "Confondre énergie renouvelable et énergie fossile.",
+      "Croire que les énergies fossiles sont inépuisables.",
+      "Oublier que les fossiles polluent fortement.",
+      "Confondre solaire, éolien et hydraulique.",
+      "Ignorer la transition énergétique.",
+      "Oublier le lien avec le développement durable.",
+      "Croire que toutes les énergies polluent autant.",
+      "Confondre éolienne et panneau solaire."
+    ]
+  },
+  "toge-inumaki-mieux-habiter-dechets-et-recyclage": {
+    "matiere": "geographie",
+    "niveau": "cm2",
+    "hero": "Toge Inumaki",
+    "manga": "Jujutsu Kaisen",
+    "notion": "Mieux habiter : les déchets et le recyclage",
+    "explication": "La gestion des déchets est un enjeu important pour « mieux habiter » la planète. Chaque jour, les habitants produisent une grande quantité de déchets, qui peuvent polluer l'environnement s'ils ne sont pas bien traités. Pour réduire ce problème, on s'appuie souvent sur une règle facile à retenir : les trois R, c'est-à-dire réduire, réutiliser et recycler. Réduire, c'est produire moins de déchets, par exemple en limitant les emballages. Réutiliser, c'est se servir à nouveau d'un objet plutôt que de le jeter. Recycler, enfin, c'est transformer un déchet en une nouvelle matière première, pour fabriquer de nouveaux objets. Pour permettre le recyclage, on pratique le tri sélectif : on sépare les déchets selon leur type (papier, plastique, verre, déchets organiques), afin que chacun puisse être traité de la bonne façon. Le recyclage présente de grands avantages : il réduit la pollution et permet d'économiser les ressources naturelles, qui ne sont pas illimitées. C'est une démarche de développement durable. En CM2, on étudie la gestion des déchets. Bien la comprendre, c'est adopter des gestes simples pour protéger l'environnement au quotidien.",
+    "definitions": [
+      {
+        "terme": "Déchet",
+        "sens": "ce qui est jeté après usage"
+      },
+      {
+        "terme": "Les trois R",
+        "sens": "réduire, réutiliser, recycler"
+      },
+      {
+        "terme": "Réduire",
+        "sens": "produire moins de déchets"
+      },
+      {
+        "terme": "Réutiliser",
+        "sens": "se resservir d'un objet au lieu de le jeter"
+      },
+      {
+        "terme": "Recycler",
+        "sens": "transformer un déchet en nouvelle matière"
+      },
+      {
+        "terme": "Tri sélectif",
+        "sens": "séparer les déchets selon leur type"
+      },
+      {
+        "terme": "Ressource",
+        "sens": "ce que le recyclage permet d'économiser"
+      },
+      {
+        "terme": "Développement durable",
+        "sens": "répondre aux besoins sans nuire à l'avenir"
+      }
+    ],
+    "methode": [
+      "Comprends le problème posé par les déchets.",
+      "Retiens la règle des trois R.",
+      "Réduire : produire moins de déchets.",
+      "Réutiliser : se resservir d'un objet.",
+      "Recycler : transformer un déchet en nouvelle matière.",
+      "Comprends le rôle du tri sélectif.",
+      "Identifie les avantages (moins de pollution, ressources économisées).",
+      "Relie ces gestes au développement durable."
+    ],
+    "exemple": {
+      "enonce": "Comment mieux gérer les déchets au quotidien ?",
+      "etapes": [
+        "Chaque jour, on produit beaucoup de déchets.",
+        "On peut suivre la règle des trois R.",
+        "Réduire : produire moins de déchets et d'emballages.",
+        "Réutiliser : se resservir des objets au lieu de les jeter.",
+        "Recycler : transformer les déchets en nouvelle matière.",
+        "Le tri sélectif permet de bien séparer les déchets."
+      ]
+    },
+    "astuce": "Toge Inumaki : « Pour mieux gérer les déchets, pense aux trois R : RÉDUIRE, RÉUTILISER, RECYCLER. Le tri sélectif transforme les déchets en nouvelles ressources et protège l'environnement ! »",
+    "erreurs": [
+      "Oublier l'une des trois actions (réduire, réutiliser, recycler).",
+      "Confondre réutiliser et recycler.",
+      "Oublier le rôle du tri sélectif.",
+      "Ignorer le lien avec le développement durable.",
+      "Croire que tous les déchets se recyclent de la même façon.",
+      "Oublier que le recyclage économise des ressources.",
+      "Confondre réduire et recycler.",
+      "Penser que les déchets ne polluent pas."
+    ]
+  }
+}
