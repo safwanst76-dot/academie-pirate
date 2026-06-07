@@ -1,0 +1,378 @@
+{
+  "inosuke-hashibira-les-metaux-et-les-ions": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Inosuke Hashibira", "manga": "Demon Slayer",
+    "notion": "Les métaux et les ions",
+    "explication": "Les métaux sont des matériaux aux propriétés bien particulières : le fer, le cuivre, le zinc et l'aluminium en sont des exemples courants. Ils ont en commun de bien conduire le courant électrique et la chaleur, et beaucoup peuvent être déformés sans casser. Les métaux sont très présents dans notre vie quotidienne, dans les constructions, les appareils ou les pièces de monnaie. En chimie, les métaux peuvent participer à des transformations chimiques. Une réaction importante est celle d'un métal avec un acide : le métal réagit, il est progressivement « attaqué », et cette réaction produit deux choses. D'une part, il se forme un gaz, le dihydrogène, que l'on peut identifier par un petit test. D'autre part, le métal se transforme en ions métalliques, qui passent en solution : par exemple, le fer donne des ions fer et le cuivre des ions cuivre. Ces ions métalliques peuvent eux-mêmes être identifiés par des tests, car ils donnent souvent des précipités de couleurs caractéristiques. En 3ème, on étudie les métaux et leurs ions. Bien les comprendre, c'est savoir reconnaître les métaux et expliquer leurs réactions chimiques.",
+    "definitions": [
+      {"terme": "Métal", "sens": "un matériau conducteur (fer, cuivre, zinc)"},
+      {"terme": "Propriété des métaux", "sens": "conduire le courant et la chaleur"},
+      {"terme": "Ion métallique", "sens": "un métal transformé en ion (ion fer, ion cuivre)"},
+      {"terme": "Acide", "sens": "il peut réagir avec un métal"},
+      {"terme": "Dihydrogène", "sens": "le gaz formé lors de la réaction métal-acide"},
+      {"terme": "Réaction chimique", "sens": "la transformation du métal avec l'acide"},
+      {"terme": "Précipité", "sens": "un solide coloré identifiant un ion"},
+      {"terme": "Test d'identification", "sens": "une méthode pour reconnaître une espèce"}
+    ],
+    "methode": [
+      "Cite des métaux courants (fer, cuivre, zinc).",
+      "Retiens leurs propriétés (conducteurs).",
+      "Comprends qu'un métal peut réagir avec un acide.",
+      "Note la formation de dihydrogène.",
+      "Comprends que le métal devient des ions métalliques.",
+      "Cite des exemples (ions fer, ions cuivre).",
+      "Sache que les ions s'identifient par des tests.",
+      "Relie les ions aux précipités colorés."
+    ],
+    "exemple": {
+      "enonce": "Que se passe-t-il quand un métal réagit avec un acide ?",
+      "etapes": [
+        "Les métaux comme le fer ou le zinc conduisent le courant.",
+        "Un métal peut réagir avec un acide.",
+        "Le métal est progressivement attaqué.",
+        "Il se forme un gaz : le dihydrogène.",
+        "Le métal se transforme en ions métalliques.",
+        "Ces ions peuvent être identifiés par des tests."
+      ]
+    },
+    "astuce": "Inosuke Hashibira : « Les métaux (fer, cuivre, zinc) conduisent le courant. Avec un acide, un métal réagit : il se forme du DIHYDROGÈNE et le métal se transforme en IONS métalliques ! »",
+    "erreurs": [
+      "Croire que les métaux ne conduisent pas le courant.",
+      "Confondre métal et ion métallique.",
+      "Oublier la formation de dihydrogène.",
+      "Croire qu'aucune nouvelle espèce ne se forme.",
+      "Confondre dihydrogène et un autre gaz.",
+      "Oublier que les ions s'identifient par des tests.",
+      "Confondre précipité et solution limpide.",
+      "Croire que le métal disparaît sans rien produire."
+    ]
+  },
+  "kanae-kocho-l-astronomie-et-les-distances-cosmiques": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Kanae Kocho", "manga": "Demon Slayer",
+    "notion": "L'astronomie et les distances cosmiques",
+    "explication": "L'astronomie est la science qui étudie les astres : les étoiles, les planètes, les galaxies et l'ensemble de l'Univers. L'une de ses particularités est qu'elle manipule des distances absolument gigantesques, bien trop grandes pour être exprimées en kilomètres de façon pratique. C'est pourquoi les astronomes utilisent une unité adaptée : l'année-lumière. Attention, malgré son nom, l'année-lumière n'est pas une durée mais une distance : c'est la distance parcourue par la lumière en une année. Comme la lumière voyage à environ 300 000 kilomètres par seconde, une année-lumière représente une distance énorme. On peut ainsi décrire les différentes échelles de l'Univers : le Système solaire (le Soleil et ses planètes), puis notre galaxie, la Voie lactée, qui contient des milliards d'étoiles, et enfin l'Univers, qui contient des milliards de galaxies. Une conséquence surprenante de ces distances est que, lorsqu'on observe une étoile très lointaine, on voit en réalité la lumière qu'elle a émise il y a très longtemps : on regarde donc le passé. En 3ème, on découvre l'astronomie et ses distances. Bien la comprendre, c'est saisir l'immensité de l'Univers et la place de la Terre.",
+    "definitions": [
+      {"terme": "Astronomie", "sens": "la science qui étudie les astres"},
+      {"terme": "Astre", "sens": "une étoile, une planète, une galaxie…"},
+      {"terme": "Année-lumière", "sens": "une distance (parcourue par la lumière en un an)"},
+      {"terme": "Vitesse de la lumière", "sens": "environ 300 000 km/s"},
+      {"terme": "Système solaire", "sens": "le Soleil et ses planètes"},
+      {"terme": "Voie lactée", "sens": "notre galaxie (des milliards d'étoiles)"},
+      {"terme": "Univers", "sens": "il contient des milliards de galaxies"},
+      {"terme": "Voir le passé", "sens": "observer une étoile lointaine, c'est voir sa lumière ancienne"}
+    ],
+    "methode": [
+      "Définis l'astronomie (l'étude des astres).",
+      "Comprends que les distances sont gigantesques.",
+      "Retiens l'unité adaptée : l'année-lumière.",
+      "Attention : l'année-lumière est une distance.",
+      "Relie-la à la vitesse de la lumière.",
+      "Connais les échelles : Système solaire, galaxie, Univers.",
+      "Retiens que la Voie lactée est notre galaxie.",
+      "Comprends qu'observer loin, c'est voir le passé."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce qu'une année-lumière ?",
+      "etapes": [
+        "L'astronomie manipule des distances gigantesques.",
+        "On utilise une unité adaptée : l'année-lumière.",
+        "Ce n'est pas une durée, mais une distance.",
+        "C'est la distance parcourue par la lumière en un an.",
+        "La lumière voyage à environ 300 000 km/s.",
+        "Observer une étoile lointaine, c'est donc voir son passé."
+      ]
+    },
+    "astuce": "Kanae Kocho : « En astronomie, les distances sont si grandes qu'on les mesure en ANNÉES-LUMIÈRE (une DISTANCE, pas une durée !). Observer une étoile lointaine, c'est voir la lumière de son passé ! »",
+    "erreurs": [
+      "Croire que l'année-lumière est une durée.",
+      "Oublier qu'elle mesure une distance.",
+      "Se tromper sur la vitesse de la lumière.",
+      "Confondre Système solaire et galaxie.",
+      "Confondre galaxie et Univers.",
+      "Oublier que la Voie lactée est notre galaxie.",
+      "Croire qu'on voit les étoiles « en direct ».",
+      "Penser qu'on peut tout mesurer en kilomètres."
+    ]
+  },
+  "kyojuro-rengoku-les-ondes-mecaniques-le-son": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Kyojuro Rengoku", "manga": "Demon Slayer",
+    "notion": "Les ondes mécaniques : le son",
+    "explication": "Le son est un exemple d'onde mécanique. Il est produit par la vibration d'un objet (une corde, une membrane, des cordes vocales) qui fait vibrer le milieu autour de lui, le plus souvent l'air. Cette vibration se transmet de proche en proche : c'est ce qui constitue l'onde sonore. Une propriété fondamentale du son est qu'il a besoin d'un milieu matériel pour se propager : il peut voyager dans l'air, dans l'eau ou dans les solides, mais il ne peut pas se propager dans le vide, car il n'y a alors rien à faire vibrer. C'est pour cela que, dans l'espace, il n'y a pas de son. La vitesse du son dépend du milieu : dans l'air, elle est d'environ 340 mètres par seconde, ce qui est bien plus lent que la lumière. On caractérise un son par deux grandeurs : la fréquence, qui détermine si le son est aigu ou grave et se mesure en hertz, et l'amplitude, liée à l'intensité (un son fort ou faible). En 3ème, on étudie le son comme onde mécanique. Bien le comprendre, c'est savoir comment se propagent les sons qui nous entourent.",
+    "definitions": [
+      {"terme": "Onde mécanique", "sens": "une vibration qui se propage dans un milieu"},
+      {"terme": "Son", "sens": "une onde mécanique produite par une vibration"},
+      {"terme": "Vibration", "sens": "le mouvement qui produit le son"},
+      {"terme": "Milieu matériel", "sens": "l'air, l'eau ou un solide"},
+      {"terme": "Vide", "sens": "le son ne peut pas s'y propager"},
+      {"terme": "Vitesse du son", "sens": "environ 340 m/s dans l'air"},
+      {"terme": "Fréquence", "sens": "elle détermine si le son est aigu ou grave (hertz)"},
+      {"terme": "Amplitude", "sens": "elle est liée à l'intensité du son"}
+    ],
+    "methode": [
+      "Définis le son (une onde mécanique).",
+      "Comprends qu'il vient d'une vibration.",
+      "Retiens qu'il a besoin d'un milieu matériel.",
+      "Note qu'il ne se propage pas dans le vide.",
+      "Comprends pourquoi il n'y a pas de son dans l'espace.",
+      "Retiens sa vitesse dans l'air (environ 340 m/s).",
+      "Distingue la fréquence (aigu/grave).",
+      "Distingue l'amplitude (fort/faible)."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi n'y a-t-il pas de son dans l'espace ?",
+      "etapes": [
+        "Le son est une onde mécanique, née d'une vibration.",
+        "Cette vibration se transmet de proche en proche.",
+        "Le son a besoin d'un milieu matériel pour se propager.",
+        "Il voyage dans l'air, l'eau ou les solides.",
+        "Dans le vide, il n'y a rien à faire vibrer.",
+        "C'est pourquoi, dans l'espace, il n'y a pas de son."
+      ]
+    },
+    "astuce": "Kyojuro Rengoku : « Le SON est une onde mécanique : il a besoin d'un MILIEU matériel (air, eau, solide) pour se propager — jamais dans le vide ! Dans l'air, il voyage à environ 340 m/s. »",
+    "erreurs": [
+      "Croire que le son se propage dans le vide.",
+      "Oublier que le son vient d'une vibration.",
+      "Confondre la vitesse du son et celle de la lumière.",
+      "Croire qu'il y a du son dans l'espace.",
+      "Confondre fréquence et amplitude.",
+      "Croire que le son ne voyage que dans l'air.",
+      "Oublier que le son est une onde mécanique.",
+      "Confondre son aigu et son fort."
+    ]
+  },
+  "shinobu-kocho-acides-bases-tests-d-identification": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Shinobu Kocho", "manga": "Demon Slayer",
+    "notion": "Acides, bases et tests d'identification",
+    "explication": "En chimie, on classe de nombreuses solutions selon leur caractère acide ou basique, mesuré par le pH : une solution est acide si son pH est inférieur à 7, neutre s'il vaut 7, et basique s'il est supérieur à 7. Pour reconnaître les différentes espèces chimiques présentes dans une solution ou un gaz, les chimistes utilisent des tests d'identification : des expériences simples qui donnent un résultat caractéristique. Plusieurs tests sont très connus. Le test du dioxyde de carbone consiste à faire passer le gaz dans de l'eau de chaux : si c'est bien du dioxyde de carbone, l'eau de chaux devient trouble (elle blanchit). Le test du dihydrogène consiste à approcher une flamme : le gaz produit alors une petite détonation caractéristique. Pour identifier les ions métalliques en solution, on ajoute un réactif comme la soude : selon l'ion présent, il se forme un précipité, c'est-à-dire un solide, dont la couleur est caractéristique de l'ion. En 3ème, on apprend à réaliser et interpréter ces tests. Bien les comprendre, c'est savoir identifier des espèces chimiques de façon rigoureuse, comme un véritable chimiste.",
+    "definitions": [
+      {"terme": "Acide", "sens": "une solution de pH inférieur à 7"},
+      {"terme": "Base", "sens": "une solution de pH supérieur à 7"},
+      {"terme": "pH", "sens": "il mesure l'acidité (de 0 à 14)"},
+      {"terme": "Test d'identification", "sens": "une expérience au résultat caractéristique"},
+      {"terme": "Eau de chaux", "sens": "elle se trouble en présence de dioxyde de carbone"},
+      {"terme": "Dihydrogène", "sens": "identifié par une petite détonation"},
+      {"terme": "Précipité", "sens": "un solide coloré identifiant un ion"},
+      {"terme": "Réactif", "sens": "ce que l'on ajoute pour réaliser un test"}
+    ],
+    "methode": [
+      "Rappelle le caractère acide ou basique (pH).",
+      "Comprends le but d'un test d'identification.",
+      "Connais le test du dioxyde de carbone (eau de chaux).",
+      "Retiens : l'eau de chaux se trouble.",
+      "Connais le test du dihydrogène (détonation).",
+      "Comprends l'identification des ions (précipités).",
+      "Retiens que la couleur du précipité est caractéristique.",
+      "Apprends à interpréter le résultat d'un test."
+    ],
+    "exemple": {
+      "enonce": "Comment identifier le dioxyde de carbone ?",
+      "etapes": [
+        "Un test d'identification donne un résultat caractéristique.",
+        "Pour le dioxyde de carbone, on utilise l'eau de chaux.",
+        "On fait passer le gaz dans l'eau de chaux.",
+        "Si c'est du dioxyde de carbone, l'eau de chaux se trouble.",
+        "Le dihydrogène, lui, produit une petite détonation.",
+        "Les ions métalliques forment des précipités colorés."
+      ]
+    },
+    "astuce": "Shinobu Kocho : « Pour identifier les espèces, on fait des TESTS ! Le dioxyde de carbone trouble l'eau de chaux ; le dihydrogène fait une petite détonation ; les ions métalliques donnent des précipités colorés ! »",
+    "erreurs": [
+      "Confondre acide et base.",
+      "Croire qu'un test donne un résultat au hasard.",
+      "Oublier que l'eau de chaux se trouble avec le dioxyde de carbone.",
+      "Confondre le test du dihydrogène et celui du dioxyde de carbone.",
+      "Oublier que les ions forment des précipités.",
+      "Croire que tous les précipités ont la même couleur.",
+      "Confondre réactif et produit identifié.",
+      "Oublier le rôle du pH dans le caractère acide ou basique."
+    ]
+  },
+  "tanjiro-kamado-l-energie-et-la-puissance-electrique": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Tanjiro Kamado", "manga": "Demon Slayer",
+    "notion": "L'énergie et la puissance électrique",
+    "explication": "Lorsqu'un appareil électrique fonctionne, il consomme de l'énergie électrique. Pour décrire cette consommation, on utilise deux grandeurs liées : la puissance et l'énergie. La puissance d'un appareil indique la quantité d'énergie qu'il consomme (ou fournit) chaque seconde. Elle se mesure en watts, dont le symbole est W. Plus la puissance d'un appareil est élevée, plus il consomme rapidement de l'énergie : un radiateur de forte puissance consomme beaucoup plus vite qu'une petite lampe. L'énergie consommée, elle, dépend à la fois de la puissance de l'appareil et de la durée pendant laquelle il fonctionne. On la calcule en multipliant la puissance par la durée : énergie égale puissance multipliée par le temps. L'énergie se mesure en joules (J), mais pour la consommation électrique de la maison, on utilise plutôt le kilowattheure (kWh), qui est l'unité figurant sur les factures d'électricité. Ainsi, un appareil puissant qui fonctionne longtemps consomme beaucoup d'énergie. En 3ème, on étudie ces grandeurs. Bien les comprendre, c'est savoir évaluer la consommation des appareils et faire des choix pour économiser l'énergie.",
+    "definitions": [
+      {"terme": "Énergie électrique", "sens": "l'énergie consommée par un appareil"},
+      {"terme": "Puissance", "sens": "l'énergie consommée chaque seconde"},
+      {"terme": "Watt (W)", "sens": "l'unité de puissance"},
+      {"terme": "Énergie = puissance × durée", "sens": "la formule de l'énergie consommée"},
+      {"terme": "Joule (J)", "sens": "l'unité d'énergie"},
+      {"terme": "Kilowattheure (kWh)", "sens": "l'unité d'énergie des factures"},
+      {"terme": "Durée", "sens": "le temps de fonctionnement de l'appareil"},
+      {"terme": "Consommation", "sens": "l'énergie utilisée par un appareil"}
+    ],
+    "methode": [
+      "Distingue la puissance et l'énergie.",
+      "Définis la puissance (énergie par seconde).",
+      "Retiens son unité : le watt (W).",
+      "Comprends que l'énergie dépend de la puissance et de la durée.",
+      "Retiens la formule : énergie = puissance × durée.",
+      "Connais les unités d'énergie : joule et kilowattheure.",
+      "Retiens que le kWh figure sur les factures.",
+      "Relie ces grandeurs aux économies d'énergie."
+    ],
+    "exemple": {
+      "enonce": "Comment calculer l'énergie consommée par un appareil ?",
+      "etapes": [
+        "La puissance est l'énergie consommée chaque seconde.",
+        "Elle se mesure en watts (W).",
+        "L'énergie dépend de la puissance et de la durée.",
+        "On la calcule : énergie = puissance × durée.",
+        "On l'exprime en joules ou en kilowattheures (kWh).",
+        "Un appareil puissant et longtemps allumé consomme beaucoup."
+      ]
+    },
+    "astuce": "Tanjiro Kamado : « La PUISSANCE (en watts, W) = l'énergie consommée chaque seconde. L'ÉNERGIE = puissance × durée (en joules ou kWh). Plus un appareil est puissant et longtemps allumé, plus il consomme ! »",
+    "erreurs": [
+      "Confondre puissance et énergie.",
+      "Oublier que l'énergie dépend de la durée.",
+      "Se tromper sur l'unité de puissance (le watt).",
+      "Oublier la formule énergie = puissance × durée.",
+      "Confondre joule et kilowattheure.",
+      "Croire qu'un appareil puissant consomme toujours peu.",
+      "Oublier que le kWh est l'unité des factures.",
+      "Croire que la durée n'a aucune importance."
+    ]
+  },
+  "tengen-uzui-les-ondes-electromagnetiques": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Tengen Uzui", "manga": "Demon Slayer",
+    "notion": "Les ondes électromagnétiques (lumière, radio)",
+    "explication": "Les ondes électromagnétiques forment une grande famille d'ondes à laquelle appartiennent la lumière visible, mais aussi les ondes radio, les micro-ondes, les rayons infrarouges, les rayons ultraviolets et les rayons X. Elles présentent une différence fondamentale avec les ondes mécaniques comme le son : les ondes électromagnétiques n'ont pas besoin d'un milieu matériel pour se propager. Elles peuvent voyager dans le vide, ce qui explique que la lumière du Soleil et des étoiles puisse nous parvenir à travers l'espace vide. De plus, toutes les ondes électromagnétiques se déplacent dans le vide à la même vitesse, qui est la vitesse de la lumière, soit environ 300 000 kilomètres par seconde. Ces ondes jouent un rôle immense dans notre vie quotidienne, en particulier pour les communications : les ondes radio transportent la radio et la télévision, et d'autres ondes permettent la téléphonie mobile, le wifi ou les communications par satellite. En 3ème, on étudie ces ondes. Bien les comprendre, c'est saisir comment l'information circule à distance et ce qui distingue ces ondes du son.",
+    "definitions": [
+      {"terme": "Onde électromagnétique", "sens": "lumière, radio, micro-ondes, rayons X…"},
+      {"terme": "Lumière visible", "sens": "une onde électromagnétique"},
+      {"terme": "Onde radio", "sens": "une onde électromagnétique de communication"},
+      {"terme": "Propagation dans le vide", "sens": "elles n'ont pas besoin de milieu matériel"},
+      {"terme": "Vitesse de la lumière", "sens": "environ 300 000 km/s (dans le vide)"},
+      {"terme": "Communication", "sens": "radio, télévision, wifi, satellite"},
+      {"terme": "Onde mécanique", "sens": "comme le son, elle a besoin d'un milieu"},
+      {"terme": "Spectre", "sens": "l'ensemble des ondes électromagnétiques"}
+    ],
+    "methode": [
+      "Cite des ondes électromagnétiques (lumière, radio).",
+      "Comprends qu'elles forment une grande famille.",
+      "Retiens : elles se propagent dans le vide.",
+      "Oppose-les aux ondes mécaniques (le son).",
+      "Comprends pourquoi la lumière du Soleil nous parvient.",
+      "Retiens leur vitesse : celle de la lumière.",
+      "Cite leurs usages (communications).",
+      "Distingue bien ondes EM et ondes mécaniques."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce qui distingue une onde électromagnétique du son ?",
+      "etapes": [
+        "Les ondes électromagnétiques sont la lumière, la radio, etc.",
+        "Le son est une onde mécanique : il a besoin d'un milieu.",
+        "Les ondes électromagnétiques se propagent dans le vide.",
+        "C'est pourquoi la lumière du Soleil traverse l'espace.",
+        "Elles voyagent à la vitesse de la lumière.",
+        "Elles permettent toutes nos communications à distance."
+      ]
+    },
+    "astuce": "Tengen Uzui : « Les ondes ÉLECTROMAGNÉTIQUES (lumière, radio, wifi) se propagent même dans le VIDE — contrairement au son ! — à la vitesse de la lumière. Elles permettent toutes nos communications ! »",
+    "erreurs": [
+      "Croire que les ondes électromagnétiques ont besoin d'air.",
+      "Confondre onde électromagnétique et onde mécanique.",
+      "Oublier que la lumière est une onde électromagnétique.",
+      "Croire que le son se propage dans le vide.",
+      "Se tromper sur leur vitesse (celle de la lumière).",
+      "Oublier leur rôle dans les communications.",
+      "Croire qu'elles voyagent toutes à des vitesses différentes dans le vide.",
+      "Confondre lumière et son."
+    ]
+  },
+  "yoriichi-tsugikuni-les-transformations-nucleaires": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Yoriichi Tsugikuni", "manga": "Demon Slayer",
+    "notion": "Les transformations nucléaires (introduction)",
+    "explication": "Jusqu'ici, on a vu que les transformations chimiques réorganisaient les atomes sans toucher à leur cœur. Les transformations nucléaires, elles, concernent le noyau de l'atome lui-même, qui peut se modifier. Certains noyaux sont instables : ils se transforment spontanément en émettant des rayonnements, un phénomène appelé la radioactivité. Il existe par ailleurs deux grandes transformations nucléaires que l'on peut provoquer ou observer. La fission nucléaire est la cassure d'un noyau lourd en plusieurs noyaux plus légers : c'est le principe utilisé dans les centrales nucléaires pour produire de l'électricité. La fusion nucléaire est, au contraire, l'union de deux noyaux légers pour former un noyau plus lourd : c'est ce qui se produit au cœur du Soleil et des étoiles, et qui leur permet de briller. Le point commun de ces transformations est qu'elles libèrent une quantité d'énergie considérable, bien plus grande que les transformations chimiques. Cette énergie nucléaire est très puissante, mais son utilisation soulève aussi des questions importantes de sécurité et de gestion des déchets. En 3ème, on découvre ces transformations. Bien les comprendre, c'est saisir d'où vient une part importante de l'énergie, sur Terre comme dans les étoiles.",
+    "definitions": [
+      {"terme": "Transformation nucléaire", "sens": "elle concerne le noyau de l'atome"},
+      {"terme": "Noyau", "sens": "le cœur de l'atome"},
+      {"terme": "Radioactivité", "sens": "des noyaux instables émettent des rayonnements"},
+      {"terme": "Fission", "sens": "la cassure d'un noyau lourd"},
+      {"terme": "Fusion", "sens": "l'union de noyaux légers"},
+      {"terme": "Centrale nucléaire", "sens": "elle utilise la fission pour l'électricité"},
+      {"terme": "Soleil", "sens": "il brille grâce à la fusion nucléaire"},
+      {"terme": "Énergie nucléaire", "sens": "une énergie considérable libérée"}
+    ],
+    "methode": [
+      "Oppose transformation chimique et nucléaire.",
+      "Retiens que la transformation nucléaire touche le noyau.",
+      "Comprends la radioactivité (noyaux instables).",
+      "Définis la fission (un noyau lourd se casse).",
+      "Relie la fission aux centrales nucléaires.",
+      "Définis la fusion (des noyaux légers s'unissent).",
+      "Relie la fusion au Soleil et aux étoiles.",
+      "Retiens qu'elles libèrent une énergie considérable."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre fission et fusion nucléaires ?",
+      "etapes": [
+        "Les transformations nucléaires concernent le noyau de l'atome.",
+        "La fission est la cassure d'un noyau lourd.",
+        "Elle est utilisée dans les centrales nucléaires.",
+        "La fusion est l'union de noyaux légers.",
+        "Elle se produit au cœur du Soleil et des étoiles.",
+        "Les deux libèrent une énergie considérable."
+      ]
+    },
+    "astuce": "Yoriichi Tsugikuni : « Les transformations NUCLÉAIRES touchent le NOYAU de l'atome. La FISSION casse un noyau lourd (centrales nucléaires) ; la FUSION unit des noyaux légers (le Soleil). Énergie énorme ! »",
+    "erreurs": [
+      "Confondre transformation chimique et nucléaire.",
+      "Croire que la transformation nucléaire touche les molécules.",
+      "Confondre fission et fusion.",
+      "Croire que les centrales utilisent la fusion.",
+      "Croire que le Soleil fonctionne par fission.",
+      "Oublier que ces transformations libèrent beaucoup d'énergie.",
+      "Confondre radioactivité et simple réaction chimique.",
+      "Oublier que la fission casse, la fusion unit."
+    ]
+  },
+  "zenitsu-agatsuma-les-fonctions-lineaires-loi-d-ohm": {
+    "matiere": "sciences", "niveau": "3eme", "hero": "Zenitsu Agatsuma", "manga": "Demon Slayer",
+    "notion": "Les fonctions linéaires : la loi d'Ohm",
+    "explication": "La loi d'Ohm est une loi très importante de l'électricité, qui concerne un composant appelé résistance (ou conducteur ohmique). Une résistance s'oppose plus ou moins au passage du courant électrique ; sa valeur, notée R, se mesure en ohms, dont le symbole est la lettre grecque oméga (Ω). La loi d'Ohm relie trois grandeurs : la tension U aux bornes de la résistance, l'intensité I du courant qui la traverse, et sa valeur R. Elle s'écrit : U égale R multiplié par I (U = R × I). Cette relation signifie que la tension est proportionnelle à l'intensité : si l'on double l'intensité, la tension double aussi. C'est un exemple de fonction linéaire, un type de relation que l'on étudie aussi en mathématiques. D'ailleurs, si l'on trace le graphique de la tension U en fonction de l'intensité I, on obtient une droite qui passe par l'origine, ce qui est la signature d'une fonction linéaire. La valeur de la résistance R correspond au coefficient de cette fonction. En 3ème, on relie ainsi la physique et les mathématiques. Bien comprendre la loi d'Ohm, c'est savoir analyser un circuit et reconnaître une situation de proportionnalité.",
+    "definitions": [
+      {"terme": "Loi d'Ohm", "sens": "U = R × I"},
+      {"terme": "Résistance", "sens": "un composant qui s'oppose au courant"},
+      {"terme": "Ohm (Ω)", "sens": "l'unité de la résistance"},
+      {"terme": "Tension (U)", "sens": "mesurée en volts"},
+      {"terme": "Intensité (I)", "sens": "mesurée en ampères"},
+      {"terme": "Proportionnalité", "sens": "U est proportionnelle à I"},
+      {"terme": "Fonction linéaire", "sens": "une droite passant par l'origine"},
+      {"terme": "Coefficient", "sens": "la résistance R, coefficient de la fonction"}
+    ],
+    "methode": [
+      "Définis la résistance (elle s'oppose au courant).",
+      "Retiens son unité : l'ohm (Ω).",
+      "Énonce la loi d'Ohm : U = R × I.",
+      "Identifie les trois grandeurs (U, R, I).",
+      "Comprends que U est proportionnelle à I.",
+      "Relie cela à une fonction linéaire.",
+      "Trace U en fonction de I : une droite par l'origine.",
+      "Associe la résistance au coefficient de la fonction."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi la loi d'Ohm est-elle une fonction linéaire ?",
+      "etapes": [
+        "La résistance R se mesure en ohms (Ω).",
+        "La loi d'Ohm relie U, R et I : U = R × I.",
+        "La tension U est proportionnelle à l'intensité I.",
+        "Si l'on double I, la tension U double aussi.",
+        "Le graphique de U en fonction de I est une droite.",
+        "Cette droite passe par l'origine : c'est une fonction linéaire."
+      ]
+    },
+    "astuce": "Zenitsu Agatsuma : « La loi d'Ohm relie tension, résistance et intensité : U = R × I ! La tension est PROPORTIONNELLE à l'intensité : c'est une fonction linéaire (une droite passant par l'origine) ! »",
+    "erreurs": [
+      "Se tromper dans la loi d'Ohm (U = R × I).",
+      "Confondre tension, intensité et résistance.",
+      "Oublier que U est proportionnelle à I.",
+      "Confondre fonction linéaire et fonction affine.",
+      "Oublier que la droite passe par l'origine.",
+      "Se tromper sur l'unité de la résistance (l'ohm).",
+      "Croire que la résistance dépend de la tension.",
+      "Oublier le lien avec la proportionnalité."
+    ]
+  }
+}
