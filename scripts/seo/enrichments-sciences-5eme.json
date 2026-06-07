@@ -1,0 +1,378 @@
+{
+  "inosuke-hashibira-l-electricite-intensite-et-tension": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Inosuke Hashibira", "manga": "Demon Slayer",
+    "notion": "L'électricité : intensité et tension",
+    "explication": "Dans un circuit électrique, on utilise deux grandeurs essentielles pour décrire ce qui se passe : l'intensité et la tension. Il ne faut surtout pas les confondre. L'intensité du courant électrique correspond, en quelque sorte, au débit du courant, c'est-à-dire à la quantité d'électricité qui circule. Elle se mesure en ampères, dont le symbole est A, à l'aide d'un appareil appelé ampèremètre. Pour mesurer l'intensité, l'ampèremètre doit être branché en série dans le circuit, c'est-à-dire sur le chemin que parcourt le courant. La tension, elle, correspond à une sorte de « pression » électrique qui existe entre deux points du circuit, par exemple aux bornes d'une pile ou d'une lampe. Elle se mesure en volts, dont le symbole est V, à l'aide d'un appareil appelé voltmètre. Pour mesurer la tension, le voltmètre doit être branché en dérivation, c'est-à-dire en parallèle, aux bornes du composant étudié. Ces deux grandeurs sont donc différentes : l'une décrit la circulation du courant, l'autre l'écart électrique entre deux points. En 5ème, on apprend à mesurer ces grandeurs. Bien les comprendre, c'est savoir étudier précisément un circuit électrique.",
+    "definitions": [
+      {"terme": "Courant électrique", "sens": "la circulation de l'électricité dans un circuit"},
+      {"terme": "Intensité", "sens": "le débit du courant électrique"},
+      {"terme": "Ampère (A)", "sens": "l'unité de l'intensité"},
+      {"terme": "Ampèremètre", "sens": "l'appareil qui mesure l'intensité (en série)"},
+      {"terme": "Tension", "sens": "la « pression » électrique entre deux points"},
+      {"terme": "Volt (V)", "sens": "l'unité de la tension"},
+      {"terme": "Voltmètre", "sens": "l'appareil qui mesure la tension (en dérivation)"},
+      {"terme": "Borne", "sens": "le point d'un composant où l'on mesure la tension"}
+    ],
+    "methode": [
+      "Distingue bien l'intensité et la tension.",
+      "Définis l'intensité (le débit du courant).",
+      "Retiens son unité : l'ampère (A).",
+      "Branche l'ampèremètre en série.",
+      "Définis la tension (entre deux points).",
+      "Retiens son unité : le volt (V).",
+      "Branche le voltmètre en dérivation.",
+      "Ne confonds jamais ces deux grandeurs."
+    ],
+    "exemple": {
+      "enonce": "Comment mesurer l'intensité et la tension ?",
+      "etapes": [
+        "L'intensité est le débit du courant électrique.",
+        "On la mesure en ampères (A) avec un ampèremètre.",
+        "L'ampèremètre se branche en série dans le circuit.",
+        "La tension est la « pression » entre deux points.",
+        "On la mesure en volts (V) avec un voltmètre.",
+        "Le voltmètre se branche en dérivation, aux bornes du composant."
+      ]
+    },
+    "astuce": "Inosuke Hashibira : « L'INTENSITÉ (en ampères, A) = le débit du courant, mesurée par un ampèremètre EN SÉRIE. La TENSION (en volts, V), mesurée par un voltmètre EN DÉRIVATION. Ne les confonds pas ! »",
+    "erreurs": [
+      "Confondre l'intensité et la tension.",
+      "Confondre les unités (ampère et volt).",
+      "Brancher l'ampèremètre en dérivation.",
+      "Brancher le voltmètre en série.",
+      "Confondre ampèremètre et voltmètre.",
+      "Croire que l'intensité se mesure en volts.",
+      "Croire que la tension se mesure en ampères.",
+      "Oublier le bon branchement de chaque appareil."
+    ]
+  },
+  "kyojuro-rengoku-conducteurs-et-isolants": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Kyojuro Rengoku", "manga": "Demon Slayer",
+    "notion": "Conducteurs et isolants",
+    "explication": "Tous les matériaux ne se comportent pas de la même façon vis-à-vis du courant électrique. On les classe en deux grandes catégories : les conducteurs et les isolants. Un conducteur est un matériau qui laisse passer le courant électrique. Les métaux sont d'excellents conducteurs : c'est le cas du cuivre, du fer, de l'aluminium ou de l'or. Le corps humain et l'eau salée conduisent aussi le courant, ce qui explique certains dangers de l'électricité. Un isolant, au contraire, est un matériau qui ne laisse pas (ou très mal) passer le courant électrique. Le plastique, le verre, le bois bien sec, le caoutchouc et l'air sont des isolants. Cette distinction est très utile dans la vie quotidienne, notamment pour la sécurité. Par exemple, les fils électriques sont faits d'un cœur en métal conducteur (souvent du cuivre), qui permet au courant de circuler, entouré d'une gaine en plastique isolant, qui empêche le courant de sortir et nous protège des chocs électriques. En 5ème, on apprend à reconnaître ces matériaux. Bien les comprendre, c'est savoir comment circule le courant et comprendre les règles de sécurité électrique.",
+    "definitions": [
+      {"terme": "Conducteur", "sens": "un matériau qui laisse passer le courant"},
+      {"terme": "Isolant", "sens": "un matériau qui ne laisse pas passer le courant"},
+      {"terme": "Métal", "sens": "un bon conducteur (cuivre, fer, aluminium)"},
+      {"terme": "Plastique", "sens": "un isolant courant"},
+      {"terme": "Verre", "sens": "un autre exemple d'isolant"},
+      {"terme": "Fil électrique", "sens": "un cœur conducteur entouré d'une gaine isolante"},
+      {"terme": "Gaine", "sens": "l'enveloppe isolante qui protège"},
+      {"terme": "Sécurité", "sens": "les isolants nous protègent des chocs électriques"}
+    ],
+    "methode": [
+      "Définis un conducteur (laisse passer le courant).",
+      "Cite des exemples : les métaux.",
+      "Retiens que l'eau salée conduit aussi.",
+      "Définis un isolant (ne laisse pas passer).",
+      "Cite des exemples (plastique, verre, bois sec).",
+      "Comprends l'usage : fil conducteur + gaine isolante.",
+      "Relie cette distinction à la sécurité.",
+      "Apprends à classer les matériaux."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi un fil électrique a-t-il une gaine en plastique ?",
+      "etapes": [
+        "Un conducteur laisse passer le courant : les métaux par exemple.",
+        "Un isolant ne le laisse pas passer : le plastique par exemple.",
+        "Le cœur du fil est en métal conducteur, souvent du cuivre.",
+        "Il permet au courant de circuler.",
+        "La gaine en plastique isolant entoure ce cœur.",
+        "Elle empêche le courant de sortir et nous protège."
+      ]
+    },
+    "astuce": "Kyojuro Rengoku : « Un CONDUCTEUR laisse passer le courant (les métaux : cuivre, fer). Un ISOLANT ne le laisse pas passer (plastique, verre, bois sec). D'où le fil en métal + sa gaine isolante ! »",
+    "erreurs": [
+      "Confondre conducteur et isolant.",
+      "Croire que le plastique conduit le courant.",
+      "Croire que les métaux sont isolants.",
+      "Oublier que l'eau salée conduit le courant.",
+      "Penser que la gaine du fil est conductrice.",
+      "Confondre le cœur du fil et sa gaine.",
+      "Oublier le rôle des isolants pour la sécurité.",
+      "Croire que tous les matériaux conduisent le courant."
+    ]
+  },
+  "obanai-iguro-les-mouvements-vitesse-trajectoire": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Obanai Iguro", "manga": "Demon Slayer",
+    "notion": "Les mouvements : vitesse et trajectoire",
+    "explication": "Un objet est en mouvement lorsqu'il change de position au cours du temps. Mais ce mouvement n'a de sens que par rapport à un point de repère, appelé le référentiel : un passager assis dans un train est immobile par rapport au train, mais en mouvement par rapport au sol. On dit que le mouvement est relatif. Pour décrire un mouvement, on utilise deux notions importantes. La trajectoire est le chemin suivi par l'objet au cours de son déplacement. Elle peut être rectiligne (en ligne droite), circulaire (en cercle), ou quelconque (toute autre forme). La vitesse, elle, indique si l'objet va vite ou lentement : elle se calcule en divisant la distance parcourue par la durée du trajet. La vitesse s'exprime en kilomètres par heure (km/h) ou en mètres par seconde (m/s). Par exemple, un objet qui parcourt cent kilomètres en deux heures a une vitesse de cinquante kilomètres par heure. En 5ème, on apprend à décrire et à étudier les mouvements. Bien les comprendre, c'est savoir caractériser un déplacement par sa trajectoire et sa vitesse, et comprendre que le mouvement dépend du point de vue choisi.",
+    "definitions": [
+      {"terme": "Mouvement", "sens": "un changement de position au cours du temps"},
+      {"terme": "Référentiel", "sens": "le point de repère pour décrire le mouvement"},
+      {"terme": "Mouvement relatif", "sens": "le mouvement dépend du référentiel"},
+      {"terme": "Trajectoire", "sens": "le chemin suivi par l'objet"},
+      {"terme": "Rectiligne", "sens": "une trajectoire en ligne droite"},
+      {"terme": "Circulaire", "sens": "une trajectoire en cercle"},
+      {"terme": "Vitesse", "sens": "la distance divisée par la durée"},
+      {"terme": "km/h et m/s", "sens": "les unités de la vitesse"}
+    ],
+    "methode": [
+      "Définis le mouvement (changement de position).",
+      "Comprends le rôle du référentiel.",
+      "Retiens que le mouvement est relatif.",
+      "Définis la trajectoire (le chemin suivi).",
+      "Cite ses types : rectiligne, circulaire, quelconque.",
+      "Définis la vitesse (distance ÷ durée).",
+      "Retiens ses unités : km/h et m/s.",
+      "Apprends à calculer une vitesse."
+    ],
+    "exemple": {
+      "enonce": "Comment calculer la vitesse d'un objet ?",
+      "etapes": [
+        "Le mouvement se décrit par rapport à un référentiel.",
+        "La trajectoire est le chemin suivi par l'objet.",
+        "La vitesse indique s'il va vite ou lentement.",
+        "On la calcule en divisant la distance par la durée.",
+        "Un objet parcourt 100 km en 2 heures.",
+        "Sa vitesse est donc de 50 km/h."
+      ]
+    },
+    "astuce": "Obanai Iguro : « Un MOUVEMENT se décrit par rapport à un référentiel (il est relatif). La TRAJECTOIRE = le chemin suivi. La VITESSE = distance ÷ durée (en km/h ou m/s) ! »",
+    "erreurs": [
+      "Oublier que le mouvement dépend du référentiel.",
+      "Confondre vitesse et trajectoire.",
+      "Croire qu'un objet est en mouvement « dans l'absolu ».",
+      "Confondre trajectoire rectiligne et circulaire.",
+      "Se tromper dans le calcul (distance ÷ durée).",
+      "Confondre les unités de vitesse.",
+      "Oublier de préciser le référentiel.",
+      "Croire que la vitesse ne dépend pas de la durée."
+    ]
+  },
+  "sanemi-shinazugawa-forces-et-interactions": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Sanemi Shinazugawa", "manga": "Demon Slayer",
+    "notion": "Forces et interactions",
+    "explication": "En sciences, une force est une action capable de modifier le mouvement ou la forme d'un objet. Une force peut produire plusieurs effets : elle peut mettre un objet en mouvement, l'arrêter, modifier sa vitesse, changer la direction de son déplacement (le dévier), ou encore le déformer. Par exemple, quand on pousse un chariot, on exerce une force qui le met en mouvement ; quand on appuie sur une éponge, on exerce une force qui la déforme. Une force est toujours le résultat d'une interaction, c'est-à-dire d'une action entre deux objets. Cette interaction peut se faire par contact (comme une main qui pousse un objet) ou à distance (comme l'attraction de la Terre). Le poids d'un objet, par exemple, est la force d'attraction exercée à distance par la Terre : c'est lui qui fait tomber les objets. On mesure l'intensité d'une force en newtons, dont le symbole est N, à l'aide d'un appareil appelé dynamomètre. En 5ème, on apprend à reconnaître les forces et leurs effets. Bien les comprendre, c'est savoir expliquer pourquoi les objets se mettent en mouvement, s'arrêtent ou se déforment.",
+    "definitions": [
+      {"terme": "Force", "sens": "une action qui modifie le mouvement ou la forme"},
+      {"terme": "Effet d'une force", "sens": "mettre en mouvement, arrêter, dévier, déformer"},
+      {"terme": "Interaction", "sens": "une action entre deux objets"},
+      {"terme": "Contact", "sens": "une interaction par contact (pousser)"},
+      {"terme": "À distance", "sens": "une interaction sans contact (l'attraction)"},
+      {"terme": "Poids", "sens": "la force d'attraction de la Terre"},
+      {"terme": "Newton (N)", "sens": "l'unité de force"},
+      {"terme": "Dynamomètre", "sens": "l'appareil qui mesure une force"}
+    ],
+    "methode": [
+      "Définis une force (modifie mouvement ou forme).",
+      "Liste ses effets (mettre en mouvement, arrêter…).",
+      "Comprends qu'une force vient d'une interaction.",
+      "Distingue interaction par contact et à distance.",
+      "Retiens que le poids est une force d'attraction.",
+      "Note que le poids vient de la Terre.",
+      "Retiens l'unité : le newton (N).",
+      "Retiens l'appareil : le dynamomètre."
+    ],
+    "exemple": {
+      "enonce": "Quels effets peut produire une force ?",
+      "etapes": [
+        "Une force est une action sur un objet.",
+        "Elle peut mettre l'objet en mouvement, comme un chariot poussé.",
+        "Elle peut l'arrêter ou modifier sa vitesse.",
+        "Elle peut le dévier ou le déformer, comme une éponge pressée.",
+        "Une force résulte d'une interaction entre deux objets.",
+        "On la mesure en newtons avec un dynamomètre."
+      ]
+    },
+    "astuce": "Sanemi Shinazugawa : « Une FORCE peut mettre en mouvement, arrêter, dévier ou déformer un objet. Elle vient d'une INTERACTION entre deux objets (par contact ou à distance). On la mesure en newtons (N) ! »",
+    "erreurs": [
+      "Croire qu'une force ne fait que déplacer un objet.",
+      "Oublier qu'une force peut déformer.",
+      "Oublier qu'une force vient d'une interaction.",
+      "Confondre interaction par contact et à distance.",
+      "Croire que le poids n'est pas une force.",
+      "Confondre le newton et une autre unité.",
+      "Confondre dynamomètre et balance.",
+      "Oublier que le poids est dû à l'attraction de la Terre."
+    ]
+  },
+  "shinobu-kocho-les-circuits-electriques-serie-derivation": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Shinobu Kocho", "manga": "Demon Slayer",
+    "notion": "Les circuits électriques (série et dérivation)",
+    "explication": "Pour qu'un courant électrique circule, il faut un circuit fermé, c'est-à-dire une boucle complète comprenant un générateur (par exemple une pile) et des composants comme des lampes. Selon la façon dont on relie ces composants, on distingue deux grands types de circuits. Dans un circuit en série, tous les composants sont placés les uns à la suite des autres, sur un seul et même chemin. Le courant n'a alors qu'un seul trajet possible. La conséquence importante est que si un composant cesse de fonctionner ou est retiré (par exemple une lampe qui grille), le circuit est ouvert et tout s'éteint. Dans un circuit en dérivation (ou en parallèle), les composants sont placés sur des branches différentes. Le courant se partage alors entre plusieurs chemins. La conséquence est que chaque composant fonctionne de façon indépendante : si l'un s'éteint, les autres continuent de fonctionner. C'est pourquoi, dans une maison, les appareils sont branchés en dérivation. En 5ème, on apprend à distinguer ces circuits. Bien les comprendre, c'est savoir comment relier des composants et prévoir le comportement d'un circuit électrique.",
+    "definitions": [
+      {"terme": "Circuit électrique", "sens": "une boucle fermée où circule le courant"},
+      {"terme": "Générateur", "sens": "ce qui fournit le courant (une pile)"},
+      {"terme": "Circuit en série", "sens": "les composants sur un seul chemin"},
+      {"terme": "Circuit en dérivation", "sens": "les composants sur des branches séparées"},
+      {"terme": "Boucle", "sens": "le chemin fermé du courant"},
+      {"terme": "Branche", "sens": "un chemin dans un circuit en dérivation"},
+      {"terme": "Composant", "sens": "une lampe, un moteur… dans le circuit"},
+      {"terme": "Indépendant", "sens": "en dérivation, chaque composant l'est"}
+    ],
+    "methode": [
+      "Rappelle qu'un circuit doit être une boucle fermée.",
+      "Identifie le générateur (la pile).",
+      "Définis le circuit en série (un seul chemin).",
+      "Retiens : si un composant s'éteint, tout s'éteint.",
+      "Définis le circuit en dérivation (branches séparées).",
+      "Retiens : chaque composant est indépendant.",
+      "Comprends pourquoi une maison utilise la dérivation.",
+      "Apprends à prévoir le comportement d'un circuit."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre circuit série et dérivation ?",
+      "etapes": [
+        "Un circuit doit former une boucle fermée.",
+        "En série, les composants sont sur un seul chemin.",
+        "Si une lampe grille, tout le circuit s'éteint.",
+        "En dérivation, les composants sont sur des branches séparées.",
+        "Si une lampe s'éteint, les autres continuent de fonctionner.",
+        "Dans une maison, les appareils sont branchés en dérivation."
+      ]
+    },
+    "astuce": "Shinobu Kocho : « En SÉRIE, les composants sont sur un seul chemin : si un s'éteint, tout s'éteint ! En DÉRIVATION, ils sont sur des branches séparées : chacun est indépendant ! »",
+    "erreurs": [
+      "Confondre circuit en série et en dérivation.",
+      "Oublier qu'un circuit doit être fermé.",
+      "Croire qu'en série un seul composant peut s'éteindre.",
+      "Croire qu'en dérivation tout s'éteint d'un coup.",
+      "Oublier le rôle du générateur.",
+      "Confondre branche et boucle.",
+      "Croire qu'une maison est câblée en série.",
+      "Oublier l'indépendance des composants en dérivation."
+    ]
+  },
+  "tanjiro-kamado-les-atomes-et-les-molecules": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Tanjiro Kamado", "manga": "Demon Slayer",
+    "notion": "Les atomes et les molécules",
+    "explication": "Toute la matière qui nous entoure est constituée de particules extrêmement petites, invisibles à l'œil nu : les atomes. Les atomes sont les « briques » de base de la matière. Ils sont si petits qu'il en faut un nombre gigantesque pour former le moindre objet. Il existe différentes sortes d'atomes, comme l'atome d'hydrogène, l'atome d'oxygène ou l'atome de carbone. Les atomes ne restent pas toujours isolés : très souvent, ils s'assemblent entre eux pour former des molécules. Une molécule est donc un groupe d'atomes liés ensemble. L'exemple le plus connu est la molécule d'eau : elle est formée de deux atomes d'hydrogène et d'un atome d'oxygène, ce que les scientifiques notent H₂O. Comprendre que la matière est faite d'atomes et de molécules permet d'expliquer de nombreux phénomènes. Par exemple, les trois états de la matière s'expliquent par la façon dont les molécules sont disposées et bougent : très serrées et ordonnées dans un solide, plus libres dans un liquide, très dispersées dans un gaz. En 5ème, on découvre ce modèle de la matière. Bien le comprendre, c'est se donner une clé pour expliquer le monde à l'échelle microscopique.",
+    "definitions": [
+      {"terme": "Atome", "sens": "la « brique » de base de la matière"},
+      {"terme": "Molécule", "sens": "un groupe d'atomes liés ensemble"},
+      {"terme": "Particule", "sens": "un élément minuscule de matière"},
+      {"terme": "Atome d'hydrogène", "sens": "une des sortes d'atomes"},
+      {"terme": "Atome d'oxygène", "sens": "une autre sorte d'atome"},
+      {"terme": "Eau (H₂O)", "sens": "2 atomes d'hydrogène + 1 d'oxygène"},
+      {"terme": "Microscopique", "sens": "trop petit pour être vu à l'œil nu"},
+      {"terme": "Modèle", "sens": "une façon de représenter la matière"}
+    ],
+    "methode": [
+      "Comprends que la matière est faite d'atomes.",
+      "Retiens que l'atome est la brique de base.",
+      "Sache qu'il existe plusieurs sortes d'atomes.",
+      "Comprends que les atomes s'assemblent en molécules.",
+      "Définis une molécule (un groupe d'atomes).",
+      "Retiens l'exemple de l'eau (H₂O).",
+      "Relie l'arrangement des molécules aux états.",
+      "Utilise ce modèle pour expliquer la matière."
+    ],
+    "exemple": {
+      "enonce": "De quoi est faite une molécule d'eau ?",
+      "etapes": [
+        "Toute la matière est faite d'atomes minuscules.",
+        "Les atomes s'assemblent pour former des molécules.",
+        "Une molécule est un groupe d'atomes liés.",
+        "La molécule d'eau est un exemple célèbre.",
+        "Elle est faite de 2 atomes d'hydrogène et 1 d'oxygène.",
+        "Les scientifiques la notent H₂O."
+      ]
+    },
+    "astuce": "Tanjiro Kamado : « Toute la matière est faite de minuscules ATOMES, qui s'assemblent en MOLÉCULES. Exemple : une molécule d'eau = 2 atomes d'hydrogène + 1 atome d'oxygène (H₂O) ! »",
+    "erreurs": [
+      "Confondre atome et molécule.",
+      "Croire qu'une molécule est plus petite qu'un atome.",
+      "Croire qu'il n'existe qu'une sorte d'atome.",
+      "Oublier que les atomes s'assemblent en molécules.",
+      "Se tromper sur la composition de l'eau (H₂O).",
+      "Croire que la matière n'est pas faite d'atomes.",
+      "Confondre atome d'hydrogène et d'oxygène.",
+      "Oublier le lien entre molécules et états de la matière."
+    ]
+  },
+  "tengen-uzui-la-securite-electrique": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Tengen Uzui", "manga": "Demon Slayer",
+    "notion": "La sécurité électrique : court-circuit et fusible",
+    "explication": "L'électricité est très utile, mais elle peut aussi être dangereuse : il est donc essentiel de connaître les règles de sécurité. L'un des principaux dangers est le court-circuit. Un court-circuit se produit lorsque le courant trouve un chemin de très faible résistance, par exemple lorsque les deux bornes d'un générateur sont reliées directement par un fil. Dans ce cas, l'intensité du courant devient brusquement très élevée : les fils chauffent fortement, ce qui peut provoquer des brûlures et même des incendies. Pour se protéger de ces surintensités, on utilise des dispositifs de sécurité. Le fusible est un petit composant contenant un fil qui fond lorsque l'intensité devient trop forte : en fondant, il coupe le circuit et arrête le courant, évitant l'accident. Le disjoncteur joue un rôle semblable : il coupe automatiquement le courant en cas de problème, mais il a l'avantage de pouvoir être réarmé, alors qu'un fusible doit être remplacé. Il faut aussi respecter des règles simples : ne pas toucher d'appareils électriques avec les mains mouillées, ne pas surcharger une prise. En 5ème, on apprend ces notions de sécurité. Bien les comprendre, c'est savoir utiliser l'électricité sans danger.",
+    "definitions": [
+      {"terme": "Sécurité électrique", "sens": "les règles pour éviter les accidents"},
+      {"terme": "Court-circuit", "sens": "un chemin de très faible résistance"},
+      {"terme": "Surintensité", "sens": "une intensité devenue trop forte"},
+      {"terme": "Incendie", "sens": "un risque du court-circuit (fils qui chauffent)"},
+      {"terme": "Fusible", "sens": "un fil qui fond et coupe le courant"},
+      {"terme": "Disjoncteur", "sens": "il coupe le courant et peut être réarmé"},
+      {"terme": "Protection", "sens": "ce qui évite les accidents électriques"},
+      {"terme": "Règle de sécurité", "sens": "ne pas toucher l'électricité les mains mouillées"}
+    ],
+    "methode": [
+      "Comprends que l'électricité peut être dangereuse.",
+      "Définis le court-circuit (faible résistance).",
+      "Comprends qu'il provoque une surintensité.",
+      "Retiens son risque : chaleur et incendie.",
+      "Découvre le fusible (il fond et coupe).",
+      "Découvre le disjoncteur (il coupe et se réarme).",
+      "Retiens des règles simples de sécurité.",
+      "Apprends à utiliser l'électricité sans danger."
+    ],
+    "exemple": {
+      "enonce": "À quoi sert un fusible ?",
+      "etapes": [
+        "Un court-circuit fait passer une intensité très forte.",
+        "Les fils chauffent fortement et peuvent prendre feu.",
+        "Le fusible contient un fil qui fond si l'intensité est trop forte.",
+        "En fondant, il coupe le circuit et arrête le courant.",
+        "Le disjoncteur joue un rôle semblable, mais se réarme.",
+        "Ces dispositifs évitent les accidents et les incendies."
+      ]
+    },
+    "astuce": "Tengen Uzui : « Un COURT-CIRCUIT fait passer une intensité énorme (risque d'incendie !). Le FUSIBLE fond et coupe le courant ; le DISJONCTEUR coupe aussi mais se réarme. La sécurité d'abord ! »",
+    "erreurs": [
+      "Croire qu'un court-circuit diminue l'intensité.",
+      "Oublier le risque d'incendie du court-circuit.",
+      "Croire que le fusible augmente le courant.",
+      "Confondre fusible et disjoncteur.",
+      "Oublier que le disjoncteur peut être réarmé.",
+      "Croire qu'un fusible peut être réutilisé après avoir fondu.",
+      "Toucher l'électricité avec les mains mouillées.",
+      "Oublier les règles de sécurité électrique."
+    ]
+  },
+  "zenitsu-agatsuma-les-transformations-physiques-et-chimiques": {
+    "matiere": "sciences", "niveau": "5eme", "hero": "Zenitsu Agatsuma", "manga": "Demon Slayer",
+    "notion": "Les transformations physiques et chimiques",
+    "explication": "La matière peut subir des transformations, et on en distingue deux grandes sortes : les transformations physiques et les transformations chimiques. Lors d'une transformation physique, la matière change d'aspect ou d'état, mais reste constituée de la même substance : aucune nouvelle substance n'apparaît. Les changements d'état en sont le meilleur exemple : quand la glace fond, elle devient de l'eau liquide, mais c'est toujours de l'eau. La dissolution du sel dans l'eau est aussi une transformation physique. Ces transformations sont souvent réversibles : on peut revenir à l'état de départ. Lors d'une transformation chimique, au contraire, une ou plusieurs substances se transforment en de nouvelles substances, différentes des substances de départ. La combustion en est un bon exemple : quand du bois brûle, il se transforme en cendres, en fumée et en gaz, qui sont de nouvelles substances. La cuisson des aliments ou la formation de la rouille sur le fer sont aussi des transformations chimiques. Celles-ci sont souvent difficiles, voire impossibles, à inverser. En 5ème, on apprend à distinguer ces deux types de transformations. Bien les comprendre, c'est savoir analyser ce qui se passe quand la matière se transforme.",
+    "definitions": [
+      {"terme": "Transformation physique", "sens": "la substance reste la même"},
+      {"terme": "Transformation chimique", "sens": "de nouvelles substances apparaissent"},
+      {"terme": "Changement d'état", "sens": "un exemple de transformation physique"},
+      {"terme": "Dissolution", "sens": "une transformation physique (sel dans l'eau)"},
+      {"terme": "Combustion", "sens": "une transformation chimique (le bois brûle)"},
+      {"terme": "Rouille", "sens": "une transformation chimique du fer"},
+      {"terme": "Nouvelle substance", "sens": "le signe d'une transformation chimique"},
+      {"terme": "Réversible", "sens": "que l'on peut souvent inverser (physique)"}
+    ],
+    "methode": [
+      "Comprends qu'il existe deux types de transformations.",
+      "Définis la transformation physique (même substance).",
+      "Cite des exemples (changement d'état, dissolution).",
+      "Note qu'elle est souvent réversible.",
+      "Définis la transformation chimique (nouvelles substances).",
+      "Cite des exemples (combustion, rouille, cuisson).",
+      "Note qu'elle est souvent difficile à inverser.",
+      "Apprends à distinguer les deux."
+    ],
+    "exemple": {
+      "enonce": "Comment distinguer une transformation physique d'une transformation chimique ?",
+      "etapes": [
+        "Dans une transformation physique, la substance reste la même.",
+        "Quand la glace fond, c'est toujours de l'eau.",
+        "Ces transformations sont souvent réversibles.",
+        "Dans une transformation chimique, de nouvelles substances apparaissent.",
+        "Quand le bois brûle, il devient cendres, fumée et gaz.",
+        "Ces transformations sont souvent impossibles à inverser."
+      ]
+    },
+    "astuce": "Zenitsu Agatsuma : « Transformation PHYSIQUE = la substance reste la MÊME (la glace fond mais reste de l'eau). Transformation CHIMIQUE = de NOUVELLES substances apparaissent (combustion, rouille) ! »",
+    "erreurs": [
+      "Confondre transformation physique et chimique.",
+      "Croire qu'un changement d'état crée une nouvelle substance.",
+      "Croire que la combustion est une transformation physique.",
+      "Oublier que la rouille est une transformation chimique.",
+      "Croire que toutes les transformations sont réversibles.",
+      "Penser que la dissolution est une transformation chimique.",
+      "Oublier le critère des nouvelles substances.",
+      "Confondre fonte de la glace et combustion."
+    ]
+  }
+}
