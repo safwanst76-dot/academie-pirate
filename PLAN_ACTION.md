@@ -1682,3 +1682,68 @@ Workflow : dry-run (gate 8/8) → run réel → vérif (sec/cta/html + mots) →
 4. **Histoire / Géo / Sciences** : ajout des 2 sections AEO uniquement.
 
 *Réf. règles : PR-00 (production ready), NR-01 (zéro régression), DEV-01 (source = GitHub).*
+---
+
+## 🏆 ENRICHISSEMENT v3 — 240 LEÇONS COMPLÈTES (07/06/2026)
+
+**Date de clôture** : 07 juin 2026
+**Périmètre** : enrichissement SEO/AEO v3 de TOUTES les leçons sur les **chemins matière indexables** (`anglais/`, `maths/`, `francais/`, `histoire/`, `sciences/`, `geographie/`).
+**Résultat** : **240/240 leçons enrichies**, chacune **> 1000 mots visibles**.
+
+### Structure couverte
+
+6 matières × 5 niveaux (CM2 → 3ème) × 8 leçons = **240 leçons**.
+
+| # | Matière | Univers | Monde (301 → matière) | Niveaux | Leçons | Statut |
+|---|---|---|---|---|---|---|
+| 1 | Anglais | Attack on Titan | english → /anglais/ | CM2·6e·5e·4e·3e | 40 | ✅ v3 >1000 mots |
+| 2 | Maths | Naruto | pays-du-feu → /maths/ | CM2·6e·5e·4e·3e | 40 | ✅ v3 >1000 mots |
+| 3 | Français | One Piece | grand-bleu → /francais/ | CM2·6e·5e·4e·3e | 40 | ✅ v3 >1000 mots |
+| 4 | Histoire | Dragon Ball Z | magnolia → /histoire/ | CM2·6e·5e·4e·3e | 40 | ✅ v3 >1000 mots |
+| 5 | Sciences | Demon Slayer | kanto → /sciences/ | CM2·6e·5e·4e·3e | 40 | ✅ v3 >1000 mots |
+| 6 | Géographie | Jujutsu Kaisen | namek → /geographie/ | CM2·6e·5e·4e·3e | 40 | ✅ v3 >1000 mots |
+| | **TOTAL** | | | | **240** | **✅ 6/6** |
+
+Dernier lot poussé : **Sciences 3ème** (Demon Slayer / kanto → `/sciences/3eme/`).
+
+### Réconciliation avec la table « Avancement » (CHANTIER P3, plus haut)
+
+⚠️ La table « Avancement » de la section **CHANTIER P3** (datée 03/06/2026) est **OBSOLÈTE** :
+elle ne reflétait que *Maths 3ème ✅ + Maths 4ème en cours*. Elle est **remplacée** par le présent bilan.
+Tout l'enrichissement v3 (240 leçons) a été rédigé, injecté et poussé depuis.
+→ Hashes de commits par lot : à confirmer via `git log --oneline --grep="enrich"`.
+
+### Outil utilisé
+
+`scripts/seo/enrich-lesson-content.py` (v3, gitignoré — vit dans le Codespace local).
+Les JSON de contenu `scripts/seo/enrichments-*.json` sont versionnés.
+
+---
+
+## 📐 RÈGLES PERMANENTES DE CONTENU (codifiées 07/06/2026)
+
+Ces règles s'appliquent à **toute future matière, tout futur monde, toute future leçon**.
+Elles sont également consignées dans `LESSONS_LEARNED.md`.
+
+### CONTENU-01 — Seuil minimal 1000 mots visibles / page
+
+**Toute page de leçon publiée et indexable doit dépasser 1000 mots VISIBLES** (texte réellement
+rendu pour l'utilisateur et les crawlers, hors balisage / JSON-LD / attributs). C'est le seuil
+content-rich validé empiriquement dans GSC : sous ~600 mots, les pages restaient en
+« Explorées, actuellement non indexées ».
+→ Vérification **obligatoire** en fin de dry-run : bumper toute leçon sous 1000 mots AVANT injection réelle.
+
+### CONTENU-02 — Couverture complète CM2 → 3ème
+
+**Toute matière démarre au CM2 et finit en 3ème** : 5 niveaux (CM2, 6ème, 5ème, 4ème, 3ème),
+8 leçons par niveau = 40 leçons / matière. Une matière n'est « livrable indexable » que lorsque
+**ses 5 niveaux** respectent CONTENU-01. Pas de niveau orphelin indexé sans ses voisins
+(cohérence du parcours + maillage interne).
+
+*Réf. : PLAN_ACTION « Pages matière indexables uniquement », NR-01, PR-00.*
+
+### Backlog post-enrichissement (rappel)
+
+- [ ] **Phase 7** — Cleanup DB + correction du bug trigger `child_profiles` (ERROR 27000).
+- [ ] **GSC** — demandes d'indexation quotidiennes. Consulter `PLAN_ACTION.md` lignes 364–450 et
+  960–1050 AVANT toute proposition d'URL ; ne jamais re-proposer une URL déjà indexée.

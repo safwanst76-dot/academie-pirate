@@ -360,3 +360,53 @@ Bénéfice : zéro downtime prod.
 ---
 
 *Erreurs #6-#8 capitalisées le 28 mai 2026 lors de Pattern A Phase 5*
+
+---
+
+## 📐 RÈGLES PERMANENTES DE CONTENU (codifiées 07/06/2026)
+
+> À respecter pour TOUTE nouvelle matière, nouveau monde, nouvelle leçon.
+> À lire en début de session au même titre que les Erreurs capitalisées.
+
+### Règle CONTENU-01 — Minimum 1000 mots visibles par page
+
+Toute page de leçon publiée et indexable doit dépasser **1000 mots visibles** (texte
+effectivement rendu, hors HTML / JSON-LD / attributs).
+- **Pourquoi** : seuil content-rich validé empiriquement dans GSC — en dessous de ~600 mots,
+  les pages restaient en « Explorées, actuellement non indexées ».
+- **Comment** : à la fin de chaque dry-run d'enrichissement, mesurer les mots visibles et
+  **bumper toute leçon sous 1000 mots** AVANT injection réelle.
+- **Statut** : règle permanente — aucune exception en prod indexable.
+
+### Règle CONTENU-02 — Couverture CM2 → 3ème complète
+
+Toute matière **démarre au CM2 et se termine en 3ème** : 5 niveaux (CM2, 6ème, 5ème, 4ème, 3ème),
+8 leçons / niveau = 40 leçons / matière.
+- Une matière n'est « livrable indexable » que lorsque **ses 5 niveaux** respectent CONTENU-01.
+- Pas de niveau orphelin indexé sans ses voisins (cohérence parcours + maillage interne).
+
+---
+
+## 🏆 BILAN — Enrichissement v3 terminé (240 leçons) — 07/06/2026
+
+L'enrichissement SEO/AEO v3 est **complet** : 6 matières × 5 niveaux × 8 leçons = **240 leçons**,
+toutes > 1000 mots visibles (détail dans `PLAN_ACTION.md`, section « ENRICHISSEMENT v3 — 240
+LEÇONS COMPLÈTES »). Dernier lot : Sciences 3ème.
+
+**Méta-leçon** : l'invariant du workflow d'enrichissement (discovery → calibrage du mock au minimum
+réel → dry-run gate → injection → vérif sec/cta/html + mots → commit/push) a tenu sur les 240 leçons
+sans régression. À reconduire à l'identique pour toute future matière / monde.
+
+---
+
+## ⏭️ BACKLOG — Phase 7 (encore ouvert)
+
+**Phase 7 — Cleanup DB + fix trigger `child_profiles`** :
+- DROP RPC `lookup_child_by_pin`, table `pin_attempts`, colonnes `pin_hash` / `pin`.
+- **Bug à corriger** : boucle de trigger **BEFORE** sur DELETE de `child_profiles` (ERROR 27000).
+  Le chemin de suppression correct = **supprimer depuis `auth.users`** et laisser le FK CASCADE
+  nettoyer `child_profiles`. **Ne JAMAIS** faire un DELETE direct sur `child_profiles`.
+
+---
+
+*Règles permanentes CONTENU-01 / CONTENU-02 + bilan v3 ajoutés le 07 juin 2026.*
