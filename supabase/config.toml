@@ -15,3 +15,12 @@ enabled = true
 verify_jwt = true
 import_map = "./functions/child-signup/deno.json"
 entrypoint = "./functions/child-signup/index.ts"
+[functions.delete-child]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/delete-child/index.ts"
+
+[functions.delete-account]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/delete-account/index.ts"
