@@ -410,3 +410,47 @@ sans régression. À reconduire à l'identique pour toute future matière / mond
 ---
 
 *Règles permanentes CONTENU-01 / CONTENU-02 + bilan v3 ajoutés le 07 juin 2026.*
+
+---
+
+### 🔵 Leçon #9 — 07/06/2026 — Suppression de compte : racine `auth.users` + audit FK exhaustif
+
+**Contexte** : Phase 7 (bug ERROR 27000 sur DELETE `child_profiles`) + Phase 8 (suppression compte
+enfant/parent, RGPD).
+
+**Cause racine du 27000** : un trigger BEFORE DELETE sur `child_profiles` supprimait `auth.users`,
+or le FK `child_profiles.auth_user_id → auth.users` est en `ON DELETE CASCADE`. Supprimer un enfant
+en direct déclenchait donc une **boucle** : trigger → DELETE auth.users → CASCADE re-DELETE la même
+ligne enfant en cours de suppression → ERROR 27000.
+
+**Principe #1 — Une seule racine de suppression : `auth.users`.**
+Toujours supprimer via `auth.admin.deleteUser(id)` (service-role) et laisser le FK CASCADE nettoyer
+les tables filles. **Ne JAMAIS** faire de `DELETE FROM child_profiles` direct, ni recréer un
+mécanisme « profil → compte Auth » (mauvais sens = boucle). Un trigger qui modifie `auth.users` en
+contexte de cascade est un piège.
+
+**Principe #2 — Avant de se reposer sur un CASCADE, auditer TOUTES les FK qui pointent vers la racine.**
+La suppression du parent a échoué silencieusement (la fonction renvoyait une 500 idempotente) à cause
+d'**une seule** FK en `NO ACTION` (`profiles_parents_id_fkey`) parmi une quinzaine pointant vers
+`auth.users`. Une seule FK non-CASCADE/non-SET NULL suffit à bloquer toute la chaîne.
+Requête d'audit réutilisable :
+```sql
+SELECT conname, conrelid::regclass AS from_tbl, confdeltype  -- c=CASCADE n=SETNULL a=NOACTION r=RESTRICT
+FROM pg_constraint
+WHERE contype='f' AND confrelid IN ('auth.users'::regclass, 'public.parents'::regclass);
+```
+→ Tout ce qui n'est pas `c`/`n` est un bloqueur potentiel à corriger (ALTER … ON DELETE CASCADE)
+ou à nettoyer dans la fonction avant la suppression.
+
+**Principe #3 — Ordre dans la suppression « parent + enfants »** : lire les `auth_user_id` enfants
+AVANT toute suppression (sinon la cascade les efface et on perd la liste), supprimer les enfants,
+puis le parent EN DERNIER. Rendre la fonction idempotente (si un enfant échoue → ne pas supprimer
+le parent, relançable).
+
+**Méthode de diagnostic gagnante** : ne pas se fier au `console.log` asynchrone côté navigateur pour
+valider une suppression — vérifier l'état réel en base (présence/absence des lignes + comptes
+`auth.users` + 0 orphelin). C'est la seule preuve fiable.
+
+**Statut** : trigger inverse supprimé, RPC `lookup_child_by_pin` + table `pin_attempts` droppées,
+`profiles_parents_id_fkey` passée en CASCADE, Edge Functions `delete-child` / `delete-account`
+déployées et validées en prod (07/06/2026, commit `8df4736`).

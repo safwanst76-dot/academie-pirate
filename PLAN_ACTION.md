@@ -1747,3 +1747,76 @@ content-rich validé empiriquement dans GSC : sous ~600 mots, les pages restaien
 - [ ] **Phase 7** — Cleanup DB + correction du bug trigger `child_profiles` (ERROR 27000).
 - [ ] **GSC** — demandes d'indexation quotidiennes. Consulter `PLAN_ACTION.md` lignes 364–450 et
   960–1050 AVANT toute proposition d'URL ; ne jamais re-proposer une URL déjà indexée.
+
+---
+
+## 🏆 PHASE 7a + PHASE 8 — Fix bug 27000 + Suppression de compte (07/06/2026)
+
+### Phase 7a — Cleanup DB + correction ERROR 27000 ✅
+
+**Bug** : trigger BEFORE DELETE `trg_cascade_delete_auth_user` sur `child_profiles` →
+`DELETE FROM auth.users` → le FK `child_profiles.auth_user_id → auth.users ON DELETE CASCADE`
+re-supprimait la même ligne en cours de suppression → **ERROR 27000**.
+
+**Fix** : suppression du mécanisme inverse (le bon sens de suppression est `auth.users` → CASCADE).
+SQL appliqué en prod :
+```sql
+DROP TRIGGER  IF EXISTS trg_cascade_delete_auth_user ON public.child_profiles;
+DROP FUNCTION IF EXISTS public.delete_auth_user_on_child_delete();
+DROP FUNCTION IF EXISTS public.lookup_child_by_pin(text);   -- RPC morte (login = signInWithPassword)
+DROP TABLE    IF EXISTS public.pin_attempts;                -- rate-limit natif Supabase Auth suffit
+```
+Vérifié : 0 trigger, 0 fonction, 0 RPC, table supprimée. Colonnes `pin`/`pin_hash`
+**CONSERVÉES** (encore utilisées `js/auth.js:974`, flux `af-pin-entry` → voir Phase 7b).
+FK `child_profiles_auth_user_id_fkey` **conservée** (bon sens).
+
+### Décision d'architecture — suppression de compte
+
+**Racine = `auth.users`.** On supprime via `auth.admin.deleteUser` (service-role) ; le FK CASCADE
+nettoie le reste. **Jamais** de `DELETE FROM child_profiles` direct (sens inverse = boucle 27000).
+La suppression est pilotée **depuis le parent**.
+
+Chaîne FK (auditée) :
+```
+parents.id                  → auth.users(id)  CASCADE
+child_profiles.parent_id    → parents(id)     CASCADE
+child_profiles.auth_user_id → auth.users(id)  CASCADE
+profiles_parents.id         → auth.users(id)  CASCADE  ← corrigé (était NO ACTION)
+```
+
+### Fix FK bloquante (audit complet des FK → auth.users)
+
+La suppression du parent échouait : `profiles_parents_id_fkey` était en **NO ACTION** → bloquait
+`DELETE auth.users[parent]` (chaque parent a une ligne `profiles_parents` = sa fiche profil RGPD).
+SQL appliqué en prod :
+```sql
+ALTER TABLE public.profiles_parents
+  DROP CONSTRAINT profiles_parents_id_fkey,
+  ADD  CONSTRAINT profiles_parents_id_fkey
+       FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE;
+```
+`profiles_parents` (nom, email, **consentement RGPD**) doit disparaître avec le compte → CASCADE correct.
+Legacy inoffensif : `profiles` (2 lignes, `parent_id` NULL) + `progression.enfant_id` (0 lien)
+→ ne bloquent aucune suppression de parent. Cleanup optionnel futur (cf. Reste à faire).
+
+### Phase 8 — Edge Functions ✅ (commit `8df4736`)
+
+- **`delete-child`** : un parent supprime un enfant. Vérifie l'ownership (`child.parent_id == parent du JWT`)
+  → `auth.admin.deleteUser(child.auth_user_id)` → CASCADE nettoie `child_profiles` + données filles.
+- **`delete-account`** (RGPD, droit à l'oubli) : lit les `auth_user_id` de TOUS les enfants AVANT toute
+  suppression → `deleteUser` chaque enfant → `deleteUser` le parent EN DERNIER. Idempotent : si un enfant
+  échoue, le parent est conservé (relançable). Garde-fou `confirm:true` obligatoire.
+- `config.toml` : `verify_jwt = true` pour les deux (session parent exigée).
+
+**Tests prod validés** (comptes jetables) :
+- `child-signup` + `delete-child` sur `testsuppr` → profil + `auth.users` supprimés, 0 progression orpheline.
+- `delete-account` sur `safwanst.76+test@gmail.com` (2 enfants) → parent + `parents` + `profiles_parents`
+  + les 2 profils enfants + leurs 2 `auth.users` tous supprimés, 0 orphelin.
+
+### Reste à faire
+
+- [ ] **Phase 8 frontend** : boutons « supprimer cet enfant » + « supprimer mon compte »,
+  modales de confirmation, `signOut`/redirect après l'auto-suppression du parent.
+- [ ] **Phase 7b** : migrer le flux `af-pin-entry` (`js/auth.js:974`) hors `pin`/`pin_hash`
+  (→ `signInWithPassword`), PUIS `DROP COLUMN pin, pin_hash`.
+- [ ] (option) Cleanup legacy `profiles` + `progression.enfant_id` (mort, 2 lignes orphelines).
