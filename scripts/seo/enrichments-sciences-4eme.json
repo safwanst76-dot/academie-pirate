@@ -1,0 +1,378 @@
+{
+  "gyomei-himejima-les-ions-et-la-conduction-electrique": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Gyomei Himejima", "manga": "Demon Slayer",
+    "notion": "Les ions et la conduction électrique",
+    "explication": "Un atome est normalement neutre, car il contient autant de charges positives que de charges négatives (les électrons). Mais un atome, ou un groupe d'atomes, peut gagner ou perdre un ou plusieurs électrons : il devient alors un ion, c'est-à-dire une particule chargée électriquement. Si l'atome perd des électrons, il a alors plus de charges positives : il devient un ion positif, appelé cation. Si l'atome gagne des électrons, il a alors plus de charges négatives : il devient un ion négatif, appelé anion. Ces ions jouent un rôle essentiel dans la conduction de l'électricité par les solutions. En effet, certaines solutions, dites solutions ioniques, contiennent des ions : c'est le cas de l'eau salée, qui contient des ions issus du sel dissous. Comme ces ions sont des particules chargées et qu'ils peuvent se déplacer dans la solution, ils permettent au courant électrique de circuler : la solution conduit alors l'électricité. À l'inverse, l'eau pure, qui contient très peu d'ions, conduit très mal le courant. En 4ème, on découvre les ions. Bien les comprendre, c'est savoir expliquer pourquoi certaines solutions conduisent le courant et d'autres non.",
+    "definitions": [
+      {"terme": "Ion", "sens": "un atome (ou groupe) chargé électriquement"},
+      {"terme": "Atome neutre", "sens": "autant de charges + que de charges -"},
+      {"terme": "Cation", "sens": "un ion positif (a perdu des électrons)"},
+      {"terme": "Anion", "sens": "un ion négatif (a gagné des électrons)"},
+      {"terme": "Électron", "sens": "une particule de charge négative"},
+      {"terme": "Solution ionique", "sens": "une solution contenant des ions"},
+      {"terme": "Conduction", "sens": "la circulation du courant grâce aux ions"},
+      {"terme": "Eau salée", "sens": "une solution ionique qui conduit le courant"}
+    ],
+    "methode": [
+      "Rappelle qu'un atome est normalement neutre.",
+      "Comprends qu'il peut gagner ou perdre des électrons.",
+      "Définis l'ion (un atome chargé).",
+      "Cation : ion positif (perte d'électrons).",
+      "Anion : ion négatif (gain d'électrons).",
+      "Comprends qu'une solution ionique contient des ions.",
+      "Explique la conduction par le déplacement des ions.",
+      "Compare l'eau salée et l'eau pure."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi l'eau salée conduit-elle le courant ?",
+      "etapes": [
+        "Un atome qui gagne ou perd des électrons devient un ion.",
+        "Un cation est positif, un anion est négatif.",
+        "L'eau salée contient des ions issus du sel dissous.",
+        "Ces ions sont des particules chargées et mobiles.",
+        "En se déplaçant, ils permettent au courant de circuler.",
+        "L'eau pure, presque sans ions, conduit très mal."
+      ]
+    },
+    "astuce": "Gyomei Himejima : « Un ION est un atome qui a perdu des électrons (cation +) ou en a gagné (anion -). Dans une solution ionique comme l'eau salée, ce sont les ions mobiles qui conduisent le courant ! »",
+    "erreurs": [
+      "Confondre cation (positif) et anion (négatif).",
+      "Croire qu'un ion est toujours neutre.",
+      "Penser que l'eau pure conduit bien le courant.",
+      "Oublier que la conduction vient des ions mobiles.",
+      "Confondre ion et atome neutre.",
+      "Croire que le cation a gagné des électrons.",
+      "Oublier que les ions sont chargés électriquement.",
+      "Confondre solution ionique et eau pure."
+    ]
+  },
+  "inosuke-hashibira-les-lentilles-et-la-formation-d-images": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Inosuke Hashibira", "manga": "Demon Slayer",
+    "notion": "Les lentilles et la formation d'images",
+    "explication": "Une lentille est un objet transparent, souvent en verre ou en plastique, capable de dévier les rayons de lumière qui la traversent. On s'intéresse surtout à la lentille convergente, plus épaisse au centre que sur les bords, comme une loupe. Sa propriété principale est de faire converger les rayons de lumière, c'est-à-dire de les rassembler vers un même point. Lorsqu'un faisceau de rayons parallèles traverse une lentille convergente, tous les rayons se rejoignent en un point particulier appelé le foyer. La distance entre le centre de la lentille et son foyer s'appelle la distance focale. Grâce à cette capacité à dévier la lumière, une lentille convergente permet de former une image d'un objet. Ce principe est utilisé dans de nombreux instruments d'optique. L'œil contient lui-même une lentille (le cristallin) qui forme une image sur le fond de l'œil. L'appareil photo, la loupe, les lunettes ou le microscope utilisent aussi des lentilles. En 4ème, on étudie les lentilles convergentes et la formation des images. Bien les comprendre, c'est savoir expliquer comment fonctionnent l'œil et les instruments qui nous aident à voir.",
+    "definitions": [
+      {"terme": "Lentille", "sens": "un objet transparent qui dévie la lumière"},
+      {"terme": "Lentille convergente", "sens": "plus épaisse au centre (comme une loupe)"},
+      {"terme": "Converger", "sens": "rassembler les rayons vers un point"},
+      {"terme": "Foyer", "sens": "le point où se rejoignent les rayons"},
+      {"terme": "Distance focale", "sens": "la distance entre le centre et le foyer"},
+      {"terme": "Image", "sens": "ce que forme la lentille à partir d'un objet"},
+      {"terme": "Cristallin", "sens": "la lentille présente dans l'œil"},
+      {"terme": "Instrument d'optique", "sens": "loupe, appareil photo, microscope…"}
+    ],
+    "methode": [
+      "Définis une lentille (objet transparent).",
+      "Reconnais la lentille convergente (épaisse au centre).",
+      "Comprends qu'elle fait converger les rayons.",
+      "Identifie le foyer (le point de convergence).",
+      "Définis la distance focale.",
+      "Comprends qu'elle forme une image.",
+      "Relie ce principe à l'œil (le cristallin).",
+      "Cite des instruments d'optique."
+    ],
+    "exemple": {
+      "enonce": "Que fait une lentille convergente à la lumière ?",
+      "etapes": [
+        "Une lentille convergente est plus épaisse au centre.",
+        "Elle fait converger les rayons de lumière.",
+        "Des rayons parallèles se rejoignent en un point.",
+        "Ce point s'appelle le foyer.",
+        "La lentille forme ainsi une image d'un objet.",
+        "C'est le principe de l'œil et de l'appareil photo."
+      ]
+    },
+    "astuce": "Inosuke Hashibira : « Une lentille CONVERGENTE (comme une loupe) rassemble les rayons de lumière vers un point, le FOYER, et forme une image. C'est le principe de l'œil et de l'appareil photo ! »",
+    "erreurs": [
+      "Croire qu'une lentille ne dévie pas la lumière.",
+      "Confondre lentille convergente et lentille fine au centre.",
+      "Oublier la notion de foyer.",
+      "Confondre foyer et distance focale.",
+      "Croire qu'une lentille ne forme pas d'image.",
+      "Oublier que l'œil contient une lentille.",
+      "Penser que seules les loupes sont des lentilles.",
+      "Confondre converger et disperser les rayons."
+    ]
+  },
+  "kyojuro-rengoku-combustions-et-oxydations": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Kyojuro Rengoku", "manga": "Demon Slayer",
+    "notion": "Combustions et oxydations",
+    "explication": "Une combustion est une transformation chimique au cours de laquelle une substance, appelée le combustible, brûle en réagissant avec un autre élément, appelé le comburant. Dans la plupart des combustions, le comburant est le dioxygène présent dans l'air. La combustion libère de l'énergie, sous forme de chaleur et souvent de lumière (les flammes). Pour qu'une combustion ait lieu, trois éléments sont nécessaires, que l'on représente par le triangle du feu : un combustible (par exemple le bois, le gaz), un comburant (le dioxygène) et une source de chaleur suffisante pour démarrer la réaction. Si l'un des trois manque, la combustion s'arrête : c'est sur ce principe que repose l'extinction des incendies. La combustion transforme les substances de départ en de nouvelles substances : par exemple, la combustion du carbone produit du dioxyde de carbone. Une oxydation est, plus largement, une réaction chimique d'une substance avec le dioxygène ; la formation de la rouille sur le fer en est un exemple lent. En 4ème, on étudie ces réactions. Bien les comprendre, c'est savoir expliquer le feu et les transformations liées au dioxygène.",
+    "definitions": [
+      {"terme": "Combustion", "sens": "une transformation chimique où une substance brûle"},
+      {"terme": "Combustible", "sens": "la substance qui brûle (bois, gaz)"},
+      {"terme": "Comburant", "sens": "ce qui permet la combustion (le dioxygène)"},
+      {"terme": "Dioxygène", "sens": "le gaz comburant présent dans l'air"},
+      {"terme": "Triangle du feu", "sens": "combustible + comburant + chaleur"},
+      {"terme": "Dioxyde de carbone", "sens": "un produit de la combustion du carbone"},
+      {"terme": "Oxydation", "sens": "une réaction avec le dioxygène"},
+      {"terme": "Rouille", "sens": "une oxydation lente du fer"}
+    ],
+    "methode": [
+      "Définis la combustion (une transformation chimique).",
+      "Identifie le combustible (ce qui brûle).",
+      "Identifie le comburant (le dioxygène).",
+      "Retiens que la combustion libère de l'énergie.",
+      "Connais le triangle du feu (3 éléments).",
+      "Comprends qu'enlever un élément éteint le feu.",
+      "Note les produits formés (dioxyde de carbone).",
+      "Comprends l'oxydation (réaction avec le dioxygène)."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les éléments nécessaires à une combustion ?",
+      "etapes": [
+        "Une combustion est une transformation chimique.",
+        "Il faut un combustible, par exemple le bois.",
+        "Il faut un comburant : le dioxygène de l'air.",
+        "Il faut une source de chaleur pour démarrer.",
+        "Ces trois éléments forment le triangle du feu.",
+        "Si l'un manque, la combustion s'arrête."
+      ]
+    },
+    "astuce": "Kyojuro Rengoku : « Une COMBUSTION = un COMBUSTIBLE qui brûle avec le DIOXYGÈNE (comburant), en libérant chaleur et lumière. Le triangle du feu : combustible + comburant + chaleur ! »",
+    "erreurs": [
+      "Confondre combustible et comburant.",
+      "Oublier que le comburant est le dioxygène.",
+      "Oublier un élément du triangle du feu.",
+      "Croire que la combustion n'est pas une réaction chimique.",
+      "Oublier que la combustion libère de l'énergie.",
+      "Confondre combustion et simple changement d'état.",
+      "Oublier que la rouille est une oxydation.",
+      "Croire qu'aucune nouvelle substance ne se forme."
+    ]
+  },
+  "mitsuri-kanroji-les-transformations-chimiques": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Mitsuri Kanroji", "manga": "Demon Slayer",
+    "notion": "Les transformations chimiques (équations)",
+    "explication": "Lors d'une transformation chimique, certaines substances disparaissent et de nouvelles substances apparaissent. Les substances présentes au départ, celles qui vont réagir, sont appelées les réactifs. Les substances formées à l'arrivée sont appelées les produits. On peut résumer une transformation chimique par une équation de réaction, qui s'écrit sous la forme : réactifs donnent produits. Une loi très importante régit ces transformations : la conservation de la masse. Énoncée par le savant Lavoisier, elle se résume par l'idée que « rien ne se perd, rien ne se crée, tout se transforme ». Cela signifie que la masse totale des produits est exactement égale à la masse totale des réactifs : aucune matière n'est perdue ni créée. Cette conservation s'explique à l'échelle microscopique : lors d'une transformation chimique, les atomes ne sont ni créés ni détruits ; ils se réorganisent simplement pour former de nouvelles molécules. C'est pourquoi le nombre de chaque type d'atome est le même avant et après la réaction. En 4ème, on apprend à décrire ces transformations. Bien les comprendre, c'est savoir analyser une réaction chimique et respecter la conservation de la matière.",
+    "definitions": [
+      {"terme": "Transformation chimique", "sens": "des réactifs deviennent des produits"},
+      {"terme": "Réactif", "sens": "une substance présente au départ"},
+      {"terme": "Produit", "sens": "une substance formée à l'arrivée"},
+      {"terme": "Équation de réaction", "sens": "réactifs donnent produits"},
+      {"terme": "Conservation de la masse", "sens": "la masse totale ne change pas"},
+      {"terme": "Lavoisier", "sens": "le savant qui a énoncé cette loi"},
+      {"terme": "Conservation des atomes", "sens": "les atomes se réorganisent sans disparaître"},
+      {"terme": "Réorganisation", "sens": "les atomes forment de nouvelles molécules"}
+    ],
+    "methode": [
+      "Définis la transformation chimique.",
+      "Identifie les réactifs (au départ).",
+      "Identifie les produits (à l'arrivée).",
+      "Écris l'équation : réactifs donnent produits.",
+      "Retiens la conservation de la masse.",
+      "Associe-la à Lavoisier.",
+      "Comprends la conservation des atomes.",
+      "Retiens que les atomes se réorganisent."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi la masse se conserve-t-elle dans une réaction chimique ?",
+      "etapes": [
+        "Les réactifs sont les substances de départ.",
+        "Les produits sont les substances formées.",
+        "On écrit l'équation : réactifs donnent produits.",
+        "La masse totale des produits égale celle des réactifs.",
+        "C'est la conservation de la masse, énoncée par Lavoisier.",
+        "En fait, les atomes se réorganisent sans disparaître."
+      ]
+    },
+    "astuce": "Mitsuri Kanroji : « Dans une transformation chimique, les RÉACTIFS deviennent des PRODUITS. La masse se conserve (Lavoisier : rien ne se perd) : les atomes se réorganisent, mais ne disparaissent jamais ! »",
+    "erreurs": [
+      "Confondre réactifs et produits.",
+      "Croire que de la matière disparaît dans la réaction.",
+      "Oublier la conservation de la masse.",
+      "Croire que des atomes sont créés ou détruits.",
+      "Inverser le sens de l'équation.",
+      "Oublier que les atomes se réorganisent.",
+      "Penser que la masse augmente toujours.",
+      "Confondre conservation de la masse et des molécules."
+    ]
+  },
+  "shinobu-kocho-l-energie-mecanique": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Shinobu Kocho", "manga": "Demon Slayer",
+    "notion": "L'énergie mécanique (cinétique et potentielle)",
+    "explication": "L'énergie mécanique d'un objet est liée à son mouvement et à sa position. Elle se compose de deux formes d'énergie. L'énergie cinétique est l'énergie que possède un objet du fait de son mouvement : plus un objet est lourd (grande masse) et plus il va vite (grande vitesse), plus son énergie cinétique est importante. Une voiture rapide possède ainsi beaucoup d'énergie cinétique. L'énergie potentielle (de position) est l'énergie que possède un objet du fait de sa hauteur : plus un objet est situé haut, plus son énergie potentielle est grande. Un objet posé en haut d'une tour possède une grande énergie potentielle. L'énergie mécanique est la somme de ces deux énergies. Au cours d'un mouvement, ces deux formes peuvent se convertir l'une en l'autre. Par exemple, lorsqu'un objet tombe, sa hauteur diminue (son énergie potentielle diminue) tandis que sa vitesse augmente (son énergie cinétique augmente). L'énergie se mesure en joules, dont le symbole est J. En 4ème, on étudie ces formes d'énergie. Bien les comprendre, c'est savoir expliquer les mouvements et les transferts d'énergie autour de nous.",
+    "definitions": [
+      {"terme": "Énergie mécanique", "sens": "la somme cinétique + potentielle"},
+      {"terme": "Énergie cinétique", "sens": "l'énergie liée au mouvement"},
+      {"terme": "Énergie potentielle", "sens": "l'énergie liée à la hauteur"},
+      {"terme": "Masse", "sens": "elle augmente l'énergie cinétique"},
+      {"terme": "Vitesse", "sens": "elle augmente l'énergie cinétique"},
+      {"terme": "Hauteur", "sens": "elle augmente l'énergie potentielle"},
+      {"terme": "Conversion", "sens": "le passage d'une énergie à l'autre"},
+      {"terme": "Joule (J)", "sens": "l'unité d'énergie"}
+    ],
+    "methode": [
+      "Définis l'énergie cinétique (le mouvement).",
+      "Retiens ses facteurs : masse et vitesse.",
+      "Définis l'énergie potentielle (la hauteur).",
+      "Comprends que l'énergie mécanique est leur somme.",
+      "Comprends les conversions entre les deux.",
+      "Étudie l'exemple d'un objet qui tombe.",
+      "Retiens l'unité d'énergie : le joule (J).",
+      "Relie l'énergie aux mouvements observés."
+    ],
+    "exemple": {
+      "enonce": "Que se passe-t-il pour l'énergie quand un objet tombe ?",
+      "etapes": [
+        "L'énergie cinétique est liée au mouvement (masse, vitesse).",
+        "L'énergie potentielle est liée à la hauteur.",
+        "L'énergie mécanique est la somme des deux.",
+        "Quand l'objet tombe, sa hauteur diminue.",
+        "Son énergie potentielle diminue, sa vitesse augmente.",
+        "Son énergie cinétique augmente : il y a conversion."
+      ]
+    },
+    "astuce": "Shinobu Kocho : « L'énergie CINÉTIQUE vient du mouvement (masse + vitesse) ; l'énergie POTENTIELLE vient de la hauteur. Leur somme = l'énergie MÉCANIQUE. Elles se convertissent l'une en l'autre ! »",
+    "erreurs": [
+      "Confondre énergie cinétique et potentielle.",
+      "Croire que l'énergie cinétique dépend de la hauteur.",
+      "Croire que l'énergie potentielle dépend de la vitesse.",
+      "Oublier que l'énergie mécanique est la somme des deux.",
+      "Oublier les conversions entre les deux énergies.",
+      "Confondre le joule avec une autre unité.",
+      "Croire qu'un objet immobile en hauteur n'a aucune énergie.",
+      "Oublier le rôle de la masse dans l'énergie cinétique."
+    ]
+  },
+  "tanjiro-kamado-la-lumiere-propagation-et-vitesse": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Tanjiro Kamado", "manga": "Demon Slayer",
+    "notion": "La lumière : propagation et vitesse",
+    "explication": "La lumière possède des propriétés bien particulières concernant la façon dont elle se déplace. Dans un milieu transparent et homogène, c'est-à-dire un milieu de même nature partout (comme l'air, le vide, l'eau pure ou le verre), la lumière se propage en ligne droite. On représente le trajet de la lumière par un trait appelé rayon de lumière. C'est cette propagation rectiligne qui explique, par exemple, la formation des ombres. La lumière se déplace aussi à une vitesse extrêmement élevée. Dans le vide, cette vitesse est d'environ 300 000 kilomètres par seconde : c'est la plus grande vitesse possible dans l'Univers. À cette vitesse, la lumière pourrait faire plusieurs fois le tour de la Terre en une seule seconde. La lumière du Soleil, par exemple, met environ huit minutes pour nous parvenir. Pour exprimer les distances immenses de l'espace, on utilise d'ailleurs l'année-lumière, qui est la distance parcourue par la lumière en une année. En 4ème, on étudie la propagation et la vitesse de la lumière. Bien les comprendre, c'est savoir comment la lumière voyage et mesurer les distances dans l'Univers.",
+    "definitions": [
+      {"terme": "Lumière", "sens": "ce qui permet de voir, et qui se propage"},
+      {"terme": "Propagation rectiligne", "sens": "la lumière voyage en ligne droite"},
+      {"terme": "Milieu transparent et homogène", "sens": "même nature partout (air, vide, eau)"},
+      {"terme": "Rayon de lumière", "sens": "la représentation du trajet de la lumière"},
+      {"terme": "Vitesse de la lumière", "sens": "environ 300 000 km/s dans le vide"},
+      {"terme": "Vide", "sens": "le milieu où la lumière va le plus vite"},
+      {"terme": "Année-lumière", "sens": "la distance parcourue en un an par la lumière"},
+      {"terme": "Ombre", "sens": "expliquée par la propagation rectiligne"}
+    ],
+    "methode": [
+      "Retiens la propagation rectiligne de la lumière.",
+      "Précise : dans un milieu transparent et homogène.",
+      "Représente le trajet par un rayon de lumière.",
+      "Relie la propagation rectiligne aux ombres.",
+      "Retiens la vitesse : environ 300 000 km/s dans le vide.",
+      "Comprends que c'est la plus grande vitesse possible.",
+      "Retiens que la lumière du Soleil met environ 8 minutes.",
+      "Découvre l'année-lumière (une distance)."
+    ],
+    "exemple": {
+      "enonce": "Comment se propage la lumière et à quelle vitesse ?",
+      "etapes": [
+        "Dans un milieu transparent et homogène, la lumière va en ligne droite.",
+        "On représente son trajet par un rayon de lumière.",
+        "Cette propagation rectiligne explique les ombres.",
+        "La lumière voyage à environ 300 000 km/s dans le vide.",
+        "C'est la plus grande vitesse possible dans l'Univers.",
+        "La lumière du Soleil met environ 8 minutes à nous parvenir."
+      ]
+    },
+    "astuce": "Tanjiro Kamado : « La lumière se propage en LIGNE DROITE dans un milieu transparent homogène. Sa vitesse dans le vide est immense : environ 300 000 km/s, la plus grande vitesse possible ! »",
+    "erreurs": [
+      "Croire que la lumière se propage en courbe (milieu homogène).",
+      "Oublier la condition « transparent et homogène ».",
+      "Confondre rayon de lumière et objet lumineux.",
+      "Se tromper sur la vitesse (environ 300 000 km/s).",
+      "Croire qu'une vitesse plus grande est possible.",
+      "Oublier le lien avec la formation des ombres.",
+      "Confondre l'année-lumière (distance) et une durée.",
+      "Croire que la lumière du Soleil arrive instantanément."
+    ]
+  },
+  "tengen-uzui-le-ph-et-les-solutions-acides-basiques": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Tengen Uzui", "manga": "Demon Slayer",
+    "notion": "Le pH et les solutions acides/basiques",
+    "explication": "Le pH est une grandeur qui permet de mesurer le caractère acide, neutre ou basique d'une solution. Il s'exprime par un nombre, généralement compris entre 0 et 14, sur une échelle appelée l'échelle de pH. La règle est simple. Si le pH est inférieur à 7, la solution est acide : c'est le cas du jus de citron, du vinaigre ou des sodas. Si le pH est égal à 7, la solution est neutre : c'est le cas de l'eau pure. Si le pH est supérieur à 7, la solution est basique : c'est le cas de l'eau savonneuse ou de certains produits ménagers. Plus le pH est petit, plus la solution est fortement acide ; plus le pH est grand, plus elle est fortement basique. Pour mesurer le pH, on peut utiliser du papier pH, qui change de couleur selon l'acidité, des indicateurs colorés, ou encore un appareil électronique appelé pH-mètre. Connaître le pH est important dans la vie quotidienne : pour l'eau d'une piscine, les aliments ou la manipulation de certains produits. En 4ème, on étudie le pH. Bien le comprendre, c'est savoir classer les solutions et reconnaître les produits acides ou basiques.",
+    "definitions": [
+      {"terme": "pH", "sens": "la grandeur qui mesure l'acidité d'une solution"},
+      {"terme": "Échelle de pH", "sens": "une échelle généralement de 0 à 14"},
+      {"terme": "Solution acide", "sens": "un pH inférieur à 7 (citron, vinaigre)"},
+      {"terme": "Solution neutre", "sens": "un pH égal à 7 (l'eau pure)"},
+      {"terme": "Solution basique", "sens": "un pH supérieur à 7 (eau savonneuse)"},
+      {"terme": "Papier pH", "sens": "il change de couleur selon l'acidité"},
+      {"terme": "Indicateur coloré", "sens": "il signale le caractère acide ou basique"},
+      {"terme": "pH-mètre", "sens": "un appareil qui mesure le pH"}
+    ],
+    "methode": [
+      "Définis le pH (il mesure l'acidité).",
+      "Retiens l'échelle de 0 à 14.",
+      "pH inférieur à 7 : solution acide.",
+      "pH égal à 7 : solution neutre.",
+      "pH supérieur à 7 : solution basique.",
+      "Retiens : plus le pH est petit, plus c'est acide.",
+      "Connais les moyens de mesure (papier pH, pH-mètre).",
+      "Cite des exemples pour chaque cas."
+    ],
+    "exemple": {
+      "enonce": "Comment classer une solution selon son pH ?",
+      "etapes": [
+        "Le pH se lit sur une échelle de 0 à 14.",
+        "Un pH inférieur à 7 indique une solution acide, comme le citron.",
+        "Un pH égal à 7 indique une solution neutre, comme l'eau pure.",
+        "Un pH supérieur à 7 indique une solution basique, comme l'eau savonneuse.",
+        "Plus le pH est petit, plus la solution est acide.",
+        "On mesure le pH avec du papier pH ou un pH-mètre."
+      ]
+    },
+    "astuce": "Tengen Uzui : « Le pH (échelle de 0 à 14) mesure l'acidité ! pH < 7 = ACIDE (citron), pH = 7 = NEUTRE (eau pure), pH > 7 = BASIQUE (savon). On le mesure avec du papier pH ! »",
+    "erreurs": [
+      "Confondre solution acide et solution basique.",
+      "Croire qu'un pH égal à 7 est acide.",
+      "Croire que plus le pH est grand, plus c'est acide.",
+      "Oublier les bornes de l'échelle (0 à 14).",
+      "Confondre l'eau pure (neutre) et une solution acide.",
+      "Confondre papier pH et indicateur quelconque.",
+      "Croire que le savon est acide.",
+      "Oublier que pH = 7 correspond au neutre."
+    ]
+  },
+  "zenitsu-agatsuma-la-reflexion-et-la-refraction": {
+    "matiere": "sciences", "niveau": "4eme", "hero": "Zenitsu Agatsuma", "manga": "Demon Slayer",
+    "notion": "La réflexion et la réfraction",
+    "explication": "Lorsque la lumière rencontre une surface ou change de milieu, son trajet peut être modifié de deux façons différentes : la réflexion et la réfraction. La réflexion se produit lorsque la lumière rencontre une surface et « rebondit » dessus, repartant dans une nouvelle direction sans traverser la surface. Le miroir est l'exemple le plus connu : il renvoie la lumière, ce qui permet de voir notre reflet. Les surfaces lisses et brillantes réfléchissent bien la lumière. La réfraction, elle, se produit lorsque la lumière passe d'un milieu transparent à un autre, par exemple de l'air vers l'eau ou de l'air vers le verre. En changeant de milieu, la lumière change de direction : on dit qu'elle est déviée. C'est la réfraction qui explique certaines illusions surprenantes : par exemple, un bâton plongé en partie dans l'eau semble « cassé » ou plié à la surface de l'eau, alors qu'il est bien droit. La réfraction intervient aussi dans la formation de l'arc-en-ciel. En 4ème, on étudie ces deux phénomènes. Bien les comprendre, c'est savoir expliquer le comportement de la lumière et de nombreuses observations du quotidien.",
+    "definitions": [
+      {"terme": "Réflexion", "sens": "la lumière rebondit sur une surface"},
+      {"terme": "Miroir", "sens": "une surface qui réfléchit la lumière"},
+      {"terme": "Réfraction", "sens": "la lumière déviée en changeant de milieu"},
+      {"terme": "Changement de milieu", "sens": "passer de l'air à l'eau, par exemple"},
+      {"terme": "Dévier", "sens": "changer de direction (réfraction)"},
+      {"terme": "Surface lisse", "sens": "elle réfléchit bien la lumière"},
+      {"terme": "Bâton « cassé »", "sens": "une illusion due à la réfraction"},
+      {"terme": "Arc-en-ciel", "sens": "un phénomène lié à la réfraction"}
+    ],
+    "methode": [
+      "Distingue la réflexion et la réfraction.",
+      "Définis la réflexion (la lumière rebondit).",
+      "Retiens l'exemple du miroir.",
+      "Note que les surfaces lisses réfléchissent bien.",
+      "Définis la réfraction (changement de direction).",
+      "Précise : lors d'un changement de milieu.",
+      "Cite l'exemple du bâton qui semble cassé.",
+      "Relie la réfraction à l'arc-en-ciel."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre réflexion et réfraction ?",
+      "etapes": [
+        "La réflexion : la lumière rebondit sur une surface.",
+        "Le miroir en est l'exemple le plus connu.",
+        "La réfraction : la lumière change de direction.",
+        "Cela se produit en passant d'un milieu à un autre.",
+        "Un bâton plongé dans l'eau semble alors « cassé ».",
+        "Pourtant, il est bien droit : c'est une illusion."
+      ]
+    },
+    "astuce": "Zenitsu Agatsuma : « RÉFLEXION = la lumière rebondit sur une surface (le miroir). RÉFRACTION = la lumière est déviée en changeant de milieu (air → eau). D'où le bâton qui semble cassé dans l'eau ! »",
+    "erreurs": [
+      "Confondre réflexion et réfraction.",
+      "Croire que le miroir dévie la lumière en la traversant.",
+      "Oublier que la réfraction vient d'un changement de milieu.",
+      "Croire que le bâton est réellement cassé.",
+      "Penser que toute surface réfléchit aussi bien la lumière.",
+      "Confondre rebond (réflexion) et déviation (réfraction).",
+      "Oublier l'exemple de l'arc-en-ciel.",
+      "Croire que la lumière ne change jamais de direction."
+    ]
+  }
+}
