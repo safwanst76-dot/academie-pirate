@@ -1,0 +1,594 @@
+{
+  "inosuke-hashibira-masse-volume-masse-volumique": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Inosuke Hashibira",
+    "manga": "Demon Slayer",
+    "notion": "Masse, volume et masse volumique",
+    "explication": "Pour décrire la matière, on utilise plusieurs grandeurs. La masse correspond à la quantité de matière d'un objet : elle se mesure en kilogrammes (kg) ou en grammes (g), à l'aide d'une balance. Le volume correspond à l'espace qu'occupe cet objet : il se mesure en litres (L) ou en millilitres (mL), par exemple avec une éprouvette graduée pour les liquides. La masse volumique est une troisième grandeur, qui relie les deux premières : elle correspond à la masse d'un certain volume de matière, c'est-à-dire la masse divisée par le volume. On l'exprime souvent en kilogrammes par litre (kg/L) ou en grammes par centimètre cube (g/cm³). La masse volumique est très utile, car elle caractérise une substance : chaque matière a sa propre masse volumique, ce qui permet de la reconnaître. Par exemple, la masse volumique de l'eau est d'environ 1 kg/L. Cette grandeur explique aussi pourquoi certains objets flottent et d'autres coulent : un objet flotte sur l'eau s'il a une masse volumique plus faible que celle de l'eau. En 6ème, on apprend à mesurer et à calculer ces grandeurs. Bien les comprendre, c'est savoir caractériser la matière avec précision.",
+    "definitions": [
+      {
+        "terme": "Masse",
+        "sens": "la quantité de matière (kg ou g)"
+      },
+      {
+        "terme": "Volume",
+        "sens": "l'espace occupé (L ou mL)"
+      },
+      {
+        "terme": "Masse volumique",
+        "sens": "la masse divisée par le volume"
+      },
+      {
+        "terme": "kg/L",
+        "sens": "une unité de masse volumique"
+      },
+      {
+        "terme": "Balance",
+        "sens": "l'instrument qui mesure la masse"
+      },
+      {
+        "terme": "Éprouvette graduée",
+        "sens": "elle mesure le volume d'un liquide"
+      },
+      {
+        "terme": "Caractériser",
+        "sens": "la masse volumique identifie une substance"
+      },
+      {
+        "terme": "Flottabilité",
+        "sens": "un objet flotte s'il est moins dense que l'eau"
+      }
+    ],
+    "methode": [
+      "Rappelle ce que sont la masse et le volume.",
+      "Retiens leurs unités et leurs instruments.",
+      "Définis la masse volumique : masse divisée par volume.",
+      "Retiens son unité (kg/L ou g/cm³).",
+      "Comprends qu'elle caractérise une substance.",
+      "Retiens la valeur pour l'eau (environ 1 kg/L).",
+      "Relie la masse volumique à la flottabilité.",
+      "Un objet flotte s'il est moins dense que l'eau."
+    ],
+    "exemple": {
+      "enonce": "Qu'est-ce que la masse volumique de l'eau ?",
+      "etapes": [
+        "La masse volumique relie la masse et le volume.",
+        "Elle se calcule en divisant la masse par le volume.",
+        "Pour l'eau, elle vaut environ 1 kg par litre.",
+        "Cette valeur est propre à l'eau : elle la caractérise.",
+        "Un objet flotte s'il est moins dense que l'eau.",
+        "Il coule s'il est plus dense qu'elle."
+      ]
+    },
+    "astuce": "Inosuke Hashibira : « La masse volumique = masse ÷ volume ! Elle caractérise chaque substance. L'eau vaut environ 1 kg/L. Un objet FLOTTE s'il est moins dense que l'eau, sinon il COULE ! »",
+    "erreurs": [
+      "Confondre la masse et la masse volumique.",
+      "Confondre le volume et la masse volumique.",
+      "Oublier que la masse volumique = masse ÷ volume.",
+      "Se tromper d'unité (kg/L pour la masse volumique).",
+      "Oublier la valeur de l'eau (environ 1 kg/L).",
+      "Croire que tous les matériaux ont la même masse volumique.",
+      "Confondre balance et éprouvette graduée.",
+      "Oublier le lien avec la flottabilité."
+    ]
+  },
+  "kyojuro-rengoku-la-lumiere-et-la-vision": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Kyojuro Rengoku",
+    "manga": "Demon Slayer",
+    "notion": "La lumière et la vision",
+    "explication": "La lumière est indispensable pour voir : dans l'obscurité totale, on ne voit rien. La lumière provient de sources lumineuses, que l'on classe en deux catégories. Les sources primaires produisent elles-mêmes leur lumière : c'est le cas du Soleil, des étoiles, d'une flamme ou d'une lampe allumée. Les objets diffusants, eux, ne produisent pas de lumière, mais renvoient (ou diffusent) la lumière qu'ils reçoivent : c'est le cas de la Lune, d'un mur ou d'un livre. Une propriété essentielle de la lumière est qu'elle se propage en ligne droite, dans toutes les directions, à partir de sa source. On représente son trajet par un rayon de lumière. Pour qu'un œil voie un objet, il faut que la lumière issue de cet objet (qu'il l'émette ou qu'il la diffuse) entre dans l'œil. C'est donc la lumière qui voyage de l'objet vers l'œil, et non l'inverse. La lumière se déplace extrêmement vite, bien plus vite que le son. En 6ème, on apprend comment fonctionnent la lumière et la vision. Bien les comprendre, c'est savoir expliquer comment et pourquoi nous voyons les objets qui nous entourent.",
+    "definitions": [
+      {
+        "terme": "Lumière",
+        "sens": "ce qui permet de voir"
+      },
+      {
+        "terme": "Source de lumière",
+        "sens": "ce qui produit ou renvoie la lumière"
+      },
+      {
+        "terme": "Source primaire",
+        "sens": "elle produit sa propre lumière (Soleil)"
+      },
+      {
+        "terme": "Objet diffusant",
+        "sens": "il renvoie la lumière reçue (la Lune)"
+      },
+      {
+        "terme": "Propagation rectiligne",
+        "sens": "la lumière voyage en ligne droite"
+      },
+      {
+        "terme": "Rayon de lumière",
+        "sens": "la représentation du trajet de la lumière"
+      },
+      {
+        "terme": "Vision",
+        "sens": "voir quand la lumière entre dans l'œil"
+      },
+      {
+        "terme": "Vitesse de la lumière",
+        "sens": "très grande, bien plus que le son"
+      }
+    ],
+    "methode": [
+      "Comprends qu'il faut de la lumière pour voir.",
+      "Distingue source primaire et objet diffusant.",
+      "Source primaire : elle produit sa lumière (Soleil, lampe).",
+      "Objet diffusant : il renvoie la lumière (Lune, mur).",
+      "Retiens que la lumière se propage en ligne droite.",
+      "Représente son trajet par un rayon de lumière.",
+      "Comprends qu'on voit quand la lumière entre dans l'œil.",
+      "Retiens que la lumière va de l'objet vers l'œil."
+    ],
+    "exemple": {
+      "enonce": "Pourquoi voit-on un objet ?",
+      "etapes": [
+        "Dans l'obscurité totale, on ne voit rien.",
+        "Il faut de la lumière pour voir.",
+        "Un objet émet sa lumière (source primaire) ou la diffuse.",
+        "La lumière se propage en ligne droite à partir de l'objet.",
+        "Elle entre ensuite dans notre œil.",
+        "C'est ainsi que nous voyons l'objet."
+      ]
+    },
+    "astuce": "Kyojuro Rengoku : « La lumière se propage en LIGNE DROITE. On voit un objet quand la lumière qu'il émet ou renvoie entre dans notre œil. Source primaire = produit sa lumière (Soleil) ; objet diffusant = la renvoie (Lune) ! »",
+    "erreurs": [
+      "Croire qu'on peut voir sans lumière.",
+      "Confondre source primaire et objet diffusant.",
+      "Croire que la Lune produit sa propre lumière.",
+      "Oublier que la lumière se propage en ligne droite.",
+      "Croire que la lumière va de l'œil vers l'objet.",
+      "Confondre rayon de lumière et objet.",
+      "Oublier que la lumière voyage très vite.",
+      "Confondre vitesse de la lumière et du son."
+    ]
+  },
+  "mitsuri-kanroji-l-environnement-et-le-developpement-durable": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Mitsuri Kanroji",
+    "manga": "Demon Slayer",
+    "notion": "L'environnement et le développement durable",
+    "explication": "L'environnement désigne le milieu dans lequel vivent les êtres vivants : il comprend à la fois les êtres vivants (animaux, végétaux, micro-organismes) et le milieu physique qui les entoure (l'air, l'eau, le sol). Tous ces éléments sont liés et forment des ensembles appelés écosystèmes. Or, les activités humaines ont de nombreux impacts sur l'environnement. La pollution de l'air, de l'eau et des sols, la production de déchets, ou encore l'utilisation importante de ressources naturelles peuvent dégrader les milieux et menacer la biodiversité, c'est-à-dire la variété des êtres vivants. Face à ces problèmes, on cherche à adopter une démarche de développement durable : un développement qui répond aux besoins des hommes d'aujourd'hui sans compromettre ceux des générations futures, en respectant l'environnement. Cela passe par des gestes concrets : réduire et trier les déchets, économiser l'eau et l'énergie, protéger les milieux naturels et la biodiversité. En 6ème, on apprend à comprendre l'environnement et son fonctionnement. Bien le comprendre, c'est prendre conscience de l'impact de nos actions et apprendre à mieux protéger notre planète. Chacun peut agir à son niveau, par des gestes simples du quotidien, pour contribuer à la protection de notre planète.",
+    "definitions": [
+      {
+        "terme": "Environnement",
+        "sens": "le milieu de vie des êtres vivants"
+      },
+      {
+        "terme": "Écosystème",
+        "sens": "un ensemble formé par le vivant et son milieu"
+      },
+      {
+        "terme": "Impact",
+        "sens": "l'effet des activités humaines sur le milieu"
+      },
+      {
+        "terme": "Pollution",
+        "sens": "la dégradation de l'air, de l'eau ou du sol"
+      },
+      {
+        "terme": "Biodiversité",
+        "sens": "la variété des êtres vivants"
+      },
+      {
+        "terme": "Ressource naturelle",
+        "sens": "un élément de la nature utilisé par l'homme"
+      },
+      {
+        "terme": "Développement durable",
+        "sens": "répondre aux besoins sans nuire à l'avenir"
+      },
+      {
+        "terme": "Protection",
+        "sens": "les gestes pour préserver l'environnement"
+      }
+    ],
+    "methode": [
+      "Définis l'environnement (vivant + milieu physique).",
+      "Comprends la notion d'écosystème.",
+      "Identifie les impacts des activités humaines.",
+      "Cite des exemples (pollution, déchets, ressources).",
+      "Comprends la menace sur la biodiversité.",
+      "Définis le développement durable.",
+      "Cite des gestes de protection.",
+      "Prends conscience de l'impact de nos actions."
+    ],
+    "exemple": {
+      "enonce": "Comment les activités humaines agissent-elles sur l'environnement ?",
+      "etapes": [
+        "L'environnement comprend le vivant et son milieu physique.",
+        "Les activités humaines ont de nombreux impacts.",
+        "La pollution dégrade l'air, l'eau et les sols.",
+        "Les déchets et l'usage des ressources posent problème.",
+        "Tout cela peut menacer la biodiversité.",
+        "Le développement durable cherche à limiter ces impacts."
+      ]
+    },
+    "astuce": "Mitsuri Kanroji : « L'environnement, c'est notre milieu de vie. Les activités humaines ont des impacts (pollution, déchets). Le développement durable cherche à les limiter pour préserver l'avenir et la biodiversité ! »",
+    "erreurs": [
+      "Réduire l'environnement aux seuls êtres vivants.",
+      "Oublier les impacts des activités humaines.",
+      "Confondre pollution et déchets.",
+      "Oublier la notion de biodiversité.",
+      "Confondre développement durable et croissance sans limite.",
+      "Oublier les gestes de protection.",
+      "Croire que les actions humaines n'ont aucun effet.",
+      "Confondre écosystème et simple paysage."
+    ]
+  },
+  "muichiro-tokito-le-systeme-solaire-et-notre-planete": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Muichiro Tokito",
+    "manga": "Demon Slayer",
+    "notion": "Le Système solaire et notre planète",
+    "explication": "Le Système solaire est l'ensemble formé par le Soleil et tous les corps célestes qui tournent autour de lui. Au centre se trouve le Soleil, qui est une étoile, c'est-à-dire un astre qui produit lui-même sa lumière et sa chaleur. Autour du Soleil gravitent huit planètes, dont la Terre, ainsi que d'autres corps comme des satellites, des astéroïdes et des comètes. Une planète, contrairement à une étoile, ne produit pas sa propre lumière : on la voit parce qu'elle est éclairée par le Soleil. La Terre, notre planète, est animée de deux mouvements importants. Elle tourne sur elle-même : c'est la rotation, qui dure environ vingt-quatre heures et explique l'alternance du jour et de la nuit. Elle tourne aussi autour du Soleil : c'est la révolution, qui dure environ trois cent soixante-cinq jours, soit une année. La Terre possède un satellite naturel, la Lune, qui tourne autour d'elle. En 6ème, on découvre l'organisation du Système solaire. Bien le comprendre, c'est savoir situer la Terre dans l'espace et expliquer le jour, la nuit et les années.",
+    "definitions": [
+      {
+        "terme": "Système solaire",
+        "sens": "le Soleil et les corps qui tournent autour"
+      },
+      {
+        "terme": "Soleil",
+        "sens": "une étoile, au centre du Système solaire"
+      },
+      {
+        "terme": "Étoile",
+        "sens": "un astre qui produit sa propre lumière"
+      },
+      {
+        "terme": "Planète",
+        "sens": "un corps qui tourne autour du Soleil (la Terre)"
+      },
+      {
+        "terme": "Rotation",
+        "sens": "la Terre tourne sur elle-même (jour/nuit)"
+      },
+      {
+        "terme": "Révolution",
+        "sens": "la Terre tourne autour du Soleil (une année)"
+      },
+      {
+        "terme": "Satellite",
+        "sens": "un corps qui tourne autour d'une planète"
+      },
+      {
+        "terme": "Lune",
+        "sens": "le satellite naturel de la Terre"
+      }
+    ],
+    "methode": [
+      "Décris le Système solaire (Soleil + 8 planètes).",
+      "Retiens que le Soleil est une étoile.",
+      "Comprends qu'une étoile produit sa propre lumière.",
+      "Comprends qu'une planète est éclairée par le Soleil.",
+      "Retiens la rotation de la Terre (jour/nuit, 24 h).",
+      "Retiens la révolution de la Terre (une année).",
+      "Note que la Lune est le satellite de la Terre.",
+      "Sache situer la Terre dans l'espace."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les deux mouvements de la Terre ?",
+      "etapes": [
+        "La Terre est une planète du Système solaire.",
+        "Elle tourne sur elle-même : c'est la rotation.",
+        "La rotation dure environ 24 heures.",
+        "Elle explique l'alternance du jour et de la nuit.",
+        "La Terre tourne aussi autour du Soleil : la révolution.",
+        "La révolution dure environ 365 jours, soit une année."
+      ]
+    },
+    "astuce": "Muichiro Tokito : « Le Système solaire = le Soleil (une étoile) + 8 planètes, dont la Terre. La Terre tourne sur elle-même (ROTATION → jour/nuit, 24 h) et autour du Soleil (RÉVOLUTION → année, 365 jours) ! »",
+    "erreurs": [
+      "Confondre une étoile et une planète.",
+      "Croire que la Terre produit sa propre lumière.",
+      "Confondre rotation et révolution.",
+      "Croire que la rotation dure une année.",
+      "Croire que la révolution dure un jour.",
+      "Oublier que le Soleil est une étoile.",
+      "Confondre la Lune et une planète.",
+      "Oublier que la Lune est le satellite de la Terre."
+    ]
+  },
+  "shinobu-kocho-les-signaux-lumineux-sonore-electrique": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Shinobu Kocho",
+    "manga": "Demon Slayer",
+    "notion": "Les signaux : lumineux, sonore, électrique",
+    "explication": "Un signal est un moyen de transporter une information d'un endroit à un autre. Les signaux sont partout autour de nous et nous permettent de communiquer et de transmettre des messages. On en distingue plusieurs types selon ce qui transporte l'information. Un signal lumineux utilise la lumière : c'est le cas des feux de circulation, d'un phare ou d'une lampe qui clignote. Un signal sonore utilise le son : une sonnette, une sirène, une alarme ou la voix sont des signaux sonores. Un signal électrique utilise le courant électrique qui circule dans un circuit : c'est par exemple ce qui transporte l'information à l'intérieur des appareils électroniques. Ces différents signaux permettent de transmettre des informations très variées, parfois sur de grandes distances et très rapidement. La lumière, par exemple, se déplace beaucoup plus vite que le son : c'est pourquoi, lors d'un orage, on voit l'éclair avant d'entendre le tonnerre. En 6ème, on apprend à reconnaître ces différents signaux. Bien les comprendre, c'est saisir comment les informations circulent et comment nous communiquons au quotidien.",
+    "definitions": [
+      {
+        "terme": "Signal",
+        "sens": "un moyen de transporter une information"
+      },
+      {
+        "terme": "Information",
+        "sens": "le message transmis par le signal"
+      },
+      {
+        "terme": "Signal lumineux",
+        "sens": "il utilise la lumière (feux, phare)"
+      },
+      {
+        "terme": "Signal sonore",
+        "sens": "il utilise le son (sonnette, sirène)"
+      },
+      {
+        "terme": "Signal électrique",
+        "sens": "il utilise le courant dans un circuit"
+      },
+      {
+        "terme": "Communication",
+        "sens": "l'échange d'informations"
+      },
+      {
+        "terme": "Transmission",
+        "sens": "le transport de l'information"
+      },
+      {
+        "terme": "Vitesse",
+        "sens": "la lumière voyage plus vite que le son"
+      }
+    ],
+    "methode": [
+      "Définis un signal (il transporte une information).",
+      "Identifie le signal lumineux (la lumière).",
+      "Cite des exemples (feux, phare).",
+      "Identifie le signal sonore (le son).",
+      "Cite des exemples (sonnette, sirène).",
+      "Identifie le signal électrique (le courant).",
+      "Comprends leur rôle dans la communication.",
+      "Retiens que la lumière va plus vite que le son."
+    ],
+    "exemple": {
+      "enonce": "Quels sont les différents types de signaux ?",
+      "etapes": [
+        "Un signal transporte une information.",
+        "Le signal lumineux utilise la lumière, comme un feu rouge.",
+        "Le signal sonore utilise le son, comme une sonnette.",
+        "Le signal électrique utilise le courant dans un circuit.",
+        "Tous permettent de transmettre des informations.",
+        "La lumière voyage plus vite que le son."
+      ]
+    },
+    "astuce": "Shinobu Kocho : « Un signal transporte une INFORMATION. Il peut être LUMINEUX (feux), SONORE (sonnette) ou ÉLECTRIQUE (circuit). Et souviens-toi : la lumière voyage plus vite que le son ! »",
+    "erreurs": [
+      "Oublier qu'un signal transporte une information.",
+      "Confondre signal lumineux et signal sonore.",
+      "Confondre signal sonore et signal électrique.",
+      "Croire qu'il n'existe qu'un seul type de signal.",
+      "Oublier des exemples de chaque signal.",
+      "Croire que le son voyage plus vite que la lumière.",
+      "Confondre signal et bruit sans information.",
+      "Oublier le rôle des signaux dans la communication."
+    ]
+  },
+  "tanjiro-kamado-l-eau-et-ses-etats-dans-la-nature": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Tanjiro Kamado",
+    "manga": "Demon Slayer",
+    "notion": "L'eau et ses états dans la nature",
+    "explication": "L'eau est présente partout sur Terre, et on la trouve dans la nature sous ses trois états physiques. À l'état solide, elle forme la glace, la neige, le givre ou les glaciers. À l'état liquide, elle remplit les océans, les mers, les rivières, les lacs et tombe sous forme de pluie. À l'état gazeux, elle est présente dans l'air sous forme de vapeur d'eau, invisible. Dans la nature, l'eau passe sans cesse d'un état à un autre grâce aux changements d'état, ce qui lui permet de circuler en permanence : c'est le cycle de l'eau. La répartition de l'eau sur Terre est très inégale : la plus grande partie est de l'eau salée, contenue dans les océans, et une faible part seulement est de l'eau douce, dont une bonne partie est emprisonnée dans les glaciers. L'eau douce disponible est donc précieuse. L'eau est par ailleurs indispensable à la vie : tous les êtres vivants en ont besoin pour vivre. En 6ème, on étudie l'eau et ses états dans la nature. Bien les comprendre, c'est relier les états de la matière au monde qui nous entoure et prendre conscience de l'importance de préserver l'eau.",
+    "definitions": [
+      {
+        "terme": "Eau",
+        "sens": "une substance présente partout sur Terre"
+      },
+      {
+        "terme": "État solide",
+        "sens": "glace, neige, glaciers"
+      },
+      {
+        "terme": "État liquide",
+        "sens": "océans, rivières, pluie"
+      },
+      {
+        "terme": "État gazeux",
+        "sens": "vapeur d'eau, invisible, dans l'air"
+      },
+      {
+        "terme": "Cycle de l'eau",
+        "sens": "l'eau circule en changeant d'état"
+      },
+      {
+        "terme": "Eau douce",
+        "sens": "l'eau non salée, précieuse et rare"
+      },
+      {
+        "terme": "Glacier",
+        "sens": "une grande masse de glace (eau solide)"
+      },
+      {
+        "terme": "Vie",
+        "sens": "tous les êtres vivants ont besoin d'eau"
+      }
+    ],
+    "methode": [
+      "Retiens que l'eau existe sous trois états dans la nature.",
+      "État solide : glace, neige, glaciers.",
+      "État liquide : océans, rivières, pluie.",
+      "État gazeux : vapeur d'eau dans l'air.",
+      "Relie ces états au cycle de l'eau.",
+      "Comprends la répartition (surtout de l'eau salée).",
+      "Retiens que l'eau douce est précieuse.",
+      "Comprends que l'eau est indispensable à la vie."
+    ],
+    "exemple": {
+      "enonce": "Sous quels états trouve-t-on l'eau dans la nature ?",
+      "etapes": [
+        "À l'état solide : la glace, la neige, les glaciers.",
+        "À l'état liquide : les océans, les rivières, la pluie.",
+        "À l'état gazeux : la vapeur d'eau dans l'air.",
+        "L'eau passe d'un état à l'autre dans le cycle de l'eau.",
+        "La majeure partie de l'eau est salée (les océans).",
+        "L'eau douce disponible est donc précieuse."
+      ]
+    },
+    "astuce": "Tanjiro Kamado : « Dans la nature, l'eau existe sous 3 états : SOLIDE (glace, neige), LIQUIDE (mers, rivières), GAZEUX (vapeur). Elle circule sans cesse grâce au cycle de l'eau ! »",
+    "erreurs": [
+      "Oublier l'un des trois états de l'eau.",
+      "Croire que la vapeur d'eau est visible.",
+      "Confondre eau douce et eau salée.",
+      "Croire que toute l'eau de la Terre est douce.",
+      "Oublier le rôle du cycle de l'eau.",
+      "Confondre glacier et simple flaque gelée.",
+      "Oublier que l'eau est indispensable à la vie.",
+      "Confondre état liquide et état gazeux."
+    ]
+  },
+  "tengen-uzui-les-sources-d-energie-renouvelables": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Tengen Uzui",
+    "manga": "Demon Slayer",
+    "notion": "Les sources d'énergie (renouvelables et non renouvelables)",
+    "explication": "L'énergie est nécessaire au fonctionnement de notre société : pour s'éclairer, se chauffer, se déplacer ou faire fonctionner les machines. Cette énergie provient de différentes sources, que l'on classe en deux grandes catégories. Les sources d'énergie renouvelables se renouvellent naturellement et sont considérées comme inépuisables à l'échelle humaine : c'est le cas de l'énergie solaire (le Soleil), éolienne (le vent), hydraulique (l'eau), de la biomasse et de la géothermie. Elles ont l'avantage de peu polluer. Les sources d'énergie non renouvelables existent en quantité limitée et finiront par s'épuiser : il s'agit principalement des énergies fossiles, comme le pétrole, le charbon et le gaz, ainsi que de l'énergie nucléaire. Les énergies fossiles ont en outre l'inconvénient de polluer fortement. À partir de ces différentes sources, on produit souvent de l'électricité, une forme d'énergie facile à transporter et à utiliser. Comme certaines sources s'épuisent et polluent, de nombreux pays cherchent à développer les énergies renouvelables : c'est la transition énergétique. En 6ème, on étudie ces sources d'énergie. Bien les comprendre, c'est savoir d'où vient l'énergie et pourquoi il faut en changer la production. Mieux comprendre ces sources d'énergie aide aussi à faire des choix responsables, à la maison comme dans la société, pour limiter la pollution et le gaspillage.",
+    "definitions": [
+      {
+        "terme": "Énergie",
+        "sens": "ce qui permet d'éclairer, chauffer, se déplacer"
+      },
+      {
+        "terme": "Source renouvelable",
+        "sens": "inépuisable et peu polluante"
+      },
+      {
+        "terme": "Source non renouvelable",
+        "sens": "limitée, finit par s'épuiser"
+      },
+      {
+        "terme": "Énergie fossile",
+        "sens": "pétrole, charbon, gaz (polluants)"
+      },
+      {
+        "terme": "Énergie solaire",
+        "sens": "produite à partir du Soleil"
+      },
+      {
+        "terme": "Énergie éolienne",
+        "sens": "produite à partir du vent"
+      },
+      {
+        "terme": "Électricité",
+        "sens": "une forme d'énergie facile à transporter"
+      },
+      {
+        "terme": "Transition énergétique",
+        "sens": "développer les énergies renouvelables"
+      }
+    ],
+    "methode": [
+      "Comprends à quoi sert l'énergie.",
+      "Distingue sources renouvelables et non renouvelables.",
+      "Cite les renouvelables (solaire, éolien, hydraulique).",
+      "Retiens qu'elles sont inépuisables et peu polluantes.",
+      "Cite les non renouvelables (fossiles, nucléaire).",
+      "Retiens que les fossiles polluent et s'épuisent.",
+      "Comprends que l'on produit souvent de l'électricité.",
+      "Découvre la transition énergétique."
+    ],
+    "exemple": {
+      "enonce": "Quelle différence entre source renouvelable et non renouvelable ?",
+      "etapes": [
+        "L'énergie sert à éclairer, chauffer, se déplacer.",
+        "Les sources renouvelables se renouvellent naturellement.",
+        "Le solaire, l'éolien et l'hydraulique en font partie.",
+        "Les sources non renouvelables sont limitées.",
+        "Les énergies fossiles (pétrole, charbon, gaz) s'épuisent et polluent.",
+        "Développer les renouvelables, c'est la transition énergétique."
+      ]
+    },
+    "astuce": "Tengen Uzui : « Sources RENOUVELABLES (solaire, éolien, eau) : inépuisables et propres. NON renouvelables (pétrole, charbon, gaz, nucléaire) : limitées, et les fossiles polluent. D'où la transition énergétique ! »",
+    "erreurs": [
+      "Confondre source renouvelable et non renouvelable.",
+      "Croire que les fossiles sont inépuisables.",
+      "Oublier que les fossiles polluent.",
+      "Confondre solaire, éolien et hydraulique.",
+      "Oublier que l'on produit souvent de l'électricité.",
+      "Ignorer la transition énergétique.",
+      "Croire que toutes les énergies se renouvellent.",
+      "Confondre énergie nucléaire et énergie renouvelable."
+    ]
+  },
+  "zenitsu-agatsuma-melanges-miscibilite-solutions": {
+    "matiere": "sciences",
+    "niveau": "6eme",
+    "hero": "Zenitsu Agatsuma",
+    "manga": "Demon Slayer",
+    "notion": "Mélanges, miscibilité, solutions",
+    "explication": "Quand on réunit plusieurs substances, on obtient un mélange. On distingue les mélanges homogènes, dans lesquels on ne distingue pas les composants (comme l'eau salée), et les mélanges hétérogènes, dans lesquels on les distingue (comme l'eau et le sable). Lorsqu'on mélange deux liquides, on parle de miscibilité. Deux liquides sont dits miscibles s'ils se mélangent complètement et forment un seul liquide homogène : par exemple, l'eau et le sirop sont miscibles. Deux liquides sont dits non miscibles s'ils ne se mélangent pas et restent séparés en deux couches distinctes : par exemple, l'eau et l'huile sont non miscibles, l'huile flottant au-dessus de l'eau. Quand un solide se dissout complètement dans un liquide pour former un mélange homogène, on obtient une solution : le solide qui se dissout est le soluté, et le liquide qui le dissout est le solvant. Dans l'eau salée, le sel est le soluté et l'eau le solvant. En 6ème, on approfondit l'étude des mélanges. Bien la comprendre, c'est savoir prévoir et expliquer le résultat de différents mélanges.",
+    "definitions": [
+      {
+        "terme": "Mélange homogène",
+        "sens": "on ne distingue pas les composants"
+      },
+      {
+        "terme": "Mélange hétérogène",
+        "sens": "on distingue les composants"
+      },
+      {
+        "terme": "Miscibilité",
+        "sens": "la capacité de deux liquides à se mélanger"
+      },
+      {
+        "terme": "Liquides miscibles",
+        "sens": "ils forment un seul liquide (eau + sirop)"
+      },
+      {
+        "terme": "Liquides non miscibles",
+        "sens": "ils restent séparés (eau + huile)"
+      },
+      {
+        "terme": "Solution",
+        "sens": "un soluté dissous dans un solvant"
+      },
+      {
+        "terme": "Soluté",
+        "sens": "le solide qui se dissout (le sel)"
+      },
+      {
+        "terme": "Solvant",
+        "sens": "le liquide qui dissout (l'eau)"
+      }
+    ],
+    "methode": [
+      "Rappelle la différence homogène / hétérogène.",
+      "Définis la miscibilité (pour deux liquides).",
+      "Liquides miscibles : ils forment un seul liquide.",
+      "Liquides non miscibles : ils restent séparés.",
+      "Cite des exemples (eau + sirop / eau + huile).",
+      "Définis une solution (soluté dans solvant).",
+      "Identifie le soluté (ce qui se dissout).",
+      "Identifie le solvant (le liquide)."
+    ],
+    "exemple": {
+      "enonce": "L'eau + le sirop et l'eau + l'huile : que se passe-t-il ?",
+      "etapes": [
+        "On mélange deux liquides : on parle de miscibilité.",
+        "L'eau et le sirop se mélangent complètement.",
+        "Ils forment un seul liquide : ils sont miscibles.",
+        "L'eau et l'huile, elles, restent séparées en deux couches.",
+        "Elles sont donc non miscibles.",
+        "L'huile flotte au-dessus de l'eau."
+      ]
+    },
+    "astuce": "Zenitsu Agatsuma : « Deux liquides sont MISCIBLES s'ils se mélangent en un seul liquide (eau + sirop). NON miscibles s'ils restent séparés (eau + huile). Une solution = un soluté dissous dans un solvant ! »",
+    "erreurs": [
+      "Confondre miscible et non miscible.",
+      "Croire que l'eau et l'huile se mélangent.",
+      "Confondre mélange homogène et hétérogène.",
+      "Confondre soluté et solvant.",
+      "Croire que tous les liquides sont miscibles.",
+      "Confondre miscibilité (liquides) et dissolution (solide).",
+      "Oublier qu'une solution est homogène.",
+      "Croire que le sel disparaît vraiment dans l'eau salée."
+    ]
+  }
+}
