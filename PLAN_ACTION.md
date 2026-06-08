@@ -1820,3 +1820,28 @@ Legacy inoffensif : `profiles` (2 lignes, `parent_id` NULL) + `progression.enfan
 - [ ] **Phase 7b** : migrer le flux `af-pin-entry` (`js/auth.js:974`) hors `pin`/`pin_hash`
   (→ `signInWithPassword`), PUIS `DROP COLUMN pin, pin_hash`.
 - [ ] (option) Cleanup legacy `profiles` + `progression.enfant_id` (mort, 2 lignes orphelines).
+
+---
+
+## ✅ MAJ 07/06/2026 (soir) — Phase 8 frontend livrée + validée en prod
+
+- **Frontend suppression livré** : bouton 🗑 par carte enfant (`delete-child`) + bouton
+  « Supprimer mon compte » (`delete-account`), modales de confirmation (le compte exige la
+  saisie de « SUPPRIMER »), `signOut` + redirect accueil après l'auto-suppression du parent.
+- Patch appliqué via script blindé (backup `.bak` + `node --check` fatal). Commit frontend :
+  `feat(auth): Phase 8 frontend — boutons + modales suppression enfant/compte` (cf. `git log`).
+- **Test prod OK** : suppression enfant + suppression parent (cascade automatique des enfants).
+- **Vérif intégrité base** : 0 orphelin (comptes Auth enfant, `child_profiles`, `parents`,
+  `profiles_parents`), 0 compte de test restant. État réel : **20 enfants / 51 parents**.
+
+→ **Phase 8 COMPLÈTE** (backend `8df4736` + frontend + cascade FK `profiles_parents`).
+
+### Backlog restant (priorisé)
+- [ ] **Phase 7b** — migrer le flux `af-pin-entry` (`js/auth.js:974`) vers `signInWithPassword`,
+  puis `ALTER TABLE child_profiles DROP COLUMN pin, DROP COLUMN pin_hash`.
+- [ ] **GSC** — demandes d'indexation quotidiennes (consulter `PLAN_ACTION.md` lignes 364–450
+  et 960–1050 AVANT toute URL ; ne jamais re-proposer une URL déjà indexée).
+- [ ] (sécu, option) ré-authentification parent (PIN/mot de passe) avant `delete-account`.
+- [ ] (option) cleanup legacy `profiles` + colonne `progression.enfant_id` (mort, 2 lignes).
+- [ ] (produit) funnel parent : 51 parents pour 20 enfants → onboarding « créer un aventurier »
+  à fluidifier.
