@@ -561,6 +561,7 @@ function _tplParentDashboard(children) {
           <div class="pd-child-stats">⭐ ${child.xp_total || 0} XP · Niv. ${child.level || 1}</div>
         </div>
         <div class="pd-child-arrow">→ Résultats</div>
+        <button type="button" class="pd-child-delete" data-del-id="${child.id}" data-del-name="${child.username}" title="Supprimer cet aventurier" style="margin-left:8px;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.4);color:#ff6b6b;border-radius:8px;padding:6px 9px;font-size:.95rem;cursor:pointer;line-height:1">🗑</button>
       </div>`;
     }).join('');
   }
@@ -583,6 +584,7 @@ function _tplParentDashboard(children) {
   <div class="pd-section">
     <button class="pd-btn-play" id="af-play-btn">🎮 JOUER MAINTENANT</button>
     <button class="pd-btn-logout" onclick="afSignOut()">← Se déconnecter</button>
+    <button type="button" id="af-delete-account-btn" style="margin-top:10px;width:100%;background:transparent;border:1px solid rgba(255,80,80,.35);color:#ff6b6b;border-radius:10px;padding:10px;font-size:.85rem;cursor:pointer">🗑 Supprimer mon compte</button>
   </div>`;
 }
 
@@ -599,6 +601,18 @@ function _bindDashboardEvents(children) {
   // Ajouter un aventurier
   var addBtn = document.getElementById('af-add-child-btn');
   if (addBtn) addBtn.addEventListener('click', function () { afShowCreateChild(false); });
+
+  // Supprimer un aventurier (delete-child)
+  document.querySelectorAll('.pd-child-delete[data-del-id]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      afConfirmDeleteChild(btn.getAttribute('data-del-id'), btn.getAttribute('data-del-name'));
+    });
+  });
+
+  // Supprimer mon compte (delete-account)
+  var delAccBtn = document.getElementById('af-delete-account-btn');
+  if (delAccBtn) delAccBtn.addEventListener('click', function () { afConfirmDeleteAccount(); });
 
   // Jouer
   var playBtn = document.getElementById('af-play-btn');
@@ -618,6 +632,91 @@ function _bindDashboardEvents(children) {
 // ══════════════════════════════════════════
 // CRÉATION ENFANT + PIN
 // ══════════════════════════════════════════
+
+// ══════════════════════════════════════════
+// SUPPRESSION (Phase 8) — modale + handlers
+// ══════════════════════════════════════════
+
+function _afConfirmModal(opts) {
+  return new Promise(function (resolve) {
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.72);padding:20px';
+    var typeBlock = opts.requireType
+      ? `<input id="af-confirm-type" type="text" autocomplete="off" placeholder="Tape ${opts.requireType}" style="margin-top:14px;width:100%;box-sizing:border-box;padding:12px 14px;text-align:center;font-family:Bangers,cursive;letter-spacing:2px;font-size:1.1rem;text-transform:uppercase;background:rgba(255,255,255,.07);border:2px solid rgba(255,80,80,.4);border-radius:10px;color:#ff6b6b;outline:none">`
+      : '';
+    overlay.innerHTML = `
+      <div style="max-width:380px;width:100%;background:#16161f;border:1px solid rgba(255,80,80,.3);border-radius:16px;padding:24px;font-family:Nunito,sans-serif;color:#fff;box-shadow:0 12px 40px rgba(0,0,0,.5)">
+        <div style="font-family:Bangers,cursive;font-size:1.4rem;color:#ff6b6b;letter-spacing:1px;margin-bottom:10px">${opts.title}</div>
+        <div style="font-size:.92rem;line-height:1.5;color:#d8d8e0">${opts.message}</div>
+        ${typeBlock}
+        <div style="display:flex;gap:10px;margin-top:20px">
+          <button id="af-confirm-cancel" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;font-weight:700;cursor:pointer">Annuler</button>
+          <button id="af-confirm-ok" ${opts.requireType ? 'disabled' : ''} style="flex:1;padding:12px;border-radius:10px;border:none;background:#ff5050;color:#fff;font-weight:800;cursor:pointer;opacity:${opts.requireType ? '.5' : '1'}">${opts.confirmLabel || 'Supprimer'}</button>
+        </div>
+      </div>`;
+    document.body.appendChild(overlay);
+    var okBtn     = overlay.querySelector('#af-confirm-ok');
+    var cancelBtn = overlay.querySelector('#af-confirm-cancel');
+    var typeInput = overlay.querySelector('#af-confirm-type');
+    function close(result) { overlay.remove(); resolve(result); }
+    if (typeInput) {
+      typeInput.addEventListener('input', function () {
+        var good = typeInput.value.trim().toUpperCase() === opts.requireType.toUpperCase();
+        okBtn.disabled = !good;
+        okBtn.style.opacity = good ? '1' : '.5';
+      });
+      setTimeout(function () { typeInput.focus(); }, 50);
+    }
+    okBtn.addEventListener('click', function () { if (!okBtn.disabled) close(true); });
+    cancelBtn.addEventListener('click', function () { close(false); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(false); });
+  });
+}
+
+async function afConfirmDeleteChild(childId, childName) {
+  if (!childId) return;
+  var ok = await _afConfirmModal({
+    title: '🗑 Supprimer cet aventurier',
+    message: `Veux-tu vraiment supprimer <strong>${childName || 'cet aventurier'}</strong> ? Sa progression et son compte de connexion seront définitivement effacés. Action irréversible.`,
+    confirmLabel: 'Supprimer'
+  });
+  if (!ok) return;
+  try {
+    var res = await sb.functions.invoke('delete-child', { body: { child_id: childId } });
+    if (res.error || !res.data || res.data.ok === false) {
+      var m = (res.data && res.data.error) || (res.error && res.error.message) || 'Suppression impossible';
+      if (typeof showToast === 'function') showToast('❌ ' + m);
+      return;
+    }
+    if (typeof showToast === 'function') showToast('🗑 ' + (childName || 'Aventurier') + ' supprimé');
+    await afShowParentDashboard();
+  } catch (e) {
+    if (typeof showToast === 'function') showToast('❌ Erreur réseau, réessaie');
+  }
+}
+
+async function afConfirmDeleteAccount() {
+  var ok = await _afConfirmModal({
+    title: '⚠️ Supprimer mon compte',
+    message: `Cette action supprime <strong>définitivement</strong> ton compte parent <strong>et tous les aventuriers rattachés</strong> (profils, progression, comptes de connexion). C'est irréversible.`,
+    confirmLabel: 'Tout supprimer',
+    requireType: 'SUPPRIMER'
+  });
+  if (!ok) return;
+  try {
+    var res = await sb.functions.invoke('delete-account', { body: { confirm: true } });
+    if (res.error || !res.data || res.data.ok === false) {
+      var m = (res.data && res.data.error) || (res.error && res.error.message) || 'Suppression impossible';
+      if (typeof showToast === 'function') showToast('❌ ' + m);
+      return;
+    }
+    if (typeof showToast === 'function') showToast('👋 Compte supprimé. Au revoir !');
+    try { await sb.auth.signOut(); } catch (_) {}
+    setTimeout(function () { window.location.href = '/'; }, 800);
+  } catch (e) {
+    if (typeof showToast === 'function') showToast('❌ Erreur réseau, réessaie');
+  }
+}
 
 async function afShowCreateChild(isFirstChild) {
   _hideAllScreens();
