@@ -1,30 +1,57 @@
-// ═══════════════════════════════════════════════════════════════════
+// ===================================================================
 // EDGE FUNCTION : send-content-email
-// Envoie des emails aux parents via SMTP Infomaniak (nodemailer)
-// ═══════════════════════════════════════════════════════════════════
+// Envoie des emails aux parents via l'API Resend (domaine aca-pirate.ch)
+// ===================================================================
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.0';
-import nodemailer from 'npm:nodemailer@6.9.14';
 
 const SUPABASE_URL     = Deno.env.get('SUPABASE_URL') ?? '';
 const SUPABASE_SERVICE = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
 
-const SMTP_HOST      = Deno.env.get('SMTP_HOST')      ?? 'mail.infomaniak.com';
-const SMTP_PORT      = parseInt(Deno.env.get('SMTP_PORT') ?? '465', 10);
-const SMTP_USER      = Deno.env.get('SMTP_USER')      ?? '';
-const SMTP_PASSWORD  = Deno.env.get('SMTP_PASSWORD')  ?? '';
-const SMTP_FROM      = Deno.env.get('SMTP_FROM')      ?? SMTP_USER;
-const SMTP_FROM_NAME = Deno.env.get('SMTP_FROM_NAME') ?? 'Académie Pirate';
+const RESEND_API_KEY  = Deno.env.get('RESEND_API_KEY')  ?? '';
+const RESEND_FROM     = Deno.env.get('RESEND_FROM')     ?? 'Académie Pirate <info@aca-pirate.ch>';
+const RESEND_REPLY_TO = Deno.env.get('RESEND_REPLY_TO') ?? 'info@aca-pirate.ch';
 
 const EMAILS_ENABLED = (Deno.env.get('EMAILS_ENABLED') ?? 'true') === 'true';
 
 const CORS = {
   'Access-Control-Allow-Origin':  '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, apikey, x-client-info, x-supabase-api-version',
 };
 
-// ── Template HTML manga-themed ──────────────────────────────────
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// -- Envoi via API Resend (retry leger sur 429) ------------------
+async function sendViaResend(msg: { to: string; subject: string; html: string; text: string }): Promise<void> {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+        'Content-Type':  'application/json',
+      },
+      body: JSON.stringify({
+        from:     RESEND_FROM,
+        to:       msg.to,
+        reply_to: RESEND_REPLY_TO,
+        subject:  msg.subject,
+        html:     msg.html,
+        text:     msg.text,
+        headers:  { 'List-Unsubscribe': '<mailto:info@aca-pirate.ch?subject=desabonnement>, <https://aca-pirate.ch/#/preferences-email>' },
+      }),
+    });
+
+    if (res.status === 429 && attempt === 0) { await sleep(1500); continue; }
+    if (!res.ok) {
+      const body = await res.text().catch(() => '');
+      throw new Error(`Resend ${res.status}: ${body.slice(0, 300)}`);
+    }
+    return;
+  }
+}
+
+// -- Template HTML manga-themed ----------------------------------
 function renderEmail(p: {
   firstName: string;
   title:     string;
@@ -68,9 +95,10 @@ Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: CORS });
 
   try {
+    if (!RESEND_API_KEY) throw new Error('RESEND_API_KEY manquant (secret Supabase)');
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE);
 
-    let body: { release_id?: string; dry_run?: boolean; test_email_only?: string } = {};
+    let body: { release_id?: string; dry_run?: boolean; test_email_only?: string; audience?: string } = {};
     try { body = await req.json(); } catch { /* body vide OK */ }
 
     let q = supabase.from('content_releases').select('*').eq('status', 'ready');
@@ -83,18 +111,29 @@ Deno.serve(async (req) => {
         { headers: { ...CORS, 'Content-Type': 'application/json' } });
     }
 
-    let parentsQuery = supabase
-      .from('profiles_parents')
-      .select('id, email, prenom')
-      .eq('email_new_features', true)
-      .not('email', 'is', null)
-      .not('consent_date', 'is', null);
+    let parents: any[] | null = null;
+    let errP: any = null;
 
     if (body.test_email_only) {
-      parentsQuery = parentsQuery.eq('email', body.test_email_only);
+      // Mode apercu : envoi UNIQUEMENT a cette adresse, quelle que soit l'audience
+      parents = [{ id: null, email: body.test_email_only, prenom: 'cher parent' }];
+    } else if (body.audience === 'consenting' || body.audience === 'non_consenting') {
+      // Audience elargie via RPC SECURITY DEFINER (source: parents + auth.users)
+      const r = await supabase.rpc('get_broadcast_parents', { p_audience: body.audience });
+      parents = r.data;
+      errP = r.error;
+    } else {
+      // Comportement par defaut : parents consentants dans profiles_parents
+      let parentsQuery = supabase
+        .from('profiles_parents')
+        .select('id, email, prenom')
+        .eq('email_new_features', true)
+        .not('email', 'is', null)
+        .not('consent_date', 'is', null);
+      const r = await parentsQuery;
+      parents = r.data;
+      errP = r.error;
     }
-
-    const { data: parents, error: errP } = await parentsQuery;
     if (errP) throw errP;
 
     const summary = { releases: 0, parents: parents?.length ?? 0, sent: 0, failed: 0, skipped: 0 };
@@ -104,16 +143,24 @@ Deno.serve(async (req) => {
         { headers: { ...CORS, 'Content-Type': 'application/json' } });
     }
 
-    const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: SMTP_PORT,
-      secure: SMTP_PORT === 465,
-      auth: { user: SMTP_USER, pass: SMTP_PASSWORD },
-    });
-
     for (const release of releases) {
       summary.releases++;
+      let failedThisRelease = 0;
+
       for (const parent of parents ?? []) {
+        // Idempotence : si deja envoye (reel) pour ce release, on saute
+        if (!body.test_email_only) {
+          const { data: already } = await supabase
+            .from('email_log')
+            .select('id')
+            .eq('release_id', release.id)
+            .eq('email', parent.email)
+            .eq('status', 'sent')
+            .not('parent_id', 'is', null)
+            .limit(1);
+          if (already && already.length > 0) { summary.skipped++; continue; }
+        }
+
         const html = renderEmail({
           firstName:   parent.prenom || 'cher parent',
           title:       release.title,
@@ -126,10 +173,8 @@ Deno.serve(async (req) => {
         if (body.dry_run) { summary.skipped++; continue; }
 
         try {
-          await transporter.sendMail({
-            from:    `"${SMTP_FROM_NAME}" <${SMTP_FROM}>`,
+          await sendViaResend({
             to:      parent.email,
-            replyTo: SMTP_FROM,
             subject: release.title,
             text:    `${release.title}\n\n${release.description}\n\n${release.cta_url || ''}`,
             html,
@@ -146,17 +191,19 @@ Deno.serve(async (req) => {
             error_message: String(e).slice(0, 500),
           });
           summary.failed++;
+          failedThisRelease++;
         }
+
+        await sleep(600); // ~<2 req/s : respect du rate limit Resend
       }
 
-      if (!body.dry_run && !body.test_email_only) {
+      // On ne clot le release que si TOUT est parti (sinon il reste 'ready' pour relance)
+      if (!body.dry_run && !body.test_email_only && failedThisRelease === 0) {
         await supabase.from('content_releases')
           .update({ status: 'sent', sent_at: new Date().toISOString() })
           .eq('id', release.id);
       }
     }
-
-    try { transporter.close(); } catch { /* ignore */ }
 
     return new Response(JSON.stringify({ ok: true, summary }),
       { headers: { ...CORS, 'Content-Type': 'application/json' } });
