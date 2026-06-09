@@ -1845,3 +1845,22 @@ Legacy inoffensif : `profiles` (2 lignes, `parent_id` NULL) + `progression.enfan
 - [ ] (option) cleanup legacy `profiles` + colonne `progression.enfant_id` (mort, 2 lignes).
 - [ ] (produit) funnel parent : 51 parents pour 20 enfants → onboarding « créer un aventurier »
   à fluidifier.
+
+
+---
+
+## [2026-06-09] Email-broadcast (Resend) + assainissement `parents` — FAIT
+
+- ESP **Resend** opérationnel (domaine `aca-pirate.ch` vérifié ; secrets `RESEND_API_KEY`, `RESEND_FROM="Académie Pirate <info@aca-pirate.ch>"`).
+- `send-content-email` migrée nodemailer/SMTP -> API Resend (idempotence, `List-Unsubscribe`, audiences, retry 429). Déployée (v21). **À committer/push.**
+- RPC `get_broadcast_parents(consenting|non_consenting)` — exclut les enfants. Audiences : 16 / 15.
+- Trigger `handle_new_parent` corrigé (skip `role='child'`).
+- Nettoyage data : `parents` 51->31, `profiles_parents` -1. Intégrité OK (`child_profiles`=20 intacts, 0 enfant dans `parents`).
+- **Campagne envoyée** : Email A -> 16 consentants ; Email B -> 15 non-consentants. 0 échec, 0 enfant, 0 synthétique.
+
+### Prochains chantiers
+1. **[NOUVEAU — PRIORITÉ] Matière « Révisions Brevet » (DNB 2026 : écrits les 26/29/30 juin).** À cadrer : intégration (7e monde thématisé vs hub de révision transversal), périmètre (3ème), 4 épreuves (français, maths, histoire-géo-EMC, sciences), format (fiches + QCM + annales corrigées + examens blancs chronométrés). SEO/AEO : « réviser le brevet 2026 », « annales brevet corrigées », « sujet type brevet », etc.
+2. **Git** : committer la migration Resend + ranger/supprimer les scripts one-shot (`patch_*`, `migrate_*`).
+3. **RGPD P0.2** : pages `/confidentialite/` + `/mentions-legales/`, consentement à l'inscription, liens footer.
+4. **Phase 7b** : migrer `af-pin-entry` hors `pin`/`pin_hash`, puis DROP colonnes.
+5. Backlog existant (images IP officielles -> remplacement, `llms.txt` section IP, règle IP-01, etc.).

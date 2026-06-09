@@ -454,3 +454,25 @@ valider une suppression — vérifier l'état réel en base (présence/absence d
 **Statut** : trigger inverse supprimé, RPC `lookup_child_by_pin` + table `pin_attempts` droppées,
 `profiles_parents_id_fkey` passée en CASCADE, Edge Functions `delete-child` / `delete-account`
 déployées et validées en prod (07/06/2026, commit `8df4736`).
+
+
+---
+
+## Leçon #10 — Broadcasts emails : exclure les comptes ENFANTS, et pas de bulk via SMTP partagé (2026-06-09)
+
+**Contexte.** Campagne d'annonce aux parents (email A = consentants, email B = non-consentants).
+
+**Pièges rencontrés.**
+1. Le trigger `on_auth_user_created -> handle_new_parent()` insérait une ligne dans `parents` pour CHAQUE `auth.users`, donc aussi pour les comptes ENFANTS (créés par `child-signup`, marqués `raw_user_meta_data.role='child'`, email synthétique `@aca-pirate.ch`). Résultat : 20 enfants parasitaient `parents` (51 lignes au lieu de 31 vrais parents), et l'audience broadcast les incluait. Un compte enfant (`taim@aca-pirate.ch`) a même reçu le 1er essai.
+2. Infomaniak SMTP (mutualisé) rejette le bulk quasi-identique : `550 5.2.0 Spam message rejected`. L'envoi à des adresses synthétiques inexistantes a aggravé la réputation -> blocage anti-spam.
+
+**Corrections.**
+- Trigger `handle_new_parent()` : `IF role='child' THEN RETURN NEW;` + `SET search_path=public`.
+- Data : -20 lignes `parents`, -1 `profiles_parents` (audit FK préalable : seule FK `child_profiles.parent_id -> parents CASCADE`, 0 enfant impacté). Intégrité après : `parents`=31, `child_profiles`=20.
+- RPC `get_broadcast_parents` : exclut `par.id IN (SELECT auth_user_id FROM child_profiles)`.
+- Envoi migré vers **Resend** (API HTTP, domaine `aca-pirate.ch` DKIM/SPF vérifié, From `info@aca-pirate.ch`), idempotence par destinataire, release marqué `sent` seulement si 0 échec, en-tête `List-Unsubscribe`, retry 429.
+
+**Règles permanentes.**
+- **EMAIL-01** — Tout broadcast part d'une audience qui EXCLUT les comptes enfants (`role='child'`) et les emails synthétiques `@aca-pirate.ch`. Vérifier `enfants=0` AVANT tout envoi réel.
+- **EMAIL-02** — Pas de bulk via SMTP Infomaniak ; le bulk passe par l'ESP (Resend). Infomaniak = transactionnel unitaire uniquement.
+- **DB-TRIG-01** — Tout trigger sur `auth.users` qui écrit dans une table métier (`parents`, `profiles_parents`, ...) DOIT discriminer le type de compte (`role`) pour ne pas mélanger parents et enfants.
