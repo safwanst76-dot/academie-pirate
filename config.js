@@ -25,8 +25,8 @@ window.AP_CONFIG = {
     'magnolia':          'island-magnolia',
     'kanto':             'island-demon-slayer',
     'pays-du-feu':       'island-pays-du-feu',
-    'namek':             'island-namek',          // à créer
-    'foret-konoha':      'island-foret-konoha',   // à créer
+    'namek':             'island-namek',          
+    'brevet':            'island-brevet',         // à créer (assets Phase 2)  
   },
 
   // ── Feature Flags ─────────────────────────────────────────────────
@@ -100,6 +100,16 @@ window.AP_CONFIG = {
       stripeTier:  'free',
       jsFiles:     ['js/worlds/english/audio.js', 'js/engine/quiz-engine.js', 'js/worlds/english/quiz-router.js', 'js/worlds/english/lesson-data.js'],
     },
+    'brevet': {
+      active:      true,
+      locked:      false,
+      route:       'brevet',
+      subject:     'Révisions Brevet (Français)',
+      universe:    'Multi-manga',
+      color:       '#eab308',
+      stripeTier:  'free',
+      jsFiles:     ['js/engine/quiz-engine.js', 'js/worlds/brevet/quiz-router.js'],
+    },
     'namek': {
       active:      true,
       locked:      false,
@@ -110,16 +120,7 @@ window.AP_CONFIG = {
       stripeTier:  'free',
       jsFiles:     ['js/worlds/namek/audio.js', 'js/worlds/namek/lesson-data.js', 'js/worlds/namek/quiz.js'],
     },
-    'foret-konoha': {
-      active:      false,
-      locked:      true,
-      route:       'foret-konoha',
-      subject:     'SVT',
-      universe:    'Naruto',
-      color:       '#16a34a',
-      stripeTier:  'free'    // BIZ-01,
-      jsFiles:     [],
-    },
+    
   },
 
   // ── Freemium ─────────────────────────────────────────────────────

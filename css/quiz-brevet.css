@@ -1,0 +1,241 @@
+/* ═══════════════════════════════════════════════════════════════
+   CSS QUIZ-BREVET.CSS — 🎓 Brevet (Révisions DNB · multi-manga)
+   Préfixe isolant : .brevet-*  (ARCHI-01 / AU-02)
+   Mobile-first : styles de base = mobile, puis montée en min-width.
+   Thème or (#eab308 / #ffd700) + surcharge du moteur (#brevet-quiz-sec .aot-*).
+   Clone structurel de quiz-grand-bleu.css, mono-niveau (pas de grille niveaux).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Fond animé ─────────────────────────────────────────────────── */
+#brevet-bg {
+  position: fixed; inset: 0; z-index: 0;
+  display: flex; gap: 0; overflow: hidden;
+  opacity: 0; transition: opacity 1s ease;
+  pointer-events: none;
+}
+#brevet-bg.visible { opacity: 1; }
+
+.brevet-bg-strip {
+  flex: 1; display: flex; flex-direction: column; gap: 4px;
+  animation: brevetStripScroll 32s linear infinite;
+  will-change: transform;
+}
+.brevet-bg-strip:nth-child(even) { animation-direction: reverse; animation-duration: 40s; }
+.brevet-bg-strip:nth-child(3)    { animation-duration: 26s; }
+.brevet-bg-strip:nth-child(5)    { animation-duration: 44s; }
+
+.brevet-bg-strip img {
+  width: 100%; aspect-ratio: 9/13; object-fit: cover;
+  display: block; border-radius: 4px;
+  opacity: .55;
+  filter: saturate(1.2) brightness(.45) sepia(.25) hue-rotate(-10deg);
+}
+@keyframes brevetStripScroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+/* ── Overlay sombre sur le fond ─────────────────────────────────── */
+#brevet-iles-sec::before,
+#brevet-quiz-sec::before {
+  content: ''; position: fixed; inset: 0; z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(12,9,0,.62) 0%,
+    rgba(18,13,2,.5) 50%,
+    rgba(12,9,0,.62) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Sections ───────────────────────────────────────────────────── */
+#brevet-iles-sec,
+#brevet-quiz-sec {
+  display: none; position: relative; z-index: 2;
+  width: 100%; min-height: 100vh;
+  padding-bottom: 80px; pointer-events: auto;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Contenu au-dessus de l'overlay */
+.brevet-map-header, .brevet-grid,
+.brevet-quiz-header, #brevet-qContainer {
+  position: relative; z-index: 3;
+}
+
+/* ── En-tête ────────────────────────────────────────────────────── */
+.brevet-map-header { text-align: center; padding: 24px 16px 16px; }
+.brevet-map-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  color: #ffd700; letter-spacing: 4px;
+  text-shadow: 3px 3px 0 #000, 0 0 30px rgba(234,179,8,.45);
+  margin-bottom: 6px;
+}
+.brevet-map-sub {
+  font-size: .85rem; font-weight: 800;
+  color: rgba(255,255,255,.78); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-top: 4px;
+}
+.brevet-back-btn {
+  display: inline-block; margin-bottom: 12px;
+  font-family: 'Bangers', cursive; font-size: .9rem; letter-spacing: 1px;
+  color: rgba(255,215,0,.85); background: rgba(234,179,8,.12);
+  border: 1.5px solid rgba(234,179,8,.4);
+  border-radius: 20px; padding: 6px 16px;
+  cursor: pointer; transition: all .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.brevet-back-btn:hover { background: rgba(234,179,8,.25); color: #ffd700; }
+
+/* ── Grille des chapitres (mono-niveau) ─────────────────────────── */
+.brevet-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 12px; padding: 12px 14px 32px;
+  max-width: 960px; margin: 0 auto;
+}
+@media (min-width: 580px) { .brevet-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .brevet-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.brevet-card {
+  position: relative; border-radius: 16px; overflow: hidden;
+  cursor: pointer; background: rgba(12,10,2,.93);
+  border: 2px solid rgba(255,255,255,.14);
+  box-shadow: 0 4px 24px rgba(0,0,0,.7);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.brevet-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--c, #eab308);
+  box-shadow: 0 8px 32px rgba(0,0,0,.7), 0 0 20px var(--c, rgba(234,179,8,.3));
+}
+.brevet-card:active { transform: scale(.97); }
+.brevet-card.done {
+  border-color: var(--c, #eab308);
+  box-shadow: 0 0 20px var(--c, rgba(234,179,8,.3));
+}
+
+.brevet-card-img-wrap {
+  position: relative; width: 100%; aspect-ratio: 3/4;
+  background: linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.45) 100%);
+  overflow: hidden;
+}
+.brevet-card-img {
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center bottom;
+  padding: 8px 6px 0; box-sizing: border-box;
+  display: block; transition: transform .4s ease;
+  mix-blend-mode: lighten;
+}
+.brevet-card:hover .brevet-card-img { transform: scale(1.06); }
+
+.brevet-card-img-fallback {
+  display: none;
+  position: absolute; inset: 0;
+  align-items: center; justify-content: center;
+  font-size: clamp(2.6rem, 9vw, 4.5rem);
+}
+.brevet-card-img-fallback[style*="flex"] { display: flex !important; }
+
+.brevet-card-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 45%; pointer-events: none;
+}
+.brevet-card-badge {
+  position: absolute; top: 8px; left: 8px;
+  font-family: 'Nunito', sans-serif; font-size: .6rem; font-weight: 900;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: #1a1400; padding: 3px 8px; border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+.brevet-card-body {
+  padding: 10px 12px 14px;
+  background: rgba(12,10,2,.95);
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.brevet-card-hero {
+  font-family: 'Nunito', sans-serif; font-size: .68rem; font-weight: 900;
+  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px;
+}
+.brevet-card-name {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(.95rem, 3vw, 1.15rem); letter-spacing: 1.5px;
+  color: #fff; margin-bottom: 3px; line-height: 1.12;
+  text-shadow: 1px 1px 0 #000;
+}
+.brevet-card-topic {
+  font-size: .72rem; color: rgba(255,255,255,.75); font-weight: 700;
+  line-height: 1.3;
+}
+.brevet-card-score { font-size: .78rem; color: #ffd700; margin-top: 5px; font-weight: 800; }
+
+/* ── Section Quiz (en-tête sticky) ──────────────────────────────── */
+#brevet-quiz-sec { padding-top: 0; }
+.brevet-quiz-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(12,10,2,.95);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 2px solid rgba(234,179,8,.45);
+  padding: 10px 16px 8px; box-shadow: 0 4px 20px rgba(0,0,0,.6);
+}
+.brevet-quiz-title {
+  font-family: 'Bangers', cursive; font-size: clamp(1rem, 4vw, 1.5rem);
+  color: #ffd700; letter-spacing: 2px; text-shadow: 2px 2px 0 #000;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.brevet-prog-bar {
+  width: 100%; height: 7px; background: rgba(255,255,255,.15);
+  border-radius: 8px; margin-top: 6px; overflow: hidden;
+}
+.brevet-prog-fill {
+  height: 100%; background: linear-gradient(90deg, #eab308, #ffd700);
+  border-radius: 8px; transition: width .4s ease;
+  box-shadow: 0 0 8px rgba(234,179,8,.5);
+}
+.brevet-prog-lbl {
+  font-size: .72rem; font-weight: 800;
+  color: rgba(255,255,255,.7); margin-top: 3px; text-align: right;
+}
+#brevet-qContainer {
+  position: relative; z-index: 3;
+  padding: 0; max-width: 740px; margin: 0 auto;
+}
+
+/* ── Surcharge couleurs (moteur AP_QuizEngine rend des .aot-*) ──── */
+#brevet-quiz-sec .aot-q-card        { border-color: rgba(234,179,8,.3); }
+#brevet-quiz-sec .aot-boss-card     { border-color: #ffd700; box-shadow: 0 0 30px rgba(255,215,0,.3); }
+#brevet-quiz-sec .aot-boss-banner   { background: linear-gradient(135deg, #1a1400, #b8860b); }
+#brevet-quiz-sec .aot-char-name     { color: #ffd700; }
+#brevet-quiz-sec .aot-q-txt         { border-left-color: #eab308; }
+#brevet-quiz-sec .aot-opt:hover     { border-color: #eab308; }
+#brevet-quiz-sec .aot-opt.aot-selected { border-color: #eab308; background: rgba(234,179,8,.15); }
+#brevet-quiz-sec .aot-btn-main {
+  background: linear-gradient(135deg, #eab308, #b8860b);
+  box-shadow: 0 4px 20px rgba(234,179,8,.4);
+}
+#brevet-quiz-sec .aot-btn-outline   { border-color: rgba(234,179,8,.5); color: #eab308; }
+#brevet-quiz-sec .aot-result-score  { color: #ffd700; }
+#brevet-quiz-sec .aot-result-card   { border-color: #eab308; }
+
+/* ── Pointer-events (anti-blocage) ──────────────────────────────── */
+#brevet-quiz-sec, #brevet-quiz-sec * { pointer-events: auto; }
+#brevet-bg, #brevet-bg *             { pointer-events: none !important; }
+
+/* ── Responsive fin ─────────────────────────────────────────────── */
+@media (max-width: 479px) {
+  .brevet-grid { gap: 10px; padding: 10px; }
+  .brevet-card-body { padding: 8px 10px 12px; }
+  .brevet-card-name { font-size: .9rem; }
+}
+@media (min-width: 768px) {
+  #brevet-qContainer { max-width: 740px; margin: 14px auto; }
+}
+@media (hover: none) and (pointer: coarse) {
+  .brevet-card:hover { transform: none !important; }
+  .brevet-card:active { transform: scale(.98) !important; }
+}
+@supports (-webkit-touch-callout: none) {
+  .brevet-quiz-header { padding-top: env(safe-area-inset-top, 10px); }
+}

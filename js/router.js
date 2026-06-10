@@ -22,6 +22,7 @@ var ROUTES = {
   'pays-du-feu': showPaysduFeu,
   'namek'      : function(s){ if(typeof showNamekV2==='function') showNamekV2(s); else showNamek(s); },
   'english'    : function(silent) { if (typeof showEnglish === 'function') showEnglish(silent); },
+  'brevet'     : function(silent) { if (typeof showBrevetV2 === 'function') showBrevetV2(silent); },
   'select'     : function() { if (typeof showChildSelect === 'function') showChildSelect(); }
 };
 
@@ -125,6 +126,14 @@ function hideAll() {
   if (aotQuiz)   aotQuiz.style.display   = 'none';
   const aotBg = document.getElementById('aot-bg');
   if (aotBg) aotBg.classList.remove('visible');
+
+  // Brevet sections
+  var brevetIles = document.getElementById('brevet-iles-sec');
+  var brevetQuiz = document.getElementById('brevet-quiz-sec');
+  if (brevetIles) brevetIles.style.display = 'none';
+  if (brevetQuiz) brevetQuiz.style.display = 'none';
+  var brevetBg = document.getElementById('brevet-bg');
+  if (brevetBg) brevetBg.classList.remove('visible');
 
   // Restaurer le fond manga quand on quitte Kanto
   const mangaBg = document.getElementById('manga-bg');
@@ -394,6 +403,7 @@ var SEO_ROUTES = {
   'namek/5eme':  { title: 'Quiz Géographie 5ème — Démographie & DD · Académie Pirate', desc: '8 îles 5ème : démographie, eau, énergie, alimentation, risques, inégalités, développement durable, climat.' },
   'namek/4eme':  { title: 'Quiz Géographie 4ème — Mondialisation · Académie Pirate', desc: '8 îles 4ème : urbanisation, mobilités, mondialisation, océans, Amérique du N, Afrique, Asie, inégalités.' },
   'namek/3eme':  { title: 'Quiz Géographie 3ème — Brevet · Académie Pirate', desc: '8 îles 3ème Brevet : aires urbaines FR, espaces productifs, faible densité, France+UE, mondialisation, aménagement, défense, géopolitique.' },
+  'brevet':      { title: 'Brevet Français 3ème — Révisions DNB · Académie Pirate', desc: 'Révise le Brevet de Français (DNB 3ème) avec les héros manga : annales corrigées 2023-2025 et 5 leçons de méthode. 100% gratuit, sans pub.' },
   'select':      { title: 'Académie Pirate — Choisir ton aventurier',              desc: 'Sélectionne ton personnage manga pour commencer ton aventure pédagogique.' },
 };
 

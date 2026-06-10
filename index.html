@@ -36,6 +36,7 @@
 <link rel="stylesheet" href="css/quiz-namek.css">
 <link rel="stylesheet" href="css/quiz-english.css">
 <link rel="stylesheet" href="css/quiz-grand-bleu.css">
+<link rel="stylesheet" href="css/quiz-brevet.css">
 <link rel="stylesheet" href="css/lesson.css">
 <link rel="stylesheet" href="css/features/daily.css">
 <link rel="stylesheet" href="css/features/child-profile.css">
@@ -504,6 +505,18 @@
   <div id="aot-qContainer"></div>
 </section>
 
+<!-- ═══ BREVET (Révisions DNB × multi-manga) ═══ -->
+<div id="brevet-bg"></div>
+<section id="brevet-iles-sec" style="display:none"></section>
+<section id="brevet-quiz-sec" style="display:none">
+  <div class="brevet-quiz-header">
+    <div class="brevet-quiz-title" id="brevet-qTitle">QUIZ</div>
+    <div class="brevet-prog-bar"><div class="brevet-prog-fill" id="brevet-qProgFill" style="width:0%"></div></div>
+    <div class="brevet-prog-lbl" id="brevet-qProgLbl">0 / 0</div>
+  </div>
+  <div id="brevet-qContainer"></div>
+</section>
+
 <!-- ═══ LESSON OVERLAY ═══ -->
 <div id="lesson-overlay" style="display:none;position:fixed;inset:0;z-index:8500;pointer-events:none"></div>
 
@@ -589,6 +602,7 @@
 <script src="js/engine/quiz-engine.js"></script>
 <script src="js/worlds/english/quiz-router.js"></script>
 <script src="js/worlds/grand-bleu/quiz-router.js"></script>
+<script src="js/worlds/brevet/quiz-router.js"></script>
 <script src="js/worlds/pays-du-feu/quiz-router.js"></script>
 <script src="js/worlds/magnolia/quiz-router.js"></script>
 <script src="js/worlds/kanto/quiz-router.js"></script>
