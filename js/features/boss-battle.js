@@ -159,6 +159,15 @@
     // Boss DS supplémentaires
     'Nakime':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/nakime.jpeg',
     'Gyutaro':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/gyutaro.jpg',
+    // ── Brevet — Révisions DNB (multi-manga) ──
+    'Le Sujet 2025':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/crocodile.jpg',
+    'Le Sujet 2024':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/hidan.jpg',
+    'Le Sujet 2023':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-bestial.jpg',
+    'Le Gardien de la Grammaire': 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/obito.jpg',
+    'Le Démon des Accords':       'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/muzan.jpg',
+    "L'Illusionniste":            'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-namek/characters/mahito.jpg',
+    'La Page Blanche':            'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/pain.jpg',
+    'Le Grand Débat':             'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-aot/bosses/titan-colossal.jpg',
   };
 
   function _resolveBossImg(bossName, bossImgProvided) {
@@ -212,6 +221,7 @@
     paysdufeu: { color: '#F97316', bg: '#0d0500', name: 'Pays du Feu' },
     namek:     { color: '#7c3aed', bg: '#0a0418', name: 'Namek'       },
     english:   { color: '#4a5c3f', bg: '#080c06', name: 'English'     },
+    brevet-francais: { color: '#eab308', bg: '#0a0a05', name: 'Brevet' },
   };
 
   // ── État ─────────────────────────────────────────────────────────
