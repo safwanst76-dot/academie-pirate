@@ -63,6 +63,16 @@ const CONTINENTS = [
     locked: false,
     zone: 'M 280,210 L 320,200 L 355,208 L 368,225 L 362,245 L 348,258 L 325,262 L 302,258 L 285,242 L 278,225 Z',
     labelX: 323, labelY: 232, subX: 323, subY: 246, emojiX: 288, emojiY: 218,
+  },
+  {
+    id: 'brevet', name: 'Brevet', subject: 'Révisions', universe: 'Multi-manga',
+    emoji: '🎓', color: '#eab308',
+    chars: ['Robin','Levi','Kakashi'], charColors: ['#6366f1','#4a5c3f','#8b5cf6'],
+    desc: "Révise le Brevet (DNB 3ème) : annales corrigées et leçons de méthode, avec tes héros manga !",
+    locked: false,
+    // Zone bas-droite (sous Namek)
+    zone: 'M 425,238 L 462,232 L 490,244 L 497,265 L 490,286 L 470,296 L 446,292 L 428,278 L 421,258 Z',
+    labelX: 458, labelY: 264, subX: 458, subY: 278, emojiX: 432, emojiY: 244,
   }
 ];
 

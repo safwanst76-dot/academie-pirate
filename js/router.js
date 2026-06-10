@@ -603,7 +603,7 @@ window.showContinentPanel = function (c) {
       padding: 24px 20px; box-shadow: 0 8px 40px rgba(0,0,0,.5);
     `;
 
-   const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : c.id === 'geography' ? 'namek' : c.id === 'english' ? 'english' : 'iles';
+   const targetRoute = c.id === 'history' ? 'histoire' : c.id === 'kanto' ? 'kanto' : c.id === 'math' ? 'pays-du-feu' : c.id === 'geography' ? 'namek' : c.id === 'english' ? 'english' : c.id === 'brevet' ? 'brevet' : 'iles';
     panel.innerHTML = `
       <div class="gp-header">
         <div class="gp-emoji">${c.emoji}</div>
