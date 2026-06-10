@@ -221,7 +221,7 @@
     paysdufeu: { color: '#F97316', bg: '#0d0500', name: 'Pays du Feu' },
     namek:     { color: '#7c3aed', bg: '#0a0418', name: 'Namek'       },
     english:   { color: '#4a5c3f', bg: '#080c06', name: 'English'     },
-    brevet-francais: { color: '#eab308', bg: '#0a0a05', name: 'Brevet' },
+    'brevet-francais': { color: '#eab308', bg: '#0a0a05', name: 'Brevet' },
   };
 
   // ── État ─────────────────────────────────────────────────────────
