@@ -160,6 +160,13 @@
     // Boss DS supplémentaires
     'Nakime':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/nakime.jpeg',
     'Gyutaro':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/gyutaro.jpg',
+    // ── Brevet Sciences — démons DS (clés additives, n'altèrent pas le monde Kanto) ──
+    'Doma':                 'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/doma.jpg',
+    'Gyokko':               'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/gyokko.jpg',
+    'Hantengu':             'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/hantengu.jpg',
+    'Kaigaku':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/kaigaku.jpg',
+    'Muzan Kibutsuji':      'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-demon-slayer/characters/muzan.jpg',
+  
     // ── Brevet — Révisions DNB (multi-manga) ──
     'Le Sujet 2025':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/grand-bleu/characters/crocodile.jpg',
     'Le Sujet 2024':              'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/hidan.jpg',
