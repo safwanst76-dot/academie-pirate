@@ -15,8 +15,8 @@
   var SUBJECTS = [
     { code: 'brevet-francais',     label: 'Français',      sub: 'Multi-manga',   icon: '📖', color: '#3b82f6', music: 'map',             active: true  },
     { code: 'brevet-maths',        label: 'Mathématiques', sub: 'Naruto',        icon: '🔢', color: '#f97316', music: 'pays-du-feu-map', active: true },
-    { code: 'brevet-histoire-geo', label: 'Histoire-Géo',  sub: 'Dragon Ball Z', icon: '🗺️', color: '#a855f7', music: 'dbz-map',         active: false },
-    { code: 'brevet-sciences',     label: 'Sciences',      sub: 'Demon Slayer',  icon: '🔬', color: '#10b981', music: 'kanto-map',       active: false }
+    { code: 'brevet-histoire-geo', label: 'Histoire-Géo',  sub: 'Dragon Ball Z', icon: '🗺️', color: '#a855f7', music: 'dbz-map',         active: true },
+    { code: 'brevet-sciences',     label: 'Sciences',      sub: 'Demon Slayer',  icon: '🔬', color: '#10b981', music: 'kanto-map',       active: true }
   ];
 
   var _matiere   = null;   // matière courante
