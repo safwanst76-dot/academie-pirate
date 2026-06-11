@@ -112,6 +112,7 @@
     'Kankuro':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kankuro.jpg',
     'Hidan':           'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/hidan.jpg',
     'Deidara':         'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/deidara.jpg',
+    'Sasori':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/sasori.jpg',
     'Kisame':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kisame.jpg',
     'Kabuto':          'https://bwxzrqsvccqmzvonsswi.supabase.co/storage/v1/object/public/island-pays-du-feu/characters/kabuto.jpg',
     // Boss 5ème/4ème/3ème — fallbacks sur images proches disponibles
