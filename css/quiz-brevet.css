@@ -239,3 +239,55 @@
 @supports (-webkit-touch-callout: none) {
   .brevet-quiz-header { padding-top: env(safe-area-inset-top, 10px); }
 }
+/* ── HUB des matières (Brevet multi-épreuves) ─────────────────────── */
+.brevet-hub {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 14px; padding: 16px 16px 44px;
+  max-width: 720px; margin: 0 auto;
+  position: relative; z-index: 3;
+}
+@media (min-width: 760px) { .brevet-hub { grid-template-columns: repeat(4, 1fr); } }
+
+.brevet-subject-card {
+  position: relative; cursor: pointer; overflow: hidden;
+  background: rgba(12,10,2,.92);
+  border: 2px solid var(--c, #eab308); border-radius: 18px;
+  padding: 22px 14px 18px; text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,.6);
+  transition: transform .2s, box-shadow .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.brevet-subject-card::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, var(--c) 0%, transparent 70%);
+  opacity: .16;
+}
+.brevet-subject-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 34px rgba(0,0,0,.7), 0 0 22px var(--c);
+}
+.brevet-subject-card:active { transform: scale(.97); }
+.brevet-subject-card.locked {
+  cursor: not-allowed; border-color: rgba(255,255,255,.14);
+  filter: grayscale(.7); opacity: .6;
+}
+.brevet-subject-card.locked::before { opacity: .05; }
+
+.brevet-subject-icon  { font-size: clamp(2.4rem, 9vw, 3.2rem); line-height: 1; margin-bottom: 8px; }
+.brevet-subject-label {
+  font-family: 'Bangers', cursive; font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+  letter-spacing: 1.5px; color: #fff; text-shadow: 1px 1px 0 #000;
+}
+.brevet-subject-sub {
+  font-size: .68rem; font-weight: 800; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--c); margin-top: 2px;
+}
+.brevet-subject-go {
+  margin-top: 12px; font-family: 'Bangers', cursive; letter-spacing: 1px;
+  font-size: .95rem; color: #1a1400; background: var(--c);
+  border-radius: 12px; padding: 5px 0; box-shadow: 0 3px 10px rgba(0,0,0,.4);
+}
+.brevet-subject-soon {
+  margin-top: 12px; font-size: .78rem; font-weight: 900;
+  color: rgba(255,255,255,.6); letter-spacing: .5px;
+}
